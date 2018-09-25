@@ -11,12 +11,11 @@ public class PhysicsSystem : Singleton<PhysicsSystem>
     // Use this for initialization
     void Start()
     {
-        Physics2D.gravity = Vector2.down * Gravity;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Physics2D.gravity = Vector2.down * Gravity;
     }
 }
