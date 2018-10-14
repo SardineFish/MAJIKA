@@ -8,6 +8,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class InputManager : Singleton<InputManager> {
     public KeyCode KeyJump;
+    public KeyCode KeyHold;
     public KeyCode KeyAttack1;
     public KeyCode KeyAttack2;
     public KeyCode KeyAttack3;
@@ -24,4 +25,13 @@ public class InputManager : Singleton<InputManager> {
         });
     }
 
+    public Vector2 GetMovement()
+    {
+        return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+    }
+
+    public bool GetKey(KeyCode key)
+    {
+        return Input.GetKeyDown(key);
+    }
 }

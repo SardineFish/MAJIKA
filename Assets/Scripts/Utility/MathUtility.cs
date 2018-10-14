@@ -34,6 +34,15 @@ public static class MathUtility
         return new Vector2(v.x, v.z);
     }
 
+    public static int SignInt(float x)
+    {
+        if (x > 0)
+            return 1;
+        else if (x < 0)
+            return -1;
+        return 0;
+    }
+
     public static float MapAngle(float ang)
     {
         if (ang > 180)
