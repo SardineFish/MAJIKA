@@ -65,6 +65,10 @@ public class MovableEntity : MonoBehaviour
             velocity = Vector2.zero;
         }
     }
+    private void FixedUpdate()
+    {
+        OnGround = false;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

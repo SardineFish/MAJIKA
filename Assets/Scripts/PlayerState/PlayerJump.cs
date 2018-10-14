@@ -23,6 +23,8 @@ public class PlayerJump : PlayerState
         }
 
         Entity.GetComponent<AnimationController>().PlayAnimation(Entity.GetComponent<PlayerController>().Jump, InputManager.Instance.GetMovement().x);
+        if (Entity.GetComponent<MovableEntity>().OnGround)
+            Entity.GetComponent<PlayerController>().ChangeState(new PlayerOnGround(Entity));
     }
 
 }
