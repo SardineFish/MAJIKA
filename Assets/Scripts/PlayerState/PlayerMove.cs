@@ -11,6 +11,7 @@ public class PlayerMove : PlayerState
 {
     public PlayerIdle IdleState;
     public PlayerJump JumpState;
+    public PlayerClimb ClimbState;
 
     public override void OnUpdate(Player player, EntityStateMachine<Player> fsm)
     {
@@ -29,6 +30,13 @@ public class PlayerMove : PlayerState
         {
             if (player.GetComponent<MovableEntity>().Jump())
                 fsm.ChangeState(JumpState);
+        }
+
+        // Climb
+        if(InputManager.Instance.GetKey(InputManager.Instance.KeyClimb))
+        {
+            if (player.GetComponent<MovableEntity>().Climb(0))
+                fsm.ChangeState(ClimbState);
         }
     }
 

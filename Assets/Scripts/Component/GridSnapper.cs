@@ -8,7 +8,7 @@ public enum SnapMode
 }
 public class GridSnapper : MonoBehaviour
 {
-    public SnapMode SnapMode = SnapMode.None;
+    public SnapMode SnapMode = SnapMode.SnapToPixel;
     public Vector3 OriginOffset;
     // Use this for initialization
     void Start()

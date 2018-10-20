@@ -25,7 +25,7 @@ namespace Assets.Editor
             if (moving)
             {
                 Tools.current = Tool.None;
-                var pos = Handles.PositionHandle(snapper.transform.position + snapper.OriginOffset + new Vector3(0.5f, 0.5f, 0), Quaternion.identity) - new Vector3(0.5f, 0.5f, 0);
+                var pos = Handles.PositionHandle(snapper.transform.position /*+ snapper.OriginOffset + new Vector3(0.5f, 0.5f, 0)*/, Quaternion.identity) /*- new Vector3(0.5f, 0.5f, 0)*/;
                 var n = GridSystem.Instance.GridPerPixel;
                 switch (snapper.SnapMode)
                 {

@@ -9,6 +9,7 @@ using UnityEngine;
 public class PlayerJump : PlayerState
 {
     public PlayerIdle IdleState;
+    public PlayerClimb ClimbState;
 
     public override void OnUpdate(Player player, EntityStateMachine<Player> fsm)
     {
@@ -27,6 +28,13 @@ public class PlayerJump : PlayerState
         player.GetComponent<AnimationController>().PlayAnimation(AnimatorController, InputManager.Instance.GetMovement().x);
         if (player.GetComponent<MovableEntity>().OnGround)
             fsm.ChangeState(IdleState);
+
+        // Climb
+        if (InputManager.Instance.GetKey(InputManager.Instance.KeyClimb))
+        {
+            if (player.GetComponent<MovableEntity>().Climb(0))
+                fsm.ChangeState(ClimbState);
+        }
     }
 
 }

@@ -8,11 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16776ea56cd5b6f42ab0ee7dd6108f57, type: 3}
-  m_Name: PlayerMove
+  m_Script: {fileID: 11500000, guid: a9b3f42eb7d9ba14fa055aa40d022c48, type: 3}
+  m_Name: PlayerClimb
   m_EditorClassIdentifier: 
-  AnimatorController: {fileID: 9100000, guid: 1473ee8c87d8e8a4ca5a59513990d49c, type: 2}
+  AnimatorController: {fileID: 9100000, guid: 562a067100058c6438378017822325dd, type: 2}
   TriggerName: 
-  IdleState: {fileID: 11400000, guid: edf21207f96067d4bbdc9837d9fddf5e, type: 2}
   JumpState: {fileID: 11400000, guid: 9961c7559eb281348913eb0307d59c7f, type: 2}
-  ClimbState: {fileID: 11400000, guid: 51287b1d169d5d641bd32450f0297bd5, type: 2}

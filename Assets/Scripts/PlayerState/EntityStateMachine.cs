@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 using SardineFish.Unity.FSM;
 using UnityEngine;
 
+[Serializable]
 public class EntityStateMachine<TEntity> : EntityBehaviour<TEntity>, IFSM<EntityState<TEntity>> where TEntity:GameEntity
 {
     [SerializeField]
     private EntityState<TEntity> state;
     public EntityState<TEntity> State => this.state;
+
+    
+    [SerializeField]
+    private string currentState;
 
 
     public bool ChangeState(EntityState<TEntity> nextState)
@@ -26,6 +31,9 @@ public class EntityStateMachine<TEntity> : EntityBehaviour<TEntity>, IFSM<Entity
     void Update()
     {
         if (State)
+        {
+            currentState = State.name;
             State.OnUpdate(Entity, this);
+        }
     }
 }

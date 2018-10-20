@@ -14,3 +14,4 @@ MonoBehaviour:
   AnimatorController: {fileID: 9100000, guid: 25f225bc3c932594181d67b043b2da01, type: 2}
   TriggerName: 
   IdleState: {fileID: 11400000, guid: edf21207f96067d4bbdc9837d9fddf5e, type: 2}
+  ClimbState: {fileID: 11400000, guid: 51287b1d169d5d641bd32450f0297bd5, type: 2}

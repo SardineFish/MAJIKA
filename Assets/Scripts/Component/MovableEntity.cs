@@ -4,15 +4,20 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class MovableEntity : MonoBehaviour
 {
+    public const string ClimbAreaTag = "ClimbArea";
     //public bool Fly = false;
     public bool OnGround = false;
+    public bool InClimbArea = false;
     public bool EnableGravity = true;
     public bool Frozen = false;
     public float MaxMoveSpeed = 10;
+    public float MaxClimbSpeed = 10;
     public float JumpHeight = 5;
     public int MaxJumpCount = 1;
 
     public int jumpCount = 0;
+
+    public GameObject AvailableClimbArea;
 
     private Vector2 velocity;
     private Vector2 additionalVelocity;
@@ -21,6 +26,7 @@ public class MovableEntity : MonoBehaviour
     {
         if (Frozen)
             return false;
+        EnableGravity = true;
         if (jumpCount-- > 0)
         {
             additionalVelocity.y = PhysicsSystem.Instance.JumpVelocoty;
@@ -36,6 +42,17 @@ public class MovableEntity : MonoBehaviour
             return false;
         velocity = movement * MaxMoveSpeed;
         return false;
+    }
+
+    public bool Climb(float speed)
+    {
+        if (!InClimbArea)
+            return false;
+        jumpCount = MaxJumpCount;
+        transform.position = transform.position.Set(x: AvailableClimbArea.transform.position.x);
+        velocity = new Vector2(0, speed * MaxClimbSpeed);
+        EnableGravity = false;
+        return true;
     }
 
     private void LateUpdate()
@@ -57,8 +74,8 @@ public class MovableEntity : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().gravityScale = 0;
             var v = velocity;
-            if (additionalVelocity.y > 0)
-                v.y = additionalVelocity.y;
+            /*if (additionalVelocity.y > 0)
+                v.y = additionalVelocity.y;*/
 
             GetComponent<Rigidbody2D>().velocity = v;
             additionalVelocity = Vector2.zero;
@@ -68,6 +85,8 @@ public class MovableEntity : MonoBehaviour
     private void FixedUpdate()
     {
         OnGround = false;
+        InClimbArea = false;
+        AvailableClimbArea = null;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -82,6 +101,15 @@ public class MovableEntity : MonoBehaviour
                 jumpCount = MaxJumpCount;
                 OnGround = true;
             }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == ClimbAreaTag)
+        {
+            InClimbArea = true;
+            AvailableClimbArea = collision.gameObject;
         }
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class InputManager : Singleton<InputManager> {
     public KeyCode KeyJump;
-    public KeyCode KeyHold;
+    public KeyCode KeyClimb;
     public KeyCode KeyAttack1;
     public KeyCode KeyAttack2;
     public KeyCode KeyAttack3;

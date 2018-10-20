@@ -23,6 +23,13 @@ public static class MathUtility
     {
         return Vector3.Scale(v, new Vector3(1, 0, 1));
     }
+    public static Vector3 Set(this Vector3 v, float x=float.NaN, float y=float.NaN, float z = float.NaN)
+    {
+        x = float.IsNaN(x) ? v.x : x;
+        y = float.IsNaN(y) ? v.y : y;
+        z = float.IsNaN(z) ? v.z : z;
+        return new Vector3(x, y, z);
+    }
 
     public static Vector2 ToVector2(this Vector3 v)
     {

@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfeefc81cb2c074abfe16dd7e236bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyJump: 330
-  KeyHold: 335
+  KeyJump: 107
+  KeyClimb: 108
   KeyAttack1: 106
   KeyAttack2: 105
   KeyAttack3: 108
@@ -82,5 +82,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a769018d9aed29a4dbb18e0cff198b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpHeight: 3
-  JumpTime: 0.5
+  JumpHeight: 4
+  JumpTime: 0.55
+  OnGroundThreshold: 0.0625
