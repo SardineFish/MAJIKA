@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SardineFish.Unity.FSM;
+﻿using UnityEngine;
+using System.Collections;
 
-public class PlayerState: EntityState<Player>
+public class PlayerState : AnimatedState<Player>
 {
-    public PlayerState(Player player) : base(player) { }
-
 }

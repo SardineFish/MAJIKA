@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SardineFish.Unity.FSM
 {
-    public abstract class State
+    public abstract class State:IState<State>
     {
-        public virtual bool Enter(State lastState)
+        public virtual bool OnEnter(State lastState)
         {
             return true;
         }
-        public virtual void Update() { }
-        public virtual bool Exit(State nextState)
+        public virtual void OnUpdate() { }
+        public virtual bool OnExit(State nextState)
         {
             return true;
         }

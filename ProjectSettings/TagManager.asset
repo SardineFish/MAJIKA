@@ -15,8 +15,8 @@ TagManager:
   - 
   - Platform
   - SolidCollider
-  - 
-  - 
+  - FootCollider
+  - BodyCollider
   - 
   - 
   - 

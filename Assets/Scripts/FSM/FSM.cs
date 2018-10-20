@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace SardineFish.Unity.FSM
 {
-    public class FSM<T> where T:State
+    public class FSM:IFSM<State>
     {
-        public T State { get; private set; }
+        public State State { get; private set; }
         public FSM()
         {
             State = null;
         }
-        public FSM(T initialState) : this()
+        public FSM(State initialState) : this()
         {
             State = initialState;
         }
 
-        public bool ChangeState(T nextState)
+        public bool ChangeState(State nextState)
         {
-            if (State!=null && !State.Exit(nextState))
+            if (State!=null && !State.OnExit(nextState))
                 return false;
-            if (!nextState.Enter(State))
+            if (!nextState.OnEnter(State))
                 return false;
             State = nextState;
             return true;
@@ -30,7 +30,7 @@ namespace SardineFish.Unity.FSM
 
         public void Update()
         {
-            State?.Update();
+            State?.OnUpdate();
         }
     }
 }
