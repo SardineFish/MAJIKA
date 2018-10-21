@@ -18,8 +18,8 @@ TagManager:
   - SolidCollider
   - FootCollider
   - BodyCollider
-  - 
-  - 
+  - CameraCollider
+  - MapEdge
   - 
   - 
   - 

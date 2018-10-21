@@ -20,6 +20,8 @@ public class EntityStateMachine<TEntity> : EntityBehaviour<TEntity>, IFSM<Entity
 
     public bool ChangeState(EntityState<TEntity> nextState)
     {
+        if (nextState == null)
+            return false;
         if (State != null && !State.OnExit(Entity, nextState, this))
             return false;
         if (!nextState.OnEnter(Entity, State, this))
