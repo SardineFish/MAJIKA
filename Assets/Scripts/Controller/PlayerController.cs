@@ -4,7 +4,7 @@ using UnityEngine;
 using MonsterLove.StateMachine;
 using SardineFish.Unity.FSM;
 
-[RequireComponent(typeof(Player), typeof(MovableEntity))]
+[RequireComponent(typeof(Player), typeof(MovableEntity), typeof(EventBus))]
 public class PlayerController : EntityStateMachine<Player>
 {
     public PlayerState InitialState;

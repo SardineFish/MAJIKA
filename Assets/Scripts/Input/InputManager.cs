@@ -9,10 +9,7 @@ using UnityEngine;
 public class InputManager : Singleton<InputManager> {
     public KeyCode KeyJump;
     public KeyCode KeyClimb;
-    public KeyCode KeyAttack1;
-    public KeyCode KeyAttack2;
-    public KeyCode KeyAttack3;
-    public KeyCode keyAttack4;
+    public KeyCode[] SkillsKeyCode = new KeyCode[0];
 
     public void Update()
     {
@@ -33,5 +30,15 @@ public class InputManager : Singleton<InputManager> {
     public bool GetKey(KeyCode key)
     {
         return Input.GetKeyDown(key);
+    }
+
+    public int GetSkillIndex()
+    {
+        for(var i = 0; i < SkillsKeyCode.Length; i++)
+        {
+            if (Input.GetKeyDown(SkillsKeyCode[i]))
+                return i;
+        }
+        return -1;
     }
 }

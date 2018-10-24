@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameEntity : MonoBehaviour
+[RequireComponent(typeof(EntityEffector))]
+public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffectorTrigger
 {
     public const string NameRenderer = "Renderer";
     public const string NameCollider = "Collider";
@@ -17,5 +18,11 @@ public class GameEntity : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void OnMessage(SkillImpactMessage msg)
+    {
+        var effector = GetComponent<EntityEffector>();
+        msg.Effects.ForEach(effect => effector.AddEffect(effect, msg.SenderEntity));
     }
 }

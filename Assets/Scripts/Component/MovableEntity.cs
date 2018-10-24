@@ -10,6 +10,7 @@ public class MovableEntity : MonoBehaviour
     public bool InClimbArea = false;
     public bool EnableGravity = true;
     public bool Frozen = false;
+    public float FaceDirection = 1;
     public float MaxMoveSpeed = 10;
     public float MaxClimbSpeed = 10;
     public float JumpHeight = 5;
@@ -44,6 +45,7 @@ public class MovableEntity : MonoBehaviour
         if (Frozen)
             return false;
         movementvelocity = movement * MaxMoveSpeed;
+        FaceDirection = Mathf.Sign(movement.x) == 0 ? FaceDirection : Mathf.Sign(movement.x);
         return false;
     }
 

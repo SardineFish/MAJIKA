@@ -3,5 +3,14 @@ using System.Collections;
 
 public class EntityBehaviour<T> : MonoBehaviour where T:GameEntity
 {
-    public T Entity => GetComponent<T>();
+    public T Entity
+    {
+        get
+        {
+            var entity = GetComponent<T>();
+            if (!entity)
+                entity = GetComponentInParent<T>();
+            return entity;
+        }
+    }
 }
