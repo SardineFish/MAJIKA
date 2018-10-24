@@ -10,8 +10,11 @@ public class CameraMovement : MonoBehaviour
     public bool EnableFollow = true;
     public float CushionRange = 0;
     public float FollowIgnoreRange = 3;
-    public float FollowRange = 5;
+    public Vector2 FollowRangeOffset;
+    public Vector2 FollowStartRange;
+    public Vector2 MaxFollowRange;
     public float MaxSpeed = 5;
+    public Vector2 MaxVelocity;
     public BoxCollider2D cushionCollider;
     public Transform followTarget;
 
@@ -43,14 +46,20 @@ public class CameraMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var follow = (followTarget.position - transform.position).ToVector2();
-        if (follow.magnitude < FollowIgnoreRange)
-            follow = Vector2.zero;
-        follow /= FollowRange;
-        follow = Vector2.ClampMagnitude(follow, 1);
-        followSpeed = follow * MaxSpeed;
+        var follow = (followTarget.position - transform.position - FollowRangeOffset.ToVector3()).ToVector2();
+        var followAccelerateRange = MaxFollowRange - FollowStartRange;
+
+        if (follow.magnitude > FollowIgnoreRange)
+        {
+            follow.x = Mathf.Clamp01((Mathf.Abs(follow.x) - FollowStartRange.x) / followAccelerateRange.x) * Mathf.Sign(follow.x);
+            follow.y = Mathf.Clamp01((Mathf.Abs(follow.y) - FollowStartRange.y) / followAccelerateRange.y) * Mathf.Sign(follow.y);
+            followSpeed = follow;
+            //followSpeed = follow * MaxSpeed;
+            //followSpeed = follow.normalized * Mathf.Clamp01((follow.magnitude - FollowIgnoreRange) / FollowRange) * MaxSpeed;
+        }
+        MaxVelocity = followTarget.GetComponent<MovableEntity>().velocity.Abs();
         if (EnableFollow)
-            GetComponent<Rigidbody2D>().velocity = followSpeed + seperateSpeed;
+            GetComponent<Rigidbody2D>().velocity =(followSpeed+seperateSpeed)*MaxSpeed;// Vector2.Scale(followSpeed + seperateSpeed, MaxVelocity);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -66,11 +75,19 @@ public class CameraMovement : MonoBehaviour
             if (Mathf.Abs((contract.normal * -contract.separation).y) > Mathf.Abs(seperation.y))
                 seperation.y = (contract.normal * -contract.separation).y;
         }
-        Debug.DrawLine(transform.position, transform.position + seperation.ToVector3(), Color.green);
-        seperation = Vector2.ClampMagnitude(seperation / CushionRange, 1);
-        Debug.DrawLine(transform.position, transform.position + seperation.ToVector3(), Color.cyan);
+        seperation = seperation / CushionRange;
+        seperation.x = Mathf.Clamp(seperation.x, -1, 1);
+        seperation.y = Mathf.Clamp(seperation.y, -1, 1);
 
-        seperateSpeed = seperation * MaxSpeed;
-        Debug.DrawLine(transform.position, transform.position + seperateSpeed.ToVector3(), Color.magenta);
+
+        seperateSpeed = seperation;// * MaxSpeed;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position+FollowRangeOffset.ToVector3(), FollowStartRange.ToVector3()*2);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position + FollowRangeOffset.ToVector3(), MaxFollowRange * 2);
     }
 }

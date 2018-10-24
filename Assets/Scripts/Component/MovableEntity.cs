@@ -16,10 +16,13 @@ public class MovableEntity : MonoBehaviour
     public int MaxJumpCount = 1;
 
     public int jumpCount = 0;
+    public Vector2 velocity;
 
     public GameObject AvailableClimbArea;
 
-    private Vector2 velocity;
+
+
+    private Vector2 movementvelocity;
     private Vector2 additionalVelocity;
 
     public bool Jump()
@@ -40,7 +43,7 @@ public class MovableEntity : MonoBehaviour
     {
         if (Frozen)
             return false;
-        velocity = movement * MaxMoveSpeed;
+        movementvelocity = movement * MaxMoveSpeed;
         return false;
     }
 
@@ -50,7 +53,7 @@ public class MovableEntity : MonoBehaviour
             return false;
         jumpCount = MaxJumpCount;
         transform.position = transform.position.Set(x: AvailableClimbArea.transform.position.x);
-        velocity = new Vector2(0, speed * MaxClimbSpeed);
+        movementvelocity = new Vector2(0, speed * MaxClimbSpeed);
         EnableGravity = false;
         return true;
     }
@@ -62,24 +65,26 @@ public class MovableEntity : MonoBehaviour
             GetComponent<Rigidbody2D>().gravityScale = 1;
             var v = GetComponent<Rigidbody2D>().velocity;
             v.x = 0;
-            v += velocity;
+            v += movementvelocity;
             if (additionalVelocity.y > 0)
                 v.y = additionalVelocity.y;
 
             GetComponent<Rigidbody2D>().velocity = v;
+            velocity = v;
             additionalVelocity = Vector2.zero;
-            velocity = Vector2.zero;
+            movementvelocity = Vector2.zero;
         }
         else
         {
             GetComponent<Rigidbody2D>().gravityScale = 0;
-            var v = velocity;
+            var v = movementvelocity;
             /*if (additionalVelocity.y > 0)
                 v.y = additionalVelocity.y;*/
 
             GetComponent<Rigidbody2D>().velocity = v;
+            velocity = v;
             additionalVelocity = Vector2.zero;
-            velocity = Vector2.zero;
+            movementvelocity = Vector2.zero;
         }
     }
     private void FixedUpdate()
