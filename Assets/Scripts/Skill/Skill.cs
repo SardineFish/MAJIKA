@@ -22,6 +22,24 @@ public class Skill : EntityBehaviour<GameEntity>
         if (Time.time - lastActivateTime < CoolDown)
             return false;
         lastActivateTime = Time.time;
+        
+        return true;
+    }
+
+    public bool Abort()
+    {
+        if (LockState)
+            return false;
+
+        if (releasedSkillImpact)
+            releasedSkillImpact.Deactivate();
+        return true;
+    }
+
+    public bool StartImpact()
+    {
+        if (releasedSkillImpact)
+            return true;
         var impact = Utility.Instantiate(SkillImpactObject, Entity.gameObject.scene).GetComponent<SkillImpact>();
         impact.Creator = Entity;
         Vector3 direction = Vector3.right;
@@ -37,13 +55,9 @@ public class Skill : EntityBehaviour<GameEntity>
         return true;
     }
 
-    public bool Abort()
+    public bool EndImpact()
     {
-        if (LockState)
-            return false;
-
-        if (releasedSkillImpact)
-            releasedSkillImpact.Deactivate();
+        releasedSkillImpact?.Deactivate();
         return true;
     }
 }

@@ -47,4 +47,14 @@ public class SkillController : EntityBehaviour<Player>
     {
         GetComponent<EventBus>().Dispatch(EventSkillEnd);
     }
+
+    void OnImpactStart()
+    {
+
+    }
+
+    void OnImpactEnd()
+    {
+
+    }
 }
