@@ -19,15 +19,17 @@ public class PlayerIdle : PlayerState
         if (!Mathf.Approximately(movement.x, 0))
             fsm.ChangeState(MoveState);
 
+        InputManager.Instance.GetAction(InputManager.Instance.JumpAction);
+
         // Jump
-        if (InputManager.Instance.GetKey(InputManager.Instance.KeyJump))
+        if (InputManager.Instance.GetAction(InputManager.Instance.JumpAction))
         {
             if (player.GetComponent<MovableEntity>().Jump())
                 fsm.ChangeState(JumpState);
         }
 
         // Climb
-        if (InputManager.Instance.GetKey(InputManager.Instance.KeyClimb))
+        if (InputManager.Instance.GetAction(InputManager.Instance.ClimbAction))
         {
             if (player.GetComponent<MovableEntity>().Climb(0))
                 fsm.ChangeState(ClimbState);

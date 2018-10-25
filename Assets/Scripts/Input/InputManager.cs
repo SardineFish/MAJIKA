@@ -4,12 +4,50 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Experimental.Input;
+using UnityEngine.Experimental.Input.Utilities;
 
 [ExecuteInEditMode]
 public class InputManager : Singleton<InputManager> {
-    public KeyCode KeyJump;
-    public KeyCode KeyClimb;
-    public KeyCode[] SkillsKeyCode = new KeyCode[0];
+    public Vector2 Movement;
+    public const int SkillCount = 4;
+
+    public InputAction MovementAction;
+
+    public InputAction JumpAction;
+    public InputAction ClimbAction;
+
+    public InputAction SkillAction1;
+    public InputAction SkillAction2;
+    public InputAction SkillAction3;
+    public InputAction SkillAction4;
+
+    private InputAction[] skillActionList;
+
+    private void OnEnable()
+    {
+        MovementAction.Enable();
+        JumpAction.Enable();
+        ClimbAction.Enable();
+        SkillAction1.Enable();
+        SkillAction2.Enable();
+        SkillAction3.Enable();
+        SkillAction4.Enable();
+    }
+
+    private void Awake()
+    {
+        skillActionList = new InputAction[] {
+            SkillAction1,
+            SkillAction2,
+            SkillAction3,
+            SkillAction4
+        }; 
+        MovementAction.performed += ctx =>
+        {
+            Movement = ctx.ReadValue<Vector2>();
+        };
+    }
 
     public void Update()
     {
@@ -17,7 +55,7 @@ public class InputManager : Singleton<InputManager> {
         {
             if (Input.GetKeyDown(key))
             {
-                Debug.Log(key);
+                //Debug.Log(key);
             }
         });
     }
@@ -27,18 +65,19 @@ public class InputManager : Singleton<InputManager> {
         return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 
-    public bool GetKey(KeyCode key)
+    public bool GetAction(InputAction action)
     {
-        return Input.GetKeyDown(key);
+        return action.phase == InputActionPhase.Started;
     }
 
     public int GetSkillIndex()
     {
-        for(var i = 0; i < SkillsKeyCode.Length; i++)
+        for(var i = 0; i < skillActionList.Length; i++)
         {
-            if (Input.GetKeyDown(SkillsKeyCode[i]))
+            if (GetAction(skillActionList[i]))
                 return i;
         }
         return -1;
+
     }
 }

@@ -12,7 +12,7 @@ public class PlayerClimb : PlayerState
         player.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, 0);
 
         // Jump
-        if (InputManager.Instance.GetKey(InputManager.Instance.KeyJump))
+        if (InputManager.Instance.GetAction(InputManager.Instance.JumpAction))
         {
             if (player.GetComponent<MovableEntity>().Jump())
                 fsm.ChangeState(JumpState);
