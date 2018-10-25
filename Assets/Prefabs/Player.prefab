@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4568907880473024}
   - component: {fileID: 212615509491180646}
+  - component: {fileID: 114377454853495348}
   m_Layer: 0
   m_Name: Renderer
   m_TagString: Untagged
@@ -55,12 +56,15 @@ GameObject:
   - component: {fileID: 114349991172085492}
   - component: {fileID: 114247470959826002}
   - component: {fileID: 114533955204039194}
+  - component: {fileID: 114761703565141142}
+  - component: {fileID: 114936478903134020}
   - component: {fileID: 95401749329384152}
   - component: {fileID: 50102132844438088}
   - component: {fileID: 114683729224533348}
   - component: {fileID: 114974915277480942}
   - component: {fileID: 114872658561303984}
   - component: {fileID: 114374967682817352}
+  - component: {fileID: 114356481816643768}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -120,7 +124,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373393434984044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5335937, y: 4.290763, z: 0}
+  m_LocalPosition: {x: 3.5673518, y: 4.277443, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4568907880473024}
@@ -292,11 +296,13 @@ MonoBehaviour:
   InClimbArea: 0
   EnableGravity: 1
   Frozen: 0
+  FaceDirection: 1
   MaxMoveSpeed: 10
   MaxClimbSpeed: 10
   JumpHeight: 5
   MaxJumpCount: 1
   jumpCount: 0
+  velocity: {x: 0, y: 0}
   AvailableClimbArea: {fileID: 0}
 --- !u!114 &114349991172085492
 MonoBehaviour:
@@ -311,6 +317,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 0
   MP: 0
+--- !u!114 &114356481816643768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373393434984044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd63b462113c1142b95bae8f03ea7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114374967682817352
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,6 +340,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: 0
+--- !u!114 &114377454853495348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206903418408264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e7d71c5e02ea747b9f8e6c173e2e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteAlignment: 7
 --- !u!114 &114533955204039194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -349,6 +378,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SnapMode: 0
   OriginOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &114761703565141142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373393434984044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: affaee391acf6dc409f9841d440d7dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114872658561303984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -363,6 +403,19 @@ MonoBehaviour:
   m_SerializedData:
     velocity: {x: 0, y: 0}
     extraVelocity: {x: 0, y: 0}
+--- !u!114 &114936478903134020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1373393434984044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23446b4692bcd8443b1885e0e0d560a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Skills: []
+  ActiveSkill: {fileID: 0}
 --- !u!114 &114974915277480942
 MonoBehaviour:
   m_ObjectHideFlags: 1
