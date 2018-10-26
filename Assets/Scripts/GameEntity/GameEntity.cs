@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(EntityEffector))]
+[RequireComponent(typeof(EntityEffector),typeof(EventBus))]
 public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffectorTrigger
 {
     public const string NameRenderer = "Renderer";
