@@ -18,15 +18,17 @@ public class EventBus : MonoBehaviour
         Listeners[eventName].Add(listener);
 
     }
-    public void AddEventListener<T>(string eventName, Action<T> listener,bool once = false)
+    public ActionEventListener<T> AddEventListener<T>(string eventName, Action<T> listener,bool once = false)
     {
         if (!Listeners.ContainsKey(eventName))
             Listeners[eventName] = new List<EventListenerBase>();
-        Listeners[eventName].Add(new ActionEventListener<T>(listener));
+        var eventListener = new ActionEventListener<T>(eventName, listener);
+        Listeners[eventName].Add(eventListener);
+        return eventListener;
     }
-    public void AddEventListener(string eventName, Action listener,bool once = false)
+    public ActionEventListener<object> AddEventListener(string eventName, Action listener,bool once = false)
     {
-        AddEventListener<object>(eventName, (obj) => listener());
+        return AddEventListener<object>(eventName, (obj) => listener());
     }
     public void AddEventListenerOnce<T>(string eventName, Action<T> listener)
     {
@@ -36,10 +38,10 @@ public class EventBus : MonoBehaviour
     {
         AddEventListener(eventName, listener, true);
     }
-    public void RemoveEventListener(string eventName, EventListenerBase listener)
+    public void RemoveEventListener(EventListenerBase listener)
     {
-        if (Listeners.ContainsKey(eventName))
-            Listeners[eventName].Remove(listener);
+        if (Listeners.ContainsKey(listener.EventName))
+            Listeners[listener.EventName].Remove(listener);
     }
     public void Dispatch(string eventName,params object[] args)
     {

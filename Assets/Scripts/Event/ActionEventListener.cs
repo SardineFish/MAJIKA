@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 public class ActionEventListener<T> : EventListenerBase
 {
     public Action<T> Callback;
-    public ActionEventListener(Action<T> callback)
+    public ActionEventListener(string eventName,Action<T> callback)
     {
+        EventName = eventName;
         Callback = callback;
     }
 

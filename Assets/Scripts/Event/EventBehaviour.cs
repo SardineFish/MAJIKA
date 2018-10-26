@@ -34,7 +34,7 @@ public class EventBehaviour : MonoBehaviour
         {
             foreach(var listener in EventListeners)
             {
-                EventTarget.RemoveEventListener(listener.Method.GetCustomAttribute<EventListenerAttribute>().EventName, listener);
+                EventTarget.RemoveEventListener(/*listener.Method.GetCustomAttribute<EventListenerAttribute>().EventName, */listener);
             }
         }
 

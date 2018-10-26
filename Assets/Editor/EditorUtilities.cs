@@ -9,6 +9,17 @@ namespace Assets.Editor
 {
     public static class EditorUtilities
     {
+        public static class Styles
+        {
+            public static GUIContent PlusIconContent = EditorGUIUtility.IconContent("Toolbar Plus");
+            public static GUIContent MinusIconContent = EditorGUIUtility.IconContent("Toolbar Minus");
+            public static GUIStyle Indent = new GUIStyle();
+
+            static Styles()
+            {
+                Indent.margin.left = (int)EditorGUIUtility.singleLineHeight;
+            }
+        }
         public static AngularRange DrawAngularRangeField(string lable, AngularRange value)
         {
             var rect = EditorGUILayout.BeginHorizontal(GUILayout.Height(22));
@@ -54,11 +65,71 @@ namespace Assets.Editor
             return show;
         }
 
-        public static bool DrawFoldList(string lable, bool show, int count, Action<int> itemRenderingCallback,Action addCallback)
+        public static List<T> DrawList<T>(List<T> list, Action headerRenderer, Func<T, T> renderCallback)
+        {
+            Verticle(() =>
+            {
+                Horizontal(() =>
+                {
+                    headerRenderer?.Invoke();
+                    if (GUILayout.Button(Styles.PlusIconContent, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
+                    {
+                        list.Add(Activator.CreateInstance<T>());
+                    }
+                });
+                EditorGUILayout.Space();
+                Verticle(Styles.Indent, () =>
+                {
+                    for (var i = 0; i < list.Count; i++)
+                    {
+                        Horizontal(() =>
+                        {
+                            if (GUILayout.Button(Styles.MinusIconContent, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
+                            {
+                                list.RemoveAt(i--);
+                                if (i >= list.Count)
+                                    return;
+                            }
+
+                            Verticle(() =>
+                            {
+                                if (renderCallback != null)
+                                    list[i] = renderCallback(list[i]);
+                            });
+                        });
+                    }
+                });
+            });
+            return list;
+        }
+
+        public static List<T> DrawList<T>(string lable, List<T> list, Func<T,T> renderCallback)
+        {
+            return DrawList(list, () => EditorGUILayout.Foldout(true, lable), renderCallback);
+        }
+
+        public static T[] DrawArray<T>(T[] array, Action headerRenderer, Func<T, T> renderCallback)
+        {
+            return DrawList(array.ToList(), headerRenderer, renderCallback).ToArray();
+        }
+
+        public static T[] DrawArray<T>(string lable, T[] array, Func<T,T> renderCallback)
+        {
+            return DrawList(
+                array.ToList(),
+                () => EditorGUILayout.Foldout(true, lable),
+                renderCallback
+            ).ToArray();
+        }
+
+
+
+        public static bool DrawFoldList(string lable, bool show, int count, Action<int> itemRenderingCallback,Action addCallback, Action removeCallback=null)
         {
             EditorGUILayout.BeginHorizontal();
             show = EditorGUILayout.Foldout(show, lable);
-            if (show && GUILayout.Button("+"))
+            var plusIconContext = EditorGUIUtility.IconContent("Toolbar Plus");
+            if (GUILayout.Button(plusIconContext, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
                 addCallback();
             EditorGUILayout.EndHorizontal();
 
@@ -69,7 +140,14 @@ namespace Assets.Editor
                 EditorGUILayout.BeginVertical(style);
                 for (var i = 0; i < count; i++)
                 {
+                    EditorGUILayout.BeginHorizontal();
+                    var minusIconContext = EditorGUIUtility.IconContent("Toolbar Minus");
+                    if (GUILayout.Button(minusIconContext, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
+                        removeCallback?.Invoke();
+                    EditorGUILayout.BeginVertical();
                     itemRenderingCallback(i);
+                    EditorGUILayout.EndVertical();
+                    EditorGUILayout.EndHorizontal();
                 }
                 EditorGUILayout.EndVertical();
             }
@@ -152,6 +230,36 @@ namespace Assets.Editor
                {
                    list.Add(new WeightedItem(null, 1));
                });
+        }
+
+        public static void Verticle(GUIStyle style, Action renderContent)
+        {
+            if (style == null)
+                EditorGUILayout.BeginVertical();
+            else
+                EditorGUILayout.BeginVertical(style);
+            renderContent?.Invoke();
+            EditorGUILayout.EndVertical();
+        }
+
+        public static void Verticle(Action renderContent)
+        {
+            Verticle(null, renderContent);
+        }
+
+        public static void Horizontal(GUIStyle style,Action renderContent)
+        {
+            if (style == null)
+                EditorGUILayout.BeginHorizontal();
+            else
+                EditorGUILayout.BeginHorizontal(style);
+            renderContent?.Invoke();
+            EditorGUILayout.EndHorizontal();
+        }
+
+        public static void Horizontal(Action renderContent)
+        {
+            Horizontal(null, renderContent);
         }
     }
 }

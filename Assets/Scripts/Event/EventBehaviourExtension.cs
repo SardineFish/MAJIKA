@@ -22,7 +22,7 @@ public static class EventBehaviourExtension
         {
             foreach (var listener in eventBehaviour.EventListeners)
             {
-                eventBehaviour.EventTarget.RemoveEventListener(listener.Method.GetCustomAttribute<EventListenerAttribute>().EventName, listener);
+                eventBehaviour.EventTarget.RemoveEventListener(/*listener.Method.GetCustomAttribute<EventListenerAttribute>().EventName, */listener);
             }
         }
 

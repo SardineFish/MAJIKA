@@ -13,8 +13,6 @@ public class ReflectEventListener:EventListenerBase
         Method = method;
         Object = @object;
     }
-
-    public string EventName { get; set; }
     public object Object { get; set; }
     public MethodInfo Method { get; set; }
 

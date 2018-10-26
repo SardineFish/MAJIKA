@@ -14,8 +14,10 @@ public enum ImpactDirection
     Flip,
     Rotate
 }
+[RequireComponent(typeof(EventBus))]
 public class SkillImpact : MonoBehaviour
 {
+    public const string EventDeactivate = "Deactivate";
     public ImpactType ImpactType;
     public ImpactDirection ImpactDirection;
     public bool ImpactOnce = true;
@@ -41,6 +43,7 @@ public class SkillImpact : MonoBehaviour
     }
     public void Deactivate()
     {
+        GetComponent<EventBus>().Dispatch(EventDeactivate);
         Active = false;
     }
 
