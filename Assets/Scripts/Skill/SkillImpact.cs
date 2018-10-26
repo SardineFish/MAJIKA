@@ -22,6 +22,7 @@ public class SkillImpact : MonoBehaviour
     public ImpactDirection ImpactDirection;
     public bool ImpactOnce = true;
     public bool Continuous = false;
+    [HideInInspector]
     public List<EffectMultiplier> Effects = new List<EffectMultiplier>();
     public GameEntity Creator;
     public bool Active = false;

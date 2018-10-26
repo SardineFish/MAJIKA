@@ -23,6 +23,7 @@ namespace Assets.Editor
             {
                 eventBus.Dispatch(eventName);
             }
+            EditorGUILayout.EndHorizontal();
         }
     }
 }

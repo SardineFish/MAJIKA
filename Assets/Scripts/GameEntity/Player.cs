@@ -2,8 +2,6 @@
 using System.Collections;
 
 [RequireComponent(typeof(SkillController))]
-public class Player : GameEntity
+public class Player : LifeEntity
 {
-    public float HP;
-    public float MP;
 }

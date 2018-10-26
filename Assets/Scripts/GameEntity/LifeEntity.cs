@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LifeEntity : GameEntity,IHP
+public class LifeEntity : GameEntity, IHP
 {
     public const string EventHPIncrease = "HPIncrease";
     public const string EventHPDecrease = "HPDecrease";
-    
-    public float HP;
+
+    public float HP = 100;
+
+    public float MaxHP = 100;
 
     public bool HP_Decrease(float value)
     {

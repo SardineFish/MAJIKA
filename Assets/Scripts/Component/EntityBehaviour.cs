@@ -8,7 +8,7 @@ public class EntityBehaviour<T> : MonoBehaviour where T:GameEntity
         get
         {
             var entity = GetComponent<T>();
-            if (!entity)
+            if (entity == null || !entity)
                 entity = GetComponentInParent<T>();
             return entity;
         }
