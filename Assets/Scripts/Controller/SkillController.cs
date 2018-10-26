@@ -46,15 +46,16 @@ public class SkillController : EntityBehaviour<Player>
     void OnSkillEnd()
     {
         GetComponent<EventBus>().Dispatch(EventSkillEnd);
+        ActiveSkill = null;
     }
 
     void OnImpactStart()
     {
-
+        ActiveSkill?.StartImpact();
     }
 
     void OnImpactEnd()
     {
-
+        ActiveSkill?.EndImpact();
     }
 }

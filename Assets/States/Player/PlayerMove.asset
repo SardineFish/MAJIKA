@@ -16,3 +16,4 @@ MonoBehaviour:
   IdleState: {fileID: 11400000, guid: edf21207f96067d4bbdc9837d9fddf5e, type: 2}
   JumpState: {fileID: 11400000, guid: 9961c7559eb281348913eb0307d59c7f, type: 2}
   ClimbState: {fileID: 11400000, guid: 51287b1d169d5d641bd32450f0297bd5, type: 2}
+  SkillState: {fileID: 11400000, guid: 14f0990528fa95f4eb13509a167cd4d2, type: 2}

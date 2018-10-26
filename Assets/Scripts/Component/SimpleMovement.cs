@@ -8,6 +8,9 @@ public class SimpleMovement : MonoBehaviour
 
     void Update()
     {
-        GetComponent<Rigidbody2D>().velocity = Velocity;
+        /*var rigidbody = GetComponent<Rigidbody2D>();
+        var dv = Velocity - rigidbody.velocity;
+        rigidbody.AddForce(dv * rigidbody.mass, ForceMode2D.Impulse);*/
+        GetComponent<Rigidbody2D>().velocity = transform.localToWorldMatrix.MultiplyVector(Velocity);
     }
 }

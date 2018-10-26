@@ -9,20 +9,30 @@ public class Skill : EntityBehaviour<GameEntity>
 {
     public GameObject SkillImpactObject;
     public RuntimeAnimatorController AnimatorController;
-    public Vector3 ImpactOffset;
+    public float ReleaseRadius;
+    public Vector3 ReleaseOffset;
     public SkillDirection Direction;
     public float CoolDown = 1;
     public bool LockState = false;
+    public bool Ready = false;
 
     private float lastActivateTime = 0;
     private SkillImpact releasedSkillImpact;
+
+    void Update()
+    {
+        Ready = Time.time - lastActivateTime >= CoolDown;
+    }
 
     public bool Activate()
     {
         if (Time.time - lastActivateTime < CoolDown)
             return false;
         lastActivateTime = Time.time;
-        
+
+        Entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, Entity.GetComponent<MovableEntity>().FaceDirection);
+        releasedSkillImpact = null;
+
         return true;
     }
 
@@ -49,8 +59,7 @@ public class Skill : EntityBehaviour<GameEntity>
                 direction = Vector3.right * Entity.GetComponent<MovableEntity>().FaceDirection;
                 break;
         }
-        impact.Activate(Entity.transform.position + ImpactOffset, direction);
-        Entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, direction.x);
+        impact.Activate(Entity.transform.position + ReleaseOffset + direction * ReleaseRadius, direction);
         releasedSkillImpact = impact;
         return true;
     }
@@ -60,4 +69,12 @@ public class Skill : EntityBehaviour<GameEntity>
         releasedSkillImpact?.Deactivate();
         return true;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position + ReleaseOffset, ReleaseRadius);
+    }
+
+    
 }

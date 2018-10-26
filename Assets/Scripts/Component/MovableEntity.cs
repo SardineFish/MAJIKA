@@ -45,7 +45,6 @@ public class MovableEntity : MonoBehaviour
         if (Frozen)
             return false;
         movementvelocity = movement * MaxMoveSpeed;
-        FaceDirection = Mathf.Sign(movement.x) == 0 ? FaceDirection : Mathf.Sign(movement.x);
         return false;
     }
 
@@ -62,6 +61,10 @@ public class MovableEntity : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!enabled)
+            return;
+
+        FaceDirection = velocity.x == 0 ? FaceDirection : Mathf.Sign(velocity.x);
         if (EnableGravity)
         {
             GetComponent<Rigidbody2D>().gravityScale = 1;

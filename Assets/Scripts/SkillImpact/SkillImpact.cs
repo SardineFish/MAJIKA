@@ -33,7 +33,11 @@ public class SkillImpact : MonoBehaviour
         transform.position = position;
         if(ImpactDirection == ImpactDirection.Flip)
         {
-            transform.Find("Renderer").localScale = new Vector3(Mathf.Sign(direction.x), 1, 1);
+            direction.y = direction.z = 0;
+            direction = direction.normalized;
+            transform.rotation *= Quaternion.FromToRotation(transform.right, direction);
+            transform.Find("Renderer").localRotation *= Quaternion.FromToRotation(Vector3.right, direction);
+            transform.Find("Renderer").localScale = new Vector3(direction.x, 1, 1);
         }
         else if (ImpactDirection == ImpactDirection.Rotate)
         {

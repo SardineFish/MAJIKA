@@ -1,24 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[CreateAssetMenu(fileName ="PlayerSkill", menuName ="PlayerState/Skill")]
 public class PlayerSkill : EntityState<Player>
 {
     public PlayerJump JumpState;
     public override bool OnEnter(Player player, EntityState<Player> previousState, EntityStateMachine<Player> fsm)
     {
-        /*if (!player.GetComponent<SkillController>().Activate(InputManager.Instance.GetSkillIndex()))
-            return false;*/
+        var skillIdx = InputManager.Instance.GetSkillIndex();
+        if (skillIdx < 0)
+            return false;
 
-        player.GetComponent<EventBus>().AddEventListenerOnce(SkillController.EventSkillEnd, () =>
+        /*player.GetComponent<EventBus>().AddEventListenerOnce(SkillController.EventSkillEnd, () =>
         {
             fsm.ChangeState(JumpState);
-        });
+        });*/
+        player.GetComponent<SkillController>().Activate(skillIdx);
         return true;
     }
     public override void OnUpdate(Player player, EntityStateMachine<Player> fsm)
     {
         if (player.GetComponent<SkillController>().IsLocked())
             return;
+
+        if (player.GetComponent<SkillController>().ActiveSkill == null)
+            fsm.ChangeState(JumpState);
 
         // Movement
         var movement = InputManager.Instance.GetMovement();

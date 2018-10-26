@@ -12,6 +12,7 @@ public class PlayerMove : PlayerState
     public PlayerIdle IdleState;
     public PlayerJump JumpState;
     public PlayerClimb ClimbState;
+    public PlayerSkill SkillState;
 
     public override void OnUpdate(Player player, EntityStateMachine<Player> fsm)
     {
@@ -38,6 +39,10 @@ public class PlayerMove : PlayerState
             if (player.GetComponent<MovableEntity>().Climb(0))
                 fsm.ChangeState(ClimbState);
         }
+
+        // Skill
+        if (InputManager.Instance.GetSkillIndex() >= 0)
+            fsm.ChangeState(SkillState);
     }
 
 }
