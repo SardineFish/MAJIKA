@@ -83,10 +83,10 @@ public class CameraMovement : MonoBehaviour
         seperateSpeed = seperation;// * MaxSpeed;
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position+FollowRangeOffset.ToVector3(), FollowStartRange.ToVector3()*2);
+        Gizmos.DrawWireCube(transform.position + FollowRangeOffset.ToVector3(), FollowStartRange.ToVector3() * 2);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + FollowRangeOffset.ToVector3(), MaxFollowRange * 2);
     }
