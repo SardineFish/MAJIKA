@@ -23,8 +23,14 @@ public class PlayerSkill : EntityState<Player>
         if (player.GetComponent<SkillController>().IsLocked())
             return;
 
-        if (player.GetComponent<SkillController>().ActiveSkill == null)
+        var activedSkill = player.GetComponent<SkillController>().ActiveSkill;
+
+        if (activedSkill == null)
             fsm.ChangeState(JumpState);
+        else
+        {
+            player.GetComponent<AnimationController>().ChangeAnimation(activedSkill.AnimatorController, player.GetComponent<MovableEntity>().FaceDirection);
+        }
 
         // Movement
         var movement = InputManager.Instance.GetMovement();

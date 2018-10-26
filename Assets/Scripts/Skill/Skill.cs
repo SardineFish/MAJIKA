@@ -22,6 +22,8 @@ public class Skill : EntityBehaviour<GameEntity>
     void Update()
     {
         Ready = Time.time - lastActivateTime >= CoolDown;
+        /*if(Active)
+            Entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, Entity.GetComponent<MovableEntity>().FaceDirection);*/
     }
 
     public bool Activate()
@@ -30,7 +32,6 @@ public class Skill : EntityBehaviour<GameEntity>
             return false;
         lastActivateTime = Time.time;
 
-        Entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, Entity.GetComponent<MovableEntity>().FaceDirection);
         releasedSkillImpact = null;
 
         return true;
@@ -43,6 +44,11 @@ public class Skill : EntityBehaviour<GameEntity>
 
         if (releasedSkillImpact)
             releasedSkillImpact.Deactivate();
+        return true;
+    }
+
+    public bool End()
+    {
         return true;
     }
 

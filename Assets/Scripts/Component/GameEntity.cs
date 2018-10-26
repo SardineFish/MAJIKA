@@ -25,4 +25,9 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
         var effector = GetComponent<EntityEffector>();
         msg.Effects.ForEach(effect => effector.AddEffect(effect, msg.SenderEntity));
     }
+
+    public static GameEntity GetEntity(Component obj)
+    {
+        return obj.GetComponent<GameEntity>() ?? obj.GetComponentInParent<GameEntity>();
+    }
 }

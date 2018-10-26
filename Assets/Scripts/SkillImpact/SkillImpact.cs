@@ -53,7 +53,7 @@ public class SkillImpact : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        var entity = collision.GetComponent<GameEntity>();
+        var entity = GameEntity.GetEntity(collision);
         if (!entity)
             return;
 
