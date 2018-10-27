@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Collections.Generic;
 
 public enum SkillDirection
 {
@@ -18,6 +20,9 @@ public class Skill : EntityBehaviour<GameEntity>
 
     private float lastActivateTime = 0;
     private SkillImpact releasedSkillImpact;
+
+    [HideInInspector]
+    public List<EffectMultiplier> Effects = new List<EffectMultiplier>();
 
     void Update()
     {
@@ -58,6 +63,7 @@ public class Skill : EntityBehaviour<GameEntity>
             return true;
         var impact = Utility.Instantiate(SkillImpactObject, Entity.gameObject.scene).GetComponent<SkillImpact>();
         impact.Creator = Entity;
+        impact.Effects = Effects;
         Vector3 direction = Vector3.right;
         switch (Direction)
         {

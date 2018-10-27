@@ -11,7 +11,12 @@ public class Damage : Effect
     public float damage;
     public override bool EffectStart(EntityEffector effector, IEffectorTrigger trigger, float multiple)
     {
-        effector.Entity.GetComponent<LifeEntity>()?.HP_Decrease(damage);
         return base.EffectStart(effector, trigger, multiple);
+    }
+
+    public override void EffectUpdate(EntityEffector effector, IEffectorTrigger trigger, float multiple)
+    {
+        effector.Entity.GetComponent<LifeEntity>()?.HP_Decrease(damage * multiple);
+        effector.RemoveEffect(this, trigger);
     }
 }

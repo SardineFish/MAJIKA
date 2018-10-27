@@ -20,7 +20,7 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
 
     }
 
-    void OnMessage(SkillImpactMessage msg)
+    public void OnMessage(SkillImpactMessage msg)
     {
         var effector = GetComponent<EntityEffector>();
         msg.Effects.ForEach(effect => effector.AddEffect(effect, msg.SenderEntity));

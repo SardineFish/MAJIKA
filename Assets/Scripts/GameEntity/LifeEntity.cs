@@ -10,14 +10,14 @@ public class LifeEntity : GameEntity, IHP
 
     public float MaxHP = 100;
 
-    public bool HP_Decrease(float value)
+    public bool HP_Increase(float value)
     {
         HP += value;
         GetComponent<EventBus>().Dispatch(EventHPIncrease, value);
         return true;
     }
 
-    public bool HP_Increase(float value)
+    public bool HP_Decrease(float value)
     {
         HP -= value;
         GetComponent<EventBus>().Dispatch(EventHPDecrease, value);

@@ -13,13 +13,19 @@ public class EntityEffector : EntityBehaviour<GameEntity>
 {
     public List<EffectMultiplier> Effects = new List<EffectMultiplier>();
 
+    List<EffectMultiplier> removeList = new List<EffectMultiplier>();
+
     void Update()
     {
-        Effects.ForEach(effect => effect.Effect.EffectUpdate(this, null, effect.Multiple));    
+        Effects.ForEach(effect => effect.Effect.EffectUpdate(this, null, effect.Multiple));
+        foreach (var remove in removeList)
+            Effects.Remove(remove);
+        removeList.Clear();
     }
 
     public bool AddEffect(EffectMultiplier effect, IEffectorTrigger trigger, EffectMerge merge = EffectMerge.Additive)
     {
+        effect = effect.Clone();
         var existed = Effects.Where(eff => eff.Effect == effect.Effect).FirstOrDefault();
         if (existed!=null || merge == EffectMerge.None)
         {
@@ -51,7 +57,7 @@ public class EntityEffector : EntityBehaviour<GameEntity>
             return true;
         if(existed.Effect.EffectEnd(this,trigger,existed.Multiple))
         {
-            Effects.Remove(existed);
+            removeList.Add(existed);
             return true;
         }
         return false;
