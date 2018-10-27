@@ -11,6 +11,7 @@ public class ValueBar : MonoBehaviour
 
     void LateUpdate()
     {
+        NormalizedValue = Mathf.Clamp01(NormalizedValue);
         var bar = transform.Find("Bar").gameObject;
         var wrapper = GetComponent<RectTransform>();
         var w = wrapper.rect.width - (Margin.left + Margin.right);
