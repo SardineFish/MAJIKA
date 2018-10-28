@@ -15,10 +15,15 @@ public class AnimationController : EntityBehaviour<GameEntity>
     public void ChangeAnimation(RuntimeAnimatorController animator, float direction)
     {
         GetComponent<Animator>().runtimeAnimatorController = animator;
+        
         if (direction > 0)
             Entity.Renderer.transform.localScale = new Vector3(1, 1, 1);
         else if (direction < 0)
             Entity.Renderer.transform.localScale = new Vector3(-1, 1, 1);
         this.Direction = MathUtility.SignInt(direction);
+    }
+    public bool IsEnd()
+    {
+        return Entity.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1;
     }
 }

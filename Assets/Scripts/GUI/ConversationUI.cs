@@ -49,7 +49,7 @@ public class ConversationUI : Singleton<ConversationUI>
         {
             Wrapper.SetActive(false);
             EndConversation();
-            return 
+            return;
         }
         var sentence = RenderSentence(conversationEnumerator.Current);
         StartCoroutine(TextCoroutine(sentence.Text));

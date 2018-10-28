@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd3c284cb7233e545a643a44f953ad19, type: 3}
-  m_Name: RedGlasses
+  m_Name: TwinTail
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: e049f1f0d6a35034886123861050c875, type: 3}
-  Name: "\u773C\u955C\u5A18"
+  Image: {fileID: 21300000, guid: c63a7e815811eb346a9865a361b90739, type: 3}
+  Name: "\u53CC\u9A6C\u5C3E"

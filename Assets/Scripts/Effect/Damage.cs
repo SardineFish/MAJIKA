@@ -11,6 +11,7 @@ public class Damage : Effect
     public float damage;
     public override bool EffectStart(EntityEffector effector, IEffectorTrigger trigger, float multiple)
     {
+        effector.Entity.GetComponent<EventBus>().Dispatch("Hit");
         return base.EffectStart(effector, trigger, multiple);
     }
 

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Conversations:
   - "${left}: \u2026\u2026"
-  - "${left}: \u4F60\u6765\u4E86\u3002"
+  - "${left}: ${right}, \u4F60\u6765\u4E86\u3002"
   - "${right}: \u55EF\uFF0C\u6211\u6765\u4E86\u3002"
