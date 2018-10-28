@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(EntityEffector),typeof(EventBus))]
+[RequireComponent(typeof(EventBus))]
 public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffectorTrigger
 {
     public const string NameRenderer = "Renderer";
@@ -20,11 +20,7 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
 
     }
 
-    public void OnMessage(SkillImpactMessage msg)
-    {
-        var effector = GetComponent<EntityEffector>();
-        msg.Effects.ForEach(effect => effector.AddEffect(effect, msg.SenderEntity));
-    }
+    
 
     public static GameEntity GetEntity(Component obj)
     {
