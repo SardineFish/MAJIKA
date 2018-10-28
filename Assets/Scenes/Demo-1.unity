@@ -2571,81 +2571,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.451666, y: 0.35279274}
   m_EdgeRadius: 0
---- !u!1 &203382064
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 203382065}
-  - component: {fileID: 203382067}
-  - component: {fileID: 203382066}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &203382065
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 203382064}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2023676737}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 284, y: -0.0000009536743}
-  m_SizeDelta: {x: -632, y: -64}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &203382066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 203382064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: d84d0984044afb0428a734c9420cdc84, type: 3}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\u6587\u5B57"
---- !u!222 &203382067
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 203382064}
-  m_CullTransparentMesh: 0
 --- !u!1001 &231800985
 Prefab:
   m_ObjectHideFlags: 0
@@ -6253,11 +6178,6 @@ Transform:
   m_Father: {fileID: 870087324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &819350067 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4713240148662208, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-    type: 2}
-  m_PrefabInternal: {fileID: 1440163780}
 --- !u!1 &846293307
 GameObject:
   m_ObjectHideFlags: 0
@@ -6509,6 +6429,10 @@ GameObject:
   m_Component:
   - component: {fileID: 870087324}
   - component: {fileID: 870087325}
+  - component: {fileID: 870087329}
+  - component: {fileID: 870087328}
+  - component: {fileID: 870087327}
+  - component: {fileID: 870087326}
   m_Layer: 0
   m_Name: RedGlass
   m_TagString: Untagged
@@ -6544,6 +6468,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SnapMode: 1
   OriginOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &870087326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870087323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf0328f39f0d3a4497a58f4f0d81fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Talker: {fileID: 11400000, guid: b635d8d6e59f0cd4ab0087c48b9657a9, type: 2}
+  Conversation: {fileID: 11400000, guid: 5c827a26b8f601b41b25f24b193e348c, type: 2}
+--- !u!114 &870087327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870087323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9aee7e4fc87264cbf028c897c6c070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &870087328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870087323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c824a1a5b78544e40abb8f0205436798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &870087329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 870087323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd63b462113c1142b95bae8f03ea7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &952957118
 GameObject:
   m_ObjectHideFlags: 0
@@ -6631,100 +6601,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5698948, y: 1}
   m_EdgeRadius: 0
---- !u!1 &967064587
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 967064588}
-  - component: {fileID: 967064591}
-  - component: {fileID: 967064590}
-  - component: {fileID: 967064589}
-  m_Layer: 0
-  m_Name: GUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &967064588
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 967064587}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1507358894}
-  m_Father: {fileID: 819350067}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &967064589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 967064587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &967064590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 967064587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 16
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &967064591
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 967064587}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 1
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &983184858
 GameObject:
   m_ObjectHideFlags: 0
@@ -6787,6 +6663,7 @@ GameObject:
   - component: {fileID: 990751210}
   - component: {fileID: 990751209}
   - component: {fileID: 990751208}
+  - component: {fileID: 990751214}
   - component: {fileID: 990751207}
   - component: {fileID: 990751206}
   - component: {fileID: 990751205}
@@ -6985,6 +6862,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
+  Talker: {fileID: 11400000, guid: 33ae0d7312dc5f347b16f838e9416230, type: 2}
+--- !u!114 &990751214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 990751201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00038245739416e44a31e0c3a6f0a86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractiveEntities: []
 --- !u!1 &1008117764
 GameObject:
   m_ObjectHideFlags: 0
@@ -7181,75 +7071,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SnapMode: 1
   OriginOffset: {x: 0, y: 0, z: 0}
---- !u!1 &1134289690
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1134289691}
-  - component: {fileID: 1134289693}
-  - component: {fileID: 1134289692}
-  m_Layer: 0
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1134289691
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1134289690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1507358894}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -166, y: 64}
-  m_SizeDelta: {x: 1024, y: 1024}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &1134289692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1134289690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e049f1f0d6a35034886123861050c875, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1134289693
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1134289690}
-  m_CullTransparentMesh: 0
 --- !u!1 &1251146005
 GameObject:
   m_ObjectHideFlags: 0
@@ -7457,63 +7278,13 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: SkillActions.Array.size
-      value: 5
+      propertyPath: BackAction.m_SingletonActionBindings.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction1.m_SingletonActionBindings.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction2.m_SingletonActionBindings.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction3.m_SingletonActionBindings.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[0].m_SingletonActionBindings.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[1].m_SingletonActionBindings.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[2].m_SingletonActionBindings.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_SingletonActionBindings.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_SingletonActionBindings.Array.size
-      value: 6
+      propertyPath: AcceptAction.m_SingletonActionBindings.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4713240148662208, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
       propertyPath: m_LocalPosition.x
@@ -7549,708 +7320,52 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: JumpAction.m_Name
-      value: Jump
+      propertyPath: InteractAction.m_SingletonActionBindings.Array.data[1].m_Interactions
+      value: Tap(),Press()
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: ClimbAction.m_Name
-      value: Climb
+      propertyPath: AcceptAction.m_Name
+      value: Accept
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Jump
+      propertyPath: BackAction.m_Name
+      value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Keyboard>/space
+      propertyPath: AcceptAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Accept
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Jump
+      propertyPath: AcceptAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: '*/Accept'
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/k
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Action
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Gamepad>/buttonSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Climb
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Keyboard>/l
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Climb
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Gamepad>/rightShoulder
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[0].m_Name
-      value: SkillKey0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[1].m_Name
-      value: SkillKey1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[2].m_Name
-      value: SkillKey2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[0].m_SingletonActionBindings.Array.data[0].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[0].m_SingletonActionBindings.Array.data[1].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[1].m_SingletonActionBindings.Array.data[0].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[0].m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Gamepad>/buttonNorth
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[0].m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/j
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[1].m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Gamepad>/buttonWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[1].m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/j
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[1].m_SingletonActionBindings.Array.data[1].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[2].m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Gamepad>/buttonWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[2].m_SingletonActionBindings.Array.data[0].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[2].m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/j
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[2].m_SingletonActionBindings.Array.data[1].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_Name
-      value: SkillKey4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Gamepad>/buttonWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_SingletonActionBindings.Array.data[0].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/j
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_SingletonActionBindings.Array.data[1].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_SingletonActionBindings.Array.data[2].m_Action
-      value: SkillKey3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_Name
-      value: SkillKey4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Gamepad>/buttonWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_SingletonActionBindings.Array.data[0].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/j
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_SingletonActionBindings.Array.data[1].m_Action
-      value: Element 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_SingletonActionBindings.Array.data[2].m_Action
-      value: SkillKey3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[0].m_SingletonActionBindings.Array.data[2].m_Action
-      value: SkillKey0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_SingletonActionBindings.Array.data[3].m_Action
-      value: SkillKey4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_SingletonActionBindings.Array.data[3].m_Action
-      value: SkillKey4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_SingletonActionBindings.Array.data[4].m_Action
-      value: SkillKey4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_SingletonActionBindings.Array.data[4].m_Action
-      value: SkillKey4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[1].m_SingletonActionBindings.Array.data[2].m_Action
-      value: SkillKey1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[0].m_SingletonActionBindings.Array.data[3].m_Action
-      value: SkillKey0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[3].m_SingletonActionBindings.Array.data[5].m_Action
-      value: SkillKey4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillActions.Array.data[4].m_SingletonActionBindings.Array.data[5].m_Action
-      value: SkillKey4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction1.m_Name
-      value: Skill Action 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction2.m_Name
-      value: Skill Action 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction3.m_Name
-      value: Skill Action 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction4.m_Name
-      value: Skill Action 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_Name
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[1].m_Name
-      value: Dpad
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[1].m_Path
-      value: Dpad
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[1].m_Flags
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[2].m_Name
-      value: up
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[2].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[2].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[3].m_Name
-      value: down
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[3].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[3].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementX.m_Name
-      value: Movement X
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[0].m_Name
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Gamepad>/leftStick
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[0].m_Flags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[4].m_Name
-      value: left
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[4].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[4].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[5].m_Name
-      value: right
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[5].m_Path
-      value: <Keyboard>/d
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[5].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[5].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[6].m_Name
-      value: Dpad
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[6].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[6].m_Flags
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[7].m_Name
-      value: up
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[7].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[7].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction1.m_Name
-      value: Movement Action 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Keyboard>/w
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[3].m_Path
-      value: <Keyboard>/s
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[4].m_Path
-      value: <Keyboard>/a
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[6].m_Path
-      value: Dpad
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[8].m_Name
-      value: down
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[8].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[8].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[9].m_Name
-      value: left
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[9].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[9].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[10].m_Name
-      value: right
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[10].m_Action
-      value: Movement
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[10].m_Flags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[7].m_Path
-      value: <Keyboard>/upArrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[8].m_Path
-      value: <Keyboard>/downArrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[9].m_Path
-      value: <Keyboard>/leftArrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[10].m_Path
-      value: <Keyboard>/rightArrow
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction1.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Skill Action 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction1.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Keyboard>/j
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction1.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Skill Action 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction1.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Gamepad>/buttonWest
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction2.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Skill Action 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction2.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Keyboard>/i
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction2.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Skill Action 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction2.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Gamepad>/buttonNorth
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction3.m_SingletonActionBindings.Array.data[0].m_Action
-      value: Skill Action 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction3.m_SingletonActionBindings.Array.data[0].m_Path
-      value: <Keyboard>/o
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction3.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Skill Action 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction3.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Gamepad>/buttonEast
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Interactions
-      value: Press(),Tap()
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[0].m_Interactions
+      propertyPath: AcceptAction.m_SingletonActionBindings.Array.data[0].m_Interactions
       value: Tap()
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Interactions
-      value: Tap()
+      propertyPath: BackAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[0].m_Interactions
-      value: Tap()
+      propertyPath: BackAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: '*/Back'
       objectReference: {fileID: 0}
     - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[1].m_Interactions
-      value: Tap()
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction2.m_SingletonActionBindings.Array.data[0].m_Interactions
-      value: Tap()
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction2.m_SingletonActionBindings.Array.data[1].m_Interactions
-      value: Tap()
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction3.m_SingletonActionBindings.Array.data[0].m_Interactions
-      value: Tap()
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction3.m_SingletonActionBindings.Array.data[1].m_Interactions
-      value: Tap()
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[2].m_Action
-      value: Climb
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Gamepad>/rightTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[2].m_Interactions
-      value: Tap()
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction1.m_SingletonActionBindings.Array.data[0].m_Interactions
-      value: Tap()
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: SkillAction1.m_SingletonActionBindings.Array.data[1].m_Interactions
+      propertyPath: BackAction.m_SingletonActionBindings.Array.data[0].m_Interactions
       value: Tap()
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1507358893
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1507358894}
-  - component: {fileID: 1507358896}
-  - component: {fileID: 1507358895}
-  m_Layer: 0
-  m_Name: Conversation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1507358894
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1507358893}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1134289691}
-  - {fileID: 2023676737}
-  m_Father: {fileID: 967064588}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1507358895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1507358893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &1507358896
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1507358893}
-  m_CullTransparentMesh: 0
 --- !u!1 &1571369515
 GameObject:
   m_ObjectHideFlags: 0
@@ -9226,76 +8341,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!1 &2023676736
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2023676737}
-  - component: {fileID: 2023676739}
-  - component: {fileID: 2023676738}
-  m_Layer: 0
-  m_Name: TextWrapper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2023676737
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2023676736}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 203382065}
-  m_Father: {fileID: 1507358894}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 64}
-  m_SizeDelta: {x: -128, y: 300}
-  m_Pivot: {x: 0.5, y: 0}
---- !u!114 &2023676738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2023676736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.7137255}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c637df3e13e864d46825c4be10d3eb79, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &2023676739
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2023676736}
-  m_CullTransparentMesh: 0
 --- !u!1001 &2054202075
 Prefab:
   m_ObjectHideFlags: 0

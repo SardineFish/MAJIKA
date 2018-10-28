@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-[CreateAssetMenu(fileName ="Conversation",menuName ="Conversation")]
+[CreateAssetMenu(fileName ="Conversation",menuName ="Conversation/Conversation")]
 public class Conversation : ScriptableObject
 {
     public List<string> Conversations;

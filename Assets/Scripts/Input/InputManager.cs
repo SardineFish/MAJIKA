@@ -16,6 +16,10 @@ public class InputManager : Singleton<InputManager> {
 
     public InputAction JumpAction;
     public InputAction ClimbAction;
+    public InputAction InteractAction;
+
+    public InputAction AcceptAction;
+    public InputAction BackAction;
 
     public InputAction SkillAction1;
     public InputAction SkillAction2;
@@ -29,6 +33,9 @@ public class InputManager : Singleton<InputManager> {
         MovementAction.Enable();
         JumpAction.Enable();
         ClimbAction.Enable();
+        InteractAction.Enable();
+        AcceptAction.Enable();
+        BackAction.Enable();
         SkillAction1.Enable();
         SkillAction2.Enable();
         SkillAction3.Enable();
