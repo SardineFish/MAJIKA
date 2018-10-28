@@ -7,7 +7,7 @@ using SardineFish.Unity.FSM;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="PlayerMove",menuName ="PlayerState/Move")]
-public class PlayerMove : PlayerState
+public class PlayerMove : PlayerControllerState
 {
     public PlayerIdle IdleState;
     public PlayerJump JumpState;

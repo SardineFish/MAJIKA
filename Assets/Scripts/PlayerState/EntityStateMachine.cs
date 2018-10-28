@@ -30,7 +30,7 @@ public class EntityStateMachine<TEntity> : EntityBehaviour<TEntity>, IFSM<Entity
         return true;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (State)
         {

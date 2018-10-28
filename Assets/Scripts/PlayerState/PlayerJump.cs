@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="PlayerJump",menuName ="PlayerState/Jump")]
-public class PlayerJump : PlayerState
+public class PlayerJump : PlayerControllerState
 {
     public PlayerIdle IdleState;
     public PlayerClimb ClimbState;

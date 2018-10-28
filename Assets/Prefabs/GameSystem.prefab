@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 114116197942095852}
   - component: {fileID: 114921217081773406}
   - component: {fileID: 114561594854667466}
+  - component: {fileID: 114642579119781240}
   m_Layer: 0
   m_Name: GameSystem
   m_TagString: Untagged
@@ -80,6 +81,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1828349632690370
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224195969168982518}
+  - component: {fileID: 114259768050393554}
+  m_Layer: 0
+  m_Name: ConversationUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1915835965201506
 GameObject:
   m_ObjectHideFlags: 1
@@ -90,9 +107,8 @@ GameObject:
   - component: {fileID: 224253266773242842}
   - component: {fileID: 222641812154164878}
   - component: {fileID: 114596110719241994}
-  - component: {fileID: 114741817387214942}
   m_Layer: 0
-  m_Name: Conversation
+  m_Name: Wrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,10 +327,48 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Path: <Gamepad>/buttonEast
-      m_Interactions: Tap()
+      m_Interactions: Tap(),Press()
       m_Processors: 
       m_Groups: 
       m_Action: Interact
+      m_Flags: 0
+  AcceptAction:
+    m_Name: Accept
+    m_ExpectedControlLayout: 
+    m_Id: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Path: '*/Accept'
+      m_Interactions: Tap()
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accept
+      m_Flags: 0
+    - m_Name: 
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: Tap()
+      m_Processors: 
+      m_Groups: 
+      m_Action: Accept
+      m_Flags: 0
+  BackAction:
+    m_Name: Back
+    m_ExpectedControlLayout: 
+    m_Id: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Path: '*/Back'
+      m_Interactions: Tap()
+      m_Processors: 
+      m_Groups: 
+      m_Action: Back
+      m_Flags: 0
+    - m_Name: 
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: Tap()
+      m_Processors: 
+      m_Groups: 
+      m_Action: Back
       m_Flags: 0
   SkillAction1:
     m_Name: Skill Action 1
@@ -394,6 +448,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114259768050393554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828349632690370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c615559022a7b3a40810e975145487b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextRenderer: {fileID: 114990612401590830}
+  ImageRenderer: {fileID: 114748778710567640}
+  LeftTalker: {fileID: 0}
+  RightTalker: {fileID: 0}
+  Conversation: {fileID: 0}
 --- !u!114 &114286827876667584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -460,22 +530,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114741817387214942
+--- !u!114 &114642579119781240
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1915835965201506}
+  m_GameObject: {fileID: 1196777880445898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c615559022a7b3a40810e975145487b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 67556a8024bd01f44aef2f4b83dca1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextRenderer: {fileID: 114990612401590830}
-  ImageRenderer: {fileID: 114748778710567640}
-  LeftTalker: {fileID: 0}
-  RightTalker: {fileID: 0}
-  Conversation: {fileID: 0}
+  PlayerInControl: {fileID: 0}
 --- !u!114 &114748778710567640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -626,7 +692,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 224253266773242842}
+  - {fileID: 224195969168982518}
   m_Father: {fileID: 4713240148662208}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -635,25 +701,44 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!224 &224195969168982518
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828349632690370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 224253266773242842}
+  m_Father: {fileID: 224129513312705998}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224253266773242842
 RectTransform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1915835965201506}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224873018015739364}
   - {fileID: 224379619771997532}
-  m_Father: {fileID: 224129513312705998}
+  m_Father: {fileID: 224195969168982518}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224379619771997532
 RectTransform:

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerState : AnimatedState<Player>
+public class PlayerControllerState : AnimatedState<Player>
 {
 }

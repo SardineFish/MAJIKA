@@ -15,11 +15,11 @@ namespace SardineFish.Unity.FSM
         private Dictionary<T, MethodInfo> enterHandler = new Dictionary<T, MethodInfo>();
         private Dictionary<T, MethodInfo> updateHandler = new Dictionary<T, MethodInfo>();
         private Dictionary<T, MethodInfo> exitHandler = new Dictionary<T, MethodInfo>();
-        public SimpleFSM(object obj) : base()
+        public SimpleFSM(object context) : base()
         {
-            stateTarget = obj;
+            stateTarget = context;
             // Init state enter
-            obj.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+            context.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
                 .Where(method => method.GetCustomAttribute<StateEnterAttribute>() != null)
                 .ForEach(method =>
                 {
@@ -28,7 +28,7 @@ namespace SardineFish.Unity.FSM
                 });
 
             // Init state update
-            obj.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+            context.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
                 .Where(method => method.GetCustomAttribute<StateUpdateAttribute>() != null)
                 .ForEach(method =>
                 {
@@ -37,7 +37,7 @@ namespace SardineFish.Unity.FSM
                 });
 
             // Init state exit
-            obj.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
+            context.GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance)
                 .Where(method => method.GetCustomAttribute<StateExitAttribute>() != null)
                 .ForEach(method =>
                 {
@@ -45,7 +45,7 @@ namespace SardineFish.Unity.FSM
                     enterHandler[(T)attr.state] = method;
                 });
         }
-        public SimpleFSM(object target, T initialState)
+        public SimpleFSM(object target, T initialState):this(target)
         {
             State = initialState;
             hasFirstState = false;
@@ -57,15 +57,19 @@ namespace SardineFish.Unity.FSM
             {
                 hasFirstState = true;
             }
-            else if (!Convert.ToBoolean(exitHandler[State]?.Invoke<object>(stateTarget, nextState)))
-            {
+            else if (exitHandler.ContainsKey(State) && !Convert.ToBoolean(exitHandler[State].Invoke<object>(stateTarget, nextState)))
                 return false;
-            }
-            if (!Convert.ToBoolean(enterHandler[nextState]?.Invoke<object>(stateTarget, nextState)))
+
+            if (enterHandler.ContainsKey(nextState) && !Convert.ToBoolean(enterHandler[nextState]?.Invoke<object>(stateTarget, nextState)))
                 return false;
 
             State = nextState;
             return true;
+        }
+
+        public void Update()
+        {
+            updateHandler[State]?.Invoke(stateTarget, null);
         }
     }
 

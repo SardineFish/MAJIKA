@@ -2,7 +2,7 @@
 using System.Collections;
 
 [CreateAssetMenu(fileName ="PlayerIdle",menuName ="PlayerState/Idle")]
-public class PlayerIdle : PlayerState
+public class PlayerIdle : PlayerControllerState
 {
     public PlayerJump JumpState;
     public PlayerMove MoveState;

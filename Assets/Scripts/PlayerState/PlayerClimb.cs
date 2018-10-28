@@ -2,7 +2,7 @@
 using System.Collections;
 
 [CreateAssetMenu(fileName ="PlayerClimb",menuName ="PlayerState/Climb")]
-public class PlayerClimb : PlayerState
+public class PlayerClimb : PlayerControllerState
 {
     public PlayerJump JumpState;
 
