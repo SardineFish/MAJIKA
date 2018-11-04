@@ -10,10 +10,10 @@ public class EntityHit : GameEntityState
     {
         entity.GetComponent<AnimationController>().ChangeAnimation(this.AnimatorController, (GameSystem.Instance.PlayerInControl.transform.position - entity.transform.position).x);
         //entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, (GameSystem.Instance.PlayerInControl.transform.position - entity.transform.position).x);
-        Utility.WaitForSecond(entity, () =>
+        /*Utility.WaitForSecond(entity, () =>
         {
             fsm.ChangeState(IdleState);
-        }, 0.5f);
+        }, 0.5f);*/
         return base.OnEnter(entity, previousState, fsm);
     }
 

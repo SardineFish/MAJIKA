@@ -11,6 +11,10 @@ public class SimpleMovement : MonoBehaviour
         /*var rigidbody = GetComponent<Rigidbody2D>();
         var dv = Velocity - rigidbody.velocity;
         rigidbody.AddForce(dv * rigidbody.mass, ForceMode2D.Impulse);*/
+    }
+
+    public void StartMovement()
+    {
         GetComponent<Rigidbody2D>().velocity = transform.localToWorldMatrix.MultiplyVector(Velocity);
     }
 }

@@ -61,6 +61,11 @@ public static class Utility
         }
     }
 
+
+    public static IEnumerable<U> Map<T, U>(this IEnumerable<T> collection, Func<T, U> callback) => collection.Select(callback);
+
+
+
     public static IEnumerable<T> NotNull<T>(this IEnumerable<T> source)
     {
         foreach(var item in source)

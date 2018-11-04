@@ -6,7 +6,8 @@ using SardineFish.Unity.FSM;
 public enum ImpactType
 {
     OnEntity,
-    Collider
+    Collider,
+    Manual,
 }
 public enum ImpactDirection
 {
@@ -44,7 +45,10 @@ public class SkillImpact : MonoBehaviour
         {
             transform.rotation *= Quaternion.FromToRotation(transform.right, direction);
         }
-        Active = true;
+        if (ImpactType == ImpactType.Collider)
+            Active = true;
+        else
+            Active = false;
     }
     public void Deactivate()
     {
@@ -57,6 +61,8 @@ public class SkillImpact : MonoBehaviour
         var entity = GameEntity.GetEntity(collision);
         if (!entity)
             return;
+        if (entity == this.Creator)
+            return;
 
         if (!Continuous && impactedList.Contains(entity))
             return;
@@ -66,5 +72,14 @@ public class SkillImpact : MonoBehaviour
             Deactivate();
 
         new SkillImpactMessage(this, Effects.ToArray()).Dispatch(entity);
+    }
+
+    public void StartImpact()
+    {
+        Active = true;
+    }
+    public void EndImpact()
+    {
+        Active = false;
     }
 }

@@ -11,11 +11,12 @@ public class Skill : EntityBehaviour<GameEntity>
 {
     public GameObject SkillImpactObject;
     public RuntimeAnimatorController AnimatorController;
+    public bool LockAction = false;
     public float ReleaseRadius;
     public Vector3 ReleaseOffset;
     public SkillDirection Direction;
     public float CoolDown = 1;
-    public bool LockState = false;
+    public bool Locked = false;
     public bool Ready = false;
 
     private float lastActivateTime = 0;
@@ -38,13 +39,15 @@ public class Skill : EntityBehaviour<GameEntity>
         lastActivateTime = Time.time;
 
         releasedSkillImpact = null;
+        if (LockAction)
+            Locked = true;
 
         return true;
     }
 
     public bool Abort()
     {
-        if (LockState)
+        if (Locked)
             return false;
 
         if (releasedSkillImpact)

@@ -7,6 +7,8 @@ public class SkillController : EntityBehaviour<Player>
     public Skill[] Skills;
     public Skill ActiveSkill = null;
 
+    private Coroutine movementCoroutine;
+
     void Update()
     {
         Skills = GetComponentsInChildren<Skill>();
@@ -28,7 +30,7 @@ public class SkillController : EntityBehaviour<Player>
     {
         if (!ActiveSkill)
             return false;
-        return ActiveSkill.LockState;
+        return ActiveSkill.Locked;
     }
 
     public bool Abort()
@@ -40,13 +42,17 @@ public class SkillController : EntityBehaviour<Player>
 
     void OnReleaseLock()
     {
-        ActiveSkill.LockState = false;
+        if (!ActiveSkill)
+            return;
+        ActiveSkill.Locked = false;
     }
 
     void OnSkillEnd()
     {
+        OnReleaseLock();
         GetComponent<EventBus>().Dispatch(EventSkillEnd);
         ActiveSkill = null;
+        movementCoroutine = null;
     }
 
     void OnImpactStart()
@@ -57,5 +63,33 @@ public class SkillController : EntityBehaviour<Player>
     void OnImpactEnd()
     {
         ActiveSkill?.EndImpact();
+    }
+
+    IEnumerator MoveCoroutine(MovementSkill movement)
+    {
+        var endTime = Time.time + movement.Duration;
+        var dir = movement.Direction;
+        dir.x *= GetComponent<MovableEntity>().FaceDirection;
+        while (Time.time <= endTime)
+        {
+            yield return null;
+            GetComponent<MovableEntity>().ForceMove(dir.normalized * movement.Speed);
+        }
+    }
+
+    void onSkillMovementStart()
+    {
+        if (!this.ActiveSkill)
+            return;
+        var movement = ActiveSkill.GetComponent<MovementSkill>();
+        if (!movement)
+            return;
+        movementCoroutine = StartCoroutine(MoveCoroutine(movement));
+    }
+
+    void onSkillMovementEnd()
+    {
+        StopCoroutine(movementCoroutine);
+        movementCoroutine = null;
     }
 }

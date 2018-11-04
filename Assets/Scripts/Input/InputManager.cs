@@ -58,13 +58,6 @@ public class InputManager : Singleton<InputManager> {
 
     public void Update()
     {
-        Enum.GetValues(typeof(KeyCode)).Cast<KeyCode>().ForEach((key) =>
-        {
-            if (Input.GetKeyDown(key))
-            {
-                //Debug.Log(key);
-            }
-        });
     }
 
     public Vector2 GetMovement()

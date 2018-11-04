@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: 9e33eecbcae63734dad580d4c9fc96b1
+guid: bcc2e89ea964fc6499597534790b0dd8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Walk_0
-    21300002: Walk_1
-    21300004: Walk_2
-    21300006: Walk_3
-    21300008: Walk_4
+    21300000: FlameSlash-Effect_0
+    21300002: FlameSlash-Effect_1
+    21300004: FlameSlash-Effect_2
+    21300006: FlameSlash-Effect_3
+    21300008: FlameSlash-Effect_4
+    21300010: FlameSlash-Effect_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -89,101 +90,121 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_0
+      name: FlameSlash-Effect_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 35
-        height: 35
+        width: 200
+        height: 75
       alignment: 9
-      pivot: {x: 0.51428574, y: -0}
+      pivot: {x: 0.5, y: 0.49333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 797bea059f5af604e9fd838555e6aa1b
+      spriteID: 3da9179c022541649a6db1892ef61ea1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_1
+      name: FlameSlash-Effect_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 200
         y: 0
-        width: 35
-        height: 35
+        width: 200
+        height: 75
       alignment: 9
-      pivot: {x: 0.51428574, y: -0}
+      pivot: {x: 0.5, y: 0.49333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24971342826f3e0429e45ae3cf622e21
+      spriteID: 389432bda3acd4c4aa6315b1e3aee0c0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_2
+      name: FlameSlash-Effect_2
       rect:
         serializedVersion: 2
-        x: 70
+        x: 400
         y: 0
-        width: 35
-        height: 35
+        width: 200
+        height: 75
       alignment: 9
-      pivot: {x: 0.51428574, y: 0}
+      pivot: {x: 0.5, y: 0.49333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15857349bbf34664b8ad7411107c5e5e
+      spriteID: 80e63268befe72a4796b7463ca2d8fca
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_3
+      name: FlameSlash-Effect_3
       rect:
         serializedVersion: 2
-        x: 105
+        x: 600
         y: 0
-        width: 35
-        height: 35
+        width: 200
+        height: 75
       alignment: 9
-      pivot: {x: 0.51428574, y: -0}
+      pivot: {x: 0.5, y: 0.49333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21cc555a7bbb17144a6ecde40b7d83d2
+      spriteID: 62d870c8c5bfc81478f3000e0b15e6b7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_4
+      name: FlameSlash-Effect_4
       rect:
         serializedVersion: 2
-        x: 140
+        x: 800
         y: 0
-        width: 35
-        height: 35
+        width: 200
+        height: 75
       alignment: 9
-      pivot: {x: 0.51428574, y: -0}
+      pivot: {x: 0.5, y: 0.49333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecef0518d65367b459b693dc2f662fe4
+      spriteID: 6fe20f303f6b0234a9086288c7468e94
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlameSlash-Effect_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.49333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5cc40e74e1cab4b9d21c8cd507f1e0
       vertices: []
       indices: 
       edges: []
@@ -191,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 799fd7702cda6b7489e5d206b7766613
+    spriteID: b932fa2eb7001774aa7aa07ffb9f57f3
     vertices: []
     indices: 
     edges: []

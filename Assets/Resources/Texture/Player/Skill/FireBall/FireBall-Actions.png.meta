@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 6f3bc92e010f8b54c879635c1fdbf839
+guid: b595cc59637368741a1ba431ab25f611
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Climb_0
+    21300000: Actions_0
+    21300002: Actions_1
+    21300004: Actions_2
+    21300006: Actions_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -85,21 +88,81 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Climb_0
+      name: Actions_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 35
-        height: 35
+        width: 100
+        height: 61
       alignment: 9
-      pivot: {x: 0.51428574, y: -0}
+      pivot: {x: 0.21, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcaccbe5a76676b4c82d61c96ea80ba5
+      spriteID: f86160e297e3e83448c7253f1a3d48c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Actions_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 61
+      alignment: 9
+      pivot: {x: 0.22, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec16b817726d8c24898301268c318f99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Actions_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 61
+      alignment: 9
+      pivot: {x: 0.22999999, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d8eeb747235cb34cb10a0472d287bba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Actions_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 61
+      alignment: 9
+      pivot: {x: 0.22, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11bc50af17a9bae409943db74a195686
       vertices: []
       indices: 
       edges: []
@@ -107,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 942a5288223b06f478a056a4c20be361
+    spriteID: 7e92421c4476e2048b1ea798f5d8048c
     vertices: []
     indices: 
     edges: []

@@ -24,7 +24,7 @@ public class MovableEntity : MonoBehaviour
 
 
     private Vector2 movementvelocity;
-    private Vector2 additionalVelocity;
+    private Vector2 forceVelocity;
 
     public bool Jump()
     {
@@ -33,7 +33,7 @@ public class MovableEntity : MonoBehaviour
         EnableGravity = true;
         if (jumpCount-- > 0)
         {
-            additionalVelocity.y = PhysicsSystem.Instance.JumpVelocoty;
+            forceVelocity.y = PhysicsSystem.Instance.JumpVelocoty;
             return true;
         }
         else
@@ -46,6 +46,12 @@ public class MovableEntity : MonoBehaviour
             return false;
         movementvelocity = movement * MaxMoveSpeed;
         return false;
+    }
+
+    public bool ForceMove(Vector2 velocity)
+    {
+        forceVelocity = velocity;
+        return true;
     }
 
     public bool Climb(float speed)
@@ -71,12 +77,14 @@ public class MovableEntity : MonoBehaviour
             var v = GetComponent<Rigidbody2D>().velocity;
             v.x = 0;
             v += movementvelocity;
-            if (additionalVelocity.y > 0)
-                v.y = additionalVelocity.y;
+            if (Mathf.Abs(forceVelocity.y) > 0)
+                v.y = forceVelocity.y;
+            if (Mathf.Abs(forceVelocity.x) > 0)
+                v.x = forceVelocity.x;
 
             GetComponent<Rigidbody2D>().velocity = v;
             velocity = v;
-            additionalVelocity = Vector2.zero;
+            forceVelocity = Vector2.zero;
             movementvelocity = Vector2.zero;
         }
         else
@@ -88,7 +96,7 @@ public class MovableEntity : MonoBehaviour
 
             GetComponent<Rigidbody2D>().velocity = v;
             velocity = v;
-            additionalVelocity = Vector2.zero;
+            forceVelocity = Vector2.zero;
             movementvelocity = Vector2.zero;
         }
     }

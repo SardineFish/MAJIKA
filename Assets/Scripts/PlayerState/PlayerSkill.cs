@@ -20,17 +20,18 @@ public class PlayerSkill : EntityState<Player>
     }
     public override void OnUpdate(Player player, EntityStateMachine<Player> fsm)
     {
+        var activedSkill = player.GetComponent<SkillController>().ActiveSkill;
+        if (activedSkill == null)
+        {
+            fsm.ChangeState(JumpState);
+            return;
+        }
+
+        player.GetComponent<AnimationController>().ChangeAnimation(activedSkill.AnimatorController, player.GetComponent<MovableEntity>().FaceDirection);
+
+        // Lock
         if (player.GetComponent<SkillController>().IsLocked())
             return;
-
-        var activedSkill = player.GetComponent<SkillController>().ActiveSkill;
-
-        if (activedSkill == null)
-            fsm.ChangeState(JumpState);
-        else
-        {
-            player.GetComponent<AnimationController>().ChangeAnimation(activedSkill.AnimatorController, player.GetComponent<MovableEntity>().FaceDirection);
-        }
 
         // Movement
         var movement = InputManager.Instance.GetMovement();
