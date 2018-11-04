@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1358919406349114}
+  m_IsPrefabAsset: 1
+--- !u!1 &1358919406349114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4468445415342720}
+  - component: {fileID: 114863732411155912}
+  - component: {fileID: 114736385249789180}
+  m_Layer: 0
+  m_Name: ArcaneBlast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4468445415342720
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1358919406349114}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114736385249789180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1358919406349114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eef951434d46e94b87e64a0cab0ca17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Distance: 6
+  Duration: 0.1
+  Direction: {x: 1, y: 0}
+--- !u!114 &114863732411155912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1358919406349114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7ddb362b7079449aa9978636d3f190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillImpactObject: {fileID: 1676269367063300, guid: 4031e06109f8fe94596cb3e7a782fc11,
+    type: 2}
+  AnimatorController: {fileID: 9100000, guid: 40db3183d0ab1424db2d27565e53d80f, type: 2}
+  LockAction: 1
+  ReleaseRadius: 8.8
+  ReleaseOffset: {x: 0, y: 0, z: 0}
+  Direction: 0
+  CoolDown: 0.4
+  Locked: 0
+  Ready: 0
+  Effects:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Multiple: 1
+  - Effect: {fileID: 11400000, guid: 3f7d90e32b4444242af3837a2625afdd, type: 2}
+    Multiple: 1
