@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114294259233113006}
   - component: {fileID: 114989365169581842}
   - component: {fileID: 114801212685767548}
+  - component: {fileID: 114007531331751134}
   m_Layer: 0
   m_Name: FlameSlash
   m_TagString: Untagged
@@ -170,6 +171,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114007531331751134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027520865202574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d6ae1e7a68b4f469dff8eb8af205a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zIndex: -5
 --- !u!114 &114294259233113006
 MonoBehaviour:
   m_ObjectHideFlags: 1

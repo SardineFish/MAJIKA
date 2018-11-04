@@ -3,9 +3,9 @@ using System.Collections;
 
 public abstract class Effect : ScriptableObject
 {
-    public virtual bool EffectStart(EntityEffector effector, IEffectorTrigger trigger, float multiple)
+    public virtual IEnumerator EffectStart(EntityEffector effector, IEffectorTrigger trigger, float multiple)
     {
-        return true;
+        yield return null;
     }
     public virtual bool EffectEnd(EntityEffector effector, IEffectorTrigger trigger, float multiple)
     {

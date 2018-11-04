@@ -63,6 +63,8 @@ public class SkillImpact : MonoBehaviour
             return;
         if (entity == this.Creator)
             return;
+        if (Active == false)
+            return;
 
         if (!Continuous && impactedList.Contains(entity))
             return;

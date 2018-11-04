@@ -11,22 +11,34 @@ public enum EffectMerge
 }
 public class EntityEffector : EntityBehaviour<GameEntity>
 {
-    public List<EffectMultiplier> Effects = new List<EffectMultiplier>();
+    public List<ActiveEffect> Effects = new List<ActiveEffect>();
 
-    List<EffectMultiplier> removeList = new List<EffectMultiplier>();
+    List<ActiveEffect> removeList = new List<ActiveEffect>();
 
     void Update()
     {
-        Effects.ForEach(effect => effect.Effect.EffectUpdate(this, null, effect.Multiple));
         foreach (var remove in removeList)
             Effects.Remove(remove);
         removeList.Clear();
+
+        //Effects.ForEach(effect => effect.Effect.EffectUpdate(this, null, effect.Multiple));
+        
+    }
+
+    IEnumerator StartEffect(ActiveEffect effect, IEffectorTrigger trigger)
+    {
+        yield return effect.Effect.EffectStart(this, trigger, effect.Multiplier);
+        this.removeList.Add(effect);
     }
 
     public bool AddEffect(EffectMultiplier effect, IEffectorTrigger trigger, EffectMerge merge = EffectMerge.Additive)
     {
         effect = effect.Clone();
         var existed = Effects.Where(eff => eff.Effect == effect.Effect).FirstOrDefault();
+        var activeEffect = new ActiveEffect { Effect = effect.Effect, Multiplier = effect.Multiple };
+        activeEffect.EffectCoroutine = StartCoroutine(StartEffect(activeEffect, trigger));
+        this.Effects.Add(activeEffect);
+        /*
         if (existed!=null || merge == EffectMerge.None)
         {
             if (!existed.Effect.EffectMerge(this, trigger, effect.Multiple, merge))
@@ -43,15 +55,17 @@ public class EntityEffector : EntityBehaviour<GameEntity>
         }
         else
         {
+            
             if (!effect.Effect.EffectStart(this, trigger, effect.Multiple))
                 return false;
             Effects.Add(effect);
-        }
+        }*/
         return true;
     }
-
+    /*
     public bool RemoveEffect(Effect effect, IEffectorTrigger trigger) 
     {
+        
         var existed = Effects.Where(eff => eff.Effect == effect).FirstOrDefault();
         if (existed == null)
             return true;
@@ -61,5 +75,5 @@ public class EntityEffector : EntityBehaviour<GameEntity>
             return true;
         }
         return false;
-    }
+    }*/
 }

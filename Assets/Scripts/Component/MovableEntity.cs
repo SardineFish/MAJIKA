@@ -93,6 +93,10 @@ public class MovableEntity : MonoBehaviour
             var v = movementvelocity;
             /*if (additionalVelocity.y > 0)
                 v.y = additionalVelocity.y;*/
+            if (Mathf.Abs(forceVelocity.y) > 0)
+                v.y = forceVelocity.y;
+            if (Mathf.Abs(forceVelocity.x) > 0)
+                v.x = forceVelocity.x;
 
             GetComponent<Rigidbody2D>().velocity = v;
             velocity = v;
