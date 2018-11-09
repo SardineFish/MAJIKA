@@ -6091,7 +6091,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4766700011500244, guid: 4822d1547c2084f4bb3004aa576fd58b, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4822d1547c2084f4bb3004aa576fd58b, type: 2}
@@ -6366,7 +6366,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4468445415342720, guid: d2977d42323c59a42b31fde2347b191c, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2977d42323c59a42b31fde2347b191c, type: 2}
@@ -8409,6 +8409,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: SkillAction4.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4713240148662208, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8474,6 +8479,21 @@ Prefab:
         type: 2}
       propertyPath: JumpTime
       value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: SkillAction4.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Skill Action 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: SkillAction4.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/p
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: SkillAction4.m_SingletonActionBindings.Array.data[0].m_Interactions
+      value: Tap()
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}

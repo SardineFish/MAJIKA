@@ -5,9 +5,8 @@ using System.Collections;
 public class KnockBack : Effect
 {
     public float Distance = 4;
-    public float Duration = 0.1f;
-    
-    public override IEnumerator EffectStart(EntityEffector effector, IEffectorTrigger trigger, float multiple)
+
+    public override void OnUpdate(EntityEffector effector, IEffectorTrigger trigger, float strength)
     {
         var speed = Distance / Duration;
         var endTime = Time.time + Duration;
@@ -15,10 +14,6 @@ public class KnockBack : Effect
         var dir = effector.Entity.transform.position - (trigger as GameEntity).transform.position;
         dir = dir.normalized;
         effector.Entity.GetComponent<EventBus>().Dispatch("KnockBack");
-        while (Time.time <= endTime)
-        {
-            movableEntity.ForceMove(dir * speed);
-            yield return null;
-        }
+        movableEntity.ForceMove(dir * speed);
     }
 }

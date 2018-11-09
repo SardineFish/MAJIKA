@@ -10,10 +10,10 @@ using UnityEngine;
 public class Damage : Effect
 {
     public float damage;
-    public override IEnumerator EffectStart(EntityEffector effector, IEffectorTrigger trigger, float multiple)
+    
+    public override void OnStart(EntityEffector effector, IEffectorTrigger trigger, float strength)
     {
         effector.Entity.GetComponent<EventBus>().Dispatch("Hit");
-        effector.Entity.GetComponent<LifeEntity>()?.HP_Decrease(damage * multiple);
-        yield return null;
+        effector.Entity.GetComponent<LifeEntity>()?.HP_Decrease(damage * strength);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,12 @@ public class EntityState<TEntity> : ScriptableObject,IState<EntityState<TEntity>
 
     public void OnUpdate()
     {
+
+    }
+
+    public IEnumerator Begin()
+    {
+        yield return null;
 
     }
 

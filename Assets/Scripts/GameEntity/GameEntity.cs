@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(EventBus))]
 public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffectorTrigger
@@ -8,6 +9,9 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
     public const string NameCollider = "Collider";
     public GameObject Renderer => transform.Find(NameRenderer).gameObject;
     public GameObject Collider => transform.Find(NameCollider).gameObject;
+
+    public List<Effect> StatusEffects = new List<Effect>();
+
     // Use this for initialization
     void Start()
     {
@@ -19,8 +23,6 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
     {
 
     }
-
-    
 
     public static GameEntity GetEntity(Component obj)
     {

@@ -9,6 +9,10 @@ using UnityEngine;
 public class ActiveEffect
 {
     public Effect Effect;
-    public float Multiplier = 1;
+    public float Strength = 1;
     public Coroutine EffectCoroutine;
+    public float Duration = 0;
+    public float LifeTime = 0;
+    public IEffectorTrigger Trigger;
+    public int Priority = 0;
 }
