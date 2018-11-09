@@ -72,12 +72,32 @@ public class InputManager : Singleton<InputManager> {
 
     public int GetSkillIndex()
     {
+        var keys = new KeyCode[]
+        {
+            KeyCode.Alpha1,
+            KeyCode.Alpha2,
+            KeyCode.Alpha3,
+            KeyCode.Alpha4,
+            KeyCode.Alpha5,
+            KeyCode.Alpha6,
+            KeyCode.Alpha7,
+            KeyCode.Alpha8,
+            KeyCode.Alpha7,
+            KeyCode.Alpha0,
+        };
+        for(var i = 0; i < keys.Length; i++)
+        {
+            if (Input.GetKeyDown(keys[i]))
+                return i;
+        }
+        return -1;
+        /*
         for(var i = 0; i < skillActionList.Length; i++)
         {
             if (GetAction(skillActionList[i]))
                 return i;
         }
-        return -1;
+        return -1;*/
 
     }
 }
