@@ -9,7 +9,7 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
     public Vector2 SpawnOffset;
     public SkillImpact Instance;
 
-    public void Spawn(List<EffectMultiplier> effects)
+    public void Spawn(List<EffectInstance> effects)
     {
         var impact = Utility.Instantiate(Prefab, Entity.gameObject.scene).GetComponent<SkillImpact>();
         impact.Creator = Entity;

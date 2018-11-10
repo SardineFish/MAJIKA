@@ -2783,11 +2783,6 @@ Prefab:
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 1290830087}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: FollowStartRange.x
-      value: 7.12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f, type: 2}
   m_IsPrefabAsset: 0
@@ -7687,6 +7682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affaee391acf6dc409f9841d440d7dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Effects: []
 --- !u!4 &1874253375
 Transform:
   m_ObjectHideFlags: 0

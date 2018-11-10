@@ -21,7 +21,7 @@ namespace Assets.Editor
                   EditorGUILayout.BeginHorizontal(GUILayout.Height(EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing));
                   effect.Effect = EditorGUILayout.ObjectField(effect.Effect, typeof(Effect), true) as Effect;
                   EditorGUILayout.LabelField("x", GUILayout.Width(EditorGUIUtility.singleLineHeight));
-                  effect.Multiple = EditorGUILayout.FloatField(effect.Multiple);
+                  effect.Strength = EditorGUILayout.FloatField(effect.Strength);
                   EditorGUILayout.EndHorizontal();
                   return effect;
               });

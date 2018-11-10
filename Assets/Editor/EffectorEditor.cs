@@ -37,7 +37,7 @@ namespace Assets.Editor
             EditorGUILayout.EndHorizontal();
 
             if (GUILayout.Button("Add Effect"))
-                effector.AddEffect(new EffectMultiplier() { Effect = testEffect, Multiple = testStrength }, null);
+                effector.AddEffect(new EffectInstance() { Effect = testEffect, Strength = testStrength }, null);
         }
     }
 }

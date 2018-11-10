@@ -5,29 +5,52 @@ public abstract class Effect : ScriptableObject
 {
     public float Duration = 0;
     public int Priority = 0;
+    public GameObject EffectPrefab;
 
-    public virtual void OnStart(EntityEffector effector, IEffectorTrigger trigger, float strength)
+    public virtual void OnStart(EffectInstance instance, EntityEffector effector)
     {
     }
 
-    public virtual void OnUpdate(EntityEffector effector, IEffectorTrigger trigger, float strength)
+    public virtual void OnUpdate(EffectInstance instance, EntityEffector effector)
     {
     }
 
-    public virtual void OnEnd(EntityEffector effector, IEffectorTrigger trigger, float strength)
+    public virtual void OnEnd(EffectInstance instance, EntityEffector effector)
     {
     }
 
-    public virtual ActiveEffect Create(EntityEffector effector, IEffectorTrigger trigger, float strength)
+    public virtual EffectInstance Create(EffectInstance effect, params IEffectorTrigger[] triggers)
     {
-        return new ActiveEffect() { Effect = this, Duration = Duration, LifeTime = 0, Strength = strength, Trigger = trigger, Priority = Priority };
+        var instance = new EffectInstance()
+        {
+            Effect = effect.Effect,
+            Strength = effect.Strength,
+            Duration = Duration,
+            Priority = Priority,
+            LifeTime = 0
+        };
+        instance.Triggers = new EffectTriggerCollection();
+        instance.Triggers.AddRange(triggers);
+        return instance;
     }
 
-    public virtual ActiveEffect Merge(ActiveEffect effect, EntityEffector effector, IEffectorTrigger trigger, float strength)
+    public virtual EffectInstance Merge(EffectInstance originalInstance, EffectInstance instance, EntityEffector effector)
     {
-        effect.Duration += Duration;
-        effect.Strength += strength;
-        effect.Trigger = trigger;
-        return effect;
+        originalInstance.Duration += instance.Duration;
+        originalInstance.Strength += instance.Strength;
+        originalInstance.Triggers.AddRange(instance.Triggers);
+        return originalInstance;
+    }
+
+    public virtual GameObject InstantiatePrefab(EffectInstance instance, EntityEffector effector)
+    {
+        var obj = Utility.Instantiate(EffectPrefab, effector.Entity.gameObject.scene);
+        obj.transform.position = effector.Entity.transform.position;
+        return obj;
+    }
+
+    public virtual void DestroyInstance(GameObject obj, EffectInstance instance, EntityEffector effector)
+    {
+        Destroy(obj);
     }
 }

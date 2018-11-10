@@ -21,7 +21,7 @@ public class Skill : EntityBehaviour<GameEntity>
     private float lastActivateTime = 0;
 
     [HideInInspector]
-    public List<EffectMultiplier> Effects = new List<EffectMultiplier>();
+    public List<EffectInstance> Effects = new List<EffectInstance>();
 
     void Update()
     {

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 public class SkillImpactMessage : EntityMessage
 {
-    public EffectMultiplier[] Effects;
+    public EffectInstance[] Effects;
     public SkillImpact Impact;
-    public SkillImpactMessage(SkillImpact impact, params EffectMultiplier[] effects) : base(impact.Creator)
+    public SkillImpactMessage(SkillImpact impact, params EffectInstance[] effects) : base(impact.Creator)
     {
         Impact = impact;
         Effects = effects;

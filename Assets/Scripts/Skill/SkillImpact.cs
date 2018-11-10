@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using SardineFish.Unity.FSM;
+using System.Linq;
 
 public enum ImpactType
 {
@@ -16,7 +17,7 @@ public enum ImpactDirection
     Rotate
 }
 [RequireComponent(typeof(EventBus))]
-public class SkillImpact : MonoBehaviour
+public class SkillImpact : MonoBehaviour,IEffectorTrigger
 {
     public const string EventDeactivate = "Deactivate";
     public ImpactType ImpactType;
@@ -24,7 +25,7 @@ public class SkillImpact : MonoBehaviour
     public bool ImpactOnce = true;
     public bool Continuous = false;
     [HideInInspector]
-    public List<EffectMultiplier> Effects = new List<EffectMultiplier>();
+    public List<EffectInstance> Effects = new List<EffectInstance>();
     public GameEntity Creator;
     public bool Active = false;
 
@@ -73,7 +74,7 @@ public class SkillImpact : MonoBehaviour
         if (ImpactOnce)
             Deactivate();
 
-        new SkillImpactMessage(this, Effects.ToArray()).Dispatch(entity);
+        new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(entity);
     }
 
     public void StartImpact()

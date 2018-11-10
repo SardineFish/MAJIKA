@@ -754,7 +754,11 @@ MonoBehaviour:
   Ready: 0
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Multiple: 1
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &114264031663767576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -830,10 +834,12 @@ MonoBehaviour:
   Locked: 0
   Ready: 0
   Effects:
-  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Multiple: 1
   - Effect: {fileID: 11400000, guid: 3f7d90e32b4444242af3837a2625afdd, type: 2}
-    Multiple: 1
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &114356481816643768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -890,7 +896,11 @@ MonoBehaviour:
   Ready: 0
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Multiple: 1
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &114433096688554936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -912,7 +922,11 @@ MonoBehaviour:
   Ready: 0
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Multiple: 1
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &114450250185123066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1022,6 +1036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affaee391acf6dc409f9841d440d7dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Effects: []
 --- !u!114 &114801616307437886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1070,9 +1085,11 @@ MonoBehaviour:
   Ready: 0
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Multiple: 1
-  - Effect: {fileID: 11400000, guid: 3f7d90e32b4444242af3837a2625afdd, type: 2}
-    Multiple: 1
+    Strength: 2
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &114872658561303984
 MonoBehaviour:
   m_ObjectHideFlags: 1

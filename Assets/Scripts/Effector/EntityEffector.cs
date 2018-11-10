@@ -5,18 +5,18 @@ using System.Linq;
 
 public class EntityEffector : EntityBehaviour<GameEntity>
 {
-    public List<ActiveEffect> Effects = new List<ActiveEffect>();
+    public List<EffectInstance> Effects = new List<EffectInstance>();
 
-    List<ActiveEffect> removeList = new List<ActiveEffect>();
+    List<EffectInstance> removeList = new List<EffectInstance>();
     
-    List<ActiveEffect> newList = new List<ActiveEffect>();
+    List<EffectInstance> newList = new List<EffectInstance>();
 
     void Update()
     {
         // Remove effects
         foreach (var remove in removeList)
         {
-            remove.Effect.OnEnd(this, remove.Trigger, remove.Strength);
+            remove.Effect.OnEnd(remove, this);
             Effects.Remove(remove);
         }
 
@@ -29,7 +29,7 @@ public class EntityEffector : EntityBehaviour<GameEntity>
             var idx = Effects.FindIndex(effect => effect.Effect == newEffect.Effect);
             if(idx >=0)
             {
-                newList[i] = Effects[idx] = newEffect.Effect.Merge(Effects[idx], this, newEffect.Trigger, newEffect.Strength);
+                newList[i] = Effects[idx] = newEffect.Effect.Merge(Effects[idx], newEffect, this);
             }
             else
             {
@@ -37,31 +37,41 @@ public class EntityEffector : EntityBehaviour<GameEntity>
             }
         }
         
-        newList = new List<ActiveEffect>();
+        newList = new List<EffectInstance>();
 
         Effects = Effects.OrderByDescending(effect => effect.Priority).ToList();
         
         Effects.ForEach(effect =>
         {
             if (effect.LifeTime == 0)
-                effect.Effect.OnStart(this, effect.Trigger, effect.Strength);
+            {
+                effect.Effect.OnStart(effect, this);
+                if (effect.Effect.EffectPrefab)
+                    effect.GameObjectInstance = effect.Effect.InstantiatePrefab(effect, this);
+            }
 
             if(effect.Duration<=0)
             {
                 removeList.Add(effect);
+                if (effect.GameObjectInstance)
+                    effect.Effect.DestroyInstance(effect.GameObjectInstance, effect, this);
             }
             else
             {
-                effect.Effect.OnUpdate(this, effect.Trigger, effect.Strength);
+                effect.Effect.OnUpdate(effect, this);
                 effect.LifeTime += Time.deltaTime;
                 if (effect.LifeTime >= effect.Duration)
+                {
                     removeList.Add(effect);
+                    if (effect.GameObjectInstance)
+                        effect.Effect.DestroyInstance(effect.GameObjectInstance, effect, this);
+                }
             }
         });
         
     }
 
-    public ActiveEffect GetEffect<T>() where T : Effect
+    public EffectInstance GetEffect<T>() where T : Effect
     {
         foreach(var effect in Effects)
         {
@@ -71,10 +81,9 @@ public class EntityEffector : EntityBehaviour<GameEntity>
         return null;
     }
 
-    public void AddEffect(EffectMultiplier effect, IEffectorTrigger trigger)
+    public void AddEffect(EffectInstance effect, IEffectorTrigger trigger)
     {
-        var activeEffect = effect.Effect.Create(this, trigger, effect.Multiple);
-        newList.Add(activeEffect);
+        newList.Add(effect);
     }
 
     public void RemoveEffect(Effect effect)
