@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1905083413670008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 8.4375, z: -10}
+  m_LocalPosition: {x: 15.26, y: 8.67, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -93,7 +93,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1905083413670008}
   m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -127,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 38.14, y: 25.015}
+  m_Size: {x: 35.279995, y: 22.155}
   m_EdgeRadius: 0
 --- !u!81 &81283256558019048
 AudioListener:
@@ -150,9 +150,17 @@ MonoBehaviour:
   camera: {fileID: 20625849297823894}
   ViewportRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 29.999998
+    x: 0.26000118
+    y: 0.23250008
+    width: 29.999996
     height: 16.875
-  CushionRange: 4.07
+  EnableFollow: 1
+  CushionRange: 2.64
+  FollowIgnoreRange: 4
+  FollowRangeOffset: {x: 0, y: -1.93}
+  FollowStartRange: {x: 7.12, y: 2.76}
+  MaxFollowRange: {x: 12.75, y: 5.7}
+  MaxSpeed: 12
+  MaxAcceleration: 30
   cushionCollider: {fileID: 61852194675784790}
+  followTarget: {fileID: 0}

@@ -14,7 +14,7 @@ public class CameraMovement : MonoBehaviour
     public Vector2 FollowStartRange;
     public Vector2 MaxFollowRange;
     public float MaxSpeed = 5;
-    public Vector2 MaxVelocity;
+    public float MaxAcceleration = 10;
     public BoxCollider2D cushionCollider;
     public Transform followTarget;
 
@@ -57,9 +57,23 @@ public class CameraMovement : MonoBehaviour
             //followSpeed = follow * MaxSpeed;
             //followSpeed = follow.normalized * Mathf.Clamp01((follow.magnitude - FollowIgnoreRange) / FollowRange) * MaxSpeed;
         }
-        MaxVelocity = followTarget.GetComponent<MovableEntity>().velocity.Abs();
+        var totalVelocity = followSpeed + seperateSpeed;
+        if (MathUtility.SignInt(totalVelocity.x) != MathUtility.SignInt(followSpeed.x))
+            totalVelocity.x = 0;
+        if (MathUtility.SignInt(totalVelocity.y) != MathUtility.SignInt(followSpeed.y))
+            totalVelocity.y = 0;
+
         if (EnableFollow)
-            GetComponent<Rigidbody2D>().velocity =(followSpeed+seperateSpeed)*MaxSpeed;// Vector2.Scale(followSpeed + seperateSpeed, MaxVelocity);
+        {
+            totalVelocity *= MaxSpeed;
+            var dv = totalVelocity - GetComponent<Rigidbody2D>().velocity;
+            if (dv.magnitude / Time.fixedDeltaTime > MaxAcceleration)
+            {
+                dv = dv.normalized * MaxAcceleration * Time.fixedDeltaTime;
+                totalVelocity = GetComponent<Rigidbody2D>().velocity + dv;
+            }
+            GetComponent<Rigidbody2D>().velocity = totalVelocity;
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)

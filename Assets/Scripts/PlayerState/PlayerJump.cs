@@ -14,6 +14,7 @@ public class PlayerJump : PlayerControllerState
 
     public override void OnUpdate(Player player, EntityStateMachine<Player> fsm)
     {
+        player.GetComponent<MovableEntity>().EnableGravity = true;
         // Movement
         var movement = InputManager.Instance.GetMovement();
         movement.y = 0;

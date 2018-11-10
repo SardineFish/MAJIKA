@@ -2780,88 +2780,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
         type: 2}
-      propertyPath: CushionRange
-      value: 2.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 61852194675784790, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 35.279995
-      objectReference: {fileID: 0}
-    - target: {fileID: 61852194675784790, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 22.155
-      objectReference: {fileID: 0}
-    - target: {fileID: 50747830803423568, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: m_UseFullKinematicContacts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: ViewportRect.x
-      value: 0.26000118
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: ViewportRect.y
-      value: 0.23250008
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: ViewportRect.width
-      value: 29.999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 1290830087}
     - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
         type: 2}
-      propertyPath: FollowIgnoreRange
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: MaxSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: FollowRange.x
-      value: 10.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: FollowRange.y
-      value: 5.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: MaxFollowRange.x
-      value: 12.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: MaxFollowRange.y
-      value: 5.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
       propertyPath: FollowStartRange.x
-      value: 8.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: FollowStartRange.y
-      value: 2.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: FollowRangeOffset.y
-      value: -1.93
+      value: 7.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f, type: 2}
@@ -6437,7 +6362,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.042872906, y: 5.781404}
+  m_Offset: {x: 0.042872906, y: 5.462889}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6448,7 +6373,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4635172, y: 11.551333}
+  m_Size: {x: 0.4635172, y: 10.914304}
   m_EdgeRadius: 0
 --- !u!114 &846293310
 MonoBehaviour:

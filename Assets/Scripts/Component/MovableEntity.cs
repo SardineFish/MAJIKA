@@ -117,8 +117,7 @@ public class MovableEntity : MonoBehaviour
         {
             var contract = collision.GetContact(i);
             var localPoint = transform.worldToLocalMatrix.MultiplyPoint(contract.point);
-            Debug.Log(localPoint.y);
-            if (Mathf.Abs(localPoint.y) <= PhysicsSystem.Instance.OnGroundThreshold)
+            if (Mathf.Abs(localPoint.y) <= PhysicsSystem.Instance.OnGroundThreshold && contract.relativeVelocity.y >=0)
             {
                 jumpCount = MaxJumpCount;
                 OnGround = true;

@@ -8,7 +8,11 @@ public class PlayerClimb : PlayerControllerState
 
     public override void OnUpdate(Player player, EntityStateMachine<Player> fsm)
     {
-        player.GetComponent<MovableEntity>().Climb(InputManager.Instance.GetMovement().y);
+        if (!player.GetComponent<MovableEntity>().Climb(InputManager.Instance.GetMovement().y))
+        {
+            fsm.ChangeState(JumpState);
+            return;
+        }
         player.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, 0);
 
         // Jump
