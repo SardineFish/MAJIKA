@@ -43,6 +43,7 @@ public class EntityEffector : EntityBehaviour<GameEntity>
         
         Effects.ForEach(effect =>
         {
+            // Start effect
             if (effect.LifeTime == 0)
             {
                 effect.Effect.OnStart(effect, this);
@@ -50,12 +51,15 @@ public class EntityEffector : EntityBehaviour<GameEntity>
                     effect.GameObjectInstance = effect.Effect.InstantiatePrefab(effect, this);
             }
 
+            // Destroy instant effect
             if(effect.Duration<=0)
             {
                 removeList.Add(effect);
                 if (effect.GameObjectInstance)
                     effect.Effect.DestroyInstance(effect.GameObjectInstance, effect, this);
             }
+
+            // Update effects
             else
             {
                 effect.Effect.OnUpdate(effect, this);

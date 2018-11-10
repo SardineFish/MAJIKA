@@ -9,7 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98606ce87f2fafb498e8b6276955b9fc, type: 3}
-  m_Name: Barrier
+  m_Name: Shield
   m_EditorClassIdentifier: 
-  Duration: 600
+  Duration: 10
   Priority: 10
+  EffectPrefab: {fileID: 1408594091717572, guid: e51fda3267c40064c9caec199c144f64,
+    type: 2}
+  Offset: {x: 0, y: 1.0625, z: 0}

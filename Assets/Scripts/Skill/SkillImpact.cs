@@ -66,6 +66,8 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
             return;
         if (Active == false)
             return;
+        if (ImpactType == ImpactType.OnEntity)
+            return;
 
         if (!Continuous && impactedList.Contains(entity))
             return;
@@ -80,6 +82,8 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
     public void StartImpact()
     {
         Active = true;
+        if (ImpactType == ImpactType.OnEntity)
+            new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(Creator);
     }
     public void EndImpact()
     {

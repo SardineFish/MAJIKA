@@ -7,6 +7,7 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
 {
     public const string NameRenderer = "Renderer";
     public const string NameCollider = "Collider";
+    public const string NameAttached = "Attached";
     public GameObject Renderer => transform.Find(NameRenderer).gameObject;
     public GameObject Collider => transform.Find(NameCollider).gameObject;
 
@@ -27,5 +28,16 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
     public static GameEntity GetEntity(Component obj)
     {
         return obj.GetComponent<GameEntity>() ?? obj.GetComponentInParent<GameEntity>();
+    }
+
+    public void Attach(GameObject obj, Vector3 offset)
+    {
+        obj.transform.parent = transform;
+        obj.transform.localPosition = offset;
+    }
+
+    public void Attach(GameObject obj)
+    {
+        Attach(obj, obj.transform.position - transform.position);
     }
 }
