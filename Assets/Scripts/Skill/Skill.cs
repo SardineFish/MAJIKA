@@ -9,7 +9,6 @@ public enum SkillDirection
 }
 public class Skill : EntityBehaviour<GameEntity>
 {
-    public GameObject SkillImpactObject;
     public RuntimeAnimatorController AnimatorController;
     public bool LockAction = false;
     public float ReleaseRadius;
@@ -20,7 +19,6 @@ public class Skill : EntityBehaviour<GameEntity>
     public bool Ready = false;
 
     private float lastActivateTime = 0;
-    private SkillImpact releasedSkillImpact;
 
     [HideInInspector]
     public List<EffectMultiplier> Effects = new List<EffectMultiplier>();
@@ -37,8 +35,7 @@ public class Skill : EntityBehaviour<GameEntity>
         if (Time.time - lastActivateTime < CoolDown)
             return false;
         lastActivateTime = Time.time;
-
-        releasedSkillImpact = null;
+        
         if (LockAction)
             Locked = true;
 
@@ -50,8 +47,7 @@ public class Skill : EntityBehaviour<GameEntity>
         if (Locked)
             return false;
 
-        if (releasedSkillImpact)
-            releasedSkillImpact.Deactivate();
+        GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Destory());
         return true;
     }
 
@@ -62,33 +58,21 @@ public class Skill : EntityBehaviour<GameEntity>
 
     public bool StartImpact()
     {
-        if (releasedSkillImpact)
-            return true;
-        var impact = Utility.Instantiate(SkillImpactObject, Entity.gameObject.scene).GetComponent<SkillImpact>();
-        impact.Creator = Entity;
-        impact.Effects = Effects;
-        Vector3 direction = Vector3.right;
-        switch (Direction)
-        {
-            case SkillDirection.Horizontal:
-                direction = Vector3.right * Entity.GetComponent<MovableEntity>().FaceDirection;
-                break;
-        }
-        impact.Activate(Entity.transform.position + ReleaseOffset + direction * ReleaseRadius, direction);
-        releasedSkillImpact = impact;
+        GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Spawn(this.Effects));
         return true;
     }
 
     public bool EndImpact()
     {
-        releasedSkillImpact?.Deactivate();
+        GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Deactivate());
         return true;
     }
 
     private void OnDrawGizmosSelected()
     {
+        /*
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position + ReleaseOffset, ReleaseRadius);
+        Gizmos.DrawWireSphere(transform.position + ReleaseOffset, ReleaseRadius);*/
     }
 
     
