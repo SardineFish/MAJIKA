@@ -185,8 +185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImpactType: 2
   ImpactDirection: 1
-  ImpactOnce: 0
   Continuous: 0
+  DestructOnHit: 0
   IgnoreCreator: 0
   NextImpact: {fileID: 0}
   Effects: []

@@ -1028,7 +1028,7 @@ MonoBehaviour:
   Locked: 0
   Ready: 0
   Effects:
-  - Effect: {fileID: 11400000, guid: 3f7d90e32b4444242af3837a2625afdd, type: 2}
+  - Effect: {fileID: 11400000, guid: 54026c068292e0a4b99fd51fe1cb8547, type: 2}
     Strength: 1
     Duration: 0
     LifeTime: 0

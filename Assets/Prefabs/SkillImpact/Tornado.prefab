@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4660490840647890}
+  - component: {fileID: 61571092238250468}
   m_Layer: 14
   m_Name: Collider
   m_TagString: Untagged
@@ -90,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046689137061402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.1609583, y: 2.0538073, z: -0.0059305886}
+  m_LocalPosition: {x: 7.1875, y: 2.0625, z: -0.0059305886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4348409616014992}
@@ -183,6 +184,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.49082422}
   m_EdgeRadius: 0
+--- !u!61 &61571092238250468
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1010219423973900}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.17581296, y: 2.7948637}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.089329, y: 5.610506}
+  m_EdgeRadius: 0
 --- !u!95 &95030474854620508
 Animator:
   serializedVersion: 3
@@ -212,10 +238,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cc93f1a029ab94d9f7c79ab31c462e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImpactType: 2
+  ImpactType: 1
   ImpactDirection: 1
-  ImpactOnce: 1
   Continuous: 1
+  DestructOnHit: 0
   IgnoreCreator: 1
   NextImpact: {fileID: 0}
   Effects: []

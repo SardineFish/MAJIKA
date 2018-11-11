@@ -174,8 +174,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImpactType: 1
   ImpactDirection: 1
-  ImpactOnce: 1
-  Continuous: 1
+  Continuous: 0
+  DestructOnHit: 1
+  IgnoreCreator: 1
   NextImpact: {fileID: 1183563241287318, guid: e2978de861f497e40b73e1318a86709f, type: 2}
   Effects: []
   Creator: {fileID: 0}

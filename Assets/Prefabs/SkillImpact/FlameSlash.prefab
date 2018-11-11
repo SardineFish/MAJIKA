@@ -207,11 +207,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ImpactType: 2
   ImpactDirection: 1
-  ImpactOnce: 0
   Continuous: 0
+  DestructOnHit: 0
+  IgnoreCreator: 1
+  NextImpact: {fileID: 0}
   Effects: []
   Creator: {fileID: 0}
   Active: 0
+  Direction: {x: 0, y: 0, z: 0}
 --- !u!114 &114794676611245526
 MonoBehaviour:
   m_ObjectHideFlags: 1

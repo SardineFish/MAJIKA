@@ -32,4 +32,6 @@ public class EffectInstance
             GameObjectInstance = this.GameObjectInstance
         };
     }
+
+    public T GetTrigger<T>() where T : IEffectorTrigger => Triggers.GetTrigger<T>();
 }

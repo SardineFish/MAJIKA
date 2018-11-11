@@ -22,8 +22,8 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
     public const string EventDeactivate = "Deactivate";
     public ImpactType ImpactType;
     public ImpactDirection ImpactDirection;
-    public bool ImpactOnce = true;
     public bool Continuous = false;
+    public bool DestructOnHit = true;
     public bool IgnoreCreator = true;
     public GameObject NextImpact;
     [HideInInspector]
@@ -73,11 +73,13 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
         if (ImpactType == ImpactType.OnEntity)
             return;
 
-        if (!Continuous && impactedList.Contains(entity))
+        if (impactedList.Contains(entity))
             return;
-        impactedList.Add(entity);
 
-        if (ImpactOnce)
+        if (!Continuous)
+            impactedList.Add(entity);
+
+        if (DestructOnHit)
             Deactivate();
 
         
