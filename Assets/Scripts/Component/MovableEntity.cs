@@ -54,6 +54,11 @@ public class MovableEntity : MonoBehaviour
         return true;
     }
 
+    public void ForceMoveTo(Vector2 position)
+    {
+        transform.position = position;
+    }
+
     public bool Climb(float speed)
     {
         if (!InClimbArea)
@@ -68,6 +73,8 @@ public class MovableEntity : MonoBehaviour
     private void LateUpdate()
     {
         if (!enabled)
+            return;
+        if (Frozen)
             return;
 
         FaceDirection = velocity.x == 0 ? FaceDirection : Mathf.Sign(velocity.x);
