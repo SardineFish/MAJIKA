@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RENDERER_ANIMATION_TEMPLATE
+  m_Name: iceSpear_Effect_Spawn
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,7 +19,15 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 025a43713c3add9488a7bb36de618ab4, type: 3}
+      value: {fileID: 21300000, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
+    - time: 0.1
+      value: {fileID: 21300002, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
+    - time: 0.2
+      value: {fileID: 21300004, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
+    - time: 0.3
+      value: {fileID: 21300006, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
+    - time: 0.4
+      value: {fileID: 21300006, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
     attribute: m_Sprite
     path: Renderer
     classID: 212
@@ -39,13 +47,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 025a43713c3add9488a7bb36de618ab4, type: 3}
+    - {fileID: 21300000, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
+    - {fileID: 21300002, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
+    - {fileID: 21300004, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
+    - {fileID: 21300006, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
+    - {fileID: 21300006, guid: cf3f3e3d148e7574386993d10a034425, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -66,8 +78,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: 0.6
-    functionName: 
+  - time: 0.4
+    functionName: StartTimer
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

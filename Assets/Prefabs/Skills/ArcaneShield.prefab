@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114642796608561594}
   - component: {fileID: 114134312282648462}
   m_Layer: 0
-  m_Name: ArcaneBarrier
+  m_Name: ArcaneShield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

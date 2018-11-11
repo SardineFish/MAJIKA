@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-guid: c8f5b98fe396f034fae7c8edb234d5c5
+guid: cf3f3e3d148e7574386993d10a034425
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ArcaneBlast-Action_0
-    21300002: ArcaneBlast-Action_1
-    21300004: ArcaneBlast-Action_2
-    21300006: ArcaneBlast-Action_3
-    21300008: ArcaneBlast-Action_4
+    21300000: TripleIceSpear - Effect_0
+    21300002: TripleIceSpear - Effect_1
+    21300004: TripleIceSpear - Effect_2
+    21300006: TripleIceSpear - Effect_3
+    21300008: TripleIceSpear - Effect_4
+    21300010: TripleIceSpear - Effect_5
+    21300012: TripleIceSpear - Effect_6
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -65,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -76,7 +78,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -89,101 +91,141 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ArcaneBlast-Action_0
+      name: TripleIceSpear - Effect_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 154
+        width: 60
+        height: 64
       alignment: 9
-      pivot: {x: 0.16796875, y: 0}
+      pivot: {x: 0.5833333, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93db0cab5cba39d47ae70586719fdf46
+      spriteID: 83fbdbfcc5bc0254786b32b6af038115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArcaneBlast-Action_1
+      name: TripleIceSpear - Effect_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 60
         y: 0
-        width: 256
-        height: 154
+        width: 60
+        height: 64
       alignment: 9
-      pivot: {x: 0.16015625, y: -0}
+      pivot: {x: 0.5833333, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cac5e5c1c4f0ac440a5fe40c6001257e
+      spriteID: bbe6a60f648c02241a3a87d7ce7a57d4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArcaneBlast-Action_2
+      name: TripleIceSpear - Effect_2
       rect:
         serializedVersion: 2
-        x: 512
+        x: 120
         y: 0
-        width: 256
-        height: 154
+        width: 60
+        height: 64
       alignment: 9
-      pivot: {x: 0.16015625, y: -0}
+      pivot: {x: 0.5833333, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ec6a1ca2209c9444b62e88204f1c834
+      spriteID: 726acf59155cb5240b6489f10902bf2c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArcaneBlast-Action_3
+      name: TripleIceSpear - Effect_3
       rect:
         serializedVersion: 2
-        x: 768
+        x: 182
         y: 0
-        width: 256
-        height: 154
+        width: 60
+        height: 64
       alignment: 9
-      pivot: {x: 0.16796875, y: 0}
+      pivot: {x: 0.5833333, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d17437776a607fa41a5cfc5dfba597b0
+      spriteID: 707197e28cc400b4d8130745a22d58b2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArcaneBlast-Action_4
+      name: TripleIceSpear - Effect_4
       rect:
         serializedVersion: 2
-        x: 1024
+        x: 240
         y: 0
-        width: 256
-        height: 154
+        width: 60
+        height: 64
       alignment: 9
-      pivot: {x: 0.16796875, y: 0}
+      pivot: {x: 0.5833333, y: 0.46875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7fe0a936919546f4fa597553d02b2f56
+      spriteID: 3011acb752ec95a4d875244cfa1033bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TripleIceSpear - Effect_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 60
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5833333, y: 0.46875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d9d63173a60e24599279d2fb878b71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TripleIceSpear - Effect_6
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 60
+        height: 64
+      alignment: 9
+      pivot: {x: 0.5833333, y: 0.46875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd42bfab4556774cae187d66dda91bf
       vertices: []
       indices: 
       edges: []
@@ -191,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9f3a26265251b4947910675ebbe2411e
+    spriteID: 4bb50e65d1328154a8060f0061758e4c
     vertices: []
     indices: 
     edges: []
