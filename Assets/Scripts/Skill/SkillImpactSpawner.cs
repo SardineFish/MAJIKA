@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(Skill))]
 public class SkillImpactSpawner : EntityBehaviour<GameEntity>
 {
     public GameObject Prefab;

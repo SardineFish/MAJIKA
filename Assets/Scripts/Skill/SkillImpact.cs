@@ -24,15 +24,19 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
     public ImpactDirection ImpactDirection;
     public bool ImpactOnce = true;
     public bool Continuous = false;
+    public bool IgnoreCreator = true;
+    public GameObject NextImpact;
     [HideInInspector]
     public List<EffectInstance> Effects = new List<EffectInstance>();
     public GameEntity Creator;
     public bool Active = false;
+    public Vector3 Direction;
 
     private List<GameEntity> impactedList = new List<GameEntity>();
 
     public void Activate(Vector3 position, Vector3 direction)
     {
+        Direction = direction;
         transform.position = position;
         if(ImpactDirection == ImpactDirection.Flip)
         {
@@ -62,7 +66,7 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
         var entity = GameEntity.GetEntity(collision);
         if (!entity)
             return;
-        if (entity == this.Creator)
+        if (IgnoreCreator && entity == Creator)
             return;
         if (Active == false)
             return;
@@ -76,14 +80,33 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
         if (ImpactOnce)
             Deactivate();
 
-        new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(entity);
+        
+        if (NextImpact && NextImpact.GetComponent<SkillImpact>())
+        {
+            var impact = Utility.Instantiate(NextImpact, Creator.gameObject.scene).GetComponent<SkillImpact>();
+            impact.Creator = Creator;
+            impact.Effects = Effects;
+            impact.Activate(transform.position, Direction);
+        }
+        else
+            new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(entity);
     }
 
     public void StartImpact()
     {
         Active = true;
         if (ImpactType == ImpactType.OnEntity)
-            new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(Creator);
+        {
+            if (NextImpact && NextImpact.GetComponent<SkillImpact>())
+            {
+                var impact = Utility.Instantiate(NextImpact, Creator.gameObject.scene).GetComponent<SkillImpact>();
+                impact.Creator = Creator;
+                impact.Effects = Effects;
+                impact.Activate(transform.position, Direction);
+            }
+            else
+                new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(Creator);
+        }
     }
     public void EndImpact()
     {

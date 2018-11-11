@@ -82,7 +82,7 @@ public class InputManager : Singleton<InputManager> {
             KeyCode.Alpha6,
             KeyCode.Alpha7,
             KeyCode.Alpha8,
-            KeyCode.Alpha7,
+            KeyCode.Alpha9,
             KeyCode.Alpha0,
         };
         for(var i = 0; i < keys.Length; i++)
