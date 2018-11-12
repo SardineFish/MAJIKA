@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.2d.pixel-perfect": "1.0.1-preview",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "2.0.16",
     "com.unity.entities": "0.0.12-preview.13",

@@ -5,6 +5,11 @@ using System.Collections;
 public class SimpleMovement : MonoBehaviour
 {
     public Vector2 Velocity;
+    public Vector2 Acceleration;
+    public float SpeedIncreasement;
+    public bool Moving = false;
+
+    private Vector2 currentVelocity;
 
     void Update()
     {
@@ -13,8 +18,23 @@ public class SimpleMovement : MonoBehaviour
         rigidbody.AddForce(dv * rigidbody.mass, ForceMode2D.Impulse);*/
     }
 
+    private void FixedUpdate()
+    {
+        if (Moving)
+        {
+            currentVelocity += Acceleration * Time.fixedDeltaTime;
+            var speed = currentVelocity.magnitude;
+            speed += SpeedIncreasement * Time.fixedDeltaTime;
+            speed = speed < 0 ? 0 : speed;
+            currentVelocity = currentVelocity.normalized * speed;
+            GetComponent<Rigidbody2D>().velocity = transform.localToWorldMatrix.MultiplyVector(currentVelocity);
+        }
+    }
+
     public void StartMovement()
     {
-        GetComponent<Rigidbody2D>().velocity = transform.localToWorldMatrix.MultiplyVector(Velocity);
+        Moving = true;
+        currentVelocity = Velocity;
+        GetComponent<Rigidbody2D>().velocity = transform.localToWorldMatrix.MultiplyVector(currentVelocity);
     }
 }
