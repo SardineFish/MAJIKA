@@ -9,6 +9,7 @@ public enum ImpactType
     OnEntity,
     Collider,
     Manual,
+    DropAttack
 }
 public enum ImpactDirection
 {
@@ -94,6 +95,21 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
             new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(entity);
     }
 
+    IEnumerator DropAttackCoroutine(float targetHeight)
+    {
+        var movement = GetComponent<SimpleMovement>();
+        yield return movement.MoveTo(new Vector2(transform.position.x, targetHeight), () => transform.position.y <= targetHeight);
+        transform.position = new Vector2(transform.position.x, targetHeight);
+        if(NextImpact && NextImpact.GetComponent<SkillImpact>())
+        {
+            var impact = Utility.Instantiate(NextImpact, Creator.gameObject.scene).GetComponent<SkillImpact>();
+            impact.Creator = Creator;
+            impact.Effects = Effects;
+            impact.Activate(transform.position, Direction);
+        }
+        Deactivate();
+    }
+
     public void StartImpact()
     {
         Active = true;
@@ -108,6 +124,22 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
             }
             else
                 new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(Creator);
+        }
+        else if (ImpactType == ImpactType.DropAttack)
+        {
+            var hits = Physics2D.RaycastAll(transform.position, Vector2.down, 400, (1 << 8) | (1 << 9));
+            if(hits.Length==0)
+            {
+                GetComponent<SimpleMovement>().StartMovement();
+                return;
+            }
+            hits = hits.OrderBy(hit => hit.point.y).ToArray();
+            var targetHeight = hits.Min(hit => hit.point.y);
+            if (targetHeight <= Creator.transform.position.y)
+            {
+                targetHeight = hits.Where(hit => hit.point.y <= Creator.transform.position.y).Max(hit => hit.point.y);
+            }
+            StartCoroutine(DropAttackCoroutine(targetHeight));
         }
     }
     public void EndImpact()

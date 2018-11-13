@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class SimpleMovement : MonoBehaviour
@@ -8,6 +9,8 @@ public class SimpleMovement : MonoBehaviour
     public Vector2 Acceleration;
     public float SpeedIncreasement;
     public bool Moving = false;
+
+    bool controlByCoroutine = false;
 
     private Vector2 currentVelocity;
 
@@ -20,15 +23,20 @@ public class SimpleMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Moving)
+        if (Moving && !controlByCoroutine)
         {
-            currentVelocity += Acceleration * Time.fixedDeltaTime;
-            var speed = currentVelocity.magnitude;
-            speed += SpeedIncreasement * Time.fixedDeltaTime;
-            speed = speed < 0 ? 0 : speed;
-            currentVelocity = currentVelocity.normalized * speed;
+            UpdateVelocity(Time.fixedDeltaTime);
             GetComponent<Rigidbody2D>().velocity = transform.localToWorldMatrix.MultiplyVector(currentVelocity);
         }
+    }
+
+    Vector2 UpdateVelocity(float dt)
+    {
+        currentVelocity += Acceleration * dt;
+        var speed = currentVelocity.magnitude;
+        speed += SpeedIncreasement * dt;
+        speed = speed < 0 ? 0 : speed;
+        return currentVelocity = currentVelocity.normalized * speed;
     }
 
     public void StartMovement()
@@ -36,5 +44,21 @@ public class SimpleMovement : MonoBehaviour
         Moving = true;
         currentVelocity = Velocity;
         GetComponent<Rigidbody2D>().velocity = transform.localToWorldMatrix.MultiplyVector(currentVelocity);
+    }
+
+    public IEnumerator MoveTo(Vector2 position, Func<bool> arrived)
+    {
+        controlByCoroutine = true;
+        GetComponent<Rigidbody2D>().velocity = currentVelocity = Velocity;
+        while (!arrived())
+        {
+            yield return new WaitForFixedUpdate();
+            GetComponent<Rigidbody2D>().velocity = UpdateVelocity(Time.fixedDeltaTime);
+        }
+    }
+
+    public IEnumerator MoveTo(Vector2 position)
+    {
+        return MoveTo(position, () => (transform.position.ToVector2() - position).magnitude >= GridSystem.Instance.GridPerPixel);
     }
 }

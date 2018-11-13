@@ -1,17 +1,18 @@
 fileFormatVersion: 2
-guid: 1b21471fa0fa35d47af193f812ca5a4a
+guid: 6861d88b3d7235845aa85c1842fd3c2c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ArcaneBlast-Effect_0
-    21300002: ArcaneBlast-Effect_1
-    21300004: ArcaneBlast-Effect_2
-    21300006: ArcaneBlast-Effect_3
-    21300008: ArcaneBlast-Effect_4
-    21300010: ArcaneBlast-Effect_5
-    21300012: ArcaneBlast-Effect_6
-    21300014: ArcaneBlast-Effect_7
-    21300016: ArcaneBlast-Effect_8
-    21300018: ArcaneBlast-Effect_9
+    21300000: Action
+    21300002: Action_0
+    21300004: Action_1
+    21300006: Action_2
+    21300008: Action_3
+    21300010: Action_4
+    21300012: Action_5
+    21300014: Action_6
+    21300016: Action_7
+    21300018: Action_8
+    21300020: Action_9
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -70,21 +71,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,201 +84,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ArcaneBlast-Effect_0
+      name: Action_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 46
+        height: 44
+      alignment: 9
+      pivot: {x: 0.39130434, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97506965faff00418bd875e4d664dea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 88
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2defafd1bb9ce4e9cbaee4f9d8f6d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 88
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9226ee369a93d9d4e9cf9b27684c84b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 88
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0811212729701144853bf8e6b175bfe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763ec7f576ec7de4d825854ac944fdd7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_5
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 44
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763579d4126a10548aedda85b9a64911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_6
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 44
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a279cf1fdd2f5a8479fb5c8d82c7a7ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_7
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 44
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35d017aec5e48e4797dc93d01c30b0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.62109375, y: 0.8831169}
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cc432ad19a3ca740aec0caf88be1db8
+      spriteID: ff476a3e463d95b45ab8e946ec6c5e95
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArcaneBlast-Effect_1
+      name: Action_9
       rect:
         serializedVersion: 2
-        x: 256
+        x: 46
         y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.62109375, y: 0.8831169}
+        width: 46
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a2347ff404674d4bb17396833cb0992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Effect_2
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.62109375, y: 0.8831169}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c426ee5c9fad2643bc78bc76cabfdaa
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Effect_3
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.625, y: 0.64285713}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba967ab7c2ce7cc4cbf0f3543e511e98
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Effect_4
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.625, y: 0.34415585}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c2364123af69004db24de040aa7d56e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Effect_5
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.62109375, y: 0.077922076}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5aa9f2b4d5c743a4caf5a7053231e8b7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Effect_6
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.625, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 814f6f52aba3fa1418aad906d114e797
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Effect_7
-      rect:
-        serializedVersion: 2
-        x: 1792
-        y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.625, y: -0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03753e38b491e1741a660a83965522b0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Effect_8
-      rect:
-        serializedVersion: 2
-        x: 2046
-        y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.625, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 605991521cc520640bc0f0e4e074c9d2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Effect_9
-      rect:
-        serializedVersion: 2
-        x: 2304
-        y: 0
-        width: 256
-        height: 154
-      alignment: 9
-      pivot: {x: 0.625, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61e7332e18b13db4a82282a8bd989986
+      spriteID: c93e9a3afb6a4934bb3d230753255e4a
       vertices: []
       indices: 
       edges: []
@@ -296,7 +286,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: bf01d4cf9e968ae4f86afd4eb819a20a
+    spriteID: 2bb313950e15a1d4e80fb677ac840fab
     vertices: []
     indices: 
     edges: []
