@@ -17,6 +17,12 @@ public enum ImpactDirection
     Flip,
     Rotate
 }
+public enum ImpactLifeCycle
+{
+    Manual,
+    DestructOnHit,
+    LifeTime,
+}
 [RequireComponent(typeof(EventBus))]
 public class SkillImpact : MonoBehaviour,IEffectorTrigger
 {
@@ -24,7 +30,8 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
     public ImpactType ImpactType;
     public ImpactDirection ImpactDirection;
     public bool Continuous = false;
-    public bool DestructOnHit = true;
+    public ImpactLifeCycle ImpactLifeCycle = ImpactLifeCycle.Manual;
+    public float LifeTime = -1;
     public bool IgnoreCreator = true;
     public GameObject NextImpact;
     [HideInInspector]
@@ -34,6 +41,28 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
     public Vector3 Direction;
 
     private List<GameEntity> impactedList = new List<GameEntity>();
+
+    private void Update()
+    {
+        if (Continuous)
+        {
+            impactedList.ForEach(ApplyDamage);
+            impactedList.Clear();
+        }
+    }
+
+    private void ApplyDamage(GameEntity entity)
+    {
+        if (NextImpact && NextImpact.GetComponent<SkillImpact>())
+        {
+            var impact = Utility.Instantiate(NextImpact, Creator.gameObject.scene).GetComponent<SkillImpact>();
+            impact.Creator = Creator;
+            impact.Effects = Effects;
+            impact.Activate(transform.position, Direction);
+        }
+        else
+            new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(entity);
+    }
 
     public void Activate(Vector3 position, Vector3 direction)
     {
@@ -55,11 +84,20 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
             Active = true;
         else
             Active = false;
+
+        if (LifeTime >= 0)
+            StartCoroutine(LifeTimeCoroutine());
     }
     public void Deactivate()
     {
         GetComponent<EventBus>().Dispatch(EventDeactivate);
         Active = false;
+    }
+
+    public IEnumerator LifeTimeCoroutine()
+    {
+        yield return new WaitForSeconds(LifeTime);
+        Deactivate();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -77,22 +115,18 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
         if (impactedList.Contains(entity))
             return;
 
-        if (!Continuous)
-            impactedList.Add(entity);
-
-        if (DestructOnHit)
+        if (ImpactLifeCycle == ImpactLifeCycle.DestructOnHit)
             Deactivate();
 
-        
-        if (NextImpact && NextImpact.GetComponent<SkillImpact>())
+        if (Continuous)
         {
-            var impact = Utility.Instantiate(NextImpact, Creator.gameObject.scene).GetComponent<SkillImpact>();
-            impact.Creator = Creator;
-            impact.Effects = Effects;
-            impact.Activate(transform.position, Direction);
+            impactedList.Add(entity);
         }
         else
-            new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(entity);
+        {
+            impactedList.Add(entity);
+            ApplyDamage(entity);
+        }
     }
 
     IEnumerator DropAttackCoroutine(float targetHeight)

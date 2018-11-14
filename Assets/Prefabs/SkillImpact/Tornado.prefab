@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 114042254869076052}
   - component: {fileID: 114542323654022848}
   - component: {fileID: 114423788127167546}
-  - component: {fileID: 114275884751721802}
   - component: {fileID: 114220557869317548}
   - component: {fileID: 114564318043344310}
   m_Layer: 0
@@ -241,7 +240,8 @@ MonoBehaviour:
   ImpactType: 1
   ImpactDirection: 1
   Continuous: 1
-  DestructOnHit: 0
+  ImpactLifeCycle: 2
+  LifeTime: 5
   IgnoreCreator: 1
   NextImpact: {fileID: 0}
   Effects: []
@@ -271,18 +271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zIndex: -5
---- !u!114 &114275884751721802
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1046689137061402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d4952169f8e0b4ba4cd881141ee166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
 --- !u!114 &114423788127167546
 MonoBehaviour:
   m_ObjectHideFlags: 1

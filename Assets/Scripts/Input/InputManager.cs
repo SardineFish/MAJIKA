@@ -84,6 +84,8 @@ public class InputManager : Singleton<InputManager> {
             KeyCode.Alpha8,
             KeyCode.Alpha9,
             KeyCode.Alpha0,
+            KeyCode.Minus,
+            KeyCode.Plus,
         };
         for(var i = 0; i < keys.Length; i++)
         {

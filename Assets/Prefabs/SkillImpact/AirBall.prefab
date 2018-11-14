@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 114562226597552480}
   - component: {fileID: 114224174706478448}
   - component: {fileID: 114232332737444576}
-  - component: {fileID: 114512199985828724}
   - component: {fileID: 114636131179630202}
   m_Layer: 0
   m_Name: AirBall
@@ -175,7 +174,8 @@ MonoBehaviour:
   ImpactType: 1
   ImpactDirection: 1
   Continuous: 0
-  DestructOnHit: 1
+  ImpactLifeCycle: 1
+  LifeTime: 5
   IgnoreCreator: 1
   NextImpact: {fileID: 1183563241287318, guid: e2978de861f497e40b73e1318a86709f, type: 2}
   Effects: []
@@ -210,18 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd63b462113c1142b95bae8f03ea7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114512199985828724
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1379096477391052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d4952169f8e0b4ba4cd881141ee166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
 --- !u!114 &114562226597552480
 MonoBehaviour:
   m_ObjectHideFlags: 1

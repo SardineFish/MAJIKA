@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 114639440863657946}
   - component: {fileID: 114335797672014730}
   - component: {fileID: 114888133237514048}
-  - component: {fileID: 114380582638688350}
   - component: {fileID: 114115284000148702}
   m_Layer: 0
   m_Name: IceSpear
@@ -197,7 +196,8 @@ MonoBehaviour:
   ImpactType: 1
   ImpactDirection: 1
   Continuous: 0
-  DestructOnHit: 1
+  ImpactLifeCycle: 1
+  LifeTime: 5
   IgnoreCreator: 1
   NextImpact: {fileID: 0}
   Effects: []
@@ -216,6 +216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 20, y: 0}
+  Acceleration: {x: 0, y: 0}
+  SpeedIncreasement: 0
+  Moving: 0
 --- !u!114 &114335797672014730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,18 +236,6 @@ MonoBehaviour:
     Targets:
     - ComponentName: SelfDestructor
       MethodName: Destruct
---- !u!114 &114380582638688350
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1785681152506050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d4952169f8e0b4ba4cd881141ee166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
 --- !u!114 &114639440863657946
 MonoBehaviour:
   m_ObjectHideFlags: 1

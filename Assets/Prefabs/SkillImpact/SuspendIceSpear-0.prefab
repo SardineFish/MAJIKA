@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 114652835026684130}
   - component: {fileID: 114326734039608910}
   - component: {fileID: 114421833428433138}
-  - component: {fileID: 114538079460658048}
   - component: {fileID: 114203257491510244}
   - component: {fileID: 114495517701218174}
   m_Layer: 0
@@ -184,6 +183,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 50, y: 0}
+  Acceleration: {x: 0, y: 0}
+  SpeedIncreasement: 0
+  Moving: 0
 --- !u!114 &114203257491510244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,18 +239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Time: 0.5
   AnimatorTrigger: Start
---- !u!114 &114538079460658048
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1065999359781884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6d4952169f8e0b4ba4cd881141ee166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
 --- !u!114 &114652835026684130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,7 +264,8 @@ MonoBehaviour:
   ImpactType: 1
   ImpactDirection: 1
   Continuous: 0
-  DestructOnHit: 1
+  ImpactLifeCycle: 1
+  LifeTime: 5
   IgnoreCreator: 1
   NextImpact: {fileID: 0}
   Effects: []
