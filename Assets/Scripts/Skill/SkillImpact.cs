@@ -15,6 +15,7 @@ public enum ImpactDirection
 {
     Ignore,
     Flip,
+    FlipObject,
     Rotate
 }
 public enum ImpactLifeCycle
@@ -22,6 +23,13 @@ public enum ImpactLifeCycle
     Manual,
     DestructOnHit,
     LifeTime,
+}
+public enum ImpactDistance
+{
+    Unlimited,
+    InScreen,
+    FullMap,
+    Constant,
 }
 [RequireComponent(typeof(EventBus))]
 public class SkillImpact : MonoBehaviour,IEffectorTrigger
@@ -44,6 +52,7 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
 
     private void Update()
     {
+        
         if (Continuous)
         {
             impactedList.ForEach(ApplyDamage);
@@ -75,10 +84,15 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
             transform.rotation *= Quaternion.FromToRotation(transform.right, direction);
             transform.Find("Renderer").localRotation *= Quaternion.FromToRotation(Vector3.right, direction);
             transform.Find("Renderer").localScale = new Vector3(direction.x, 1, 1);
+            //transform.Find("Collider").localRotation *= Quaternion.FromToRotation(Vector3.right, direction);
         }
         else if (ImpactDirection == ImpactDirection.Rotate)
         {
             transform.rotation *= Quaternion.FromToRotation(transform.right, direction);
+        }
+        else if (ImpactDirection == ImpactDirection.FlipObject)
+        {
+            transform.localScale = new Vector3(direction.x, 1, 1);
         }
         if (ImpactType == ImpactType.Collider)
             Active = true;
