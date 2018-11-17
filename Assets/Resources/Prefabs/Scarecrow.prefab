@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 95189295561932028}
   - component: {fileID: 114408075733164844}
   - component: {fileID: 50579955809238664}
+  - component: {fileID: 114522042659583768}
   m_Layer: 0
   m_Name: Scarecrow
   m_TagString: Untagged
@@ -472,6 +473,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114522042659583768
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617440705409084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b8430dc9f50454d8c3d9f59280fff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventTrigger: Die
 --- !u!114 &114663389947243864
 MonoBehaviour:
   m_ObjectHideFlags: 1

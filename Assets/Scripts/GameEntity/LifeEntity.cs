@@ -6,10 +6,18 @@ public class LifeEntity : GameEntity, IHP
 {
     public const string EventHPIncrease = "HPIncrease";
     public const string EventHPDecrease = "HPDecrease";
+    public const string EventDeath = "Die";
 
     public float HP = 100;
 
     public float MaxHP = 100;
+
+    protected override void Update()
+    {
+        base.Update();
+        if (HP <= 0)
+            GetComponent<EventBus>().Dispatch(EventDeath);
+    }
 
     public void OnMessage(SkillImpactMessage msg)
     {

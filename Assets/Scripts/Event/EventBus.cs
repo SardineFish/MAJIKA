@@ -48,7 +48,7 @@ public class EventBus : MonoBehaviour
         if(Listeners.ContainsKey(eventName))
         {
             Listeners[eventName].ForEach(listener => listener.Invoke(args));
-            for(var i=0;i<Listeners.Count;i++)
+            for(var i=0;i<Listeners[eventName].Count;i++)
             {
                 if (Listeners[eventName][i].Once)
                 {

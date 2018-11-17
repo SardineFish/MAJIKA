@@ -10,7 +10,7 @@ namespace LuaHost.Proxy
 {
     class ProxyBase<T> where T:class
     {
-        T target;
+        protected T target;
         public ProxyBase(T target)
         {
             this.target = target;
@@ -31,7 +31,18 @@ namespace LuaHost.Proxy
         [MoonSharpHidden]
         public GameEntityProxy(GameEntity entity):base(entity)
         {
+            entity.OnUpdate += EntityUpdate;
         }
+        private void EntityUpdate()
+        {
+            OnUpdate?.Invoke(target);
+            if(target is LifeEntity && (target as LifeEntity).HP <= 0)
+            {
+                OnDead?.Invoke();
+            }
+        }
+        public event Action OnDead;
+        public event Action<GameEntity> OnUpdate;
     }
 
     class Vector2Proxy

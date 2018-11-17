@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 [RequireComponent(typeof(EventBus))]
 public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffectorTrigger
@@ -13,16 +14,18 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
 
     public List<Effect> StatusEffects = new List<Effect>();
 
+    public event Action OnUpdate;
+
     // Use this for initialization
-    void Start()
+    protected virtual void Start()
     {
 
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-
+        OnUpdate?.Invoke();
     }
 
     public static GameEntity GetEntity(Component obj)
