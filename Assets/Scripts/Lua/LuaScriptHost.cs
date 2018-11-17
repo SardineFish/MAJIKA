@@ -10,17 +10,25 @@ namespace LuaHost
 {
     public class LuaScriptHost : Singleton<LuaScriptHost>
     {
+        public TextAsset Script;
+
+        [NonSerialized]
         public Script LuaScript;
 
         private void Awake()
         {
-            UserData.RegisterType<LuaRuntime.Console>();
-            UserData.CreateStatic<LuaRuntime.Console>();
-            LuaScript = new Script();
-            LuaScript.Globals["console"] = typeof(LuaRuntime.Console);
+            LuaScript = LuaRuntime.LuaRuntimeHost.GetScriptRuntime();
+        }
 
-            LuaScript.DoFile("test");
-            
+        private void Start()
+        {
+            if (Script)
+                LuaScript.DoString(Script.text);
+        }
+
+        public void RunScript(TextAsset script)
+        {
+            LuaScript.DoString(script.text);
         }
     }
 }

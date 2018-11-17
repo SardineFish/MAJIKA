@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
-using UnityEditor;
+﻿using UnityEngine;
 using UnityEditor.Experimental.AssetImporters;
 using System.IO;
 
@@ -15,10 +9,9 @@ namespace Assets.Editor
     {
         public override void OnImportAsset(AssetImportContext ctx)
         {
-            var asset = new TextAsset();
+            var asset = new TextAsset(File.ReadAllText(ctx.assetPath));
             ctx.AddObjectToAsset("Text", asset);
             ctx.SetMainObject(asset);
-            asset.name = Path.GetFileName(ctx.assetPath);
         }
     }
 }

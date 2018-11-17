@@ -1,0 +1,5 @@
+﻿console.log("From Lua!")
+player = scene.getEntity("Player")
+console.log(player)
+console.logVector(vec2(5,6))
+console.log(vec2(3,4).x)
