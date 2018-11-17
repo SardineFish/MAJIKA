@@ -29,12 +29,13 @@ namespace LuaHost.LuaRuntime
                 return new Vector2(wrapper.x, wrapper.y);
             });
         }
-        public static Script GetScriptRuntime()
+        public static Script GetScriptRuntime(LuaScriptHost host)
         {
             var script = new Script();
             script.Globals["console"] = typeof(Console);
             script.Globals["scene"] = new SceneHost();
             script.Globals["resources"] = new ResourcesHost();
+            script.Globals["game"] = new GameHost(host);
             script.Globals["vec2"] = (Func<float, float, Vector2>)MathUtilities.vec2;
             return script; 
         }

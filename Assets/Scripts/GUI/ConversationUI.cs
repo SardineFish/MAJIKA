@@ -12,46 +12,49 @@ public class ConversationUI : Singleton<ConversationUI>
     public Image ImageRenderer;
     public Talker LeftTalker;
     public Talker RightTalker;
-    public Conversation Conversation;
     public bool Ready = true;
+    public IConversation Conversation;
 
-
-
-    private IEnumerator<string> conversationEnumerator;
+    public event Action onComversationFinish;
 
     void Update()
     {
-        if (Conversation && conversationEnumerator == null)
-        {
-            conversationEnumerator = Conversation.Conversations.GetEnumerator();
-            NextSentence();
-        }
-        if(Ready && conversationEnumerator!=null && InputManager.Instance.GetAction(InputManager.Instance.AcceptAction))
+        if(Ready && Conversation!=null && InputManager.Instance.GetAction(InputManager.Instance.AcceptAction))
         {
             NextSentence();
         }
+    }
+
+    public void StartConversation(Talker left, Talker right, IConversation conversation)
+    {
+        this.LeftTalker = left;
+        this.RightTalker = right;
+        this.Conversation = conversation;
+        this.Conversation.StartConversation();
+        NextSentence();
     }
 
     public void EndConversation()
     {
-        conversationEnumerator = null;
         Conversation = null;
         LeftTalker = null;
         RightTalker = null;
         GameSystem.Instance.PlayerInControl.GetComponent<PlayerController>().playerFSM.ChangeState(PlayerState.Idle);
+        onComversationFinish?.Invoke();
     }
 
     public void NextSentence()
     {
-        if (conversationEnumerator.MoveNext())
-            Wrapper.SetActive(true);
-        else
+        var text = Conversation.Next();
+        if(text == null)
         {
             Wrapper.SetActive(false);
             EndConversation();
             return;
         }
-        var sentence = RenderSentence(conversationEnumerator.Current);
+        else
+            Wrapper.SetActive(true);
+        var sentence = RenderSentence(text);
         StartCoroutine(TextCoroutine(sentence.Text));
         ImageRenderer.sprite = sentence.Talker.Image;
     }
@@ -59,7 +62,7 @@ public class ConversationUI : Singleton<ConversationUI>
     public IEnumerator TextCoroutine(string text)
     {
         Ready = false;
-        for(var i = 0; i < text.Length; i++)
+        for(var i = 0; i <= text.Length; i++)
         {
             TextRenderer.text = text.Substring(0, i);
             yield return new WaitForSeconds(0.1f);

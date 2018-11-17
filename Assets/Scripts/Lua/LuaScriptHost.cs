@@ -17,7 +17,7 @@ namespace LuaHost
 
         private void Awake()
         {
-            LuaScript = LuaRuntime.LuaRuntimeHost.GetScriptRuntime();
+            LuaScript = LuaRuntime.LuaRuntimeHost.GetScriptRuntime(this);
         }
 
         private void Start()
@@ -29,6 +29,16 @@ namespace LuaHost
         public void RunScript(TextAsset script)
         {
             LuaScript.DoString(script.text);
+        }
+    }
+
+    public class HostBase
+    {
+        protected LuaScriptHost host;
+        [MoonSharpHidden]
+        protected HostBase(LuaScriptHost host)
+        {
+            this.host = host;
         }
     }
 }

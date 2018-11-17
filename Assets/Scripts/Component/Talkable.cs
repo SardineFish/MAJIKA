@@ -5,7 +5,7 @@ using System.Collections;
 public class Talkable : EventBehaviour
 {
     public Talker Talker;
-    public Conversation Conversation;
+    public ConversationAsset Conversation;
     void Awake()
     {
         Bind(GetComponent<EventBus>());   

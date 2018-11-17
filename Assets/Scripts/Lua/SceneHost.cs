@@ -11,7 +11,7 @@ namespace LuaHost
     [MoonSharpUserData]
     public class SceneHost
     {
-        public GameEntity GetEntity(string name)
+        public GameEntity Entity(string name)
         {
             return GameObject.Find(name).GetComponent<GameEntity>();
         }
