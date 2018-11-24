@@ -15,4 +15,6 @@ MonoBehaviour:
   Priority: 10
   EffectPrefab: {fileID: 1408594091717572, guid: e51fda3267c40064c9caec199c144f64,
     type: 2}
+  ShieldDefenseEffect: {fileID: 1469371913424142, guid: 43ed4e370ef948240b17247839f0e5b3,
+    type: 2}
   Offset: {x: 0, y: 1.0625, z: 0}

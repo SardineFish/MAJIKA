@@ -8,7 +8,7 @@ public class Gravitate : Effect
 
     public override void OnStart(EffectInstance instance, EntityEffector effector)
     {
-        var dir = instance.GetTrigger<SkillImpact>().transform.position - effector.Entity.transform.position;
+        var dir = instance.GetTrigger<ImpactData>().position - effector.Entity.transform.position;
         var velocity = dir.normalized * Speed;
         effector.Entity.GetComponent<MovableEntity>().ForceMove(velocity);
     }

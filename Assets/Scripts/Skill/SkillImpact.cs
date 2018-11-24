@@ -32,7 +32,7 @@ public enum ImpactDistance
     Constant,
 }
 [RequireComponent(typeof(EventBus))]
-public class SkillImpact : MonoBehaviour,IEffectorTrigger
+public class SkillImpact : MonoBehaviour
 {
     public const string EventDeactivate = "Deactivate";
     public ImpactType ImpactType;
@@ -70,7 +70,10 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
             impact.Activate(transform.position, Direction);
         }
         else
-            new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(entity);
+        {
+            var data = new ImpactData() { position = transform.position, Creator = Creator };
+            new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, data, this.Creator)).ToArray()).Dispatch(entity);
+        }
     }
 
     public void Activate(Vector3 position, Vector3 direction)
@@ -159,15 +162,7 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
         Active = true;
         if (ImpactType == ImpactType.OnEntity)
         {
-            if (NextImpact && NextImpact.GetComponent<SkillImpact>())
-            {
-                var impact = Utility.Instantiate(NextImpact, Creator.gameObject.scene).GetComponent<SkillImpact>();
-                impact.Creator = Creator;
-                impact.Effects = Effects;
-                impact.Activate(transform.position, Direction);
-            }
-            else
-                new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, this, this.Creator)).ToArray()).Dispatch(Creator);
+            ApplyDamage(Creator);
         }
         else if (ImpactType == ImpactType.DropAttack)
         {

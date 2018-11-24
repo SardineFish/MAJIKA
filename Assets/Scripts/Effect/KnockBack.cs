@@ -18,7 +18,7 @@ public class KnockBack : Effect
         {
             center = (damageBody as CapsuleCollider2D).offset;
         }
-        var dir = effector.Entity.transform.position.ToVector2() + center - instance.Triggers.GetTrigger<SkillImpact>().transform.position.ToVector2();
+        var dir = effector.Entity.transform.position.ToVector2() + center - instance.Triggers.GetTrigger<ImpactData>().position.ToVector2();
         dir = dir.normalized;
         effector.Entity.GetComponent<EventBus>().Dispatch("KnockBack");
         movableEntity.ForceMove(dir * speed);

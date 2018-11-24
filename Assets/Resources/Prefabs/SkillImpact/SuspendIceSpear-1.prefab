@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114421833428433138}
   - component: {fileID: 114203257491510244}
   - component: {fileID: 114495517701218174}
+  - component: {fileID: 114859615259049228}
   m_Layer: 0
   m_Name: SuspendIceSpear-1
   m_TagString: Untagged
@@ -215,6 +216,8 @@ MonoBehaviour:
     Targets:
     - ComponentName: SelfDestructor
       MethodName: Destruct
+    - ComponentName: Spawner
+      MethodName: Spawn
 --- !u!114 &114421833428433138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b8430dc9f50454d8c3d9f59280fff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventTrigger: 
 --- !u!114 &114852051150582414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,6 +276,18 @@ MonoBehaviour:
   Creator: {fileID: 0}
   Active: 0
   Direction: {x: 0, y: 0, z: 0}
+--- !u!114 &114859615259049228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065999359781884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4709785e826a1340ba7c4b4fba537d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1649108897510488, guid: 87cbbd9f1b9629241b5c78fff55076fb, type: 2}
 --- !u!212 &212010581044344648
 SpriteRenderer:
   m_ObjectHideFlags: 1

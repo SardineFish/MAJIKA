@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114335797672014730}
   - component: {fileID: 114888133237514048}
   - component: {fileID: 114115284000148702}
+  - component: {fileID: 114445868820103250}
   m_Layer: 0
   m_Name: IceSpear
   m_TagString: Untagged
@@ -236,6 +237,20 @@ MonoBehaviour:
     Targets:
     - ComponentName: SelfDestructor
       MethodName: Destruct
+    - ComponentName: Spawner
+      MethodName: Spawn
+--- !u!114 &114445868820103250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1785681152506050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4709785e826a1340ba7c4b4fba537d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1649108897510488, guid: 87cbbd9f1b9629241b5c78fff55076fb, type: 2}
 --- !u!114 &114639440863657946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,6 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b8430dc9f50454d8c3d9f59280fff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventTrigger: 
 --- !u!114 &114888133237514048
 MonoBehaviour:
   m_ObjectHideFlags: 1
