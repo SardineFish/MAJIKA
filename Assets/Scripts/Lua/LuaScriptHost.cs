@@ -18,6 +18,7 @@ namespace LuaHost
         private void Awake()
         {
             LuaScript = LuaRuntime.LuaRuntimeHost.GetScriptRuntime(this);
+            
         }
 
         private void Start()

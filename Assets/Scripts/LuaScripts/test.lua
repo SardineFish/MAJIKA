@@ -9,12 +9,21 @@ conversation2 = {
     "${right}: YEAH! ",
     "${left}: ......"
 }
+enemyCount = 3;
 
-game.conversation(redGlass, player, conversation1)
-.Then(function()
+function entityDie( entity )
+	enemyCount = enemyCount - 1;
+	if enemyCount <= 0 then
+		spawnEnemy()
+	end
+end
+
+function spawnEnemy()
+    enemyCount = 3;
     local prefab = resources.prefab("Scarecrow");
-    local enemy = scene.addEntity(prefab, "Enemy", vec2(25,3));
-    enemy.onDead.add(function()
-        game.conversation(redGlass,player,conversation2)
-    end)
-end)
+    scene.spawn(prefab, "Enemy", vec2(24,7)).onDead.add(entityDie);
+    scene.spawn(prefab, "Enemy", vec2(26,5)).onDead.add(entityDie);
+    scene.spawn(prefab, "Enemy", vec2(28,6)).onDead.add(entityDie);
+end
+
+spawnEnemy();

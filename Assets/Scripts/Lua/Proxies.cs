@@ -23,6 +23,7 @@ namespace LuaHost.Proxy
         public GameObjectProxy(GameObject gameObject):base(gameObject)
         {
         }
+        public string name => target.name;
     }
 
     class GameEntityProxy:ProxyBase<GameEntity>
@@ -38,10 +39,10 @@ namespace LuaHost.Proxy
             OnUpdate?.Invoke(target);
             if(target is LifeEntity && (target as LifeEntity).HP <= 0)
             {
-                OnDead?.Invoke();
+                OnDead?.Invoke(target);
             }
         }
-        public event Action OnDead;
+        public event Action<GameEntity> OnDead;
         public event Action<GameEntity> OnUpdate;
     }
 

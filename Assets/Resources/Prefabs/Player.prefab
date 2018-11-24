@@ -1729,12 +1729,6 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
-  - Effect: {fileID: 11400000, guid: 91b78faaefa3ce042838e84f8539f6b7, type: 2}
-    Strength: 1
-    Duration: 0
-    LifeTime: 0
-    Priority: 0
-    GameObjectInstance: {fileID: 0}
 --- !u!114 &114872658561303984
 MonoBehaviour:
   m_ObjectHideFlags: 1

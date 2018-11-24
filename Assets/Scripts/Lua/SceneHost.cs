@@ -15,7 +15,7 @@ namespace LuaHost
         {
             return GameObject.Find(name).GetComponent<GameEntity>();
         }
-        public GameEntity AddEntity(GameObject prefab, string name, Vector2 position)
+        public GameEntity Spawn(GameObject prefab, string name, Vector2 position)
         {
             if (prefab.GetComponent<GameEntity>())
             {

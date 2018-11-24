@@ -19,15 +19,16 @@ namespace LuaHost.LuaRuntime
             UserData.RegisterAssembly();
             UserData.RegisterProxyType<Proxy.GameObjectProxy, GameObject>(obj => new Proxy.GameObjectProxy(obj));
             UserData.RegisterProxyType<Proxy.GameEntityProxy, GameEntity>(obj => new Proxy.GameEntityProxy(obj));
-
-            Script.GlobalOptions.CustomConverters.SetClrToScriptCustomConversion<Vector2>((script, v) => DynValue.FromObject(script, new Proxy.Vector2Wrapper(v.x, v.y)));
+            UserData.RegisterType<Vector3>();
+            UserData.RegisterType<Vector2>();
+            /*Script.GlobalOptions.CustomConverters.SetClrToScriptCustomConversion<Vector2>((script, v) => DynValue.FromObject(script, new Proxy.Vector2Wrapper(v.x, v.y)));
             Script.GlobalOptions.CustomConverters.SetScriptToClrCustomConversion(DataType.UserData, typeof(Vector2), (val) =>
             {
                 var wrapper = val.UserData.Object as Proxy.Vector2Wrapper;
                 if (wrapper == null)
-                    return Vector2.zero;
+                    return null;
                 return new Vector2(wrapper.x, wrapper.y);
-            });
+            });*/
         }
         public static Script GetScriptRuntime(LuaScriptHost host)
         {
@@ -37,6 +38,7 @@ namespace LuaHost.LuaRuntime
             script.Globals["resources"] = new ResourcesHost();
             script.Globals["game"] = new GameHost(host);
             script.Globals["vec2"] = (Func<float, float, Vector2>)MathUtilities.vec2;
+            script.Globals["vec3"] = (Func<float, float, float, Vector3>)MathUtilities.vec3;
             return script; 
         }
     }
@@ -51,5 +53,6 @@ namespace LuaHost.LuaRuntime
     public static class MathUtilities
     {
         public static Vector2 vec2(float x, float y) => new Vector2(x, y);
+        public static Vector3 vec3(float x, float y, float z) => new Vector3(x, y);
     }
 }
