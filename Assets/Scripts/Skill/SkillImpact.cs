@@ -94,10 +94,6 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
         {
             transform.localScale = new Vector3(direction.x, 1, 1);
         }
-        if (ImpactType == ImpactType.Collider)
-            Active = true;
-        else
-            Active = false;
 
         if (LifeTime >= 0)
             StartCoroutine(LifeTimeCoroutine());
@@ -175,23 +171,28 @@ public class SkillImpact : MonoBehaviour,IEffectorTrigger
         }
         else if (ImpactType == ImpactType.DropAttack)
         {
-            var hits = Physics2D.RaycastAll(transform.position, Vector2.down, 400, (1 << 8) | (1 << 9));
-            if(hits.Length==0)
-            {
-                GetComponent<SimpleMovement>().StartMovement();
-                return;
-            }
-            hits = hits.OrderBy(hit => hit.point.y).ToArray();
-            var targetHeight = hits.Min(hit => hit.point.y);
-            if (targetHeight <= Creator.transform.position.y)
-            {
-                targetHeight = hits.Where(hit => hit.point.y <= Creator.transform.position.y).Max(hit => hit.point.y);
-            }
-            StartCoroutine(DropAttackCoroutine(targetHeight));
+            DropDownImpact();
         }
     }
     public void EndImpact()
     {
         Active = false;
+    }
+
+    public void DropDownImpact()
+    {
+        var hits = Physics2D.RaycastAll(transform.position, Vector2.down, 400, (1 << 8) | (1 << 9));
+        if (hits.Length == 0)
+        {
+            GetComponent<SimpleMovement>().StartMovement();
+            return;
+        }
+        hits = hits.OrderBy(hit => hit.point.y).ToArray();
+        var targetHeight = hits.Min(hit => hit.point.y);
+        if (targetHeight <= Creator.transform.position.y)
+        {
+            targetHeight = hits.Where(hit => hit.point.y <= Creator.transform.position.y).Max(hit => hit.point.y);
+        }
+        StartCoroutine(DropAttackCoroutine(targetHeight));
     }
 }
