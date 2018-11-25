@@ -39,6 +39,11 @@ namespace LuaHost.LuaRuntime
             script.Globals["game"] = new GameHost(host);
             script.Globals["vec2"] = (Func<float, float, Vector2>)MathUtilities.vec2;
             script.Globals["vec3"] = (Func<float, float, float, Vector3>)MathUtilities.vec3;
+            var utility = new UtilityHost(host);
+            script.Globals["timeout"] = (Func<Closure, float, int>)utility.SetTimeout;
+            script.Globals["interval"] = (Func<Closure, float, int>)utility.Interval;
+            script.Globals["removeTimeout"] = (Action<int>)utility.RemoveTimeout;
+            script.Globals["removeInterval"] = (Action<int>)utility.RemoveInterval;
             return script; 
         }
     }
@@ -54,5 +59,43 @@ namespace LuaHost.LuaRuntime
     {
         public static Vector2 vec2(float x, float y) => new Vector2(x, y);
         public static Vector3 vec3(float x, float y, float z) => new Vector3(x, y);
+    }
+    public class UtilityHost
+    {
+        LuaScriptHost host;
+        int timeOutID = 0;
+        int intervalID = 0;
+        Dictionary<int, UnityEngine.Coroutine> TimeoutCoroutine = new Dictionary<int, UnityEngine.Coroutine>();
+        Dictionary<int, UnityEngine.Coroutine> IntervalCoroutine = new Dictionary<int, UnityEngine.Coroutine>();
+        public UtilityHost(LuaScriptHost host)
+        {
+            this.host = host;
+        }
+        public int SetTimeout(Closure callback, float milliseconds)
+        {
+            TimeoutCoroutine[timeOutID]= Utility.WaitForSecond(host, () => callback.Call(), milliseconds / 1000);
+            return timeOutID++;
+        }
+        public void RemoveTimeout(int id)
+        {
+            if (TimeoutCoroutine.ContainsKey(id))
+            {
+                host.StopCoroutine(TimeoutCoroutine[id]);
+                TimeoutCoroutine.Remove(id);
+            }
+        }
+        public int Interval(Closure callback, float milliseconds)
+        {
+            IntervalCoroutine[intervalID] = Utility.SetInterval(host, () => callback.Call(), milliseconds / 1000);
+            return intervalID++;
+        }
+        public void RemoveInterval(int id)
+        {
+            if (IntervalCoroutine.ContainsKey(id))
+            {
+                host.StopCoroutine(IntervalCoroutine[id]);
+                IntervalCoroutine.Remove(id);
+            }
+        }
     }
 }

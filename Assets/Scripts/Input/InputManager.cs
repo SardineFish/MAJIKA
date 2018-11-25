@@ -13,7 +13,7 @@ public class InputManager : Singleton<InputManager> {
     public const int SkillCount = 4;
 
     public InputAction MovementAction;
-
+    
     public InputAction JumpAction;
     public InputAction ClimbAction;
     public InputAction InteractAction;

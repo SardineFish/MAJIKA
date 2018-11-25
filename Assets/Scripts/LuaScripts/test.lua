@@ -13,8 +13,8 @@ enemyCount = 3;
 
 function entityDie( entity )
 	enemyCount = enemyCount - 1;
-	if enemyCount <= 0 then
-		spawnEnemy()
+    if enemyCount <= 0 then
+        timeout(spawnEnemy, 1000);
 	end
 end
 

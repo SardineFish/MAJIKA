@@ -21,7 +21,6 @@ public class PlayerIdle : PlayerControllerState
             fsm.ChangeState(MoveState);
 
         InputManager.Instance.GetAction(InputManager.Instance.JumpAction);
-
         // Jump
         if (InputManager.Instance.GetAction(InputManager.Instance.JumpAction))
         {

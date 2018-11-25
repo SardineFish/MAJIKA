@@ -28,6 +28,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1018701730944500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4689956856316632}
+  - component: {fileID: 114324149477318200}
+  m_Layer: 0
+  m_Name: LuaHost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1196777880445898
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1957225885653962
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +148,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4689956856316632
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018701730944500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4713240148662208}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4713240148662208
 Transform:
   m_ObjectHideFlags: 1
@@ -143,6 +172,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224129513312705998}
+  - {fileID: 4689956856316632}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -267,22 +297,8 @@ MonoBehaviour:
     m_Id: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Path: <Keyboard>/space
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump
-      m_Flags: 0
-    - m_Name: 
       m_Path: <Keyboard>/k
       m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonSouth
-      m_Interactions: Press(),Tap()
       m_Processors: 
       m_Groups: 
       m_Action: Jump
@@ -338,7 +354,7 @@ MonoBehaviour:
     m_Id: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Path: '*/Accept'
+      m_Path: <Keyboard>/enter
       m_Interactions: Tap()
       m_Processors: 
       m_Groups: 
@@ -357,7 +373,7 @@ MonoBehaviour:
     m_Id: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Path: '*/Back'
+      m_Path: <Keyboard>/escape
       m_Interactions: Tap()
       m_Processors: 
       m_Groups: 
@@ -431,7 +447,14 @@ MonoBehaviour:
     m_Name: Skill Action 4
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Path: <Keyboard>/p
+      m_Interactions: Tap()
+      m_Processors: 
+      m_Groups: 
+      m_Action: Skill Action 4
+      m_Flags: 0
 --- !u!114 &114131385399021922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -459,11 +482,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c615559022a7b3a40810e975145487b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Wrapper: {fileID: 1915835965201506}
   TextRenderer: {fileID: 114990612401590830}
   ImageRenderer: {fileID: 114748778710567640}
   LeftTalker: {fileID: 0}
   RightTalker: {fileID: 0}
-  Conversation: {fileID: 0}
+  Ready: 1
 --- !u!114 &114286827876667584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,6 +515,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114324149477318200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018701730944500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4633ca4cdf455a499de03abf43fe671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Script: {fileID: 4900000, guid: ebb14ba7ac743f14bb843b7b9000d8af, type: 3}
 --- !u!114 &114561594854667466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -581,7 +617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JumpHeight: 4
-  JumpTime: 0.55
+  JumpTime: 0.65
   OnGroundThreshold: 0.0625
 --- !u!114 &114990612401590830
 MonoBehaviour:

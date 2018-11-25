@@ -166,10 +166,23 @@ public static class Utility
         complete?.Invoke();
     }
 
-    public static void WaitForSecond(this MonoBehaviour context, Action callback, float seconds = 0)
+    public static Coroutine WaitForSecond(this MonoBehaviour context, Action callback, float seconds = 0)
     {
-        context.StartCoroutine(WaitForSecondEnumerator(callback, seconds));
-        
+        return context.StartCoroutine(WaitForSecondEnumerator(callback, seconds));
+    }
+
+    public static Coroutine SetInterval(this MonoBehaviour context, Action callback, float seconds = 0)
+    {
+        return context.StartCoroutine(IntervalCoroutine(callback, seconds));
+    }
+
+    public static IEnumerator IntervalCoroutine(Action callback, float seconds)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(seconds);
+            callback?.Invoke();
+        }
     }
 
     public static IEnumerator WaitForSecondEnumerator(Action callback,float seconds = 0)
