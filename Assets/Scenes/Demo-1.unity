@@ -8411,6 +8411,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: JumpAction.m_SingletonActionBindings.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4713240148662208, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8448,6 +8453,36 @@ Prefab:
       propertyPath: PlayerInControl
       value: 
       objectReference: {fileID: 990751213}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/space
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Interactions
+      value: Tap()
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Path
+      value: <Gamepad>/buttonSouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Interactions
+      value: Tap()
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
   m_IsPrefabAsset: 0

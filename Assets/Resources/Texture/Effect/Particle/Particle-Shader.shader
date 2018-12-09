@@ -8,7 +8,7 @@
 		Tags {"RenderType"="Transparent" "Queue"="Transparent"}
 		
 		Pass {
-
+			
 			CGPROGRAM
 
 			#pragma vertex vert
@@ -46,6 +46,7 @@
 				output.uv.x = input.uv.x;// / _Column;
 				output.uv.y = input.uv.y;// / _Row;
 				return output;
+				
 			}
 
 			fixed4 frag(v2f input): SV_Target
