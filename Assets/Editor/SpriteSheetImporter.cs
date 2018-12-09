@@ -17,7 +17,7 @@ namespace Assets.Editor
             var importer = assetImporter as TextureImporter;
             importer.spritePixelsPerUnit = 16;
             importer.filterMode = FilterMode.Point;
-            importer.spriteImportMode = SpriteImportMode.Multiple;
+            //importer.spriteImportMode = SpriteImportMode.Multiple;
             return;
             importer.spritePixelsPerUnit = 16;
             importer.filterMode = FilterMode.Point;

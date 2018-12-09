@@ -303,6 +303,20 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Jump
       m_Flags: 0
+    - m_Name: 
+      m_Path: <Keyboard>/space
+      m_Interactions: Tap()
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
+    - m_Name: 
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: Tap()
+      m_Processors: 
+      m_Groups: 
+      m_Action: Jump
+      m_Flags: 0
   ClimbAction:
     m_Name: Climb
     m_ExpectedControlLayout: 

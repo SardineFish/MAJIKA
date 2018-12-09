@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114334640122168452}
   - component: {fileID: 50747830803423568}
   - component: {fileID: 61852194675784790}
+  - component: {fileID: 114769273651185550}
   m_Layer: 12
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1905083413670008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.26, y: 8.67, z: -10}
+  m_LocalPosition: {x: 15.15, y: 8.17, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 35.279995, y: 22.155}
+  m_Size: {x: 35.28, y: 22.155}
   m_EdgeRadius: 0
 --- !u!81 &81283256558019048
 AudioListener:
@@ -150,9 +151,9 @@ MonoBehaviour:
   camera: {fileID: 20625849297823894}
   ViewportRect:
     serializedVersion: 2
-    x: 0.26000118
-    y: 0.23250008
-    width: 29.999996
+    x: 0.14999962
+    y: -0.26749992
+    width: 29.999998
     height: 16.875
   EnableFollow: 1
   CushionRange: 2.64
@@ -164,3 +165,22 @@ MonoBehaviour:
   MaxAcceleration: 30
   cushionCollider: {fileID: 61852194675784790}
   followTarget: {fileID: 0}
+--- !u!114 &114769273651185550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905083413670008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AssetsPPU: 16
+  m_RefResolutionX: 480
+  m_RefResolutionY: 270
+  m_UpscaleRT: 0
+  m_PixelSnapping: 1
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0

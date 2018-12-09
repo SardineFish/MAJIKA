@@ -2838,53 +2838,9 @@ Prefab:
       propertyPath: followTarget
       value: 
       objectReference: {fileID: 1290830087}
-    - target: {fileID: 20625849297823894, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: orthographic size
-      value: 8.4375
-      objectReference: {fileID: 0}
-    - target: {fileID: 61852194675784790, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 35.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 61852194675784790, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 22.155
-      objectReference: {fileID: 0}
-    - target: {fileID: 20625849297823894, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-        type: 2}
-      propertyPath: m_ForceIntoRT
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &231800986 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1905083413670008, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
-    type: 2}
-  m_PrefabInternal: {fileID: 231800985}
---- !u!114 &231800987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 231800986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 16
-  m_RefResolutionX: 480
-  m_RefResolutionY: 270
-  m_UpscaleRT: 0
-  m_PixelSnapping: 1
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!1 &239153626
 GameObject:
   m_ObjectHideFlags: 0
@@ -7097,7 +7053,7 @@ Prefab:
     - target: {fileID: 224279871091823934, guid: 30f9432304a8b7c4fa5ded22c7605df6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000000057742
+      value: -0.000000029802322
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 2}
@@ -8162,7 +8118,7 @@ Prefab:
     - target: {fileID: 224279871091823934, guid: 30f9432304a8b7c4fa5ded22c7605df6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000000057742
+      value: -0.000000029802322
       objectReference: {fileID: 0}
     - target: {fileID: 114533955204039194, guid: 30f9432304a8b7c4fa5ded22c7605df6,
         type: 2}
@@ -8411,11 +8367,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4713240148662208, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8453,36 +8404,6 @@ Prefab:
       propertyPath: PlayerInControl
       value: 
       objectReference: {fileID: 990751213}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Action
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Path
-      value: <Keyboard>/space
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Action
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Interactions
-      value: Tap()
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Path
-      value: <Gamepad>/buttonSouth
-      objectReference: {fileID: 0}
-    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Interactions
-      value: Tap()
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
   m_IsPrefabAsset: 0
