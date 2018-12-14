@@ -66,8 +66,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7ddb362b7079449aa9978636d3f190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkillImpactObject: {fileID: 1676269367063300, guid: 4031e06109f8fe94596cb3e7a782fc11,
-    type: 2}
   AnimatorController: {fileID: 9100000, guid: 40db3183d0ab1424db2d27565e53d80f, type: 2}
   LockAction: 1
   ReleaseRadius: 8.8
@@ -76,8 +74,17 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: 605a492fa35fc61469f598eda3f18e00, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Multiple: 1
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
   - Effect: {fileID: 11400000, guid: 3f7d90e32b4444242af3837a2625afdd, type: 2}
-    Multiple: 1
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}

@@ -590,7 +590,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1373393434984044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1875, y: 3.0625, z: 0}
+  m_LocalPosition: {x: 4.625, y: 2.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4744935778831600}
@@ -1066,6 +1066,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: 5906c3a9925a553429a4cca37b7059e1, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
     Strength: -1
@@ -1104,6 +1105,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: 2ff27d88026a2b948a4e2027a68a8646, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 54026c068292e0a4b99fd51fe1cb8547, type: 2}
     Strength: 1
@@ -1159,6 +1161,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: 30e45dbfc5bb3ca4890966f15fa91ddb, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
     Strength: 1
@@ -1200,6 +1203,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: d5893a8a5e8cf7643b88ad1d2256b68a, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3f7d90e32b4444242af3837a2625afdd, type: 2}
     Strength: 1
@@ -1261,6 +1265,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: bd0870e41a1a51f4896bf673cc150a91, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 91b78faaefa3ce042838e84f8539f6b7, type: 2}
     Strength: 1
@@ -1287,6 +1292,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: b2e1cf958f2c85941b66ef1198f53c7a, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
     Strength: 1
@@ -1328,6 +1334,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: 7b13c5f77fcc5fe45a7808034589e273, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3cca85c78335cce4ba55157b46746941, type: 2}
     Strength: 1
@@ -1354,6 +1361,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: 81a52b63f5cec724e8814ce7ba2fad76, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
     Strength: 1
@@ -1408,6 +1416,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: b77d4ec29ecdc344ea46aa898f336adb, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3f7d90e32b4444242af3837a2625afdd, type: 2}
     Strength: 1
@@ -1505,6 +1514,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: 1410636b2e935174ab7eabde33e9ef52, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 91b78faaefa3ce042838e84f8539f6b7, type: 2}
     Strength: 1
@@ -1603,6 +1613,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: af5df61561ec51b47a37726c4782461f, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3cca85c78335cce4ba55157b46746941, type: 2}
     Strength: 1
@@ -1722,6 +1733,7 @@ MonoBehaviour:
   CoolDown: 0.4
   Locked: 0
   Ready: 0
+  Icon: {fileID: 21300000, guid: 605a492fa35fc61469f598eda3f18e00, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
     Strength: 2

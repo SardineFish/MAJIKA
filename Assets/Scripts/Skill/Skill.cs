@@ -17,6 +17,7 @@ public class Skill : EntityBehaviour<GameEntity>
     public float CoolDown = 1;
     public bool Locked = false;
     public bool Ready = false;
+    public Sprite Icon;
 
     private float lastActivateTime = 0;
 
