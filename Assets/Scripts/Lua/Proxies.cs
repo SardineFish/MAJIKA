@@ -11,9 +11,14 @@ namespace LuaHost.Proxy
     class ProxyBase<T> where T:class
     {
         protected T target;
-        public ProxyBase(T target)
+        protected LuaScriptHost host;
+        public ProxyBase(T target):this(target,null)
+        {
+        }
+        public ProxyBase(T target,LuaScriptHost host)
         {
             this.target = target;
+            this.host = host;
         }
     }
     class GameObjectProxy:ProxyBase<GameObject>
@@ -26,25 +31,7 @@ namespace LuaHost.Proxy
         public string name => target.name;
     }
 
-    class GameEntityProxy:ProxyBase<GameEntity>
-    {
-
-        [MoonSharpHidden]
-        public GameEntityProxy(GameEntity entity):base(entity)
-        {
-            entity.OnUpdate += EntityUpdate;
-        }
-        private void EntityUpdate()
-        {
-            OnUpdate?.Invoke(target);
-            if(target is LifeEntity && (target as LifeEntity).HP <= 0)
-            {
-                OnDead?.Invoke(target);
-            }
-        }
-        public event Action<GameEntity> OnDead;
-        public event Action<GameEntity> OnUpdate;
-    }
+    
 
     class Vector2Proxy
     {

@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bindings:
-  - PathSource: Skill.Icon
+  - PathSource: Icon
     PathTemplate: Image.sprite
     BindingMode: 2
 --- !u!114 &114719917719016310

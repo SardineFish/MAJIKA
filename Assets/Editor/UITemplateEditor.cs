@@ -56,6 +56,7 @@ namespace Assets.Editor
                 template.Bindings.Add(new BindingOption());
             }
             template.DataSource = EditorGUILayout.ObjectField("Data Source", template.DataSource as UnityEngine.Object, typeof(UnityEngine.Object), true);
+            EditorUtility.SetDirty(target);
         }
     }
 }
