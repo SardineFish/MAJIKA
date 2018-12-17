@@ -118,18 +118,23 @@ public class MovableEntity : MonoBehaviour
         AvailableClimbArea = null;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         for (int i = 0; i < collision.contactCount; i++)
         {
             var contract = collision.GetContact(i);
             var localPoint = transform.worldToLocalMatrix.MultiplyPoint(contract.point);
-            if (Mathf.Abs(localPoint.y) <= PhysicsSystem.Instance.OnGroundThreshold && contract.relativeVelocity.y >=0)
+            if (Mathf.Abs(localPoint.y) <= PhysicsSystem.Instance.OnGroundThreshold && contract.relativeVelocity.y >= 0)
             {
                 jumpCount = MaxJumpCount;
                 OnGround = true;
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)

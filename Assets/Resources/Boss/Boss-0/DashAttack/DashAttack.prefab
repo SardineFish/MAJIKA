@@ -9,32 +9,32 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1383862836126126}
+  m_RootGameObject: {fileID: 1751801689995410}
   m_IsPrefabAsset: 1
---- !u!1 &1383862836126126
+--- !u!1 &1751801689995410
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4129303689736330}
-  - component: {fileID: 114468844249103814}
-  - component: {fileID: 114311295947386896}
-  - component: {fileID: 114665100243093594}
+  - component: {fileID: 4081554784632212}
+  - component: {fileID: 114043213902744248}
+  - component: {fileID: 114431668932075340}
+  - component: {fileID: 114946502126652588}
   m_Layer: 0
-  m_Name: FlameSlash
+  m_Name: DashAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4129303689736330
+--- !u!4 &4081554784632212
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1383862836126126}
+  m_GameObject: {fileID: 1751801689995410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,32 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114311295947386896
+--- !u!114 &114043213902744248
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1383862836126126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eef951434d46e94b87e64a0cab0ca17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Distance: 6
-  Duration: 0.1
-  Direction: {x: 1, y: 0}
---- !u!114 &114468844249103814
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1383862836126126}
+  m_GameObject: {fileID: 1751801689995410}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7ddb362b7079449aa9978636d3f190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimatorController: {fileID: 9100000, guid: 08560fcf784e83d4db34ade9f830ac22, type: 2}
+  AnimatorController: {fileID: 9100000, guid: 2c6ff41be5f69604b8e41e24d2b71a37, type: 2}
   LockAction: 1
   ReleaseRadius: -0.4375
   ReleaseOffset: {x: 0, y: 2.3125, z: 0}
@@ -83,18 +69,32 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
---- !u!114 &114665100243093594
+--- !u!114 &114431668932075340
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1383862836126126}
+  m_GameObject: {fileID: 1751801689995410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eef951434d46e94b87e64a0cab0ca17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Distance: 6
+  Duration: 0.1
+  Direction: {x: 1, y: 0}
+--- !u!114 &114946502126652588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751801689995410}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 540551126948fef47a43a06c35818832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1027520865202574, guid: 9423573db135d304ab33796ea45cb90f, type: 2}
-  SpawnOffset: {x: -0.4375, y: 2.3125}
+  Prefab: {fileID: 1976878548391048, guid: c2cb0ef259e8b8d41ba61419d8f5cd88, type: 2}
+  SpawnOffset: {x: -1.7900009, y: 0}
   TimeOffset: 0
   Instance: {fileID: 0}

@@ -28,29 +28,29 @@ AnimationClip:
       value: {fileID: 21300006, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
     - time: 0.4
       value: {fileID: 21300008, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
-    - time: 0.5
+    - time: 0.45
       value: {fileID: 21300010, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
-    - time: 0.6
+    - time: 0.65
       value: {fileID: 21300012, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
-    - time: 0.70000005
+    - time: 0.7
       value: {fileID: 21300014, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
-    - time: 0.8000001
+    - time: 0.75
       value: {fileID: 21300016, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
-    - time: 0.9000001
+    - time: 0.95
       value: {fileID: 21300018, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
-    - time: 1.0000001
+    - time: 1.1
       value: {fileID: 21300020, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
-    - time: 1.1000001
+    - time: 1.2
       value: {fileID: 21300022, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
-    - time: 1.2000002
+    - time: 1.3
       value: {fileID: 21300024, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
-    - time: 1.3000002
+    - time: 1.4
       value: {fileID: 21300026, guid: c4cd98e882f18984f81547fc01939d19, type: 3}
     attribute: m_Sprite
     path: Renderer
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 10
+  m_SampleRate: 20
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -84,7 +84,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.4000002
+    m_StopTime: 1.45
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -104,4 +104,25 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.05
+    functionName: onSkillMovementStart
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.4
+    functionName: OnImpactStart
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.45
+    functionName: OnSkillEnd
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
