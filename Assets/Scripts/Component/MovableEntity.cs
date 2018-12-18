@@ -116,6 +116,9 @@ public class MovableEntity : MonoBehaviour
         OnGround = false;
         InClimbArea = false;
         AvailableClimbArea = null;
+
+        GetComponent<Rigidbody2D>().gravityScale = EnableGravity ? 1 : 0;
+
     }
 
     private void OnCollisionStay2D(Collision2D collision)

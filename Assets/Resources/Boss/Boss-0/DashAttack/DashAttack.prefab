@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eef951434d46e94b87e64a0cab0ca17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Distance: 6
+  Distance: 8
   Duration: 0.1
   Direction: {x: 1, y: 0}
 --- !u!114 &114946502126652588
@@ -95,6 +95,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1976878548391048, guid: c2cb0ef259e8b8d41ba61419d8f5cd88, type: 2}
-  SpawnOffset: {x: -1.7900009, y: 0}
+  SpawnOffset: {x: 3.5875, y: 0}
   TimeOffset: 0
   Instance: {fileID: 0}
