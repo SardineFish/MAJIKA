@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: a2d573c1dcf21b045b1e4cecc4cb48d3, type: 2}
   TriggerName: 
-  IdleState: {fileID: 11400000, guid: e3d44d17a711ba945bbb4036686961c2, type: 2}
-  JumpState: {fileID: 11400000, guid: 19347ef92ce900446aff2b2273ab0e0e, type: 2}
+  IdleState: {fileID: 11400000, guid: d90af75a50657d34b81bc8978d7089b6, type: 2}
+  JumpState: {fileID: 11400000, guid: 65c73a413d420c149973d5d5a88e1ca1, type: 2}
   ClimbState: {fileID: 0}
-  SkillState: {fileID: 11400000, guid: 1e128bdac61e96a45b3dad1a4a13eb43, type: 2}
+  SkillState: {fileID: 11400000, guid: 57f4a9c168b2e43489a3e6a829be9344, type: 2}

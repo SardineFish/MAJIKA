@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EntityController : EntityStateMachine<GameEntity>
+public class EntityController : MonoBehaviour
 {
-    public GameEntityState InitialState;
-    private void Awake()
+
+    // Use this for initialization
+    void Start()
     {
-        ChangeState(InitialState);
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 }

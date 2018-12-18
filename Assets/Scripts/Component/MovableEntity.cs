@@ -45,7 +45,7 @@ public class MovableEntity : MonoBehaviour
         if (Frozen)
             return false;
         movementvelocity = movement * MaxMoveSpeed;
-        return false;
+        return true;
     }
 
     public bool ForceMove(Vector2 velocity)

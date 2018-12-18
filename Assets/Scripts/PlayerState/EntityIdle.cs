@@ -24,11 +24,6 @@ public class EntityIdle : GameEntityState
         if (InputManager.Instance.GetSkillIndex() >= 0)
             fsm.ChangeState(SkillState);
 
-        // Movement
-        var movement = InputManager.Instance.GetMovement();
-        movement.y = 0;
-        entity.GetComponent<MovableEntity>().Move(movement);
-        if (!Mathf.Approximately(movement.x, 0))
-            fsm.ChangeState(MoveState);
+        fsm.ChangeState(MoveState);
     }
 }

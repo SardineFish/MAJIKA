@@ -27,6 +27,7 @@ public class EntityStateMachine<TEntity> : EntityBehaviour<TEntity>, IFSM<Entity
         if (!nextState.OnEnter(Entity, State, this))
             return false;
         state = nextState;
+        Entity.StartCoroutine(State.Begin(Entity, this));
         return true;
     }
 

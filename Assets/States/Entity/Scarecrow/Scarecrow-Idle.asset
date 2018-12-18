@@ -9,10 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39ea02bac1a12b3489c8b23a512e6e94, type: 3}
-  m_Name: Idle
+  m_Name: Scarecrow-Idle
   m_EditorClassIdentifier: 
-  AnimatorController: {fileID: 9100000, guid: 437fd8368179fd54c98de923145e7dce, type: 2}
+  AnimatorController: {fileID: 9100000, guid: b2acf37d5c3f3254288a4e089a00bb82, type: 2}
   TriggerName: 
-  MoveState: {fileID: 11400000, guid: 996ed5b6d8def9444ac5ea6a97eae00f, type: 2}
-  SkillState: {fileID: 11400000, guid: 1e128bdac61e96a45b3dad1a4a13eb43, type: 2}
-  HitState: {fileID: 11400000, guid: 58553aa9f9f96f944aad1ccbac3ce5bd, type: 2}
+  MoveState: {fileID: 0}
+  SkillState: {fileID: 0}
+  HitState: {fileID: 11400000, guid: 18b4d54bfe8619240935c5ade1f83e7c, type: 2}

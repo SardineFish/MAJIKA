@@ -10,6 +10,13 @@ namespace State
         public EntityJump JumpState;
         public EntityClimb ClimbState;
         public EntitySkill SkillState;
+        public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
+        {
+            var movement = InputManager.Instance.GetMovement();
+            movement.y = 0;
+            return entity.GetComponent<MovableEntity>().Move(movement)
+                && !Mathf.Approximately(movement.x, 0);
+        }
         public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
         {
             // Movement

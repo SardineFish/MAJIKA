@@ -24,9 +24,9 @@ public class EntityState<TEntity> : ScriptableObject,IState<EntityState<TEntity>
 
     }
 
-    public IEnumerator Begin()
+    public virtual IEnumerator Begin(TEntity entity, EntityStateMachine<TEntity> fsm)
     {
-        yield return null;
+        yield break;
 
     }
 

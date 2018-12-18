@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 437fd8368179fd54c98de923145e7dce, type: 2}
   TriggerName: 
-  MoveState: {fileID: 11400000, guid: 996ed5b6d8def9444ac5ea6a97eae00f, type: 2}
-  SkillState: {fileID: 11400000, guid: 1e128bdac61e96a45b3dad1a4a13eb43, type: 2}
-  HitState: {fileID: 11400000, guid: 58553aa9f9f96f944aad1ccbac3ce5bd, type: 2}
+  MoveState: {fileID: 11400000, guid: adec1d3cc3d9b7b42b75433789fc3bd7, type: 2}
+  SkillState: {fileID: 11400000, guid: 57f4a9c168b2e43489a3e6a829be9344, type: 2}
+  HitState: {fileID: 11400000, guid: 56ac2e93837e9e9469faf448ea5dc329, type: 2}

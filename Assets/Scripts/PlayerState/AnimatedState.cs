@@ -6,6 +6,12 @@ public class AnimatedState<TEntity> : EntityState<TEntity> where TEntity:GameEnt
     public RuntimeAnimatorController AnimatorController;
     public string TriggerName = "";
 
+    public override bool OnEnter(TEntity entity, EntityState<TEntity> previousState, EntityStateMachine<TEntity> fsm)
+    {
+        Animate(entity, 0);
+        return true;
+    }
+
     public override void OnUpdate(TEntity entity, EntityStateMachine<TEntity> fsm)
     {
         Animate(entity, 0);
@@ -13,6 +19,7 @@ public class AnimatedState<TEntity> : EntityState<TEntity> where TEntity:GameEnt
 
     public void Animate(TEntity entity, float direction)
     {
-        entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, direction);
+        if (AnimatorController)
+            entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, direction);
     }
 }

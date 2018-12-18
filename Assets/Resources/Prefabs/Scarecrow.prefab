@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
-  InitialState: {fileID: 11400000, guid: e3d44d17a711ba945bbb4036686961c2, type: 2}
+  InitialState: {fileID: 11400000, guid: a12e7c3fe30a0d6478cd82378e46d9fc, type: 2}
 --- !u!114 &114677540223058800
 MonoBehaviour:
   m_ObjectHideFlags: 1

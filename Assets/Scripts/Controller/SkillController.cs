@@ -26,6 +26,19 @@ public class SkillController : EntityBehaviour<Player>
         return true;
     }
 
+    public IEnumerator WaitSkill()
+    {
+        while (ActiveSkill && ActiveSkill.Locked)
+            yield return null;
+        yield break;
+    }
+
+    public IEnumerator WaitActivate(int idx)
+    {
+        if (Activate(idx))
+            yield return WaitSkill();
+    }
+
     public bool IsLocked()
     {
         if (!ActiveSkill)

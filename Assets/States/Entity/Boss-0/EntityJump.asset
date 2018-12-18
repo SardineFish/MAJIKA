@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 437fd8368179fd54c98de923145e7dce, type: 2}
   TriggerName: 
-  MoveState: {fileID: 11400000, guid: 996ed5b6d8def9444ac5ea6a97eae00f, type: 2}
-  IdleState: {fileID: 11400000, guid: e3d44d17a711ba945bbb4036686961c2, type: 2}
+  MoveState: {fileID: 11400000, guid: adec1d3cc3d9b7b42b75433789fc3bd7, type: 2}
+  IdleState: {fileID: 11400000, guid: d90af75a50657d34b81bc8978d7089b6, type: 2}

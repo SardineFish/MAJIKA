@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0213af22082d18e4aa0aa09ada2cbb75, type: 3}
-  m_Name: Skill
+  m_Script: {fileID: 11500000, guid: 7a5c748d3bb9c9e4c969504bd7ef0b09, type: 3}
+  m_Name: Scarecrow-Hit
   m_EditorClassIdentifier: 
-  AnimatorController: {fileID: 0}
+  AnimatorController: {fileID: 9100000, guid: 64bf131ad88b01640a1e421534160989, type: 2}
   TriggerName: 
-  JumpState: {fileID: 11400000, guid: 19347ef92ce900446aff2b2273ab0e0e, type: 2}
+  IdleState: {fileID: 11400000, guid: a12e7c3fe30a0d6478cd82378e46d9fc, type: 2}

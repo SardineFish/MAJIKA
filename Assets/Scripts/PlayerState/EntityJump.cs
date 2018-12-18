@@ -9,6 +9,14 @@ namespace State
         public EntityMove MoveState;
         public EntityIdle IdleState;
 
+        public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
+        {
+            if (!entity.GetComponent<MovableEntity>().Jump())
+                return false;
+
+            return base.OnEnter(entity, previousState, fsm);
+        }
+
         public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
         {
             entity.GetComponent<MovableEntity>().EnableGravity = true;
