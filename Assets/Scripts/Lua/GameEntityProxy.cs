@@ -35,23 +35,21 @@ namespace LuaHost.Proxy
                 target.transform.position = target.transform.position.Set(x: value.x, y: value.y);
             }
         }
-        public bool Skill(int idx)
+        public void Skill(int idx)
         {
-            if (!target.GetComponent<SkillController>())
-                return false;
-            return target.GetComponent<SkillController>().Activate(idx);
+            target.GetComponent<EntityController>()?.Skill(idx);
         }
-        public bool Move(Vector2 movement)
+        public void Move(Vector2 movement)
         {
-            return target.GetComponent<MovableEntity>().Move(movement);
+            target.GetComponent<EntityController>()?.Move(movement);
         }
-        public bool Jump()
+        public void Jump()
         {
-            return target.GetComponent<MovableEntity>().Jump();
+            target.GetComponent<EntityController>()?.Jump();
         }
-        public bool Climb(float speed)
+        public void Climb(float speed)
         {
-            return target.GetComponent<MovableEntity>().Climb(speed);
+            target.GetComponent<EntityController>()?.Climb(speed);
         }
         public void StartCoroutine(Closure closure)
         {
