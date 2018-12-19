@@ -8,11 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39ea02bac1a12b3489c8b23a512e6e94, type: 3}
-  m_Name: Idle
+  m_Script: {fileID: 11500000, guid: 7a5c748d3bb9c9e4c969504bd7ef0b09, type: 3}
+  m_Name: Boss0Hit
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 437fd8368179fd54c98de923145e7dce, type: 2}
   TriggerName: 
-  MoveState: {fileID: 11400000, guid: adec1d3cc3d9b7b42b75433789fc3bd7, type: 2}
-  SkillState: {fileID: 11400000, guid: 57f4a9c168b2e43489a3e6a829be9344, type: 2}
-  HitState: {fileID: 11400000, guid: 56ac2e93837e9e9469faf448ea5dc329, type: 2}
+  IdleState: {fileID: 11400000, guid: d90af75a50657d34b81bc8978d7089b6, type: 2}

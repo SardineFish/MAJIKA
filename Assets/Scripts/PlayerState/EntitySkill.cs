@@ -9,14 +9,18 @@ namespace State
         public EntityJump JumpState;
         public EntityIdle IdleState;
 
+        public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
+        {
+            var skillIdx = (fsm as EntityController).SkillIndex;
+            if (skillIdx < 0 || !entity.GetComponent<SkillController>().Activate(skillIdx))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public override IEnumerator Begin(GameEntity entity, EntityStateMachine<GameEntity> fsm)
         {
-            var skillIdx = InputManager.Instance.GetSkillIndex();
-            if (skillIdx < 0)
-                yield break;
-            if (!entity.GetComponent<SkillController>().Activate(skillIdx))
-                yield break;
-
             entity.GetComponent<AnimationController>().ChangeAnimation(
                 entity.GetComponent<SkillController>().ActiveSkill.AnimatorController,
                 entity.GetComponent<MovableEntity>().FaceDirection);

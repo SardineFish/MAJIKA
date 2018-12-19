@@ -15,6 +15,5 @@ namespace LuaHost
             base.InitRuntime();
             LuaScript.Globals["entity"] = GetComponent<GameEntity>();
         }
-
     }
 }

@@ -8,33 +8,23 @@ namespace State
     {
         public EntityMove MoveState;
         public EntityIdle IdleState;
+        public EntityClimb ClimbState;
 
         public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
         {
-            if (!entity.GetComponent<MovableEntity>().Jump())
-                return false;
-
-            return base.OnEnter(entity, previousState, fsm);
+            if((fsm as EntityController).Jumped && entity.GetComponent<MovableEntity>().Jump())
+            {
+                return base.OnEnter(entity, previousState, fsm);
+            }
+            return false;
         }
 
         public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
         {
-            entity.GetComponent<MovableEntity>().EnableGravity = true;
-            // Movement
-            var movement = InputManager.Instance.GetMovement();
-            movement.y = 0;
-            entity.GetComponent<MovableEntity>().Move(movement);
-
-            // Jump
-            if (InputManager.Instance.GetAction(InputManager.Instance.JumpAction))
-            {
-                if (entity.GetComponent<MovableEntity>().Jump())
-                    fsm.ChangeState(this);
-            }
-
-            entity.GetComponent<AnimationController>().PlayAnimation(AnimatorController, InputManager.Instance.GetMovement().x);
-            if (entity.GetComponent<MovableEntity>().OnGround)
-                fsm.ChangeState(IdleState);
+            if (MoveState)
+                fsm.ChangeState(MoveState);
+            if (ClimbState)
+                fsm.ChangeState(ClimbState);
         }
     }
 

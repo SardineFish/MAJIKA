@@ -14919,6 +14919,8 @@ GameObject:
   - component: {fileID: 1451444686}
   - component: {fileID: 1451444688}
   - component: {fileID: 1451444680}
+  - component: {fileID: 1451444693}
+  - component: {fileID: 1451444690}
   - component: {fileID: 1451444689}
   - component: {fileID: 1451444692}
   - component: {fileID: 1451444691}
@@ -15075,13 +15077,24 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1451444679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a082c76a052f22d48a4448dd5cac2e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
   InitialState: {fileID: 11400000, guid: d90af75a50657d34b81bc8978d7089b6, type: 2}
+--- !u!114 &1451444690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1451444679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 904a28cfe6cdca3419da8e42e2ae7d3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1451444691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15108,6 +15121,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Position: {x: 0, y: 0, z: 0}
   EnableRootMotion: 0
+--- !u!114 &1451444693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1451444679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051faa088389e9c4d84a0dfca653de8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 
+  IdleState: {fileID: 11400000, guid: d90af75a50657d34b81bc8978d7089b6, type: 2}
+  SkillState: {fileID: 11400000, guid: 57f4a9c168b2e43489a3e6a829be9344, type: 2}
+  HitState: {fileID: 11400000, guid: 56ac2e93837e9e9469faf448ea5dc329, type: 2}
+  DeadState: {fileID: 0}
+  Locked: 0
+  Movement: {x: 0, y: 0}
+  ClimbSpeed: 0
+  Jumped: 0
+  SkillIndex: -1
 --- !u!1 &1506329427
 GameObject:
   m_ObjectHideFlags: 0
@@ -15283,7 +15317,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.125
+      value: 9.9375
       objectReference: {fileID: 0}
     - target: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -15327,7 +15361,22 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2d125e4909fa2d24db9f1b0fc1ab8b81, type: 2}
+      objectReference: {fileID: 9100000, guid: 7de790aba1137f34194b04c97300632f, type: 2}
+    - target: {fileID: 114434014480466924, guid: 30f9432304a8b7c4fa5ded22c7605df6,
+        type: 2}
+      propertyPath: EnableRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114434014480466924, guid: 30f9432304a8b7c4fa5ded22c7605df6,
+        type: 2}
+      propertyPath: Position.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114434014480466924, guid: 30f9432304a8b7c4fa5ded22c7605df6,
+        type: 2}
+      propertyPath: Position.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 2}
   m_IsPrefabAsset: 0

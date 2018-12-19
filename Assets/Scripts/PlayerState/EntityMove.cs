@@ -12,15 +12,17 @@ namespace State
         public EntitySkill SkillState;
         public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
         {
-            var movement = InputManager.Instance.GetMovement();
+            var movement = entity.GetComponent<EntityController>().Movement;
             movement.y = 0;
-            return entity.GetComponent<MovableEntity>().Move(movement)
-                && !Mathf.Approximately(movement.x, 0);
+            if (entity.GetComponent<MovableEntity>().Move(movement)
+                && !Mathf.Approximately(movement.x, 0))
+                return base.OnEnter(entity, previousState, fsm);
+            return false;
         }
         public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
         {
             // Movement
-            var movement = InputManager.Instance.GetMovement();
+            var movement = entity.GetComponent<EntityController>().Movement;
             movement.y = 0;
             entity.GetComponent<MovableEntity>().Move(movement);
 
@@ -29,23 +31,15 @@ namespace State
             else
                 entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, movement.x);
 
-            // Jump
-            if (InputManager.Instance.GetAction(InputManager.Instance.JumpAction))
-            {
-                if (entity.GetComponent<MovableEntity>().Jump())
-                    fsm.ChangeState(JumpState);
-            }
+            if (JumpState)
+                fsm.ChangeState(JumpState);
 
-            // Climb
-            if (InputManager.Instance.GetAction(InputManager.Instance.ClimbAction))
-            {
-                if (entity.GetComponent<MovableEntity>().Climb(0))
-                    fsm.ChangeState(ClimbState);
-            }
+            if (ClimbState)
+                fsm.ChangeState(ClimbState);
 
-            // Skill
-            if (InputManager.Instance.GetSkillIndex() >= 0)
+            if (SkillState)
                 fsm.ChangeState(SkillState);
+            
         }
     }
 }

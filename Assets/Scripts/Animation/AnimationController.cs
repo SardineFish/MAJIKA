@@ -5,6 +5,13 @@ using System.Collections;
 public class AnimationController : EntityBehaviour<GameEntity>
 {
     public int Direction = 0;
+    public IEnumerator WaitAnimation(RuntimeAnimatorController animator,float direction)
+    {
+        GetComponent<Animator>().runtimeAnimatorController = animator;
+        yield return null;
+        while (GetComponent<Animator>().runtimeAnimatorController == animator && !IsEnd())
+            yield return null;
+    }
     public void PlayAnimation(RuntimeAnimatorController animator, float direction)
     {
         if (Entity.GetComponent<Animator>().runtimeAnimatorController == animator && direction == MathUtility.SignInt(this.Direction))

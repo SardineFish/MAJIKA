@@ -2,28 +2,38 @@
 using System.Collections;
 using State;
 
-[CreateAssetMenu(fileName = "Idle", menuName = "EntityState/Idle")]
-public class EntityIdle : GameEntityState
+namespace State
 {
-    public EntityMove MoveState;
-    public EntitySkill SkillState;
-    public EntityHit HitState;
-    public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
+    [CreateAssetMenu(fileName = "Idle", menuName = "EntityState/Idle")]
+    public class EntityIdle : GameEntityState
     {
-        entity.GetComponent<EventBus>().AddEventListenerOnce("Hit", () =>
+        public EntityMove MoveState;
+        public EntityJump JumpState;
+        public EntitySkill SkillState;
+        public EntityClimb ClimbState;
+
+        /*
+        public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
         {
-            fsm.ChangeState(HitState);
-        });
-        entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, (GameSystem.Instance.PlayerInControl.transform.position - entity.transform.position).x);
-        return base.OnEnter(entity, previousState, fsm);
+            entity.GetComponent<EventBus>().AddEventListenerOnce("Hit", () =>
+            {
+                fsm.ChangeState(HitState);
+            });
+            entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, (GameSystem.Instance.PlayerInControl.transform.position - entity.transform.position).x);
+            return base.OnEnter(entity, previousState, fsm);
+        }*/
+
+        public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
+        {
+            if (MoveState)
+                fsm.ChangeState(MoveState);
+            if (JumpState)
+                fsm.ChangeState(JumpState);
+            if (SkillState)
+                fsm.ChangeState(SkillState);
+            if (ClimbState)
+                fsm.ChangeState(ClimbState);
+        }
     }
 
-    public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
-    {
-        // Skill
-        if (InputManager.Instance.GetSkillIndex() >= 0)
-            fsm.ChangeState(SkillState);
-
-        fsm.ChangeState(MoveState);
-    }
 }

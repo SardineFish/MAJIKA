@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0e23622d46f2684fa25101fcf9d2960, type: 3}
-  m_Name: EntityMove
+  m_Name: Boss0Move
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: a2d573c1dcf21b045b1e4cecc4cb48d3, type: 2}
   TriggerName: 
