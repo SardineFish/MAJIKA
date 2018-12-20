@@ -7,6 +7,8 @@ public class AnimationController : EntityBehaviour<GameEntity>
     public int Direction = 0;
     public IEnumerator WaitAnimation(RuntimeAnimatorController animator,float direction)
     {
+        if (!animator)
+            yield break;
         GetComponent<Animator>().runtimeAnimatorController = animator;
         yield return null;
         while (GetComponent<Animator>().runtimeAnimatorController == animator && !IsEnd())

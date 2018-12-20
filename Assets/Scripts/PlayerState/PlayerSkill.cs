@@ -10,12 +10,10 @@ public class PlayerSkill : EntityState<Player>
         var skillIdx = InputManager.Instance.GetSkillIndex();
         if (skillIdx < 0)
             return false;
-
-        /*player.GetComponent<EventBus>().AddEventListenerOnce(SkillController.EventSkillEnd, () =>
-        {
-            fsm.ChangeState(JumpState);
-        });*/
-        player.GetComponent<SkillController>().Activate(skillIdx);
+        
+        if (!player.GetComponent<SkillController>().Activate(skillIdx))
+            return false;
+        
         return true;
     }
     public override void OnUpdate(Player player, EntityStateMachine<Player> fsm)
@@ -27,7 +25,7 @@ public class PlayerSkill : EntityState<Player>
             return;
         }
 
-        player.GetComponent<AnimationController>().ChangeAnimation(activedSkill.AnimatorController, player.GetComponent<MovableEntity>().FaceDirection);
+        //player.GetComponent<AnimationController>().ChangeAnimation(activedSkill.AnimatorController, player.GetComponent<MovableEntity>().FaceDirection);
 
         // Lock
         if (player.GetComponent<SkillController>().IsLocked())

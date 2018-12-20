@@ -47,9 +47,10 @@ public class EntityController : EntityStateMachine<GameEntity>
     public virtual void Move(Vector2 movement) => Movement = movement;
     public virtual void Jump() => Jumped = true;
     public virtual void Climb(float climbSpeed) => ClimbSpeed = climbSpeed;
-    public virtual bool Skill(int idx)
+    public virtual bool Skill(int idx, float dir = 0)
     {
         SkillIndex = idx;
+        GetComponent<MovableEntity>().FaceTo(dir);
         return ChangeState(SkillState);
     }
     public virtual void Lock() => Locked = true;

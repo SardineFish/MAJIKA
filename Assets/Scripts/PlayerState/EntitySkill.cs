@@ -16,14 +16,14 @@ namespace State
             {
                 return false;
             }
+            entity.GetComponent<AnimationController>().ChangeAnimation(
+                entity.GetComponent<SkillController>().ActiveSkill.AnimatorController,
+                entity.GetComponent<MovableEntity>().FaceDirection);
             return true;
         }
 
         public override IEnumerator Begin(GameEntity entity, EntityStateMachine<GameEntity> fsm)
         {
-            entity.GetComponent<AnimationController>().ChangeAnimation(
-                entity.GetComponent<SkillController>().ActiveSkill.AnimatorController,
-                entity.GetComponent<MovableEntity>().FaceDirection);
 
             yield return entity.GetComponent<SkillController>().WaitSkill();
             fsm.ChangeState(IdleState);

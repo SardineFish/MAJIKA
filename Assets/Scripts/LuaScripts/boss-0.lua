@@ -64,11 +64,11 @@ function chase()
         local dx = math.abs(dpos.x);
 
         if (dx <= 5) then
-            entity.skill(2);
-            entity.skill(3);
+            entity.skill(2, dpos.x);
+            entity.skill(3, dpos.x);
         elseif (dx <= 12) then
-            entity.skill(0);
-            entity.skill(1);
+            entity.skill(0, dpos.x);
+            entity.skill(1, dpos.x);
         end
 
         entity.move(vec2(sign(dpos.x), 0));

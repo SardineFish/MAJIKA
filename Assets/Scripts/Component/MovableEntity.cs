@@ -70,6 +70,14 @@ public class MovableEntity : MonoBehaviour
         return true;
     }
 
+    public bool FaceTo(float direction)
+    {
+        if (Frozen)
+            return false;
+        FaceDirection = direction == 0 ? FaceDirection : Mathf.Sign(direction);
+        return true;
+    }
+
     private void LateUpdate()
     {
         if (!enabled)

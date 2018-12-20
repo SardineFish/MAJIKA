@@ -12,9 +12,11 @@ public class SkillController : EntityBehaviour<Player>
     void Update()
     {
         Skills = GetComponentsInChildren<Skill>();
+        if (ActiveSkill && GetComponent<Animator>().runtimeAnimatorController != ActiveSkill.AnimatorController)
+            OnSkillEnd();
     }
 
-    public bool Activate(int idx)
+    public bool Activate(int idx, float direction=0)
     {
         if (idx >= Skills.Length)
             return false;
@@ -23,6 +25,7 @@ public class SkillController : EntityBehaviour<Player>
         if (!Skills[idx].Activate())
             return false;
         ActiveSkill = Skills[idx];
+        GetComponent<AnimationController>().ChangeAnimation(ActiveSkill.AnimatorController, direction);
         return true;
     }
 
