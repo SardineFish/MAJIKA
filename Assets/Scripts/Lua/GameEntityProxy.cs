@@ -14,15 +14,15 @@ namespace LuaHost.Proxy
         [MoonSharpHidden]
         public GameEntityProxy(GameEntity entity) : base(entity)
         {
-            entity.OnUpdate += EntityUpdate;
+            //entity.OnUpdate += EntityUpdate;
         }
         private void EntityUpdate()
         {
-            OnUpdate?.Invoke(target);
+            /*OnUpdate?.Invoke();
             if (target is LifeEntity && (target as LifeEntity).HP <= 0)
             {
-                OnDead?.Invoke(target);
-            }
+                OnDead?.Invoke();
+            }*/
         }
         public Vector2 Position
         {
@@ -36,26 +36,20 @@ namespace LuaHost.Proxy
             }
         }
         public void Skill(int idx)
-        {
-            target.GetComponent<EntityController>()?.Skill(idx);
-        }
+            => target.GetComponent<EntityController>()?.Skill(idx);
         public void Move(Vector2 movement)
-        {
-            target.GetComponent<EntityController>()?.Move(movement);
-        }
-        public void Jump()
-        {
-            target.GetComponent<EntityController>()?.Jump();
-        }
-        public void Climb(float speed)
-        {
-            target.GetComponent<EntityController>()?.Climb(speed);
-        }
-        public void StartCoroutine(Closure closure)
-        {
-
-        }
-        public event Action<GameEntity> OnDead;
-        public event Action<GameEntity> OnUpdate;
+            => target.GetComponent<EntityController>()?.Move(movement);
+        public void Jump() 
+            => target.GetComponent<EntityController>()?.Jump();
+        public void Climb(float speed) 
+            => target.GetComponent<EntityController>()?.Climb(speed);
+        public UnityEngine.Coroutine StartCoroutine(Closure closure) 
+            => target.StartCoroutine(closure.OwnerScript.CreateCoroutine(closure).Coroutine.AsUnityCoroutine());
+        public UnityEngine.Coroutine StartCoroutine(MoonSharp.Interpreter.Coroutine coroutine) 
+            => target.StartCoroutine(coroutine.AsUnityCoroutine());
+        public void StopCoroutine(UnityEngine.Coroutine coroutine) 
+            => target.StopCoroutine(coroutine);
+        /*public event Action OnDead;*/
+        /*public event Action OnUpdate;*/
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MoonSharp.Interpreter;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,6 +45,10 @@ namespace LuaHost.LuaRuntime
                 host.StopCoroutine(TimeoutCoroutine[id]);
                 TimeoutCoroutine.Remove(id);
             }
+        }
+        public YieldInstruction WaitForSeconds(float seconds)
+        {
+            return new WaitForSeconds(seconds);
         }
         public int Interval(Closure callback, float milliseconds)
         {

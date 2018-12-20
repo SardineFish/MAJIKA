@@ -26,6 +26,13 @@ namespace LuaHost
         {
             if (Script)
                 LuaScript.DoString(Script.text);
+
+            LuaScript.Globals.Get("start").Function?.Call();
+        }
+
+        private void Update()
+        {
+            LuaScript.Globals.Get("update").Function?.Call(Time.deltaTime);
         }
 
         protected virtual void Awake()
@@ -36,6 +43,7 @@ namespace LuaHost
         public void RunScript(TextAsset script)
         {
             LuaScript.DoString(script.text);
+            LuaScript.Globals.Get("start").Function?.Call();
         }
 
         public static Script CreateScriptRuntime(LuaScriptHost host)
@@ -52,6 +60,9 @@ namespace LuaHost
             script.Globals["interval"] = (Func<Closure, float, int>)utility.Interval;
             script.Globals["removeTimeout"] = (Action<int>)utility.RemoveTimeout;
             script.Globals["removeInterval"] = (Action<int>)utility.RemoveInterval;
+            script.Globals["waitForSeconds"] = (Func<float, YieldInstruction>)utility.WaitForSeconds;
+            script.Globals["Time"] = typeof(Time);
+            script.Globals["entity"] = host.GetComponent<GameEntity>();
             return script;
         }
         static void InitRuntimeEnvironment()
@@ -59,8 +70,11 @@ namespace LuaHost
             UserData.RegisterAssembly();
             UserData.RegisterProxyType<Proxy.GameObjectProxy, GameObject>(obj => new Proxy.GameObjectProxy(obj));
             UserData.RegisterProxyType<Proxy.GameEntityProxy, GameEntity>(obj => new Proxy.GameEntityProxy(obj));
+            UserData.RegisterProxyType<Proxy.CoroutineProxy, UnityEngine.Coroutine>(obj => new Proxy.CoroutineProxy(obj));
             UserData.RegisterType<Vector3>();
             UserData.RegisterType<Vector2>();
+            UserData.RegisterType<YieldInstruction>();
+            UserData.RegisterType<Time>();
         }
     }
 

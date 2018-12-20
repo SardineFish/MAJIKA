@@ -324,7 +324,7 @@ Prefab:
         type: 2}
       propertyPath: followTarget
       value: 
-      objectReference: {fileID: 1451444681}
+      objectReference: {fileID: 249452450}
     - target: {fileID: 114334640122168452, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f,
         type: 2}
       propertyPath: FollowStartRange.x
@@ -338,6 +338,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93f5757cf35d65e4ebb7e3bfc8ed901f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &249452450 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1635571494}
 --- !u!1001 &351761132
 Prefab:
   m_ObjectHideFlags: 0
@@ -14949,8 +14954,8 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!4 &1451444681
 Transform:
@@ -14959,7 +14964,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1451444679}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.8125, y: 2, z: 0}
+  m_LocalPosition: {x: 136.1875, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1545201760}
@@ -15151,7 +15156,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1451444679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d86b199344342242baaa2ae249832c7, type: 3}
+  m_Script: {fileID: 11500000, guid: c4633ca4cdf455a499de03abf43fe671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Script: {fileID: 4900000, guid: 3731531bb647c8541ac338ae40d117fe, type: 3}
@@ -15368,7 +15373,7 @@ Prefab:
     - target: {fileID: 114533955204039194, guid: 30f9432304a8b7c4fa5ded22c7605df6,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 95401749329384152, guid: 30f9432304a8b7c4fa5ded22c7605df6,
         type: 2}

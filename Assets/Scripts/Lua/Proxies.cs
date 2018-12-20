@@ -56,4 +56,11 @@ namespace LuaHost.Proxy
         public float magnitude => vector.magnitude;
         public Vector2 normalized => vector.normalized;
     }
+
+    class CoroutineProxy : ProxyBase<UnityEngine.Coroutine>
+    {
+        public CoroutineProxy(UnityEngine.Coroutine target) : base(target)
+        {
+        }
+    }
 }

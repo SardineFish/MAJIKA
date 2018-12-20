@@ -21,6 +21,7 @@ namespace Assets.Editor
             if (GUILayout.Button("Run"))
             {
                 luaHost.RunScript(luaHost.Script);
+
             }
         }
     }
