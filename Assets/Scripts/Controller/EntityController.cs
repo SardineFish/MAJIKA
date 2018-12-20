@@ -47,6 +47,10 @@ public class EntityController : EntityStateMachine<GameEntity>
     public virtual void Move(Vector2 movement) => Movement = movement;
     public virtual void Jump() => Jumped = true;
     public virtual void Climb(float climbSpeed) => ClimbSpeed = climbSpeed;
-    public virtual void Skill(int idx) => SkillIndex = idx;
+    public virtual bool Skill(int idx)
+    {
+        SkillIndex = idx;
+        return ChangeState(SkillState);
+    }
     public virtual void Lock() => Locked = true;
 }

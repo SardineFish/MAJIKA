@@ -57,15 +57,26 @@ end
 
 function chase()
     local dpos = player.position - entity.position;
-    while true do
-        dpos = player.position - entity.position;
         entity.move(vec2(sign(dpos.x), 0));
+    while true do
         coroutine.yield(nil);
+        dpos = player.position - entity.position;
+        local dx = math.abs(dpos.x);
+
+        if (dx <= 5) then
+            entity.skill(2);
+            entity.skill(3);
+        elseif (dx <= 12) then
+            entity.skill(0);
+            entity.skill(1);
+        end
+
+        entity.move(vec2(sign(dpos.x), 0));
     end
 end
 
 function attack()
-    local dpos = player.position - entity.position;
+    
 end
 
 function sign(x)
