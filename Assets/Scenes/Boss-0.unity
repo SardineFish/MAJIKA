@@ -113,6 +113,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &52233282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1765851017921384, guid: 30f9432304a8b7c4fa5ded22c7605df6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1289991160}
+--- !u!61 &52233283
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52233282}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.2}
+  m_EdgeRadius: 0
 --- !u!4 &89676569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4271529326518446, guid: 99cb2c5b9f3cc2a458267aeba6f3bc82,
@@ -8683,6 +8713,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: -0.000000057742
       objectReference: {fileID: 0}
+    - target: {fileID: 70369796772209350, guid: 30f9432304a8b7c4fa5ded22c7605df6,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 2}
   m_IsPrefabAsset: 0
@@ -15205,6 +15240,7 @@ MonoBehaviour:
   Movement: {x: 0, y: 0}
   ClimbSpeed: 0
   Jumped: 0
+  Climbed: 0
   SkillIndex: -1
 --- !u!114 &1451444694
 MonoBehaviour:
@@ -15333,7 +15369,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1554382693}
   - component: {fileID: 1554382695}
-  - component: {fileID: 1554382694}
   m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
@@ -15354,21 +15389,6 @@ Transform:
   m_Father: {fileID: 1506329428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1554382694
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1554382692}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.4850378, y: 2.4730191}
-  serializedVersion: 2
-  m_Radius: 0.7391038
 --- !u!70 &1554382695
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -15381,8 +15401,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06416321, y: 1.4771118}
-  m_Size: {x: 1.5586853, y: 2.9542236}
+  m_Offset: {x: 0.023925781, y: 1.5656346}
+  m_Size: {x: 1.7679214, y: 3.1312692}
   m_Direction: 0
 --- !u!1 &1715435335
 GameObject:

@@ -35,8 +35,8 @@ namespace LuaHost.Proxy
                 target.transform.position = target.transform.position.Set(x: value.x, y: value.y);
             }
         }
-        public void Skill(int idx)
-            => target.GetComponent<EntityController>()?.Skill(idx);
+        public void Skill(int idx, float dir)
+            => target.GetComponent<EntityController>()?.Skill(idx, dir);
         public void Move(Vector2 movement)
             => target.GetComponent<EntityController>()?.Move(movement);
         public void Jump() 
