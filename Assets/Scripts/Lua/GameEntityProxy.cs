@@ -43,12 +43,12 @@ namespace LuaHost.Proxy
             => target.GetComponent<EntityController>()?.Jump();
         public void Climb(float speed) 
             => target.GetComponent<EntityController>()?.Climb(speed);
-        public UnityEngine.Coroutine StartCoroutine(Closure closure) 
+        /*-public UnityEngine.Coroutine StartCoroutine(Closure closure) 
             => target.StartCoroutine(closure.OwnerScript.CreateCoroutine(closure).Coroutine.AsUnityCoroutine());
         public UnityEngine.Coroutine StartCoroutine(MoonSharp.Interpreter.Coroutine coroutine) 
             => target.StartCoroutine(coroutine.AsUnityCoroutine());
         public void StopCoroutine(UnityEngine.Coroutine coroutine) 
-            => target.StopCoroutine(coroutine);
+            => target.StopCoroutine(coroutine);*/
         /*public event Action OnDead;*/
         /*public event Action OnUpdate;*/
     }

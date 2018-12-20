@@ -20,6 +20,7 @@ namespace Assets.Editor
             EditorGUILayout.Space();
             if (GUILayout.Button("Run"))
             {
+                luaHost.CoroutineManager.Reset();
                 luaHost.RunScript(luaHost.Script);
 
             }

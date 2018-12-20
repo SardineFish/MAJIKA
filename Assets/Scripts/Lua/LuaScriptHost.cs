@@ -15,6 +15,7 @@ namespace LuaHost
 
         [NonSerialized]
         public Script LuaScript;
+        public LuaCoroutineManager CoroutineManager;
 
         public virtual void InitRuntime()
         {
@@ -48,6 +49,7 @@ namespace LuaHost
 
         public static Script CreateScriptRuntime(LuaScriptHost host)
         {
+            host.CoroutineManager = new LuaCoroutineManager(host);
             var script = new Script();
             script.Globals["console"] = typeof(LuaRuntime.Console);
             script.Globals["scene"] = new SceneHost();
@@ -63,6 +65,8 @@ namespace LuaHost
             script.Globals["waitForSeconds"] = (Func<float, YieldInstruction>)utility.WaitForSeconds;
             script.Globals["Time"] = typeof(Time);
             script.Globals["entity"] = host.GetComponent<GameEntity>();
+            script.Globals["startCoroutine"] = (Func<Closure, UnityEngine.Coroutine>)host.CoroutineManager.StartCoroutine;
+            script.Globals["stopCoroutine"] = (Action<UnityEngine.Coroutine>)host.CoroutineManager.StopCoroutine;
             return script;
         }
         static void InitRuntimeEnvironment()
@@ -86,5 +90,24 @@ namespace LuaHost
         {
             this.host = host;
         }
+    }
+
+    public class LuaCoroutineManager
+    {
+        LuaScriptHost Host;
+        public LuaCoroutineManager(LuaScriptHost host)
+        {
+            Host = host;
+        }
+
+        public void Reset()
+            => Host.StopAllCoroutines();
+
+        public UnityEngine.Coroutine StartCoroutine(Closure closure)
+            => Host.StartCoroutine(closure.OwnerScript.CreateCoroutine(closure).Coroutine.AsUnityCoroutine());
+        public UnityEngine.Coroutine StartCoroutine(MoonSharp.Interpreter.Coroutine coroutine)
+            => Host.StartCoroutine(coroutine.AsUnityCoroutine());
+        public void StopCoroutine(UnityEngine.Coroutine coroutine)
+            => Host.StopCoroutine(coroutine);
     }
 }

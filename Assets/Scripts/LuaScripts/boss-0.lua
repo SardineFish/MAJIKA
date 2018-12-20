@@ -6,19 +6,19 @@ local lastAITime = 0;
 function start()
     console.log(vec2(4,6)-vec2(2,3));
     player = scene.entity("Player");
-    entity.startCoroutine(bossAI);
+    startCoroutine(bossAI);
 end
 
 function update(dt)
 end
 
 function bossAI()
-    local co = entity.startCoroutine(wander);
+    local co = startCoroutine(wander);
     local currentState = wander;
     function changeState(state)
         if(state ~= currentState) then
-            entity.stopCoroutine(co);
-            co = entity.startCoroutine(state);
+            stopCoroutine(co);
+            co = startCoroutine(state);
             currentState = state;
         end
     end
