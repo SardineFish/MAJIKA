@@ -10,7 +10,7 @@ public class EntityInputAdapter : EntityBehaviour<GameEntity>
     {
         var controller = GetComponent<EntityController>();
         controller.Movement = InputManager.Instance.Movement;
-        controller.Jumped = InputManager.Instance.GetAction(InputManager.Instance.JumpAction);
+        controller.Jumped = InputManager.Instance.Jumped;
         controller.ClimbSpeed = InputManager.Instance.GetAction(InputManager.Instance.ClimbAction) ? InputManager.Instance.Movement.y : 0;
         controller.SkillIndex = InputManager.Instance.GetSkillIndex();
     }

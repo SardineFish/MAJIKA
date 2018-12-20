@@ -11,6 +11,7 @@ using UnityEngine.Experimental.Input.Utilities;
 public class InputManager : Singleton<InputManager> {
     public Vector2 Movement;
     public const int SkillCount = 4;
+    public bool Jumped = false;
 
     public InputAction MovementAction;
     
@@ -53,6 +54,13 @@ public class InputManager : Singleton<InputManager> {
         MovementAction.performed += ctx =>
         {
             Movement = ctx.ReadValue<Vector2>();
+        };
+        JumpAction.performed += ctx =>
+        {
+            if (ctx.ReadValue<float>() > 0.5)
+                Jumped = true;
+            else
+                Jumped = false;
         };
     }
 
