@@ -6,6 +6,7 @@ namespace State
     [CreateAssetMenu(fileName = "Jump", menuName = "EntityState/Jump")]
     public class EntityJump : GameEntityState
     {
+        public EntityAir AirState;
         public EntityMove MoveState;
         public EntityIdle IdleState;
         public EntityClimb ClimbState;
@@ -14,7 +15,7 @@ namespace State
         {
             if((fsm as EntityController).Jumped && entity.GetComponent<MovableEntity>().Jump())
             {
-                return base.OnEnter(entity, previousState, fsm);
+                fsm.ChangeState(AirState);
             }
             return false;
         }

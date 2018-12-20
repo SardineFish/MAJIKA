@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ea02bac1a12b3489c8b23a512e6e94, type: 3}
+  m_Name: NewPlayerIdle
+  m_EditorClassIdentifier: 
+  AnimatorController: {fileID: 9100000, guid: 25f225bc3c932594181d67b043b2da01, type: 2}
+  TriggerName: 
+  MoveState: {fileID: 11400000, guid: 10c273593421274428e2f9b021d35f0d, type: 2}
+  JumpState: {fileID: 11400000, guid: 8bbec5147132cf643bf9310e3f070953, type: 2}
+  SkillState: {fileID: 11400000, guid: ab0ba3ecf9c4d4a47b302990f0781627, type: 2}
+  ClimbState: {fileID: 11400000, guid: e679bc0d5fd56ce4bb8cc2cdc4d1e1e8, type: 2}
