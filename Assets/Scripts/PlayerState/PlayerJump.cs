@@ -12,6 +12,7 @@ public class PlayerJump : PlayerControllerState
     public PlayerClimb ClimbState;
     public PlayerSkill SkillState;
 
+
     public override void OnUpdate(Player player, EntityStateMachine<Player> fsm)
     {
         player.GetComponent<MovableEntity>().EnableGravity = true;

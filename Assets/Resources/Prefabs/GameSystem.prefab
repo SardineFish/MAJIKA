@@ -209,6 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Movement: {x: 0, y: 0}
+  Jumped: 0
   MovementAction:
     m_Name: Movement
     m_ExpectedControlLayout: 
@@ -298,7 +299,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Path: <Keyboard>/k
-      m_Interactions: Tap()
+      m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Jump

@@ -14,3 +14,4 @@ MonoBehaviour:
   AnimatorController: {fileID: 9100000, guid: 562a067100058c6438378017822325dd, type: 2}
   TriggerName: 
   AirState: {fileID: 11400000, guid: ace4938e04b752b468c601bc6af4c4f3, type: 2}
+  JumpState: {fileID: 11400000, guid: 8bbec5147132cf643bf9310e3f070953, type: 2}

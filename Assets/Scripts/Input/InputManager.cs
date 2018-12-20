@@ -12,6 +12,7 @@ public class InputManager : Singleton<InputManager> {
     public Vector2 Movement;
     public const int SkillCount = 4;
     public bool Jumped = false;
+    public bool Climbed = false;
 
     public InputAction MovementAction;
     
@@ -61,6 +62,13 @@ public class InputManager : Singleton<InputManager> {
                 Jumped = true;
             else
                 Jumped = false;
+        };
+        ClimbAction.performed += ctx =>
+        {
+            if (ctx.ReadValue<float>() > 0.5)
+                Climbed = true;
+            else
+                Climbed = false;
         };
     }
 

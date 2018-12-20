@@ -7053,7 +7053,7 @@ Prefab:
     - target: {fileID: 224279871091823934, guid: 30f9432304a8b7c4fa5ded22c7605df6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000000029802322
+      value: -0.000000057742
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 2}
@@ -8118,7 +8118,7 @@ Prefab:
     - target: {fileID: 224279871091823934, guid: 30f9432304a8b7c4fa5ded22c7605df6,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000000029802322
+      value: -0.000000057742
       objectReference: {fileID: 0}
     - target: {fileID: 114533955204039194, guid: 30f9432304a8b7c4fa5ded22c7605df6,
         type: 2}
@@ -8404,6 +8404,11 @@ Prefab:
       propertyPath: PlayerInControl
       value: 
       objectReference: {fileID: 990751213}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[0].m_Interactions
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
   m_IsPrefabAsset: 0

@@ -17,6 +17,7 @@ public class EntityController : EntityStateMachine<GameEntity>
     public Vector2 Movement = Vector2.zero;
     public float ClimbSpeed = 0;
     public bool Jumped = false;
+    public bool Climbed = false;
     public int SkillIndex = -1;
     // Use this for initialization
     void Start()
