@@ -29,6 +29,11 @@ public class SkillController : EntityBehaviour<Player>
         return true;
     }
 
+    public Utility.CallbackYieldInstruction WaitSkillYield()
+    {
+        return new Utility.CallbackYieldInstruction(() => ActiveSkill && ActiveSkill.Locked);
+    }
+
     public IEnumerator WaitSkill()
     {
         while (ActiveSkill && ActiveSkill.Locked)

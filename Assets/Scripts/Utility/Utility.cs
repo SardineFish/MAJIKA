@@ -190,4 +190,25 @@ public static class Utility
         yield return new WaitForSeconds(seconds);
         callback?.Invoke();
     }
+
+    public static IEnumerable<float> Timer(float time)
+    {
+        for (var startTime = Time.time; Time.time < startTime + time;)
+        {
+            yield return Time.time - startTime;
+        }
+        yield return time;
+    }
+
+    public class CallbackYieldInstruction : CustomYieldInstruction
+    {
+        Func<bool> callback;
+        public override bool keepWaiting => callback?.Invoke() ?? true;
+
+        public CallbackYieldInstruction(Func<bool> callback)
+        {
+            this.callback = callback;
+        }
+    }
+
 }

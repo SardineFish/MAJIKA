@@ -52,7 +52,9 @@ public class EntityController : EntityStateMachine<GameEntity>
     {
         SkillIndex = idx;
         GetComponent<MovableEntity>().FaceTo(dir);
-        return ChangeState(SkillState);
+        var result = ChangeState(SkillState);
+        SkillIndex = -1;
+        return result;
     }
     public virtual void Lock() => Locked = true;
 }

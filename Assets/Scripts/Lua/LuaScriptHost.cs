@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,6 +52,7 @@ namespace LuaHost
         {
             host.CoroutineManager = new LuaCoroutineManager(host);
             var script = new Script();
+            script.Globals["_host"] = host;
             script.Globals["console"] = typeof(LuaRuntime.Console);
             script.Globals["scene"] = new SceneHost();
             script.Globals["resources"] = new ResourcesHost();
@@ -67,18 +69,29 @@ namespace LuaHost
             script.Globals["entity"] = host.GetComponent<GameEntity>();
             script.Globals["startCoroutine"] = (Func<Closure, UnityEngine.Coroutine>)host.CoroutineManager.StartCoroutine;
             script.Globals["stopCoroutine"] = (Action<UnityEngine.Coroutine>)host.CoroutineManager.StopCoroutine;
+            script.Globals["utility"] = utility;
             return script;
         }
         static void InitRuntimeEnvironment()
         {
             UserData.RegisterAssembly();
+            UserData.RegisterProxyType<LuaScriptProxy, LuaScriptHost>(obj => new LuaScriptProxy(obj));
             UserData.RegisterProxyType<Proxy.GameObjectProxy, GameObject>(obj => new Proxy.GameObjectProxy(obj));
             UserData.RegisterProxyType<Proxy.GameEntityProxy, GameEntity>(obj => new Proxy.GameEntityProxy(obj));
             UserData.RegisterProxyType<Proxy.CoroutineProxy, UnityEngine.Coroutine>(obj => new Proxy.CoroutineProxy(obj));
+            UserData.RegisterType<UtilityHost>();
             UserData.RegisterType<Vector3>();
             UserData.RegisterType<Vector2>();
+            UserData.RegisterType<Utility.CallbackYieldInstruction>();
             UserData.RegisterType<YieldInstruction>();
             UserData.RegisterType<Time>();
+        }
+    }
+
+    class LuaScriptProxy : Proxy.ProxyBase<LuaScriptHost>
+    {
+        public LuaScriptProxy(LuaScriptHost target) : base(target)
+        {
         }
     }
 
@@ -103,8 +116,21 @@ namespace LuaHost
         public void Reset()
             => Host.StopAllCoroutines();
 
+        public IEnumerator Co(MoonSharp.Interpreter.Coroutine co)
+        {
+            while(co.State != CoroutineState.Dead)
+            {
+                var val = co.Resume();
+                /*if (!val.IsNil())
+                    Debug.Log(val.ToObject());*/
+                yield return val.ToObject();
+            }
+        }
+        
         public UnityEngine.Coroutine StartCoroutine(Closure closure)
-            => Host.StartCoroutine(closure.OwnerScript.CreateCoroutine(closure).Coroutine.AsUnityCoroutine());
+        {
+            return Host.StartCoroutine(Co(closure.OwnerScript.CreateCoroutine(closure).Coroutine));
+        }
         public UnityEngine.Coroutine StartCoroutine(MoonSharp.Interpreter.Coroutine coroutine)
             => Host.StartCoroutine(coroutine.AsUnityCoroutine());
         public void StopCoroutine(UnityEngine.Coroutine coroutine)

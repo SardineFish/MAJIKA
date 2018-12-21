@@ -29,6 +29,7 @@ namespace LuaHost.LuaRuntime
         int intervalID = 0;
         Dictionary<int, UnityEngine.Coroutine> TimeoutCoroutine = new Dictionary<int, UnityEngine.Coroutine>();
         Dictionary<int, UnityEngine.Coroutine> IntervalCoroutine = new Dictionary<int, UnityEngine.Coroutine>();
+        [MoonSharpHidden]
         public UtilityHost(LuaScriptHost host)
         {
             this.host = host;
@@ -46,15 +47,18 @@ namespace LuaHost.LuaRuntime
                 TimeoutCoroutine.Remove(id);
             }
         }
-        public YieldInstruction WaitForSeconds(float seconds)
-        {
-            return new WaitForSeconds(seconds);
-        }
+        public YieldInstruction WaitForSeconds(float seconds) 
+            => new WaitForSeconds(seconds);
+        public IEnumerable<float> Timer(float time) 
+            => Utility.Timer(time);
+        public IEnumerator getEnumerator(Closure func) => host.LuaScript.CreateCoroutine(func).Coroutine.AsUnityCoroutine();
+        [MoonSharpHidden]
         public int Interval(Closure callback, float milliseconds)
         {
             IntervalCoroutine[intervalID] = Utility.SetInterval(host, () => callback.Call(), milliseconds / 1000);
             return intervalID++;
         }
+        [MoonSharpHidden]
         public void RemoveInterval(int id)
         {
             if (IntervalCoroutine.ContainsKey(id))

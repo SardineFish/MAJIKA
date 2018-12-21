@@ -5,6 +5,15 @@ using System.Collections;
 public class AnimationController : EntityBehaviour<GameEntity>
 {
     public int Direction = 0;
+    public IEnumerator WaitAnimation()
+    {
+        while (!IsEnd())
+            yield return null;
+    }
+    public Utility.CallbackYieldInstruction WaitAnimationYield()
+    {
+        return new Utility.CallbackYieldInstruction(() => !IsEnd());
+    }
     public IEnumerator WaitAnimation(RuntimeAnimatorController animator,float direction)
     {
         if (!animator)
