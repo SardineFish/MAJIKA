@@ -103,6 +103,16 @@ public class InputManager : Singleton<InputManager> {
             KeyCode.Minus,
             KeyCode.Equals,
         };
+        var actions = new InputAction[]
+        {
+            SkillAction1,
+            SkillAction2,
+            SkillAction3,
+            SkillAction4,
+        };
+        for (var i = 0; i < actions.Length; i++)
+            if (GetAction(actions[i]))
+                return i;
         for(var i = 0; i < keys.Length; i++)
         {
             if (Input.GetKeyDown(keys[i]))

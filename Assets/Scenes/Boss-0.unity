@@ -8780,6 +8780,31 @@ Prefab:
       propertyPath: JumpAction.m_SingletonActionBindings.Array.data[0].m_Interactions
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: MovementAction.m_SingletonActionBindings.Array.data[1].m_Processors
+      value: Normalize()
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[1].m_Interactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: JumpAction.m_SingletonActionBindings.Array.data[2].m_Interactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[1].m_Interactions
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 2}
+      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[2].m_Interactions
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
   m_IsPrefabAsset: 0
@@ -15234,7 +15259,7 @@ MonoBehaviour:
   currentState: 
   IdleState: {fileID: 11400000, guid: d90af75a50657d34b81bc8978d7089b6, type: 2}
   SkillState: {fileID: 11400000, guid: 57f4a9c168b2e43489a3e6a829be9344, type: 2}
-  HitState: {fileID: 11400000, guid: 56ac2e93837e9e9469faf448ea5dc329, type: 2}
+  HitState: {fileID: 0}
   DeadState: {fileID: 0}
   Locked: 0
   Movement: {x: 0, y: 0}
