@@ -15130,7 +15130,7 @@ Animator:
   m_GameObject: {fileID: 1451444679}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2c6ff41be5f69604b8e41e24d2b71a37, type: 2}
+  m_Controller: {fileID: 9100000, guid: eb2bfc1c41050de4e9de43a4b7502e49, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15507,7 +15507,7 @@ Prefab:
     - target: {fileID: 224664484933104010, guid: b20cb3b4b1eed9a4284c16da96ced98e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224664484933104010, guid: b20cb3b4b1eed9a4284c16da96ced98e,
         type: 2}

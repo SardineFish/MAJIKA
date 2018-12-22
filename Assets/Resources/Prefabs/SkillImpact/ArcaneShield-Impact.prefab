@@ -120,7 +120,7 @@ MonoBehaviour:
   Continuous: 0
   ImpactLifeCycle: 0
   LifeTime: -1
-  IgnoreCreator: 1
+  IgnoreCreator: 0
   NextImpact: {fileID: 0}
   Effects: []
   Creator: {fileID: 0}
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b8430dc9f50454d8c3d9f59280fff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventTrigger: 
 --- !u!114 &114681355232957752
 MonoBehaviour:
   m_ObjectHideFlags: 1

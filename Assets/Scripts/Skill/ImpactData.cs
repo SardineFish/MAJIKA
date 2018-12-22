@@ -9,4 +9,5 @@ public class ImpactData : IEffectorTrigger
 {
     public Vector3 position;
     public GameEntity Creator;
+    public ImpactType ImpactType;
 }

@@ -82,6 +82,7 @@ namespace LuaHost
             UserData.RegisterType<UtilityHost>();
             UserData.RegisterType<Vector3>();
             UserData.RegisterType<Vector2>();
+            UserData.RegisterType<Threat>();
             UserData.RegisterType<Utility.CallbackYieldInstruction>();
             UserData.RegisterType<YieldInstruction>();
             UserData.RegisterType<Time>();

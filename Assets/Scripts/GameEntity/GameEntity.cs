@@ -26,6 +26,7 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
     protected virtual void Update()
     {
         OnUpdate?.Invoke();
+        DetectThreat();
     }
 
     public static GameEntity GetEntity(Component obj)
@@ -42,5 +43,10 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
     public void Attach(GameObject obj)
     {
         Attach(obj, obj.transform.position - transform.position);
+    }
+
+    public virtual Threat[] DetectThreat()
+    {
+        return new Threat[0];
     }
 }

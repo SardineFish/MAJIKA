@@ -62,7 +62,7 @@ MonoBehaviour:
   Ready: 0
   Icon: {fileID: 21300000, guid: b2e1cf958f2c85941b66ef1198f53c7a, type: 3}
   Effects:
-  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+  - Effect: {fileID: 11400000, guid: c497f34645c63df4dace4c76479e8d91, type: 2}
     Strength: 1
     Duration: 0
     LifeTime: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540551126948fef47a43a06c35818832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1976878548391048, guid: 3da72c2e21a32034d9d60862edc50dd2, type: 2}
+  Prefab: {fileID: 1408594091717572, guid: fe36d96d39414bf478fe6b16f1b84bf1, type: 2}
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
   Instance: {fileID: 0}

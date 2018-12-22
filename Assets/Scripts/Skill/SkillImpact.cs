@@ -75,7 +75,7 @@ public class SkillImpact : MonoBehaviour
         }
         else
         {
-            var data = new ImpactData() { position = transform.position, Creator = Creator };
+            var data = new ImpactData() { position = transform.position, Creator = Creator, ImpactType = ImpactType };
             new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, data, this.Creator)).ToArray()).Dispatch(entity);
         }
     }
@@ -101,6 +101,8 @@ public class SkillImpact : MonoBehaviour
         {
             transform.localScale = new Vector3(direction.x, 1, 1);
         }
+        if (Active)
+            StartImpact();
 
         if (LifeTime >= 0)
             StartCoroutine(LifeTimeCoroutine());
@@ -167,6 +169,8 @@ public class SkillImpact : MonoBehaviour
         if (ImpactType == ImpactType.OnEntity)
         {
             ApplyDamage(Creator);
+            if (ImpactLifeCycle == ImpactLifeCycle.DestructOnHit)
+                Deactivate();
         }
         else if (ImpactType == ImpactType.DropAttack)
         {

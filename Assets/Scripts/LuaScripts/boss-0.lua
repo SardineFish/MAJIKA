@@ -59,9 +59,16 @@ function chase()
         local dx = math.abs(dpos.x)
         local skilled = false
 
-        skilled =
-            (dx <= 5 and (entity.skill(2, dpos.x) or entity.skill(3, dpos.x))) or
-            (dx <= 15 and (entity.skill(0, dpos.x) or entity.skill(1, dpos.x)))
+        local threat = detectBullet();
+        if(threat) then
+            skilled = entity.skill(4, threat.position.x - entity.position.x);
+        end
+        
+        if(dx<=5) then
+            skilled = entity.skill(2, dpos.x) or entity.skill(3, dpos.x);
+        elseif dx<=13 then
+            skilled = entity.skill(0, dpos.x) or entity.skill(1, dpos.x);
+        end
 
         if skilled then
             coroutine.yield(entity.wait("skill", _host))
@@ -75,6 +82,20 @@ function chase()
         end
         entity.move(vec2(sign(dpos.x), 0))
     end
+end
+
+function detectBullet()
+    local threat = entity.detectThreat();
+    for k in pairs(threat) do
+        local t = threat[k];
+        if t.typeName == "bullet" then
+            local dir =  entity.position.x - t.position.x;
+            if(sign(t.velocity.x) == sign(dir) and entity.position.y <= t.position.y and t.position.y <= (entity.position.y + 3)) then
+                return t;
+            end
+        end
+    end
+    return nil;
 end
 
 function attack()
