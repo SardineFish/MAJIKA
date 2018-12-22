@@ -50,7 +50,7 @@ function wander()
 end
 
 function chase()
-    local skillGap = 1.5
+    local skillGap = 0.8
     local dpos = player.position - entity.position
     entity.move(vec2(sign(dpos.x), 0))
     while true do
@@ -61,7 +61,7 @@ function chase()
 
         skilled =
             (dx <= 5 and (entity.skill(2, dpos.x) or entity.skill(3, dpos.x))) or
-            (dx <= 12 and (entity.skill(0, dpos.x) or entity.skill(1, dpos.x)))
+            (dx <= 15 and (entity.skill(0, dpos.x) or entity.skill(1, dpos.x)))
 
         if skilled then
             coroutine.yield(entity.wait("skill", _host))

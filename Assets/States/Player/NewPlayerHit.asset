@@ -14,3 +14,5 @@ MonoBehaviour:
   HitAction: {fileID: 9100000, guid: 2d125e4909fa2d24db9f1b0fc1ab8b81, type: 2}
   BlowUpAction: {fileID: 9100000, guid: 7de790aba1137f34194b04c97300632f, type: 2}
   IdleState: {fileID: 11400000, guid: 0b6c0916b0c114f4abd2a2378a507668, type: 2}
+  MoveState: {fileID: 11400000, guid: 10c273593421274428e2f9b021d35f0d, type: 2}
+  JumpState: {fileID: 11400000, guid: 8bbec5147132cf643bf9310e3f070953, type: 2}

@@ -14,8 +14,7 @@ namespace State
         {
             var movement = entity.GetComponent<EntityController>().Movement;
             movement.y = 0;
-            if (entity.GetComponent<MovableEntity>().Move(movement)
-                && !Mathf.Approximately(movement.x, 0))
+            if (!Mathf.Approximately(movement.x, 0) && entity.GetComponent<MovableEntity>().Move(movement))
                 return base.OnEnter(entity, previousState, fsm);
             return false;
         }

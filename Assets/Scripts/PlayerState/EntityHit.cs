@@ -9,6 +9,8 @@ namespace State
         public RuntimeAnimatorController HitAction;
         public RuntimeAnimatorController BlowUpAction;
         public EntityIdle IdleState;
+        public EntityMove MoveState;
+        public EntityJump JumpState;
 
         public override IEnumerator Begin(GameEntity entity, EntityStateMachine<GameEntity> fsm)
         {
@@ -19,10 +21,22 @@ namespace State
                 if (blowUp != null)
                     yield return entity.GetComponent<AnimationController>().WaitAnimation(BlowUpAction, trigger.position.x - entity.transform.position.x);
                 else
-                    yield return entity.GetComponent<AnimationController>().WaitAnimation(HitAction, trigger.position.x - entity.transform.position.x);
+                {
+                    entity.GetComponent<AnimationController>().PlayAnimation(HitAction, trigger.position.x - entity.transform.position.x);
+                    while (!entity.GetComponent<AnimationController>().IsEnd())
+                    {
+                        yield return null;
+                        if (fsm.ChangeState(MoveState) || fsm.ChangeState(JumpState))
+                        {
+                            Debug.Log("leave");
+                            yield break;
+                        }
+                    }
+                }
             }
             fsm.ChangeState(IdleState);
         }
+
         /*
 
         public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)

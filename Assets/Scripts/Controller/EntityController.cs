@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using State;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(EventBus))]
 public class EntityController : EntityStateMachine<GameEntity>
@@ -12,6 +13,8 @@ public class EntityController : EntityStateMachine<GameEntity>
     public EntityHit HitState;
     public EntityDead DeadState;
 
+    public List<ControllerPlugin> Plugins = new List<ControllerPlugin>();
+
     public bool Locked = false;
 
     public Vector2 Movement = Vector2.zero;
@@ -19,6 +22,7 @@ public class EntityController : EntityStateMachine<GameEntity>
     public bool Jumped = false;
     public bool Climbed = false;
     public int SkillIndex = -1;
+    
     // Use this for initialization
     void Start()
     {
@@ -37,18 +41,21 @@ public class EntityController : EntityStateMachine<GameEntity>
 
     protected override void Update()
     {
-        if (!Locked)
-            base.Update();
         this.Movement = Vector2.zero;
         ClimbSpeed = 0;
         Jumped = false;
         SkillIndex = -1;
+        Plugins.ForEach(plugin => plugin.OnUpdate(this)); 
+        if (!Locked)
+            base.Update();
     }
 
     public virtual void Move(Vector2 movement) => Movement = movement;
     public virtual void Jump() => Jumped = true;
     public virtual void Climb(float climbSpeed) => ClimbSpeed = climbSpeed;
-    public virtual bool Skill(int idx, float dir = 0)
+    public virtual void Skill(int idx) => Skill(idx, Movement.x);
+
+    public virtual bool Skill(int idx, float dir)
     {
         SkillIndex = idx;
         GetComponent<MovableEntity>().FaceTo(dir);

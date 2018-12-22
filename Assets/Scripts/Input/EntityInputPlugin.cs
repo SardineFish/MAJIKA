@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(EntityController))]
-public class EntityInputAdapter : EntityBehaviour<GameEntity>
+[CreateAssetMenu(fileName ="InputPlugin",menuName ="ControllerPlugin/Input")]
+public class EntityInputPlugin : ControllerPlugin
 {
-
-    // Update is called once per frame
-    void Update()
+    public override void OnUpdate(EntityController controller)
     {
-        var controller = GetComponent<EntityController>();
         controller.Movement = InputManager.Instance.Movement;
         controller.Jumped = InputManager.Instance.Jumped;
         controller.Climbed = InputManager.Instance.Climbed;

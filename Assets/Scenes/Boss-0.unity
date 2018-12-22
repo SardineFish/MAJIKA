@@ -8676,6 +8676,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114616804827387526, guid: 30f9432304a8b7c4fa5ded22c7605df6,
+        type: 2}
+      propertyPath: Plugins.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 9.9375
@@ -8718,7 +8723,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114616804827387526, guid: 30f9432304a8b7c4fa5ded22c7605df6,
+        type: 2}
+      propertyPath: Plugins.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e518002a654178641b0f8266273d2618,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114493887595048574, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1291950635 stripped
@@ -15058,7 +15070,6 @@ GameObject:
   - component: {fileID: 1451444680}
   - component: {fileID: 1451444693}
   - component: {fileID: 1451444694}
-  - component: {fileID: 1451444690}
   - component: {fileID: 1451444692}
   - component: {fileID: 1451444691}
   m_Layer: 0
@@ -15208,17 +15219,6 @@ MonoBehaviour:
   jumpCount: 0
   velocity: {x: 0, y: 0}
   AvailableClimbArea: {fileID: 0}
---- !u!114 &1451444690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1451444679}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 904a28cfe6cdca3419da8e42e2ae7d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1451444691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15261,6 +15261,7 @@ MonoBehaviour:
   SkillState: {fileID: 11400000, guid: 57f4a9c168b2e43489a3e6a829be9344, type: 2}
   HitState: {fileID: 0}
   DeadState: {fileID: 0}
+  Plugins: []
   Locked: 0
   Movement: {x: 0, y: 0}
   ClimbSpeed: 0

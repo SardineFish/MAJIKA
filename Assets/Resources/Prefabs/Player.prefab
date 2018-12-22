@@ -192,11 +192,8 @@ GameObject:
   - component: {fileID: 95401749329384152}
   - component: {fileID: 114264031663767576}
   - component: {fileID: 114616804827387526}
-  - component: {fileID: 114493887595048574}
   - component: {fileID: 50102132844438088}
   - component: {fileID: 114683729224533348}
-  - component: {fileID: 114974915277480942}
-  - component: {fileID: 114872658561303984}
   - component: {fileID: 114374967682817352}
   - component: {fileID: 114356481816643768}
   - component: {fileID: 114434014480466924}
@@ -357,6 +354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4764653269973756}
   - component: {fileID: 70369796772209350}
+  - component: {fileID: 61042752785626078}
   m_Layer: 10
   m_Name: Foot
   m_TagString: Untagged
@@ -754,6 +752,31 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!61 &61042752785626078
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1765851017921384}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.1}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.2}
+  m_EdgeRadius: 0
 --- !u!61 &61195702091113216
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -800,7 +823,7 @@ CapsuleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1765851017921384}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -848,7 +871,7 @@ Animator:
   m_GameObject: {fileID: 1373393434984044}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7de790aba1137f34194b04c97300632f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2d125e4909fa2d24db9f1b0fc1ab8b81, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1447,17 +1470,6 @@ MonoBehaviour:
   Distance: 6
   Duration: 0.1
   Direction: {x: 1, y: 0}
---- !u!114 &114493887595048574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373393434984044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 904a28cfe6cdca3419da8e42e2ae7d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114498644027963564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1552,10 +1564,13 @@ MonoBehaviour:
   SkillState: {fileID: 11400000, guid: ab0ba3ecf9c4d4a47b302990f0781627, type: 2}
   HitState: {fileID: 11400000, guid: 20ca004ad557555429c68676f39172fd, type: 2}
   DeadState: {fileID: 0}
+  Plugins:
+  - {fileID: 11400000, guid: e518002a654178641b0f8266273d2618, type: 2}
   Locked: 0
   Movement: {x: 0, y: 0}
   ClimbSpeed: 0
   Jumped: 0
+  Climbed: 0
   SkillIndex: -1
 --- !u!114 &114662362330932198
 MonoBehaviour:
@@ -1760,20 +1775,6 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
---- !u!114 &114872658561303984
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373393434984044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b25f23ef9a68048b4dc6d4172d1624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SerializedData:
-    velocity: {x: 0, y: 0}
-    extraVelocity: {x: 0, y: 0}
 --- !u!114 &114879123650143600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1831,17 +1832,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Skills: []
   ActiveSkill: {fileID: 0}
---- !u!114 &114974915277480942
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1373393434984044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212615509491180646
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1944,7 +1934,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000000057742, y: 0}
   m_SizeDelta: {x: -0.12499988, y: -0.12500001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224386285208076174
