@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1310066853191910, guid: a60cc89262f493a49b1e815cc615d4fc, type: 2}
-  SpawnOffset: {x: 9.375, y: 0}
+  SpawnOffset: {x: 0.375, y: 0}
   TimeOffset: 0
   Instance: {fileID: 0}
 --- !u!114 &114994737816093780
