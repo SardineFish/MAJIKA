@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: c57e83e755ec27c489babdbaedca60ff
+guid: 629d4eefc01a4bb4b9c5eff26530d65c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Roll_0
-    21300002: Roll_1
-    21300004: Roll_2
-    21300006: Roll_3
-    21300008: Roll_4
-    21300010: Roll_5
-    21300012: Roll_6
-    21300014: Roll_7
-    21300016: Roll_8
-    21300018: Roll_9
-    21300020: Roll_10
-    21300022: Roll_11
-    21300024: Roll_12
+    21300000: Death_0
+    21300002: Death_1
+    21300004: Death_2
+    21300006: Death_3
+    21300008: Death_4
+    21300010: Death_5
+    21300012: Death_6
+    21300014: Death_7
+    21300016: Death_8
+    21300018: Death_9
+    21300020: Death_10
+    21300022: Death_11
+    21300024: Death_12
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,261 +108,261 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Roll_0
+      name: Death_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 220
-        width: 159
-        height: 55
+        y: 219
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118ab774c640a294da00fea666fbf109
+      spriteID: 3a63f81a53da2b049a1349361be96d84
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_1
+      name: Death_1
       rect:
         serializedVersion: 2
-        x: 159
-        y: 220
-        width: 159
-        height: 55
+        x: 104
+        y: 219
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bfd9debb49f5e847b95b093f2dcad17
+      spriteID: 050ca1318f6e3a54f876f4d810e33218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_2
+      name: Death_2
       rect:
         serializedVersion: 2
-        x: 318
-        y: 220
-        width: 159
-        height: 55
+        x: 208
+        y: 219
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aa43fbbc48c048448ab82d0e631788c
+      spriteID: b8a20190f25bb79439883a239a7b4a5c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_3
+      name: Death_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 165
-        width: 159
-        height: 55
+        x: 312
+        y: 219
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b3b0146b9e914b4bb2ef2aca467edc6
+      spriteID: 6bbac9e0c2a26c547ad96c2dd1014029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_4
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 165
-        width: 159
-        height: 55
-      alignment: 9
-      pivot: {x: 0.5283019, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5de8de4c8eca0c448b51dfd0c92a8c03
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Roll_5
-      rect:
-        serializedVersion: 2
-        x: 318
-        y: 165
-        width: 159
-        height: 55
-      alignment: 9
-      pivot: {x: 0.5283019, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9dfd5322ae4807f449c2c62d77dfe81d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Roll_6
+      name: Death_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 110
-        width: 159
-        height: 55
+        y: 146
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e249f83a83358ff4196813ae754754e7
+      spriteID: a9c234219976f3b42be721b136782a42
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_7
+      name: Death_5
       rect:
         serializedVersion: 2
-        x: 159
-        y: 110
-        width: 159
-        height: 55
+        x: 104
+        y: 146
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a217fcb80561f594ab05fa500c5b8a81
+      spriteID: 00758ab41cbec744d82596cf73279369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_8
+      name: Death_6
       rect:
         serializedVersion: 2
-        x: 318
-        y: 110
-        width: 159
-        height: 55
+        x: 208
+        y: 146
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29d3e43bcf2b35a4494be641b2960b00
+      spriteID: e248585622d5c1647b03a7bdafea6590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_9
+      name: Death_7
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 146
+        width: 104
+        height: 73
+      alignment: 9
+      pivot: {x: 0.74038464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b7f0d36b236ae549b4cd652985a65f6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 55
-        width: 159
-        height: 55
+        y: 73
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 798f6a9d2c790504794743bd0df4fe72
+      spriteID: 62be19a89f344e942aff43884f173802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_10
+      name: Death_9
       rect:
         serializedVersion: 2
-        x: 159
-        y: 55
-        width: 159
-        height: 55
+        x: 104
+        y: 73
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b149b271340acf44b86a3832d0bf3f4
+      spriteID: 45370c06b7bba4441b99392f6af65637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_11
+      name: Death_10
       rect:
         serializedVersion: 2
-        x: 318
-        y: 55
-        width: 159
-        height: 55
+        x: 208
+        y: 73
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bef4296e8c062134184c9cdbab4a0231
+      spriteID: b8ef8bc07476076469fb2a3ab90a37cc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_12
+      name: Death_11
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 73
+        width: 104
+        height: 73
+      alignment: 9
+      pivot: {x: 0.74038464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e8801cdafad9446ac43288bac1aacc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 159
-        height: 55
+        width: 104
+        height: 73
       alignment: 9
-      pivot: {x: 0.5283019, y: 0}
+      pivot: {x: 0.74038464, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 958bd27f45554b941a9a0d19ea00fe50
+      spriteID: 013305aed2d968f4da78e5742960adf8
       vertices: []
       indices: 
       edges: []
@@ -370,7 +370,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 950b1a886f2852d439ade0af6206f5a3
+    spriteID: 32a71120d179ac14f9da0cba2daf7b33
     vertices: []
     indices: 
     edges: []

@@ -4,7 +4,6 @@ VisualRange = 24
 local player
 local lastAITime = 0
 function start()
-    console.log(vec2(4, 6) - vec2(2, 3))
     player = scene.entity("Player")
     --startCoroutine(chase)
     startCoroutine(bossAI)

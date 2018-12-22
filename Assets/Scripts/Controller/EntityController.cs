@@ -7,7 +7,6 @@ using System.Collections.Generic;
 public class EntityController : EntityStateMachine<GameEntity>
 {
     public const string EventHit = "Hit";
-    public const string EventDeath = "Death";
     public EntityIdle IdleState;
     public EntitySkill SkillState;
     public EntityHit HitState;
@@ -31,7 +30,7 @@ public class EntityController : EntityStateMachine<GameEntity>
          {
              ChangeState(HitState);
          });
-        GetComponent<EventBus>().AddEventListener(EventDeath, () =>
+        GetComponent<EventBus>().AddEventListener(LifeEntity.EventDeath, () =>
         {
             ChangeState(DeadState);
         });

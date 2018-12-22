@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class ZIndex : MonoBehaviour
 {
     public float zIndex = 0;

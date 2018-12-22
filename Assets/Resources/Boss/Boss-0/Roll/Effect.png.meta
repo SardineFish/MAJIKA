@@ -1,20 +1,21 @@
 fileFormatVersion: 2
-guid: c57e83e755ec27c489babdbaedca60ff
+guid: 00334a24497a3ca49b74e4045440384f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Roll_0
-    21300002: Roll_1
-    21300004: Roll_2
-    21300006: Roll_3
-    21300008: Roll_4
-    21300010: Roll_5
-    21300012: Roll_6
-    21300014: Roll_7
-    21300016: Roll_8
-    21300018: Roll_9
-    21300020: Roll_10
-    21300022: Roll_11
-    21300024: Roll_12
+    21300000: Effect_0
+    21300002: Effect_1
+    21300004: Effect_2
+    21300006: Effect_3
+    21300008: Effect_4
+    21300010: Effect_5
+    21300012: Effect_6
+    21300014: Effect_7
+    21300016: Effect_8
+    21300018: Effect_9
+    21300020: Effect_10
+    21300022: Effect_11
+    21300024: Effect_12
+    21300026: Effect_13
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Roll_0
+      name: Effect_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 220
-        width: 159
-        height: 55
+        y: 249
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,19 +123,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 118ab774c640a294da00fea666fbf109
+      spriteID: 204b530da02fda24fa31a001aa4de15a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_1
+      name: Effect_1
       rect:
         serializedVersion: 2
-        x: 159
-        y: 220
-        width: 159
-        height: 55
+        x: 189
+        y: 249
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bfd9debb49f5e847b95b093f2dcad17
+      spriteID: 3ee397208b96c2343b9fdcd911a5b105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_2
+      name: Effect_2
       rect:
         serializedVersion: 2
-        x: 318
-        y: 220
-        width: 159
-        height: 55
+        x: 378
+        y: 249
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,79 +163,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aa43fbbc48c048448ab82d0e631788c
+      spriteID: f2225b820221b9442b7f0c2eb6408dba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 165
-        width: 159
-        height: 55
-      alignment: 9
-      pivot: {x: 0.5283019, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b3b0146b9e914b4bb2ef2aca467edc6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Roll_4
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 165
-        width: 159
-        height: 55
-      alignment: 9
-      pivot: {x: 0.5283019, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5de8de4c8eca0c448b51dfd0c92a8c03
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Roll_5
-      rect:
-        serializedVersion: 2
-        x: 318
-        y: 165
-        width: 159
-        height: 55
-      alignment: 9
-      pivot: {x: 0.5283019, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9dfd5322ae4807f449c2c62d77dfe81d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Roll_6
+      name: Effect_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 110
-        width: 159
-        height: 55
+        y: 166
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,19 +183,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e249f83a83358ff4196813ae754754e7
+      spriteID: e338cf8182b02a942ad0712c3acfae60
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_7
+      name: Effect_4
       rect:
         serializedVersion: 2
-        x: 159
-        y: 110
-        width: 159
-        height: 55
+        x: 189
+        y: 166
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,19 +203,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a217fcb80561f594ab05fa500c5b8a81
+      spriteID: 8c1972cbe5c6d8a47bdbf3041ca04cd1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_8
+      name: Effect_5
       rect:
         serializedVersion: 2
-        x: 318
-        y: 110
-        width: 159
-        height: 55
+        x: 378
+        y: 166
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,19 +223,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29d3e43bcf2b35a4494be641b2960b00
+      spriteID: b2f93823f96947c42a117ed2b3c02ef3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_9
+      name: Effect_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 55
-        width: 159
-        height: 55
+        y: 83
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,19 +243,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 798f6a9d2c790504794743bd0df4fe72
+      spriteID: e2ff03fd6c62fe0489b908f6010bf599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_10
+      name: Effect_7
       rect:
         serializedVersion: 2
-        x: 159
-        y: 55
-        width: 159
-        height: 55
+        x: 189
+        y: 83
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,19 +263,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b149b271340acf44b86a3832d0bf3f4
+      spriteID: 69304e570a5b0394ebd5321eaa7e7d12
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_11
+      name: Effect_8
       rect:
         serializedVersion: 2
-        x: 318
-        y: 55
-        width: 159
-        height: 55
+        x: 378
+        y: 83
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,19 +283,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bef4296e8c062134184c9cdbab4a0231
+      spriteID: c0fb3ae9e40cb2342b01c3dc0c3f8be7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Roll_12
+      name: Effect_9
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 159
-        height: 55
+        width: 189
+        height: 83
       alignment: 9
       pivot: {x: 0.5283019, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,7 +303,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 958bd27f45554b941a9a0d19ea00fe50
+      spriteID: 4372e2dd27e22c64f98765c10b9616c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect_10
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 0
+        width: 189
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5283019, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915603230458ca0459c524818d4863f8
       vertices: []
       indices: 
       edges: []
@@ -370,7 +331,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 950b1a886f2852d439ade0af6206f5a3
+    spriteID: c3c4b810ed233594fa8f60546ff88ffc
     vertices: []
     indices: 
     edges: []
