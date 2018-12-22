@@ -8,6 +8,7 @@ public enum ImpactType
 {
     OnEntity,
     Collider,
+    ColliderCast,
     Manual,
     DropAttack
 }
@@ -34,6 +35,7 @@ public enum ImpactDistance
 [RequireComponent(typeof(EventBus))]
 public class SkillImpact : MonoBehaviour
 {
+    public const int DamageLayerMask = 1 << 14;
     public const string EventDeactivate = "Deactivate";
     public ImpactType ImpactType;
     public ImpactDirection ImpactDirection;
@@ -62,6 +64,8 @@ public class SkillImpact : MonoBehaviour
 
     private void ApplyDamage(GameEntity entity)
     {
+        if (IgnoreCreator && entity == Creator)
+            return;
         if (NextImpact && NextImpact.GetComponent<SkillImpact>())
         {
             var impact = Utility.Instantiate(NextImpact, Creator.gameObject.scene).GetComponent<SkillImpact>();
@@ -167,6 +171,41 @@ public class SkillImpact : MonoBehaviour
         else if (ImpactType == ImpactType.DropAttack)
         {
             DropDownImpact();
+        }
+        else if(ImpactType == ImpactType.ColliderCast)
+        {
+            var hitEntities = new List<GameEntity>();
+            var box = GetComponentInChildren<BoxCollider2D>();
+            var circle = GetComponentInChildren<CircleCollider2D>();
+            var capsule = GetComponent<CapsuleCollider2D>();
+            if (box)
+            {
+                var hits = Physics2D.BoxCastAll(box.offset + box.transform.position.ToVector2(), box.size, 0, Vector2.zero, 0, DamageLayerMask);
+                hitEntities.AddRange(
+                    hits.Select(hit => hit.transform.GetComponentInParent<GameEntity>())
+                        .Where(entity => entity)
+                        .ToList());
+            }
+            if(circle)
+            {
+                var hits = Physics2D.CircleCastAll(circle.offset + circle.transform.position.ToVector2(), circle.radius, Vector2.zero, 0, DamageLayerMask);
+                hitEntities.AddRange(
+                    hits.Select(hit => hit.transform.GetComponentInParent<GameEntity>())
+                        .Where(entity => entity)
+                        .ToList());
+            }
+            if (capsule)
+            {
+                var hits = Physics2D.CapsuleCastAll(capsule.offset + capsule.transform.position.ToVector2(), capsule.size, capsule.direction, 0, Vector2.zero, 0, DamageLayerMask);
+                hitEntities.AddRange(
+                    hits.Select(hit => hit.transform.GetComponentInParent<GameEntity>())
+                        .Where(entity => entity)
+                        .ToList());
+            }
+            hitEntities
+                .Distinct()
+                .ForEach(entity => ApplyDamage(entity));
+            EndImpact();
         }
     }
     public void EndImpact()
