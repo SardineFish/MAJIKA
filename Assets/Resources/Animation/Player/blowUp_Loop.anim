@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: blowUp
+  m_Name: blowUp_Loop
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,12 +19,6 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300004, guid: c078d4109f5c2de4386d7183b4eaeab1, type: 3}
-    - time: 0.05
-      value: {fileID: 21300000, guid: 54cc73618241f734da432653c1b5bb64, type: 3}
-    - time: 0.1
-      value: {fileID: 21300002, guid: 54cc73618241f734da432653c1b5bb64, type: 3}
-    - time: 0.15
       value: {fileID: 21300004, guid: 54cc73618241f734da432653c1b5bb64, type: 3}
     attribute: m_Sprite
     path: Renderer
@@ -45,16 +39,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300004, guid: c078d4109f5c2de4386d7183b4eaeab1, type: 3}
-    - {fileID: 21300000, guid: 54cc73618241f734da432653c1b5bb64, type: 3}
-    - {fileID: 21300002, guid: 54cc73618241f734da432653c1b5bb64, type: 3}
     - {fileID: 21300004, guid: 54cc73618241f734da432653c1b5bb64, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.2
+    m_StopTime: 0.05
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

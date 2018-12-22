@@ -52,7 +52,7 @@ public class EntityEffector : EntityBehaviour<GameEntity>
             }
 
             // Destroy instant effect
-            if(effect.Duration<=0)
+            if(effect.Duration==0)
             {
                 removeList.Add(effect);
                 if (effect.GameObjectInstance)
@@ -64,7 +64,7 @@ public class EntityEffector : EntityBehaviour<GameEntity>
             {
                 effect.Effect.OnUpdate(effect, this);
                 effect.LifeTime += Time.deltaTime;
-                if (effect.LifeTime >= effect.Duration)
+                if (effect.Duration > 0 && effect.LifeTime >= effect.Duration)
                 {
                     removeList.Add(effect);
                     if (effect.GameObjectInstance)

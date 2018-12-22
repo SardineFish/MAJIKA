@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 54cc73618241f734da432653c1b5bb64
+guid: 9db7cb7c37f6b1f42a8f191c7b6fd49e
 TextureImporter:
   fileIDToRecycleName:
     21300000: PlayerBlowUp_0
@@ -108,7 +108,7 @@ TextureImporter:
         width: 116
         height: 52
       alignment: 9
-      pivot: {x: 0.94827586, y: 0.09615385}
+      pivot: {x: 0.9655172, y: 0.1923077}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,7 +128,7 @@ TextureImporter:
         width: 116
         height: 52
       alignment: 9
-      pivot: {x: 0.77586204, y: 0.23076925}
+      pivot: {x: 0.76724136, y: 0.40384617}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,7 +148,7 @@ TextureImporter:
         width: 116
         height: 52
       alignment: 9
-      pivot: {x: 0.6034483, y: 0.4423077}
+      pivot: {x: 0.6034483, y: 0.6730769}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,7 +168,7 @@ TextureImporter:
         width: 116
         height: 52
       alignment: 9
-      pivot: {x: 0.4137931, y: 0.34615386}
+      pivot: {x: 0.4137931, y: 0.4615385}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

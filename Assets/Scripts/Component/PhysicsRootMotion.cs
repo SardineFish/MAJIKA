@@ -7,6 +7,7 @@ public class PhysicsRootMotion : MonoBehaviour
     public Vector3 Position;
     public bool EnableRootMotion;
 
+    bool started = false;
     float lastTime = float.MaxValue;
     Vector3 origin = Vector3.zero;
 
@@ -18,7 +19,16 @@ public class PhysicsRootMotion : MonoBehaviour
     private void Update()
     {
         GetComponent<MovableEntity>().EnableGravity = !EnableRootMotion;
-        GetComponent<MovableEntity>().Frozen = EnableRootMotion;
+        if (EnableRootMotion)
+        {
+            started = true;
+            GetComponent<MovableEntity>().Frozen = true;
+        }
+        else if (started)
+        {
+            GetComponent<MovableEntity>().Frozen = false;
+            started = false;
+        }
     }
 
     private void LateUpdate()

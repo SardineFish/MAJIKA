@@ -3,6 +3,7 @@ using System.Collections;
 
 public abstract class Effect : ScriptableObject
 {
+    [Tooltip("Life time of this effect, -1: infinite")]
     public float Duration = 0;
     public int Priority = 0;
     public GameObject EffectPrefab;

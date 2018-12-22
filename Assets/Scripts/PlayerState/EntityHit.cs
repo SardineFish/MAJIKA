@@ -19,7 +19,23 @@ namespace State
             if(trigger!=null)
             {
                 if (blowUp != null)
-                    yield return entity.GetComponent<AnimationController>().WaitAnimation(BlowUpAction, trigger.position.x - entity.transform.position.x);
+                {
+                    var movable = entity.GetComponent<MovableEntity>();
+                    var v = (blowUp.Effect as BlowUp).Blow;
+                    v.x *= MathUtility.SignInt(blowUp.GetTrigger<ImpactData>().position.x - entity.transform.position.x);
+                    entity.GetComponent<MovableEntity>().Frozen = true;
+                    entity.GetComponent<MovableEntity>().SetVelocity(v);
+                    entity.GetComponent<AnimationController>().PlayAnimation(BlowUpAction, trigger.position.x - entity.transform.position.x);
+                    yield return null;
+                    while (!movable.OnGround)
+                        yield return null;
+                    movable.Frozen = false;
+                    entity.GetComponent<Animator>().SetTrigger("end");
+                    entity.GetComponent<EntityEffector>().RemoveEffect(blowUp.Effect);
+                    while (!fsm.ChangeState(MoveState) && !fsm.ChangeState(JumpState))
+                        yield return null;
+                    yield break;
+                }
                 else
                 {
                     entity.GetComponent<AnimationController>().PlayAnimation(HitAction, trigger.position.x - entity.transform.position.x);
@@ -37,24 +53,12 @@ namespace State
             fsm.ChangeState(IdleState);
         }
 
-        /*
-
         public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
         {
-            //entity.GetComponent<EntityEffector>().GetEffect<>
-            entity.GetComponent<AnimationController>().ChangeAnimation(this.AnimatorController, (GameSystem.Instance.PlayerInControl.transform.position - entity.transform.position).x);
-            //entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, (GameSystem.Instance.PlayerInControl.transform.position - entity.transform.position).x);
-            /*Utility.WaitForSecond(entity, () =>
-            {
-                fsm.ChangeState(IdleState);
-            }, 0.5f); /
+            if (previousState == this)
+                return false;
             return base.OnEnter(entity, previousState, fsm);
         }
-
-        public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
-        {
-            base.OnUpdate(entity, fsm);
-        }*/
     }
 
 }

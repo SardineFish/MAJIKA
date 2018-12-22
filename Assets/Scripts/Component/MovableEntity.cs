@@ -59,6 +59,13 @@ public class MovableEntity : MonoBehaviour
         transform.position = position;
     }
 
+    public void SetVelocity(Vector2 v)
+    {
+        GetComponent<Rigidbody2D>().velocity = v;
+        velocity = v;
+        Debug.Log(GetComponent<Rigidbody2D>().velocity);
+    }
+
     public bool Climb(float speed)
     {
         if (!InClimbArea)
@@ -121,6 +128,7 @@ public class MovableEntity : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        Debug.Log(GetComponent<Rigidbody2D>().velocity);
         OnGround = false;
         InClimbArea = false;
         AvailableClimbArea = null;

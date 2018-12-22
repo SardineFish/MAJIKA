@@ -58,12 +58,18 @@ MonoBehaviour:
   ReleaseRadius: -0.4375
   ReleaseOffset: {x: 0, y: 2.3125, z: 0}
   Direction: 0
-  CoolDown: 0.4
+  CoolDown: 6
   Locked: 0
   Ready: 0
   Icon: {fileID: 21300000, guid: b2e1cf958f2c85941b66ef1198f53c7a, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b, type: 2}
     Strength: 1
     Duration: 0
     LifeTime: 0
