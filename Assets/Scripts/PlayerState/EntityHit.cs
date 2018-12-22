@@ -6,6 +6,7 @@ namespace State
     [CreateAssetMenu(fileName = "Hit", menuName = "EntityState/Hit")]
     public class EntityHit : EntityState<GameEntity>
     {
+        public float BlowUpSleepTime = 0.5f;
         public RuntimeAnimatorController HitAction;
         public RuntimeAnimatorController BlowUpAction;
         public EntityIdle IdleState;
@@ -20,6 +21,7 @@ namespace State
             {
                 if (blowUp != null)
                 {
+                    entity.GetComponent<SkillController>().Abort();
                     var movable = entity.GetComponent<MovableEntity>();
                     var v = (blowUp.Effect as BlowUp).Blow;
                     v.x *= MathUtility.SignInt(blowUp.GetTrigger<ImpactData>().position.x - entity.transform.position.x);
@@ -31,6 +33,7 @@ namespace State
                         yield return null;
                     movable.Frozen = false;
                     entity.GetComponent<Animator>().SetTrigger("end");
+                    yield return new WaitForSeconds(BlowUpSleepTime);
                     entity.GetComponent<EntityEffector>().RemoveEffect(blowUp.Effect);
                     while (!fsm.ChangeState(MoveState) && !fsm.ChangeState(JumpState))
                         yield return null;
@@ -44,7 +47,6 @@ namespace State
                         yield return null;
                         if (fsm.ChangeState(MoveState) || fsm.ChangeState(JumpState))
                         {
-                            Debug.Log("leave");
                             yield break;
                         }
                     }
@@ -55,9 +57,14 @@ namespace State
 
         public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
         {
-            if (previousState == this)
-                return false;
             return base.OnEnter(entity, previousState, fsm);
+        }
+
+        public override bool OnExit(GameEntity entity, EntityState<GameEntity> nextState, EntityStateMachine<GameEntity> fsm)
+        {
+            if (nextState is EntitySkill)
+                return false;
+            return true;
         }
     }
 

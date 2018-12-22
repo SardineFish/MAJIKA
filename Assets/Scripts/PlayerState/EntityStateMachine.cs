@@ -12,7 +12,7 @@ public class EntityStateMachine<TEntity> : EntityBehaviour<TEntity>, IFSM<Entity
     [SerializeField]
     private EntityState<TEntity> state;
     public EntityState<TEntity> State => this.state;
-
+    Coroutine currentStateCoroutine;
     
     [SerializeField]
     private string currentState;
@@ -26,8 +26,10 @@ public class EntityStateMachine<TEntity> : EntityBehaviour<TEntity>, IFSM<Entity
             return false;
         if (!nextState.OnEnter(Entity, State, this))
             return false;
+        if (currentStateCoroutine != null)
+            Entity.StopCoroutine(currentStateCoroutine);
         state = nextState;
-        Entity.StartCoroutine(State.Begin(Entity, this));
+        currentStateCoroutine = Entity.StartCoroutine(State.Begin(Entity, this));
         return true;
     }
 

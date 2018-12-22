@@ -41,13 +41,13 @@ public class EntityController : EntityStateMachine<GameEntity>
 
     protected override void Update()
     {
+        if (!Locked)
+            base.Update();
         this.Movement = Vector2.zero;
         ClimbSpeed = 0;
         Jumped = false;
         SkillIndex = -1;
-        Plugins.ForEach(plugin => plugin.OnUpdate(this)); 
-        if (!Locked)
-            base.Update();
+        Plugins.ForEach(plugin => plugin.OnUpdate(this));
     }
 
     public virtual void Move(Vector2 movement) => Movement = movement;

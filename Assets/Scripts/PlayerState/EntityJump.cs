@@ -15,6 +15,7 @@ namespace State
         {
             if((fsm as EntityController).Jumped && entity.GetComponent<MovableEntity>().Jump())
             {
+                base.OnEnter(entity, previousState, fsm);
                 fsm.ChangeState(AirState);
             }
             return false;

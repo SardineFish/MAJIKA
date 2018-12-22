@@ -6,8 +6,8 @@ local lastAITime = 0
 function start()
     console.log(vec2(4, 6) - vec2(2, 3))
     player = scene.entity("Player")
-    startCoroutine(chase)
-    --startCoroutine(bossAI)
+    --startCoroutine(chase)
+    startCoroutine(bossAI)
 end
 
 function update(dt)
@@ -73,7 +73,6 @@ function chase()
                 coroutine.yield(nil)
             end
         end
-
         entity.move(vec2(sign(dpos.x), 0))
     end
 end

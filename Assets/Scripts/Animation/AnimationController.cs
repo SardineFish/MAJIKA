@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(PhysicsRootMotion))]
 [RequireComponent(typeof(Animator))]
 public class AnimationController : EntityBehaviour<GameEntity>
 {
@@ -32,6 +33,7 @@ public class AnimationController : EntityBehaviour<GameEntity>
     }
     public void ChangeAnimation(RuntimeAnimatorController animator, float direction)
     {
+        GetComponent<PhysicsRootMotion>().EnableRootMotion = false;
         GetComponent<Animator>().runtimeAnimatorController = animator;
         
         if (direction > 0)

@@ -128,7 +128,6 @@ public class MovableEntity : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Debug.Log(GetComponent<Rigidbody2D>().velocity);
         OnGround = false;
         InClimbArea = false;
         AvailableClimbArea = null;
