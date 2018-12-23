@@ -8682,20 +8682,6 @@ Prefab:
       propertyPath: PlayerInControl
       value: 
       objectReference: {fileID: 1451444685}
-    - target: {fileID: 224051498993231204, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -11.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 224051498993231204, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: -87.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1915835965201506, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 2}
   m_IsPrefabAsset: 0

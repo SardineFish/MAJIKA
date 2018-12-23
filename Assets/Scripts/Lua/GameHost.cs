@@ -19,6 +19,10 @@ namespace LuaHost
         {
             return host.StartCoroutine(ConversationUI.Instance.StartConversation(new Conversation(conversation), talkers.Select(entity => entity.GetComponent<Talkable>().Talker).ToArray()));
         }
+        public UnityEngine.Coroutine tips(string tips, float time = 3)
+        {
+            return host.StartCoroutine(Tips.Instance.ShowTipsWait(tips, time));
+        }
         /*
         public Promise ConversationAsync(GameEntity left, GameEntity right, List<string> conversation)
         {

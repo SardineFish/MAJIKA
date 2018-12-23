@@ -199,6 +199,13 @@ public static class Utility
         }
         yield return time;
     }
+    public static IEnumerable<float> TimerNormalized(float time)
+    {
+        foreach (var t in Timer(time))
+        {
+            yield return t / time;
+        }
+    }
 
     public class CallbackYieldInstruction : CustomYieldInstruction
     {

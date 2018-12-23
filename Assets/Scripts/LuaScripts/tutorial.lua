@@ -4,8 +4,6 @@ end
 
 function tutorial()
     local player = scene.entity("Player");
-    coroutine.yield(game.conversation({
-        "这里是移动教学"
-    }, { player }));
+    coroutine.yield(game.tips("使用 A, S, D, W 移动", 5));
 
 end
