@@ -14,8 +14,7 @@ public class Talkable : EventBehaviour
     [EventListener(InteractiveEntity.EventInteract)]
     public void OnInteract(GameEntity entity)
     {
-        ConversationUI.Instance.LeftTalker = Talker;
-        ConversationUI.Instance.RightTalker = (entity as Player)?.Talker;
+        ConversationUI.Instance.Talkers = new Talker[] { Talker, (entity as Player)?.Talker };
         ConversationUI.Instance.Conversation = Conversation;
     }
 }

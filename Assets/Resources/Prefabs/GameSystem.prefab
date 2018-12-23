@@ -44,6 +44,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1146818173693926
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224022112107305228}
+  - component: {fileID: 222565361499148248}
+  - component: {fileID: 114270130497776340}
+  - component: {fileID: 114928717124064940}
+  - component: {fileID: 114471290641874748}
+  - component: {fileID: 114902193118139276}
+  m_Layer: 0
+  m_Name: SkillUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1196777880445898
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1957225885653962
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Movement: {x: 0, y: 0}
   Jumped: 0
+  Climbed: 0
   MovementAction:
     m_Name: Movement
     m_ExpectedControlLayout: 
@@ -225,7 +246,7 @@ MonoBehaviour:
     - m_Name: Dpad
       m_Path: Dpad
       m_Interactions: 
-      m_Processors: 
+      m_Processors: Normalize()
       m_Groups: 
       m_Action: Movement
       m_Flags: 4
@@ -306,14 +327,14 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Path: <Keyboard>/space
-      m_Interactions: Tap()
+      m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Jump
       m_Flags: 0
     - m_Name: 
       m_Path: <Gamepad>/buttonSouth
-      m_Interactions: Tap()
+      m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Jump
@@ -332,14 +353,14 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Path: <Gamepad>/rightShoulder
-      m_Interactions: Tap()
+      m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Climb
       m_Flags: 0
     - m_Name: 
       m_Path: <Gamepad>/rightTrigger
-      m_Interactions: Tap()
+      m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Climb
@@ -497,12 +518,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c615559022a7b3a40810e975145487b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WPS: 10
   Wrapper: {fileID: 1915835965201506}
   TextRenderer: {fileID: 114990612401590830}
   ImageRenderer: {fileID: 114748778710567640}
-  LeftTalker: {fileID: 0}
-  RightTalker: {fileID: 0}
-  Ready: 1
+  Talkers: []
+  Talking: 0
+--- !u!114 &114270130497776340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146818173693926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!114 &114286827876667584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -541,7 +589,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4633ca4cdf455a499de03abf43fe671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Script: {fileID: 4900000, guid: ebb14ba7ac743f14bb843b7b9000d8af, type: 3}
+  Script: {fileID: 0}
+--- !u!114 &114471290641874748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146818173693926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d66ff8a82f483c340b4726ef05105300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Template: {fileID: 1133665496197162, guid: eb787084487d5eb40b39b74ae3e148fc, type: 2}
 --- !u!114 &114561594854667466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,7 +672,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e049f1f0d6a35034886123861050c875, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fb9e4029d0982c4d8efa397f1115f15, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -620,6 +680,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114902193118139276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146818173693926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eef0ee5bac8b2b4cae66df85ee01448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TemplateRenderer: {fileID: 114471290641874748}
 --- !u!114 &114921217081773406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -634,6 +706,28 @@ MonoBehaviour:
   JumpHeight: 4
   JumpTime: 0.65
   OnGroundThreshold: 0.0625
+--- !u!114 &114928717124064940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146818173693926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 16
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
 --- !u!114 &114990612401590830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -673,6 +767,13 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1011223039936196}
+  m_CullTransparentMesh: 0
+--- !u!222 &222565361499148248
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146818173693926}
   m_CullTransparentMesh: 0
 --- !u!222 &222584856184181184
 CanvasRenderer:
@@ -715,6 +816,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!224 &224022112107305228
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146818173693926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224129513312705998}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 24, y: -48}
+  m_SizeDelta: {x: -48, y: 72}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!224 &224051498993231204
 RectTransform:
   m_ObjectHideFlags: 1
@@ -744,6 +863,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 224195969168982518}
+  - {fileID: 224022112107305228}
   m_Father: {fileID: 4713240148662208}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

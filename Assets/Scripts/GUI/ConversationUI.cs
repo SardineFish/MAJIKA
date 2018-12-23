@@ -7,69 +7,61 @@ using System;
 
 public class ConversationUI : Singleton<ConversationUI>
 {
+    public float WPS = 10;
     public GameObject Wrapper;
     public Text TextRenderer;
     public Image ImageRenderer;
-    public Talker LeftTalker;
-    public Talker RightTalker;
-    public bool Ready = true;
+    public Talker[] Talkers;
     public IConversation Conversation;
+    public bool Talking = false;
 
     public event Action onComversationFinish;
 
     void Update()
     {
-        if(Ready && Conversation!=null && InputManager.Instance.GetAction(InputManager.Instance.AcceptAction))
-        {
-            NextSentence();
-        }
     }
 
-    public void StartConversation(Talker left, Talker right, IConversation conversation)
+    public IEnumerator StartConversation(IConversation conversation, Talker[] talkers, bool lockPlayer = false)
     {
-        this.LeftTalker = left;
-        this.RightTalker = right;
-        this.Conversation = conversation;
-        this.Conversation.StartConversation();
-        NextSentence();
+        Guid lockID;
+        if (lockPlayer)
+            GameSystem.Instance.PlayerInControl.GetComponent<EntityController>().Lock();
+
+        Talkers = talkers;
+        Conversation = conversation;
+        Talking = true;
+        Wrapper.SetActive(true);
+
+        foreach (var text in conversation)
+        {
+            yield return ShowSentence(text);
+        }
+        Talkers = null;
+        Conversation = null;
+        Wrapper.SetActive(false);
+        GameSystem.Instance.PlayerInControl.GetComponent<EntityController>().UnLock(lockID);
     }
 
     public void EndConversation()
     {
         Conversation = null;
-        LeftTalker = null;
-        RightTalker = null;
         GameSystem.Instance.PlayerInControl.GetComponent<PlayerController>().playerFSM.ChangeState(PlayerState.Idle);
         onComversationFinish?.Invoke();
     }
 
-    public void NextSentence()
+    public IEnumerator ShowSentence(string text)
     {
-        var text = Conversation.Next();
-        if(text == null)
-        {
-            Wrapper.SetActive(false);
-            EndConversation();
-            return;
-        }
-        else
-            Wrapper.SetActive(true);
         var sentence = RenderSentence(text);
-        StartCoroutine(TextCoroutine(sentence.Text));
-        ImageRenderer.sprite = sentence.Talker.Image;
-    }
-
-    public IEnumerator TextCoroutine(string text)
-    {
-        Ready = false;
-        for(var i = 0; i <= text.Length; i++)
+        var secondsPerWord = 1 / WPS;
+        for(var i = 0; i <= sentence.Text.Length; i++)
         {
+            if (InputManager.Instance.GetAction(InputManager.Instance.AcceptAction))
+                i = sentence.Text.Length;
             TextRenderer.text = text.Substring(0, i);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(secondsPerWord);
         }
-        Ready = true;
+        yield return InputManager.Instance.WaitForAction(InputManager.Instance.AcceptAction);
     }
-
     Sentence RenderSentence(string textTemplate)
     {
         var headerReg = new Regex(@"\$\{(.*?)\}:");
@@ -78,11 +70,18 @@ public class ConversationUI : Singleton<ConversationUI>
         Talker talker = null;
         switch(talkerTemplate)
         {
-            case "left":
-                talker = LeftTalker;
+            case "player":
+                talker = FindObjectOfType<Player>().GetComponent<Talkable>().Talker;
                 break;
-            case "right":
-                talker = RightTalker;
+            default:
+                try
+                {
+                    talker = Talkers[Convert.ToInt32(talkerTemplate)];
+                }
+                catch
+                {
+                    talker = null;
+                }
                 break;
         }
         var text = reg.Replace(textTemplate, match => TemplateReplacer(match.Groups[1].Value));
@@ -92,9 +91,16 @@ public class ConversationUI : Singleton<ConversationUI>
     string TemplateReplacer(string template)
     {
         var replacer = new Dictionary<string, Func<string>>();
-        replacer["left"] = () => LeftTalker.Name;
-        replacer["right"] = () => RightTalker.Name;
-        return replacer[template]?.Invoke();
+        if (template == "player")
+            return FindObjectOfType<Player>().GetComponent<Talkable>().Talker.Name;
+        try
+        {
+            return Talkers[Convert.ToInt32(template)].Name;
+        }
+        catch
+        {
+            return $"{{{template}}}";
+        }
     }
 }
 

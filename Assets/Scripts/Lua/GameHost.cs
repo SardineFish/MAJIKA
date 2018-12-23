@@ -15,7 +15,12 @@ namespace LuaHost
         public GameHost(LuaScriptHost host):base(host)
         {
         }
-        public Promise Conversation(GameEntity left, GameEntity right, List<string> conversation)
+        public UnityEngine.Coroutine Conversation(List<string> conversation, GameEntity[] talkers, bool lockPlayer = true)
+        {
+            return host.StartCoroutine(ConversationUI.Instance.StartConversation(new Conversation(conversation), talkers.Select(entity => entity.GetComponent<Talkable>().Talker).ToArray()));
+        }
+        /*
+        public Promise ConversationAsync(GameEntity left, GameEntity right, List<string> conversation)
         {
             return new Promise((resolve) =>
             {
@@ -28,6 +33,6 @@ namespace LuaHost
                 ConversationUI.Instance.StartConversation(left.GetComponent<Talkable>().Talker, right.GetComponent<Talkable>().Talker, new Conversation(conversation));
                 ConversationUI.Instance.onComversationFinish += callback;
             }, host);
-        }
+        }*/
     }
 }

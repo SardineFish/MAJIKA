@@ -7,14 +7,14 @@ using System.Collections.Generic;
 public class EntityController : EntityStateMachine<GameEntity>
 {
     public const string EventHit = "Hit";
+    public Locker Locker = new Locker();
     public EntityIdle IdleState;
     public EntitySkill SkillState;
     public EntityHit HitState;
     public EntityDead DeadState;
 
     public List<ControllerPlugin> Plugins = new List<ControllerPlugin>();
-
-    public bool Locked = false;
+    
 
     public Vector2 Movement = Vector2.zero;
     public float ClimbSpeed = 0;
@@ -40,7 +40,7 @@ public class EntityController : EntityStateMachine<GameEntity>
 
     protected override void Update()
     {
-        if (!Locked)
+        if (!Locker.Locked)
             base.Update();
         this.Movement = Vector2.zero;
         ClimbSpeed = 0;
@@ -56,11 +56,15 @@ public class EntityController : EntityStateMachine<GameEntity>
 
     public virtual bool Skill(int idx, float dir)
     {
+        if (Locker.Locked)
+            return false;
         SkillIndex = idx;
         GetComponent<MovableEntity>().FaceTo(dir);
         var result = ChangeState(SkillState);
         SkillIndex = -1;
         return result;
     }
-    public virtual void Lock() => Locked = true;
+    public virtual System.Guid Lock() => Locker.Lock();
+    public virtual bool UnLock(System.Guid id) => Locker.UnLock(id);
+    public virtual void UnLock() => Locker.UnLockAll();
 }

@@ -81,6 +81,12 @@ public class InputManager : Singleton<InputManager> {
         return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 
+    public IEnumerator WaitForAction(InputAction action)
+    {
+        while (!GetAction(action))
+            yield return null;
+    }
+
     public bool GetAction(InputAction action)
     {
         return action.phase == InputActionPhase.Started;

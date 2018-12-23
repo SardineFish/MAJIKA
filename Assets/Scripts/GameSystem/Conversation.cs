@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-public interface IConversation
+public interface IConversation : IEnumerable<string>
 {
     void StartConversation();
 
@@ -26,6 +26,26 @@ public class ConversationAsset : ScriptableObject,IConversation
     {
         conversationEnumerator.MoveNext();
         return conversationEnumerator.Current;
+    }
+
+    void IConversation.StartConversation()
+    {
+        throw new NotImplementedException();
+    }
+
+    string IConversation.Next()
+    {
+        throw new NotImplementedException();
+    }
+
+    IEnumerator<string> IEnumerable<string>.GetEnumerator()
+    {
+        return Conversations.GetEnumerator();
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return Conversations.GetEnumerator();
     }
 }
 public class Conversation: IConversation
@@ -51,4 +71,9 @@ public class Conversation: IConversation
         return null;
     }
 
+    public IEnumerator<string> GetEnumerator()
+        => Conversations.GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator()
+        => Conversations.GetEnumerator();
 }
