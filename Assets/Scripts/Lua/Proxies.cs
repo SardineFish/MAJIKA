@@ -63,4 +63,21 @@ namespace LuaHost.Proxy
         {
         }
     }
+
+    class CameraProxy : ProxyBase<Camera>
+    {
+        public CameraProxy(Camera target) : base(target)
+        {
+        }
+
+        public void Follow(GameEntity followTarget)
+        {
+            target.GetComponent<CameraMovement>().followTarget = followTarget.transform; 
+        }
+
+        public void MoveTo(Vector2 pos)
+        {
+            target.GetComponent<CameraMovement>().focusPosition = pos.ToVector3();
+        }
+    }
 }

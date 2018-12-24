@@ -159,12 +159,13 @@ MonoBehaviour:
   CushionRange: 2.64
   FollowIgnoreRange: 4
   FollowRangeOffset: {x: 0, y: -1.93}
-  FollowStartRange: {x: 7.12, y: 2.76}
-  MaxFollowRange: {x: 12.75, y: 5.7}
+  FollowStartRange: {x: 1.6, y: 2.76}
+  MaxFollowRange: {x: 6.03, y: 5.7}
   MaxSpeed: 12
   MaxAcceleration: 30
   cushionCollider: {fileID: 61852194675784790}
   followTarget: {fileID: 0}
+  focusPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114769273651185550
 MonoBehaviour:
   m_ObjectHideFlags: 1

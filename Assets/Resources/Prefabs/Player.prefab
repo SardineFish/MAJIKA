@@ -1564,9 +1564,6 @@ MonoBehaviour:
   SkillState: {fileID: 11400000, guid: ab0ba3ecf9c4d4a47b302990f0781627, type: 2}
   HitState: {fileID: 11400000, guid: 20ca004ad557555429c68676f39172fd, type: 2}
   DeadState: {fileID: 0}
-  Plugins:
-  - {fileID: 11400000, guid: e518002a654178641b0f8266273d2618, type: 2}
-  Locked: 0
   Movement: {x: 0, y: 0}
   ClimbSpeed: 0
   Jumped: 0

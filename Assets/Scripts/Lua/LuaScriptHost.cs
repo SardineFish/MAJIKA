@@ -70,6 +70,7 @@ namespace LuaHost
             script.Globals["startCoroutine"] = (Func<Closure, UnityEngine.Coroutine>)host.CoroutineManager.StartCoroutine;
             script.Globals["stopCoroutine"] = (Action<UnityEngine.Coroutine>)host.CoroutineManager.StopCoroutine;
             script.Globals["utility"] = utility;
+            script.Globals["camera"] = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
             return script;
         }
         static void InitRuntimeEnvironment()
@@ -79,6 +80,7 @@ namespace LuaHost
             UserData.RegisterProxyType<Proxy.GameObjectProxy, GameObject>(obj => new Proxy.GameObjectProxy(obj));
             UserData.RegisterProxyType<Proxy.GameEntityProxy, GameEntity>(obj => new Proxy.GameEntityProxy(obj));
             UserData.RegisterProxyType<Proxy.CoroutineProxy, UnityEngine.Coroutine>(obj => new Proxy.CoroutineProxy(obj));
+            UserData.RegisterProxyType<Proxy.CameraProxy, Camera>(obj => new Proxy.CameraProxy(obj));
             UserData.RegisterType<UtilityHost>();
             UserData.RegisterType<Vector3>();
             UserData.RegisterType<Vector2>();

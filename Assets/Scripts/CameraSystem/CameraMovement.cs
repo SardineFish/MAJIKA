@@ -16,6 +16,7 @@ public class CameraMovement : MonoBehaviour
     public float MaxAcceleration = 10;
     public BoxCollider2D cushionCollider;
     public Transform followTarget;
+    public Vector3 focusPosition;
 
     private Vector2 seperateSpeed;
     private Vector2 followSpeed;
@@ -46,9 +47,10 @@ public class CameraMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!followTarget)
-            return;
-        var follow = (followTarget.position - transform.position - FollowRangeOffset.ToVector3()).ToVector2();
+        if (followTarget)
+            focusPosition = followTarget.position;
+
+        var follow = (focusPosition - transform.position - FollowRangeOffset.ToVector3()).ToVector2();
         var followAccelerateRange = MaxFollowRange - FollowStartRange;
 
         if (follow.magnitude > FollowIgnoreRange)
