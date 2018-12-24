@@ -22,6 +22,7 @@ public class InputManager : Singleton<InputManager> {
 
     public InputAction AcceptAction;
     public InputAction BackAction;
+    public InputAction AnyKey;
 
     public InputAction SkillAction1;
     public InputAction SkillAction2;
@@ -32,6 +33,7 @@ public class InputManager : Singleton<InputManager> {
 
     private void OnEnable()
     {
+        AnyKey.Enable();
         MovementAction.Enable();
         JumpAction.Enable();
         ClimbAction.Enable();

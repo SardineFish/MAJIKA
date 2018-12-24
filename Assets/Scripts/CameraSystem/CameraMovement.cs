@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[ExecuteInEditMode]
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
 public class CameraMovement : MonoBehaviour
 {
@@ -26,6 +25,7 @@ public class CameraMovement : MonoBehaviour
     {
         camera = GetComponent<Camera>();
         cushionCollider = GetComponent<BoxCollider2D>();
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -46,6 +46,8 @@ public class CameraMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!followTarget)
+            return;
         var follow = (followTarget.position - transform.position - FollowRangeOffset.ToVector3()).ToVector2();
         var followAccelerateRange = MaxFollowRange - FollowStartRange;
 

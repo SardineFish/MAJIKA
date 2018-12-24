@@ -23,20 +23,11 @@ namespace LuaHost
         {
             return host.StartCoroutine(Tips.Instance.ShowTipsWait(tips, time));
         }
-        /*
-        public Promise ConversationAsync(GameEntity left, GameEntity right, List<string> conversation)
+        public void Control(GameEntity entity)
         {
-            return new Promise((resolve) =>
-            {
-                Action callback = null;
-                callback = () =>
-                {
-                    ConversationUI.Instance.onComversationFinish -= callback;
-                    resolve();
-                };
-                ConversationUI.Instance.StartConversation(left.GetComponent<Talkable>().Talker, right.GetComponent<Talkable>().Talker, new Conversation(conversation));
-                ConversationUI.Instance.onComversationFinish += callback;
-            }, host);
-        }*/
+            GameObject.Destroy(GameSystem.Instance.PlayerInControl.GetComponent<EntityInputPlugin>());
+            entity.gameObject.AddComponent<EntityInputPlugin>();
+            GameSystem.Instance.PlayerInControl = entity;
+        }
     }
 }

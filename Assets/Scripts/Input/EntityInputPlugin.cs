@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu(fileName ="InputPlugin",menuName ="ControllerPlugin/Input")]
 public class EntityInputPlugin : ControllerPlugin
 {
     public override void OnUpdate(EntityController controller)

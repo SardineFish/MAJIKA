@@ -12,8 +12,6 @@ public class EntityController : EntityStateMachine<GameEntity>
     public EntitySkill SkillState;
     public EntityHit HitState;
     public EntityDead DeadState;
-
-    public List<ControllerPlugin> Plugins = new List<ControllerPlugin>();
     
 
     public Vector2 Movement = Vector2.zero;
@@ -46,7 +44,11 @@ public class EntityController : EntityStateMachine<GameEntity>
         ClimbSpeed = 0;
         Jumped = false;
         SkillIndex = -1;
-        Plugins.ForEach(plugin => plugin.OnUpdate(this));
+        GetComponents<ControllerPlugin>().ForEach(plugin =>
+        {
+            if (plugin.enabled)
+                plugin.OnUpdate(this);
+        });
     }
 
     public virtual void Move(Vector2 movement) => Movement = movement;

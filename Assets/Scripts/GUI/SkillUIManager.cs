@@ -8,10 +8,11 @@ public class SkillUIManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        this.NextFrame(() =>
-        {
-            TemplateRenderer.DataSource = GameSystem.Instance.PlayerInControl.GetComponent<SkillController>().Skills;
-        });
+        if (GameSystem.Instance.PlayerInControl)
+            this.NextFrame(() =>
+            {
+                TemplateRenderer.DataSource = GameSystem.Instance.PlayerInControl.GetComponent<SkillController>().Skills;
+            });
     }
 
     // Update is called once per frame
