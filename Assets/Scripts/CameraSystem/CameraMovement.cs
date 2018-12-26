@@ -27,6 +27,7 @@ public class CameraMovement : MonoBehaviour
         camera = GetComponent<Camera>();
         cushionCollider = GetComponent<BoxCollider2D>();
         DontDestroyOnLoad(gameObject);
+        focusPosition = transform.position;
     }
 
     // Update is called once per frame

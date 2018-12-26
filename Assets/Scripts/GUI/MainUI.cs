@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 public class MainUI : MonoBehaviour
 {
 
@@ -20,6 +20,14 @@ public class MainUI : MonoBehaviour
 
     IEnumerator EnterGameCoroutine()
     {
-        yield break;
+        yield return LevelLoader.LoadLevel(GameSystem.Instance.TutorialScenePath);
+        GetComponent<Animator>().SetTrigger("hide");
+        yield return null;
+        var animator = GetComponent<Animator>();
+        while(animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        {
+            yield return null;
+        }
+        FindObjectOfType<Level>().Ready();
     }
 }
