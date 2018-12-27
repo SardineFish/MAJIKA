@@ -16,6 +16,7 @@ namespace State
             {
                 return false;
             }
+            entity.GetComponent<AudioController>().PlayAudio(null);
             return true;
         }
 

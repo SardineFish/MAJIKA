@@ -86,6 +86,12 @@ public class SkillController : EntityBehaviour<Player>
         ActiveSkill?.EndImpact();
     }
 
+    void OnSkillAudioEffect()
+    {
+        if (ActiveSkill)
+            GetComponent<AudioController>().PlayEffect(ActiveSkill.AudioEffect);
+    }
+
     IEnumerator MoveCoroutine(MovementSkill movement)
     {
         var endTime = Time.time + movement.Duration;

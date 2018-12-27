@@ -13,6 +13,9 @@ function update(dt)
 end
 
 function bossAI()
+    repeat coroutine.yield(nil);
+    until player.position.x > 134;
+    
     local co = startCoroutine(wander)
     local currentState = wander
     function changeState(state)

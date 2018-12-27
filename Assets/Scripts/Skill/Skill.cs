@@ -10,6 +10,7 @@ public enum SkillDirection
 public class Skill : EntityBehaviour<GameEntity>
 {
     public RuntimeAnimatorController AnimatorController;
+    public AudioClip AudioEffect;
     public bool LockAction = false;
     public float ReleaseRadius;
     public Vector3 ReleaseOffset;
