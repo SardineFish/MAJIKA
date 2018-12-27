@@ -182,9 +182,10 @@ public class SkillImpact : MonoBehaviour
             var box = GetComponentInChildren<BoxCollider2D>();
             var circle = GetComponentInChildren<CircleCollider2D>();
             var capsule = GetComponent<CapsuleCollider2D>();
+            var pos = transform.localToWorldMatrix.MultiplyPoint(box.offset);
             if (box)
             {
-                var hits = Physics2D.BoxCastAll(box.offset + box.transform.position.ToVector2(), box.size, 0, Vector2.zero, 0, DamageLayerMask);
+                var hits = Physics2D.BoxCastAll(pos, box.size, 0, Vector2.zero, 0, DamageLayerMask);
                 hitEntities.AddRange(
                     hits.Select(hit => hit.transform.GetComponentInParent<GameEntity>())
                         .Where(entity => entity)
@@ -192,7 +193,7 @@ public class SkillImpact : MonoBehaviour
             }
             if(circle)
             {
-                var hits = Physics2D.CircleCastAll(circle.offset + circle.transform.position.ToVector2(), circle.radius, Vector2.zero, 0, DamageLayerMask);
+                var hits = Physics2D.CircleCastAll(pos, circle.radius, Vector2.zero, 0, DamageLayerMask);
                 hitEntities.AddRange(
                     hits.Select(hit => hit.transform.GetComponentInParent<GameEntity>())
                         .Where(entity => entity)
@@ -200,7 +201,7 @@ public class SkillImpact : MonoBehaviour
             }
             if (capsule)
             {
-                var hits = Physics2D.CapsuleCastAll(capsule.offset + capsule.transform.position.ToVector2(), capsule.size, capsule.direction, 0, Vector2.zero, 0, DamageLayerMask);
+                var hits = Physics2D.CapsuleCastAll(pos, capsule.size, capsule.direction, 0, Vector2.zero, 0, DamageLayerMask);
                 hitEntities.AddRange(
                     hits.Select(hit => hit.transform.GetComponentInParent<GameEntity>())
                         .Where(entity => entity)
