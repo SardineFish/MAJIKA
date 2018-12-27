@@ -20,6 +20,7 @@ namespace LuaHost
             if (prefab.GetComponent<GameEntity>())
             {
                 var obj = GameObject.Instantiate(prefab, position.ToVector3(), Quaternion.identity);
+                obj.name = name;
                 return obj.GetComponent<GameEntity>();
             }
             return null;

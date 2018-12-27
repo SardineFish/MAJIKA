@@ -218,4 +218,29 @@ public static class Utility
         }
     }
 
+    public static IEnumerator ShowUI(UnityEngine.UI.Graphic ui, float time)
+    {
+        var color = ui.color;
+        color.a = 0;
+        ui.gameObject.SetActive(true);
+        foreach(var t in TimerNormalized(time))
+        {
+            color.a = t;
+            ui.color = color;
+            yield return null;
+        }
+    }
+    public static IEnumerator HideUI(UnityEngine.UI.Graphic ui, float time, bool deactive = false)
+    {
+        var color = ui.color;
+        color.a = 1;
+        foreach (var t in TimerNormalized(time))
+        {
+            color.a = 1 - t;
+            ui.color = color;
+            yield return null;
+        }
+        if (deactive)
+            ui.gameObject.SetActive(false);
+    }
 }

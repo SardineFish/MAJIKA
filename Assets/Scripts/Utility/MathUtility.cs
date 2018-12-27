@@ -44,6 +44,14 @@ public static class MathUtility
     {
         return new Vector2(Mathf.Abs(v.x), Mathf.Abs(v.y));
     }
+    public static Color Set(this Color color, float r = float.NaN, float g=float.NaN, float b=float.NaN, float a = float.NaN)
+    {
+        color.r = float.IsNaN(r) ? color.r : r;
+        color.g = float.IsNaN(g) ? color.g : g;
+        color.b = float.IsNaN(b) ? color.b : b;
+        color.a = float.IsNaN(a) ? color.a : a;
+        return color;
+    }
 
     public static int SignInt(float x)
     {

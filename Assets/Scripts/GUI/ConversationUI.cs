@@ -11,6 +11,8 @@ public class ConversationUI : Singleton<ConversationUI>
     public GameObject Wrapper;
     public Text TextRenderer;
     public Image ImageRenderer;
+    public Graphic ContinueHint;
+    public Sprite Transperant;
     public Talker[] Talkers;
     public IConversation Conversation;
     public bool Talking = false;
@@ -31,7 +33,6 @@ public class ConversationUI : Singleton<ConversationUI>
         Conversation = conversation;
         Talking = true;
         Wrapper.SetActive(true);
-
         foreach (var text in conversation)
         {
             yield return ShowSentence(text);
@@ -51,18 +52,24 @@ public class ConversationUI : Singleton<ConversationUI>
 
     public IEnumerator ShowSentence(string text)
     {
-        var sentence = RenderSentence(text);
+        var (talker, renderedText) = RenderSentence(text);
+        if (talker)
+            ImageRenderer.sprite = talker.Image;
+        else
+            ImageRenderer.sprite = Transperant;
         var secondsPerWord = 1 / WPS;
-        for(var i = 0; i <= sentence.Text.Length; i++)
+        for(var i = 0; i <= renderedText.Length; i++)
         {
             if (InputManager.Instance.GetAction(InputManager.Instance.AcceptAction))
-                i = sentence.Text.Length;
+                i = renderedText.Length;
             TextRenderer.text = text.Substring(0, i);
             yield return new WaitForSeconds(secondsPerWord);
         }
+        yield return Utility.ShowUI(ContinueHint, 0.2f);
         yield return InputManager.Instance.WaitForAction(InputManager.Instance.AcceptAction);
+        yield return Utility.HideUI(ContinueHint, 0);
     }
-    Sentence RenderSentence(string textTemplate)
+    (Talker Talker, string Text) RenderSentence(string textTemplate)
     {
         var headerReg = new Regex(@"\$\{(.*?)\}:");
         var reg = new Regex(@"\$\{(.*?)\}");
@@ -85,7 +92,7 @@ public class ConversationUI : Singleton<ConversationUI>
                 break;
         }
         var text = reg.Replace(textTemplate, match => TemplateReplacer(match.Groups[1].Value));
-        return new Sentence() { Talker = talker, Text = text };
+        return (talker, text);
     }
 
     string TemplateReplacer(string template)
