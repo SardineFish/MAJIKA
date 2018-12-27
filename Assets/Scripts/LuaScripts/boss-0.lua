@@ -1,5 +1,5 @@
 AIDuration = 0.2
-VisualRange = 24
+VisualRange = 20
 
 local player
 local lastAITime = 0
