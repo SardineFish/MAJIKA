@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 6795263824424542851}
   - component: {fileID: 6795263824424542852}
   m_Layer: 0
-  m_Name: Boss
+  m_Name: Boss-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -725,11 +725,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224488869891280750, guid: b20cb3b4b1eed9a4284c16da96ced98e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000000057742
-      objectReference: {fileID: 0}
     - target: {fileID: 224772696314357822, guid: b20cb3b4b1eed9a4284c16da96ced98e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -759,6 +754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224488869891280750, guid: b20cb3b4b1eed9a4284c16da96ced98e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000000057742
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}

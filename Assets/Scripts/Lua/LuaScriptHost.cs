@@ -26,9 +26,6 @@ namespace LuaHost
 
         protected virtual void Start()
         {
-            if (Script)
-                LuaScript.DoString(Script.text);
-
             LuaScript.Globals.Get("start").Function?.Call();
         }
 
@@ -40,6 +37,9 @@ namespace LuaHost
         protected virtual void Awake()
         {
             InitRuntime();
+            if (Script)
+                LuaScript.DoString(Script.text);
+            LuaScript.Globals.Get("awake").Function?.Call();
         }
 
         public void RunScript(TextAsset script)
