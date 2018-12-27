@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e23622d46f2684fa25101fcf9d2960, type: 3}
   m_Name: Boss0Move
   m_EditorClassIdentifier: 
-  Audio: {fileID: 8300000, guid: a90de21ee9115a849970f938588e7c67, type: 3}
+  SoundEffect: {fileID: 0}
   AnimatorController: {fileID: 9100000, guid: a2d573c1dcf21b045b1e4cecc4cb48d3, type: 2}
   TriggerName: 
+  FootStep: {fileID: 8300000, guid: cf4b0415f8ceff546886ea680ee620ca, type: 3}
+  Delay: 0
+  Duration: 0.7
+  Volumn: 1
   IdleState: {fileID: 11400000, guid: d90af75a50657d34b81bc8978d7089b6, type: 2}
   JumpState: {fileID: 11400000, guid: 65c73a413d420c149973d5d5a88e1ca1, type: 2}
   ClimbState: {fileID: 0}

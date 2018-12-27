@@ -16,19 +16,18 @@ public class AudioController : EntityBehaviour<GameEntity>
         if (!clip)
         {
             source.clip = null;
-            source.Stop();
         }
         else if (source.clip != clip)
         {
-            source.Stop();
             source.clip = clip;
             source.Play();
         }
     }
 
-    public void PlayEffect(AudioClip clip)
+    public void PlayEffect(AudioClip clip, float volumn = 1)
     {
-        source.PlayOneShot(clip);
+        if (clip)
+            source.PlayOneShot(clip, volumn);
     }
     private void Update()
     {

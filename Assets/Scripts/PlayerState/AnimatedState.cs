@@ -3,13 +3,14 @@ using System.Collections;
 
 public class AnimatedState<TEntity> : EntityState<TEntity> where TEntity:GameEntity
 {
-    public AudioClip Audio;
+    public AudioClip SoundEffect;
     public RuntimeAnimatorController AnimatorController;
     public string TriggerName = "";
 
     public override bool OnEnter(TEntity entity, EntityState<TEntity> previousState, EntityStateMachine<TEntity> fsm)
     {
-        entity.GetComponent<AudioController>().PlayAudio(Audio);
+        if (SoundEffect)
+            entity.GetComponent<AudioController>().PlayEffect(SoundEffect);
         Animate(entity, 0);
         return true;
     }

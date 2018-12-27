@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: c28260c52b1164849a28087b8b71183b, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 1.36
   ReleaseOffset: {x: 0, y: 1.35, z: 0}
@@ -319,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: f16f84b2d6f90374fb02a592cf62aab1, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 1.36
   ReleaseOffset: {x: 0, y: 1.35, z: 0}
@@ -503,6 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 874fad72e3a39504a92163747ad306b4, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 0.8465862
   ReleaseOffset: {x: 0, y: 1.25284, z: 0}
@@ -579,6 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 266e23a3eb6470b45a1845022aa3c0a0, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 0.8465862
   ReleaseOffset: {x: 0, y: 1.25284, z: 0}
@@ -971,6 +975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e2a7859c9396940b02250a2e7e7e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayClip: {fileID: 0}
 --- !u!1 &1383743700571564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: a61851166c03aea4489a0c420a7eb40d, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 0.0625
   ReleaseOffset: {x: 0, y: 0.9375, z: 0}
@@ -1203,6 +1209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 40db3183d0ab1424db2d27565e53d80f, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 8.8
   ReleaseOffset: {x: 0, y: 0, z: 0}
@@ -1297,6 +1304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 706850122770db443807e39fc30b4868, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 1.36
   ReleaseOffset: {x: 0, y: 1.35, z: 0}
@@ -1420,6 +1428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: c7138f73261b7e94cb534bf23f72c882, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 0.8465862
   ReleaseOffset: {x: 0, y: 1.25284, z: 0}
@@ -1557,6 +1566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 60442408de0fe4f41aef2dcb33bf929e, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 1.36
   ReleaseOffset: {x: 0, y: 1.35, z: 0}
@@ -1827,6 +1837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 08560fcf784e83d4db34ade9f830ac22, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: -0.4375
   ReleaseOffset: {x: 0, y: 2.3125, z: 0}
@@ -2025,6 +2036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: 38927d5f0028513498987d057ac1243a, type: 2}
+  AudioEffect: {fileID: 8300000, guid: d2d41192fdbaea04cabec741ed90e4de, type: 3}
   LockAction: 1
   ReleaseRadius: 0.8465862
   ReleaseOffset: {x: 0, y: 1.25284, z: 0}
@@ -2101,6 +2113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorController: {fileID: 9100000, guid: bb2bba4c0388b774e813f17628853a86, type: 2}
+  AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 0.8465862
   ReleaseOffset: {x: 0, y: 1.25284, z: 0}
