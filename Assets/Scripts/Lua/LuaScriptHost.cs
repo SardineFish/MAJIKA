@@ -49,6 +49,14 @@ namespace LuaHost
             LuaScript.Globals.Get("start").Function?.Call();
         }
 
+        public void ReStart()
+        {
+            StopAllCoroutines();
+            LuaScript.DoString(Script.text);
+            LuaScript.Globals.Get("awake").Function?.Call();
+            LuaScript.Globals.Get("start").Function?.Call();
+        }
+
         public static Script CreateScriptRuntime(LuaScriptHost host)
         {
             host.CoroutineManager = new LuaCoroutineManager(host);

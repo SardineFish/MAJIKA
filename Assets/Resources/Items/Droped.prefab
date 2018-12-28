@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 269b8fabf591e1143974ca27ffb5d1f4, type: 2}
   TraceRadius: 3
-  PickupVelocity: {x: 0, y: 10}
+  PickupVelocity: {x: 0, y: 6}
   Acceleration: 50
 --- !u!58 &214808702
 CircleCollider2D:

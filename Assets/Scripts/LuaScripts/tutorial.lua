@@ -70,6 +70,7 @@ function tutorial()
     until player.position.x > 134;
     
     boss.setActive(true);
+    boss.restartScript();
     coroutine.yield(game.conversation({
         "安静的走廊里好像能听见什么……"
     },{player}));

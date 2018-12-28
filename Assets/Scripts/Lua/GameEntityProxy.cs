@@ -68,5 +68,8 @@ namespace LuaHost.Proxy
 
         public Threat[] DetectThreat()
             => target.DetectThreat();
+
+        public void RestartScript()
+            => target.GetComponent<LuaScriptHost>().ReStart();
     }
 }

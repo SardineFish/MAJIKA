@@ -15108,6 +15108,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 647464044, guid: 19b812f176135e7428064a0e40984f2f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -103.57991
+      objectReference: {fileID: 0}
+    - target: {fileID: 647464044, guid: 19b812f176135e7428064a0e40984f2f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -223.16031
+      objectReference: {fileID: 0}
+    - target: {fileID: 426572459, guid: 19b812f176135e7428064a0e40984f2f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -114.46401
+      objectReference: {fileID: 0}
+    - target: {fileID: 426572459, guid: 19b812f176135e7428064a0e40984f2f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -236.92802
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19b812f176135e7428064a0e40984f2f, type: 3}
 --- !u!1001 &1624447704984642687
@@ -15120,7 +15136,7 @@ PrefabInstance:
     - target: {fileID: 1624447704904195074, guid: 6197c38ce6f25024891d434ad6638628,
         type: 3}
       propertyPath: m_Name
-      value: GameObject
+      value: FlameStone
       objectReference: {fileID: 0}
     - target: {fileID: 1624447704904195323, guid: 6197c38ce6f25024891d434ad6638628,
         type: 3}
