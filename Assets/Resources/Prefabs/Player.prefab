@@ -857,7 +857,7 @@ MonoBehaviour:
   IdleState: {fileID: 11400000, guid: 0b6c0916b0c114f4abd2a2378a507668, type: 2}
   SkillState: {fileID: 11400000, guid: ab0ba3ecf9c4d4a47b302990f0781627, type: 2}
   HitState: {fileID: 11400000, guid: 20ca004ad557555429c68676f39172fd, type: 2}
-  DeadState: {fileID: 0}
+  DeadState: {fileID: 11400000, guid: c954a1edd82d6e7408afe039415932f9, type: 2}
   Movement: {x: 0, y: 0}
   ClimbSpeed: 0
   Jumped: 0

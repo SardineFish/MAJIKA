@@ -22,7 +22,7 @@ function update()
     end
     if player.HP <= 0 then
         gameEnd = true;
-        game.over();
+        startCoroutine(playerDead);
         return;
     end
     if boss.HP <= 0 then
@@ -30,6 +30,12 @@ function update()
         startCoroutine(bossDead);
         return;
     end
+end
+
+function playerDead()
+    coroutine.yield(player.wait("action", _host));
+    coroutine.yield(waitForSeconds(1));
+    game.over();
 end
 
 function bossDead()
