@@ -16,5 +16,10 @@ namespace LuaHost
             
             return Resources.Load<GameObject>($"Prefabs/{name}");
         }
+
+        public AudioClip Audio(string name)
+        {
+            return Resources.Load<AudioClip>($"Audio/{name}");
+        }
     }
 }

@@ -89,6 +89,7 @@ namespace LuaHost
             UserData.RegisterProxyType<Proxy.GameObjectProxy, GameObject>(obj => new Proxy.GameObjectProxy(obj));
             UserData.RegisterProxyType<Proxy.GameEntityProxy, GameEntity>(obj => new Proxy.GameEntityProxy(obj));
             UserData.RegisterProxyType<Proxy.CoroutineProxy, UnityEngine.Coroutine>(obj => new Proxy.CoroutineProxy(obj));
+            UserData.RegisterProxyType<Proxy.AudioClipProxy, AudioClip>(obj => new Proxy.AudioClipProxy(obj));
             UserData.RegisterProxyType<Proxy.CameraProxy, Camera>(obj => new Proxy.CameraProxy(obj));
             UserData.RegisterType<UtilityHost>();
             UserData.RegisterType<Vector3>();

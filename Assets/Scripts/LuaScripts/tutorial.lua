@@ -35,6 +35,7 @@ end
 function playerDead()
     game.control(nil);
     game.setTarget(nil);
+    game.exitAudio();
     --coroutine.yield(player.wait("action", _host));
     --coroutine.yield(waitForSeconds(1));
     game.over();
@@ -43,7 +44,9 @@ end
 function bossDead()
     game.control(nil);
     game.setTarget(nil);
+    game.exitAudio();
     coroutine.yield(boss.wait("action", _host));
+    game.playAudio(resources.audio("Win"), 0.25);
     game.pass();
 end
 
@@ -76,8 +79,9 @@ function tutorial()
     },{player}, true));
 
     camera.follow(boss);
-    coroutine.yield(waitForSeconds(6));
+    coroutine.yield(waitForSeconds(4));
     game.setTarget(boss, "Boss");
+    game.playAudio(resources.audio("Boss"), 0.25);
     camera.follow(player);
 
 end

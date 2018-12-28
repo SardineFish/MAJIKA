@@ -64,6 +64,13 @@ namespace LuaHost.Proxy
         }
     }
 
+    class AudioClipProxy : ProxyBase<AudioClip>
+    {
+        public AudioClipProxy(AudioClip target) : base(target)
+        {
+        }
+    }
+
     class CameraProxy : ProxyBase<Camera>
     {
         public CameraProxy(Camera target) : base(target)

@@ -46,5 +46,18 @@ namespace LuaHost
             Debug.Log("Level Pass");
             Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventPass);
         }
+
+        public void PlayAudio(AudioClip clip, float volumn = 1, float time = 0, bool loop = false)
+        {
+            Level.Instance.GetComponent<AudioController>().StartCoroutine(Level.Instance.GetComponent<AudioController>().Enter(clip, volumn, time, loop));
+            Level.Instance.GetComponent<AudioSource>().clip = clip;
+            Level.Instance.GetComponent<AudioSource>().volume = volumn;
+            Level.Instance.GetComponent<AudioSource>().Play();
+        }
+
+        public void ExitAudio(float time = 1)
+        {
+            Level.Instance.GetComponent<AudioController>().StartCoroutine(Level.Instance.GetComponent<AudioController>().Exit(time));
+        }
     }
 }

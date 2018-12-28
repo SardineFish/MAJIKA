@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AudioController : EntityBehaviour<GameEntity>
+public class AudioController : MonoBehaviour
 {
     AudioSource source;
     public AudioClip PlayClip;
@@ -29,12 +29,27 @@ public class AudioController : EntityBehaviour<GameEntity>
         if (clip)
             source.PlayOneShot(clip, volumn);
     }
-    private void Update()
+    
+    public IEnumerator Enter(AudioClip clip, float volumn, float time, bool loop = true)
     {
-        if(PlayClip)
+        source.clip = clip;
+        source.volume = 0;
+        source.loop = loop;
+        foreach(var t in Utility.TimerNormalized(time))
         {
-            source.PlayOneShot(PlayClip);
-            PlayClip = null;
+            source.volume = volumn * t;
+            yield return null;
         }
+    }
+
+    public IEnumerator Exit(float time)
+    {
+        var v = source.volume;
+        foreach (var t in Utility.TimerNormalized(time))
+        {
+            source.volume = v * (1 - t);
+            yield return null;
+        }
+        source.clip = null;
     }
 }
