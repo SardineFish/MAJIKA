@@ -21,6 +21,8 @@ namespace State
             {
                 if (blowUp != null)
                 {
+                    var locker = (fsm as EntityController).Lock();
+                    Debug.Log($"locked {(fsm as EntityController).Locker.Locked}");
                     entity.GetComponent<SkillController>().Abort();
                     var movable = entity.GetComponent<MovableEntity>();
                     var v = (blowUp.Effect as BlowUp).Blow;
@@ -37,6 +39,8 @@ namespace State
                     entity.GetComponent<EntityEffector>().RemoveEffect(blowUp.Effect);
                     while (!fsm.ChangeState(MoveState) && !fsm.ChangeState(JumpState))
                         yield return null;
+                    (fsm as EntityController).UnLock(locker);
+                    Debug.Log($"unlocked {(fsm as EntityController).Locker.Locked}");
                     yield break;
                 }
                 else
@@ -62,6 +66,8 @@ namespace State
 
         public override bool OnExit(GameEntity entity, EntityState<GameEntity> nextState, EntityStateMachine<GameEntity> fsm)
         {
+            if (nextState is EntityHit)
+                return false;
             if (nextState is EntitySkill)
                 return false;
             return true;
