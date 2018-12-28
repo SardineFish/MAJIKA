@@ -3,13 +3,14 @@ local boss;
 local gameEnd = false;
 function awake()
     local prefab = resources.prefab("Player");
-    player = scene.spawn(prefab, "Player", vec2(5, 2.2));
     boss = scene.spawn(resources.prefab("Boss-0"), "Boss", vec2(180, 3));
+    player = scene.spawn(prefab, "Player", vec2(5, 2.2));
     camera.reset();
     camera.follow(player);
 end
 
 function start()
+    boss.setActive(false);
     game.control(player);
     startCoroutine(tutorial);
     
@@ -24,7 +25,7 @@ function update()
         startCoroutine(playerDead);
         return;
     end
-    if boss.HP <= 0 then
+    if boss and boss.HP <= 0 then
         gameEnd = true;
         startCoroutine(bossDead);
         return;
@@ -32,12 +33,16 @@ function update()
 end
 
 function playerDead()
+    game.control(nil);
+    game.setTarget(nil);
     --coroutine.yield(player.wait("action", _host));
     --coroutine.yield(waitForSeconds(1));
     game.over();
 end
 
 function bossDead()
+    game.control(nil);
+    game.setTarget(nil);
     coroutine.yield(boss.wait("action", _host));
     game.pass();
 end
@@ -63,12 +68,15 @@ function tutorial()
 
     repeat coroutine.yield(nil);
     until player.position.x > 134;
+    
+    boss.setActive(true);
     coroutine.yield(game.conversation({
         "安静的走廊里好像能听见什么……"
     },{player}));
 
     camera.follow(boss);
     coroutine.yield(waitForSeconds(6));
+    game.setTarget(boss, "Boss");
     camera.follow(player);
 
 end

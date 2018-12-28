@@ -17,7 +17,13 @@ namespace LuaHost.Proxy
             //entity.OnUpdate += EntityUpdate;
         }
 
-        public float HP => (target as LifeEntity)?.HP ?? 0;
+        public float HP
+        {
+            get => (target as LifeEntity)?.HP ?? 0;
+            set => (target as LifeEntity).HP = value;
+        }
+
+        public void SetActive(bool active) => target.gameObject.SetActive(active);
         
         public Vector2 Position
         {

@@ -3,11 +3,12 @@ using System;
 using System.Collections;
 
 [RequireComponent(typeof(ValueBar))]
-public class HPBar : EntityBehaviour<LifeEntity>
+public class HPBar: MonoBehaviour
 {
+    public LifeEntity DisplayEntity;
     private void Awake()
     {
-        Entity.GetComponent<EventBus>().On(LifeEntity.EventDeath, OnDead);
+        //DisplayEntity.GetComponent<EventBus>().On(LifeEntity.EventDeath, OnDead);
     }
     private void OnDead()
     {
@@ -15,8 +16,19 @@ public class HPBar : EntityBehaviour<LifeEntity>
     }
     private void Update()
     {
-        var entity = Entity;
-        GetComponent<ValueBar>().NormalizedValue = Entity.HP / Entity.MaxHP;
-        
+        if (DisplayEntity)
+        {
+            var hp = DisplayEntity.HP / DisplayEntity.MaxHP;
+
+            GetComponent<ValueBar>().NormalizedValue = hp;
+            if (hp <= 0)
+                GetComponent<CanvasGroup>().alpha = 0;
+            else
+                GetComponent<CanvasGroup>().alpha = 1;
+        }
+        else
+        {
+            GetComponent<CanvasGroup>().alpha = 0;
+        }
     }
 }   

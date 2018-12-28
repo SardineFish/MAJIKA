@@ -27,8 +27,14 @@ namespace LuaHost
         {
             if (GameSystem.Instance.PlayerInControl)
                 GameObject.Destroy(GameSystem.Instance.PlayerInControl.GetComponent<EntityInputPlugin>());
-            entity.gameObject.AddComponent<EntityInputPlugin>();
+            if (entity)
+                entity.gameObject.AddComponent<EntityInputPlugin>();
             GameSystem.Instance.PlayerInControl = entity;
+            GameGUIManager.Instance.PlayerHP.DisplayEntity = entity as LifeEntity;
+        }
+        public void SetTarget(GameEntity entity, string name)
+        {
+            GameGUIManager.Instance.TargetUI.SetTarget(name, entity);
         }
         public void Over()
         {
