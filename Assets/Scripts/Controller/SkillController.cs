@@ -11,9 +11,14 @@ public class SkillController : EntityBehaviour<Player>
 
     void Update()
     {
-        Skills = GetComponentsInChildren<Skill>();
+        UpdateSkillList();
         if (ActiveSkill && GetComponent<Animator>().runtimeAnimatorController != ActiveSkill.AnimatorController)
             OnSkillEnd();
+    }
+
+    void UpdateSkillList()
+    {
+        Skills = GetComponentsInChildren<Skill>();
     }
 
     public bool Activate(int idx, float direction=0)
@@ -118,5 +123,19 @@ public class SkillController : EntityBehaviour<Player>
     {
         StopCoroutine(movementCoroutine);
         movementCoroutine = null;
+    }
+
+    public void AddSkill(Skill skill, int idx)
+    {
+        var obj = Instantiate(skill.gameObject);
+        obj.transform.parent = Entity.GetChild("Skills").transform;
+        obj.transform.SetSiblingIndex(idx);
+        UpdateSkillList();
+    }
+
+    public void RemoveSkill(int idx)
+    {
+        Destroy(Skills[idx].gameObject);
+        UpdateSkillList();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 namespace Inventory
 {
@@ -12,6 +13,11 @@ namespace Inventory
         public AudioClip PickupSoundEffect;
         [HideInInspector]
         public ItemProperty[] Properties;
+
+        public T GetProperty<T>() where T: ItemProperty
+        {
+            return Properties.Where(prop => prop is T).FirstOrDefault() as T;
+        }
     }
 
 }

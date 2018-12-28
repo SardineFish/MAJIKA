@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 520958285}
   - component: {fileID: 520958286}
+  - component: {fileID: 520958287}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -155,9 +156,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc7fc4d573567a45ab6cd172861cb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AutoPickup: 0
+  AutoPickup: 1
   PickupDistance: 1
   Items: []
+--- !u!114 &520958287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520958284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64094ccc7c04d640bde2bcc7c50e283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Elements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Skills:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &571203559
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,21 +442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904a28cfe6cdca3419da8e42e2ae7d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1645141510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645141493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bc7fc4d573567a45ab6cd172861cb94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AutoPickup: 1
-  PickupDistance: 1.5
-  Items: []
 --- !u!1001 &1859059297
 PrefabInstance:
   m_ObjectHideFlags: 0

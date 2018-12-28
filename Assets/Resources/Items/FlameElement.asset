@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998b8ceff84aae74d9bb1988db9e941e, type: 3}
   m_Name: FlameElement
   m_EditorClassIdentifier: 
-  Skill: {fileID: 1580239507433992, guid: 5932c9e571b8b7144aa72d9719015da4, type: 3}
+  Skill: {fileID: 6358152220088979830, guid: dad318f803436be4f9d19d38ba54b4b8, type: 3}

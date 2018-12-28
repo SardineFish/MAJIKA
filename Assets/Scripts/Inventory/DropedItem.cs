@@ -29,7 +29,7 @@ namespace Inventory
             {
                 count = Physics2D.CircleCastNonAlloc(transform.position, TraceRadius, Vector2.zero, hits, 0, 1 << 11);
                 inventory = hits.Take(count)
-                        .Select(hit => hit.rigidbody.GetComponent<Inventory>())
+                        .Select(hit => hit.rigidbody?.GetComponent<GameEntity>()?.GetEntityComponent<Inventory>())
                         .Where(t => t && t.AutoPickup)
                         .FirstOrDefault();
                 yield return null;

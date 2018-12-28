@@ -49,4 +49,16 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
     {
         return new Threat[0];
     }
+
+    public T GetEntityComponent<T>()
+    {
+        var component = GetComponent<T>();
+        if (component == null)
+            component = GetComponentInChildren<T>();
+        return component;
+    }
+    public GameObject GetChild(string name)
+    {
+        return transform.Find(name).gameObject;
+    }
 }
