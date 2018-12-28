@@ -218,14 +218,14 @@ public static class Utility
         }
     }
 
-    public static IEnumerator ShowUI(UnityEngine.UI.Graphic ui, float time)
+    public static IEnumerator ShowUI(UnityEngine.UI.Graphic ui, float time, float targetAlpha = 1)
     {
         var color = ui.color;
         color.a = 0;
         ui.gameObject.SetActive(true);
         foreach(var t in TimerNormalized(time))
         {
-            color.a = t;
+            color.a = t * targetAlpha;
             ui.color = color;
             yield return null;
         }

@@ -11,6 +11,12 @@ public class Tips : Singleton<Tips>
     }
     public IEnumerator ShowTipsWait(string tip, float time)
     {
+        yield return Utility.ShowUI(GetComponent<Graphic>(), .2f, .4f);
+        Text.text = tip;
+        yield return Utility.ShowUI(Text, .3f);
+        yield return new WaitForSeconds(time - 1);
+        yield return Utility.HideUI(Text, .2f);
+        /*
         var color = Text.color;
         color.a = 0;
         Text.color = color;
@@ -28,7 +34,7 @@ public class Tips : Singleton<Tips>
             color.a = 1 - t;
             Text.color = color;
             yield return null;
-        }
-        gameObject.SetActive(false);
+        }*/
+        yield return Utility.HideUI(GetComponent<Graphic>(), .2f);
     }
 }
