@@ -45,12 +45,16 @@ end
 
 function tutorial()
     coroutine.yield(waitForSeconds(0.7));
-    game.tips("使用 A, S, D, W 移动", 8);
+    game.tips("使用 A, S, D, W 移动", 3);
     repeat coroutine.yield(nil); 
     until player.position.x > 25;
     coroutine.yield(game.conversation({
         "血迹，看起来像是发生过战斗"
     },{player}));
+
+    repeat coroutine.yield(nil); 
+    until player.position.x > 43;
+    game.tips("使用 [Space] 跳过障碍物", 2);
 
     repeat coroutine.yield(nil);
     until player.position.x > 70;
