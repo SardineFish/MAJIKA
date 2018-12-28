@@ -70,6 +70,18 @@ namespace LuaHost.Proxy
         {
         }
 
+        public float Speed
+        {
+            get => target.GetComponent<CameraMovement>().MaxSpeed;
+            set => target.GetComponent<CameraMovement>().MaxSpeed = value;
+        }
+
+        public float Acceleration
+        {
+            get => target.GetComponent<CameraMovement>().MaxAcceleration;
+            set => target.GetComponent<CameraMovement>().MaxAcceleration = value;
+        }
+
         public void Follow(GameEntity followTarget)
         {
             target.GetComponent<CameraMovement>().followTarget = followTarget.transform; 

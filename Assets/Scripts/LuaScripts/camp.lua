@@ -13,10 +13,12 @@ function start()
 end
 
 function moveCamera()
+    camera.speed = 3;
+    camera.acceleration = 3;
     camera.follow(twinTail);
-    coroutine.yield(waitForSeconds(1));
+    coroutine.yield(waitForSeconds(.5));
     camera.follow(yellowHair);
-    coroutine.yield(waitForSeconds(1.5));
+    coroutine.yield(waitForSeconds(2.5));
     camera.follow(player);
     coroutine.yield(waitForSeconds(2));
     game.control(player);
