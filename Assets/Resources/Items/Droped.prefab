@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1624447704904195326}
   - component: {fileID: 1624447704904195327}
   - component: {fileID: 1624447704904195072}
-  - component: {fileID: 1624447704904195073}
+  - component: {fileID: 214808702}
   m_Layer: 18
   m_Name: Droped
   m_TagString: Untagged
@@ -156,8 +156,8 @@ MonoBehaviour:
   TraceRadius: 3
   PickupVelocity: {x: 0, y: 10}
   Acceleration: 50
---- !u!61 &1624447704904195073
-BoxCollider2D:
+--- !u!58 &214808702
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -170,15 +170,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
