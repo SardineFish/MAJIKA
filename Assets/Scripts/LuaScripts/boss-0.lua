@@ -56,6 +56,9 @@ function chase()
     local dpos = player.position - entity.position
     entity.move(vec2(sign(dpos.x), 0))
     while true do
+        if player.HP <= 0 then
+            return;
+        end
         coroutine.yield(nil)
         dpos = player.position - entity.position
         local dx = math.abs(dpos.x)

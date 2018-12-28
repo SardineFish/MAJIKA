@@ -79,5 +79,12 @@ namespace LuaHost.Proxy
         {
             target.GetComponent<CameraMovement>().focusPosition = pos.ToVector3();
         }
+
+        public void Reset()
+        {
+            return;
+            target.GetComponent<CameraMovement>().followTarget = null;
+            target.transform.position = (target.GetComponent<CameraMovement>().ViewportRect.size / 2).ToVector3(target.transform.position.z);
+        }
     }
 }

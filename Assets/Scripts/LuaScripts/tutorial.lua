@@ -2,13 +2,16 @@ local player;
 local boss;
 local gameEnd = false;
 function awake()
+console.log("awake");
     local prefab = resources.prefab("Player");
     player = scene.spawn(prefab, "Player", vec2(5, 5));
     boss = scene.spawn(resources.prefab("Boss-0"), "Boss", vec2(180, 3));
+    camera.reset();
     camera.follow(player);
 end
 
 function start()
+console.log("start");
     game.control(player);
     startCoroutine(tutorial);
 end

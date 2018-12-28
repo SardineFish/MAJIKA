@@ -18,7 +18,9 @@ public class CameraMovement : MonoBehaviour
     public Transform followTarget;
     public Vector3 focusPosition;
 
+    [SerializeField]
     private Vector2 seperateSpeed;
+    [SerializeField]
     private Vector2 followSpeed;
 
     // Use this for initialization

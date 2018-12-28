@@ -20,7 +20,7 @@ public class MainUI : MonoBehaviour
 
     IEnumerator EnterGameCoroutine()
     {
-        yield return LevelLoader.LoadLevel(GameSystem.Instance.TutorialScenePath);
+        yield return LevelLoader.Instance.LoadLevelWithoutUI(GameSystem.Instance.TutorialScenePath);
         GetComponent<Animator>().SetTrigger("hide");
         yield return null;
         var animator = GetComponent<Animator>();

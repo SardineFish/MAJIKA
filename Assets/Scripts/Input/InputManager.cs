@@ -46,8 +46,9 @@ public class InputManager : Singleton<InputManager> {
         SkillAction4.Enable();
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         skillActionList = new InputAction[] {
             SkillAction1,
             SkillAction2,

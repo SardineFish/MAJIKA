@@ -15,6 +15,10 @@ public static class MathUtility
     {
         return new Vector3(v.x, v.y, 0);
     }
+    public static Vector3 ToVector3(this Vector2 v, float z)
+    {
+        return new Vector3(v.x, v.y, z);
+    }
     public static Vector3 ToVector3XZ(this Vector2 v)
     {
         return new Vector3(v.x, 0, v.y);

@@ -11,4 +11,8 @@ public class Singleton<T> : UnityEngine.MonoBehaviour where T:Singleton<T>
     {
         Instance = this as T;
     }
+    protected virtual void Awake()
+    {
+        Instance = this as T;
+    }
 }
