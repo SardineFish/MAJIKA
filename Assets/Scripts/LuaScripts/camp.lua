@@ -12,6 +12,7 @@ function awake()
     twinTail = scene.entity("TwinTail");
     playerWalkCoroutine = startCoroutine(playerWalk);
     camera.reset();
+    camera.follow(player);
 end
 function start()
     startCoroutine(moveCamera); 

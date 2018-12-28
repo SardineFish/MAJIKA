@@ -54,7 +54,7 @@ function tutorial()
     until player.position.x > 25;
     coroutine.yield(game.conversation({
         "血迹，看起来像是发生过战斗"
-    },{player}));
+    },{player}, true));
 
     repeat coroutine.yield(nil); 
     until player.position.x > 43;
@@ -64,7 +64,7 @@ function tutorial()
     until player.position.x > 70;
     coroutine.yield(game.conversation({
         "外面的天色预示着什么……"
-    },{player}));
+    },{player}, true));
 
     repeat coroutine.yield(nil);
     until player.position.x > 134;
@@ -73,7 +73,7 @@ function tutorial()
     boss.restartScript();
     coroutine.yield(game.conversation({
         "安静的走廊里好像能听见什么……"
-    },{player}));
+    },{player}, true));
 
     camera.follow(boss);
     coroutine.yield(waitForSeconds(6));
