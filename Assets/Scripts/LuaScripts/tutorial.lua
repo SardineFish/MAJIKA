@@ -1,6 +1,6 @@
 local player;
 local boss;
-
+local gameEnd = false;
 function awake()
     local prefab = resources.prefab("Player");
     player = scene.spawn(prefab, "Player", vec2(5, 5));
@@ -11,6 +11,27 @@ end
 function start()
     game.control(player);
     startCoroutine(tutorial);
+end
+
+function update()
+    if gameEnd then
+        return;
+    end
+    if player.HP <= 0 then
+        gameEnd = true;
+        game.over();
+        return;
+    end
+    if boss.HP <= 0 then
+        gameEnd = true;
+        startCoroutine(bossDead);
+        return;
+    end
+end
+
+function bossDead()
+    coroutine.yield(boss.wait("action", _host));
+    game.pass();
 end
 
 function tutorial()

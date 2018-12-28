@@ -30,5 +30,15 @@ namespace LuaHost
             entity.gameObject.AddComponent<EntityInputPlugin>();
             GameSystem.Instance.PlayerInControl = entity;
         }
+        public void Over()
+        {
+            Debug.Log("Game Over");
+            Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventFailed);
+        }
+        public void Pass()
+        {
+            Debug.Log("Level Pass");
+            Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventPass);
+        }
     }
 }

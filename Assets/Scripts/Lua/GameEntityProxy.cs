@@ -11,20 +11,14 @@ namespace LuaHost.Proxy
 {
     class GameEntityProxy : ProxyBase<GameEntity>
     {
-
         [MoonSharpHidden]
         public GameEntityProxy(GameEntity entity) : base(entity)
         {
             //entity.OnUpdate += EntityUpdate;
         }
-        private void EntityUpdate()
-        {
-            /*OnUpdate?.Invoke();
-            if (target is LifeEntity && (target as LifeEntity).HP <= 0)
-            {
-                OnDead?.Invoke();
-            }*/
-        }
+
+        public float HP => (target as LifeEntity)?.HP ?? 0;
+        
         public Vector2 Position
         {
             get

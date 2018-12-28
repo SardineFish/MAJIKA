@@ -160,6 +160,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1196777880445898, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
+      propertyPath: m_Name
+      value: GameSystem
+      objectReference: {fileID: 0}
     - target: {fileID: 4713240148662208, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -192,28 +196,17 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114642579119781240, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 3}
-      propertyPath: TutorialScenePath
-      value: Scenes/Boss-0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1957225885653962, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1635804040862494, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114483133151282178, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 3}
-      propertyPath: m_Color.a
+    - target: {fileID: 4713240148662208, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114760786081430092, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
+    - target: {fileID: 4713240148662208, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713240148662208, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}

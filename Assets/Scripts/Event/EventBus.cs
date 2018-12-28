@@ -11,6 +11,12 @@ public class EventBus : MonoBehaviour
     {
         Listeners = new Dictionary<string, List<EventListenerBase>>();
     }
+    public void On(string eventName, ReflectEventListener listener)
+        => AddEventListener(eventName, listener);
+    public void On<T>(string eventName, Action<T> listener)
+        => AddEventListener(eventName, listener);
+    public void On(string eventName, Action listener)
+        => AddEventListener(eventName, listener);
     public void AddEventListener(string eventName,ReflectEventListener listener)
     {
         if (!Listeners.ContainsKey(eventName))
