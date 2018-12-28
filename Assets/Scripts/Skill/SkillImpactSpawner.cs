@@ -8,6 +8,7 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
     public Vector2 SpawnOffset;
     public float TimeOffset = 0;
     public SkillImpact Instance;
+    
 
     IEnumerator SpawnCoroutine(List<EffectInstance> effects)
     {
@@ -22,7 +23,7 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
         Instance = impact;
     }
 
-    public void Spawn(List<EffectInstance> effects)
+    public void Spawn(List<EffectInstance> effects, float dir)
     {
         if(TimeOffset>0)
         {
@@ -33,9 +34,9 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
             var impact = Utility.Instantiate(Prefab, Entity.gameObject.scene).GetComponent<SkillImpact>();
             impact.Creator = Entity;
             impact.Effects = effects;
-            Vector3 direction = Vector3.right * Entity.GetComponent<MovableEntity>().FaceDirection;
+            Vector3 direction = Vector3.right * dir;
             var offset = SpawnOffset;
-            offset.x *= Entity.GetComponent<MovableEntity>().FaceDirection;
+            offset.x *= dir;
             impact.Activate(Entity.transform.position + offset.ToVector3(), direction);
             Instance = impact;
         }

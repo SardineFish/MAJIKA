@@ -22,7 +22,7 @@ public class SkillController : EntityBehaviour<Player>
             return false;
         if (ActiveSkill && !ActiveSkill.Abort())
             return false;
-        if (!Skills[idx].Activate())
+        if (!Skills[idx].Activate(direction))
             return false;
         ActiveSkill = Skills[idx];
         GetComponent<AnimationController>().ChangeAnimation(ActiveSkill.AnimatorController, direction);

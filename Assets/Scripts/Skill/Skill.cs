@@ -21,6 +21,7 @@ public class Skill : EntityBehaviour<GameEntity>
     public Sprite Icon;
 
     private float lastActivateTime = 0;
+    float Dir = 0;
 
     [HideInInspector]
     public List<EffectInstance> Effects = new List<EffectInstance>();
@@ -32,12 +33,12 @@ public class Skill : EntityBehaviour<GameEntity>
             Entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, Entity.GetComponent<MovableEntity>().FaceDirection);*/
     }
 
-    public bool Activate()
+    public bool Activate(float direction)
     {
         if (Time.time - lastActivateTime < CoolDown)
             return false;
         lastActivateTime = Time.time;
-        
+        Dir = direction;
         if (LockAction)
             Locked = true;
 
@@ -60,7 +61,7 @@ public class Skill : EntityBehaviour<GameEntity>
 
     public bool StartImpact()
     {
-        GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Spawn(this.Effects));
+        GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Spawn(this.Effects, Dir));
         return true;
     }
 

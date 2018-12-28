@@ -12,6 +12,7 @@ namespace State
         public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
         {
             var skillIdx = (fsm as EntityController).SkillIndex;
+
             if (skillIdx < 0 || !entity.GetComponent<SkillController>().Activate(skillIdx, entity.GetComponent<MovableEntity>().FaceDirection))
             {
                 return false;

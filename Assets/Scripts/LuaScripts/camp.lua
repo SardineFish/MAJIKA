@@ -11,10 +11,8 @@ function awake()
     redGlass = scene.entity("RedGlass");
     twinTail = scene.entity("TwinTail");
     playerWalkCoroutine = startCoroutine(playerWalk);
-    console.log(player);
 end
 function start()
-    console.log("start");
     startCoroutine(moveCamera); 
 end
 
