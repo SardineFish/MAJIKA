@@ -14,6 +14,7 @@ function start()
 console.log("start");
     game.control(player);
     startCoroutine(tutorial);
+    
 end
 
 function update()
@@ -33,8 +34,8 @@ function update()
 end
 
 function playerDead()
-    coroutine.yield(player.wait("action", _host));
-    coroutine.yield(waitForSeconds(1));
+    --coroutine.yield(player.wait("action", _host));
+    --coroutine.yield(waitForSeconds(1));
     game.over();
 end
 
