@@ -16,7 +16,7 @@ MonoBehaviour:
   AnimatorController: {fileID: 9100000, guid: a2d573c1dcf21b045b1e4cecc4cb48d3, type: 2}
   TriggerName: 
   FootStep: {fileID: 8300000, guid: cf4b0415f8ceff546886ea680ee620ca, type: 3}
-  Delay: 0
+  Delay: 0.1
   Duration: 0.7
   Volumn: 1
   IdleState: {fileID: 11400000, guid: d90af75a50657d34b81bc8978d7089b6, type: 2}
