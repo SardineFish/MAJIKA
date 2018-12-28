@@ -30,6 +30,7 @@ namespace LuaHost
             if (entity)
                 entity.gameObject.AddComponent<EntityInputPlugin>();
             GameSystem.Instance.PlayerInControl = entity;
+            GameGUIManager.Instance.GetComponent<SkillUIManager>().DisplayEntity = entity;
             GameGUIManager.Instance.PlayerHP.DisplayEntity = entity as LifeEntity;
         }
         public void SetTarget(GameEntity entity, string name)
