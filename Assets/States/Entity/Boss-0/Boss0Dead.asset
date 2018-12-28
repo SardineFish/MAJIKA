@@ -4,12 +4,14 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5996d203c9b249a41ad6a4651cb49dd1, type: 3}
   m_Name: Boss0Dead
   m_EditorClassIdentifier: 
+  SoundEffect: {fileID: 8300000, guid: 2ba9cd1207b37be49a791d1f6b47a9ea, type: 3}
   AnimatorController: {fileID: 9100000, guid: 6b20dca64c26b3641aa4e005f4b5be2d, type: 2}
   TriggerName: 
