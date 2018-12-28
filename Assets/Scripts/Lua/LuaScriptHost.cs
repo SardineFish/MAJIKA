@@ -45,6 +45,7 @@ namespace LuaHost
         public void RunScript(TextAsset script)
         {
             LuaScript.DoString(script.text);
+            LuaScript.Globals.Get("awake").Function?.Call();
             LuaScript.Globals.Get("start").Function?.Call();
         }
 

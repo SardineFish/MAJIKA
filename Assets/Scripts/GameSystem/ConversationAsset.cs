@@ -48,6 +48,7 @@ public class ConversationAsset : ScriptableObject,IConversation
         return Conversations.GetEnumerator();
     }
 }
+
 public class Conversation: IConversation
 {
     public List<string> Conversations;
