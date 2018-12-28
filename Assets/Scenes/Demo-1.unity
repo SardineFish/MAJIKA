@@ -7303,7 +7303,8 @@ MonoBehaviour:
   PassUI: {fileID: 0}
   FailUI: {fileID: 0}
   NextScene: 
-  ActiveAtLoaded: []
+  ActiveAtLoaded:
+  - {fileID: 1399220247}
 --- !u!4 &1399220246
 Transform:
   m_ObjectHideFlags: 0
