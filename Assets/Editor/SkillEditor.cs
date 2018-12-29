@@ -25,6 +25,7 @@ namespace Assets.Editor
                   EditorGUILayout.EndHorizontal();
                   return effect;
               });
+            EditorUtility.SetDirty(target);
         }
     }
 }

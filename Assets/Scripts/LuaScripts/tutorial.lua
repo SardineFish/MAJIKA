@@ -81,7 +81,7 @@ function tutorial()
     camera.follow(boss);
     coroutine.yield(waitForSeconds(4));
     game.setTarget(boss, "Boss");
-    game.playAudio(resources.audio("Boss"), 0.25);
+    game.playAudio(resources.audio("Boss"), 0.25, 1, true);
     camera.follow(player);
 
 end

@@ -56,7 +56,8 @@ public class MovableEntity : MonoBehaviour
 
     public void ForceMoveTo(Vector2 position)
     {
-        transform.position = position;
+        //transform.position = position;
+        GetComponent<Rigidbody2D>().MovePosition(position);
     }
 
     public void SetVelocity(Vector2 v)

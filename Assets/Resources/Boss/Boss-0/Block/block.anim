@@ -29,15 +29,15 @@ AnimationClip:
       value: {fileID: 21300008, guid: 3ae5aa6d121267b4ab764568fe19cdc8, type: 3}
     - time: 0.35
       value: {fileID: 21300010, guid: 3ae5aa6d121267b4ab764568fe19cdc8, type: 3}
-    - time: 0.75
+    - time: 0.8
       value: {fileID: 21300012, guid: 3ae5aa6d121267b4ab764568fe19cdc8, type: 3}
-    - time: 0.85
+    - time: 0.9
       value: {fileID: 21300014, guid: 3ae5aa6d121267b4ab764568fe19cdc8, type: 3}
-    - time: 0.95
+    - time: 1
       value: {fileID: 21300016, guid: 3ae5aa6d121267b4ab764568fe19cdc8, type: 3}
-    - time: 1.05
+    - time: 1.1
       value: {fileID: 21300018, guid: 3ae5aa6d121267b4ab764568fe19cdc8, type: 3}
-    - time: 1.15
+    - time: 1.2
       value: {fileID: 21300020, guid: 3ae5aa6d121267b4ab764568fe19cdc8, type: 3}
     attribute: m_Sprite
     path: Renderer
@@ -73,7 +73,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.2
+    m_StopTime: 1.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -100,7 +100,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.3
+  - time: 0.1
     functionName: OnImpactStart
     data: 
     objectReferenceParameter: {fileID: 0}

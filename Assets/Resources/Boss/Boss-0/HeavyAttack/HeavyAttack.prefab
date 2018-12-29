@@ -56,7 +56,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: b2e1cf958f2c85941b66ef1198f53c7a, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 1
+    Strength: 3
     Duration: 0
     LifeTime: 0
     Priority: 0

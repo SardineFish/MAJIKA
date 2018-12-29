@@ -40,6 +40,8 @@ public class EntityController : EntityStateMachine<GameEntity>
     {
         if (!Locker.Locked)
             base.Update();
+        else if (State is EntityMove)
+            ChangeState(IdleState);
         this.Movement = Vector2.zero;
         ClimbSpeed = 0;
         Jumped = false;
