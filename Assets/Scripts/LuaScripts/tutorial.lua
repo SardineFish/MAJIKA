@@ -11,9 +11,8 @@ end
 
 function start()
     boss.setActive(false);
-    game.control(player);
     startCoroutine(tutorial);
-    
+    game.control(player);
 end
 
 function update()
