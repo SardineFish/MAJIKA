@@ -35,15 +35,17 @@ namespace Inventory
                 yield return null;
             }
             while (!inventory);
-
-            var movement = GetComponent<SimpleMovement>();
+            
+            /*var movement = GetComponent<SimpleMovement>();
             movement.Velocity = PickupVelocity;
-            movement.StartMovement();
+            movement.StartMovement();*/
+            GetComponent<Rigidbody2D>().velocity = PickupVelocity;
             while (true)
             {
                 var bodyCenter = inventory.Entity.transform.localToWorldMatrix.MultiplyPoint(inventory.Entity.GetComponent<Rigidbody2D>().centerOfMass);
                 Debug.DrawLine(bodyCenter, transform.position);
-                movement.Acceleration = (inventory.Entity.transform.position - transform.position).normalized * Acceleration;
+                GetComponent<Rigidbody2D>().AddForce((inventory.Entity.transform.position - transform.position).normalized * Acceleration, ForceMode2D.Force);
+                //movement.Acceleration = (inventory.Entity.transform.position - transform.position).normalized * Acceleration;
                 if ((bodyCenter.ToVector2()-transform.position.ToVector2()).magnitude <= inventory.PickupDistance)
                 {
                     inventory.Items.Add(Item);

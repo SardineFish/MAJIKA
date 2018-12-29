@@ -123,7 +123,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1624447704904195327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624447704904195074}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5035fe67cc08e2e40b2b94fc2897d5b9, type: 3}
   m_Name: 
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 269b8fabf591e1143974ca27ffb5d1f4, type: 2}
   TraceRadius: 3
-  PickupVelocity: {x: 0, y: 6}
+  PickupVelocity: {x: 0, y: 20}
   Acceleration: 50
 --- !u!58 &214808702
 CircleCollider2D:
