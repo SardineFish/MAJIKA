@@ -31,8 +31,7 @@ function moveCamera()
     camera.follow(player);
     coroutine.yield(waitForSeconds(3));
     game.control(player);
-    camera.speed = 15;
-    camera.acceleration = 35;
+    game.loadScene("Scenes/Credit");
 end
 
 function playerWalk()

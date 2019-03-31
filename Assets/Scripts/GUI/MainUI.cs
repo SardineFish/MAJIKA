@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-public class MainUI : MonoBehaviour
+public class MainUI : Singleton<MainUI>
 {
 
     // Update is called once per frame
@@ -11,6 +11,11 @@ public class MainUI : MonoBehaviour
         {
             GetComponent<Animator>().SetTrigger("start");
         }
+    }
+
+    public void ReStart()
+    {
+        GetComponent<Animator>().SetTrigger("restart");
     }
 
     public void EnterGame()

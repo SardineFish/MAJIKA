@@ -30,8 +30,11 @@ namespace LuaHost
             if (entity)
                 entity.gameObject.AddComponent<EntityInputPlugin>();
             GameSystem.Instance.PlayerInControl = entity;
-            GameGUIManager.Instance.GetComponent<SkillUIManager>().DisplayEntity = entity;
-            GameGUIManager.Instance.PlayerHP.DisplayEntity = entity as LifeEntity;
+            if (GameGUIManager.Instance)
+            {
+                GameGUIManager.Instance.GetComponent<SkillUIManager>().DisplayEntity = entity;
+                GameGUIManager.Instance.PlayerHP.DisplayEntity = entity as LifeEntity;
+            }
         }
         public void SetTarget(GameEntity entity, string name)
         {
@@ -59,6 +62,11 @@ namespace LuaHost
         public void ExitAudio(float time = 1)
         {
             Level.Instance.GetComponent<AudioController>().StartCoroutine(Level.Instance.GetComponent<AudioController>().Exit(time));
+        }
+
+        public void LoadScene(string path)
+        {
+            LevelLoader.Instance.LoadLevelDetach(path);
         }
     }
 }

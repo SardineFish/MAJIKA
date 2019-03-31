@@ -50,7 +50,7 @@ MonoBehaviour:
   ReleaseRadius: -0.4375
   ReleaseOffset: {x: 0, y: 2.3125, z: 0}
   Direction: 0
-  CoolDown: 0.4
+  CoolDown: 3
   Locked: 0
   Ready: 0
   Icon: {fileID: 21300000, guid: b2e1cf958f2c85941b66ef1198f53c7a, type: 3}
