@@ -15,7 +15,7 @@ namespace Inventory
 
         private void Start()
         {
-            GetComponent<SpriteRenderer>().sprite = Item.Icon;
+            GetComponent<SpriteRenderer>().sprite = Item.Iconx32;
             GetComponent<Animator>().runtimeAnimatorController = Item?.DropedAnimation;
             StartCoroutine(TraceTarget());
         }

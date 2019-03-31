@@ -74,7 +74,7 @@ namespace Assets.Editor
                     headerRenderer?.Invoke();
                     if (GUILayout.Button(Styles.PlusIconContent, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
                     {
-                        list.Add(Activator.CreateInstance<T>());
+                        list.Add(default(T));
                     }
                 });
                 EditorGUILayout.Space();
@@ -89,6 +89,7 @@ namespace Assets.Editor
                                 list.RemoveAt(i--);
                                 if (i >= list.Count)
                                     return;
+                                return;
                             }
 
                             Verticle(() =>
@@ -102,6 +103,7 @@ namespace Assets.Editor
             });
             return list;
         }
+        
 
         public static List<T> DrawList<T>(string lable, List<T> list, Func<T,T> renderCallback)
         {

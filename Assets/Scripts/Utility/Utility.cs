@@ -243,4 +243,8 @@ public static class Utility
         if (deactive)
             ui.gameObject.SetActive(false);
     }
+    public static T GetInterface<T>(this Component component)
+        => (T)(object)(component.GetComponents<Component>().Where(c => c is T).FirstOrDefault());
+    public static T GetInterface<T>(this GameObject obj) 
+        => (T)(object)obj.GetComponents<Component>().Where(c => c is T).FirstOrDefault();
 }

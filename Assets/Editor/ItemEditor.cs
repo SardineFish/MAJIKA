@@ -18,7 +18,9 @@ namespace Assets.Editor
             base.OnInspectorGUI();
 
             var item = target as Item;
-            EditorUtilities.DrawArray("Properties", item.Properties, (prop) => EditorGUILayout.ObjectField(prop, typeof(ItemProperty), false) as ItemProperty);
+            if (item.Properties == null)
+                item.Properties = new ItemProperty[0];
+            item.Properties = EditorUtilities.DrawArray("Properties", item.Properties, (prop) => EditorGUILayout.ObjectField(prop, typeof(ItemProperty), false) as ItemProperty);
             EditorUtility.SetDirty(target);
         }
     }
