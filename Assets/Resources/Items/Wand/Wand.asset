@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wand
   m_EditorClassIdentifier: 
   DisplayName: "\u6CD5\u6756"
+  Type: 2
   Iconx32: {fileID: 21300000, guid: 13c32f9d7d65b804398b358f7f8842c6, type: 3}
   Iconx16: {fileID: 21300000, guid: 1b4bca85e17ccd24e82a82a9ac378361, type: 3}
   DecoratedColor: {r: 0.6745098, g: 0.4117647, b: 0.22745098, a: 1}

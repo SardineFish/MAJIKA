@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: FlameStone
   m_EditorClassIdentifier: 
   DisplayName: Flame Stone
-  Icon: {fileID: 21300000, guid: df0428033f6eb4d4aa1ee30c8175d924, type: 3}
+  Type: 4
+  Iconx32: {fileID: 21300000, guid: df0428033f6eb4d4aa1ee30c8175d924, type: 3}
+  Iconx16: {fileID: 0}
+  DecoratedColor: {r: 0.8113208, g: 0.6750582, b: 0.37887147, a: 1}
   DropedAnimation: {fileID: 0}
   PickupSoundEffect: {fileID: 8300000, guid: b7217a0eadcf7ea409b4faa14ddc55ae, type: 3}
   Properties:

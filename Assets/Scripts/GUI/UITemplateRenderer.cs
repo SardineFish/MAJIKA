@@ -17,6 +17,9 @@ public class UITemplateRenderer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GetComponentsInChildren<UITemplate>().ForEach(t => Destroy(t.gameObject));
+        if (dataSource != null)
+            SetDataSource(dataSource);
     }
 
     // Update is called once per frame

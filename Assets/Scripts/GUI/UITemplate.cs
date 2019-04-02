@@ -44,21 +44,45 @@ public class UITemplate : MonoBehaviour
         }
         foreach (var bind in Bindings)
         {
-            if(bind.BindingMode == BindingMode.OneWay)
+            if (bind.BindingMode == BindingMode.Static)
+                return;
+            var source = UITemplateUtility.GetValueByPath(dataSource, bind.PathSource);
+            var rendered = gameObject.GetValueByPath(bind.PathTemplate);
+
+            if (bind.BindingMode == BindingMode.OneWay)
             {
-                gameObject.SetValueByPath(bind.PathTemplate, UITemplateUtility.GetValueByPath(dataSource, bind.PathSource));
-                //UITemplateUtility.SetValueByPath(gameObject, bind.PathTemplate, UITemplateUtility.GetValueByPath(dataSource, bind.PathSource));
+                if(bind.lastSource != source)
+                {
+                    gameObject.SetValueByPath(bind.PathTemplate, UITemplateUtility.GetValueByPath(dataSource, bind.PathSource));
+                    bind.lastSource = source;
+                    bind.lastRender = gameObject.GetValueByPath(bind.PathTemplate);
+                }
+            }
+            else if (bind.BindingMode == BindingMode.TwoWay)
+            {
+                if(bind.lastSource != source)
+                {
+                    gameObject.SetValueByPath(bind.PathTemplate, UITemplateUtility.GetValueByPath(dataSource, bind.PathSource));
+                    bind.lastSource = source;
+                    bind.lastRender = gameObject.GetValueByPath(bind.PathTemplate);
+                }
+                else if (bind.lastRender != rendered)
+                {
+                    UITemplateUtility.SetValueByPath(ref dataSource, bind.PathSource, rendered);
+                    bind.lastSource = UITemplateUtility.GetValueByPath(dataSource, bind.PathSource);
+                    bind.lastRender = rendered;
+                }
             }
         }
     }
 
     void Reload()
     {
-        if (DataSource == null)
-            return;
         foreach (var bind in Bindings)
         {
-            gameObject.SetValueByPath(bind.PathTemplate, UITemplateUtility.GetValueByPath(dataSource, bind.PathSource));
+            bind.lastSource = UITemplateUtility.GetValueByPath(dataSource, bind.PathSource);
+            gameObject.SetValueByPath(bind.PathTemplate, bind.lastSource);
+            bind.lastRender = gameObject.GetValueByPath(bind.PathTemplate);
         }
     }
 }

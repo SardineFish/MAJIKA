@@ -11,6 +11,8 @@ public class BindingOption
     public string PathTemplate = "";
     public BindingMode BindingMode = BindingMode.TwoWay;
     public Func<object, object> DataConverter = obj => obj;
+    public object lastSource = null;
+    public object lastRender = null;
 }
 public enum BindingMode
 {

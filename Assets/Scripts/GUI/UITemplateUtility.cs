@@ -10,6 +10,10 @@ public static class UITemplateUtility
 {
     public static object GetValueByPath(this GameObject obj, string path)
     {
+        if (obj == null)
+            return null;
+        if (path == "")
+            return obj;
         var paths = path.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
         if (paths.Length <= 0)
             return null;
@@ -24,6 +28,10 @@ public static class UITemplateUtility
 
     public static object SetValueByPath(this GameObject obj, string path, object value)
     {
+        if (obj == null)
+            return null;
+        if (path == "")
+            return null;
         var paths = path.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
         if (paths.Length <= 0)
             return null;
@@ -50,6 +58,10 @@ public static class UITemplateUtility
 
     public static object GetValueByPath(object obj, string path)
     {
+        if (obj == null)
+            return null;
+        if (path == "")
+            return obj;
         var paths = path.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
         if (paths.Length <= 0)
             return null;
@@ -61,8 +73,12 @@ public static class UITemplateUtility
         return value;
     }
 
-    public static object SetValueByPath(object obj,string path, object value)
+    public static object SetValueByPath(ref object obj,string path, object value)
     {
+        if (obj == null)
+            return null;
+        if (path == "")
+            obj = path;
         var paths = path.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
         if (paths.Length <= 0)
             return null;

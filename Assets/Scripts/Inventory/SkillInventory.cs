@@ -17,8 +17,9 @@ namespace Inventory
         // Update is called once per frame
         void Update()
         {
-            var elements = Entity.GetEntityComponent<Inventory>().Items
-                .Select(item => item.GetProperty<MajikaElement>())
+            var elements = Entity.GetEntityComponent<Inventory>().Slots
+                .Where(item => item.Item && item.Amount > 0)
+                .Select(item => item.Item.GetProperty<MajikaElement>())
                 .ToArray();
             var skillController = Entity.GetComponent<SkillController>();
             for (var i = 0; i < 4; i++)

@@ -8,6 +8,7 @@ namespace Inventory
     public class Item : ScriptableObject
     {
         public string DisplayName;
+        public ItemType Type;
         public Sprite Iconx32;
         public Sprite Iconx16;
         public Color DecoratedColor;
@@ -22,4 +23,11 @@ namespace Inventory
         }
     }
 
+    public enum ItemType:int
+    {
+        Cloak = 1,
+        Wand = 2,
+        Stone = 4,
+        All = Cloak | Wand | Stone,
+    }
 }

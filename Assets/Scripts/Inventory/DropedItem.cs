@@ -48,7 +48,7 @@ namespace Inventory
                 //movement.Acceleration = (inventory.Entity.transform.position - transform.position).normalized * Acceleration;
                 if ((bodyCenter.ToVector2()-transform.position.ToVector2()).magnitude <= inventory.PickupDistance)
                 {
-                    inventory.Items.Add(Item);
+                    inventory.Add(Item);
                     inventory.Entity.GetComponent<AudioController>().PlayEffect(Item.PickupSoundEffect);
                     break;
                 }

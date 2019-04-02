@@ -21,7 +21,7 @@ namespace Assets.Editor
                 if (!template.transform.GetChild(i).GetComponent<UITemplate>())
                     template.transform.GetChild(i).gameObject.AddComponent<UITemplate>();
             }
-            EditorUtilities.DrawList("Bindings:", template.Bindings, (bind) =>
+            template.Bindings = EditorUtilities.DrawList("Bindings:", template.Bindings, (bind) =>
               {
                   bind.PathSource = EditorGUILayout.TextField("BindSource", bind.PathSource);
                   EditorGUILayout.LabelField("TargetPath");
@@ -56,7 +56,7 @@ namespace Assets.Editor
                 template.Bindings.Add(new BindingOption());
             }
             template.DataSource = EditorGUILayout.ObjectField("Data Source", template.DataSource as UnityEngine.Object, typeof(UnityEngine.Object), true);
-            EditorUtility.SetDirty(target);
+            EditorUtility.SetDirty(template);
         }
     }
 }
