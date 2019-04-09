@@ -25,19 +25,34 @@ namespace Assets.Editor
             if (moving)
             {
                 Tools.current = Tool.None;
-                var pos = Handles.PositionHandle(snapper.transform.position /*+ snapper.OriginOffset + new Vector3(0.5f, 0.5f, 0)*/, Quaternion.identity) /*- new Vector3(0.5f, 0.5f, 0)*/;
-                var n = GridSystem.Instance.GridPerPixel;
-                switch (snapper.SnapMode)
+                if(snapper.transform is RectTransform )
                 {
-                    case SnapMode.SnapToGrid:
-                        pos = new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), pos.z);
-                        break;
-                    case SnapMode.SnapToPixel:
-                        pos = new Vector3(Mathf.Round(pos.x / n) * n, Mathf.Round(pos.y / n) * n, pos.z);
-                        break;
+                    var n = GridSystem.Instance.ScreenPixelPerUnit;
+                    var center = (snapper.transform as RectTransform).rect.size / 2;
+                    snapper.OriginOffset = center - new Vector2(Mathf.FloorToInt(center.x / n) * n, Mathf.FloorToInt(center.y / n) * n);
+                    var pos = Handles.PositionHandle(snapper.transform.position + snapper.OriginOffset /*+ new Vector3(0.5f, 0.5f, 0)*/, Quaternion.identity) /*- new Vector3(0.5f, 0.5f, 0)*/;
+                    pos = new Vector3(Mathf.Floor(pos.x / n) * n, Mathf.Floor(pos.y / n) * n, pos.z);
+                    pos -= snapper.OriginOffset;
+                    pos.x = Mathf.CeilToInt(pos.x);
+                    pos.y = Mathf.CeilToInt(pos.y);
+                    snapper.transform.position = pos;
                 }
-                pos -= snapper.OriginOffset;
-                snapper.transform.position = pos;
+                else
+                {
+                    var pos = Handles.PositionHandle(snapper.transform.position /*+ snapper.OriginOffset + new Vector3(0.5f, 0.5f, 0)*/, Quaternion.identity) /*- new Vector3(0.5f, 0.5f, 0)*/;
+                    var n = GridSystem.Instance.GridPerPixel;
+                    switch (snapper.SnapMode)
+                    {
+                        case SnapMode.SnapToGrid:
+                            pos = new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), pos.z);
+                            break;
+                        case SnapMode.SnapToPixel:
+                            pos = new Vector3(Mathf.Round(pos.x / n) * n, Mathf.Round(pos.y / n) * n, pos.z);
+                            break;
+                    }
+                    pos -= snapper.OriginOffset;
+                    snapper.transform.position = pos;
+                }
             }
         }
     }

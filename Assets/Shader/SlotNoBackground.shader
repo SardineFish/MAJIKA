@@ -1,12 +1,10 @@
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "MAJIKA/Slot"
+Shader "MAJIKA/SlotNoBG"
 {
     Properties
     {
         [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
-        [PerRendererData] _InnerShadow ("Inner Shadow", 2D) = "white" {}
-        _Mask ("Mask", 2D) = "white" {}
         _Color ("Tint", Color) = (1,1,1,1)
         [MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
     }
@@ -77,9 +75,7 @@ Shader "MAJIKA/Slot"
 
             fixed4 frag(v2f IN) : SV_Target
             {
-                fixed4 c = fixed4(overlay(tex2D(_InnerShadow, IN.texcoord) * IN.color * _Color, tex2D(_MainTex, IN.texcoord)).rgb, IN.color.a) * tex2D(_Mask, IN.texcoord);
-                c.rgb *= c.a;
-                return c;
+                return fixed4(tex2D(_MainTex, IN.texcoord).rgba * tex2D(_MainTex, IN.texcoord).a);
             }
         ENDCG
         }
