@@ -8,9 +8,10 @@ using MoonSharp.Interpreter;
 
 namespace LuaHost.Proxy
 {
-    class ProxyBase<T> where T:class
+    public class ProxyBase<T> where T:class
     {
-        protected T target;
+        [MoonSharpHidden]
+        public T target;
         protected LuaScriptHost host;
         public ProxyBase(T target):this(target,null)
         {
@@ -21,7 +22,7 @@ namespace LuaHost.Proxy
             this.host = host;
         }
     }
-    class GameObjectProxy:ProxyBase<GameObject>
+    public class GameObjectProxy:ProxyBase<GameObject>
     {
 
         [MoonSharpHidden]
@@ -57,21 +58,21 @@ namespace LuaHost.Proxy
         public Vector2 normalized => vector.normalized;
     }
 
-    class CoroutineProxy : ProxyBase<UnityEngine.Coroutine>
+    public class CoroutineProxy : ProxyBase<UnityEngine.Coroutine>
     {
         public CoroutineProxy(UnityEngine.Coroutine target) : base(target)
         {
         }
     }
 
-    class AudioClipProxy : ProxyBase<AudioClip>
+    public class AudioClipProxy : ProxyBase<AudioClip>
     {
         public AudioClipProxy(AudioClip target) : base(target)
         {
         }
     }
 
-    class CameraProxy : ProxyBase<Camera>
+    public class CameraProxy : ProxyBase<Camera>
     {
         public CameraProxy(Camera target) : base(target)
         {

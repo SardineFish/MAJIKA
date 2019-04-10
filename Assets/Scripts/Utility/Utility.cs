@@ -247,4 +247,14 @@ public static class Utility
         => (T)(object)(component.GetComponents<Component>().Where(c => c is T).FirstOrDefault());
     public static T GetInterface<T>(this GameObject obj) 
         => (T)(object)obj.GetComponents<Component>().Where(c => c is T).FirstOrDefault();
+    public static bool All<T>(this IEnumerable<T> ts, Func<T, int, bool> predicate)
+    {
+        int idx = 0;
+        foreach(var item in ts)
+        {
+            if (!predicate(item, idx++))
+                return false;
+        }
+        return true;
+    }
 }

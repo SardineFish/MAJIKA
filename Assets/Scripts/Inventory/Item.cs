@@ -21,6 +21,26 @@ namespace Inventory
         {
             return Properties.Where(prop => prop is T).FirstOrDefault() as T;
         }
+
+
+        public static Recipe operator +(Item item1, Item item2)
+        {
+            return new Recipe()
+            {
+                Materials = new Item[] { item1, item2 }.ToList(),
+                Product = null
+            };
+        }
+        public static Recipe operator +(Item item, Recipe recipe)
+        {
+            recipe.Materials.Insert(0, item);
+            return recipe;
+        }
+        public static Recipe operator +(Recipe recipe, Item item)
+        {
+            recipe.Materials.Add(item);
+            return recipe;
+        }
     }
 
     public enum ItemType:int

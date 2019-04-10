@@ -8743,7 +8743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Switch: 0
-  SwitchTo: {fileID: 0}
+  SwitchTo: {fileID: 93240046}
 --- !u!1 &952957118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9811,7 +9811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Switch: 0
-  SwitchTo: {fileID: 0}
+  SwitchTo: {fileID: 130038439}
 --- !u!1 &1399220244
 GameObject:
   m_ObjectHideFlags: 0
@@ -9875,6 +9875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4633ca4cdf455a499de03abf43fe671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InitialScript: {fileID: 0}
   Script: {fileID: 4900000, guid: fd54a1727c833f04da936af84623045e, type: 3}
 --- !u!114 &1399220248
 MonoBehaviour:

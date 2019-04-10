@@ -12,6 +12,7 @@ namespace LuaHost
 {
     public class LuaScriptHost : MonoBehaviour
     {
+        public TextAsset InitialScript;
         public TextAsset Script;
 
         [NonSerialized]
@@ -29,7 +30,7 @@ namespace LuaHost
             LuaScript.Globals.Get("start").Function?.Call();
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             LuaScript.Globals.Get("update").Function?.Call(Time.deltaTime);
         }
@@ -37,6 +38,8 @@ namespace LuaHost
         protected virtual void Awake()
         {
             InitRuntime();
+            if (InitialScript)
+                LuaScript.DoString(InitialScript.text);
             if (Script)
                 LuaScript.DoString(Script.text);
             LuaScript.Globals.Get("awake").Function?.Call();
@@ -81,6 +84,10 @@ namespace LuaHost
             script.Globals["utility"] = utility;
             script.Globals["camera"] = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
             return script;
+        }
+        public static void EnableConsole(Script script)
+        {
+            script.Globals["console"] = typeof(LuaRuntime.Console);
         }
         static void InitRuntimeEnvironment()
         {

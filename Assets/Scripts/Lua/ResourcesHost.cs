@@ -21,5 +21,15 @@ namespace LuaHost
         {
             return Resources.Load<AudioClip>($"Audio/{name}");
         }
+
+        public Inventory.Item Item(string name)
+        {
+            return Resources.Load<Inventory.Item>($"Items/{name}");
+        }
+
+        public static void AddHost(Script script)
+        {
+            script.Globals["resources"] = new ResourcesHost();
+        }
     }
 }

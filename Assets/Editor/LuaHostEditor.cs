@@ -9,7 +9,7 @@ using UnityEditor;
 namespace Assets.Editor
 {
     [CanEditMultipleObjects]
-    [CustomEditor(typeof(LuaHost.LuaScriptHost))]
+    [CustomEditor(typeof(LuaHost.LuaScriptHost), true)]
     class LuaHostEditor:UnityEditor.Editor
     {
         public override void OnInspectorGUI()
@@ -20,7 +20,9 @@ namespace Assets.Editor
             EditorGUILayout.Space();
             if (GUILayout.Button("Run"))
             {
-                luaHost.CoroutineManager.Reset();
+                luaHost.CoroutineManager?.Reset();
+                if (luaHost.InitialScript)
+                    luaHost.RunScript(luaHost.InitialScript);
                 luaHost.RunScript(luaHost.Script);
 
             }
