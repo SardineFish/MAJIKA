@@ -6,10 +6,10 @@ public class PageContainer : MonoBehaviour
 {
     private void Start()
     {
-        GetComponentsInChildren<UIPage>()
+        GetComponentsInChildren<UIPage>(true)
             .ForEach(p => p.gameObject.SetActive(false));
 
-        GetComponentsInChildren<UIPage>()
+        GetComponentsInChildren<UIPage>(true)
             .Where(p => p.IsDefault)
             .FirstOrDefault()
             ?.gameObject.SetActive(true);
@@ -17,7 +17,7 @@ public class PageContainer : MonoBehaviour
 
     public void Show(UIPage page)
     {
-        GetComponentsInChildren<UIPage>().ForEach(p => p.gameObject.SetActive(false));
+        GetComponentsInChildren<UIPage>(true).ForEach(p => p.gameObject.SetActive(false));
         page.gameObject.SetActive(true);
     }
 
