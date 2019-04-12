@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa6404e9c598e61409c2351cc6718f96, type: 3}
-  m_Name: FlameStone
+  m_Name: AirBoom
   m_EditorClassIdentifier: 
-  DisplayName: Flame Stone
+  DisplayName: "\u3010\u7A7A\u6C14\u9707\u7206\u3011 "
+  Description: "\u9576\u5D4C\u5230\u6CD5\u6756\u4E0A\u53EF\u4EE5\u8FD0\u7528\u3010\u7A7A\u6C14\u9707\u7206\u3011\r"
   Type: 4
   Iconx32: {fileID: 21300000, guid: df0428033f6eb4d4aa1ee30c8175d924, type: 3}
   Iconx16: {fileID: 0}
@@ -20,4 +21,4 @@ MonoBehaviour:
   DropedAnimation: {fileID: 0}
   PickupSoundEffect: {fileID: 8300000, guid: b7217a0eadcf7ea409b4faa14ddc55ae, type: 3}
   Properties:
-  - {fileID: 11400000, guid: 409116c0b04dd0c4892fad31e57a8aa0, type: 2}
+  - {fileID: 11400000, guid: 8af507d2180419541bc29f03fa83da17, type: 2}

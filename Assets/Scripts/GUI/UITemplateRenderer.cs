@@ -31,10 +31,8 @@ public class UITemplateRenderer : MonoBehaviour
     void SetDataSource(object dataSource)
     {
         this.dataSource = dataSource;
-        foreach(var obj in gameObject.GetChildren())
-        {
-            Destroy(obj);
-        }
+
+        gameObject.DestroyChildren();
         if (DataSource != null)
         {
             if (DataSource is IList)

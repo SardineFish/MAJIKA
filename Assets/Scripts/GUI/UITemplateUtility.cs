@@ -18,12 +18,17 @@ public static class UITemplateUtility
         if (paths.Length <= 0)
             return null;
         var component = obj.GetComponent(paths[0]);
-        object value = component;
-        for (var i = 1; i < paths.Length; i++)
+        object currentObj = component;
+        MemberInfo current = component.GetType().GetMember(paths[1]).FirstOrDefault();
+        for (var i = 2; i < paths.Length; i++)
         {
-            value = value.GetType().GetField(paths[i]).GetValue(value);
+            if (current.MemberType == MemberTypes.Field)
+                currentObj = (current as FieldInfo).GetValue(currentObj);
+            else if (current.MemberType == MemberTypes.Property)
+                currentObj = (current as PropertyInfo).GetValue(currentObj);
+            current = currentObj.GetType().GetMember(paths[i]).FirstOrDefault();
         }
-        return value;
+        return currentObj;
     }
 
     public static object SetValueByPath(this GameObject obj, string path, object value)

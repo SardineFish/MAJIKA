@@ -257,4 +257,40 @@ public static class Utility
         }
         return true;
     }
+    public static bool Any<T>(this IEnumerable<T> ts, Func<T, int, bool> predicate)
+    {
+        int idx = 0;
+        foreach (var item in ts)
+        {
+            if (predicate(item, idx++))
+                return true;
+        }
+        return false;
+    }
+
+    public static void ForceDestroy(GameObject gameObject)
+    {
+        if (Application.isPlaying)
+            GameObject.Destroy(gameObject);
+        else
+            GameObject.DestroyImmediate(gameObject);
+    }
+
+    public static void DestroyChildren(this GameObject gameObject)
+    {
+        if (Application.isPlaying)
+        {
+            foreach (var child in gameObject.GetChildren())
+                GameObject.Destroy(child);
+        }
+        else
+        {
+            var count = gameObject.transform.childCount;
+            for (var i = 0; i < count; i++)
+            {
+                GameObject.DestroyImmediate(gameObject.transform.GetChild(0).gameObject);
+            }
+        }
+
+    }
 }

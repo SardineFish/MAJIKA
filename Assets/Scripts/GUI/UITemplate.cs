@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
+[ExecuteInEditMode]
 public class UITemplate : MonoBehaviour
 {
     object dataSource;
@@ -25,6 +26,7 @@ public class UITemplate : MonoBehaviour
         }
     }
     public List<BindingOption> Bindings = new List<BindingOption>();
+    public bool UpdateInEditMode = false;
     // Use this for initialization
     void Start()
     {
@@ -48,12 +50,11 @@ public class UITemplate : MonoBehaviour
                 return;
             var source = UITemplateUtility.GetValueByPath(dataSource, bind.PathSource);
             var rendered = gameObject.GetValueByPath(bind.PathTemplate);
-
             if (bind.BindingMode == BindingMode.OneWay)
             {
                 if(bind.lastSource != source)
                 {
-                    gameObject.SetValueByPath(bind.PathTemplate, UITemplateUtility.GetValueByPath(dataSource, bind.PathSource));
+                    gameObject.SetValueByPath(bind.PathTemplate, bind.DataConverter ? bind.DataConverter.ConvertTo(source) : source);
                     bind.lastSource = source;
                     bind.lastRender = gameObject.GetValueByPath(bind.PathTemplate);
                 }
@@ -62,7 +63,7 @@ public class UITemplate : MonoBehaviour
             {
                 if(bind.lastSource != source)
                 {
-                    gameObject.SetValueByPath(bind.PathTemplate, UITemplateUtility.GetValueByPath(dataSource, bind.PathSource));
+                    gameObject.SetValueByPath(bind.PathTemplate, bind.DataConverter ? bind.DataConverter.ConvertTo(source) : source);
                     bind.lastSource = source;
                     bind.lastRender = gameObject.GetValueByPath(bind.PathTemplate);
                 }
@@ -81,7 +82,7 @@ public class UITemplate : MonoBehaviour
         foreach (var bind in Bindings)
         {
             bind.lastSource = UITemplateUtility.GetValueByPath(dataSource, bind.PathSource);
-            gameObject.SetValueByPath(bind.PathTemplate, bind.lastSource);
+            gameObject.SetValueByPath(bind.PathTemplate, bind.DataConverter ? bind.DataConverter.ConvertTo(bind.lastSource) : bind.lastSource);
             bind.lastRender = gameObject.GetValueByPath(bind.PathTemplate);
         }
     }

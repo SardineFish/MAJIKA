@@ -1,7 +1,19 @@
 function start()
-    cloak = Item.find("Cloak/Cloak")
-    stone = Item.find("FlameStone/FlameStone")
-    
-    cloak.from(cloak + stone)
-    stone.from(stone + stone)
+    cloak = Item.find("Cloak")
+
+    flameGem = Item.find("FlameStone")
+    iceGem = Item.find("IceGem")
+    airGem = Item.find("AirGem")
+    arcaneGem = Item.find("ArcaneGem")
+
+    flameJet = Item.find("FlameJet")
+    airBoom = Item.find("AirBoom")
+    arcaneShield = Item.find("ArcaneShield")
+    iceSpear = Item.find("IceSpear")
+
+    flameJet.from(flameGem + flameGem + flameGem)
+    airBoom.from(airGem + airGem + airGem)
+    iceSpear.from(iceGem + iceGem + iceGem)
+    arcaneShield.from(arcaneGem + arcaneGem + arcaneGem)
+
 end

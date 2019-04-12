@@ -8,6 +8,8 @@ namespace Inventory
     public class Item : ScriptableObject
     {
         public string DisplayName;
+        [TextArea]
+        public string Description;
         public ItemType Type;
         public Sprite Iconx32;
         public Sprite Iconx16;

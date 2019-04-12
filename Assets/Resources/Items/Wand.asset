@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa6404e9c598e61409c2351cc6718f96, type: 3}
-  m_Name: Cloak
+  m_Name: Wand
   m_EditorClassIdentifier: 
-  DisplayName: "\u6597\u7BF7"
-  Type: 1
-  Iconx32: {fileID: 21300000, guid: 4dd38c83b130a9347b4626686bdd1161, type: 3}
-  Iconx16: {fileID: 21300000, guid: 7ce8c51ec4c77444f8b703e2287daf6f, type: 3}
-  DecoratedColor: {r: 0.40784314, g: 0.22745098, b: 0.5019608, a: 1}
+  DisplayName: "\u6CD5\u6756"
+  Description: 
+  Type: 2
+  Iconx32: {fileID: 21300000, guid: 13c32f9d7d65b804398b358f7f8842c6, type: 3}
+  Iconx16: {fileID: 21300000, guid: 1b4bca85e17ccd24e82a82a9ac378361, type: 3}
+  DecoratedColor: {r: 0.6745098, g: 0.4117647, b: 0.22745098, a: 1}
   DropedAnimation: {fileID: 0}
   PickupSoundEffect: {fileID: 0}
   Properties: []

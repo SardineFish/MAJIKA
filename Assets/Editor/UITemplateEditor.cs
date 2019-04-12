@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEditor.Experimental.SceneManagement;
 
 namespace Assets.Editor
 {
@@ -14,6 +16,7 @@ namespace Assets.Editor
     {
         public override void OnInspectorGUI()
         {
+            base.OnInspectorGUI();
             var template = target as UITemplate;
 
             for(var i=0;i<template.transform.childCount;i++)
@@ -48,6 +51,7 @@ namespace Assets.Editor
                   bind.PathTemplate = nameList[idx] + "." + EditorGUILayout.TextField(bind.PathTemplate.Substring(componentName.Length + 1));
                   EditorGUILayout.EndHorizontal();
                   EditorGUILayout.Space();
+                  bind.DataConverter = EditorGUILayout.ObjectField("Converter", bind.DataConverter, typeof(MAJIKA.Converter.TypeConverterBase), true) as MAJIKA.Converter.TypeConverterBase;
                   EditorGUILayout.Space();
                   return bind;
               });
@@ -57,6 +61,9 @@ namespace Assets.Editor
             }
             template.DataSource = EditorGUILayout.ObjectField("Data Source", template.DataSource as UnityEngine.Object, typeof(UnityEngine.Object), true);
             EditorUtility.SetDirty(template);
+#if UNITY_EDITOR
+            //EditorSceneManager.MarkSceneDirty(template.gameObject.scene);
+#endif
         }
     }
 }

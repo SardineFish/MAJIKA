@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 998b8ceff84aae74d9bb1988db9e941e, type: 3}
-  m_Name: FlameElement
+  m_Name: FlameJet
   m_EditorClassIdentifier: 
-  Skill: {fileID: 6358152220088979830, guid: dad318f803436be4f9d19d38ba54b4b8, type: 3}
+  Skill: {fileID: 6772409996632679684, guid: c05a308d5d729864a8fbc96d07286147, type: 3}
