@@ -6,13 +6,13 @@ namespace MAJIKA.Converter
     public abstract class TypeConverter<TInput, TOutput> : TypeConverterBase
     {
         public abstract TOutput ConvertTo(TInput input);
-        public override object ConvertTo(object input)
+        public override object ConvertObjectTo(object input)
         {
             return ConvertTo((TInput)input);
         }
 
         public abstract TInput ConvertBack(TOutput input);
-        public override object ConvertBack(object input)
+        public override object ConvertObjectBack(object input)
         {
             return ConvertBack((TOutput)input);
         }
@@ -20,8 +20,8 @@ namespace MAJIKA.Converter
 
     public abstract class TypeConverterBase: ScriptableObject
     {
-        public abstract object ConvertTo(object input);
-        public abstract object ConvertBack(object input);
+        public abstract object ConvertObjectTo(object input);
+        public abstract object ConvertObjectBack(object input);
     }
 }
 

@@ -12,5 +12,6 @@ namespace MAJIKA.GUI
     {
         public Sprite DragIamge;
         public object Data;
+        public IDragable DragTarget;
     }
 }

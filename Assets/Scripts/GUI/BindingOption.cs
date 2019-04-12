@@ -10,7 +10,7 @@ public class BindingOption
 {
     public string PathSource = "";
     public string PathTemplate = "";
-    public BindingMode BindingMode = BindingMode.TwoWay;
+    public BindingMode BindingMode = BindingMode.OneWay;
     public MAJIKA.Converter.TypeConverterBase DataConverter;
     public object lastSource = null;
     public object lastRender = null;

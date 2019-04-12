@@ -1,7 +1,7 @@
 function start()
     cloak = Item.find("Cloak")
 
-    flameGem = Item.find("FlameStone")
+    flameGem = Item.find("FlameGem")
     iceGem = Item.find("IceGem")
     airGem = Item.find("AirGem")
     arcaneGem = Item.find("ArcaneGem")

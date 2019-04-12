@@ -958,13 +958,13 @@ MonoBehaviour:
   PickupDistance: 1
   Slots:
   - Item: {fileID: 11400000, guid: 269b8fabf591e1143974ca27ffb5d1f4, type: 2}
-    Amount: 1
-  - Item: {fileID: 0}
-    Amount: 0
-  - Item: {fileID: 0}
-    Amount: 0
-  - Item: {fileID: 0}
-    Amount: 0
+    Amount: 100
+  - Item: {fileID: 11400000, guid: c955c30a2c1d9e44494f70685e69f4fb, type: 2}
+    Amount: 100
+  - Item: {fileID: 11400000, guid: d336e617a8d919840adfd9ae4d646597, type: 2}
+    Amount: 100
+  - Item: {fileID: 11400000, guid: 0809b1638075ba64fa8253dec55ba38a, type: 2}
+    Amount: 100
   - Item: {fileID: 0}
     Amount: 0
   - Item: {fileID: 0}
