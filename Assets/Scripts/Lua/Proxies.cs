@@ -106,4 +106,17 @@ namespace LuaHost.Proxy
             target.transform.position = (target.GetComponent<CameraMovement>().ViewportRect.size / 2).ToVector3(target.transform.position.z);
         }
     }
+
+    public class UIPanelProxy<TUIPanel> : ProxyBase<TUIPanel> where TUIPanel: MAJIKA.GUI.UIPanel<TUIPanel>
+    {
+        public UIPanelProxy(TUIPanel target, LuaScriptHost host) : base(target, host)
+        {
+        }
+
+        public void Show()
+            => target.Show();
+
+        public void Hide()
+            => target.Hide();
+    }
 }

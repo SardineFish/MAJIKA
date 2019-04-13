@@ -230,6 +230,28 @@ public static class Utility
             yield return null;
         }
     }
+
+    public static IEnumerator ShowUI(CanvasGroup canvasGroup, float time)
+    {
+        canvasGroup.alpha = 0;
+        canvasGroup.gameObject.SetActive(true);
+        foreach(var t in TimerNormalized(time))
+        {
+            canvasGroup.alpha = t;
+            yield return null;
+        }
+    }
+
+    public static IEnumerator HideUI(CanvasGroup canvasGroup, float time)
+    {
+        foreach (var t in TimerNormalized(time))
+        {
+            canvasGroup.alpha = 1 - t;
+            yield return null;
+        }
+        canvasGroup.gameObject.SetActive(false);
+    }
+
     public static IEnumerator HideUI(UnityEngine.UI.Graphic ui, float time, bool deactive = false)
     {
         var color = ui.color;

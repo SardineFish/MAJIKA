@@ -83,6 +83,7 @@ namespace LuaHost
             script.Globals["stopCoroutine"] = (Action<UnityEngine.Coroutine>)host.CoroutineManager.StopCoroutine;
             script.Globals["utility"] = utility;
             script.Globals["camera"] = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+            GUIHost.InitHost(host, script);
             return script;
         }
         public static void EnableConsole(Script script)

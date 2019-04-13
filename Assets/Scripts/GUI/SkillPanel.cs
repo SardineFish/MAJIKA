@@ -1,20 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Inventory;
 
-public class SkillPanel : MonoBehaviour
+namespace MAJIKA.GUI
 {
-    public GameObject Skill;
-    public GameObject Equipment;
-
-    public void ShowSkillPanel()
+    public class SkillPanel : UIPanel<SkillPanel>
     {
-        Equipment.SetActive(false);
-        Skill.SetActive(true);
+        public Slot MajorMaterial;
+        public List<Slot> MinorMateirals = new List<Slot>();
+        public Slot ProductSlot;
+
+        public Slot[] Skills;
+     
+
+        public void Craft()
+        {
+            var major = MajorMaterial.Take();
+            if (!major)
+                return;
+            var minors = MinorMateirals
+                .Select(slot => slot.Take())
+                .Where(item => item)
+                .ToArray();
+    
+            var materials = new List<Item>();
+            materials.Add(major);
+            materials.AddRange(minors);
+
+            var product = CraftSystem.Instance.Craft(materials.ToArray());
+            if (product)
+                ProductSlot.Put(product);
+        }
+
+        
     }
 
-    public void ShowEquipmentPanel()
-    {
-        Skill.SetActive(false);
-        Equipment.SetActive(true);
-    }
 }
