@@ -21,4 +21,4 @@ MonoBehaviour:
   DropedAnimation: {fileID: 0}
   PickupSoundEffect: {fileID: 8300000, guid: b7217a0eadcf7ea409b4faa14ddc55ae, type: 3}
   Properties:
-  - {fileID: 11400000, guid: 409116c0b04dd0c4892fad31e57a8aa0, type: 2}
+  - {fileID: 11400000, guid: 3378d4d6fe82f844b8cd047bbeda262e, type: 2}

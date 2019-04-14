@@ -6,13 +6,7 @@ public class PageContainer : MonoBehaviour
 {
     private void Start()
     {
-        GetComponentsInChildren<UIPage>(true)
-            .ForEach(p => p.gameObject.SetActive(false));
-
-        GetComponentsInChildren<UIPage>(true)
-            .Where(p => p.IsDefault)
-            .FirstOrDefault()
-            ?.gameObject.SetActive(true);
+        Reset();
     }
 
     public void Show(UIPage page)
@@ -22,11 +16,22 @@ public class PageContainer : MonoBehaviour
     }
 
     public void PageNext()
-    {   
+    {
     }
 
     public void PageBack()
     {
 
+    }
+
+    public void Reset()
+    {
+        GetComponentsInChildren<UIPage>(true)
+            .ForEach(p => p.gameObject.SetActive(false));
+
+        GetComponentsInChildren<UIPage>(true)
+            .Where(p => p.IsDefault)
+            .FirstOrDefault()
+            ?.gameObject.SetActive(true);
     }
 }

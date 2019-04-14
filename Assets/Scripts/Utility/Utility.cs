@@ -100,7 +100,7 @@ public static class Utility
     public static GameObject Instantiate(GameObject original, GameObject parent)
     {
         var obj = Instantiate(original, parent.scene);
-        obj.transform.parent = parent.transform;
+        obj.transform.SetParent(parent.transform);
         return obj;
     }
 

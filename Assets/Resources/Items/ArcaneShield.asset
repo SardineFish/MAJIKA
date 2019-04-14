@@ -15,7 +15,7 @@ MonoBehaviour:
   DisplayName: "\u3010\u5965\u80FD\u5C4F\u969C\u3011 "
   Description: "\u9576\u5D4C\u5230\u6CD5\u6756\u4E0A\u53EF\u4EE5\u8FD0\u7528\u3010\u5965\u80FD\u5C4F\u969C\u3011\r"
   Type: 4
-  Iconx32: {fileID: 21300000, guid: d86091d48b1d5004694811008b6990d8, type: 3}
+  Iconx32: {fileID: 21300000, guid: 1410636b2e935174ab7eabde33e9ef52, type: 3}
   Iconx16: {fileID: 0}
   DecoratedColor: {r: 0.5469381, g: 0.3326362, b: 0.6132076, a: 1}
   DropedAnimation: {fileID: 0}

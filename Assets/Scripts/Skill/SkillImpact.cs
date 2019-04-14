@@ -182,7 +182,11 @@ public class SkillImpact : MonoBehaviour
             var box = GetComponentInChildren<BoxCollider2D>();
             var circle = GetComponentInChildren<CircleCollider2D>();
             var capsule = GetComponent<CapsuleCollider2D>();
-            var pos = transform.localToWorldMatrix.MultiplyPoint(box.offset);
+            var pos = box
+                ? transform.localToWorldMatrix.MultiplyPoint(box.offset)
+                : circle
+                    ? transform.localToWorldMatrix.MultiplyPoint(circle.offset)
+                    : transform.localToWorldMatrix.MultiplyPoint(capsule.offset);
             if (box)
             {
                 var hits = Physics2D.BoxCastAll(pos, box.size, 0, Vector2.zero, 0, DamageLayerMask);
