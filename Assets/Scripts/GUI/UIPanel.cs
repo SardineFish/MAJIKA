@@ -8,12 +8,18 @@ namespace MAJIKA.GUI
 
         public virtual void Hide()
         {
-            StartCoroutine(Utility.HideUI(GetComponent<CanvasGroup>(), 1));
+            if (gameObject.activeInHierarchy)
+                StartCoroutine(Utility.HideUI(GetComponent<CanvasGroup>(), .3f));
         }
 
         public virtual void Show()
         {
-            StartCoroutine(Utility.ShowUI(GetComponent<CanvasGroup>(), 1));
+            if (!gameObject.activeInHierarchy)
+            {
+                gameObject.SetActive(true);
+                GetComponent<CanvasGroup>().alpha = 0;
+                StartCoroutine(Utility.ShowUI(GetComponent<CanvasGroup>(), .3f));
+            }
         }
     }
 }

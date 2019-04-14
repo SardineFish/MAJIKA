@@ -34,7 +34,20 @@ namespace MAJIKA.GUI
                 ProductSlot.Put(product);
         }
 
-        
+        public override void Show()
+        {
+            var player = GameSystem.Instance.PlayerInControl;
+            if (!player)
+                return;
+            var skillSlots = player.GetComponentInChildren<Equipment>()?.SkillSlots;
+            if (skillSlots == null)
+                return;
+            for(var i=0;i<skillSlots.Length;i++)
+            {
+                Skills[i].GetComponent<UITemplate>().DataSource = skillSlots[i];
+            }
+            base.Show();
+        }
     }
 
 }

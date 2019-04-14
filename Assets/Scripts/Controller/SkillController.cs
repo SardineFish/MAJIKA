@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class SkillController : EntityBehaviour<Player>
 {
     public const string EventSkillEnd = "SkillEnd";
+    public Skill EmptySkill;
     public Skill[] Skills;
     public Skill ActiveSkill = null;
 
@@ -18,7 +20,9 @@ public class SkillController : EntityBehaviour<Player>
 
     void UpdateSkillList()
     {
-        Skills = GetComponentsInChildren<Skill>();
+        Skills = GetComponentsInChildren<Skill>()
+            .Where(skill => skill.gameObject)
+            .ToArray();
     }
 
     public bool Activate(int idx, float direction=0)
@@ -128,7 +132,7 @@ public class SkillController : EntityBehaviour<Player>
     public void AddSkill(Skill skill, int idx)
     {
         var obj = Instantiate(skill.gameObject);
-        obj.transform.parent = Entity.GetChild("Skills").transform;
+        obj.transform.parent = Entity.GetChild(GameEntity.NameSkills).transform;
         obj.transform.SetSiblingIndex(idx);
         UpdateSkillList();
     }
@@ -136,6 +140,23 @@ public class SkillController : EntityBehaviour<Player>
     public void RemoveSkill(int idx)
     {
         Destroy(Skills[idx].gameObject);
+        UpdateSkillList();
+    }
+
+    public void SetSkills(Skill[] skills)
+    {
+        for(var i=0;i<skills.Length;i++)
+        {
+            if (skills[i])
+                AddSkill(skills[i], i);
+            else
+                AddSkill(EmptySkill, i);
+        }
+    }
+
+    public void ClearSkills()
+    {
+        Entity.GetChild(GameEntity.NameSkills).gameObject.DestroyChildren();
         UpdateSkillList();
     }
 }

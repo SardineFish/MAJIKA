@@ -9,6 +9,8 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
     public const string NameRenderer = "Renderer";
     public const string NameCollider = "Collider";
     public const string NameAttached = "Attached";
+    public const string NameSkills = "Skills";
+    public const string NameInventory = "Inventory";
     public GameObject Renderer => transform.Find(NameRenderer).gameObject;
     public GameObject Collider => transform.Find(NameCollider).gameObject;
 

@@ -552,6 +552,11 @@ PrefabInstance:
       propertyPath: MovementAction.m_SingletonActionBindings.Array.data[0].m_Processors
       value: Deadzone(min=0.2,max=1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: ClimbAction.m_SingletonActionBindings.Array.data[0].m_Interactions
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 858601542092759146, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 3}
       propertyPath: m_Volume

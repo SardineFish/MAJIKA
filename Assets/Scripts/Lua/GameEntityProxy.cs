@@ -71,5 +71,12 @@ namespace LuaHost.Proxy
 
         public void RestartScript()
             => target.GetComponent<LuaScriptHost>().ReStart();
+
+
+
+        public void On(string eventName, Closure callback)
+        {
+            target.GetComponent<EventBus>().On(eventName, () => callback.Call());
+        }
     }
 }

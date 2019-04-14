@@ -9,7 +9,7 @@ namespace Inventory
     [Serializable]
     public class ItemWrapper
     {
-        public Item Item;
-        public int Amount = 1;
+        public Item Item = null;
+        public int Amount = 0;
     }
 }

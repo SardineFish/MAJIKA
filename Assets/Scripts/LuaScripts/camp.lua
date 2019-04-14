@@ -10,6 +10,11 @@ function awake()
     yellowHair = scene.entity("YellowHair");
     redGlass = scene.entity("RedGlass");
     twinTail = scene.entity("TwinTail");
+
+    yellowHair.on("OnInteract", function()
+        --game.control(null)
+        gui.skillPanel.show()
+    end)
     --playerWalkCoroutine = startCoroutine(playerWalk);
     camera.reset();
     camera.follow(player);

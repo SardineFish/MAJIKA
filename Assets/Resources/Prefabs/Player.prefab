@@ -382,6 +382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23446b4692bcd8443b1885e0e0d560a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EmptySkill: {fileID: 5611800162971754747, guid: a95e4e5e8f876ea4bbd24b46f7576007,
+    type: 3}
   Skills: []
   ActiveSkill: {fileID: 0}
 --- !u!95 &95401749329384152
@@ -919,7 +921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1803362264041524446}
   - component: {fileID: 3788073403262971492}
-  - component: {fileID: 5763317023627789134}
+  - component: {fileID: 7621301060941540264}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -981,7 +983,7 @@ MonoBehaviour:
     Amount: 0
   - Item: {fileID: 0}
     Amount: 0
---- !u!114 &5763317023627789134
+--- !u!114 &7621301060941540264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -990,19 +992,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 4059479603567758353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f64094ccc7c04d640bde2bcc7c50e283, type: 3}
+  m_Script: {fileID: 11500000, guid: 73b46bf4832655840a389f578833e942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Elements:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Skills:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  SkillSlots:
+  - Item: {fileID: 0}
+    Amount: 0
+  - Item: {fileID: 0}
+    Amount: 0
+  - Item: {fileID: 0}
+    Amount: 0
+  - Item: {fileID: 0}
+    Amount: 0
+  Cloak:
+    Item: {fileID: 0}
+    Amount: 0
+  Wand:
+    Item: {fileID: 0}
+    Amount: 0
 --- !u!1 &8878409496743526656
 GameObject:
   m_ObjectHideFlags: 0
