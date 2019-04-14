@@ -19,6 +19,7 @@ namespace MAJIKA.GUI
                 gameObject.SetActive(true);
                 GetComponent<CanvasGroup>().alpha = 0;
                 StartCoroutine(Utility.ShowUI(GetComponent<CanvasGroup>(), .3f));
+                GetComponent<PageContainer>()?.Reset();
             }
         }
     }

@@ -967,8 +967,8 @@ MonoBehaviour:
     Amount: 100
   - Item: {fileID: 11400000, guid: 0809b1638075ba64fa8253dec55ba38a, type: 2}
     Amount: 100
-  - Item: {fileID: 0}
-    Amount: 0
+  - Item: {fileID: 11400000, guid: 1d251178a0f04cc4683d1cb8675c77a8, type: 2}
+    Amount: 100
   - Item: {fileID: 0}
     Amount: 0
   - Item: {fileID: 0}

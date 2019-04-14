@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6404e9c598e61409c2351cc6718f96, type: 3}
+  m_Name: MAJIKACore
+  m_EditorClassIdentifier: 
+  DisplayName: "\u9B54\u4EBA\u6676\u6838 "
+  Description: "\u62E5\u6709\u5F3A\u5927\u9B54\u529B\u7684\u6676\u6838\uFF0C\u53EF\u4EE5\u7528\u4E8E\u521D\u7B49\u6CD5\u672F\u7684\u7A81\u7834\u5347\u7EA7\r"
+  Type: 4
+  Iconx32: {fileID: 21300000, guid: df0428033f6eb4d4aa1ee30c8175d924, type: 3}
+  Iconx16: {fileID: 0}
+  DecoratedColor: {r: 0.4056604, g: 0.13585797, b: 0.14600615, a: 1}
+  DropedAnimation: {fileID: 0}
+  PickupSoundEffect: {fileID: 8300000, guid: b7217a0eadcf7ea409b4faa14ddc55ae, type: 3}
+  Properties:
+  - {fileID: 11400000, guid: 409116c0b04dd0c4892fad31e57a8aa0, type: 2}
