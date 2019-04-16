@@ -7136,7 +7136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PassUI: {fileID: 0}
-  FailUI: {fileID: 0}
+  FailedUI: {fileID: 0}
   NextScene: 
   ActiveAtLoaded:
   - {fileID: 1399220247}

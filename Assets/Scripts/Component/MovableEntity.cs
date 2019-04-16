@@ -30,6 +30,8 @@ public class MovableEntity : MonoBehaviour
     {
         if (Frozen)
             return false;
+        if (!OnGround)
+            return false;
         EnableGravity = true;
         if (jumpCount-- > 0)
         {

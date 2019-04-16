@@ -182,21 +182,21 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Path: <Keyboard>/k
-      m_Interactions: 
+      m_Interactions: PressAndRelease()
       m_Processors: 
       m_Groups: 
       m_Action: Jump
       m_Flags: 0
     - m_Name: 
       m_Path: <Keyboard>/space
-      m_Interactions: 
+      m_Interactions: PressAndRelease()
       m_Processors: 
       m_Groups: 
       m_Action: Jump
       m_Flags: 0
     - m_Name: 
       m_Path: <Gamepad>/buttonSouth
-      m_Interactions: 
+      m_Interactions: PressAndRelease()
       m_Processors: 
       m_Groups: 
       m_Action: Jump
@@ -234,7 +234,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Path: <Keyboard>/e
-      m_Interactions: Tap()
+      m_Interactions: Press()
       m_Processors: 
       m_Groups: 
       m_Action: Interact
@@ -250,7 +250,14 @@ MonoBehaviour:
     m_Name: Inventory
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Path: <Keyboard>/b
+      m_Interactions: Press()
+      m_Processors: 
+      m_Groups: 
+      m_Action: Inventory
+      m_Flags: 0
   AcceptAction:
     m_Name: Accept
     m_ExpectedControlLayout: 
@@ -258,7 +265,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Path: <Keyboard>/enter
-      m_Interactions: Tap()
+      m_Interactions: Press()
       m_Processors: 
       m_Groups: 
       m_Action: Accept
@@ -277,7 +284,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Path: <Keyboard>/escape
-      m_Interactions: Tap()
+      m_Interactions: Press()
       m_Processors: 
       m_Groups: 
       m_Action: Back
@@ -412,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpHeight: 5
   JumpTime: 0.65
-  OnGroundThreshold: 0.1625
+  OnGroundThreshold: 0.0625
 --- !u!114 &114561594854667466
 MonoBehaviour:
   m_ObjectHideFlags: 0
