@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using MAJIKA.GUI;
 
 public class Level : Singleton<Level>
 {
     public const string EventFailed = "Failed";
     public const string EventPass = "Pass";
-    public GameObject PassUI;
-    public GameObject FailUI;
+    public CoveredUI PassUI;
+    public CoveredUI FailedUI;
     public string NextScene;
     public List<MonoBehaviour> ActiveAtLoaded = new List<MonoBehaviour>();
     protected override void Awake()
@@ -18,7 +19,7 @@ public class Level : Singleton<Level>
     }
     IEnumerator OnLevelPass()
     {
-        PassUI?.SetActive(true);
+        PassUI?.Show();
         var animator = PassUI.GetComponent<Animator>();
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
@@ -32,8 +33,8 @@ public class Level : Singleton<Level>
     }
     IEnumerator OnLevelFailed()
     {
-        FailUI?.SetActive(true);
-        var animator = FailUI.GetComponent<Animator>();
+        FailedUI?.Show();
+        var animator = FailedUI.GetComponent<Animator>();
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
             yield return null;

@@ -34,7 +34,7 @@ namespace MAJIKA.GUI
                 ProductSlot.Put(product);
         }
 
-        public override void Show()
+        public override void Show(float time = .1f)
         {
             var player = GameSystem.Instance.PlayerInControl;
             if (!player)
@@ -46,7 +46,7 @@ namespace MAJIKA.GUI
             {
                 Skills[i].GetComponent<UITemplate>().DataSource = skillSlots[i];
             }
-            base.Show();
+            base.Show(time);
         }
     }
 

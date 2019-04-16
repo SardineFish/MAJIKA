@@ -8,7 +8,6 @@ namespace MAJIKA.GUI
     {
         public void OnDrop(PointerEventData eventData)
         {
-            Debug.Log("Drop");
             var data = eventData.pointerDrag.GetInterface<IDragable>()?.OnDrag();
             var idropable = this.GetInterface<IDropable>();
             if (idropable !=null && idropable.Accept(data))

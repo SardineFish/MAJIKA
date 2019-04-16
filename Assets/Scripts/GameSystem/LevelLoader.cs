@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using MAJIKA.GUI;
 
 public class LevelLoader : Singleton<LevelLoader>
 {
-    public GameObject LoadingUI;
+    public CoveredUI LoadingUI;
     public IEnumerator LoadLevelWithoutUI(string scenePath)
     {
         yield return SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Single);
     }
     public IEnumerator LoadLevel(string scenePath)
     {
-        yield return Utility.ShowUI(LoadingUI.GetComponent<UnityEngine.UI.Graphic>(), 1f);
+        yield return LoadingUI.WaitShow();
         yield return SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Single);
-        yield return Utility.HideUI(LoadingUI.GetComponent<UnityEngine.UI.Graphic>(), 1f);
+        yield return LoadingUI.WaitHide();
         FindObjectOfType<Level>().Ready();
     }
     public void LoadLevelDetach(string scenePath)

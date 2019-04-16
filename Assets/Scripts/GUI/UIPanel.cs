@@ -3,23 +3,57 @@ using System.Collections;
 
 namespace MAJIKA.GUI
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public abstract class UIPanel<T> : Singleton<T> where T : UIPanel<T>
     {
-
-        public virtual void Hide()
+        System.Guid lockID;
+        protected virtual void Update()
         {
-            if (gameObject.activeInHierarchy)
-                StartCoroutine(Utility.HideUI(GetComponent<CanvasGroup>(), .3f));
+            if (InputManager.Instance.GetActionPerformed(InputManager.Instance.BackAction))
+                Hide();
         }
 
-        public virtual void Show()
+        public IEnumerator WaitHide(float time = .2f)
+        {
+            if (gameObject.activeInHierarchy)
+            {
+                yield return Utility.HideUI(GetComponent<CanvasGroup>(), time);
+
+                var player = GameSystem.Instance.PlayerInControl;
+                player?.GetComponent<EntityController>().UnLock(lockID);
+            }
+        }
+
+        public virtual void Hide(float time = .2f)
+        {
+            if (gameObject.activeInHierarchy)
+            {
+                StartCoroutine(WaitHide(time));
+            }
+        }
+
+        public IEnumerator WaitShow(float time = .1f)
+        {
+            if (!gameObject.activeInHierarchy)
+            {
+                var player = GameSystem.Instance.PlayerInControl;
+                if (player)
+                {
+                    lockID = player.GetComponent<EntityController>().Lock();
+                }
+                gameObject.SetActive(true);
+                GetComponent<CanvasGroup>().alpha = 0;
+                GetComponent<PageContainer>()?.Reset();
+                yield return Utility.ShowUI(GetComponent<CanvasGroup>(), time);
+            }
+        }
+
+        public virtual void Show(float time = .1f)
         {
             if (!gameObject.activeInHierarchy)
             {
                 gameObject.SetActive(true);
-                GetComponent<CanvasGroup>().alpha = 0;
-                StartCoroutine(Utility.ShowUI(GetComponent<CanvasGroup>(), .3f));
-                GetComponent<PageContainer>()?.Reset();
+                StartCoroutine(WaitShow(.1f));
             }
         }
     }

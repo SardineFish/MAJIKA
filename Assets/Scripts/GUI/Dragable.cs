@@ -13,7 +13,6 @@ namespace MAJIKA.GUI
             var data = this.GetInterface<IDragable>()?.OnDrag();
             if (data != null)
             {
-                Debug.Log($"{gameObject.name} Drag");
                 eventData.Use();
                 DragNDropSystem.Instance.UpdateDragging(data);
             }

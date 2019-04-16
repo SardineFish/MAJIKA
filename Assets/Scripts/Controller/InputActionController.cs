@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 [RequireComponent(typeof(Player))]
-public class InteractController : EntityBehaviour<Player>
+public class InputActionController : EntityBehaviour<Player>
 {
     public List<InteractiveEntity> InteractiveEntities = new List<InteractiveEntity>();
 
@@ -15,6 +15,10 @@ public class InteractController : EntityBehaviour<Player>
         {
             InteractiveEntities[0].Interact(Entity);
             //Entity.GetComponent<PlayerController>().playerFSM.ChangeState(PlayerState.Interact);
+        }
+        else if(InputManager.Instance.GetActionPerformed(InputManager.Instance.InventoryAction))
+        {
+            MAJIKA.GUI.InventoryPanel.Instance?.Show();
         }
     }
 
