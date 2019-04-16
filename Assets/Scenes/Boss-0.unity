@@ -15005,22 +15005,22 @@ PrefabInstance:
     - target: {fileID: 565822037658253117, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 32
+      value: 160.5
       objectReference: {fileID: 0}
     - target: {fileID: 565822037658253117, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 565822037658253117, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 565822037658253117, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 565822037658253117, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
@@ -15035,12 +15035,12 @@ PrefabInstance:
     - target: {fileID: 1017066013864555554, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -94.08
+      value: -155.23201
       objectReference: {fileID: 0}
     - target: {fileID: 1017066013864555554, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -196.16
+      value: -318.46402
       objectReference: {fileID: 0}
     - target: {fileID: 344508133976083909, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
@@ -15110,12 +15110,12 @@ PrefabInstance:
     - target: {fileID: 1017066013679651557, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: -310.7399
       objectReference: {fileID: 0}
     - target: {fileID: 1017066013679651557, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -16.000244
+      value: -637.4803
       objectReference: {fileID: 0}
     - target: {fileID: 4265285734234992803, guid: 19b812f176135e7428064a0e40984f2f,
         type: 3}

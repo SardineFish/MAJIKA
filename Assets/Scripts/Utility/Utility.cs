@@ -233,11 +233,13 @@ public static class Utility
 
     public static IEnumerator ShowUI(CanvasGroup canvasGroup, float time)
     {
+        time = (1 - canvasGroup.alpha) * time;
         canvasGroup.alpha = 0;
         canvasGroup.gameObject.SetActive(true);
+        var alpha = canvasGroup.alpha;
         foreach(var t in TimerNormalized(time))
         {
-            canvasGroup.alpha = t;
+            canvasGroup.alpha = alpha + t * (1 - alpha);
             yield return null;
         }
     }
@@ -303,7 +305,10 @@ public static class Utility
         if (Application.isPlaying)
         {
             foreach (var child in gameObject.GetChildren())
+            {
+                child.SetActive(false);
                 GameObject.Destroy(child);
+            }
         }
         else
         {

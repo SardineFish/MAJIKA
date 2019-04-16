@@ -15,12 +15,11 @@ namespace MAJIKA.GUI
 
         public IEnumerator WaitHide(float time = .2f)
         {
+            var player = GameSystem.Instance.PlayerInControl;
+            player?.GetComponent<EntityController>().UnLock(lockID);
             if (gameObject.activeInHierarchy)
             {
                 yield return Utility.HideUI(GetComponent<CanvasGroup>(), time);
-
-                var player = GameSystem.Instance.PlayerInControl;
-                player?.GetComponent<EntityController>().UnLock(lockID);
             }
         }
 
@@ -36,16 +35,16 @@ namespace MAJIKA.GUI
         {
             if (!gameObject.activeInHierarchy)
             {
-                var player = GameSystem.Instance.PlayerInControl;
-                if (player)
-                {
-                    lockID = player.GetComponent<EntityController>().Lock();
-                }
                 gameObject.SetActive(true);
-                GetComponent<CanvasGroup>().alpha = 0;
-                GetComponent<PageContainer>()?.Reset();
-                yield return Utility.ShowUI(GetComponent<CanvasGroup>(), time);
             }
+            var player = GameSystem.Instance.PlayerInControl;
+            if (player)
+            {
+                lockID = player.GetComponent<EntityController>().Lock();
+            }
+            GetComponent<CanvasGroup>().alpha = 0;
+            GetComponent<PageContainer>()?.Reset();
+            yield return Utility.ShowUI(GetComponent<CanvasGroup>(), time);
         }
 
         public virtual void Show(float time = .1f)
