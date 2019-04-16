@@ -11,7 +11,7 @@ public class InteractController : EntityBehaviour<Player>
 
     private void Update()
     {
-        if (InputManager.Instance.GetAction(InputManager.Instance.InteractAction) && InteractiveEntities.Count > 0)
+        if (InputManager.Instance.GetActionPerformed(InputManager.Instance.InteractAction) && InteractiveEntities.Count > 0)
         {
             InteractiveEntities[0].Interact(Entity);
             //Entity.GetComponent<PlayerController>().playerFSM.ChangeState(PlayerState.Interact);

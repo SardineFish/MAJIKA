@@ -25,6 +25,7 @@ public class ConversationUI : Singleton<ConversationUI>
 
     public IEnumerator StartConversation(IConversation conversation, Talker[] talkers, bool lockPlayer = false)
     {
+        TextRenderer.text = "";
         Guid lockID;
         if (lockPlayer)
             lockID = GameSystem.Instance.PlayerInControl.GetComponent<EntityController>().Lock();
@@ -55,19 +56,22 @@ public class ConversationUI : Singleton<ConversationUI>
 
     public IEnumerator ShowSentence(string text)
     {
+        yield return null;
         var (talker, renderedText) = RenderSentence(text);
         if (talker)
             ImageRenderer.sprite = talker.Image;
         else
             ImageRenderer.sprite = Transperant;
         var secondsPerWord = 1 / WPS;
-        for(var i = 0; i <= renderedText.Length; i++)
+        foreach(var t in Utility.TimerNormalized(secondsPerWord*renderedText.Length))
         {
-            if (InputManager.Instance.GetAction(InputManager.Instance.AcceptAction))
-                i = renderedText.Length;
-            TextRenderer.text = text.Substring(0, i);
-            yield return new WaitForSeconds(secondsPerWord);
+            if (InputManager.Instance.GetActionPerformed(InputManager.Instance.AcceptAction))
+                break;
+            TextRenderer.text = renderedText.Substring(0, Mathf.FloorToInt(t * renderedText.Length));
+            yield return null;
         }
+        TextRenderer.text = renderedText;
+        yield return null;
         yield return Utility.ShowUI(ContinueHint, 0.2f);
         yield return InputManager.Instance.WaitForAction(InputManager.Instance.AcceptAction);
         yield return Utility.HideUI(ContinueHint, 0);

@@ -5,6 +5,16 @@ local twinTail;
 
 local playerWalkCoroutine;
 
+conversation1 = {
+    "${1}: ${0}你来了。",
+    "${0}: 嗯，我来了。"
+}
+conversation2 = {
+    "${left}: Are You OK? ",
+    "${right}: YEAH! ",
+    "${left}: ......"
+}
+
 function awake()
     player = scene.entity("Player");
     yellowHair = scene.entity("YellowHair");
@@ -15,6 +25,11 @@ function awake()
         --game.control(null)
         gui.skillPanel.show()
     end)
+
+    redGlass.on("OnInteract", function()
+        game.conversation(conversation1, {player, redGlass})
+    end)
+
     --playerWalkCoroutine = startCoroutine(playerWalk);
     camera.reset();
     camera.follow(player);

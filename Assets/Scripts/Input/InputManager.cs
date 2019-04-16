@@ -31,6 +31,8 @@ public class InputManager : Singleton<InputManager> {
 
     private InputAction[] skillActionList;
 
+    public Dictionary<InputAction, InputState> InputActionWrappers = new Dictionary<InputAction, InputState>();
+
     private void OnEnable()
     {
         AnyKey.Enable();
@@ -44,6 +46,8 @@ public class InputManager : Singleton<InputManager> {
         SkillAction2.Enable();
         SkillAction3.Enable();
         SkillAction4.Enable();
+        InputActionWrappers[AcceptAction] = new InputState(AcceptAction);
+        InputActionWrappers[MovementAction] = new InputState(MovementAction);
     }
 
     protected override void Awake()
@@ -73,10 +77,24 @@ public class InputManager : Singleton<InputManager> {
             else
                 Climbed = false;
         };
+        this.GetType().GetFields()
+            .Where(field => field.FieldType == typeof(InputAction))
+            .ForEach(field =>
+            {
+                var action = field.GetValue(this) as InputAction;
+                this.InputActionWrappers[action] = new InputState(action);
+            });
+
     }
 
     public void Update()
     {
+        InputActionWrappers.ForEach(pair => pair.Value.Update());
+    }
+
+    private void FixedUpdate()
+    {
+        InputActionWrappers.ForEach(pair => pair.Value.FixedUpdate());
     }
 
     public Vector2 GetMovement()
@@ -92,8 +110,17 @@ public class InputManager : Singleton<InputManager> {
 
     public bool GetAction(InputAction action)
     {
-        return action.phase == InputActionPhase.Started;
+        return InputActionWrappers[action].Phase == InputActionPhase.Started || InputActionWrappers[action].Phase == InputActionPhase.Performed;
     }
+
+    public bool GetActionStarted(InputAction action) 
+        => InputActionWrappers[action].GetPhaseChanged(InputActionPhase.Started);
+
+    public bool GetActionPerformed(InputAction action) 
+        => InputActionWrappers[action].GetPhaseChanged(InputActionPhase.Performed);
+
+    public bool GetActionCancelled(InputAction action)
+        => InputActionWrappers[action].GetPhaseChanged(InputActionPhase.Cancelled);
 
     public int GetSkillIndex()
     {
