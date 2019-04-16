@@ -41,9 +41,9 @@ public class ConversationUI : Singleton<ConversationUI>
         Talkers = null;
         Conversation = null;
         Wrapper.SetActive(false);
-        InputManager.Instance.Jumped = false;
+        // InputManager.Instance.Jumped = false;
         yield return null;
-        InputManager.Instance.Jumped = false;
+        // InputManager.Instance.Jumped = false;
         GameSystem.Instance.PlayerInControl.GetComponent<EntityController>().UnLock(lockID);
     }
 

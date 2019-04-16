@@ -9,16 +9,15 @@ using UnityEngine.Experimental.Input.Utilities;
 
 [ExecuteInEditMode]
 public class InputManager : Singleton<InputManager> {
-    public Vector2 Movement;
     public const int SkillCount = 4;
-    public bool Jumped = false;
-    public bool Climbed = false;
 
     public InputAction MovementAction;
     
     public InputAction JumpAction;
     public InputAction ClimbAction;
     public InputAction InteractAction;
+
+    public InputAction InventoryAction;
 
     public InputAction AcceptAction;
     public InputAction BackAction;
@@ -29,25 +28,18 @@ public class InputManager : Singleton<InputManager> {
     public InputAction SkillAction3;
     public InputAction SkillAction4;
 
+    public IEnumerable<InputAction> AllActions
+        => this.GetType().GetFields()
+            .Where(field => field.FieldType == typeof(InputAction))
+            .Select(field => field.GetValue(this) as InputAction);
+
     private InputAction[] skillActionList;
 
     public Dictionary<InputAction, InputState> InputActionWrappers = new Dictionary<InputAction, InputState>();
 
     private void OnEnable()
     {
-        AnyKey.Enable();
-        MovementAction.Enable();
-        JumpAction.Enable();
-        ClimbAction.Enable();
-        InteractAction.Enable();
-        AcceptAction.Enable();
-        BackAction.Enable();
-        SkillAction1.Enable();
-        SkillAction2.Enable();
-        SkillAction3.Enable();
-        SkillAction4.Enable();
-        InputActionWrappers[AcceptAction] = new InputState(AcceptAction);
-        InputActionWrappers[MovementAction] = new InputState(MovementAction);
+        AllActions.ForEach(action => action.Enable());
     }
 
     protected override void Awake()
@@ -58,33 +50,8 @@ public class InputManager : Singleton<InputManager> {
             SkillAction2,
             SkillAction3,
             SkillAction4
-        }; 
-        MovementAction.performed += ctx =>
-        {
-            Movement = ctx.ReadValue<Vector2>();
         };
-        JumpAction.performed += ctx =>
-        {
-            if (ctx.ReadValue<float>() > 0.5)
-                Jumped = true;
-            else
-                Jumped = false;
-        };
-        ClimbAction.performed += ctx =>
-        {
-            if (ctx.ReadValue<float>() > 0.5)
-                Climbed = true;
-            else
-                Climbed = false;
-        };
-        this.GetType().GetFields()
-            .Where(field => field.FieldType == typeof(InputAction))
-            .ForEach(field =>
-            {
-                var action = field.GetValue(this) as InputAction;
-                this.InputActionWrappers[action] = new InputState(action);
-            });
-
+        AllActions.ForEach(action => this.InputActionWrappers[action] = new InputState(action));
     }
 
     public void Update()
@@ -99,7 +66,8 @@ public class InputManager : Singleton<InputManager> {
 
     public Vector2 GetMovement()
     {
-        return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        return GetInputValue<Vector2>(MovementAction);
+        // return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
 
     public IEnumerator WaitForAction(InputAction action)
@@ -121,6 +89,9 @@ public class InputManager : Singleton<InputManager> {
 
     public bool GetActionCancelled(InputAction action)
         => InputActionWrappers[action].GetPhaseChanged(InputActionPhase.Cancelled);
+
+    public T GetInputValue<T>(InputAction action) where T : struct
+        => InputActionWrappers[action].ReadValue<T>();
 
     public int GetSkillIndex()
     {
