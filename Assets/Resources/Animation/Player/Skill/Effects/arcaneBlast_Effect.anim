@@ -4,7 +4,8 @@
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: arcaneBlast_Effect
   serializedVersion: 6
   m_Legacy: 0
@@ -19,22 +20,49 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
-    - time: 0.125
-      value: {fileID: 21300002, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
+      value: {fileID: 21300000, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - time: 0.15
+      value: {fileID: 21300002, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
     - time: 0.25
-      value: {fileID: 21300004, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
-    - time: 0.375
-      value: {fileID: 21300006, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
-    - time: 0.5
-      value: {fileID: 21300008, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
-    - time: 0.625
-      value: {fileID: 21300010, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
+      value: {fileID: 21300004, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - time: 0.3
+      value: {fileID: 21300006, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - time: 0.35
+      value: {fileID: 21300008, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - time: 0.45
+      value: {fileID: 21300010, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - time: 0.55
+      value: {fileID: 21300012, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - time: 0.65
+      value: {fileID: 0}
     attribute: m_Sprite
     path: Renderer
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 8
+  - curve:
+    - time: 0
+      value: {fileID: 0}
+    - time: 0.3
+      value: {fileID: 21300000, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - time: 0.35
+      value: {fileID: 21300002, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - time: 0.45
+      value: {fileID: 21300004, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - time: 0.55
+      value: {fileID: 21300006, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - time: 0.65
+      value: {fileID: 21300008, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - time: 0.75
+      value: {fileID: 21300010, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - time: 0.85
+      value: {fileID: 21300012, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - time: 0.9
+      value: {fileID: 0}
+    attribute: m_Sprite
+    path: Renderer/Effect
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 20
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -48,19 +76,37 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 884373330
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
-    - {fileID: 21300002, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
-    - {fileID: 21300004, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
-    - {fileID: 21300006, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
-    - {fileID: 21300008, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
-    - {fileID: 21300010, guid: 1b21471fa0fa35d47af193f812ca5a4a, type: 3}
+    - {fileID: 21300000, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - {fileID: 21300002, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - {fileID: 21300004, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - {fileID: 21300006, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - {fileID: 21300008, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - {fileID: 21300010, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - {fileID: 21300012, guid: 5bc317af86cf9044095e4973b4c82547, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - {fileID: 21300002, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - {fileID: 21300004, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - {fileID: 21300006, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - {fileID: 21300008, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - {fileID: 21300010, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - {fileID: 21300012, guid: a9aa2ef019697a14e9d8aad2ac29c60f, type: 3}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.75
+    m_StopTime: 0.95
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,10 +125,16 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_GenerateMotionCurves: 0
   m_Events:
-  - time: 0.375
+  - time: 0.35
     functionName: StartImpact
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.9
+    functionName: Deactivate
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

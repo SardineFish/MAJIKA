@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: a9aa2ef019697a14e9d8aad2ac29c60f
+guid: 5bc317af86cf9044095e4973b4c82547
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ArcaneBlast-Impact_0
-    21300002: ArcaneBlast-Impact_1
-    21300004: ArcaneBlast-Impact_2
-    21300006: ArcaneBlast-Impact_3
-    21300008: ArcaneBlast-Impact_4
-    21300010: ArcaneBlast-Impact_5
-    21300012: ArcaneBlast-Impact_6
+    21300000: ArcaneBlast-Effect_0
+    21300002: ArcaneBlast-Effect_1
+    21300004: ArcaneBlast-Effect_2
+    21300006: ArcaneBlast-Effect_3
+    21300008: ArcaneBlast-Effect_4
+    21300010: ArcaneBlast-Effect_5
+    21300012: ArcaneBlast-Effect_6
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -91,141 +91,141 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ArcaneBlast-Impact_0
+      name: ArcaneBlast-Effect_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
-        width: 210
-        height: 64
+        y: 154
+        width: 95
+        height: 154
       alignment: 9
-      pivot: {x: 0.552381, y: 0}
+      pivot: {x: 0.6105263, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0460597d97eb80e43a162891e00bcaa6
+      spriteID: cc3cce7a188d1c54ba22507c03f6eedd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArcaneBlast-Impact_1
+      name: ArcaneBlast-Effect_1
       rect:
         serializedVersion: 2
-        x: 210
-        y: 192
-        width: 210
-        height: 64
+        x: 95
+        y: 154
+        width: 95
+        height: 154
       alignment: 9
-      pivot: {x: 0.552381, y: 0}
+      pivot: {x: 0.6105263, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05f5747946eff3249b85c1015dd02cad
+      spriteID: 05d4c7982af3d54459195483d29f8209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArcaneBlast-Impact_2
+      name: ArcaneBlast-Effect_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 210
-        height: 64
+        x: 190
+        y: 154
+        width: 95
+        height: 154
       alignment: 9
-      pivot: {x: 0.552381, y: 0}
+      pivot: {x: 0.6105263, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3716cd24ab728f44e8fef535d2fed601
+      spriteID: 5235e8bb10a57924d8b8729fcc57b65d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArcaneBlast-Impact_3
+      name: ArcaneBlast-Effect_3
       rect:
         serializedVersion: 2
-        x: 210
-        y: 128
-        width: 210
-        height: 64
+        x: 285
+        y: 154
+        width: 95
+        height: 154
       alignment: 9
-      pivot: {x: 0.552381, y: 0}
+      pivot: {x: 0.6105263, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b75b1514a50a3da40aae1f412abe35de
+      spriteID: 7fe26b8ebf618264c962c50938779306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArcaneBlast-Impact_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 210
-        height: 64
-      alignment: 9
-      pivot: {x: 0.552381, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 456e9b35318852d4e9a488e355fc25af
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Impact_5
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 64
-        width: 210
-        height: 64
-      alignment: 9
-      pivot: {x: 0.552381, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3453fe76497ffa54cae67fa15557c6d6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArcaneBlast-Impact_6
+      name: ArcaneBlast-Effect_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 210
-        height: 64
+        width: 95
+        height: 154
       alignment: 9
-      pivot: {x: 0.552381, y: 0}
+      pivot: {x: 0.6105263, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eea2af1f8894f894793b927380e880a6
+      spriteID: b2335d5b2a6afde4ba223a4dfab5e358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcaneBlast-Effect_5
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 95
+        height: 154
+      alignment: 9
+      pivot: {x: 0.6105263, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c38eb7d9e9ae3345a15ce172dab4f21
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcaneBlast-Effect_6
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 0
+        width: 95
+        height: 154
+      alignment: 9
+      pivot: {x: 0.6105263, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6091f113efcfdfb4180d505404ecfac5
       vertices: []
       indices: 
       edges: []
@@ -233,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 84fcab07f05a9d842bfe804ce4ab9410
+    spriteID: fa05a324561d767478b788b56ab4571a
     vertices: []
     indices: 
     edges: []

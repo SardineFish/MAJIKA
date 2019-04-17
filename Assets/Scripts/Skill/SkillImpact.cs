@@ -10,7 +10,6 @@ public enum ImpactType
     Collider,
     ColliderCast,
     Manual,
-    DropAttack
 }
 public enum ImpactDirection
 {
@@ -172,10 +171,10 @@ public class SkillImpact : MonoBehaviour
             if (ImpactLifeCycle == ImpactLifeCycle.DestructOnHit)
                 Deactivate();
         }
-        else if (ImpactType == ImpactType.DropAttack)
+        /*else if (ImpactType == ImpactType.DropAttack)
         {
             DropDownImpact();
-        }
+        }*/
         else if(ImpactType == ImpactType.ColliderCast)
         {
             var hitEntities = new List<GameEntity>();

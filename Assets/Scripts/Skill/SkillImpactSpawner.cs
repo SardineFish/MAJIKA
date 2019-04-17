@@ -8,6 +8,7 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
     public Vector2 SpawnOffset;
     public float TimeOffset = 0;
     public SkillImpact Instance;
+    public bool SpawnOnGround = false;
     
 
     IEnumerator SpawnCoroutine(List<EffectInstance> effects)
@@ -37,7 +38,19 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
             Vector3 direction = Vector3.right * dir;
             var offset = SpawnOffset;
             offset.x *= dir;
-            impact.Activate(Entity.transform.position + offset.ToVector3(), direction);
+            var pos = Entity.transform.position + offset.ToVector3();
+            if(SpawnOnGround)
+            {
+                RaycastHit2D[] hits = new RaycastHit2D[1];
+                var filter = new ContactFilter2D();
+                filter.layerMask = (1 << 8) | (1 << 9);
+                filter.useLayerMask = true;
+                if(Physics2D.Raycast(pos.ToVector2(), Vector2.down, filter, hits)>0)
+                {
+                    pos = hits[0].point.ToVector3();
+                }
+            }
+            impact.Activate(pos, direction);
             Instance = impact;
         }
     }
