@@ -18,7 +18,7 @@ namespace State
         }
         public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
         {
-            if (!entity.GetComponent<MovableEntity>().Climb(InputManager.Instance.GetMovement().y))
+            if (!entity.GetComponent<MovableEntity>().Climb((fsm as EntityController).Movement.y))
                 fsm.ChangeState(AirState);
 
             fsm.ChangeState(JumpState);

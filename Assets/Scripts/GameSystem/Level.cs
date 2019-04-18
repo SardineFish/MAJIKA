@@ -24,7 +24,7 @@ public class Level : Singleton<Level>
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
             yield return null;
-        yield return InputManager.Instance.WaitForAction(InputManager.Instance.AcceptAction);
+        yield return NewInputManager.Instance.Controller.Actions.Accept.WaitPerform();
         animator.SetTrigger("exit");
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
@@ -38,7 +38,7 @@ public class Level : Singleton<Level>
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
             yield return null;
-        yield return InputManager.Instance.WaitForAction(InputManager.Instance.AcceptAction);
+        yield return NewInputManager.Instance.Controller.Actions.Accept.WaitPerform();
         animator.SetTrigger("exit");
 
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)

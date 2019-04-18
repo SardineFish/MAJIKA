@@ -62,6 +62,5 @@ public class InputTest : MonoBehaviour, IGamePlayActions
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(InputAsset.GamePlay);
     }
 }

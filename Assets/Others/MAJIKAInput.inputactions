@@ -210,6 +210,146 @@
                     "modifiers": ""
                 }
             ]
+        },
+        {
+            "name": "Actions",
+            "id": "979648fe-b14b-49a0-88a0-f265d902f365",
+            "actions": [
+                {
+                    "name": "Accept",
+                    "id": "65446e76-5303-445e-9a14-aa3d76f04e8c",
+                    "expectedControlLayout": "",
+                    "continuous": false,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                },
+                {
+                    "name": "Back",
+                    "id": "24aa8211-93cc-4d8c-895f-850829cb1c26",
+                    "expectedControlLayout": "",
+                    "continuous": false,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                },
+                {
+                    "name": "Interact",
+                    "id": "2d4bb328-46c7-4bd7-bab7-da0d5569037d",
+                    "expectedControlLayout": "",
+                    "continuous": false,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "Press",
+                    "bindings": []
+                },
+                {
+                    "name": "Inventory",
+                    "id": "64ff6447-e02d-4e4e-9652-5340597bf192",
+                    "expectedControlLayout": "",
+                    "continuous": false,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "Press",
+                    "bindings": []
+                },
+                {
+                    "name": "AnyKey",
+                    "id": "b3a34c68-9479-44eb-bdec-4e10285db884",
+                    "expectedControlLayout": "",
+                    "continuous": false,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "Press",
+                    "bindings": []
+                },
+                {
+                    "name": "New action",
+                    "id": "18d0a7e0-591a-4b98-a966-2010ae02eb97",
+                    "expectedControlLayout": "AnyKey",
+                    "continuous": false,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "Press",
+                    "bindings": []
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accept",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AnyKey",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                }
+            ]
         }
     ],
     "controlSchemes": []

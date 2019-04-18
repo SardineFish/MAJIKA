@@ -11,6 +11,7 @@ namespace Testing
     {
         private void Start()
         {
+            /*
             InputManager.Instance.AcceptAction.performed += (ctx) =>
             {
                 Debug.Log("performed");
@@ -22,11 +23,21 @@ namespace Testing
             InputManager.Instance.AcceptAction.cancelled += ctx =>
             {
                 Debug.Log("cancelled");
-            };
+            };*/
         }
         private void Update()
         {
+
             //Debug.Log(InputManager.Instance.AcceptAction.phase);
+        }
+
+        private void FixedUpdate()
+        {
+            if(NewInputManager.Instance.Controller.Actions.Accept.phase == UnityEngine.Experimental.Input.InputActionPhase.Started)
+            {
+                
+                Debug.Log("Press");
+            }
         }
     }
 }

@@ -12,6 +12,17 @@ namespace MAJIKA.GUI
         public Slot[] Skills;
         public InventoryRenderer InventoryRenderer;
 
+        private void OnEnable()
+        {
+            NewInputManager.Instance.Controller.Actions.Inventory.performed += ctx =>
+            {
+                if (!this.gameObject.activeInHierarchy)
+                    this.Show();
+                else
+                    this.Hide();
+            };
+        }
+
         public override void Show(float time = .1f)
         {
             var player = GameSystem.Instance.PlayerInControl;
@@ -28,11 +39,9 @@ namespace MAJIKA.GUI
             base.Show(time);
         }
 
-        protected override void Update()
+        public override void Hide(float time = 0.2F)
         {
-            base.Update();
-            if (InputManager.Instance.GetActionPerformed(InputManager.Instance.InventoryAction))
-                Hide();
+            base.Hide(time);
         }
     }
 }

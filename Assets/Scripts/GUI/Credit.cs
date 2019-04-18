@@ -14,7 +14,7 @@ public class Credit : MonoBehaviour
     IEnumerator CreditCoroutine()
     {
         yield return new WaitForSeconds(0.5f);
-        yield return InputManager.Instance.WaitForAction(InputManager.Instance.AcceptAction);
+        yield return NewInputManager.Instance.Controller.Actions.Accept.WaitPerform();
         yield return UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync(gameObject.scene);
         MainUI.Instance.ReStart();
     }

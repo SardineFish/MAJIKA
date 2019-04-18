@@ -27,6 +27,14 @@ public class MAJIKAInput : InputActionAssetReference
         m_GamePlay_Skill2 = m_GamePlay.GetAction("Skill2");
         m_GamePlay_Skill3 = m_GamePlay.GetAction("Skill3");
         m_GamePlay_Skill4 = m_GamePlay.GetAction("Skill4");
+        // Actions
+        m_Actions = asset.GetActionMap("Actions");
+        m_Actions_Accept = m_Actions.GetAction("Accept");
+        m_Actions_Back = m_Actions.GetAction("Back");
+        m_Actions_Interact = m_Actions.GetAction("Interact");
+        m_Actions_Inventory = m_Actions.GetAction("Inventory");
+        m_Actions_AnyKey = m_Actions.GetAction("AnyKey");
+        m_Actions_Newaction = m_Actions.GetAction("New action");
         m_Initialized = true;
     }
     private void Uninitialize()
@@ -43,15 +51,28 @@ public class MAJIKAInput : InputActionAssetReference
         m_GamePlay_Skill2 = null;
         m_GamePlay_Skill3 = null;
         m_GamePlay_Skill4 = null;
+        if (m_ActionsActionsCallbackInterface != null)
+        {
+            Actions.SetCallbacks(null);
+        }
+        m_Actions = null;
+        m_Actions_Accept = null;
+        m_Actions_Back = null;
+        m_Actions_Interact = null;
+        m_Actions_Inventory = null;
+        m_Actions_AnyKey = null;
+        m_Actions_Newaction = null;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
     {
         if (newAsset == asset) return;
         var GamePlayCallbacks = m_GamePlayActionsCallbackInterface;
+        var ActionsCallbacks = m_ActionsActionsCallbackInterface;
         if (m_Initialized) Uninitialize();
         asset = newAsset;
         GamePlay.SetCallbacks(GamePlayCallbacks);
+        Actions.SetCallbacks(ActionsCallbacks);
     }
     public override void MakePrivateCopyOfActions()
     {
@@ -145,6 +166,86 @@ public class MAJIKAInput : InputActionAssetReference
             return new GamePlayActions(this);
         }
     }
+    // Actions
+    private InputActionMap m_Actions;
+    private IActionsActions m_ActionsActionsCallbackInterface;
+    private InputAction m_Actions_Accept;
+    private InputAction m_Actions_Back;
+    private InputAction m_Actions_Interact;
+    private InputAction m_Actions_Inventory;
+    private InputAction m_Actions_AnyKey;
+    private InputAction m_Actions_Newaction;
+    public struct ActionsActions
+    {
+        private MAJIKAInput m_Wrapper;
+        public ActionsActions(MAJIKAInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Accept { get { return m_Wrapper.m_Actions_Accept; } }
+        public InputAction @Back { get { return m_Wrapper.m_Actions_Back; } }
+        public InputAction @Interact { get { return m_Wrapper.m_Actions_Interact; } }
+        public InputAction @Inventory { get { return m_Wrapper.m_Actions_Inventory; } }
+        public InputAction @AnyKey { get { return m_Wrapper.m_Actions_AnyKey; } }
+        public InputAction @Newaction { get { return m_Wrapper.m_Actions_Newaction; } }
+        public InputActionMap Get() { return m_Wrapper.m_Actions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled { get { return Get().enabled; } }
+        public InputActionMap Clone() { return Get().Clone(); }
+        public static implicit operator InputActionMap(ActionsActions set) { return set.Get(); }
+        public void SetCallbacks(IActionsActions instance)
+        {
+            if (m_Wrapper.m_ActionsActionsCallbackInterface != null)
+            {
+                Accept.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAccept;
+                Accept.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAccept;
+                Accept.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAccept;
+                Back.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBack;
+                Back.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBack;
+                Back.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnBack;
+                Interact.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnInteract;
+                Interact.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnInteract;
+                Interact.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnInteract;
+                Inventory.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnInventory;
+                Inventory.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnInventory;
+                Inventory.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnInventory;
+                AnyKey.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAnyKey;
+                AnyKey.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAnyKey;
+                AnyKey.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAnyKey;
+                Newaction.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnNewaction;
+                Newaction.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnNewaction;
+                Newaction.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnNewaction;
+            }
+            m_Wrapper.m_ActionsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                Accept.started += instance.OnAccept;
+                Accept.performed += instance.OnAccept;
+                Accept.cancelled += instance.OnAccept;
+                Back.started += instance.OnBack;
+                Back.performed += instance.OnBack;
+                Back.cancelled += instance.OnBack;
+                Interact.started += instance.OnInteract;
+                Interact.performed += instance.OnInteract;
+                Interact.cancelled += instance.OnInteract;
+                Inventory.started += instance.OnInventory;
+                Inventory.performed += instance.OnInventory;
+                Inventory.cancelled += instance.OnInventory;
+                AnyKey.started += instance.OnAnyKey;
+                AnyKey.performed += instance.OnAnyKey;
+                AnyKey.cancelled += instance.OnAnyKey;
+                Newaction.started += instance.OnNewaction;
+                Newaction.performed += instance.OnNewaction;
+                Newaction.cancelled += instance.OnNewaction;
+            }
+        }
+    }
+    public ActionsActions @Actions
+    {
+        get
+        {
+            if (!m_Initialized) Initialize();
+            return new ActionsActions(this);
+        }
+    }
 }
 public interface IGamePlayActions
 {
@@ -155,4 +256,13 @@ public interface IGamePlayActions
     void OnSkill2(InputAction.CallbackContext context);
     void OnSkill3(InputAction.CallbackContext context);
     void OnSkill4(InputAction.CallbackContext context);
+}
+public interface IActionsActions
+{
+    void OnAccept(InputAction.CallbackContext context);
+    void OnBack(InputAction.CallbackContext context);
+    void OnInteract(InputAction.CallbackContext context);
+    void OnInventory(InputAction.CallbackContext context);
+    void OnAnyKey(InputAction.CallbackContext context);
+    void OnNewaction(InputAction.CallbackContext context);
 }

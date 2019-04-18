@@ -8,7 +8,7 @@ using UnityEngine.Experimental.Input;
 using UnityEngine.Experimental.Input.Utilities;
 
 [ExecuteInEditMode]
-public class InputManager : Singleton<InputManager> {
+public class InputManager_Legacy : Singleton<InputManager_Legacy> {
     public const int SkillCount = 4;
 
     public InputAction MovementAction;

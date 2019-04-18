@@ -50,7 +50,6 @@ public class ConversationUI : Singleton<ConversationUI>
     public void EndConversation()
     {
         Conversation = null;
-        GameSystem.Instance.PlayerInControl.GetComponent<PlayerController>().playerFSM.ChangeState(PlayerState.Idle);
         onComversationFinish?.Invoke();
     }
 
@@ -65,7 +64,7 @@ public class ConversationUI : Singleton<ConversationUI>
         var secondsPerWord = 1 / WPS;
         foreach(var t in Utility.TimerNormalized(secondsPerWord*renderedText.Length))
         {
-            if (InputManager.Instance.GetActionPerformed(InputManager.Instance.AcceptAction))
+            if (NewInputManager.Instance.Controller.Actions.Accept.WasPressedThisFrame())
                 break;
             TextRenderer.text = renderedText.Substring(0, Mathf.FloorToInt(t * renderedText.Length));
             yield return null;
@@ -73,7 +72,7 @@ public class ConversationUI : Singleton<ConversationUI>
         TextRenderer.text = renderedText;
         yield return null;
         yield return Utility.ShowUI(ContinueHint, 0.2f);
-        yield return InputManager.Instance.WaitForAction(InputManager.Instance.AcceptAction);
+        yield return NewInputManager.Instance.Controller.Actions.Accept.WaitPerform();
         yield return Utility.HideUI(ContinueHint, 0);
     }
     (Talker Talker, string Text) RenderSentence(string textTemplate)

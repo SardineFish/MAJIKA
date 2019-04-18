@@ -11,12 +11,12 @@ public class InputActionController : EntityBehaviour<Player>
 
     private void Update()
     {
-        if (InputManager.Instance.GetActionPerformed(InputManager.Instance.InteractAction) && InteractiveEntities.Count > 0)
+        if (NewInputManager.Instance.Controller.Actions.Interact.WasPressedThisFrame() && InteractiveEntities.Count > 0)
         {
             InteractiveEntities[0].Interact(Entity);
             //Entity.GetComponent<PlayerController>().playerFSM.ChangeState(PlayerState.Interact);
         }
-        else if(InputManager.Instance.GetActionPerformed(InputManager.Instance.InventoryAction))
+        else if(NewInputManager.Instance.Actions.Inventory.WasPressedThisFrame())
         {
             MAJIKA.GUI.InventoryPanel.Instance?.Show();
         }
