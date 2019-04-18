@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: a87cb84ce1478dc46939b2d7d82c435a
+ScriptedImporter:
+  fileIDToRecycleName:
+    11400000: <root>
+    11400004: GamePlay/Jump
+    11400006: GamePlay/Movement
+    11400008: GamePlay/Climb
+    11400010: GamePlay/Skill2
+    11400012: GamePlay/Skill1
+    11400014: GamePlay/Skill3
+    11400016: GamePlay/Skill4
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: e2fdc6edf8744b38b702a2a5ee3541b2, type: 3}
+  generateWrapperCode: 1
+  wrapperCodePath: Assets/Scripts/Input/MAJIKAInput.cs
+  wrapperClassName: MAJIKAInput
+  wrapperCodeNamespace: 
+  generateActionEvents: 0
+  generateInterfaces: 1
+  actionGuids: []
+  actionMapGuids: []

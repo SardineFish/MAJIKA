@@ -2,6 +2,7 @@
 using System.Collections;
 using State;
 using System.Collections.Generic;
+using UnityEngine.Experimental.Input;
 
 [RequireComponent(typeof(EventBus))]
 public class EntityController : EntityStateMachine<GameEntity>

@@ -97,6 +97,9 @@ MonoBehaviour:
     m_Name: Movement
     m_ExpectedControlLayout: 
     m_Id: 
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
       m_Path: <Gamepad>/leftStick
@@ -179,100 +182,45 @@ MonoBehaviour:
     m_Name: Jump
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/k
-      m_Interactions: PressAndRelease()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Keyboard>/space
-      m_Interactions: PressAndRelease()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonSouth
-      m_Interactions: PressAndRelease()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Jump
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   ClimbAction:
     m_Name: Climb
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/l
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Climb
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/rightShoulder
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Climb
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/rightTrigger
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Climb
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   InteractAction:
     m_Name: Interact
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/e
-      m_Interactions: Press()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Interact
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonEast
-      m_Interactions: Tap(),Press()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Interact
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   InventoryAction:
     m_Name: Inventory
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/b
-      m_Interactions: Press()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Inventory
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   AcceptAction:
     m_Name: Accept
     m_ExpectedControlLayout: 
     m_Id: 
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
       m_Path: <Keyboard>/enter
-      m_Interactions: Press()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Accept
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonSouth
-      m_Interactions: Tap()
+      m_Interactions: 
       m_Processors: 
       m_Groups: 
       m_Action: Accept
@@ -281,130 +229,50 @@ MonoBehaviour:
     m_Name: Back
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/escape
-      m_Interactions: Press()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Back
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonEast
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Back
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   AnyKey:
     m_Name: Any Key
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/anyKey
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Any Key
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonSouth
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Any Key
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonWest
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Any Key
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonEast
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Any Key
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonNorth
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Any Key
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   SkillAction1:
     m_Name: Skill Action 1
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/j
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skill Action 1
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonWest
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skill Action 1
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   SkillAction2:
     m_Name: Skill Action 2
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/i
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skill Action 2
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonNorth
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skill Action 2
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   SkillAction3:
     m_Name: Skill Action 3
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/o
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skill Action 3
-      m_Flags: 0
-    - m_Name: 
-      m_Path: <Gamepad>/buttonEast
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skill Action 3
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
   SkillAction4:
     m_Name: Skill Action 4
     m_ExpectedControlLayout: 
     m_Id: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Path: <Keyboard>/p
-      m_Interactions: Tap()
-      m_Processors: 
-      m_Groups: 
-      m_Action: Skill Action 4
-      m_Flags: 0
+    m_Flags: 0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
 --- !u!114 &114921217081773406
 MonoBehaviour:
   m_ObjectHideFlags: 0

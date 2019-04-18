@@ -26,7 +26,7 @@ namespace Testing
         }
         private void Update()
         {
-            Debug.Log(InputManager.Instance.AcceptAction.phase);
+            //Debug.Log(InputManager.Instance.AcceptAction.phase);
         }
     }
 }
