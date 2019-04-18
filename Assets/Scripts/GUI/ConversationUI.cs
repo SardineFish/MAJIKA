@@ -17,8 +17,6 @@ public class ConversationUI : Singleton<ConversationUI>
     public IConversation Conversation;
     public bool Talking = false;
 
-    public event Action onComversationFinish;
-
     void Update()
     {
     }
@@ -50,7 +48,6 @@ public class ConversationUI : Singleton<ConversationUI>
     public void EndConversation()
     {
         Conversation = null;
-        onComversationFinish?.Invoke();
     }
 
     public IEnumerator ShowSentence(string text)
@@ -64,7 +61,7 @@ public class ConversationUI : Singleton<ConversationUI>
         var secondsPerWord = 1 / WPS;
         foreach(var t in Utility.TimerNormalized(secondsPerWord*renderedText.Length))
         {
-            if (NewInputManager.Instance.Controller.Actions.Accept.WasPressedThisFrame())
+            if (InputManager.Instance.Controller.Actions.Accept.WasPressedThisFrame())
                 break;
             TextRenderer.text = renderedText.Substring(0, Mathf.FloorToInt(t * renderedText.Length));
             yield return null;
@@ -72,7 +69,7 @@ public class ConversationUI : Singleton<ConversationUI>
         TextRenderer.text = renderedText;
         yield return null;
         yield return Utility.ShowUI(ContinueHint, 0.2f);
-        yield return NewInputManager.Instance.Controller.Actions.Accept.WaitPerform();
+        yield return InputManager.Instance.Controller.Actions.Accept.WaitPerform();
         yield return Utility.HideUI(ContinueHint, 0);
     }
     (Talker Talker, string Text) RenderSentence(string textTemplate)
@@ -119,6 +116,6 @@ public class ConversationUI : Singleton<ConversationUI>
 
 class Sentence
 {
-    public Talker Talker;
-    public string Text;
+    public Talker Talker = null;
+    public string Text = null;
 }

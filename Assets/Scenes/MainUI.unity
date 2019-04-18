@@ -493,7 +493,8 @@ PrefabInstance:
       propertyPath: AcceptAction.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Keyboard>/space
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114116197942095852, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
 --- !u!1001 &2017192964
 PrefabInstance:

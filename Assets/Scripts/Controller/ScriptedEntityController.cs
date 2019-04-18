@@ -15,15 +15,5 @@ namespace Assets.Scripts.Controller
             LuaScript.Globals["entity"] = GetComponent<GameEntity>();
             
         }
-        protected override void Start()
-        {
-            base.Start();
-            LuaScript.Globals.Get("start").Function?.Call();
-        }
-        private void Update()
-        {
-            LuaScript.Globals.Get("update").Function?.Call();
-
-        }
     }
 }

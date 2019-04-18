@@ -7,7 +7,7 @@ public class MainUI : Singleton<MainUI>
     // Update is called once per frame
     void Update()
     {
-        if (NewInputManager.Instance.Controller.Actions.AnyKey.WasPressedThisFrame())
+        if (InputManager.Instance.Controller.Actions.AnyKey.WasPressedThisFrame())
         {
             GetComponent<Animator>().SetTrigger("start");
         }

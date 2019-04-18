@@ -14,7 +14,7 @@ namespace MAJIKA.GUI
 
         private void OnEnable()
         {
-            NewInputManager.Instance.Controller.Actions.Inventory.performed += ctx =>
+            InputManager.Instance.Controller.Actions.Inventory.performed += ctx =>
             {
                 if (!this.gameObject.activeInHierarchy)
                     this.Show();

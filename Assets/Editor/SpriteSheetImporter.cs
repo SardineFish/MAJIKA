@@ -19,7 +19,7 @@ namespace Assets.Editor
             importer.filterMode = FilterMode.Point;
             //importer.spriteImportMode = SpriteImportMode.Multiple;
             return;
-            importer.spritePixelsPerUnit = 16;
+            /*importer.spritePixelsPerUnit = 16;
             importer.filterMode = FilterMode.Point;
             importer.compressionQuality = 0;
 
@@ -48,7 +48,7 @@ namespace Assets.Editor
                     spriteSheet[i] = sprite;
                 }
                 importer.spritesheet = spriteSheet;
-            }
+            }*/
         }
     }
 }

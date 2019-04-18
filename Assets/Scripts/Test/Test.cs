@@ -33,7 +33,7 @@ namespace Testing
 
         private void FixedUpdate()
         {
-            if(NewInputManager.Instance.Controller.Actions.Accept.phase == UnityEngine.Experimental.Input.InputActionPhase.Started)
+            if(InputManager.Instance.Controller.Actions.Accept.phase == UnityEngine.Experimental.Input.InputActionPhase.Started)
             {
                 
                 Debug.Log("Press");

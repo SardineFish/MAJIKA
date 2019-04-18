@@ -14,15 +14,4 @@ public class GameEntityScriptHost : LuaScriptHost
         base.InitRuntime();
         LuaScript.Globals["entity"] = GetComponent<GameEntity>();
     }
-
-    protected override void Start()
-    {
-        base.Start();
-        LuaScript.Globals.Get("start").Function?.Call();
-    }
-
-    private void Update()
-    {
-        LuaScript.Globals.Get("update").Function?.Call(Time.deltaTime);
-    }
 }

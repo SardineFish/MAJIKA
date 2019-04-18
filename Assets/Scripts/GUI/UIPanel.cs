@@ -9,7 +9,7 @@ namespace MAJIKA.GUI
         System.Guid lockID;
         protected virtual void Update()
         {
-            if (NewInputManager.Instance.Controller.Actions.Back.WasPressedThisFrame())
+            if (InputManager.Instance.Controller.Actions.Back.WasPressedThisFrame())
                 Hide();
         }
 

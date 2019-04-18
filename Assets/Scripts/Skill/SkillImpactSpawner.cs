@@ -42,10 +42,12 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
             if(SpawnOnGround)
             {
                 RaycastHit2D[] hits = new RaycastHit2D[1];
-                var filter = new ContactFilter2D();
-                filter.layerMask = (1 << 8) | (1 << 9);
-                filter.useLayerMask = true;
-                if(Physics2D.Raycast(pos.ToVector2(), Vector2.down, filter, hits)>0)
+                var filter = new ContactFilter2D
+                {
+                    layerMask = (1 << 8) | (1 << 9),
+                    useLayerMask = true
+                };
+                if (Physics2D.Raycast(pos.ToVector2(), Vector2.down, filter, hits)>0)
                 {
                     pos = hits[0].point.ToVector3();
                 }

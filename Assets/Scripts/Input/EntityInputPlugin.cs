@@ -12,7 +12,7 @@ public class EntityInputPlugin : ControllerPlugin, IGamePlayActions
 
     private void OnEnable()
     {
-        inputAsset = NewInputManager.Instance.Controller.Clone() as MAJIKAInput;
+        inputAsset = InputManager.Instance.Controller.Clone() as MAJIKAInput;
         inputAsset.MakePrivateCopyOfActions();
         inputAsset.GamePlay.SetCallbacks(this);
         inputAsset.Enable();
