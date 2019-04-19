@@ -11,12 +11,18 @@ public class SkillUIManager : MonoBehaviour
     {
     }
 
+    Skill[] lastUpdate = new Skill[0];
     // Update is called once per frame
     void Update()
     {
         if (DisplayEntity)
         {
-            TemplateRenderer.DataSource = DisplayEntity.GetComponent<SkillController>().Skills;
+            var skills = DisplayEntity.GetComponent<SkillController>().Skills;
+            if(!lastUpdate.Diff(skills))
+            {
+                TemplateRenderer.DataSource = DisplayEntity.GetComponent<SkillController>().Skills;
+                lastUpdate = skills;
+            }
             GetComponent<CanvasGroup>().alpha = 1;
         }
         else

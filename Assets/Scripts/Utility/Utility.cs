@@ -318,6 +318,24 @@ public static class Utility
                 GameObject.DestroyImmediate(gameObject.transform.GetChild(0).gameObject);
             }
         }
+    }
 
+    public static bool Diff<T>(this IEnumerable<T> ts, IEnumerable<T> target) where T: class
+        => Diff<T, T>(ts, target, (s, t) => s == t);
+
+    public static bool Diff<T, U>(this IEnumerable<T> ts, IEnumerable<U> target, Func<T, U, bool> comparerer)
+    {
+        var targetEnumerator = target.GetEnumerator();
+        foreach(var element in ts)
+        {
+            if (!targetEnumerator.MoveNext())
+                return false;
+            var targetElement = targetEnumerator.Current;
+            if (!comparerer(element, targetElement))
+                return false;
+        }
+        if (targetEnumerator.MoveNext())
+            return false;
+        return true;
     }
 }
