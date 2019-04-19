@@ -4,8 +4,9 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System;
+using UnityEngine.EventSystems;
 
-public class ConversationUI : Singleton<ConversationUI>
+public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
 {
     public float WPS = 10;
     public GameObject Wrapper;
@@ -17,8 +18,17 @@ public class ConversationUI : Singleton<ConversationUI>
     public IConversation Conversation;
     public bool Talking = false;
 
+    DoubleBuffer<bool> touchScreenSkip = new DoubleBuffer<bool>();
+
     void Update()
     {
+        touchScreenSkip.Update();
+        touchScreenSkip.Value = false;
+    }
+
+    public void TouchScreenSkip()
+    {
+        touchScreenSkip.Value = true;
     }
 
     public IEnumerator StartConversation(IConversation conversation, Talker[] talkers, bool lockPlayer = false)
@@ -61,7 +71,7 @@ public class ConversationUI : Singleton<ConversationUI>
         var secondsPerWord = 1 / WPS;
         foreach(var t in Utility.TimerNormalized(secondsPerWord*renderedText.Length))
         {
-            if (InputManager.Instance.Controller.Actions.Accept.WasPressedThisFrame())
+            if (InputManager.Instance.Controller.Actions.Accept.WasPressedThisFrame() || touchScreenSkip.Value)
                 break;
             TextRenderer.text = renderedText.Substring(0, Mathf.FloorToInt(t * renderedText.Length));
             yield return null;
@@ -69,7 +79,9 @@ public class ConversationUI : Singleton<ConversationUI>
         TextRenderer.text = renderedText;
         yield return null;
         yield return Utility.ShowUI(ContinueHint, 0.2f);
-        yield return InputManager.Instance.Controller.Actions.Accept.WaitPerform();
+        while (!InputManager.Instance.Actions.Accept.WasPressedThisFrame() && !touchScreenSkip.Value)
+            yield return null;
+        // yield return InputManager.Instance.Controller.Actions.Accept.WaitPerform();
         yield return Utility.HideUI(ContinueHint, 0);
     }
     (Talker Talker, string Text) RenderSentence(string textTemplate)
@@ -111,6 +123,11 @@ public class ConversationUI : Singleton<ConversationUI>
         {
             return $"{{{template}}}";
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        TouchScreenSkip();
     }
 }
 

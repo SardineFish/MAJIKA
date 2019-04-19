@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Input 1/MAJIKAInput.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Input/MAJIKAInput.inputactions'
 
 using System;
 using UnityEngine;
