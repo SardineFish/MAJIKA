@@ -2,13 +2,13 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
-public class MainUI : Singleton<MainUI>, IPointerClickHandler
+public class MainUI : Singleton<MainUI>
 {
 
     // Update is called once per frame
     void Update()
     {
-        if (InputManager.Instance.Controller.Actions.AnyKey.WasPressedThisFrame())
+        if (InputManager.Instance.Controller.Actions.AnyKey.WasPressedThisFrame() || InputManager.Instance.GetTouch())
         {
             GetComponent<Animator>().SetTrigger("start");
         }

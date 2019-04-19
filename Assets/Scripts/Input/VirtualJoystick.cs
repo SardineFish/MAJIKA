@@ -2,9 +2,11 @@
 using System.Collections;
 using UnityEngine.Experimental.Input.Plugins.OnScreen;
 
+
 public class VirtualJoystick : OnScreenControl
 {
     VariableJoystick joystick;
+
     private void Start()
     {
         joystick = GetComponent<VariableJoystick>();

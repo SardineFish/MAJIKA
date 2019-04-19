@@ -5,5 +5,11 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Canvas))]
 public class GUIHover : EntityBehaviour<GameEntity>
 {
+    private void OnEnable()
+    {
+        var canvas = GetComponent<Canvas>();
+        if (canvas)
+            canvas.worldCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
+    }
 }

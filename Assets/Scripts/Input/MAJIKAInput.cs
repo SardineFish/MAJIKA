@@ -34,7 +34,7 @@ public class MAJIKAInput : InputActionAssetReference
         m_Actions_Interact = m_Actions.GetAction("Interact");
         m_Actions_Inventory = m_Actions.GetAction("Inventory");
         m_Actions_AnyKey = m_Actions.GetAction("AnyKey");
-        m_Actions_Newaction = m_Actions.GetAction("New action");
+        m_Actions_Test = m_Actions.GetAction("Test");
         m_Initialized = true;
     }
     private void Uninitialize()
@@ -61,7 +61,7 @@ public class MAJIKAInput : InputActionAssetReference
         m_Actions_Interact = null;
         m_Actions_Inventory = null;
         m_Actions_AnyKey = null;
-        m_Actions_Newaction = null;
+        m_Actions_Test = null;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
@@ -174,7 +174,7 @@ public class MAJIKAInput : InputActionAssetReference
     private InputAction m_Actions_Interact;
     private InputAction m_Actions_Inventory;
     private InputAction m_Actions_AnyKey;
-    private InputAction m_Actions_Newaction;
+    private InputAction m_Actions_Test;
     public struct ActionsActions
     {
         private MAJIKAInput m_Wrapper;
@@ -184,7 +184,7 @@ public class MAJIKAInput : InputActionAssetReference
         public InputAction @Interact { get { return m_Wrapper.m_Actions_Interact; } }
         public InputAction @Inventory { get { return m_Wrapper.m_Actions_Inventory; } }
         public InputAction @AnyKey { get { return m_Wrapper.m_Actions_AnyKey; } }
-        public InputAction @Newaction { get { return m_Wrapper.m_Actions_Newaction; } }
+        public InputAction @Test { get { return m_Wrapper.m_Actions_Test; } }
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -210,9 +210,9 @@ public class MAJIKAInput : InputActionAssetReference
                 AnyKey.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAnyKey;
                 AnyKey.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAnyKey;
                 AnyKey.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAnyKey;
-                Newaction.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnNewaction;
-                Newaction.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnNewaction;
-                Newaction.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnNewaction;
+                Test.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTest;
+                Test.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTest;
+                Test.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTest;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -232,9 +232,9 @@ public class MAJIKAInput : InputActionAssetReference
                 AnyKey.started += instance.OnAnyKey;
                 AnyKey.performed += instance.OnAnyKey;
                 AnyKey.cancelled += instance.OnAnyKey;
-                Newaction.started += instance.OnNewaction;
-                Newaction.performed += instance.OnNewaction;
-                Newaction.cancelled += instance.OnNewaction;
+                Test.started += instance.OnTest;
+                Test.performed += instance.OnTest;
+                Test.cancelled += instance.OnTest;
             }
         }
     }
@@ -264,5 +264,5 @@ public interface IActionsActions
     void OnInteract(InputAction.CallbackContext context);
     void OnInventory(InputAction.CallbackContext context);
     void OnAnyKey(InputAction.CallbackContext context);
-    void OnNewaction(InputAction.CallbackContext context);
+    void OnTest(InputAction.CallbackContext context);
 }

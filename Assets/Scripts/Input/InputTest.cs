@@ -12,7 +12,15 @@ public class InputTest : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Debug.Log(Gamepad.current.buttonNorth.valueType);
+        InputManager.Instance.Controller.Actions.Test.performed += ctx =>
+        {
+            GameLog.Log($"{ctx.control.path} performed");
+        };
+        InputManager.Instance.Controller.Actions.Test.cancelled += ctx
+             => GameLog.Log($"{ctx.control.path} cancelled");
+        InputManager.Instance.Controller.Actions.Test.started += ctx
+            => GameLog.Log($"{ctx.control.path} started");
+        
     }
 
     // Update is called once per frame

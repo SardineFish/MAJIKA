@@ -9,5 +9,6 @@ namespace MAJIKA.GUI
 {
     public class CoveredUI : UIPanel<CoveredUI>
     {
+
     }
 }

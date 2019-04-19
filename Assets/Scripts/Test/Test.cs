@@ -33,11 +33,6 @@ namespace Testing
 
         private void FixedUpdate()
         {
-            if(InputManager.Instance.Controller.Actions.Accept.phase == UnityEngine.Experimental.Input.InputActionPhase.Started)
-            {
-                
-                Debug.Log("Press");
-            }
         }
     }
 }

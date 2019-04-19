@@ -4,22 +4,41 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-[RequireComponent(typeof(Player))]
+[RequireComponent(typeof(Player), typeof(EntityController))]
 public class InputActionController : EntityBehaviour<Player>
 {
     public List<InteractiveEntity> InteractiveEntities = new List<InteractiveEntity>();
 
     private void Update()
     {
-        if (InputManager.Instance.Controller.Actions.Interact.WasPressedThisFrame() && InteractiveEntities.Count > 0)
+        if (InputManager.Instance.Controller.Actions.Interact.WasPressedThisFrame())
         {
-            InteractiveEntities[0].Interact(Entity);
-            //Entity.GetComponent<PlayerController>().playerFSM.ChangeState(PlayerState.Interact);
+            Interact();
         }
         else if(InputManager.Instance.Actions.Inventory.WasPressedThisFrame())
         {
-            MAJIKA.GUI.InventoryPanel.Instance?.Show();
+            OpenInventory();
         }
+    }
+
+    public bool Interact()
+    {
+        if(!GetComponent<EntityController>().Locker.Locked && InteractiveEntities.Count > 0)
+        {
+            InteractiveEntities[0].Interact(Entity);
+            return true;
+        }
+        return false;
+
+    }
+
+    public bool OpenInventory()
+    {
+        if (GetComponent<EntityController>().Locker.Locked)
+            return false;
+
+        MAJIKA.GUI.InventoryPanel.Instance?.Show();
+        return true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
