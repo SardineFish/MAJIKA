@@ -16,6 +16,7 @@ ScriptedImporter:
     11400022: Actions/Interact
     11400024: Actions/Inventory
     11400026: Actions/AnyKey
+    11400028: Actions/Touch
   externalObjects: {}
   userData: 
   assetBundleName: 

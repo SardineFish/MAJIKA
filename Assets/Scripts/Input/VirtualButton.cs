@@ -5,16 +5,22 @@ using UnityEngine.EventSystems;
 using UnityEngine.Experimental.Input;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
-
-public class VirtualButton : OnScreenActionControl, IPointerDownHandler, IPointerUpHandler
+public class VirtualButton : OnScreenActionControl
 {
-    public void OnPointerDown(PointerEventData eventData)
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        GetComponentInParent<VirtualInputManager>()?.Register(this);
+    }
+
+    public void TouchCallback()
     {
         SendValueToControl<float>(1);
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public void Reset()
     {
         SendValueToControl<float>(0);
     }

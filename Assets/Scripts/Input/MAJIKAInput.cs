@@ -35,6 +35,7 @@ public class MAJIKAInput : InputActionAssetReference
         m_Actions_Inventory = m_Actions.GetAction("Inventory");
         m_Actions_AnyKey = m_Actions.GetAction("AnyKey");
         m_Actions_Test = m_Actions.GetAction("Test");
+        m_Actions_Touch = m_Actions.GetAction("Touch");
         m_Initialized = true;
     }
     private void Uninitialize()
@@ -62,6 +63,7 @@ public class MAJIKAInput : InputActionAssetReference
         m_Actions_Inventory = null;
         m_Actions_AnyKey = null;
         m_Actions_Test = null;
+        m_Actions_Touch = null;
         m_Initialized = false;
     }
     public void SetAsset(InputActionAsset newAsset)
@@ -175,6 +177,7 @@ public class MAJIKAInput : InputActionAssetReference
     private InputAction m_Actions_Inventory;
     private InputAction m_Actions_AnyKey;
     private InputAction m_Actions_Test;
+    private InputAction m_Actions_Touch;
     public struct ActionsActions
     {
         private MAJIKAInput m_Wrapper;
@@ -185,6 +188,7 @@ public class MAJIKAInput : InputActionAssetReference
         public InputAction @Inventory { get { return m_Wrapper.m_Actions_Inventory; } }
         public InputAction @AnyKey { get { return m_Wrapper.m_Actions_AnyKey; } }
         public InputAction @Test { get { return m_Wrapper.m_Actions_Test; } }
+        public InputAction @Touch { get { return m_Wrapper.m_Actions_Touch; } }
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -213,6 +217,9 @@ public class MAJIKAInput : InputActionAssetReference
                 Test.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTest;
                 Test.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTest;
                 Test.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTest;
+                Touch.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTouch;
+                Touch.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTouch;
+                Touch.cancelled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnTouch;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -235,6 +242,9 @@ public class MAJIKAInput : InputActionAssetReference
                 Test.started += instance.OnTest;
                 Test.performed += instance.OnTest;
                 Test.cancelled += instance.OnTest;
+                Touch.started += instance.OnTouch;
+                Touch.performed += instance.OnTouch;
+                Touch.cancelled += instance.OnTouch;
             }
         }
     }
@@ -265,4 +275,5 @@ public interface IActionsActions
     void OnInventory(InputAction.CallbackContext context);
     void OnAnyKey(InputAction.CallbackContext context);
     void OnTest(InputAction.CallbackContext context);
+    void OnTouch(InputAction.CallbackContext context);
 }

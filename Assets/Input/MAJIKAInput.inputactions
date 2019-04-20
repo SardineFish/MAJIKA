@@ -298,6 +298,16 @@
                     "processors": "",
                     "interactions": "",
                     "bindings": []
+                },
+                {
+                    "name": "Touch",
+                    "id": "6e192c60-8edc-4d0f-b132-807bbb64e9cf",
+                    "expectedControlLayout": "",
+                    "continuous": true,
+                    "passThrough": false,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
                 }
             ],
             "bindings": [
@@ -387,7 +397,7 @@
                 },
                 {
                     "name": "",
-                    "path": "<Keyboard>/t",
+                    "path": "<Touchscreen>/phase",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -399,11 +409,35 @@
                 },
                 {
                     "name": "",
-                    "path": "<Pointer>/button",
+                    "path": "<Touchscreen>/touch",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Test",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
+                    "chainWithPrevious": false,
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
                     "chainWithPrevious": false,
                     "isComposite": false,
                     "isPartOfComposite": false,
