@@ -11,6 +11,7 @@ namespace MAJIKA.GUI
         public Slot MajorMaterial;
         public List<Slot> MinorMateirals = new List<Slot>();
         public Slot ProductSlot;
+        public InventoryRenderer InventoryRenderer;
 
         public Slot[] Skills;
      
@@ -39,6 +40,7 @@ namespace MAJIKA.GUI
             var player = GameSystem.Instance.PlayerInControl;
             if (!player)
                 return;
+            InventoryRenderer.Inventory = player.GetComponentInChildren<Inventory.Inventory>();
             var skillSlots = player.GetComponentInChildren<Equipment>()?.SkillSlots;
             if (skillSlots == null)
                 return;
