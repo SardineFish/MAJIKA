@@ -11,24 +11,9 @@ namespace Testing
     {
         private void Start()
         {
-            /*
-            InputManager.Instance.AcceptAction.performed += (ctx) =>
-            {
-                Debug.Log("performed");
-            };
-            InputManager.Instance.AcceptAction.started += ctx =>
-            {
-                Debug.Log("started");
-            };
-            InputManager.Instance.AcceptAction.cancelled += ctx =>
-            {
-                Debug.Log("cancelled");
-            };*/
         }
         private void Update()
         {
-
-            //Debug.Log(InputManager.Instance.AcceptAction.phase);
         }
 
         private void FixedUpdate()

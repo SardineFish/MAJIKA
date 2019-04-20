@@ -23,3 +23,4 @@ MonoBehaviour:
   JumpState: {fileID: 11400000, guid: 8bbec5147132cf643bf9310e3f070953, type: 2}
   ClimbState: {fileID: 11400000, guid: e679bc0d5fd56ce4bb8cc2cdc4d1e1e8, type: 2}
   SkillState: {fileID: 11400000, guid: ab0ba3ecf9c4d4a47b302990f0781627, type: 2}
+  AirState: {fileID: 11400000, guid: ace4938e04b752b468c601bc6af4c4f3, type: 2}

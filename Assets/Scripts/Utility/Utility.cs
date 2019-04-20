@@ -338,4 +338,9 @@ public static class Utility
             return false;
         return true;
     }
+
+    public static Color RandomColor()
+    {
+        return new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
+    }
 }

@@ -12,14 +12,14 @@ public class InputTest : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        InputManager.Instance.Controller.Actions.Test.performed += ctx =>
+        InputManager.Instance.GamePlay.Jump.performed += ctx =>
         {
-            GameLog.Log($"{ctx.control.path} performed");
+            GetComponent<SpriteRenderer>().color = Utility.RandomColor();
         };
-        InputManager.Instance.Controller.Actions.Test.cancelled += ctx
-             => GameLog.Log($"{ctx.control.path} cancelled");
-        InputManager.Instance.Controller.Actions.Test.started += ctx
-            => GameLog.Log($"{ctx.control.path} started");
+        InputManager.Instance.GamePlay.Jump.cancelled += ctx =>
+        {
+            Debug.Log("can");
+        };
         
     }
 

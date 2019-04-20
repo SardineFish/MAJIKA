@@ -39,19 +39,15 @@ public class EntityController : EntityStateMachine<GameEntity>
 
     protected override void Update()
     {
-        if (!Locker.Locked)
-            base.Update();
-        else if (State is EntityMove)
-            ChangeState(IdleState);
-        this.Movement = Vector2.zero;
-        ClimbSpeed = 0;
-        Jumped = false;
-        SkillIndex = -1;
         GetComponents<ControllerPlugin>().ForEach(plugin =>
         {
             if (plugin.enabled)
                 plugin.OnUpdate(this);
         });
+        if (!Locker.Locked)
+            base.Update();
+        else if (State is EntityMove)
+            ChangeState(IdleState);
     }
 
     public virtual void Move(Vector2 movement) => Movement = movement;

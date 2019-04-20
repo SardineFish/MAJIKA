@@ -14,6 +14,7 @@ namespace State
         public EntityJump JumpState;
         public EntityClimb ClimbState;
         public EntitySkill SkillState;
+        public EntityAir AirState;
         public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
         {
             var movement = entity.GetComponent<EntityController>().Movement;
@@ -33,6 +34,9 @@ namespace State
                 fsm.ChangeState(IdleState);
             else
                 entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, movement.x);
+
+            if (!entity.GetComponent<MovableEntity>().OnGround)
+                fsm.ChangeState(AirState);
 
             if (JumpState)
                 fsm.ChangeState(JumpState);
