@@ -282,5 +282,10 @@ PrefabInstance:
       propertyPath: TargetFrameRate
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 114921217081773406, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: JumpHeight
+      value: 5.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}

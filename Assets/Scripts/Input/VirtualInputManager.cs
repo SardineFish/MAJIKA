@@ -36,13 +36,13 @@ public class VirtualInputManager : MonoBehaviour
         }
         if (Touchscreen.current.activeTouches.Count > 0)
             Debug.Log(Touchscreen.current.activeTouches.Count);
-        for (var touchIdx = 0; touchIdx < Touchscreen.current.activeTouches.Count; touchIdx++)
+        for (var touchIdx = 0; touchIdx < Input.touchCount; touchIdx++)
         {
-            var touch = Touchscreen.current.activeTouches[touchIdx];
-            Debug.Log($"{touch.touchId.ReadValue()} {touch.phase.ReadValue()} {touch.pressure.ReadValue()} {touch.radius.ReadValue()}");
-            var pos = Touchscreen.current.activeTouches[touchIdx].position;
+            //var touch = Touchscreen.current.activeTouches[touchIdx];
+            //Debug.Log($"{touch.touchId.ReadValue()} {touch.phase.ReadValue()} {touch.pressure.ReadValue()} {touch.radius.ReadValue()}");
+            //var pos = Touchscreen.current.activeTouches[touchIdx].position;
             //Debug.Log(pos.ReadValue());
-            data.position = pos.ReadValue();
+            data.position = Input.touches[touchIdx].position;
             raycaster.Raycast(data, results);
             //results.ForEach(result => Debug.Log(result.gameObject));
             if (results.Count <= 0)

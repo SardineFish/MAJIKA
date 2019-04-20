@@ -39,18 +39,18 @@ namespace Assets.Editor
                 }
                 else
                 {
-                    var pos = Handles.PositionHandle(snapper.transform.position /*+ snapper.OriginOffset + new Vector3(0.5f, 0.5f, 0)*/, Quaternion.identity) /*- new Vector3(0.5f, 0.5f, 0)*/;
                     var n = GridSystem.Instance.GridPerPixel;
+                    var pos = Handles.PositionHandle(snapper.transform.position + snapper.OriginOffset * n, Quaternion.identity);
                     switch (snapper.SnapMode)
                     {
                         case SnapMode.SnapToGrid:
-                            pos = new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), pos.z);
+                            pos = new Vector3(Mathf.Floor(pos.x), Mathf.Floor(pos.y), pos.z);
                             break;
                         case SnapMode.SnapToPixel:
-                            pos = new Vector3(Mathf.Round(pos.x / n) * n, Mathf.Round(pos.y / n) * n, pos.z);
+                            pos = new Vector3(Mathf.Floor(pos.x / n) * n, Mathf.Floor(pos.y / n) * n, pos.z);
                             break;
                     }
-                    pos -= snapper.OriginOffset;
+                    pos -= snapper.OriginOffset * n;
                     snapper.transform.position = pos;
                 }
             }
