@@ -33,7 +33,7 @@ function awake()
     --playerWalkCoroutine = startCoroutine(playerWalk);
     camera.reset();
     camera.follow(player);
-    game.control(player);
+    --game.control(player);
     gui.skillPanel.hide();
 end
 function start()
