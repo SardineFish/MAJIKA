@@ -58,9 +58,12 @@ public class Skill : EntityBehaviour<GameEntity>
         return true;
     }
 
-    public bool StartImpact()
+    public bool StartImpact(int idx = -1)
     {
-        GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Spawn(this.Effects, Dir));
+        if (idx < 0)
+            GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Spawn(this.Effects, Dir));
+        else
+            GetComponents<SkillImpactSpawner>()[idx].Spawn(this.Effects, Dir);
         return true;
     }
 

@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: 06de9f189ac565349bb8a4f5fd4d8250
+guid: 3814064b8e6e6b54a8fedd0edc568f49
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Idle_0
-    21300002: Idle_1
-    21300004: Idle_2
-    21300006: Idle_3
+    21300000: Effect-2_0
+    21300002: Effect-2_1
+    21300004: Effect-2_2
+    21300006: Effect-2_3
+    21300008: Effect-2_4
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -46,7 +47,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -84,85 +85,116 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Effect-2_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 168
+        width: 119
+        height: 84
+      alignment: 9
+      pivot: {x: 0, y: 0.4404762}
+      border: {x: 28, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc06134ad6931be4880b0e3f9334b9f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect-2_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 168
+        width: 125
+        height: 84
+      alignment: 9
+      pivot: {x: 0, y: 0.4404762}
+      border: {x: 34, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8f01a940226924bb2a3228dfc09a58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect-2_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 138
-        width: 163
-        height: 138
+        y: 84
+        width: 125
+        height: 84
       alignment: 9
-      pivot: {x: 0.36196318, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0, y: 0.4404762}
+      border: {x: 34, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 951e60d9250ff31498301a0121d17d1a
+      spriteID: a468f5fc3a862d444b3f401ed9f7e3c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: Effect-2_3
       rect:
         serializedVersion: 2
-        x: 163
-        y: 138
-        width: 163
-        height: 138
+        x: 134
+        y: 84
+        width: 119
+        height: 84
       alignment: 9
-      pivot: {x: 0.36196318, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0, y: 0.4404762}
+      border: {x: 28, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64268d38c940a854ea4df263a66e1e5c
+      spriteID: d50c83b4e34f86e4a8bd2d6d0737b9e0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Effect-2_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 18
         y: 0
-        width: 163
-        height: 138
+        width: 107
+        height: 84
       alignment: 9
-      pivot: {x: 0.36196318, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0, y: 0.4404762}
+      border: {x: 11, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 983b31e70c890324d935a1ef014c5066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_3
-      rect:
-        serializedVersion: 2
-        x: 163
-        y: 0
-        width: 163
-        height: 138
-      alignment: 9
-      pivot: {x: 0.36196318, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcb19f7e20321304cb0f6551f47a11ce
+      spriteID: 3716b7e9de82d3440acd1ed21deb738a
       vertices: []
       indices: 
       edges: []
@@ -170,7 +202,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7464b4c2c9f5b674d860fc6f676ca27b
+    spriteID: 0659d446c5c07944da761859bef8624d
     vertices: []
     indices: 
     edges: []

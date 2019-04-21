@@ -85,6 +85,11 @@ public class SkillController : EntityBehaviour<Player>
         movementCoroutine = null;
     }
 
+    void SpawnImpact (int idx)
+    {
+        ActiveSkill?.StartImpact(idx);
+    }
+
     void OnImpactStart()
     {
         ActiveSkill?.StartImpact();
