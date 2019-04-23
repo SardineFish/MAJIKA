@@ -14157,6 +14157,96 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+--- !u!1 &383195294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383195295}
+  - component: {fileID: 383195298}
+  - component: {fileID: 383195297}
+  - component: {fileID: 383195296}
+  m_Layer: 0
+  m_Name: Roar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &383195295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383195294}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9195648924139813515}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &383195296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383195294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540551126948fef47a43a06c35818832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1874614879033618, guid: f885396d21a80a94c9048c612d26cbf1, type: 3}
+  SpawnOffset: {x: 0.375, y: 4.8125}
+  TimeOffset: 0
+  Instance: {fileID: 0}
+  SpawnOnGround: 0
+--- !u!114 &383195297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383195294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540551126948fef47a43a06c35818832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 1874614879033618, guid: ff1ec5e8494de5d4cb353b9ae2e82b97, type: 3}
+  SpawnOffset: {x: 2.375, y: 0}
+  TimeOffset: 0
+  Instance: {fileID: 0}
+  SpawnOnGround: 0
+--- !u!114 &383195298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383195294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7ddb362b7079449aa9978636d3f190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimatorController: {fileID: 9100000, guid: 26d5c48c56631d34d908cc9ca1c765d6, type: 2}
+  AudioEffect: {fileID: 0}
+  LockAction: 1
+  ReleaseRadius: 0
+  ReleaseOffset: {x: 0, y: 0, z: 0}
+  Direction: 0
+  CoolDown: 1
+  Locked: 0
+  Ready: 0
+  Icon: {fileID: 0}
+  Effects: []
 --- !u!1 &401848435
 GameObject:
   m_ObjectHideFlags: 0
@@ -16045,7 +16135,7 @@ Animator:
   m_GameObject: {fileID: 9195648924063284166}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 701a90f005f14b344a09fcb8817ce7e6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 632822f7f53f9ee4c9b6cf58b0175ad6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -16184,6 +16274,7 @@ Transform:
   m_Children:
   - {fileID: 63128467}
   - {fileID: 401848436}
+  - {fileID: 383195295}
   m_Father: {fileID: 9195648924063284168}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
