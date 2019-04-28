@@ -37,6 +37,11 @@ public class CameraFollow : CameraPlugin
         Debug.DrawLine(transform.position, transform.position + followSpeed.ToVector3(), Color.red);
     }
 
+    public void ResetPosition(Vector2 position)
+    {
+        movePosition = position;
+    }
+
     public override void CameraUpdate(float dt)
     {
         if (followTarget)

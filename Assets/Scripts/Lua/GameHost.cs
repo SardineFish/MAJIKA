@@ -50,6 +50,10 @@ namespace LuaHost
             Debug.Log("Level Pass");
             Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventPass);
         }
+        public void LoadLevel(string level)
+        {
+            LevelLoader.Instance.LoadLevelDetach(level);
+        }
 
         public void PlayAudio(AudioClip clip, float volumn = 1, float time = 0, bool loop = false)
         {

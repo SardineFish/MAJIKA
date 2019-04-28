@@ -7,7 +7,9 @@ local playerWalkCoroutine;
 
 conversation1 = {
     "${1}: ${0}你来了。",
-    "${0}: 嗯，我来了。"
+    "${0}: 嗯，我来了。",
+    "${1}: 下一关？",
+    "${0}: 不 要 停 下 来 "
 }
 conversation2 = {
     "${left}: Are You OK? ",
@@ -28,12 +30,22 @@ function awake()
 
     redGlass.on("OnInteract", function()
         game.conversation(conversation1, {player, redGlass})
+        startCoroutine(function ()
+            coroutine.yield(game.conversation({
+                "${1}: ${0}你来了。",
+                "${0}: 嗯，我来了。",
+                "${1}: 下一关？",
+                "${0}: 不 要 停 下 来 "
+            },{player, redGlass}, true));
+            game.loadLevel("Demo-2");
+        
+        end)
     end)
 
     --playerWalkCoroutine = startCoroutine(playerWalk);
     camera.reset();
     camera.follow(player);
-    --game.control(player);
+    game.control(player);
     gui.skillPanel.hide();
 end
 function start()

@@ -22,6 +22,11 @@ public class MainCamera : Singleton<MainCamera>
         Reset();
     }
 
+    private void Start()
+    {
+        GameObject.DontDestroyOnLoad(gameObject);
+    }
+
     private void Update()
     {
         Reset();

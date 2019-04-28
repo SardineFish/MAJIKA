@@ -7,10 +7,11 @@ local playerWalkCoroutine;
 
 function awake()
     player = scene.entity("Player");
+    boss = scene.entity("Boss-1");
 
     camera.reset();
-    camera.follow(player);
-    game.control(player);
+    camera.follow(boss);
+    game.control(boss);
 end
 function start()
 end

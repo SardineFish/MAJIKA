@@ -103,7 +103,7 @@ namespace LuaHost.Proxy
         public void Reset()
         {
             target.GetComponent<CameraFollow>().followTarget = null;
-            target.transform.position = (MainCamera.Instance.ViewportRect.size / 2).ToVector3(target.transform.position.z);
+            MainCamera.Instance.GetComponent<CameraFollow>().ResetPosition(MainCamera.Instance.ViewportRect.size / 2);
         }
     }
 
