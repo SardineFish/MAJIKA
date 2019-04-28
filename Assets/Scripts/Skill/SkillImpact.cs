@@ -185,7 +185,9 @@ public class SkillImpact : MonoBehaviour
                 ? transform.localToWorldMatrix.MultiplyPoint(box.offset)
                 : circle
                     ? transform.localToWorldMatrix.MultiplyPoint(circle.offset)
-                    : transform.localToWorldMatrix.MultiplyPoint(capsule.offset);
+                    : capsule
+                        ? transform.localToWorldMatrix.MultiplyPoint(capsule.offset)
+                        : transform.position;
             if (box)
             {
                 var hits = Physics2D.BoxCastAll(pos, box.size, 0, Vector2.zero, 0, DamageLayerMask);

@@ -5,6 +5,10 @@ namespace MAJIKA.FX
 {
     public class FullScreenFX : MonoBehaviour
     {
+        private void Reset()
+        {
+            Update();
+        }
         // Use this for initialization
         void Start()
         {
