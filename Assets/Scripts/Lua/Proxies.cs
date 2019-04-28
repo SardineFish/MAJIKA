@@ -80,30 +80,30 @@ namespace LuaHost.Proxy
 
         public float Speed
         {
-            get => target.GetComponent<CameraMovement>().MaxSpeed;
-            set => target.GetComponent<CameraMovement>().MaxSpeed = value;
+            get => target.GetComponent<CameraFollow>().MaxSpeed;
+            set => target.GetComponent<CameraFollow>().MaxSpeed = value;
         }
 
         public float Acceleration
         {
-            get => target.GetComponent<CameraMovement>().MaxAcceleration;
-            set => target.GetComponent<CameraMovement>().MaxAcceleration = value;
+            get => target.GetComponent<CameraFollow>().MaxAcceleration;
+            set => target.GetComponent<CameraFollow>().MaxAcceleration = value;
         }
 
         public void Follow(GameEntity followTarget)
         {
-            target.GetComponent<CameraMovement>().followTarget = followTarget.transform; 
+            target.GetComponent<CameraFollow>().followTarget = followTarget.transform; 
         }
 
         public void MoveTo(Vector2 pos)
         {
-            target.GetComponent<CameraMovement>().focusPosition = pos.ToVector3();
+            target.GetComponent<CameraFollow>().focusPosition = pos.ToVector3();
         }
 
         public void Reset()
         {
-            target.GetComponent<CameraMovement>().followTarget = null;
-            target.transform.position = (target.GetComponent<CameraMovement>().ViewportRect.size / 2).ToVector3(target.transform.position.z);
+            target.GetComponent<CameraFollow>().followTarget = null;
+            target.transform.position = (MainCamera.Instance.ViewportRect.size / 2).ToVector3(target.transform.position.z);
         }
     }
 

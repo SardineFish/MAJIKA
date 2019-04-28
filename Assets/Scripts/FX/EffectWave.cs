@@ -12,6 +12,10 @@ namespace MAJIKA.FX
     {
         public Vector2 Center;
         MaterialPropertyBlock propertyBlock;
+        private void Reset()
+        {
+            propertyBlock = new MaterialPropertyBlock();
+        }
         private void Start()
         {
             propertyBlock = new MaterialPropertyBlock();

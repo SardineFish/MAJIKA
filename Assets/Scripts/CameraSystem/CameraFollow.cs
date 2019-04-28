@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
-public class CameraMovement_Legacy : MonoBehaviour
+[RequireComponent(typeof(BoxCollider2D))]
+public class CameraFollow : CameraPlugin
 {
-    public new Camera camera;
-    public bool EnableFollow = true;
     public float CushionRange = 0;
     public float FollowIgnoreRange = 3;
     public Vector2 FollowRangeOffset;
@@ -15,46 +13,36 @@ public class CameraMovement_Legacy : MonoBehaviour
     public float MaxAcceleration = 10;
     public BoxCollider2D cushionCollider;
     public Transform followTarget;
-    public Vector3 focusPosition;
+    public Vector2 focusPosition;
 
-    private Rect ViewportRect;
+    Vector2 movePosition;
+    Vector2 velocity;
 
     [SerializeField]
     private Vector2 seperateSpeed;
     [SerializeField]
     private Vector2 followSpeed;
 
-    // Use this for initialization
-    void Start()
+    private void OnEnable()
     {
-        camera = GetComponent<Camera>();
         cushionCollider = GetComponent<BoxCollider2D>();
-        DontDestroyOnLoad(gameObject);
-        focusPosition = transform.position;
+        movePosition = transform.position.ToVector2();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        camera = GetComponent<Camera>();
-        cushionCollider = GetComponent<BoxCollider2D>();
-        //Debug.DrawLine(camera.cameraToWorldMatrix.MultiplyPoint(Vector3.zero), camera.cameraToWorldMatrix.MultiplyPoint(new Vector3(1, 1, 0)*camera.orthographicSize));
-        Debug.DrawLine(camera.ViewportToWorldPoint(Vector3.zero), camera.ViewportToWorldPoint(new Vector3(1, 1, 0)));
-        var origin = camera.ViewportToWorldPoint(Vector3.zero);
-        var corner = camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
-        ViewportRect = new Rect(camera.ViewportToWorldPoint(Vector3.zero), corner - origin);
-        cushionCollider.size = new Vector2(ViewportRect.width + 2 * CushionRange, ViewportRect.height + 2 * CushionRange);
+        cushionCollider.size = new Vector2(Camera.ViewportRect.width + 2 * CushionRange, Camera.ViewportRect.height + 2 * CushionRange);
         cushionCollider.offset = Vector2.zero;
         Debug.DrawLine(transform.position, transform.position + seperateSpeed.ToVector3(), Color.blue);
         Debug.DrawLine(transform.position, transform.position + followSpeed.ToVector3(), Color.red);
     }
 
-    private void FixedUpdate()
+    public override void CameraUpdate(float dt)
     {
         if (followTarget)
             focusPosition = followTarget.position;
 
-        var follow = (focusPosition - transform.position - FollowRangeOffset.ToVector3()).ToVector2();
+        var follow = focusPosition - movePosition - FollowRangeOffset;
         var followAccelerateRange = MaxFollowRange - FollowStartRange;
 
         if (follow.magnitude > FollowIgnoreRange)
@@ -71,17 +59,16 @@ public class CameraMovement_Legacy : MonoBehaviour
         if (MathUtility.SignInt(totalVelocity.y) != MathUtility.SignInt(followSpeed.y))
             totalVelocity.y = 0;
 
-        if (EnableFollow)
+        totalVelocity *= MaxSpeed;
+        var dv = totalVelocity - velocity;
+        if (dv.magnitude / Time.fixedDeltaTime > MaxAcceleration)
         {
-            totalVelocity *= MaxSpeed;
-            var dv = totalVelocity - GetComponent<Rigidbody2D>().velocity;
-            if (dv.magnitude / Time.fixedDeltaTime > MaxAcceleration)
-            {
-                dv = dv.normalized * MaxAcceleration * Time.fixedDeltaTime;
-                totalVelocity = GetComponent<Rigidbody2D>().velocity + dv;
-            }
-            GetComponent<Rigidbody2D>().velocity = totalVelocity;
+            dv = dv.normalized * MaxAcceleration * Time.fixedDeltaTime;
+            totalVelocity = velocity + dv;
         }
+        velocity = totalVelocity;
+        movePosition += velocity * dt;
+        Camera.Position = movePosition;
     }
 
     private void OnCollisionStay2D(Collision2D collision)

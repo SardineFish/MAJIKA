@@ -180,7 +180,7 @@ public class SkillImpact : MonoBehaviour
             var hitEntities = new List<GameEntity>();
             var box = GetComponentInChildren<BoxCollider2D>();
             var circle = GetComponentInChildren<CircleCollider2D>();
-            var capsule = GetComponent<CapsuleCollider2D>();
+            var capsule = GetComponentInChildren<CapsuleCollider2D>();
             var pos = box
                 ? transform.localToWorldMatrix.MultiplyPoint(box.offset)
                 : circle

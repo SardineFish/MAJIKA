@@ -310,7 +310,9 @@ GameObject:
   - component: {fileID: 61852195359746380}
   - component: {fileID: 114769273798218388}
   - component: {fileID: 7}
+  - component: {fileID: 1905084097576292}
   - component: {fileID: 1905084097576291}
+  - component: {fileID: 1905084097576293}
   m_Layer: 12
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -327,17 +329,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1905084097576290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e3e1b9dd0bbe3345a97bdda9175c3c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 07b8ae8df5a72744082fc545ebbb141f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 20625850232929676}
-  ViewportRect:
-    serializedVersion: 2
-    x: 0
-    y: -0.7075
-    width: 29.999998
-    height: 16.875
-  EnableFollow: 1
+  Enabled: 1
   CushionRange: 2.64
   FollowIgnoreRange: 0
   FollowRangeOffset: {x: 0, y: -1.93}
@@ -347,9 +342,44 @@ MonoBehaviour:
   MaxAcceleration: 30
   cushionCollider: {fileID: 61852195359746380}
   followTarget: {fileID: 0}
-  focusPosition: {x: 0, y: 0, z: 0}
+  focusPosition: {x: 0, y: 0}
   seperateSpeed: {x: 0, y: 0}
   followSpeed: {x: 0, y: 0}
+--- !u!114 &1905084097576292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905084097576290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f12b765979807f4a8d116687d0e2092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 20625850232929676}
+  ViewportRect:
+    serializedVersion: 2
+    x: -3.869999
+    y: -4.0275
+    width: 29.999998
+    height: 16.875
+  Position: {x: 0, y: 0}
+--- !u!114 &1905084097576293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905084097576290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95b29bc38fde0fb4ea1a16a478822ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enabled: 0
+  Strength: 1
+  Frequence: 1
 --- !u!4 &4333117267359568
 Transform:
   m_ObjectHideFlags: 0
