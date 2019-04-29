@@ -5,5 +5,5 @@ public abstract class CameraPlugin : MonoBehaviour
 {
     public bool Enabled = true;
     public MainCamera Camera => GetComponent<MainCamera>();
-    public virtual void CameraUpdate(float dt) { }
+    public virtual CameraContext CameraUpdate(CameraContext modifier, float dt) { return modifier; }
 }

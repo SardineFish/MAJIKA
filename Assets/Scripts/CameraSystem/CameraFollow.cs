@@ -42,7 +42,7 @@ public class CameraFollow : CameraPlugin
         movePosition = position;
     }
 
-    public override void CameraUpdate(float dt)
+    public override CameraContext CameraUpdate(CameraContext modifier, float dt)
     {
         if (followTarget)
             focusPosition = followTarget.position;
@@ -73,7 +73,9 @@ public class CameraFollow : CameraPlugin
         }
         velocity = totalVelocity;
         movePosition += velocity * dt;
-        Camera.Position = movePosition;
+        Camera.GetComponent<Rigidbody2D>().MovePosition(movePosition);
+        modifier.Position = movePosition;
+        return modifier;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
