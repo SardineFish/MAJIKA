@@ -10,8 +10,8 @@ function awake()
     boss = scene.entity("Boss-1");
 
     camera.reset();
-    camera.follow(boss);
-    game.control(boss);
+    camera.follow(player);
+    game.control(player);
 end
 function start()
 end

@@ -25,6 +25,7 @@ public class MovableEntity : MonoBehaviour
 
     private Vector2 movementvelocity;
     private Vector2 forceVelocity;
+    
 
     public bool Jump()
     {

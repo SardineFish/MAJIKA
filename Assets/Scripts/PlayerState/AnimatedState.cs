@@ -11,7 +11,7 @@ public class AnimatedState<TEntity> : EntityState<TEntity> where TEntity:GameEnt
     {
         if (SoundEffect)
             entity.GetComponent<AudioController>().PlayEffect(SoundEffect);
-        Animate(entity, 0);
+        Animate(entity, entity.GetComponent<MovableEntity>().FaceDirection);
         return true;
     }
 

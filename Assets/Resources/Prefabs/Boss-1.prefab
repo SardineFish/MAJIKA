@@ -378,7 +378,6 @@ GameObject:
   - component: {fileID: 361338555447679930}
   - component: {fileID: 361338555447679933}
   - component: {fileID: 5465358969643469089}
-  - component: {fileID: 361338555447679912}
   m_Layer: 0
   m_Name: Boss-1
   m_TagString: Untagged
@@ -476,7 +475,7 @@ MonoBehaviour:
   InClimbArea: 0
   EnableGravity: 1
   Frozen: 0
-  FaceDirection: 1
+  FaceDirection: -1
   MaxMoveSpeed: 5
   MaxClimbSpeed: 10
   JumpHeight: 5
@@ -614,18 +613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayClip: {fileID: 0}
---- !u!114 &361338555447679912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361338555447679913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 904a28cfe6cdca3419da8e42e2ae7d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &361338555617389834
 GameObject:
   m_ObjectHideFlags: 0
