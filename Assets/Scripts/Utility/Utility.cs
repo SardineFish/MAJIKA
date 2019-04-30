@@ -363,4 +363,22 @@ public static class Utility
         }
         return v;
     }
+
+    public static GenericPlatform GetGenericPlatform(RuntimePlatform platform)
+    {
+        if (platform == RuntimePlatform.WindowsEditor ||
+            platform == RuntimePlatform.WindowsPlayer ||
+            platform == RuntimePlatform.LinuxEditor ||
+            platform == RuntimePlatform.LinuxPlayer ||
+            platform == RuntimePlatform.OSXEditor ||
+            platform == RuntimePlatform.OSXPlayer)
+            return GenericPlatform.Desktop;
+        return GenericPlatform.Mobile;
+    }
+}
+
+public enum GenericPlatform
+{
+    Desktop,
+    Mobile,
 }

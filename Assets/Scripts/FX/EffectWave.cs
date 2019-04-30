@@ -31,8 +31,8 @@ namespace MAJIKA.FX
         [EditorButton]
         public void ResetTime()
         {
-            Debug.Log("Reset");
-            propertyBlock.SetFloat("_StartTime", Time.time);
+            // Debug.Log($"Reset At {Time.time} {Time.unscaledTime} {Time.fixedTime} {Time.fixedUnscaledTime}");
+            propertyBlock.SetFloat("_StartTime", Time.timeSinceLevelLoad);
             propertyBlock.SetVector("_Center", new Vector4(Center.position.x, Center.position.y, 0, 1));
             GetComponent<Renderer>().SetPropertyBlock(propertyBlock);
         }

@@ -34,8 +34,6 @@ public class VirtualInputManager : MonoBehaviour
         {
             buttons[i].Reset();
         }
-        if (Touchscreen.current.activeTouches.Count > 0)
-            Debug.Log(Touchscreen.current.activeTouches.Count);
         for (var touchIdx = 0; touchIdx < Input.touchCount; touchIdx++)
         {
             //var touch = Touchscreen.current.activeTouches[touchIdx];

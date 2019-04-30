@@ -537,7 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 
   IdleState: {fileID: 11400000, guid: 65d95063d36e4cf48ac7a54e946281d1, type: 2}
-  SkillState: {fileID: 0}
+  SkillState: {fileID: 11400000, guid: 2628fd36a788565469c1b82ed229e3a0, type: 2}
   HitState: {fileID: 0}
   DeadState: {fileID: 0}
   Movement: {x: 0, y: 0}
@@ -571,7 +571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialScript: {fileID: 0}
-  Script: {fileID: 4900000, guid: 3731531bb647c8541ac338ae40d117fe, type: 3}
+  Script: {fileID: 4900000, guid: 571e000dbbe6f5a46b07d9c0a0b109a6, type: 3}
 --- !u!114 &361338555447679930
 MonoBehaviour:
   m_ObjectHideFlags: 0

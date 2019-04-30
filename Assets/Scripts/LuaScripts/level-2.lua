@@ -10,17 +10,17 @@ function awake()
     boss = scene.entity("Boss-1");
 
     camera.reset();
-    camera.follow(player);
-    game.control(player);
+    camera.follow(boss);
+    game.control(boss);
 end
 function start()
 end
 
 function update(dt)
-    if(player.position.x > 27) then
-        camera.follow({player, boss});
-    else
-        camera.follow(player);
-    end
+    -- if(player.position.x > 27) then
+    --     camera.follow({player, boss});
+    -- else
+    --     camera.follow(player);
+    -- end
 
 end
