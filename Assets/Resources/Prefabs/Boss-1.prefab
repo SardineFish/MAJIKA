@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatusEffects: []
-  HP: 1000
+  HP: 4000
   MaxHP: 1000
 --- !u!114 &361338555447679906
 MonoBehaviour:
