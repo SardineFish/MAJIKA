@@ -9,6 +9,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Damage",menuName ="StatusEffect/Damage")]
 public class Damage : Effect
 {
+    public MAJIKAElementType ElementProperty;
     public float damage;
     public bool DPS = false;
     

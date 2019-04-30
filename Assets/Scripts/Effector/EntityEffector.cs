@@ -85,6 +85,11 @@ public class EntityEffector : EntityBehaviour<GameEntity>
         return null;
     }
 
+    public IEnumerable<EffectInstance> GetEffects<T>() where T: Effect
+    {
+        return Effects.Where(effect => effect.Effect is T);
+    }
+
     public void AddEffect(EffectInstance effect, IEffectorTrigger trigger)
     {
         newList.Add(effect);

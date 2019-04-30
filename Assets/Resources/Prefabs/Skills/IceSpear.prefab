@@ -56,8 +56,8 @@ MonoBehaviour:
   Ready: 0
   Icon: {fileID: 21300000, guid: 5906c3a9925a553429a4cca37b7059e1, type: 3}
   Effects:
-  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: -1
+  - Effect: {fileID: 11400000, guid: 707ccad3b130f70439b05a33f631a347, type: 2}
+    Strength: 10
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -93,3 +93,4 @@ MonoBehaviour:
   SpawnOffset: {x: 1.36, y: 1.35}
   TimeOffset: 0
   Instance: {fileID: 0}
+  SpawnOnGround: 0
