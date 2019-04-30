@@ -14305,22 +14305,22 @@ PrefabInstance:
     - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -196
+      value: -94.08002
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -400
+      value: -196.16003
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -517.8999
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1051.8003
+      value: -16.000244
       objectReference: {fileID: 0}
     - target: {fileID: 6283574702615849072, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
@@ -14733,7 +14733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialScript: {fileID: 0}
-  Script: {fileID: 4900000, guid: ad6c7188c922b4a4ba07b40585d386f2, type: 3}
+  Script: {fileID: 4900000, guid: 6609224042dec2140911d31e3a80e5d1, type: 3}
 --- !u!114 &1399220248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15550,5 +15550,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 361338555447679931, guid: 1249514862bf0bf4384153ca7c38bbbd,
+        type: 3}
+      propertyPath: SkillState
+      value: 
+      objectReference: {fileID: 11400000, guid: 2628fd36a788565469c1b82ed229e3a0,
+        type: 2}
+    - target: {fileID: 361338555447679928, guid: 1249514862bf0bf4384153ca7c38bbbd,
+        type: 3}
+      propertyPath: Script
+      value: 
+      objectReference: {fileID: 4900000, guid: 571e000dbbe6f5a46b07d9c0a0b109a6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1249514862bf0bf4384153ca7c38bbbd, type: 3}
