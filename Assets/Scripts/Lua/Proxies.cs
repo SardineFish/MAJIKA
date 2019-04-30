@@ -72,9 +72,9 @@ namespace LuaHost.Proxy
         }
     }
 
-    public class CameraProxy : ProxyBase<Camera>
+    public class CameraProxy : ProxyBase<SceneCamera>
     {
-        public CameraProxy(Camera target) : base(target)
+        public CameraProxy(SceneCamera target) : base(target)
         {
         }
 
@@ -92,7 +92,12 @@ namespace LuaHost.Proxy
 
         public void Follow(GameEntity followTarget)
         {
-            target.GetComponent<CameraFollow>().followTarget = followTarget.transform; 
+            target.GetComponent<CameraFollow>().Follow(followTarget.transform);
+        }
+
+        public void Follow(GameEntity[] targets)
+        {
+            target.GetComponent<CameraFollow>().Follow(targets.Select(target => target.transform).ToArray());
         }
 
         public void MoveTo(Vector2 pos)
@@ -102,8 +107,8 @@ namespace LuaHost.Proxy
 
         public void Reset()
         {
-            target.GetComponent<CameraFollow>().followTarget = null;
-            MainCamera.Instance.GetComponent<CameraFollow>().ResetPosition(MainCamera.Instance.ViewportRect.size / 2);
+            target.GetComponent<CameraFollow>().Follow();
+            SceneCamera.Instance.GetComponent<CameraFollow>().ResetPosition(SceneCamera.Instance.ViewportRect.size / 2);
         }
     }
 

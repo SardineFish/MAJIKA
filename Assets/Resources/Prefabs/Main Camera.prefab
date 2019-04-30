@@ -11,13 +11,9 @@ GameObject:
   - component: {fileID: 5252665952139568240}
   - component: {fileID: 5234049392859557548}
   - component: {fileID: 5317226791138207698}
-  - component: {fileID: 5214633777514456938}
-  - component: {fileID: 5202199725592427116}
   - component: {fileID: 5295649471734186420}
   - component: {fileID: 5254103350612120359}
-  - component: {fileID: 5254741445650935364}
-  - component: {fileID: 5254741445650935363}
-  - component: {fileID: 5254741445650935365}
+  - component: {fileID: 1415536577}
   m_Layer: 12
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -32,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5254741445650935362}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.13, y: 4.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -89,53 +85,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5254741445650935362}
   m_Enabled: 1
---- !u!50 &5214633777514456938
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5254741445650935362}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 1
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
-  m_Constraints: 0
---- !u!61 &5202199725592427116
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5254741445650935362}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 35.28, y: 22.155}
-  m_EdgeRadius: 0
 --- !u!114 &5295649471734186420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +165,7 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &5254741445650935364
+--- !u!114 &1415536577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,54 +174,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5254741445650935362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f12b765979807f4a8d116687d0e2092, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d03a6b08c0880a4491799b1e68eff73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 5234049392859557548}
-  ViewportRect:
-    serializedVersion: 2
-    x: -3.869999
-    y: -4.0275
-    width: 29.999998
-    height: 16.875
-  Position: {x: 0, y: 0}
---- !u!114 &5254741445650935363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5254741445650935362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b8ae8df5a72744082fc545ebbb141f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enabled: 1
-  CushionRange: 2.64
-  FollowIgnoreRange: 0
-  FollowRangeOffset: {x: 0, y: -1.93}
-  FollowStartRange: {x: 1.6, y: 2.76}
-  MaxFollowRange: {x: 6.03, y: 5.7}
-  MaxSpeed: 12
-  MaxAcceleration: 30
-  cushionCollider: {fileID: 5202199725592427116}
-  followTarget: {fileID: 0}
-  focusPosition: {x: 0, y: 0}
-  seperateSpeed: {x: 0, y: 0}
-  followSpeed: {x: 0, y: 0}
---- !u!114 &5254741445650935365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5254741445650935362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b29bc38fde0fb4ea1a16a478822ab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enabled: 0
-  Strength: 1
-  Frequence: 1

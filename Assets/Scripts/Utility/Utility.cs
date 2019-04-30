@@ -343,4 +343,24 @@ public static class Utility
     {
         return new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
     }
+
+    public static Vector2 Sum<T>(this IEnumerable<T> ts, Func<T,Vector2> selector)
+    {
+        Vector2 v = Vector2.zero;
+        foreach( var el in ts)
+        {
+            v += selector(el);
+        }
+        return v;
+    }
+
+    public static Vector3 Sum<T>(this IEnumerable<T> ts, Func<T, Vector3> selector)
+    {
+        Vector3 v = Vector3.zero;
+        foreach (var el in ts)
+        {
+            v += selector(el);
+        }
+        return v;
+    }
 }

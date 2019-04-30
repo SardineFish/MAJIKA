@@ -10,18 +10,18 @@ namespace MAJIKA.FX
         // Use this for initialization
         void Start()
         {
-            MainCamera.Instance.GetComponent<CameraShake>().Enabled = true;
+            SceneCamera.Instance.GetComponent<CameraShake>().Enabled = true;
         }
 
         private void Update()
         {
-            MainCamera.Instance.GetComponent<CameraShake>().Frequence = Frequence;
-            MainCamera.Instance.GetComponent<CameraShake>().Strength = Strength;
+            SceneCamera.Instance.GetComponent<CameraShake>().Frequence = Frequence;
+            SceneCamera.Instance.GetComponent<CameraShake>().Strength = Strength;
         }
 
         private void OnDestroy()
         {
-            MainCamera.Instance.GetComponent<CameraShake>().Enabled = false;
+            SceneCamera.Instance.GetComponent<CameraShake>().Enabled = false;
         }
     }
 

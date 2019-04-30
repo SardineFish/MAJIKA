@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class CameraFollow : CameraPlugin
@@ -12,11 +13,13 @@ public class CameraFollow : CameraPlugin
     public float MaxSpeed = 5;
     public float MaxAcceleration = 10;
     public BoxCollider2D cushionCollider;
-    public Transform followTarget;
+    [SerializeField]
+    private Transform followTarget;
     public Vector2 focusPosition;
 
     Vector2 movePosition;
     Vector2 velocity;
+    Transform[] multiFollow = new Transform[] { };
 
     [SerializeField]
     private Vector2 seperateSpeed;
@@ -27,6 +30,8 @@ public class CameraFollow : CameraPlugin
     {
         cushionCollider = GetComponent<BoxCollider2D>();
         movePosition = transform.position.ToVector2();
+        if (followTarget)
+            multiFollow = new Transform[] { followTarget };
     }
 
     private void Update()
@@ -37,6 +42,13 @@ public class CameraFollow : CameraPlugin
         Debug.DrawLine(transform.position, transform.position + followSpeed.ToVector3(), Color.red);
     }
 
+    public void Follow(params Transform[] targets)
+    {
+        if (targets.Length == 1)
+            followTarget = targets[0];
+        multiFollow = targets;
+    }
+
     public void ResetPosition(Vector2 position)
     {
         movePosition = position;
@@ -44,8 +56,10 @@ public class CameraFollow : CameraPlugin
 
     public override CameraContext CameraUpdate(CameraContext modifier, float dt)
     {
-        if (followTarget)
-            focusPosition = followTarget.position;
+        if (multiFollow.Length > 0)
+            focusPosition = multiFollow.Sum(target => target.transform.position.ToVector2()) / multiFollow.Length;
+        else
+            return modifier;
 
         var follow = focusPosition - movePosition - FollowRangeOffset;
         var followAccelerateRange = MaxFollowRange - FollowStartRange;
@@ -73,7 +87,6 @@ public class CameraFollow : CameraPlugin
         }
         velocity = totalVelocity;
         movePosition += velocity * dt;
-        Camera.GetComponent<Rigidbody2D>().MovePosition(movePosition);
         modifier.Position = movePosition;
         return modifier;
     }

@@ -10,17 +10,17 @@ public class SceneDepth: MonoBehaviour
     public Vector2 InitialPosition;
     public bool UsePosZ = true;
     public float Depth = 0;
-    public MainCamera Camera;
+    public SceneCamera Camera;
 
     private void Reset()
     {
         InitialPosition = transform.position;
-        Camera = MainCamera.Instance;
+        Camera = SceneCamera.Instance;
     }
 
     private void OnEnable()
     {
-        Camera = MainCamera.Instance;
+        Camera = SceneCamera.Instance;
     }
 
     private void Update()

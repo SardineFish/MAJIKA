@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(MainCamera))]
+[RequireComponent(typeof(SceneCamera))]
 public class DepthOfField : CameraPlugin
 {
     public Vector2 BasePosition;

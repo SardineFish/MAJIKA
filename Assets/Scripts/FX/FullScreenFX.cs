@@ -18,8 +18,8 @@ namespace MAJIKA.FX
         // Update is called once per frame
         void Update()
         {
-            var camera = MainCamera.Instance.Camera;
-            transform.localScale = new Vector3(MainCamera.Instance.ViewportRect.width, MainCamera.Instance.ViewportRect.height, 1);
+            var camera = SceneCamera.Instance.Camera;
+            transform.localScale = new Vector3(SceneCamera.Instance.ViewportRect.width, SceneCamera.Instance.ViewportRect.height, 1);
             transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, transform.position.z);
         }
     }

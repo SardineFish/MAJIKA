@@ -15,3 +15,15 @@ function awake()
 end
 function start()
 end
+
+function update(dt)
+    console.log("update");
+    if(player.position.x > 27) then
+        console.log("Folow both");
+        camera.follow({player, boss});
+    else
+        console.log("Folow player");
+        camera.follow(player);
+    end
+
+end
