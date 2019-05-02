@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Boss1Dead
   m_EditorClassIdentifier: 
   SoundEffect: {fileID: 0}
-  AnimatorController: {fileID: 0}
+  AnimatorController: {fileID: 9100000, guid: c47b77822d44dd5489d3f0391b580ca4, type: 2}
   TriggerName: 

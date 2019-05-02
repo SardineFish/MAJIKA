@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Boss1Birth
   m_EditorClassIdentifier: 
   SoundEffect: {fileID: 0}
-  AnimatorController: {fileID: 0}
+  AnimatorController: {fileID: 9100000, guid: 152c950e3c4696a4aad41c99935dbce8, type: 2}
   TriggerName: 
-  IdleState: {fileID: 0}
+  IdleState: {fileID: 11400000, guid: 65d95063d36e4cf48ac7a54e946281d1, type: 2}

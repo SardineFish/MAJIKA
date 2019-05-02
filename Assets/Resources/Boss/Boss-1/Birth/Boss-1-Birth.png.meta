@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-guid: e1a91808830910242b0af8cbfaa0eb5f
+guid: 23b22ac7e10118349b48c377b56d1278
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Effect-3-Ground_0
-    21300002: Effect-3-Ground_1
-    21300004: Effect-3-Ground_2
-    21300006: Effect-3-Ground_3
-    21300008: Effect-3-Ground_4
+    21300000: Action_0
+    21300002: Action_1
+    21300004: Action_2
+    21300006: Action_3
+    21300008: Action_4
+    21300010: Action_5
+    21300012: Action_6
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -47,7 +49,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -100,101 +102,141 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Effect-3-Ground_0
+      name: Action_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 112
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 276
+        width: 140
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5285714, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b10e0d28aff422345b9a7a56a9ccdc44
+      spriteID: bd62840964f6c9a468e01fb627e0c26e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_1
+      name: Action_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 112
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 140
+        y: 276
+        width: 140
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5285714, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f1bee6696c47cc4eb7a4a709781b8fd
+      spriteID: f809c85deb33fe44887be425a6920fe8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_2
+      name: Action_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 276
+        width: 140
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5285714, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ffe228d9654934a8438a7567573693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 56
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 138
+        width: 140
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5285714, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10b5b986158494846883150eab5773e6
+      spriteID: 5858c5154073f3b42ad0d41ad079f14b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_3
+      name: Action_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 56
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 140
+        y: 138
+        width: 140
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5285714, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a37ca8f6a056509478ad331774e23e62
+      spriteID: 1e5b7706eea25cf4cb901a9be7fbd409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_4
+      name: Action_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 138
+        width: 140
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5285714, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd29780a9f831eb4993e13af74aaf749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Action_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 140
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5285714, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a698767340f3d3c4093e985eb65f92f5
+      spriteID: cb68ad6519414bc49abe38533cf76ba3
       vertices: []
       indices: 
       edges: []
@@ -202,7 +244,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: eb8f3aa39c16ed74ba94c1f8361799f1
+    spriteID: ce26c983d0f54c14f9c0e4269f1f760e
     vertices: []
     indices: 
     edges: []

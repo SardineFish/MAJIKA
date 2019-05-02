@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: e1a91808830910242b0af8cbfaa0eb5f
+guid: 2aab81b6698432e4ca70670556e80579
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Effect-3-Ground_0
-    21300002: Effect-3-Ground_1
-    21300004: Effect-3-Ground_2
-    21300006: Effect-3-Ground_3
-    21300008: Effect-3-Ground_4
+    21300000: Stones_0
+    21300002: Stones_1
+    21300004: Stones_2
+    21300006: Stones_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -100,101 +99,81 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Effect-3-Ground_0
+      name: Stones_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 112
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 114
+        width: 357
+        height: 38
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b10e0d28aff422345b9a7a56a9ccdc44
+      spriteID: cc6345104988a604d9eb34a256279c97
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 112
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f1bee6696c47cc4eb7a4a709781b8fd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Effect-3-Ground_2
+      name: Stones_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 56
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 76
+        width: 357
+        height: 38
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10b5b986158494846883150eab5773e6
+      spriteID: 693f391d1f7cc8148bd996350116bc07
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_3
+      name: Stones_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 56
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 0
+        y: 38
+        width: 357
+        height: 38
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a37ca8f6a056509478ad331774e23e62
+      spriteID: 7c77520c7ef52db4db7c50e58f5950ad
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_4
+      name: Stones_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 357
+        height: 38
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a698767340f3d3c4093e985eb65f92f5
+      spriteID: f7ed28789ed405f4086a770cb639ac34
       vertices: []
       indices: 
       edges: []
@@ -202,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: eb8f3aa39c16ed74ba94c1f8361799f1
+    spriteID: da053ba8f23c2a54fbef37a79015ab02
     vertices: []
     indices: 
     edges: []

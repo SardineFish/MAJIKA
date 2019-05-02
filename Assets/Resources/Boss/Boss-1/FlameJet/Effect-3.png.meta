@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: d1c426790851e1c48b2bf05a2fa2e83c
+guid: 9e1aab677a5da7448bca3f48af8116dc
 TextureImporter:
   fileIDToRecycleName:
     21300000: Effect-3_0
     21300002: Effect-3_1
-    21300004: Effect-3_2
-    21300006: Effect-3_3
-    21300008: Effect-3_4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -104,17 +101,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 166
-        width: 166
+        y: 83
+        width: 227
         height: 83
       alignment: 9
-      pivot: {x: 0.03012048, y: 0.7710843}
+      pivot: {x: 0.030837003, y: 0.85542166}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0fe522bd49735d42bfef1018aa07ecf
+      spriteID: fb1b41d5044d47f4fb5ea0946888baad
       vertices: []
       indices: 
       edges: []
@@ -123,78 +120,18 @@ TextureImporter:
       name: Effect-3_1
       rect:
         serializedVersion: 2
-        x: 166
-        y: 166
-        width: 166
-        height: 83
-      alignment: 9
-      pivot: {x: 0.03012048, y: 0.7710843}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd8415a127a1df64b8baa7688433acc4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Effect-3_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 83
-        width: 166
-        height: 83
-      alignment: 9
-      pivot: {x: 0.03012048, y: 0.7710843}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25de5ad81612a504780374b6b3319ef6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Effect-3_3
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 83
-        width: 166
-        height: 83
-      alignment: 9
-      pivot: {x: 0.03012048, y: 0.7710843}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: adcde90bf20a8dc4aaf483a0144ccb84
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Effect-3_4
-      rect:
-        serializedVersion: 2
         x: 0
         y: 0
-        width: 166
+        width: 227
         height: 83
       alignment: 9
-      pivot: {x: 0.03012048, y: 0.7710843}
+      pivot: {x: 0.030837005, y: 0.85542166}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a574860930b94f449be8e3cef734eb4
+      spriteID: 723381ce13a5a564787bd2f27e219acc
       vertices: []
       indices: 
       edges: []
@@ -202,7 +139,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5f6a3e5206ac9134fad7d8f4fcdd9608
+    spriteID: 6051ae753453fb949bde404e44e910db
     vertices: []
     indices: 
     edges: []

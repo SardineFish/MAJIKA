@@ -10,6 +10,7 @@ namespace State
         public override IEnumerator Begin(GameEntity entity, EntityStateMachine<GameEntity> fsm)
         {
             yield return entity.GetComponent<AnimationController>().WaitAnimation();
+            fsm.ChangeState(IdleState);
         }
     }
 }

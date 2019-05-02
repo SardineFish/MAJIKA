@@ -275,53 +275,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &361338554651026729
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 361338554651026726}
-  - component: {fileID: 361338554651026727}
-  m_Layer: 10
-  m_Name: Foot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &361338554651026726
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361338554651026729}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 361338555669614906}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &361338554651026727
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361338554651026729}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.22055343, y: 0.009999988}
-  m_Size: {x: 6.5389013, y: 0.040000387}
-  m_Direction: 1
 --- !u!1 &361338555402574567
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +473,7 @@ Animator:
   m_GameObject: {fileID: 361338555447679913}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6530628fd0f271c49a8bb76ae69329af, type: 2}
+  m_Controller: {fileID: 9100000, guid: c47b77822d44dd5489d3f0391b580ca4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -542,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
-  InitialState: {fileID: 11400000, guid: 595211611f55cd5438afb6ed03fcabc6, type: 2}
+  InitialState: {fileID: 11400000, guid: 50e779d8e6c04a1408c95be74fd14ffc, type: 2}
   IdleState: {fileID: 11400000, guid: 65d95063d36e4cf48ac7a54e946281d1, type: 2}
   SkillState: {fileID: 11400000, guid: 2628fd36a788565469c1b82ed229e3a0, type: 2}
   HitState: {fileID: 0}
@@ -630,6 +583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361338555617389835}
   - component: {fileID: 361338555617389833}
+  - component: {fileID: 2870590720305706785}
   m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
@@ -689,9 +643,25 @@ PolygonCollider2D:
       - {x: -2.6954918, y: 4.3007483}
       - {x: -2.8387527, y: 3.5914307}
       - {x: -3.213726, y: 3.30297}
-      - {x: -3.0629268, y: 0.0010881424}
-      - {x: 3.4024506, y: 0.066657305}
+      - {x: -3.2213326, y: 0.088485}
+      - {x: 3.317772, y: 0.09922695}
       - {x: 2.5117826, y: 1.2907658}
+--- !u!70 &2870590720305706785
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361338555617389834}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03, y: 0.03125}
+  m_Size: {x: 6.5389013, y: 0.0625}
+  m_Direction: 1
 --- !u!1 &361338555622373937
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,12 +731,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: 81e05b5e57bee9b46bf8b37aa6cdab2f, type: 3}
+  m_Sprite: {fileID: 21300030, guid: 5ebb7968dcf936e469492ebeaf6fc8a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.1875, y: 8.625}
+  m_Size: {x: 9.8125, y: 8.6875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -801,7 +771,6 @@ Transform:
   m_Children:
   - {fileID: 361338555617389835}
   - {fileID: 361338553608423777}
-  - {fileID: 361338554651026726}
   m_Father: {fileID: 361338555447679911}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1197,7 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1874614879033618, guid: dde4e03a5ecd913448d1a8f6e371c14a, type: 3}
-  SpawnOffset: {x: 0.625, y: 3.9375}
+  SpawnOffset: {x: 0.875, y: 4.4375}
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0

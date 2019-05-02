@@ -1,12 +1,17 @@
 fileFormatVersion: 2
-guid: e1a91808830910242b0af8cbfaa0eb5f
+guid: 2ef4b854a6d8b8b4bbc160824cbfa93d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Effect-3-Ground_0
-    21300002: Effect-3-Ground_1
-    21300004: Effect-3-Ground_2
-    21300006: Effect-3-Ground_3
-    21300008: Effect-3-Ground_4
+    21300000: Boss-1-Dead_0
+    21300002: Boss-1-Dead_1
+    21300004: Boss-1-Dead_2
+    21300006: Boss-1-Dead_3
+    21300008: Boss-1-Dead_4
+    21300010: Boss-1-Dead_5
+    21300012: Boss-1-Dead_6
+    21300014: Boss-1-Dead_7
+    21300016: Boss-1-Dead_8
+    21300018: Boss-1-Dead_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -47,7 +52,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
@@ -100,101 +105,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Effect-3-Ground_0
+      name: Boss-1-Dead_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 112
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 276
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b10e0d28aff422345b9a7a56a9ccdc44
+      spriteID: 2641725f10df789419a6b3a656506666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_1
+      name: Boss-1-Dead_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 112
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 148
+        y: 276
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f1bee6696c47cc4eb7a4a709781b8fd
+      spriteID: cb3f1ce4d3eba684389abdddd5a16f74
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_2
+      name: Boss-1-Dead_2
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 276
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955388dda9779de46a6b4e72e9205b3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss-1-Dead_3
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 276
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb687818d8780741a77b73b31cf7ddd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss-1-Dead_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 56
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 138
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10b5b986158494846883150eab5773e6
+      spriteID: 0c5bf19c2a279d148ba5bb3da508b6d6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_3
+      name: Boss-1-Dead_5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 56
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 148
+        y: 138
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a37ca8f6a056509478ad331774e23e62
+      spriteID: bea6a541b47c8cf449397bdb0abc8366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Effect-3-Ground_4
+      name: Boss-1-Dead_6
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 138
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d28508ebb342944b67eaa6b021cf4b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss-1-Dead_7
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 138
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b0b58b4ea101dd4995b32d34e93f429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss-1-Dead_8
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 56
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a698767340f3d3c4093e985eb65f92f5
+      spriteID: 6a18b49b3844abf42b38efa792e48269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss-1-Dead_9
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 148
+        height: 138
+      alignment: 9
+      pivot: {x: 0.5540541, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73f0df06d048c247aabce9cc30e8fae
       vertices: []
       indices: 
       edges: []
@@ -202,7 +307,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: eb8f3aa39c16ed74ba94c1f8361799f1
+    spriteID: ea36db2c17ce8254fa0c3734269c33c3
     vertices: []
     indices: 
     edges: []
