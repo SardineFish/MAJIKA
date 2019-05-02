@@ -9,6 +9,7 @@ public class EntityController : EntityStateMachine<GameEntity>
 {
     public const string EventHit = "Hit";
     public Locker Locker = new Locker();
+    public GameEntityState InitialState;
     public EntityIdle IdleState;
     public EntitySkill SkillState;
     public EntityHit HitState;
@@ -24,7 +25,9 @@ public class EntityController : EntityStateMachine<GameEntity>
     // Use this for initialization
     void Start()
     {
-        ChangeState(IdleState);
+        if (!InitialState)
+            InitialState = IdleState;
+        ChangeState(InitialState);
         GetComponent<EventBus>().AddEventListener(EventHit, () =>
          {
              ChangeState(HitState);

@@ -542,10 +542,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
+  InitialState: {fileID: 11400000, guid: 595211611f55cd5438afb6ed03fcabc6, type: 2}
   IdleState: {fileID: 11400000, guid: 65d95063d36e4cf48ac7a54e946281d1, type: 2}
   SkillState: {fileID: 11400000, guid: 2628fd36a788565469c1b82ed229e3a0, type: 2}
   HitState: {fileID: 0}
-  DeadState: {fileID: 0}
+  DeadState: {fileID: 11400000, guid: 595211611f55cd5438afb6ed03fcabc6, type: 2}
   Movement: {x: 0, y: 0}
   ClimbSpeed: 0
   Jumped: 0

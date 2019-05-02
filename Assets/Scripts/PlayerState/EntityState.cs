@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using SardineFish.Unity.FSM;
 using UnityEngine;
 
-public class EntityState<TEntity> : ScriptableObject,IState<EntityState<TEntity>> where TEntity: GameEntity
+public class EntityState<TEntity> : StateAsset, IState<EntityState<TEntity>> where TEntity: GameEntity
 {
     public bool OnEnter(EntityState<TEntity> previousState)
     {
