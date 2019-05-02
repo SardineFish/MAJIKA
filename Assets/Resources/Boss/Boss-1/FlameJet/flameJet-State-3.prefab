@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cc93f1a029ab94d9f7c79ab31c462e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImpactType: 2
+  ImpactType: 1
   ImpactDirection: 2
   Continuous: 1
   ImpactLifeCycle: 0

@@ -23,6 +23,7 @@ public class Skill : EntityBehaviour<GameEntity>
     private float lastActivateTime = 0;
     float Dir = 0;
     
+    [HideInInspector]
     public List<EffectInstance> Effects = new List<EffectInstance>();
 
     void Update()

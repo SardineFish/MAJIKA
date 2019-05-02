@@ -58,8 +58,9 @@ public class SkillImpact : MonoBehaviour
         
         if (Continuous)
         {
+            //Debug.Log(impactedList.Count);
             impactedList.ForEach(ApplyDamage);
-            impactedList.Clear();
+            //impactedList.Clear();
         }
     }
 
@@ -125,6 +126,39 @@ public class SkillImpact : MonoBehaviour
             yield return null;
         }
         Deactivate();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var entity = GameEntity.GetEntity(collision);
+        if (!entity)
+            return;
+        if (IgnoreCreator && entity == Creator)
+            return;
+        if (Active == false)
+            return;
+        if (ImpactType == ImpactType.OnEntity)
+            return;
+
+        if (impactedList.Contains(entity))
+            return;
+
+        if (ImpactLifeCycle == ImpactLifeCycle.DestructOnHit)
+            Deactivate();
+
+        if (Continuous)
+        {
+            impactedList.Add(entity);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var entity = GameEntity.GetEntity(collision);
+        if (Continuous)
+        {
+            impactedList.Remove(entity);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

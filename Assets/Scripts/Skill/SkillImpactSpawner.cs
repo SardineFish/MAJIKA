@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class SkillImpactSpawner : EntityBehaviour<GameEntity>
 {
@@ -9,6 +10,8 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
     public float TimeOffset = 0;
     public SkillImpact Instance;
     public bool SpawnOnGround = false;
+    [HideInInspector]
+    public List<EffectInstance> AdditionalEffect = new List<EffectInstance>();
     
 
     IEnumerator SpawnCoroutine(List<EffectInstance> effects)
@@ -26,6 +29,7 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
 
     public void Spawn(List<EffectInstance> effects, float dir)
     {
+        effects = effects.Union(AdditionalEffect).ToList();
         if(TimeOffset>0)
         {
             StartCoroutine(SpawnCoroutine(effects));

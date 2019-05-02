@@ -10,8 +10,8 @@ public class EntityEffector : EntityBehaviour<GameEntity>
     List<EffectInstance> removeList = new List<EffectInstance>();
     
     List<EffectInstance> newList = new List<EffectInstance>();
-
-    void Update()
+    
+    void LateUpdate()
     {
         // Remove effects
         foreach (var remove in removeList)

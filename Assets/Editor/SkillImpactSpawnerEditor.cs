@@ -15,7 +15,19 @@ namespace Assets.Editor
         bool editOffset = false;
         public override void OnInspectorGUI()
         {
+            var spawner = target as SkillImpactSpawner;
             base.OnInspectorGUI();
+
+            EditorUtilities.DrawList("Additional Effects", spawner.AdditionalEffect, (effect) =>
+            {
+                EditorGUILayout.BeginHorizontal(GUILayout.Height(EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing));
+                effect.Effect = EditorGUILayout.ObjectField(effect.Effect, typeof(Effect), true) as Effect;
+                EditorGUILayout.LabelField("x", GUILayout.Width(EditorGUIUtility.singleLineHeight));
+                effect.Strength = EditorGUILayout.FloatField(effect.Strength);
+                EditorGUILayout.EndHorizontal();
+                return effect;
+            });
+            EditorUtility.SetDirty(target);
             EditorGUILayout.Space();
             editOffset = GUILayout.Toggle(editOffset, "Edit Offset", "Button");
         }

@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 7.3995247, y: 0}
+  m_Offset: {x: 6.2470236, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.530952, y: 1.9046173}
+  m_Size: {x: 12.22595, y: 1.9046173}
   m_EdgeRadius: 0
 --- !u!1 &1395722801589436
 GameObject:
@@ -131,7 +131,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 14.665001, y: 5.25}
+  m_Size: {x: 12.359999, y: 5.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -204,11 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cc93f1a029ab94d9f7c79ab31c462e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImpactType: 2
+  ImpactType: 1
   ImpactDirection: 2
   Continuous: 1
   ImpactLifeCycle: 0
   LifeTime: -1
+  FireRange: -1
   IgnoreCreator: 1
   NextImpact: {fileID: 0}
   Effects: []

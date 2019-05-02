@@ -5,9 +5,13 @@ using System.Collections;
 public class ZIndex : MonoBehaviour
 {
     public float zIndex = 0;
+    public bool Local = false;
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position.Set(z: zIndex);
+        if (Local)
+            transform.localPosition = transform.localPosition.Set(z: zIndex);
+        else
+            transform.position = transform.position.Set(z: zIndex);
     }
 }

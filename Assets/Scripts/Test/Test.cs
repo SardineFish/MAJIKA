@@ -9,6 +9,7 @@ namespace Testing
 {
     public class Test:MonoBehaviour
     {
+        public float FloatValue;
         private void Start()
         {
         }
