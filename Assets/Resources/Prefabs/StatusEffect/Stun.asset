@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1787aeefbc170064287c2db900143ae4, type: 3}
-  m_Name: FrozenDamage
+  m_Script: {fileID: 11500000, guid: 91fa92cc1d0bd2b49ae4649c335f6694, type: 3}
+  m_Name: Stun
   m_EditorClassIdentifier: 
-  Duration: 0
-  Priority: 0
+  Duration: 1
+  Priority: 10
   EffectPrefab: {fileID: 0}
-  ElementProperty: 2
-  damage: 1
-  DPS: 0

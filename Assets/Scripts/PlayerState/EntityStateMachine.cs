@@ -18,7 +18,7 @@ public class EntityStateMachine<TEntity> : EntityBehaviour<TEntity>, IFSM<Entity
     private string currentState;
 
 
-    public bool ChangeState(EntityState<TEntity> nextState)
+    public virtual bool ChangeState(EntityState<TEntity> nextState)
     {
         if (nextState == null)
             return false;

@@ -6,6 +6,7 @@ public class Stun : Effect
 {
     public override void OnStart(EffectInstance instance, EntityEffector effector)
     {
+        instance.Duration *= instance.Strength;
         instance.lockID = effector.Entity.GetComponent<EntityController>().Lock(effector.Entity.GetComponent<EntityController>().StunState);
     }
 

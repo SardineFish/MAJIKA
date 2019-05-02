@@ -54,6 +54,13 @@ public class EntityController : EntityStateMachine<GameEntity>
             ChangeState(IdleState);
     }
 
+    public override bool ChangeState(EntityState<GameEntity> nextState)
+    {
+        if (Locker.Locked)
+            return false;
+        return base.ChangeState(nextState);
+    }
+
     public virtual void Move(Vector2 movement) => Movement = movement;
     public virtual void Jump() => Jumped = true;
     public virtual void Climb(float climbSpeed) => ClimbSpeed = climbSpeed;

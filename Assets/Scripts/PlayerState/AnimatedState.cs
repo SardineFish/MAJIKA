@@ -11,7 +11,10 @@ public class AnimatedState<TEntity> : EntityState<TEntity> where TEntity:GameEnt
     {
         if (SoundEffect)
             entity.GetComponent<AudioController>().PlayEffect(SoundEffect);
-        Animate(entity, entity.GetComponent<MovableEntity>().FaceDirection);
+        if (previousState == this)
+            OnRePlay(entity, fsm);
+        else
+            Animate(entity, entity.GetComponent<MovableEntity>().FaceDirection);
         return true;
     }
 
@@ -24,5 +27,10 @@ public class AnimatedState<TEntity> : EntityState<TEntity> where TEntity:GameEnt
     {
         if (AnimatorController)
             entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, direction);
+    }
+
+    protected virtual void OnRePlay(TEntity entity, EntityStateMachine<TEntity> fsm)
+    {
+        Animate(entity, entity.GetComponent<MovableEntity>().FaceDirection);
     }
 }

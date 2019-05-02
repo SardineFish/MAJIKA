@@ -16,5 +16,5 @@ MonoBehaviour:
   Priority: 0
   EffectPrefab: {fileID: 0}
   ElementProperty: 1
-  damage: 10
+  damage: 1
   DPS: 0

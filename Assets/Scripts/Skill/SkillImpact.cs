@@ -10,6 +10,7 @@ public enum ImpactType
     Collider,
     ColliderCast,
     Manual,
+    WholeScene,
 }
 public enum ImpactDirection
 {
@@ -150,6 +151,11 @@ public class SkillImpact : MonoBehaviour
         {
             impactedList.Add(entity);
         }
+        else
+        {
+            impactedList.Add(entity);
+            ApplyDamage(entity);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -259,6 +265,12 @@ public class SkillImpact : MonoBehaviour
                 .Distinct()
                 .ForEach(entity => ApplyDamage(entity));
             EndImpact();
+        }
+        else if (ImpactType == ImpactType.WholeScene)
+        {
+            Resources.FindObjectsOfTypeAll<GameEntity>()
+                .Where(entity => entity.gameObject.scene != null)
+                .ForEach(entity => ApplyDamage(entity));
         }
     }
     public void EndImpact()

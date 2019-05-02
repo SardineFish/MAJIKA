@@ -499,6 +499,7 @@ MonoBehaviour:
   IdleState: {fileID: 11400000, guid: 65d95063d36e4cf48ac7a54e946281d1, type: 2}
   SkillState: {fileID: 11400000, guid: 2628fd36a788565469c1b82ed229e3a0, type: 2}
   HitState: {fileID: 0}
+  StunState: {fileID: 0}
   DeadState: {fileID: 11400000, guid: 595211611f55cd5438afb6ed03fcabc6, type: 2}
   Movement: {x: 0, y: 0}
   ClimbSpeed: 0
@@ -525,7 +526,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361338555447679913}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4633ca4cdf455a499de03abf43fe671, type: 3}
   m_Name: 
@@ -785,9 +786,9 @@ GameObject:
   - component: {fileID: 8835563813101479178}
   - component: {fileID: 8835563813101479176}
   - component: {fileID: 8835563813101479177}
-  - component: {fileID: 8835563813101479173}
-  - component: {fileID: 8835563813101479174}
-  - component: {fileID: 8835563813101479175}
+  - component: {fileID: 3224671904013440685}
+  - component: {fileID: 7370573971470784213}
+  - component: {fileID: 5665454223971375577}
   m_Layer: 0
   m_Name: LargeFireBall
   m_TagString: Untagged
@@ -849,7 +850,14 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
---- !u!114 &8835563813101479173
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+--- !u!114 &3224671904013440685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -866,7 +874,14 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
---- !u!114 &8835563813101479174
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+--- !u!114 &7370573971470784213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -883,7 +898,14 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
---- !u!114 &8835563813101479175
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+--- !u!114 &5665454223971375577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -900,6 +922,13 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &8835563813168560369
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,6 +1002,13 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &8835563813168560334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,6 +1026,19 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 30
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: b3ffc78061f210a4a89388975b948397, type: 2}
+    Strength: 2
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &8835563813183002652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1111,19 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 30
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &8835563813519582205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1198,13 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &8835563813519582203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,6 +1222,13 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 951b64ecb89d65642972b537ff4b98bd, type: 2}
+    Strength: 20
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &8835563813519582201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,6 +1246,13 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 0
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 951b64ecb89d65642972b537ff4b98bd, type: 2}
+    Strength: 20
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1001 &361338555014703582
 PrefabInstance:
   m_ObjectHideFlags: 0
