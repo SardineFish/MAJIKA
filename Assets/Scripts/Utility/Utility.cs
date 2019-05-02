@@ -379,7 +379,7 @@ public static class Utility
     public static IEnumerable<T> FindObjectOfAll<T>() where T: UnityEngine.Component
     {
         return Resources.FindObjectsOfTypeAll<T>()
-            .Where(obj => obj.gameObject.scene != null);
+            .Where(obj => obj.gameObject.scene != null && obj.gameObject.scene.isLoaded);
     }
 }
 

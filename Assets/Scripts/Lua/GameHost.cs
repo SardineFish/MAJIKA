@@ -25,9 +25,11 @@ namespace LuaHost
         }
         public void Control(GameEntity entity)
         {
-            if (GameSystem.Instance.PlayerInControl)
+            if (GameSystem.Instance.PlayerInControl == entity)
+                return;
+            if (GameSystem.Instance.PlayerInControl && GameSystem.Instance.PlayerInControl.GetComponent<EntityInputPlugin>())
                 GameObject.Destroy(GameSystem.Instance.PlayerInControl.GetComponent<EntityInputPlugin>());
-            if (entity)
+            if (entity && !entity.GetComponent<EntityInputPlugin>())
                 entity.gameObject.AddComponent<EntityInputPlugin>();
             GameSystem.Instance.PlayerInControl = entity;
             if (GameGUIManager.Instance)
