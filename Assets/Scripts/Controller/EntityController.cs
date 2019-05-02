@@ -86,7 +86,7 @@ public class EntityController : EntityStateMachine<GameEntity>
     {
         if (Locker.UnLock(id))
         {
-            ChangeState(IdleState);
+            //ChangeState(IdleState);
             return true;
         }
         return false;
@@ -94,6 +94,6 @@ public class EntityController : EntityStateMachine<GameEntity>
     public virtual void UnLock()
     {
         Locker.UnLockAll();
-        ChangeState(IdleState);
+        //ChangeState(IdleState);
     }
 }
