@@ -17,6 +17,8 @@ public class EffectInstance
     public EffectTriggerCollection Triggers;
     public int Priority = 0;
     public GameObject GameObjectInstance;
+    [HideInInspector]
+    public Guid lockID;
 
     public EffectInstance Clone()
     {

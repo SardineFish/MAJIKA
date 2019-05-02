@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07814f719e0424b4aadc4ddd5279bbc7, type: 3}
+  m_Name: NewPlayerStun
+  m_EditorClassIdentifier: 
+  SoundEffect: {fileID: 0}
+  AnimatorController: {fileID: 9100000, guid: 3ac68d6611f322c43af495d6cfc557ed, type: 2}
+  TriggerName: 
+  IdleState: {fileID: 11400000, guid: 0b6c0916b0c114f4abd2a2378a507668, type: 2}

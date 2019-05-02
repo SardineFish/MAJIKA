@@ -13,6 +13,7 @@ public class EntityController : EntityStateMachine<GameEntity>
     public EntityIdle IdleState;
     public EntitySkill SkillState;
     public EntityHit HitState;
+    public EntityStun StunState;
     public EntityDead DeadState;
     
 
@@ -68,7 +69,24 @@ public class EntityController : EntityStateMachine<GameEntity>
         SkillIndex = -1;
         return result;
     }
-    public virtual System.Guid Lock() => Locker.Lock();
-    public virtual bool UnLock(System.Guid id) => Locker.UnLock(id);
-    public virtual void UnLock() => Locker.UnLockAll();
+    public virtual System.Guid Lock() => Lock(IdleState);
+    public virtual System.Guid Lock(EntityState<GameEntity> state)
+    {
+        ChangeState(state);
+        return Locker.Lock();
+    }
+    public virtual bool UnLock(System.Guid id)
+    {
+        if (Locker.UnLock(id))
+        {
+            ChangeState(IdleState);
+            return true;
+        }
+        return false;
+    }
+    public virtual void UnLock()
+    {
+        Locker.UnLockAll();
+        ChangeState(IdleState);
+    }
 }

@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatusEffects: []
-  HP: 100
+  HP: 1000
   MaxHP: 100
   Talker: {fileID: 11400000, guid: 33ae0d7312dc5f347b16f838e9416230, type: 2}
 --- !u!114 &114247470959826002
@@ -395,7 +395,7 @@ Animator:
   m_GameObject: {fileID: 1373393434984044}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7de790aba1137f34194b04c97300632f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3ac68d6611f322c43af495d6cfc557ed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -430,9 +430,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
+  InitialState: {fileID: 0}
   IdleState: {fileID: 11400000, guid: 0b6c0916b0c114f4abd2a2378a507668, type: 2}
   SkillState: {fileID: 11400000, guid: ab0ba3ecf9c4d4a47b302990f0781627, type: 2}
   HitState: {fileID: 11400000, guid: 20ca004ad557555429c68676f39172fd, type: 2}
+  StunState: {fileID: 11400000, guid: 437643c4c463a5a4e8aa976ee6507186, type: 2}
   DeadState: {fileID: 11400000, guid: c954a1edd82d6e7408afe039415932f9, type: 2}
   Movement: {x: 0, y: 0}
   ClimbSpeed: 0
