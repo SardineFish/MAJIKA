@@ -375,6 +375,12 @@ public static class Utility
             return GenericPlatform.Desktop;
         return GenericPlatform.Mobile;
     }
+
+    public static IEnumerable<T> FindObjectOfAll<T>() where T: UnityEngine.Component
+    {
+        return Resources.FindObjectsOfTypeAll<T>()
+            .Where(obj => obj.gameObject.scene != null);
+    }
 }
 
 public enum GenericPlatform

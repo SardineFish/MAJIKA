@@ -22,7 +22,7 @@ public class CameraFollow : CameraPlugin
     Transform[] multiFollow = new Transform[] { };
 
     [SerializeField]
-    private Vector2 seperateSpeed;
+    private Vector2 seperate;
     [SerializeField]
     private Vector2 followSpeed;
 
@@ -38,7 +38,7 @@ public class CameraFollow : CameraPlugin
     {
         cushionCollider.size = new Vector2(Camera.ViewportRect.width + 2 * CushionRange, Camera.ViewportRect.height + 2 * CushionRange);
         cushionCollider.offset = Vector2.zero;
-        Debug.DrawLine(transform.position, transform.position + seperateSpeed.ToVector3(), Color.blue);
+        Debug.DrawLine(transform.position, transform.position + seperate.ToVector3(), Color.blue);
         Debug.DrawLine(transform.position, transform.position + followSpeed.ToVector3(), Color.red);
     }
 
@@ -68,24 +68,23 @@ public class CameraFollow : CameraPlugin
         {
             follow.x = Mathf.Clamp01((Mathf.Abs(follow.x) - FollowStartRange.x) / followAccelerateRange.x) * Mathf.Sign(follow.x);
             follow.y = Mathf.Clamp01((Mathf.Abs(follow.y) - FollowStartRange.y) / followAccelerateRange.y) * Mathf.Sign(follow.y);
-            followSpeed = follow;
+            this.followSpeed = follow;
             //followSpeed = follow * MaxSpeed;
             //followSpeed = follow.normalized * Mathf.Clamp01((follow.magnitude - FollowIgnoreRange) / FollowRange) * MaxSpeed;
         }
-        var totalVelocity = followSpeed + seperateSpeed;
-        if (MathUtility.SignInt(totalVelocity.x) != MathUtility.SignInt(followSpeed.x))
-            totalVelocity.x = 0;
-        if (MathUtility.SignInt(totalVelocity.y) != MathUtility.SignInt(followSpeed.y))
-            totalVelocity.y = 0;
 
-        totalVelocity *= MaxSpeed;
-        var dv = totalVelocity - velocity;
+        followSpeed *= MaxSpeed;
+        var dv = followSpeed - velocity;
         if (dv.magnitude / Time.fixedDeltaTime > MaxAcceleration)
         {
             dv = dv.normalized * MaxAcceleration * Time.fixedDeltaTime;
-            totalVelocity = velocity + dv;
+            followSpeed = velocity + dv;
         }
-        velocity = totalVelocity;
+        
+        followSpeed.x *= Mathf.Clamp01(1 + Mathf.Pow(seperate.x, 5) * MathUtility.SignInt(followSpeed.x));
+        followSpeed.y *= Mathf.Clamp01(1 + Mathf.Pow(seperate.y, 5) * MathUtility.SignInt(followSpeed.y));
+
+        velocity = followSpeed;
         movePosition += velocity * dt;
         modifier.Position = movePosition;
         return modifier;
@@ -109,7 +108,7 @@ public class CameraFollow : CameraPlugin
         seperation.y = Mathf.Clamp(seperation.y, -1, 1);
 
 
-        seperateSpeed = seperation;// * MaxSpeed;
+        seperate = seperation;// * MaxSpeed;
     }
 
     private void OnDrawGizmosSelected()

@@ -14256,14 +14256,14 @@ MonoBehaviour:
   CushionRange: 2.64
   FollowIgnoreRange: 0
   FollowRangeOffset: {x: 0, y: -1.93}
-  FollowStartRange: {x: 1.6, y: 0.63}
-  MaxFollowRange: {x: 6.03, y: 1.48}
-  MaxSpeed: 12
+  FollowStartRange: {x: 1.25, y: 1.65}
+  MaxFollowRange: {x: 13.08, y: 6.21}
+  MaxSpeed: 18
   MaxAcceleration: 30
   cushionCollider: {fileID: 0}
   followTarget: {fileID: 0}
   focusPosition: {x: 0, y: 0}
-  seperateSpeed: {x: 0, y: 0}
+  seperate: {x: 0, y: 0}
   followSpeed: {x: 0, y: 0}
 --- !u!61 &2126107841
 BoxCollider2D:
@@ -14366,6 +14366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 361338555447679913, guid: 1249514862bf0bf4384153ca7c38bbbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 361338555447679911, guid: 1249514862bf0bf4384153ca7c38bbbd,
         type: 3}
