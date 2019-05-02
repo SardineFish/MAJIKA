@@ -41,6 +41,8 @@ public class SkillImpact : MonoBehaviour
     public bool Continuous = false;
     public ImpactLifeCycle ImpactLifeCycle = ImpactLifeCycle.Manual;
     public float LifeTime = -1;
+    [SerializeField]
+    public float FireRange = -1;
     public bool IgnoreCreator = true;
     public GameObject NextImpact;
     [HideInInspector]
@@ -103,7 +105,7 @@ public class SkillImpact : MonoBehaviour
         if (Active)
             StartImpact();
 
-        if (LifeTime >= 0)
+        if (LifeTime >= 0 || FireRange > 0)
             StartCoroutine(LifeTimeCoroutine());
     }
     public void Deactivate()
@@ -114,7 +116,14 @@ public class SkillImpact : MonoBehaviour
 
     public IEnumerator LifeTimeCoroutine()
     {
-        yield return new WaitForSeconds(LifeTime);
+        var startTime = Time.time;
+        var startPos = transform.position.ToVector2();
+        var lifeTime = LifeTime < 0 ? float.PositiveInfinity : LifeTime;
+        var fireRange = FireRange < 0 ? float.PositiveInfinity : FireRange;
+        while(Time.time - startTime <= lifeTime && (transform.position.ToVector2() - startPos).magnitude <= fireRange)
+        {
+            yield return null;
+        }
         Deactivate();
     }
 

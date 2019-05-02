@@ -183,7 +183,8 @@ MonoBehaviour:
   ImpactDirection: 1
   Continuous: 0
   ImpactLifeCycle: 1
-  LifeTime: 1.2
+  LifeTime: -1
+  FireRange: 20
   IgnoreCreator: 1
   NextImpact: {fileID: 0}
   Effects: []
