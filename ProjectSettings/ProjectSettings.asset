@@ -118,7 +118,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.2.4-alpha
+  bundleVersion: 0.2.6
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -155,6 +155,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: net.Bintyan.MAJIKA
     Standalone: com.Company.ProductName
+    iOS: net.bingyan.MAJIKA
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 19

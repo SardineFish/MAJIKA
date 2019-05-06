@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatusEffects: []
-  HP: 1000
+  HP: 100
   MaxHP: 100
   Talker: {fileID: 11400000, guid: 33ae0d7312dc5f347b16f838e9416230, type: 2}
 --- !u!114 &114247470959826002
