@@ -12,13 +12,16 @@ namespace MAJIKA.FX
     {
         public Transform Center;
         MaterialPropertyBlock propertyBlock;
+        private void Awake()
+        {
+            propertyBlock = new MaterialPropertyBlock();
+        }
         private void Reset()
         {
             propertyBlock = new MaterialPropertyBlock();
         }
         private void Start()
         {
-            propertyBlock = new MaterialPropertyBlock();
             ResetTime();
         }
 
