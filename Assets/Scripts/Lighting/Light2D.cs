@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 namespace Lighting2D
 {
     [ExecuteInEditMode]
-    public class Light2D : MonoBehaviour
+    public class Light2D : Light2DBase
     {
         public float Intensity = 1;
         public float Range = 5;
@@ -60,7 +60,7 @@ namespace Lighting2D
             };
         }
 
-        public virtual void RenderLight(CommandBuffer cmd)
+        public override void RenderLight(CommandBuffer cmd)
         {
             cmd.SetGlobalVector("_2DLightPos", transform.position);
             cmd.SetGlobalFloat("_LightRange", Range);
