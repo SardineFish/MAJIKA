@@ -22,6 +22,11 @@ public class MeshBuilder
 
     public void AddVertsAndTriangles(Vector3[] vertices, int[] triangles)
     {
+        if(vertices.Length + VerticesCount > Vertices.Length)
+            Array.Resize(ref Vertices, vertices.Length + VerticesCount);
+        if (triangles.Length + TriangleCount > Triangles.Length)
+            Array.Resize(ref Triangles, triangles.Length + TriangleCount);
+
         var offset = VerticesCount;
         for (var i = 0; i < vertices.Length; i++)
             Vertices[offset + i] = vertices[i];
@@ -33,18 +38,7 @@ public class MeshBuilder
 
     public void AddCopiedMesh(Mesh mesh)
     {
-        var vertBase = Vertices.Length;
-        var triangleBase = Triangles.Length;
-        Array.Resize(ref Vertices, Vertices.Length + mesh.vertices.Length);
-        Array.Resize(ref Triangles, Triangles.Length + mesh.triangles.Length);
-        for(var i=0;i<mesh.vertices.Length;i++)
-        {
-            Vertices[vertBase + i] = mesh.vertices[i];
-        }
-        for(var i=0;i<mesh.triangles.Length;i++)
-        {
-            Triangles[triangleBase + i] = mesh.triangles[i] + vertBase;
-        }
+        AddVertsAndTriangles(mesh.vertices, mesh.triangles);
     }
 
     public Mesh ToMesh(Mesh mesh)

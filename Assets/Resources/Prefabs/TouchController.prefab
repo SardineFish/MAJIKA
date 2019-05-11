@@ -734,6 +734,7 @@ GameObject:
   - component: {fileID: 1340831905813441345}
   - component: {fileID: 1409148334606108716}
   - component: {fileID: 2236975457994727411}
+  - component: {fileID: 1084983943647505235}
   m_Layer: 0
   m_Name: TouchController
   m_TagString: Untagged
@@ -813,6 +814,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb0ebdb5fd5cbd4ba6af2f87d0e98df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons: []
+--- !u!114 &1084983943647505235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649134036024794370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722fb407f1a9a464d8a1de6e18cc4a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Platform: 1
 --- !u!1 &7995154422616259494
 GameObject:
   m_ObjectHideFlags: 0

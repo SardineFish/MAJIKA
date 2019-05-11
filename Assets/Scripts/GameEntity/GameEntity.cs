@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 
 [RequireComponent(typeof(EventBus))]
-public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffectorTrigger
+public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigger
 {
     public const string NameRenderer = "Renderer";
     public const string NameCollider = "Collider";
@@ -21,12 +21,13 @@ public class GameEntity : MonoBehaviour,IMessageSender,IMessageReceiver,IEffecto
     // Use this for initialization
     protected virtual void Start()
     {
-
+        base.Start();
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
+        base.Update();
         OnUpdate?.Invoke();
         DetectThreat();
     }

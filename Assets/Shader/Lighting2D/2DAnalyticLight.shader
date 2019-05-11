@@ -25,7 +25,7 @@ Shader "Lighting2D/AnalyticLight"
 		Cull Off
 		Lighting Off
 		ZWrite Off
-		Blend One OneMinusSrcAlpha
+		Blend One One
 
 		Pass
 		{

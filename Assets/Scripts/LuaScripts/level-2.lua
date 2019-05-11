@@ -12,7 +12,7 @@ function start()
     camera.reset();
     camera.follow(player);
     game.control(player);
-    startCoroutine(level);
+    --startCoroutine(level);
 end
 
 function update(dt)

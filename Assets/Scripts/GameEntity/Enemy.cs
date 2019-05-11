@@ -6,7 +6,7 @@ public class Enemy : LifeEntity
 {
     public override Threat[] DetectThreat()
     {
-        var enemis = FindObjectsOfType<Player>();
+        var enemis = Entity.FindAll<Player>();
 
         return enemis.Select(player => new Threat()
         {
@@ -15,7 +15,7 @@ public class Enemy : LifeEntity
             Velocity = player.GetComponent<MovableEntity>().velocity
         })
             .Union(
-                FindObjectsOfType<SkillImpact>()
+                Entity.FindAll<SkillImpact>()
                 .Where(impact => impact.ImpactType == ImpactType.Collider && impact.Creator is Player)
                 .Select(impact => new Threat()
                 {

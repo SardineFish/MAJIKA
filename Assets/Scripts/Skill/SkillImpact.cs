@@ -33,7 +33,7 @@ public enum ImpactDistance
     Constant,
 }
 [RequireComponent(typeof(EventBus))]
-public class SkillImpact : MonoBehaviour
+public class SkillImpact : Entity
 {
     public const int DamageLayerMask = 1 << 14;
     public const string EventDeactivate = "Deactivate";
@@ -54,9 +54,9 @@ public class SkillImpact : MonoBehaviour
 
     private List<GameEntity> impactedList = new List<GameEntity>();
 
-    private void Update()
+    protected override void Update()
     {
-        
+        base.Update();
         if (Continuous)
         {
             //Debug.Log(impactedList.Count);

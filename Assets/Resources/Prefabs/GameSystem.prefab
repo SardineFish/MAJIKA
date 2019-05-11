@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightingMaterial: {fileID: 2100000, guid: 7cc0108523e87ce41a0ca56d8976f5ca, type: 2}
-  lightMap: {fileID: 0}
+  BloomIteration: 2
 --- !u!23 &1773484650
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 114921217081773406}
   - component: {fileID: 114561594854667466}
   - component: {fileID: 114642579119781240}
+  - component: {fileID: 6903434265148320309}
   - component: {fileID: 308097140}
   m_Layer: 0
   m_Name: GameSystem
@@ -210,6 +211,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TutorialScenePath: Scenes/Boss-0
   PlayerInControl: {fileID: 0}
+--- !u!114 &6903434265148320309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196777880445898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfab48847af12c469a4e737b5cb5cd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Entities: []
 --- !u!114 &308097140
 MonoBehaviour:
   m_ObjectHideFlags: 0

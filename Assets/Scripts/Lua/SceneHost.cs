@@ -13,9 +13,7 @@ namespace LuaHost
     {
         public GameEntity Entity(string name)
         {
-            return Utility.FindObjectOfAll<GameEntity>()
-                .Where(entity => entity.gameObject.name == name)
-                .FirstOrDefault();
+            return EntityManager.FindEntity<GameEntity>(name);
         }
         public GameEntity Spawn(GameObject prefab, string name, Vector2 position)
         {
