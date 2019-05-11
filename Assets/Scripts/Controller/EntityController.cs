@@ -22,6 +22,7 @@ public class EntityController : EntityStateMachine<GameEntity>
     public bool Jumped = false;
     public bool Climbed = false;
     public int SkillIndex = -1;
+    public GameEntity SkillTarget = null;
     
     // Use this for initialization
     void Start()
@@ -74,6 +75,18 @@ public class EntityController : EntityStateMachine<GameEntity>
         GetComponent<MovableEntity>().FaceTo(dir);
         var result = ChangeState(SkillState);
         SkillIndex = -1;
+        return result;
+    }
+    public virtual bool Skill(int idx, GameEntity target)
+    {
+        if (Locker.Locked)
+            return false;
+        SkillIndex = idx;
+        SkillTarget = target;
+        GetComponent<MovableEntity>().FaceTo((target.transform.position - transform.position).x);
+        var result = ChangeState(SkillState);
+        SkillIndex = -1;
+        SkillTarget = null;
         return result;
     }
     public virtual System.Guid Lock() => Lock(IdleState);

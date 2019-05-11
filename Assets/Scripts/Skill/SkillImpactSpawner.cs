@@ -14,7 +14,7 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
     public List<EffectInstance> AdditionalEffect = new List<EffectInstance>();
     
 
-    IEnumerator SpawnCoroutine(List<EffectInstance> effects)
+    IEnumerator SpawnCoroutine(List<EffectInstance> effects , float dir, GameEntity target)
     {
         yield return new WaitForSeconds(TimeOffset);
         var impact = Utility.Instantiate(Prefab, Entity.gameObject.scene).GetComponent<SkillImpact>();
@@ -22,17 +22,18 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
         impact.Effects = effects;
         Vector3 direction = Vector3.right * Entity.GetComponent<MovableEntity>().FaceDirection;
         var offset = SpawnOffset;
-        offset.x *= Entity.GetComponent<MovableEntity>().FaceDirection;
-        impact.Activate(Entity.transform.position + offset.ToVector3(), direction);
+        offset.x *= dir;
+        impact.Activate(Entity.transform.position + offset.ToVector3(), direction, target);
         Instance = impact;
     }
 
-    public void Spawn(List<EffectInstance> effects, float dir)
+    public void Spawn(List<EffectInstance> effects, float dir, GameEntity target)
     {
+        dir = MathUtility.SignInt(dir);
         effects = effects.Union(AdditionalEffect).ToList();
         if(TimeOffset>0)
         {
-            StartCoroutine(SpawnCoroutine(effects));
+            StartCoroutine(SpawnCoroutine(effects, dir, target));
         }
         else
         {
@@ -56,7 +57,7 @@ public class SkillImpactSpawner : EntityBehaviour<GameEntity>
                     pos = hits[0].point.ToVector3();
                 }
             }
-            impact.Activate(pos, direction);
+            impact.Activate(pos, direction, target);
             Instance = impact;
         }
     }

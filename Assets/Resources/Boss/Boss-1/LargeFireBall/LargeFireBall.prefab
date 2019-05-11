@@ -133,10 +133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImpactType: 1
-  ImpactDirection: 1
+  ImpactDirection: 3
   Continuous: 0
   ImpactLifeCycle: 1
   LifeTime: 5
+  FireRange: -1
   IgnoreCreator: 1
   NextImpact: {fileID: 0}
   Effects: []
@@ -270,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zIndex: -5
+  Local: 0
 --- !u!1 &8209849266044801021
 GameObject:
   m_ObjectHideFlags: 0

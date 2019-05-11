@@ -17,7 +17,7 @@ end
 function bossAttack()
     while player.position.x > 27 do
         local skill = math.floor(math.random() * 4)
-        entity.skill(skill, -1)
+        entity.skill(skill, player)
         coroutine.yield(entity.wait("skill", _host))
         coroutine.yield(waitForSeconds(Interval))
     end

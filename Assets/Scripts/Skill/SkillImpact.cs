@@ -51,6 +51,7 @@ public class SkillImpact : Entity
     public GameEntity Creator;
     public bool Active = false;
     public Vector3 Direction;
+    public GameEntity TargetEntity;
 
     private List<GameEntity> impactedList = new List<GameEntity>();
 
@@ -74,7 +75,7 @@ public class SkillImpact : Entity
             var impact = Utility.Instantiate(NextImpact, Creator.gameObject.scene).GetComponent<SkillImpact>();
             impact.Creator = Creator;
             impact.Effects = Effects;
-            impact.Activate(transform.position, Direction);
+            impact.Activate(transform.position, Direction, TargetEntity);
         }
         else
         {
@@ -83,10 +84,11 @@ public class SkillImpact : Entity
         }
     }
 
-    public void Activate(Vector3 position, Vector3 direction)
+    public void Activate(Vector3 position, Vector3 direction, GameEntity targetEntity)
     {
         Direction = direction;
         transform.position = position;
+        TargetEntity = targetEntity;
         if(ImpactDirection == ImpactDirection.Flip)
         {
             direction.y = direction.z = 0;
@@ -98,11 +100,12 @@ public class SkillImpact : Entity
         }
         else if (ImpactDirection == ImpactDirection.Rotate)
         {
+            direction = targetEntity.transform.position - transform.position;
             transform.rotation *= Quaternion.FromToRotation(transform.right, direction);
         }
         else if (ImpactDirection == ImpactDirection.FlipObject)
         {
-            transform.localScale = new Vector3(direction.x, 1, 1);
+            transform.localScale = new Vector3(MathUtility.SignInt(direction.x), 1, 1);
         }
         if (Active)
             StartImpact();
@@ -206,7 +209,7 @@ public class SkillImpact : Entity
             var impact = Utility.Instantiate(NextImpact, Creator.gameObject.scene).GetComponent<SkillImpact>();
             impact.Creator = Creator;
             impact.Effects = Effects;
-            impact.Activate(transform.position, Direction);
+            impact.Activate(transform.position, Direction, TargetEntity);
         }
         Deactivate();
     }

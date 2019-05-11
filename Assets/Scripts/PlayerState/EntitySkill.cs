@@ -12,13 +12,19 @@ namespace State
         public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
         {
             var skillIdx = (fsm as EntityController).SkillIndex;
+            var skillTarget = (fsm as EntityController).SkillTarget;
 
-            if (skillIdx < 0 || !entity.GetComponent<SkillController>().Activate(skillIdx, entity.GetComponent<MovableEntity>().FaceDirection))
+            if(skillTarget && skillIdx >=0 && entity.GetComponent<SkillController>().Activate(skillIdx, skillTarget))
             {
-                return false;
+                entity.GetComponent<AudioController>().PlayAudio(null);
+                return true;
             }
-            entity.GetComponent<AudioController>().PlayAudio(null);
-            return true;
+            else if (skillIdx >= 0 && entity.GetComponent<SkillController>().Activate(skillIdx, entity.GetComponent<MovableEntity>().FaceDirection))
+            {
+                entity.GetComponent<AudioController>().PlayAudio(null);
+                return true;
+            }
+            return false;
         }
 
         public override IEnumerator Begin(GameEntity entity, EntityStateMachine<GameEntity> fsm)

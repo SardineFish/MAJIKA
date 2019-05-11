@@ -38,6 +38,8 @@ namespace LuaHost.Proxy
         }
         public bool Skill(int idx, float dir)
             => target.GetComponent<EntityController>()?.Skill(idx, dir) ?? false;
+        public bool Skill(int idx, GameEntity skillTarget)
+            => target.GetComponent<EntityController>()?.Skill(idx, skillTarget) ?? false;
         public void Move(Vector2 movement)
             => target.GetComponent<EntityController>()?.Move(movement);
         public void Jump() 

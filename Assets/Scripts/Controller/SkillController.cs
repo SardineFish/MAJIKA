@@ -9,6 +9,8 @@ public class SkillController : EntityBehaviour<Player>
     public Skill[] Skills;
     public Skill ActiveSkill = null;
 
+    public GameEntity TargetEntity = null;
+
     private Coroutine movementCoroutine;
 
     void Update()
@@ -37,6 +39,21 @@ public class SkillController : EntityBehaviour<Player>
         GetComponent<AnimationController>().ChangeAnimation(ActiveSkill.AnimatorController, direction);
         return true;
     }
+
+    public bool Activate(int idx, GameEntity entity)
+    {
+        if (idx >= Skills.Length)
+            return false;
+        if (ActiveSkill && !ActiveSkill.Abort())
+            return false;
+        if (!Skills[idx].Activate(entity))
+            return false;
+        TargetEntity = entity;
+        ActiveSkill = Skills[idx];
+        GetComponent<AnimationController>().ChangeAnimation(ActiveSkill.AnimatorController, (entity.transform.position - transform.position).x);
+        return true;
+    }
+    
 
     public Utility.CallbackYieldInstruction WaitSkillYield()
     {

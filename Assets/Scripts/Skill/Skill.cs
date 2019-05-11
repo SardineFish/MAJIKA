@@ -14,7 +14,6 @@ public class Skill : EntityBehaviour<GameEntity>
     public bool LockAction = false;
     public float ReleaseRadius;
     public Vector3 ReleaseOffset;
-    public SkillDirection Direction;
     public float CoolDown = 1;
     public bool Locked = false;
     public bool Ready = false;
@@ -22,6 +21,7 @@ public class Skill : EntityBehaviour<GameEntity>
 
     private float lastActivateTime = 0;
     float Dir = 0;
+    GameEntity TargetEntity = null;
     
     [HideInInspector]
     public List<EffectInstance> Effects = new List<EffectInstance>();
@@ -45,6 +45,19 @@ public class Skill : EntityBehaviour<GameEntity>
         return true;
     }
 
+    public bool Activate(GameEntity entity)
+    {
+        if (Time.time - lastActivateTime < CoolDown)
+            return false;
+        lastActivateTime = Time.time;
+        Dir = (entity.transform.position - transform.position).x;
+        TargetEntity = entity;
+        if (LockAction)
+            Locked = true;
+
+        return true;
+    }
+
     public bool Abort()
     {
         if (Locked)
@@ -62,9 +75,9 @@ public class Skill : EntityBehaviour<GameEntity>
     public bool StartImpact(int idx = -1)
     {
         if (idx < 0)
-            GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Spawn(this.Effects, Dir));
+            GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Spawn(this.Effects, Dir, TargetEntity));
         else
-            GetComponents<SkillImpactSpawner>()[idx].Spawn(this.Effects, Dir);
+            GetComponents<SkillImpactSpawner>()[idx].Spawn(this.Effects, Dir, TargetEntity);
         return true;
     }
 
