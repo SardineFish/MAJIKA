@@ -3,16 +3,13 @@ StateBattle = "battle";
 StateEnd = "end";
 local levelState = StateReady;
 
-function awake()
-
-end
 function start()
     player = scene.entity("Player");
     boss = scene.entity("Boss-1");
     camera.reset();
     camera.follow(player);
     game.control(player);
-    --startCoroutine(level);
+    startCoroutine(level);
 end
 
 function update(dt)

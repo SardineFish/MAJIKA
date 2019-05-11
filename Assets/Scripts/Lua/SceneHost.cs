@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LuaHost
 {
@@ -13,8 +14,13 @@ namespace LuaHost
     {
         public GameEntity Entity(string name)
         {
-            return EntityManager.FindEntity<GameEntity>(name);
-        }
+            return Utility.Times(SceneManager.sceneCount)
+                .SelectMany(i=>SceneManager.GetSceneAt(i).GetRootGameObjects())
+                .Where(obj => obj.name == name)
+                .Select(obj => obj.GetComponent<GameEntity>())
+                .FirstOrDefault();
+            // return GameObject.Find(name).GetComponent<GameEntity>();
+        } 
         public GameEntity Spawn(GameObject prefab, string name, Vector2 position)
         {
             if (prefab.GetComponent<GameEntity>())

@@ -21,21 +21,21 @@ public class EntityManager : Singleton<EntityManager>
     public static Entity FindEntity(string name)
     {
         return Instance?.Entities
-            .Where(entity => entity.gameObject.name == name)
+            .Where(entity => entity && entity.gameObject.name == name)
             .FirstOrDefault();
     }
 
     public static EntityT FindEntity<EntityT>(string name) where EntityT: Entity
     {
         return Instance?.Entities
-            .Where(entity => entity is EntityT && entity.name == name)
+            .Where(entity => entity && entity is EntityT && entity.name == name)
             .FirstOrDefault() as EntityT;
     }
 
     public static EntityT[] FindEntities<EntityT>() where EntityT:Entity
     {
         return Instance?.Entities
-            .Where(entity => entity is EntityT)
+            .Where(entity => entity && entity is EntityT)
             .Select(entity => entity as EntityT)
             .ToArray();
     }

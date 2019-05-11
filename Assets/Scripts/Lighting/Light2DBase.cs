@@ -22,7 +22,10 @@ namespace Lighting2D
         public Mesh ShadowMesh;
         protected virtual void Start()
         {
+            tempMesh = new Mesh();
+            tempMesh.name = "Sub Shadow Mesh";
             ShadowMesh = new Mesh();
+            ShadowMesh.name = "Shadow Mesh";
             ShadowMesh.Clear();
             shadowMat = new Material(Shader.Find("Lighting2D/Shadow"));
         }
@@ -33,7 +36,7 @@ namespace Lighting2D
         {
         }
 
-        Mesh tempMesh = new Mesh();
+        Mesh tempMesh;
         public Mesh PolygonShadowMesh(PolygonCollider2D pol)
         {
             var points = pol.GetPath(0);

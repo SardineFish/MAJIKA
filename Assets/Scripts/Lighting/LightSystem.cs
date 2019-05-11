@@ -55,6 +55,7 @@ namespace Lighting2D
 
         public void RenderDeffer(Light2DProfile profile)
         {
+            return;
             var camera = profile.Camera;
             var cmd = profile.CommandBuffer;
             cmd.Clear();

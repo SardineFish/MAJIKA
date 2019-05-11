@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5763621234452488722}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -57,7 +57,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 605a492fa35fc61469f598eda3f18e00, type: 3}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 50
+    Strength: 500
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -94,3 +94,4 @@ MonoBehaviour:
   TimeOffset: 0
   Instance: {fileID: 0}
   SpawnOnGround: 1
+  AdditionalEffect: []

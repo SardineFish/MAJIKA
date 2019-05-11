@@ -382,6 +382,14 @@ public static class Utility
             .Where(obj => obj.gameObject.scene != null && obj.gameObject.scene.isLoaded);
     }
 
+    public static IEnumerable<int> Times(int times)
+    {
+        for (var i = 0; i < times; i++)
+        {
+            yield return i;
+        }
+    }
+
 }
 
 public enum GenericPlatform

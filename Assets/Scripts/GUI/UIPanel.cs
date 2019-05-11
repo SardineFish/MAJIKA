@@ -16,6 +16,8 @@ namespace MAJIKA.GUI
         public IEnumerator WaitHide(float time = .2f)
         {
             var player = GameSystem.Instance.PlayerInControl;
+            if (!player)
+                player = null;
             player?.GetComponent<EntityController>().UnLock(lockID);
             if (gameObject.activeInHierarchy)
             {

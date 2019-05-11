@@ -17,7 +17,7 @@ conversation2 = {
     "${left}: ......"
 }
 
-function awake()
+function start()
     player = scene.entity("Player");
     yellowHair = scene.entity("YellowHair");
     redGlass = scene.entity("RedGlass");
@@ -47,9 +47,6 @@ function awake()
     camera.follow(player);
     game.control(player);
     gui.skillPanel.hide();
-end
-function start()
-    --startCoroutine(moveCamera); 
 end
 
 function moveCamera()
