@@ -22,7 +22,7 @@ namespace State
                 if (blowUp != null)
                 {
                     var locker = (fsm as EntityController).Lock(this);
-                    Debug.Log($"locked {(fsm as EntityController).Locker.Locked}");
+                    // Debug.Log($"locked {(fsm as EntityController).Locker.Locked}");
                     entity.GetComponent<SkillController>().Abort();
                     var movable = entity.GetComponent<MovableEntity>();
                     var v = (blowUp.Effect as BlowUp).Blow;
@@ -40,7 +40,7 @@ namespace State
                     (fsm as EntityController).UnLock(locker);
                     while (!fsm.ChangeState(MoveState) && !fsm.ChangeState(JumpState))
                         yield return null;
-                    Debug.Log($"unlocked {(fsm as EntityController).Locker.Locked}");
+                    // Debug.Log($"unlocked {(fsm as EntityController).Locker.Locked}");
                     yield break;
                 }
                 else
@@ -49,7 +49,7 @@ namespace State
                     while (!entity.GetComponent<AnimationController>().IsEnd())
                     {
                         yield return null;
-                        if (fsm.ChangeState(MoveState) || fsm.ChangeState(JumpState))
+                        if (fsm.ChangeState(JumpState) || fsm.ChangeState(MoveState))
                         {
                             yield break;
                         }
