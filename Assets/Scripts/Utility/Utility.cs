@@ -381,6 +381,7 @@ public static class Utility
         return Resources.FindObjectsOfTypeAll<T>()
             .Where(obj => obj.gameObject.scene != null && obj.gameObject.scene.isLoaded);
     }
+
 }
 
 public enum GenericPlatform

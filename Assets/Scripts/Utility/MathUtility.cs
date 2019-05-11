@@ -96,4 +96,12 @@ public static class MathUtility
     {
         return Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
     }
+
+    public static Vector2 Rotate(Vector2 v, float rad)
+    {
+        var rx = Mathf.Cos(rad);
+        var ry = Mathf.Sin(rad);
+        // (vx + vy i) * (rx + ry i)
+        return new Vector2(rx * v.x - ry * v.y, rx * v.y + ry * v.x);
+    }
 }

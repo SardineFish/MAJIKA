@@ -62,6 +62,8 @@ namespace Lighting2D
 
         public override void RenderLight(CommandBuffer cmd)
         {
+            if (!LightMaterial)
+                LightMaterial = new Material(Shader.Find("Lighting2D/AnalyticLight"));
             cmd.SetGlobalVector("_2DLightPos", transform.position);
             cmd.SetGlobalFloat("_LightRange", Range);
             cmd.SetGlobalFloat("_Intensity", Intensity);

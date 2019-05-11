@@ -90,6 +90,7 @@ namespace Lighting2D
             foreach (var light in lights)
             {
                 light.RenderLight(cmd);
+                light.RenderShadow(cmd);
             }
             cmd.SetRenderTarget(BuiltinRenderTextureType.CameraTarget, BuiltinRenderTextureType.CameraTarget);
             
