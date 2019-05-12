@@ -31,7 +31,7 @@ function start()
     end)
 
     redGlass.on("OnInteract", function()
-        game.conversation(conversation1, {player, redGlass})
+        --game.conversation(conversation1, {player, redGlass})
         startCoroutine(function ()
             coroutine.yield(game.conversation({
                 "${1}: ${0}你来了。",
@@ -40,6 +40,19 @@ function start()
                 "${0}: 不 要 停 下 来 "
             },{player, redGlass}, true));
             game.loadLevel("Demo-2");
+        
+        end)
+    end)
+
+    twinTail.on("OnInteract", function()
+        startCoroutine(function ()
+            coroutine.yield(game.conversation({
+                "${1}: 🐴?",
+                "${0}: ¿",
+                "${1}: 这边请。",
+                "${0}: ……"
+            },{player, twinTail}, true));
+            game.loadLevel("Boss-0");
         
         end)
     end)
