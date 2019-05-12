@@ -1974,7 +1974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2227993316516484727
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2045,6 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ddf04ef1604c14db88856809b576d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Visible: 0
   Skills:
   - {fileID: 2227993315780339846}
   - {fileID: 2227993316456025434}

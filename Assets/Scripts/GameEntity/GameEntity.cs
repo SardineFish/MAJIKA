@@ -18,6 +18,8 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
 
     public event Action OnUpdate;
 
+    
+
     // Use this for initialization
     protected virtual void Start()
     {

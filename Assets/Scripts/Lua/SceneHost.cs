@@ -14,6 +14,9 @@ namespace LuaHost
     {
         public GameEntity Entity(string name)
         {
+            var entity = EntityManager.FindEntity<GameEntity>(name);
+            return entity; 
+
             return Utility.Times(SceneManager.sceneCount)
                 .SelectMany(i=>SceneManager.GetSceneAt(i).GetRootGameObjects())
                 .Where(obj => obj.name == name)

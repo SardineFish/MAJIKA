@@ -48,7 +48,7 @@ function start()
     camera.reset();
     camera.follow(player);
     game.control(player);
-    gui.skillPanel.hide();
+    --gui.skillPanel.hide();
 end
 
 function moveCamera()

@@ -3,13 +3,14 @@ using System.Collections;
 
 public class Entity : MonoBehaviour
 {
-    protected virtual void OnEnable()
+    public Entity()
     {
-        EntityManager.Instance.Entities.Add(this);
+        EntityManager.RegisterEntity(this);
     }
+
     protected virtual void OnDestroy()
     {
-        EntityManager.Instance.Entities.Remove(this);
+        EntityManager.RemoveEntity(this);
     }
     // Use this for initialization
     protected virtual void Start()
