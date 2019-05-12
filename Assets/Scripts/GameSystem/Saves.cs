@@ -89,11 +89,11 @@ public class Saves : Singleton<Saves>
 
     public string Serialize(PlayerProfile profile)
     {
-        profile.inventory = profile.inventory
-            .Select(item => new SerializableItem() { name = item.name, amount = item.amount })
+        profile.inventory = profile.Inventory
+            .Select(item => SerializeItem(item))
             .ToArray();
         profile.skillSlots = profile.SkillSlots
-            .Select(item => new SerializableItem() { name = item.Item.name, amount = item.Amount })
+            .Select(item => SerializeItem(item))
             .ToArray();
         return JsonUtility.ToJson(profile);
     }
@@ -109,9 +109,16 @@ public class Saves : Singleton<Saves>
             .ToArray();
         return profile;
     }
-
+    
+    public SerializableItem SerializeItem(Inventory.ItemWrapper item)
+    {
+        return item == null || item.Item == null
+            ? new SerializableItem() { name = null, amount = 0 }
+            : new SerializableItem() { name = item.Item.name, amount = item.Amount };
+    }
     public Inventory.ItemWrapper DeserializeItem(SerializableItem item)
     {
         return AssetsManager.FindItem(item.name)?.Create(item.amount) ?? new Inventory.ItemWrapper();
     }
+
 }
