@@ -54,19 +54,18 @@ namespace MAJIKA.GUI
                 yield return Utility.HideUI(GetComponent<CanvasGroup>(), time);
             }
         }
-        public Coroutine HideAsync(float time = .2f)
+        public void HideAsync(float time = .2f)
         {
-            StopAllCoroutines();
-            return StartCoroutine(Hide(time));
+            StartCoroutine(Hide(time));
         }
 
-        public Coroutine ShowAsync(float time = .1f)
+        public void ShowAsync(float time = .1f)
         {
             if (!gameObject.activeInHierarchy)
             {
                 gameObject.SetActive(true);
             }
-            return StartCoroutine(Show(time));
+            StartCoroutine(Show(time));
         }
     }
 }
