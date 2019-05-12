@@ -34,10 +34,12 @@ public class InputActionController : EntityBehaviour<Player>
 
     public bool OpenInventory()
     {
-        if (GetComponent<EntityController>().Locker.Locked)
+        if (MAJIKA.GUI.InventoryPanel.Instance.Visible)
+            MAJIKA.GUI.InventoryPanel.Instance?.HideAsync();
+        else if (GetComponent<EntityController>().Locker.Locked)
             return false;
-
-        MAJIKA.GUI.InventoryPanel.Instance?.Show();
+        else
+            MAJIKA.GUI.InventoryPanel.Instance?.ShowAsync();
         return true;
     }
 

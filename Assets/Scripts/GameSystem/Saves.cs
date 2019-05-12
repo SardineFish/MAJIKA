@@ -28,7 +28,7 @@ public class Saves : Singleton<Saves>
         {
             if (!Directory.Exists(SavesFolder))
                 Directory.CreateDirectory(SavesFolder);
-            var json = JsonUtility.ToJson(Profile);
+            var json = Serialize(Profile);
             using (var fs = new FileStream(SavesTemp, FileMode.Create))
             using (var sw = new StreamWriter(fs))
             {

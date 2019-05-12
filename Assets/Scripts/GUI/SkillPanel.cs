@@ -38,26 +38,25 @@ namespace MAJIKA.GUI
                 ProductSlot.Put(product);
         }
 
-        public override void Show(float time = .1f)
+        public override IEnumerator Show(float time = 0.1F)
         {
             var player = GameSystem.Instance.PlayerInControl;
             if (!player)
-                return;
+                return null;
             InventoryRenderer.Inventory = player.GetComponentInChildren<Inventory.Inventory>();
             var skillSlots = player.GetComponentInChildren<Equipment>()?.SkillSlots;
             if (skillSlots == null)
-                return;
-            for(var i=0;i<skillSlots.Length;i++)
+                return null;
+            for (var i = 0; i < skillSlots.Length; i++)
             {
                 Skills[i].GetComponent<UITemplate>().DataSource = skillSlots[i];
             }
-            base.Show(time);
+            return base.Show(time);
         }
-
-        public override void Hide(float time = 0.2F)
+        public override IEnumerator Hide(float time = 0.2F)
         {
-            base.Hide(time);
             Saves.Instance.Save();
+            return base.Hide(time);
         }
     }
 

@@ -23,6 +23,8 @@ function start()
     redGlass = scene.entity("RedGlass");
     twinTail = scene.entity("TwinTail");
 
+    console.log(yellowHair);
+
     yellowHair.on("OnInteract", function()
         --game.control(null)
         gui.skillPanel.show()

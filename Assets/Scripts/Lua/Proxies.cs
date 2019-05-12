@@ -119,9 +119,9 @@ namespace LuaHost.Proxy
         }
 
         public void Show()
-            => target.Show();
+            => target.ShowAsync();
 
         public void Hide()
-            => target.Hide();
+            => target.HideAsync();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Inventory;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,55 +14,26 @@ namespace MAJIKA.GUI
         public Slot[] Skills;
         public InventoryRenderer InventoryRenderer;
 
-        InventoryPanel(): base()
-        {
-            Debug.Log("instantiate inventory panel");
-        }
-
-        protected void Awake()
-        {
-            //base.Awake();
-            Debug.Log("awake inventory panel " + name);
-            InputManager.Instance.Controller.Actions.Inventory.performed += Inventory_performed;
-        }
-
-        private void OnEnable()
-        {
-        }
-
-        private void OnDestroy()
-        {
-            InputManager.Instance.Controller.Actions.Inventory.performed -= Inventory_performed;
-        }
-
-        private void Inventory_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext obj)
-        {
-            if (!this.gameObject.activeInHierarchy)
-                this.Show();
-            else
-                this.Hide();
-        }
-
-        public override void Show(float time = .1f)
+        public override IEnumerator Show(float time = 0.1F)
         {
             var player = GameSystem.Instance.PlayerInControl;
             if (!player)
-                return;
+                return null;
             InventoryRenderer.Inventory = player.GetComponentInChildren<Inventory.Inventory>();
             var skillSlots = player.GetComponentInChildren<Equipment>()?.SkillSlots;
             if (skillSlots == null)
-                return;
+                return null;
             for (var i = 0; i < skillSlots.Length; i++)
             {
                 Skills[i].GetComponent<UITemplate>().DataSource = skillSlots[i];
             }
-            base.Show(time);
+            return base.Show(time);
         }
 
-        public override void Hide(float time = 0.2F)
+        public override IEnumerator Hide(float time = 0.2F)
         {
-            base.Hide(time);
             Saves.Instance.Save();
+            return base.Hide(time);
         }
     }
 }

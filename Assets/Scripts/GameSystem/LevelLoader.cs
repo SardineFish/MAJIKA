@@ -12,9 +12,9 @@ public class LevelLoader : Singleton<LevelLoader>
     }
     public IEnumerator LoadLevel(string scenePath)
     {
-        yield return LoadingUI.WaitShow(.5f);
+        yield return LoadingUI.Show(.5f);
         yield return SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Single);
-        yield return LoadingUI.WaitHide(1);
+        yield return LoadingUI.Hide(1);
         FindObjectOfType<Level>().Ready();
     }
     public void LoadLevelDetach(string scenePath)

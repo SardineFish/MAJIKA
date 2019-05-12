@@ -18,7 +18,7 @@ public class Level : Singleton<Level>
     }
     IEnumerator OnLevelPass()
     {
-        PassUI?.Show();
+        PassUI?.ShowAsync();
         var animator = PassUI.GetComponent<Animator>();
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
@@ -34,7 +34,7 @@ public class Level : Singleton<Level>
     }
     IEnumerator OnLevelFailed()
     {
-        FailedUI?.Show();
+        FailedUI?.ShowAsync();
         var animator = FailedUI.GetComponent<Animator>();
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
