@@ -24,6 +24,9 @@ namespace Inventory
             return Properties.Where(prop => prop is T).FirstOrDefault() as T;
         }
 
+        public ItemWrapper Create(int amount)
+            => new ItemWrapper() { Item = this, Amount = amount };
+
 
         public static Recipe operator +(Item item1, Item item2)
         {

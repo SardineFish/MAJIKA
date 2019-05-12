@@ -1,0 +1,25 @@
+{
+    "inventory": [
+        {
+            "name": "FlameGem",
+            "amount": 100
+        },
+        {
+            "name": "AirGem",
+            "amount": 100
+        },
+        {
+            "name": "IceGem",
+            "amount": 100
+        },
+        {
+            "name": "ArcaneGem",
+            "amount": 100
+        },
+        {
+            "name": "MAJIKACore",
+            "amount": 100
+        }
+    ],
+    "skillSlots": []
+}

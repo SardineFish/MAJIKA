@@ -6,13 +6,22 @@ using System.Threading.Tasks;
 
 public class Singleton<T> : UnityEngine.MonoBehaviour where T:Singleton<T>
 {
-    public static T Instance;
+    private static List<T> instances = new List<T>();
+    public static T Instance
+    {
+        get
+        {
+            for(var i= instances.Count-1; i>=0;i--)
+            {
+                if (instances[i] && instances[i].gameObject.scene != null)
+                    return instances[i];
+            }
+            return null;
+        }
+    }
+
     public Singleton() : base()
     {
-        Instance = this as T;
-    }
-    protected virtual void Awake()
-    {
-        Instance = this as T;
+        instances.Add(this as T);
     }
 }

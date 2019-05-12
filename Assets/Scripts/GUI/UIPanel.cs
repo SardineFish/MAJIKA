@@ -5,7 +5,7 @@ namespace MAJIKA.GUI
 {
     [RequireComponent(typeof(CanvasGroup))]
     public abstract class UIPanel<T> : Singleton<T> where T : UIPanel<T>
-    {
+    {   
         System.Guid lockID;
         protected virtual void Update()
         {
@@ -54,7 +54,6 @@ namespace MAJIKA.GUI
             if (!gameObject.activeInHierarchy)
             {
                 gameObject.SetActive(true);
-                StartCoroutine(WaitShow(.1f));
             }
         }
     }

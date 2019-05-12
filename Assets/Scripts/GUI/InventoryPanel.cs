@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace MAJIKA.GUI
 {
@@ -12,15 +13,33 @@ namespace MAJIKA.GUI
         public Slot[] Skills;
         public InventoryRenderer InventoryRenderer;
 
+        InventoryPanel(): base()
+        {
+            Debug.Log("instantiate inventory panel");
+        }
+
+        protected void Awake()
+        {
+            //base.Awake();
+            Debug.Log("awake inventory panel " + name);
+            InputManager.Instance.Controller.Actions.Inventory.performed += Inventory_performed;
+        }
+
         private void OnEnable()
         {
-            InputManager.Instance.Controller.Actions.Inventory.performed += ctx =>
-            {
-                if (!this.gameObject.activeInHierarchy)
-                    this.Show();
-                else
-                    this.Hide();
-            };
+        }
+
+        private void OnDestroy()
+        {
+            InputManager.Instance.Controller.Actions.Inventory.performed -= Inventory_performed;
+        }
+
+        private void Inventory_performed(UnityEngine.Experimental.Input.InputAction.CallbackContext obj)
+        {
+            if (!this.gameObject.activeInHierarchy)
+                this.Show();
+            else
+                this.Hide();
         }
 
         public override void Show(float time = .1f)
@@ -42,6 +61,7 @@ namespace MAJIKA.GUI
         public override void Hide(float time = 0.2F)
         {
             base.Hide(time);
+            Saves.Instance.Save();
         }
     }
 }

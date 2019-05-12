@@ -8,6 +8,9 @@ namespace MAJIKA.GUI
 {
     public class SkillPanel : UIPanel<SkillPanel>
     {
+        public SkillPanel():base()
+        {
+        }
         public Slot MajorMaterial;
         public List<Slot> MinorMateirals = new List<Slot>();
         public Slot ProductSlot;
@@ -49,6 +52,12 @@ namespace MAJIKA.GUI
                 Skills[i].GetComponent<UITemplate>().DataSource = skillSlots[i];
             }
             base.Show(time);
+        }
+
+        public override void Hide(float time = 0.2F)
+        {
+            base.Hide(time);
+            Saves.Instance.Save();
         }
     }
 

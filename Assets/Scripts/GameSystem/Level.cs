@@ -11,9 +11,8 @@ public class Level : Singleton<Level>
     public CoveredUI FailedUI;
     public string NextScene;
     public List<MonoBehaviour> ActiveAtLoaded = new List<MonoBehaviour>();
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
         GetComponent<EventBus>().On(EventFailed, () => StartCoroutine(OnLevelFailed()));
         GetComponent<EventBus>().On(EventPass, () => StartCoroutine(OnLevelPass()));
     }

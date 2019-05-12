@@ -19,6 +19,8 @@ namespace MAJIKA.FX
         void Update()
         {
             var camera = SceneCamera.Instance.Camera;
+            if (!camera)
+                return;
             transform.localScale = new Vector3(SceneCamera.Instance.ViewportRect.width, SceneCamera.Instance.ViewportRect.height, 1);
             transform.position = new Vector3(camera.transform.position.x, camera.transform.position.y, transform.position.z);
         }
