@@ -5,18 +5,17 @@ using System.Linq;
 
 public class EntityManager : Singleton<EntityManager>
 {
-    private static List<Entity> Entities = new List<Entity>();
+    public static List<Entity> Entities;
     //public List<Entity> Entities = new List<Entity>();
     // Use this for initialization
     void Start()
     {
-        Entities = Entities.Where(entity => IsInHierarchy(entity)).ToList();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Entities = Entities.Where(entity => IsInHierarchy(entity)).ToList();
+        Entities = Entities.Where(entity => entity).ToList();
     }
 
     public static void RegisterEntity(Entity entity)
@@ -55,6 +54,16 @@ public class EntityManager : Singleton<EntityManager>
 
     public static bool IsInHierarchy(Entity entity)
     {
-        return entity && entity.gameObject.scene != null && entity.gameObject.scene.name != null;
+        return entity 
+            && entity.gameObject
+            && entity.gameObject.scene != null 
+            && entity.gameObject.scene.name != null;
+    }
+
+    public static bool IsPrefab(Entity entity)
+    {
+        return entity
+            && entity.gameObject
+            && (entity.gameObject.scene == null || entity.gameObject.scene.name == null);
     }
 }

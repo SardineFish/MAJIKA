@@ -6,7 +6,6 @@ local levelState = StateReady;
 function start()
     player = scene.entity("Player");
     boss = scene.entity("Boss-1");
-    camera.reset();
     camera.follow(player);
     game.control(player);
     startCoroutine(level);

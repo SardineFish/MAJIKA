@@ -17,11 +17,11 @@ namespace LuaHost
             var entity = EntityManager.FindEntity<GameEntity>(name);
             return entity; 
 
-            return Utility.Times(SceneManager.sceneCount)
-                .SelectMany(i=>SceneManager.GetSceneAt(i).GetRootGameObjects())
-                .Where(obj => obj.name == name)
-                .Select(obj => obj.GetComponent<GameEntity>())
-                .FirstOrDefault();
+            // return Utility.Times(SceneManager.sceneCount)
+            //     .SelectMany(i=>SceneManager.GetSceneAt(i).GetRootGameObjects())
+            //     .Where(obj => obj.name == name)
+            //     .Select(obj => obj.GetComponent<GameEntity>())
+            //     .FirstOrDefault();
             // return GameObject.Find(name).GetComponent<GameEntity>();
         } 
         public GameEntity Spawn(GameObject prefab, string name, Vector2 position)
