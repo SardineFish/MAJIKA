@@ -44,7 +44,7 @@ public class VirtualInputManager : MonoBehaviour
             raycaster.Raycast(data, results);
             //results.ForEach(result => Debug.Log(result.gameObject));
             if (results.Count <= 0)
-                return;
+                continue;
             for (var i = 0; i < buttons.Count; i++)
             {
                 if (buttons[i].gameObject == results[0].gameObject)
