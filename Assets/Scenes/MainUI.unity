@@ -175,7 +175,7 @@ PrefabInstance:
     - target: {fileID: 114642579119781240, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 3}
       propertyPath: TutorialScenePath
-      value: Scenes/Demo-2
+      value: Scenes/Demo-1
       objectReference: {fileID: 0}
     - target: {fileID: 1897780154930036, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
       propertyPath: m_IsActive

@@ -7,8 +7,8 @@ public class Level : Singleton<Level>
 {
     public const string EventFailed = "Failed";
     public const string EventPass = "Pass";
-    public CoveredUI PassUI;
-    public CoveredUI FailedUI;
+    public string PassUIName = "LevelPass";
+    public string FailedUIName = "LevelFailed";
     public string NextScene;
     public List<MonoBehaviour> ActiveAtLoaded = new List<MonoBehaviour>();
     protected void Awake()
@@ -18,8 +18,8 @@ public class Level : Singleton<Level>
     }
     IEnumerator OnLevelPass()
     {
-        PassUI?.ShowAsync();
-        var animator = PassUI.GetComponent<Animator>();
+        CoveredUI.Find(PassUIName)?.ShowAsync();
+        var animator = CoveredUI.Find(FailedUIName)?.GetComponent<Animator>();
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
             yield return null;
@@ -34,8 +34,8 @@ public class Level : Singleton<Level>
     }
     IEnumerator OnLevelFailed()
     {
-        FailedUI?.ShowAsync();
-        var animator = FailedUI.GetComponent<Animator>();
+        CoveredUI.Find(FailedUIName)?.ShowAsync();
+        var animator = CoveredUI.Find(FailedUIName)?.GetComponent<Animator>();
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
             yield return null;

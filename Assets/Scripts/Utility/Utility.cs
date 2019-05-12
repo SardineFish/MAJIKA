@@ -390,6 +390,11 @@ public static class Utility
         }
     }
 
+    public static bool IsInHierarchy(this GameObject gameObject)
+    {
+        return gameObject && gameObject.scene != null && gameObject.scene.name != null;
+    }
+
 }
 
 public enum GenericPlatform
