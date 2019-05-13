@@ -62,5 +62,6 @@
     <string></string>
     <key>UnityCrashSubmissionURL</key>
     <string>https://a:b@perf-events.cloud.unity3d.com/symbolicate</string>
+	<key>ITSAppUsesNonExemptEncryption</key><false/>
   </dict>
 </plist>
