@@ -1,0 +1,4 @@
+[submodule "Build/iOS"]
+	path = Build/iOS
+	url = https://github.com/SardineFish/MAJIKA.git
+	branch = build-iOS

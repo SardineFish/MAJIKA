@@ -1,7 +1,8 @@
 /[Ll]ibrary/
 /[Tt]emp/
 [Oo]bj/
-[Bb]uild/
+[Bb]uild/Android
+[Bb]uild/PC
 [Bb]uilds/
 Assets/AssetStoreTools*
 
