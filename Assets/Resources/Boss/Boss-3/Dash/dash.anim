@@ -66,8 +66,6 @@ AnimationClip:
       value: {fileID: 21300000, guid: 44f3d9a0ecf45c94ba56f81222f33a0f, type: 3}
     - time: 0
       value: {fileID: 21300000, guid: 44f3d9a0ecf45c94ba56f81222f33a0f, type: 3}
-    - time: 0.8
-      value: {fileID: 21300000, guid: 44f3d9a0ecf45c94ba56f81222f33a0f, type: 3}
     attribute: m_Sprite
     path: Renderer
     classID: 212
@@ -105,13 +103,12 @@ AnimationClip:
     - {fileID: 21300016, guid: f92708c0bdf7a7242a77a09927b86e6a, type: 3}
     - {fileID: 21300000, guid: 44f3d9a0ecf45c94ba56f81222f33a0f, type: 3}
     - {fileID: 21300000, guid: 44f3d9a0ecf45c94ba56f81222f33a0f, type: 3}
-    - {fileID: 21300000, guid: 44f3d9a0ecf45c94ba56f81222f33a0f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.85
+    m_StopTime: 0.6
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -214,4 +211,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.6
+    functionName: OnSkillEnd
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.6
+    functionName: OnReleaseLock
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

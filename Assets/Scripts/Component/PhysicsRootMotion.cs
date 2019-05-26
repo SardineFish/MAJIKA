@@ -11,6 +11,7 @@ public class PhysicsRootMotion : MonoBehaviour
     float lastTime = float.MaxValue;
     Vector3 origin = Vector3.zero;
 
+
     private void Start()
     {
         origin = transform.position;    
@@ -18,9 +19,9 @@ public class PhysicsRootMotion : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<MovableEntity>().EnableGravity = !EnableRootMotion;
         if (EnableRootMotion)
         {
+            GetComponent<MovableEntity>().EnableGravity = false;
             started = true;
             GetComponent<MovableEntity>().Frozen = true;
         }
@@ -28,6 +29,7 @@ public class PhysicsRootMotion : MonoBehaviour
         {
             GetComponent<MovableEntity>().Frozen = false;
             started = false;
+            GetComponent<MovableEntity>().ResetDefault();
         }
     }
 

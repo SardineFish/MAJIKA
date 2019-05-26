@@ -1,10 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum DirectionImplement
+{
+    FlipRenderer,
+    FlipRoot
+}
+
 [RequireComponent(typeof(PhysicsRootMotion))]
 [RequireComponent(typeof(Animator))]
 public class AnimationController : EntityBehaviour<GameEntity>
 {
+    public DirectionImplement DirectionImplement = DirectionImplement.FlipRenderer;
     public int Direction = 0;
     public IEnumerator WaitAnimation()
     {
@@ -35,11 +42,20 @@ public class AnimationController : EntityBehaviour<GameEntity>
     {
         GetComponent<PhysicsRootMotion>().EnableRootMotion = false;
         GetComponent<Animator>().runtimeAnimatorController = animator;
-        
-        if (direction > 0)
-            Entity.Renderer.transform.localScale = new Vector3(1, 1, 1);
-        else if (direction < 0)
-            Entity.Renderer.transform.localScale = new Vector3(-1, 1, 1);
+        if(DirectionImplement == DirectionImplement.FlipRenderer)
+        {
+            if (direction > 0)
+                Entity.Renderer.transform.localScale = new Vector3(1, 1, 1);
+            else if (direction < 0)
+                Entity.Renderer.transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (DirectionImplement == DirectionImplement.FlipRoot)
+        {
+            if (direction > 0)
+                Entity.transform.localScale = new Vector3(1, 1, 1);
+            else if (direction < 0)
+                Entity.transform.localScale = new Vector3(-1, 1, 1);
+        }
         this.Direction = MathUtility.SignInt(direction);
     }
     public bool IsEnd()

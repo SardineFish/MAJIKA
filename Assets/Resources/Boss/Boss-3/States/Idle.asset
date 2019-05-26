@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ea02bac1a12b3489c8b23a512e6e94, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: 
+  SoundEffect: {fileID: 0}
+  AnimatorController: {fileID: 9100000, guid: 7dcec4de36c40af489294c708d8ab9b8, type: 2}
+  TriggerName: 
+  MoveState: {fileID: 0}
+  JumpState: {fileID: 0}
+  SkillState: {fileID: 11400000, guid: 5d8fc6b9b78d4e54e9fbf409bcc67f20, type: 2}
+  ClimbState: {fileID: 0}
+  AirState: {fileID: 0}

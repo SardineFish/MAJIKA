@@ -25,15 +25,33 @@ public class MovableEntity : MonoBehaviour
 
     private Vector2 movementvelocity;
     private Vector2 forceVelocity;
-    
+
+    bool initialGravity;
+    float initialMaxMoveSpeed;
+    float initialMaxClimbSpeed;
+
+    private void Start()
+    {
+        initialGravity = EnableGravity;
+        initialMaxMoveSpeed = MaxMoveSpeed;
+        initialMaxClimbSpeed = MaxClimbSpeed;
+    }
+
+    public void ResetDefault()
+    {
+        EnableGravity = initialGravity;
+        MaxMoveSpeed = initialMaxMoveSpeed;
+        MaxClimbSpeed = initialMaxClimbSpeed;
+
+    }
 
     public bool Jump()
     {
         if (Frozen)
             return false;
-        EnableGravity = true;
         if (jumpCount-- > 0)
         {
+            EnableGravity = true;
             forceVelocity.y = PhysicsSystem.Instance.JumpVelocoty;
             return true;
         }
