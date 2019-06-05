@@ -10,14 +10,80 @@ SkillFeatherBarrier = 3;
 Left = -1;
 Right = 1;
 
+states = {
+    ["UpLeft"] = {
+        name = "up left",
+        skills = {
+            {
+                skill = SkillDash,
+                dir = Right,
+                prob = 0.333,
+                transit = "UpRight",
+            },
+            {
+                skill = SkillFeatherBarrier,
+                dir = Right,
+                prob = 0.333,
+            },
+            {
+                skill = SkillDive,
+                dir = Right,
+                prob = 0.333,
+                transit = "Center"
+            }
+        }
+    },
+    ["UpRight"] = {
+        name = "up right",
+        skills = {
+            {
+                skill = SkillDash,
+                dir = Left,
+                prob = 0.333,
+                transit = "UpLeft"
+            },
+            {
+                skill = SkillFeatherBarrier,
+                dir = Left,
+                prob = 0.333,
+            },
+            {
+                skill = SkillDive,
+                dir = Left,
+                prob = 0.333,
+                transit = "Center",
+            }
+        }
+    },
+    ["Center"] = {
+        name = "center",
+        skills = {
+            {
+                skill = SkillSliceScreen,
+                dir = Right,
+                prob = 1,
+                func = function()
+                    entity.position = posA - (posC - posA)
+                    entity.skill(SkillDive, Right)
+                    coroutine.yield(entity.wait("skill", _host))
+                end,
+                transit = "UpLeft"
+            }
+        }
+    }
+}
+fsm = SimpleStateMachine.new(states, 1)
+
 function start()
     entity.position = posA
+    fsm.start("UpLeft")    
     --startCoroutine(stage1UpLeft)
 end
 
 function changeState(func)
     startCoroutine(func)
 end
+
 
 function stage1UpLeft()
     coroutine.yield(nil)
