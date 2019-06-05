@@ -11,7 +11,7 @@ public class Skill : EntityBehaviour<GameEntity>
 {
     public RuntimeAnimatorController AnimatorController;
     public AudioClip AudioEffect;
-    public bool LockAction = false;
+    public bool LockAction = true;
     public float ReleaseRadius;
     public Vector3 ReleaseOffset;
     public float CoolDown = 1;

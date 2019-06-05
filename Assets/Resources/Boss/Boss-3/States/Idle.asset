@@ -15,7 +15,7 @@ MonoBehaviour:
   SoundEffect: {fileID: 0}
   AnimatorController: {fileID: 9100000, guid: 7dcec4de36c40af489294c708d8ab9b8, type: 2}
   TriggerName: 
-  MoveState: {fileID: 0}
+  MoveState: {fileID: 11400000, guid: 4b671055b905992478c6859954cb84bf, type: 2}
   JumpState: {fileID: 0}
   SkillState: {fileID: 11400000, guid: 5d8fc6b9b78d4e54e9fbf409bcc67f20, type: 2}
   ClimbState: {fileID: 0}

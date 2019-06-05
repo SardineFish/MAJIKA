@@ -16,4 +16,4 @@ MonoBehaviour:
   AnimatorController: {fileID: 0}
   TriggerName: 
   JumpState: {fileID: 0}
-  IdleState: {fileID: 0}
+  IdleState: {fileID: 11400000, guid: 2a12bab675a27a442849b60160332fd0, type: 2}

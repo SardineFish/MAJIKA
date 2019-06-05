@@ -8,4 +8,4 @@ PhysicsMaterial2D:
   m_PrefabAsset: {fileID: 0}
   m_Name: Slop
   friction: 1
-  bounciness: 2.69
+  bounciness: 0
