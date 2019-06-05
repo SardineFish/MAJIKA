@@ -10,6 +10,11 @@ public class EventResponsor : MonoBehaviour
 
     private List<EventListenerBase> listeners = new List<EventListenerBase>();
 
+    private void Reset()
+    {
+        EventBus = GetComponent<EventBus>();
+    }
+
     private void Awake()
     {
         if (!EventBus)

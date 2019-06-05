@@ -50,7 +50,6 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 8.8
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  Direction: 0
   CoolDown: 0.4
   Locked: 0
   Ready: 0
@@ -90,8 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1676269367063300, guid: 4031e06109f8fe94596cb3e7a782fc11, type: 3}
+  SpawnType: 1
   SpawnOffset: {x: 8.8125, y: 8.75}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 1
   AdditionalEffect: []

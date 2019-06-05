@@ -11,7 +11,7 @@ Right = 1;
 
 function start()
     entity.position = posA
-    startCoroutine(stage1UpLeft)
+    --startCoroutine(stage1UpLeft)
 end
 
 function changeState(func)

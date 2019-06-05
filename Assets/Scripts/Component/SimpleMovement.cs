@@ -14,6 +14,11 @@ public class SimpleMovement : MonoBehaviour
 
     private Vector2 currentVelocity;
 
+    void Start()
+    {
+        currentVelocity = Velocity;   
+    }
+
     void Update()
     {
         /*var rigidbody = GetComponent<Rigidbody2D>();
