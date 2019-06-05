@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class EventBus : MonoBehaviour
 {
+    public object[] CurrentArgs;
+    public string CurrentEvent;
     private readonly Dictionary<string, List<EventListenerBase>> Listeners = new Dictionary<string, List<EventListenerBase>>();
 
     public EventBus()
@@ -51,6 +53,9 @@ public class EventBus : MonoBehaviour
     }
     public void Dispatch(string eventName,params object[] args)
     {
+        CurrentArgs = args;
+        CurrentEvent = eventName;
+
         if(Listeners.ContainsKey(eventName))
         {
             Listeners[eventName].ForEach(listener => listener.Invoke(args));
@@ -61,14 +66,9 @@ public class EventBus : MonoBehaviour
                     Listeners[eventName].RemoveAt(i--);
                 }
             }
-            //Listeners[eventName].ForEach(listener => listener.Method.Invoke(listener.Object, args));
-            /*try
-            {
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError(ex.Message);
-            }*/
         }
+
+        CurrentArgs = null;
+        CurrentEvent = null;
     }
 }

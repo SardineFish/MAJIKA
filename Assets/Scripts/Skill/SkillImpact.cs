@@ -37,13 +37,14 @@ public class SkillImpact : Entity
 {
     public const int DamageLayerMask = 1 << 14;
     public const string EventDeactivate = "Deactivate";
+    public const string EventHit = "Hit";
     public ImpactType ImpactType;
     public ImpactDirection ImpactDirection;
     public bool Continuous = false;
     public ImpactLifeCycle ImpactLifeCycle = ImpactLifeCycle.Manual;
     public float LifeTime = -1;
-    [SerializeField]
     public float FireRange = -1;
+    public bool EntityOnly = true;
     public bool IgnoreCreator = true;
     public GameObject NextImpact;
     [HideInInspector]
@@ -60,9 +61,7 @@ public class SkillImpact : Entity
         base.Update();
         if (Continuous)
         {
-            //Debug.Log(impactedList.Count);
             impactedList.ForEach(ApplyDamage);
-            //impactedList.Clear();
         }
     }
 
@@ -136,31 +135,36 @@ public class SkillImpact : Entity
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Don't need collider
+        if (Active == false || ImpactType == ImpactType.OnEntity)
+            return;
+
         var entity = GameEntity.GetEntity(collision);
-        if (!entity)
-            return;
-        if (IgnoreCreator && entity == Creator)
-            return;
-        if (Active == false)
-            return;
-        if (ImpactType == ImpactType.OnEntity)
-            return;
-
-        if (impactedList.Contains(entity))
-            return;
-
-        if (ImpactLifeCycle == ImpactLifeCycle.DestructOnHit)
-            Deactivate();
-
-        if (Continuous)
+        // Interaction with entity
+        if (entity)
         {
+            if (IgnoreCreator && entity == Creator)
+                return;
+            else if (impactedList.Contains(entity))
+                return;
+
             impactedList.Add(entity);
+            // Apply damage immediately
+            if (!Continuous)
+                ApplyDamage(entity);
+        }
+        // Interaction with non-entity
+        else if (!EntityOnly)
+        {
+
         }
         else
-        {
-            impactedList.Add(entity);
-            ApplyDamage(entity);
-        }
+            return;
+
+
+        GetComponent<EventBus>().Dispatch(EventHit, collision.gameObject, entity);
+        if (ImpactLifeCycle == ImpactLifeCycle.DestructOnHit)
+            Deactivate();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -172,6 +176,7 @@ public class SkillImpact : Entity
         }
     }
 
+    /*
     private void OnTriggerStay2D(Collider2D collision)
     {
         var entity = GameEntity.GetEntity(collision);
@@ -199,7 +204,7 @@ public class SkillImpact : Entity
             impactedList.Add(entity);
             ApplyDamage(entity);
         }
-    }
+    }*/
 
     IEnumerator DropAttackCoroutine(float targetHeight)
     {

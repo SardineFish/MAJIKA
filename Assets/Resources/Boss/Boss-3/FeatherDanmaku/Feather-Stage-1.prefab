@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 7995869736342031919}
   - component: {fileID: 6578860256110799940}
   - component: {fileID: 1375643734726760800}
-  - component: {fileID: 1720373020095370069}
   m_Layer: 0
   m_Name: Feather
   m_TagString: Untagged
@@ -125,7 +124,7 @@ MonoBehaviour:
   ImpactType: 1
   ImpactDirection: 3
   Continuous: 0
-  ImpactLifeCycle: 1
+  ImpactLifeCycle: 2
   LifeTime: -1
   FireRange: 100
   EntityOnly: 0
@@ -191,8 +190,12 @@ MonoBehaviour:
     Targets:
     - ComponentName: SelfDestructor
       MethodName: Destruct
-    - ComponentName: Spawner
-      MethodName: Spawn
+  - Event: Hit
+    Targets:
+    - ComponentName: TransformBinding
+      MethodName: BindFromEvent
+    - ComponentName: SimpleMovement
+      MethodName: Stop
 --- !u!114 &6578860256110799940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,19 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
---- !u!114 &1720373020095370069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6078980646003974180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4709785e826a1340ba7c4b4fba537d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Prefab: {fileID: 1649108897510488, guid: 87cbbd9f1b9629241b5c78fff55076fb, type: 3}
 --- !u!1 &6078980647753264660
 GameObject:
   m_ObjectHideFlags: 0

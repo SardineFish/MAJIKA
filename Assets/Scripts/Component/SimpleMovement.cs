@@ -51,6 +51,13 @@ public class SimpleMovement : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = transform.localToWorldMatrix.MultiplyVector(currentVelocity);
     }
 
+    public void Stop()
+    {
+        Moving = false;
+        currentVelocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
     public IEnumerator MoveTo(Vector2 position, Func<bool> arrived)
     {
         controlByCoroutine = true;

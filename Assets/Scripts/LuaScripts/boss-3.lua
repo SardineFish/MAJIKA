@@ -5,6 +5,7 @@ posC = vec2(43, 11);
 SkillDash = 0;
 SkillDive = 1;
 SkillSliceScreen = 2;
+SkillFeatherBarrier = 3;
 
 Left = -1;
 Right = 1;
