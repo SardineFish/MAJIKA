@@ -6,24 +6,29 @@ public class MovableEntity : MonoBehaviour
 {
     public const string ClimbAreaTag = "ClimbArea";
     //public bool Fly = false;
+    public bool PhysicalControl = false;
     public bool OnGround = false;
     public bool InClimbArea = false;
     public bool EnableGravity = true;
     public bool Frozen = false;
     public float FaceDirection = 1;
+
     public float MaxMoveSpeed = 10;
+
     public float MaxClimbSpeed = 10;
     public float JumpHeight = 5;
     public int MaxJumpCount = 1;
 
     public int jumpCount = 0;
-    public Vector2 velocity;
 
     public GameObject AvailableClimbArea;
 
-
-
+    [ReadOnly]
+    [HideInInspector]
+    public Vector2 velocity;
+    [ReadOnly]
     private Vector2 movementvelocity;
+    [ReadOnly]
     private Vector2 forceVelocity;
 
     bool initialGravity;

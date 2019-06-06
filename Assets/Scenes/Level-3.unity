@@ -18017,22 +18017,22 @@ PrefabInstance:
     - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -94.08
+      value: -175.616
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -196.16
+      value: -359.232
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: -414.3199
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -16.000244
+      value: -844.64026
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b9034704dde6e4ea609d575faa4738, type: 3}
@@ -18362,6 +18362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf14aec0873b154089722d62bec0ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PhysicalControl: 0
   OnGround: 0
   InClimbArea: 0
   EnableGravity: 0
@@ -18372,8 +18373,8 @@ MonoBehaviour:
   JumpHeight: 5
   MaxJumpCount: 1
   jumpCount: 0
-  velocity: {x: 0, y: 0}
   AvailableClimbArea: {fileID: 0}
+  velocity: {x: 0, y: 0}
 --- !u!1 &6355838551474159856
 GameObject:
   m_ObjectHideFlags: 0
