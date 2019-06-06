@@ -133,7 +133,15 @@ public class SkillImpact : Entity
         Deactivate();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    // For continuous damage
+    private void OnTriggerEnter2D(Collider2D collision) 
+        => HandleCollide(collision);
+
+    // For manually activate
+    private void OnTriggerStay2D(Collider2D collision) 
+        => HandleCollide(collision);
+
+    void HandleCollide(Collider2D collision)
     {
         // Don't need collider
         if (Active == false || ImpactType == ImpactType.OnEntity)
@@ -224,6 +232,7 @@ public class SkillImpact : Entity
     public void StartImpact()
     {
         Active = true;
+        impactedList.ForEach(entity => ApplyDamage(entity));
         if (ImpactType == ImpactType.OnEntity)
         {
             ApplyDamage(Creator);

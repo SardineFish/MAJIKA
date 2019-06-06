@@ -420,6 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd63b462113c1142b95bae8f03ea7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentEvent: 
 --- !u!114 &6795263824424542855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a25b944a2485648afc3b8adbc9c8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DirectionImplement: 0
   Direction: 0
 --- !u!114 &6795263824424542849
 MonoBehaviour:
@@ -702,7 +704,7 @@ GameObject:
   - component: {fileID: 6795263826330939480}
   - component: {fileID: 6795263826330939462}
   - component: {fileID: 5708043946867162805}
-  m_Layer: 14
+  m_Layer: 10
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

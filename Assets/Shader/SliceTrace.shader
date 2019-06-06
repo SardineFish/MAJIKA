@@ -62,6 +62,8 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 uv = 1 - abs(i.uv * 2 - 1);
+                uv.y -= 1 - uv.x;
+                uv.y = saturate(uv.y);
                 fixed4 color = fixed4(1, 1, 1, pow(uv.y, 3));
                 color *= i.color;
                 color.rgb *= color.a;

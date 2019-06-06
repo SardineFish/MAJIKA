@@ -13619,6 +13619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd63b462113c1142b95bae8f03ea7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentEvent: 
 --- !u!114 &1399220249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14649,6 +14650,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 361338555447679905, guid: 1249514862bf0bf4384153ca7c38bbbd,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 632822f7f53f9ee4c9b6cf58b0175ad6, type: 2}
+    - target: {fileID: 361338555622373903, guid: 1249514862bf0bf4384153ca7c38bbbd,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 10.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 361338555622373903, guid: 1249514862bf0bf4384153ca7c38bbbd,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 361338553751984611, guid: 1249514862bf0bf4384153ca7c38bbbd,
         type: 3}
       propertyPath: m_Sprite
@@ -14733,20 +14749,5 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b,
         type: 2}
-    - target: {fileID: 361338555447679905, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 632822f7f53f9ee4c9b6cf58b0175ad6, type: 2}
-    - target: {fileID: 361338555622373903, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 10.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 361338555622373903, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1249514862bf0bf4384153ca7c38bbbd, type: 3}

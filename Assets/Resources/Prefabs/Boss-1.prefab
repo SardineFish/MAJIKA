@@ -137,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361338553608423777}
   - component: {fileID: 361338553608423807}
-  m_Layer: 14
+  m_Layer: 10
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -387,6 +387,7 @@ MonoBehaviour:
   EmptySkill: {fileID: 0}
   Skills: []
   ActiveSkill: {fileID: 0}
+  TargetEntity: {fileID: 0}
 --- !u!114 &361338555447679909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd63b462113c1142b95bae8f03ea7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentEvent: 
 --- !u!114 &361338555447679934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +508,7 @@ MonoBehaviour:
   Jumped: 0
   Climbed: 0
   SkillIndex: -1
+  SkillTarget: {fileID: 0}
 --- !u!114 &361338555447679904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a25b944a2485648afc3b8adbc9c8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DirectionImplement: 0
   Direction: 0
 --- !u!114 &361338555447679928
 MonoBehaviour:
@@ -827,7 +831,6 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  Direction: 0
   CoolDown: 1
   Locked: 0
   Ready: 0
@@ -846,10 +849,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 8209641911087812931, guid: 93d54dfbb33770a4989732b562d96f98, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 1.5, y: 4.5}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
     Strength: 10
@@ -857,6 +863,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!114 &3224671904013440685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,10 +877,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 8209641911087812931, guid: 93d54dfbb33770a4989732b562d96f98, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 1.5, y: 4.5}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
     Strength: 10
@@ -881,6 +891,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!114 &7370573971470784213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,10 +905,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 8209641911087812931, guid: 93d54dfbb33770a4989732b562d96f98, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 1.5, y: 4.5}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
     Strength: 10
@@ -905,6 +919,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!114 &5665454223971375577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,10 +933,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 8209641911087812931, guid: 93d54dfbb33770a4989732b562d96f98, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 1.5, y: 4.5}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
     Strength: 10
@@ -929,6 +947,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!1 &8835563813168560369
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +998,6 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  Direction: 0
   CoolDown: 1
   Locked: 0
   Ready: 0
@@ -998,10 +1016,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1874614879033618, guid: ff1ec5e8494de5d4cb353b9ae2e82b97, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 2.375, y: 0}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
     Strength: 10
@@ -1009,6 +1030,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!114 &8835563813168560334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1022,10 +1044,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1874614879033618, guid: dec6486f3fd44be46adbf0b913095dad, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 0.125, y: 4.375}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
     Strength: 30
@@ -1039,6 +1064,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!1 &8835563813183002652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1114,6 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  Direction: 0
   CoolDown: 1
   Locked: 0
   Ready: 0
@@ -1107,10 +1132,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1874614879033618, guid: acbbf120b097966429e52eb7dab5d58f, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 3.0625, y: 0}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
     Strength: 30
@@ -1124,6 +1152,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!1 &8835563813519582205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1204,6 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  Direction: 0
   CoolDown: 1
   Locked: 0
   Ready: 0
@@ -1194,10 +1222,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1874614879033618, guid: ff1ec5e8494de5d4cb353b9ae2e82b97, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 2.375, y: 0}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
     Strength: 10
@@ -1205,6 +1236,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!114 &8835563813519582203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,10 +1250,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1874614879033618, guid: f885396d21a80a94c9048c612d26cbf1, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 0.375, y: 4.8125}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 951b64ecb89d65642972b537ff4b98bd, type: 2}
     Strength: 20
@@ -1229,6 +1264,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!114 &8835563813519582201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,10 +1278,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1874614879033618, guid: dde4e03a5ecd913448d1a8f6e371c14a, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 0.875, y: 4.4375}
   TimeOffset: 0
   Instance: {fileID: 0}
-  SpawnOnGround: 0
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 951b64ecb89d65642972b537ff4b98bd, type: 2}
     Strength: 20
@@ -1253,6 +1292,7 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
 --- !u!1001 &361338555014703582
 PrefabInstance:
   m_ObjectHideFlags: 0

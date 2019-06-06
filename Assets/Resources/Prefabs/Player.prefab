@@ -387,6 +387,7 @@ MonoBehaviour:
     type: 3}
   Skills: []
   ActiveSkill: {fileID: 0}
+  TargetEntity: {fileID: 0}
 --- !u!95 &95401749329384152
 Animator:
   serializedVersion: 3
@@ -443,6 +444,7 @@ MonoBehaviour:
   Jumped: 0
   Climbed: 0
   SkillIndex: -1
+  SkillTarget: {fileID: 0}
 --- !u!50 &50102132844438088
 Rigidbody2D:
   serializedVersion: 4
@@ -490,6 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a25b944a2485648afc3b8adbc9c8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DirectionImplement: 0
   Direction: 0
 --- !u!114 &114356481816643768
 MonoBehaviour:
@@ -503,6 +506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd63b462113c1142b95bae8f03ea7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentEvent: 
 --- !u!114 &114434014480466924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,7 +695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4081161878066798}
   - component: {fileID: 70426402373812074}
-  m_Layer: 14
+  m_Layer: 10
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

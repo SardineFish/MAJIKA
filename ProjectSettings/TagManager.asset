@@ -17,12 +17,12 @@ TagManager:
   - 
   - Platform
   - SolidCollider
-  - FootCollider
+  - BodyDamage
   - BodyCollider
-  - CameraCollider
-  - MapEdge
-  - Damage
-  - Barrier
+  - Camera
+  - CameraBoundary
+  - SkillImpact
+  - Shield
   - Other
   - PostProcess
   - DropedItem
