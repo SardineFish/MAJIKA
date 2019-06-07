@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 using UnityEditor;
 using System.Reflection;
-using UnityEngine.Experimental.Input;
+using UnityEngine.InputSystem;
 /*
 namespace Assets.Editor
 {

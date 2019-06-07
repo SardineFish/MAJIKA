@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Experimental.Input;
-using UnityEngine.Experimental.Input.Controls;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public static class InputUtility
 {

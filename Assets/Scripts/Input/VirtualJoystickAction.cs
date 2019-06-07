@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Experimental.Input.Plugins.OnScreen;
+using UnityEngine.InputSystem.Plugins.OnScreen;
 
 public class VirtualJoystickAction : OnScreenActionControl
 {

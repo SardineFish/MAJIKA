@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Experimental.Input;
+using UnityEngine.InputSystem;
 using System.Linq;
 
 public class InputManager : Singleton<InputManager>
@@ -11,6 +11,11 @@ public class InputManager : Singleton<InputManager>
     }
     [Tooltip("Input action assets")]
     public MAJIKAInput Controller;
+
+    private void Awake()
+    {
+        Controller = new MAJIKAInput();
+    }
 
     public MAJIKAInput.ActionsActions Actions => Controller.Actions;
 

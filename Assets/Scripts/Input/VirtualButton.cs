@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Experimental.Input.Plugins.OnScreen;
+using UnityEngine.InputSystem.Plugins.OnScreen;
 using UnityEngine.EventSystems;
-using UnityEngine.Experimental.Input;
+using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.UI;

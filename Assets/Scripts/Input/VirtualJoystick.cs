@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Experimental.Input.Plugins.OnScreen;
+using UnityEngine.InputSystem.Plugins.OnScreen;
 
 
 public class VirtualJoystick : OnScreenControl
 {
     VariableJoystick joystick;
+    protected override string controlPathInternal { get; set; }
 
     private void Start()
     {

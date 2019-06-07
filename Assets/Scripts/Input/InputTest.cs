@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Experimental.Input;
+using UnityEngine.InputSystem;
 
 public class InputTest : MonoBehaviour
 {

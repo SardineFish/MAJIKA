@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Experimental.Input.Plugins.OnScreen;
+using UnityEngine.InputSystem.Plugins.OnScreen;
 using System.Collections.Generic;
-using UnityEngine.Experimental.Input;
+using UnityEngine.InputSystem;
 using System.Linq;
 
 public enum ActionBind
@@ -20,6 +20,14 @@ public class OnScreenActionControl : OnScreenControl
 {
     public ActionBind ActionBind;
     Dictionary<ActionBind, InputAction> dict = new Dictionary<ActionBind, InputAction>();
+
+    private string _controlPath;
+    protected override string controlPathInternal
+    {
+        get => _controlPath;
+        set => _controlPath = value;
+    }
+
     protected virtual void OnEnable()
     {
         dict[ActionBind.Jump] = InputManager.Instance.GamePlay.Jump;

@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
-using UnityEngine.Experimental.Input;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(GraphicRaycaster))]
 public class VirtualInputManager : MonoBehaviour

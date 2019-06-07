@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Experimental.Input;
+using UnityEngine.InputSystem;
 
-public class EntityInputPlugin : ControllerPlugin, IGamePlayActions
+public class EntityInputPlugin : ControllerPlugin, MAJIKAInput.IGamePlayActions
 {
     private MAJIKAInput inputAsset;
     bool climb = false;
@@ -12,8 +12,7 @@ public class EntityInputPlugin : ControllerPlugin, IGamePlayActions
 
     private void OnEnable()
     {
-        inputAsset = InputManager.Instance.Controller.Clone() as MAJIKAInput;
-        inputAsset.MakePrivateCopyOfActions();
+        inputAsset = new MAJIKAInput();
         inputAsset.GamePlay.SetCallbacks(this);
         inputAsset.Enable();
     }

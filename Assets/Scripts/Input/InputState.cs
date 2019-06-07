@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEngine.Experimental.Input;
+using UnityEngine.InputSystem;
 
 public class InputState
 {
@@ -40,7 +40,7 @@ public class InputState
             FixedUpdatePhaseBuffer.Value = PhaseBuffer.Value = UpdatePhaseTrack.Value = FixedUpdatePhaseTrack.Value = InputActionPhase.Performed;
             ctxUpdate.Value = ctxFixedUpdate.Value = ctxLast.Value = ctx;
         };
-        action.cancelled += ctx =>
+        action.canceled += ctx =>
         {
             FixedUpdatePhaseBuffer.Value = PhaseBuffer.Value = UpdatePhaseTrack.Value = FixedUpdatePhaseTrack.Value = InputActionPhase.Performed;
             ctxUpdate.Value = ctxFixedUpdate.Value = ctxLast.Value = ctx;
