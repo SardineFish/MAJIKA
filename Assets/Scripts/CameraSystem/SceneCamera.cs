@@ -18,7 +18,7 @@ public class SceneCamera : Singleton<SceneCamera>
 
     private void Reset()
     {
-        Camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        Camera = GameObject.FindGameObjectWithTag("MainCamera")?.GetComponent<Camera>();
         UpdateViewPort();
     }
     private void OnEnable()
@@ -34,6 +34,8 @@ public class SceneCamera : Singleton<SceneCamera>
 
     private void Update()
     {
+        if (!Camera)
+            return;
         UpdateViewPort();
         if(!Application.isPlaying)
         {
@@ -70,6 +72,8 @@ public class SceneCamera : Singleton<SceneCamera>
 
     void UpdateViewPort()
     {
+        if (!Camera)
+            return;
         var origin = Camera.ViewportToWorldPoint(Vector3.zero);
         var corner = Camera.ViewportToWorldPoint(new Vector3(1, 1, 0));
         ViewportRect = new Rect(Camera.ViewportToWorldPoint(Vector3.zero), corner - origin);
