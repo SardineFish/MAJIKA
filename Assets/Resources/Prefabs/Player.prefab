@@ -288,8 +288,6 @@ GameObject:
   - component: {fileID: 114701006908116634}
   - component: {fileID: 114098448852098718}
   - component: {fileID: 6601401655735286485}
-  - component: {fileID: 114727486404280084}
-  - component: {fileID: 114292331963863756}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -346,18 +344,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf14aec0873b154089722d62bec0ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PhysicalControl: 0
   OnGround: 0
   InClimbArea: 0
   EnableGravity: 1
   Frozen: 0
   FaceDirection: 1
+  MaxMoveForce: 30
   MaxMoveSpeed: 10
   MaxClimbSpeed: 10
-  JumpHeight: 5
   MaxJumpCount: 1
   jumpCount: 0
-  velocity: {x: 0, y: 0}
   AvailableClimbArea: {fileID: 0}
+  velocity: {x: 0, y: 0}
 --- !u!114 &114761703565141142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,30 +559,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayClip: {fileID: 0}
---- !u!114 &114727486404280084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373393434984044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 904a28cfe6cdca3419da8e42e2ae7d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114292331963863756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373393434984044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 904a28cfe6cdca3419da8e42e2ae7d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1385408004206328
 GameObject:
   m_ObjectHideFlags: 0

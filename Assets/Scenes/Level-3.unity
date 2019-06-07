@@ -1012,9 +1012,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114292331963863756, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
-    - {fileID: 114727486404280084, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
+    - target: {fileID: 2124639345246176885, guid: 30f9432304a8b7c4fa5ded22c7605df6,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 37c45d6f508ef934fa923aa530a46d98, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
 --- !u!1 &632904107
 GameObject:
@@ -18368,9 +18371,9 @@ MonoBehaviour:
   EnableGravity: 0
   Frozen: 0
   FaceDirection: 1
+  MaxMoveForce: 5
   MaxMoveSpeed: 0.001
   MaxClimbSpeed: 0
-  JumpHeight: 5
   MaxJumpCount: 1
   jumpCount: 0
   AvailableClimbArea: {fileID: 0}

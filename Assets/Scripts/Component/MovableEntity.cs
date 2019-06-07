@@ -13,10 +13,9 @@ public class MovableEntity : MonoBehaviour
     public bool Frozen = false;
     public float FaceDirection = 1;
 
+    public float MaxMoveForce = 30;
     public float MaxMoveSpeed = 10;
-
     public float MaxClimbSpeed = 10;
-    public float JumpHeight = 5;
     public int MaxJumpCount = 1;
 
     public int jumpCount = 0;
@@ -27,9 +26,14 @@ public class MovableEntity : MonoBehaviour
     [HideInInspector]
     public Vector2 velocity;
     [ReadOnly]
-    private Vector2 movementvelocity;
+    private Vector2 controledMovement;
     [ReadOnly]
     private Vector2 forceVelocity;
+    [ReadOnly]
+    private float climbSpeed;
+    [ReadOnly]
+    private Vector2 groundNormal;
+    private Vector2 groundTangent;
 
     bool initialGravity;
     float initialMaxMoveSpeed;
@@ -68,7 +72,7 @@ public class MovableEntity : MonoBehaviour
     {
         if (Frozen)
             return false;
-        movementvelocity = movement * MaxMoveSpeed;
+        controledMovement = movement;
         return true;
     }
 
@@ -90,14 +94,14 @@ public class MovableEntity : MonoBehaviour
         velocity = v;
         Debug.Log(GetComponent<Rigidbody2D>().velocity);
     }
-
-    public bool Climb(float speed)
+     
+    public bool Climb(float normalizedSpeed)
     {
         if (!InClimbArea)
             return false;
         jumpCount = MaxJumpCount;
         transform.position = transform.position.Set(x: AvailableClimbArea.transform.position.x);
-        movementvelocity = new Vector2(0, speed * MaxClimbSpeed);
+        climbSpeed = normalizedSpeed * MaxClimbSpeed;
         EnableGravity = false;
         return true;
     }
@@ -116,49 +120,86 @@ public class MovableEntity : MonoBehaviour
             return;
         if (Frozen)
             return;
-
         FaceDirection = velocity.x == 0 ? FaceDirection : Mathf.Sign(velocity.x);
-        if (EnableGravity)
+        if (PhysicalControl)
         {
-            GetComponent<Rigidbody2D>().gravityScale = 1;
-            var v = GetComponent<Rigidbody2D>().velocity;
-            v.x = 0;
-            v += movementvelocity;
-            if (Mathf.Abs(forceVelocity.y) > 0)
-                v.y = forceVelocity.y;
-            if (Mathf.Abs(forceVelocity.x) > 0)
-                v.x = forceVelocity.x;
-
-            GetComponent<Rigidbody2D>().velocity = v;
-            velocity = v;
-            forceVelocity = Vector2.zero;
-            movementvelocity = Vector2.zero;
+            var rigidbody = GetComponent<Rigidbody2D>();
+            rigidbody.gravityScale = EnableGravity ? 1 : 0;
+            velocity = rigidbody.velocity;
+            if (!Mathf.Approximately(forceVelocity.x, 0))
+                velocity.x = forceVelocity.x;
+            if (!Mathf.Approximately(forceVelocity.y, 0))
+                velocity.y = forceVelocity.y;
+            rigidbody.velocity = velocity;
+            var force = groundTangent * controledMovement + groundNormal * controledMovement.y;
+            force *= MaxMoveForce;
+            rigidbody.AddForce(force);
+            velocity = rigidbody.velocity;
+            velocity.x = Mathf.Clamp(velocity.x, -MaxMoveSpeed, MaxMoveSpeed);
+            rigidbody.velocity = velocity;
         }
         else
         {
-            GetComponent<Rigidbody2D>().gravityScale = 0;
-            var v = movementvelocity;
-            /*if (additionalVelocity.y > 0)
-                v.y = additionalVelocity.y;*/
-            if (Mathf.Abs(forceVelocity.y) > 0)
-                v.y = forceVelocity.y;
-            if (Mathf.Abs(forceVelocity.x) > 0)
-                v.x = forceVelocity.x;
+            if (EnableGravity)
+            {
+                GetComponent<Rigidbody2D>().gravityScale = 1;
+                var v = GetComponent<Rigidbody2D>().velocity;
+                // Transform to ground coordinate & apply controls
+                v = new Vector2(Vector2.Dot(v, groundTangent), Vector2.Dot(v, groundNormal));
+                v.x = 0;
+                v += controledMovement * MaxMoveSpeed;
+                // Transfrom back to world coordinate
+                v = v.x * groundTangent + v.y * groundNormal;
 
-            GetComponent<Rigidbody2D>().velocity = v;
-            velocity = v;
-            forceVelocity = Vector2.zero;
-            movementvelocity = Vector2.zero;
+                if (Mathf.Abs(forceVelocity.y) > 0)
+                    v.y = forceVelocity.y;
+                if (Mathf.Abs(forceVelocity.x) > 0)
+                    v.x = forceVelocity.x;
+
+                GetComponent<Rigidbody2D>().velocity = v;
+                velocity = v;
+                forceVelocity = Vector2.zero;
+                Debug.DrawLine(transform.position, transform.position + velocity.ToVector3(), Color.cyan);
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().gravityScale = 0;
+                // Use ground coordinate to apply controls
+                var v = controledMovement * MaxMoveSpeed;
+                v = v.x * groundTangent + v.y * groundNormal;
+                /*if (additionalVelocity.y > 0)
+                    v.y = additionalVelocity.y;*/
+                if (Mathf.Abs(forceVelocity.y) > 0)
+                    v.y = forceVelocity.y;
+                if (Mathf.Abs(forceVelocity.x) > 0)
+                    v.x = forceVelocity.x;
+
+                GetComponent<Rigidbody2D>().velocity = v;
+                velocity = v;
+                forceVelocity = Vector2.zero;
+            }
         }
+        climbSpeed = 0;
+        forceVelocity = Vector2.zero;
+        controledMovement = Vector2.zero;
     }
     private void FixedUpdate()
     {
         OnGround = false;
         InClimbArea = false;
         AvailableClimbArea = null;
+        SetGroundNormal(Vector2.up);
 
         GetComponent<Rigidbody2D>().gravityScale = EnableGravity ? 1 : 0;
 
+    }
+
+    private void SetGroundNormal(Vector2 normal)
+    {
+        groundNormal = normal.normalized;
+        groundTangent = Vector3.Cross(groundNormal.ToVector3(), Vector3.forward).ToVector2().normalized;
+        Debug.DrawLine(transform.position, transform.position + groundNormal.ToVector3(), Color.green);
+        Debug.DrawLine(transform.position, transform.position + groundTangent.ToVector3(), Color.red);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -174,11 +215,13 @@ public class MovableEntity : MonoBehaviour
                 && Mathf.Abs(localPoint.y) <= PhysicsSystem.Instance.OnGroundThreshold 
                 && contract.relativeVelocity.y >= 0)
             {
+                SetGroundNormal(contract.normal);
                 jumpCount = MaxJumpCount;
                 OnGround = true;
             }
             else if (dot < 1 && Mathf.Abs(localPoint.y) <= 2 * PhysicsSystem.Instance.OnGroundThreshold && contract.normalImpulse >= 0)
             {
+                SetGroundNormal(contract.normal);
                 jumpCount = MaxJumpCount;
                 OnGround = true;
             }
