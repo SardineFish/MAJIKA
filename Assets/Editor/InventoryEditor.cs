@@ -18,24 +18,16 @@ namespace Assets.Editor
             base.OnInspectorGUI();
 
             var inventory = target as Inventory.Inventory;
-            bool edited = false;
             inventory.Slots = EditorUtilities.DrawArray("Slots", inventory.Slots, (slot) =>
             {
                 EditorUtilities.Horizontal(() =>
                 {
-                    Item item = EditorGUILayout.ObjectField(slot.Item, typeof(Item), true) as Item;
-                    if (slot.Item != item)
-                        edited = true;
-                    slot.Item = item;
-                    var amount = EditorGUILayout.IntField(slot.Amount);
-                    if (amount != slot.Amount)
-                        edited = true;
-                    slot.Amount = amount;
+                    slot.Item = EditorGUILayout.ObjectField(slot.Item, typeof(Item), true) as Item; 
+                    slot.Amount = EditorGUILayout.IntField(slot.Amount);
                 });
                 return slot;
             });
-            if (edited)
-                EditorSceneManager.MarkSceneDirty(inventory.gameObject.scene);
+            Undo.RecordObject(target, "Modify Inventory");
             EditorGUILayout.Space();
         }
     }

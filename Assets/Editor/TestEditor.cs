@@ -17,7 +17,7 @@ namespace Assets.Editor
         {
             var test = target as Testing.Test;
             test.FloatValue = EditorGUILayout.FloatField("Float Value", test.FloatValue);
-            EditorUtility.SetDirty(target);
+            Undo.RecordObject(target, "Modify Test");
             base.OnInspectorGUI();
         }
     }

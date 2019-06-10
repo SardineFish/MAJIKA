@@ -21,7 +21,7 @@ namespace Assets.Editor
             if (item.Properties == null)
                 item.Properties = new ItemProperty[0];
             item.Properties = EditorUtilities.DrawArray("Properties", item.Properties, (prop) => EditorGUILayout.ObjectField(prop, typeof(ItemProperty), false) as ItemProperty);
-            EditorUtility.SetDirty(target);
+            Undo.RecordObject(target, "Modify Item");
         }
     }
 }
