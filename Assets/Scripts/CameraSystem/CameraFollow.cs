@@ -57,7 +57,18 @@ public class CameraFollow : CameraPlugin
     public override CameraContext CameraUpdate(CameraContext modifier, float dt)
     {
         if (multiFollow.Length > 0)
+        {
             focusPosition = multiFollow.Sum(target => target.transform.position.ToVector2()) / multiFollow.Length;
+            if (multiFollow.Length > 1)
+            {
+                var screenSpacePos = (multiFollow[0].transform.position.ToVector2() - focusPosition);
+                screenSpacePos = screenSpacePos / (Camera.ViewportRect.size / 2);
+                if (screenSpacePos.magnitude > 0.7f)
+                    screenSpacePos = screenSpacePos.normalized * 0.7f;
+                var pos = screenSpacePos * (Camera.ViewportRect.size / 2);
+                focusPosition = multiFollow[0].transform.position.ToVector2() - pos;
+            }
+        }
         else
             return modifier;
 
