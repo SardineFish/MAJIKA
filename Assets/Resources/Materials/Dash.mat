@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SliceTrace
-  m_Shader: {fileID: 4800000, guid: fdb5cd8440860534d8ed426a10989463, type: 3}
+  m_Name: Dash
+  m_Shader: {fileID: 4800000, guid: 460ff474051cafd47b14f943000622b4, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

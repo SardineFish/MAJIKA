@@ -1108,7 +1108,13 @@ MonoBehaviour:
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
-  Effects: []
+  Effects:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &632904111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17616,7 +17622,19 @@ MonoBehaviour:
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
-  Effects: []
+  Effects:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &1896960114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17650,6 +17668,7 @@ GameObject:
   - component: {fileID: 1909319454}
   - component: {fileID: 1909319455}
   - component: {fileID: 1909319456}
+  - component: {fileID: 1909319457}
   m_Layer: 0
   m_Name: SliceScreen
   m_TagString: Untagged
@@ -17713,7 +17732,41 @@ MonoBehaviour:
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
-  AdditionalEffect: []
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  SpawnDirections: []
+--- !u!114 &1909319457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909319453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540551126948fef47a43a06c35818832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 9052357713365072028, guid: d3258d30386facf408665a561729b8d6, type: 3}
+  SpawnType: 0
+  SpawnOffset: {x: 0, y: 0}
+  TimeOffset: 0
+  Instance: {fileID: 0}
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
+  AdditionalEffect:
+  - Effect: {fileID: 11400000, guid: fe9a9edba1daa0a49bfe7bdefa2a8049, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
   SpawnDirections: []
 --- !u!1 &1996253755
 GameObject:
@@ -18328,7 +18381,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 18, y: 15.5}
+  m_Size: {x: 13.75, y: 13.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -18610,7 +18663,7 @@ Animator:
   m_GameObject: {fileID: 6355838551474159856}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 411c8faecf4eacb4682b7f4cab5ac663, type: 2}
+  m_Controller: {fileID: 9100000, guid: 91d9d32c84240aa439ad3390a0e01c2e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 1

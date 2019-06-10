@@ -16,9 +16,15 @@ states = {
         name = "up left",
         skills = {
             {
-                skill = SkillDash,
+                skill = SkillDive,
                 dir = Right,
                 prob = 1,
+                transit = "Center"
+            },
+            {
+                skill = SkillDash,
+                dir = Right,
+                prob = 0.25,
                 transit = "UpRight",
             },
             {
@@ -31,12 +37,6 @@ states = {
                 dir = Right,
                 prob = 0.25,
             },
-            {
-                skill = SkillDive,
-                dir = Right,
-                prob = 0.25,
-                transit = "Center"
-            }
         }
     },
     ["UpRight"] = {
@@ -45,7 +45,7 @@ states = {
             {
                 skill = SkillDash,
                 dir = Left,
-                prob = 1,
+                prob = 0.25,
                 transit = "UpLeft"
             },
             {

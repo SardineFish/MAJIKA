@@ -35,7 +35,7 @@ public enum ImpactDistance
 [RequireComponent(typeof(EventBus))]
 public class SkillImpact : Entity
 {
-    public const int DamageLayerMask = 1 << 14;
+    public const int DamageLayerMask = 1 << 10;
     public const string EventDeactivate = "Deactivate";
     public const string EventHit = "Hit";
     public ImpactType ImpactType;
@@ -184,36 +184,6 @@ public class SkillImpact : Entity
         }
     }
 
-    /*
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        var entity = GameEntity.GetEntity(collision);
-        if (!entity)
-            return;
-        if (IgnoreCreator && entity == Creator)
-            return;
-        if (Active == false)
-            return;
-        if (ImpactType == ImpactType.OnEntity)
-            return;
-
-        if (impactedList.Contains(entity))
-            return;
-
-        if (ImpactLifeCycle == ImpactLifeCycle.DestructOnHit)
-            Deactivate();
-
-        if (Continuous)
-        {
-            impactedList.Add(entity);
-        }
-        else
-        {
-            impactedList.Add(entity);
-            ApplyDamage(entity);
-        }
-    }*/
-
     IEnumerator DropAttackCoroutine(float targetHeight)
     {
         var movement = GetComponent<SimpleMovement>();
@@ -239,10 +209,7 @@ public class SkillImpact : Entity
             if (ImpactLifeCycle == ImpactLifeCycle.DestructOnHit)
                 Deactivate();
         }
-        /*else if (ImpactType == ImpactType.DropAttack)
-        {
-            DropDownImpact();
-        }*/
+
         else if(ImpactType == ImpactType.ColliderCast)
         {
             var hitEntities = new List<GameEntity>();
@@ -258,7 +225,8 @@ public class SkillImpact : Entity
                         : transform.position;
             if (box)
             {
-                var hits = Physics2D.BoxCastAll(pos, box.size, 0, Vector2.zero, 0, DamageLayerMask);
+                var hits = Physics2D.OverlapBoxAll(pos, box.size, box.transform.eulerAngles.z, DamageLayerMask);
+                
                 hitEntities.AddRange(
                     hits.Select(hit => hit.transform.GetComponentInParent<GameEntity>())
                         .Where(entity => entity)

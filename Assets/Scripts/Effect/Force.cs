@@ -21,6 +21,9 @@ public class Force : Effect
     public ForceType ForceType;
     public Vector2 Impulse;
     public ForceApplyMode ForceApplyMode;
+    public bool ConstraintX = false;
+    public bool ConstraintY = false;
+
 
     public override void OnStart(EffectInstance instance, EntityEffector effector)
     {
@@ -45,6 +48,11 @@ public class Force : Effect
                 dir = impact.Direction;
                 break;
         }
+        if (ConstraintX)
+            dir.x = 0;
+        if (ConstraintY)
+            dir.y = 0;
+        dir = dir.normalized;
         var f = dir * Impulse.magnitude * instance.Strength;
 
         movable.PhysicalControl = true;
