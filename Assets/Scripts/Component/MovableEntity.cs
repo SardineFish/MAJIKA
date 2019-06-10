@@ -114,6 +114,23 @@ public class MovableEntity : MonoBehaviour
         return true;
     }
 
+    public bool AddForce(Vector2 force, ForceMode2D forceMode)
+    {
+        if (!PhysicalControl)
+            return false;
+        GetComponent<Rigidbody2D>().AddForce(force, forceMode);
+        return true;
+    }
+
+    public bool SetMomentum(Vector2 momentum)
+    {
+        var rigidbody = GetComponent<Rigidbody2D>();
+        var m = rigidbody.mass;
+        var v = momentum / m;
+        rigidbody.velocity = v;
+        return true;
+    }
+
     private void LateUpdate()
     {
         if (!enabled)
@@ -131,12 +148,15 @@ public class MovableEntity : MonoBehaviour
             if (!Mathf.Approximately(forceVelocity.y, 0))
                 velocity.y = forceVelocity.y;
             rigidbody.velocity = velocity;
-            var force = groundTangent * controledMovement + groundNormal * controledMovement.y;
-            force *= MaxMoveForce;
-            rigidbody.AddForce(force);
-            velocity = rigidbody.velocity;
-            velocity.x = Mathf.Clamp(velocity.x, -MaxMoveSpeed, MaxMoveSpeed);
-            rigidbody.velocity = velocity;
+
+            // donot add force to player reaching speed limit.
+            if (Mathf.Abs(velocity.x) < MaxMoveSpeed || MathUtility.SignInt(controledMovement.x) != MathUtility.SignInt(velocity.x))
+            {
+                var force = groundTangent * controledMovement + groundNormal * controledMovement.y;
+                force *= MaxMoveForce;
+                rigidbody.AddForce(force);
+                velocity = rigidbody.velocity;
+            }
         }
         else
         {

@@ -26,10 +26,10 @@ namespace State
                     entity.GetComponent<SkillController>().Abort();
                     var movable = entity.GetComponent<MovableEntity>();
                     var v = (blowUp.Effect as BlowUp).Blow;
-                    v.x *= MathUtility.SignInt(blowUp.GetTrigger<ImpactData>().position.x - entity.transform.position.x);
+                    v.x *= MathUtility.SignInt(blowUp.GetTrigger<ImpactData>().Position.x - entity.transform.position.x);
                     entity.GetComponent<MovableEntity>().Frozen = true;
                     entity.GetComponent<MovableEntity>().SetVelocity(v);
-                    entity.GetComponent<AnimationController>().PlayAnimation(BlowUpAction, trigger.position.x - entity.transform.position.x);
+                    entity.GetComponent<AnimationController>().PlayAnimation(BlowUpAction, trigger.Position.x - entity.transform.position.x);
                     yield return null;
                     while (!movable.OnGround)
                         yield return null;
@@ -45,7 +45,7 @@ namespace State
                 }
                 else
                 {
-                    entity.GetComponent<AnimationController>().PlayAnimation(HitAction, trigger.position.x - entity.transform.position.x);
+                    entity.GetComponent<AnimationController>().PlayAnimation(HitAction, trigger.Position.x - entity.transform.position.x);
                     while (!entity.GetComponent<AnimationController>().IsEnd())
                     {
                         yield return null;

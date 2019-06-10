@@ -7,7 +7,8 @@ using UnityEngine;
 
 public class ImpactData : IEffectorTrigger
 {
-    public Vector3 position;
+    public Vector2 Direction;
+    public Vector3 Position;
     public GameEntity Creator;
     public ImpactType ImpactType;
 }

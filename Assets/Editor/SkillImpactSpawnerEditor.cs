@@ -47,7 +47,7 @@ namespace Assets.Editor
                 EditorGUILayout.EndHorizontal();
                 return effect;
             });
-            EditorUtility.SetDirty(target);
+            Undo.RecordObject(target, "Edit Impact Spawner");
             EditorGUILayout.Space();
             editOffset = GUILayout.Toggle(editOffset, "Edit Offset", "Button");
         }

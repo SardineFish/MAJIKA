@@ -6,6 +6,7 @@ SkillDash = 0;
 SkillDive = 1;
 SkillSliceScreen = 2;
 SkillFeatherBarrier = 3;
+SkillWindBlow = 4;
 
 Left = -1;
 Right = 1;
@@ -15,20 +16,25 @@ states = {
         name = "up left",
         skills = {
             {
+                skill = SkillWindBlow,
+                dir = Right,
+                prob = 0.25,
+            },
+            {
                 skill = SkillDash,
                 dir = Right,
-                prob = 0.333,
+                prob = 0.25,
                 transit = "UpRight",
             },
             {
                 skill = SkillFeatherBarrier,
                 dir = Right,
-                prob = 0.333,
+                prob = 0.25,
             },
             {
                 skill = SkillDive,
                 dir = Right,
-                prob = 0.333,
+                prob = 0.25,
                 transit = "Center"
             }
         }
@@ -37,20 +43,25 @@ states = {
         name = "up right",
         skills = {
             {
+                skill = SkillWindBlow,
+                dir = Left,
+                prob = 0.25,
+            },
+            {
                 skill = SkillDash,
                 dir = Left,
-                prob = 0.333,
+                prob = 0.25,
                 transit = "UpLeft"
             },
             {
                 skill = SkillFeatherBarrier,
                 dir = Left,
-                prob = 0.333,
+                prob = 0.25,
             },
             {
                 skill = SkillDive,
                 dir = Left,
-                prob = 0.333,
+                prob = 0.25,
                 transit = "Center",
             }
         }

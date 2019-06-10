@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEditor;
 using System.Reflection;
+using UnityEditor.SceneManagement;
 
 namespace Assets.Editor
 {
@@ -28,7 +29,7 @@ namespace Assets.Editor
                 return responsor;
             });
 
-            EditorUtility.SetDirty(target);
+            Undo.RecordObject(target, "Edit Event Responsors");
         }
 
         public ComponentResponsor EditResponsor(GameObject context, ComponentResponsor responsor)

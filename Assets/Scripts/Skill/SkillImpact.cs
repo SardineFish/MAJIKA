@@ -78,7 +78,7 @@ public class SkillImpact : Entity
         }
         else
         {
-            var data = new ImpactData() { position = transform.position, Creator = Creator, ImpactType = ImpactType };
+            var data = new ImpactData() { Position = transform.position, Creator = Creator, ImpactType = ImpactType, Direction = this.Direction };
             new SkillImpactMessage(this, Effects.Select(effect => effect.Effect.Create(effect, data, this.Creator)).ToArray()).Dispatch(entity);
         }
     }

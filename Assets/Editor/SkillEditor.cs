@@ -25,7 +25,7 @@ namespace Assets.Editor
                   EditorGUILayout.EndHorizontal();
                   return effect;
               });
-            EditorUtility.SetDirty(skill);
+            Undo.RecordObject(skill, "Modify Skill");
         }
     }
 }

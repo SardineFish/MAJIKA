@@ -26,7 +26,7 @@ public class Barrier : Effect
                 if (ShieldDefenseEffect)
                 {
                     var effect = Instantiate(ShieldDefenseEffect);
-                    effect.transform.localScale = new Vector3(MathUtility.SignInt((damage.GetTrigger<ImpactData>().position - effector.Entity.transform.position).x), 1, 1);
+                    effect.transform.localScale = new Vector3(MathUtility.SignInt((damage.GetTrigger<ImpactData>().Position - effector.Entity.transform.position).x), 1, 1);
                     effector.Entity.Attach(effect, Offset);
                 }
                 damage.Strength = 0;
