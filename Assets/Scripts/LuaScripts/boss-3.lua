@@ -18,7 +18,7 @@ states = {
             {
                 skill = SkillDive,
                 dir = Right,
-                prob = 1,
+                prob = 0.15,
                 transit = "Center"
             },
             {
@@ -61,7 +61,7 @@ states = {
             {
                 skill = SkillDive,
                 dir = Left,
-                prob = 0.25,
+                prob = 0.15,
                 transit = "Center",
             }
         }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ClimbArea
   - Level
+  - Platform
   layers:
   - Default
   - TransparentFX
