@@ -16,15 +16,15 @@ states = {
         name = "up left",
         skills = {
             {
+                skill = SkillDash,
+                dir = Right,
+                prob = 1,
+                transit = "UpRight",
+            },
+            {
                 skill = SkillWindBlow,
                 dir = Right,
                 prob = 0.25,
-            },
-            {
-                skill = SkillDash,
-                dir = Right,
-                prob = 0.25,
-                transit = "UpRight",
             },
             {
                 skill = SkillFeatherBarrier,
@@ -43,15 +43,15 @@ states = {
         name = "up right",
         skills = {
             {
+                skill = SkillDash,
+                dir = Left,
+                prob = 1,
+                transit = "UpLeft"
+            },
+            {
                 skill = SkillWindBlow,
                 dir = Left,
                 prob = 0.25,
-            },
-            {
-                skill = SkillDash,
-                dir = Left,
-                prob = 0.25,
-                transit = "UpLeft"
             },
             {
                 skill = SkillFeatherBarrier,

@@ -1,0 +1,315 @@
+fileFormatVersion: 2
+guid: d507d70c57f895e4dac594186e0d4e1e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6394490053288797695
+    second: Tweet_0
+  - first:
+      213: 6586673260044660383
+    second: Tweet_1
+  - first:
+      213: -3692042190398207909
+    second: Tweet_2
+  - first:
+      213: 8218055853721942301
+    second: Tweet_3
+  - first:
+      213: 6218788382969017436
+    second: Tweet_4
+  - first:
+      213: 1739477111866005794
+    second: Tweet_5
+  - first:
+      213: -5111399256373316809
+    second: Tweet_6
+  - first:
+      213: 8120814744712868661
+    second: Tweet_7
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tweet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 188
+        width: 111
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5405406, y: 0.287234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532f0da3419600b41a1c86e4630c2794
+      internalID: 6394490053288797695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tweet_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 188
+        width: 111
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5405406, y: 0.287234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2859c0352e51c448a4046766ccf38fe
+      internalID: 6586673260044660383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tweet_2
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 188
+        width: 111
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5405406, y: 0.287234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64f9c9cbb94262469615d1aad1558f4
+      internalID: -3692042190398207909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tweet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 94
+        width: 111
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5405406, y: 0.287234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f0fa886a4d20042921bd40570fc463
+      internalID: 8218055853721942301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tweet_4
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 94
+        width: 111
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5405406, y: 0.287234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb000b0e60f8a6f4db29189daa356f3a
+      internalID: 6218788382969017436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tweet_5
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 94
+        width: 111
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5405406, y: 0.287234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab68f26b805baff4c92f4c70d515b69b
+      internalID: 1739477111866005794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tweet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 111
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5405406, y: 0.287234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc1d867e1a5451e449308524b7fe6c30
+      internalID: -5111399256373316809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tweet_7
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 0
+        width: 111
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5405406, y: 0.287234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9d49e378569e674da2b0f5dd2ea6401
+      internalID: 8120814744712868661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 70dfefeff93e4bc488b4fcf4ce93ebd9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
