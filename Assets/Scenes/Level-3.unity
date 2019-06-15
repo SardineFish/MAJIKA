@@ -18607,12 +18607,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 
-  InitialState: {fileID: 0}
+  InitialState: {fileID: 11400000, guid: 2a12bab675a27a442849b60160332fd0, type: 2}
   IdleState: {fileID: 11400000, guid: 2a12bab675a27a442849b60160332fd0, type: 2}
   SkillState: {fileID: 11400000, guid: 5d8fc6b9b78d4e54e9fbf409bcc67f20, type: 2}
   HitState: {fileID: 0}
   StunState: {fileID: 0}
-  DeadState: {fileID: 0}
+  DeadState: {fileID: 11400000, guid: f897bae97a75f0343bcd918fe7ba92e4, type: 2}
   Movement: {x: 0, y: 0}
   ClimbSpeed: 0
   Jumped: 0
@@ -18696,7 +18696,7 @@ Animator:
   m_GameObject: {fileID: 6355838551474159856}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 91d9d32c84240aa439ad3390a0e01c2e, type: 2}
+  m_Controller: {fileID: 9100000, guid: aa18525cfb75e7345bf15249eb9a54f0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
@@ -18732,7 +18732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatusEffects: []
-  HP: 1000
+  HP: 300
   MaxHP: 1000
 --- !u!114 &6355838551474159867
 MonoBehaviour:
