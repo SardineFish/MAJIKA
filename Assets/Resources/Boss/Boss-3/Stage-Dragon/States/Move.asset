@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e23622d46f2684fa25101fcf9d2960, type: 3}
+  m_Name: Move
+  m_EditorClassIdentifier: 
+  SoundEffect: {fileID: 0}
+  AnimatorController: {fileID: 9100000, guid: 249875e8518c52b48896a2e13abac7ab, type: 2}
+  TriggerName: 
+  FootStep: {fileID: 0}
+  Delay: 0
+  Duration: 0.5
+  Volumn: 1
+  IdleState: {fileID: 11400000, guid: 95045ac0ed1c7cf45b613a7b608c6dc1, type: 2}
+  JumpState: {fileID: 0}
+  ClimbState: {fileID: 0}
+  SkillState: {fileID: 11400000, guid: 02ccfea85f36219459fc707bce837a4c, type: 2}
+  AirState: {fileID: 0}

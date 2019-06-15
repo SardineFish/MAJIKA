@@ -1,14 +1,24 @@
 fileFormatVersion: 2
 guid: ff07f14b47be27d448ab0a59385078a7
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Action_0
-    21300002: Action_1
-    21300004: Action_2
-    21300006: Action_3
-    21300008: Action_4
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Action_0
+  - first:
+      213: 21300002
+    second: Action_1
+  - first:
+      213: 21300004
+    second: Action_2
+  - first:
+      213: 21300006
+    second: Action_3
+  - first:
+      213: 21300008
+    second: Action_4
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -126,6 +136,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c55ea921d304f2b4080e70054f45c1c1
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -146,6 +157,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 78be64620abf0134da322305ccf5062a
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -166,6 +178,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f19c25be988ccea4a89f57986b69f06c
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -186,6 +199,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a4a159bd3452a4c44a44f43ecf8ba023
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -206,6 +220,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 953b0ee519c992e408982226501a09bf
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -214,10 +229,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 06fae2dd82ec06c4aac12a4440188085
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
