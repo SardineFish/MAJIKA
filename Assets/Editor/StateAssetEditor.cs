@@ -39,6 +39,7 @@ namespace Assets.Editor
                         Debug.Log($"Set {(value is null? "null" : value.name)} to {state.name}.{field.Name}");
                     });
             }
+            Undo.RecordObjects(stateAssets.ToArray(), "Auto set states");
         }
     }
 }
