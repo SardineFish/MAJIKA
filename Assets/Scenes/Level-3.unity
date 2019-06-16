@@ -11020,7 +11020,7 @@ GameObject:
   - component: {fileID: 1699651194}
   - component: {fileID: 1699651193}
   m_Layer: 0
-  m_Name: Boss-3-Dragon
+  m_Name: Boss-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11204,7 +11204,7 @@ Animator:
   m_GameObject: {fileID: 1699651192}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dca5782be3bdd674ebd717b2deaee09c, type: 2}
+  m_Controller: {fileID: 9100000, guid: acc50f9923433ff4c941973c90872fb4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
@@ -11381,7 +11381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a7ddb362b7079449aa9978636d3f190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimatorController: {fileID: 9100000, guid: 91d9d32c84240aa439ad3390a0e01c2e, type: 2}
+  AnimatorController: {fileID: 9100000, guid: acc50f9923433ff4c941973c90872fb4, type: 2}
   AudioEffect: {fileID: 0}
   LockAction: 1
   ReleaseRadius: 0
@@ -18973,22 +18973,22 @@ PrefabInstance:
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -94.08002
+      value: -150.636
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -196.16003
+      value: -309.272
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: -287.3856
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -16.000244
+      value: -590.77167
       objectReference: {fileID: 0}
     - target: {fileID: 3610250976051289633, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
