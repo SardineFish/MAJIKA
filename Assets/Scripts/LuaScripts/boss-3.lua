@@ -11,6 +11,8 @@ SkillWindBlow = 4;
 Left = -1;
 Right = 1;
 
+player = nil;
+
 states = {
     ["UpLeft"] = {
         name = "up left",
@@ -85,51 +87,96 @@ states = {
 }
 fsm = SimpleStateMachine.new(states, 1)
 
+function randomSkill(skills, dir)
+    local totalWeight = 0
+    for i, skill in ipairs(skills) do
+        totalWeight = totalWeight + skill.weight
+    end
+
+    for i, skill in ipairs(skills) do
+        if math.random() < skill.weight / totalWeight then
+            local performed = entity.skill(skill.skill, dir)
+            if performed then 
+                return true 
+            end
+        end
+        totalWeight = totalWeight - skill.weight
+    end
+    return false
+end
+
 function start()
     entity.position = posA
-    fsm.start("UpLeft")    
-    --startCoroutine(stage1UpLeft)
+    --fsm.start("UpLeft")   
+    player = scene.entity("Player") 
+    startCoroutine(stage1UpLeft)
 end
 
 function changeState(func)
     startCoroutine(func)
 end
 
+actionCount = 0
 
 function stage1UpLeft()
-    coroutine.yield(nil)
     console.log("upLeft")
-    if math.random() < .5 then
-        if entity.skill(SkillDash, Right) then
+
+    repeat
+        coroutine.yield(nil)
+
+        if actionCount >= 4 and entity.skill(SkillDive, Right) then
+            coroutine.yield(entity.wait("skill", _host))
+            changeState(stage2Center)
+            return
+        elseif 
+            player.position.y > 12
+            and math.random() < .5 
+            and entity.skill(SkillWindBlow, Right) 
+        then
+            coroutine.yield(entity.wait("skill", _host))
+            actionCount = actionCount + 1
+        elseif math.random() < .5 and entity.skill(SkillDash, Right) then
             coroutine.yield(entity.wait("skill", _host))
             changeState(stage1UpRight)
+            actionCount = actionCount + 1
+            return
+        elseif entity.skill(SkillFeatherBarrier, Right) then
+            coroutine.yield(entity.wait("skill", _host))
         end
-    else
-        if entity.skill(SkillDive, Right) then
+    until false
+end
+
+function stage1UpRight()
+    console.log("upRight")
+
+    repeat
+        coroutine.yield(nil)
+
+        if actionCount >= 4 and entity.skill(SkillDive, Left) then
             coroutine.yield(entity.wait("skill", _host))
             changeState(stage2Center)
-        end
-    end
-    console.log("upLeft end")
-end
-function stage1UpRight()
-    coroutine.yield(nil)
-    console.log("upRight")
-    if math.random() < .5 then
-        if entity.skill(SkillDash, Left) then
+            return
+        elseif 
+            player.position.y > 12
+            and math.random() < .5 
+            and entity.skill(SkillWindBlow, Left) 
+        then
+            coroutine.yield(entity.wait("skill", _host))
+            actionCount = actionCount + 1
+        elseif math.random() < .5 and entity.skill(SkillDash, Left) then
             coroutine.yield(entity.wait("skill", _host))
             changeState(stage1UpLeft)
-        end
-    else
-        if entity.skill(SkillDive, Left) then
+            actionCount = actionCount + 1
+            return
+        elseif entity.skill(SkillFeatherBarrier, Left) then
             coroutine.yield(entity.wait("skill", _host))
-            changeState(stage2Center)
         end
-    end
+    until false
 end
 function stage2Center()
     coroutine.yield(nil)
     console.log("center")
+    actionCount = 0
     if entity.skill(SkillSliceScreen, Right) then
         coroutine.yield(entity.wait("skill", _host))
         entity.position = posA - (posC - posA)
