@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MAJIKA.GUI;
 
+[RequireComponent(typeof(EventBus))]
 public class Level : Singleton<Level>
 {
     public const string EventFailed = "Failed";

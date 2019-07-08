@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Timeline;
 
 namespace LuaHost
 {
@@ -24,6 +25,11 @@ namespace LuaHost
             //     .FirstOrDefault();
             // return GameObject.Find(name).GetComponent<GameEntity>();
         } 
+
+        public GameObject Object(string name)
+        {
+            return GameObject.Find(name);
+        }
         public GameEntity Spawn(GameObject prefab, string name, Vector2 position)
         {
             if (prefab.GetComponent<GameEntity>())
@@ -33,6 +39,10 @@ namespace LuaHost
                 return obj.GetComponent<GameEntity>();
             }
             return null;
+        }
+        public void Event(string eventName)
+        {
+            Level.Instance.GetComponent<EventBus>().Dispatch(eventName);
         }
     }
 }

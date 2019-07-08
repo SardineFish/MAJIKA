@@ -106,10 +106,10 @@ function randomSkill(skills, dir)
 end
 
 function start()
-    entity.position = posA
+    --entity.position = posA
     --fsm.start("UpLeft")   
     player = scene.entity("Player") 
-    startCoroutine(stage1UpLeft)
+    --startCoroutine(stage1UpLeft)
 end
 
 function changeState(func)

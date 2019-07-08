@@ -52,6 +52,7 @@ namespace Assets.Editor
                 goto End;
             }
             var methods = component.GetType().GetMethods(BindingFlags.Instance | BindingFlags.Public)
+                .Where(m => !m.IsSpecialName)
                 .Select(m => m.Name)
                 .ToList();
             idx = EditorGUILayout.Popup(methods.IndexOf(responsor.MethodName), methods.ToArray());

@@ -17,7 +17,11 @@ public class EventResponse
         foreach(var responsor in Targets)
         {
             var component = gameObject.GetComponent(responsor.ComponentName);
-            var method = component.GetType().GetMethod(responsor.MethodName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+            var method = component.GetType()
+                .GetMethods(BindingFlags.Instance | BindingFlags.Public)
+                .Where(m => m.Name == responsor.MethodName)
+                .Where(m => m.GetParameters().Length <= 0)
+                .FirstOrDefault();
             method?.Invoke(component, null);
         }
     }

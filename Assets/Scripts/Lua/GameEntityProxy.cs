@@ -47,6 +47,10 @@ namespace LuaHost.Proxy
         public void Climb(float speed) 
             => target.GetComponent<EntityController>()?.Climb(speed);
         
+        public void Destroy()
+        {
+            GameObject.Destroy(target.gameObject);
+        }
 
         private IEnumerator WaitInternal(string target)
         {
@@ -57,6 +61,8 @@ namespace LuaHost.Proxy
                     yield return this.target.GetComponent<SkillController>().WaitSkill();
                     break;
                 case "animation":
+                case "animate":
+                case "anim":
                 case "action":
                     yield return this.target.GetComponent<AnimationController>().WaitAnimation();
                     break;

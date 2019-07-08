@@ -132,25 +132,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss-3
       objectReference: {fileID: 0}
-    - target: {fileID: 6385070694191812821, guid: 6461a67624058d3418671c43d784006a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6385070694191812827, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.391098
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6385070694191812827, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.717294
+      value: 15.28
       objectReference: {fileID: 0}
     - target: {fileID: 6385070694191812827, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6385070694191812827, guid: 6461a67624058d3418671c43d784006a,
         type: 3}

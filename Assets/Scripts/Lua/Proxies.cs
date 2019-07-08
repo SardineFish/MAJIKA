@@ -30,6 +30,11 @@ namespace LuaHost.Proxy
         {
         }
         public string name => target.name;
+        public Vector2 position
+        {
+            get => target.transform.position;
+            set => target.transform.position = value.ToVector3(target.transform.position.z);
+        }
     }
 
     

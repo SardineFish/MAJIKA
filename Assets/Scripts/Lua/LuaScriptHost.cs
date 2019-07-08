@@ -45,6 +45,11 @@ namespace LuaHost
             LuaScript.Globals.Get("awake").Function?.Call();
         }
 
+        private void OnDestroy()
+        {
+            StopAllCoroutines();
+        }
+
         public void RunScript(TextAsset script)
         {
             LuaScript.DoString(script.text);

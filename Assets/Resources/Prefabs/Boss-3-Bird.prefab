@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 6385070694191812828}
   - component: {fileID: 6385070694191812806}
   - component: {fileID: 1605308353738424925}
+  - component: {fileID: 1873539730}
   m_Layer: 0
   m_Name: Boss-3-Bird
   m_TagString: Untagged
@@ -526,7 +527,7 @@ Animator:
   m_GameObject: {fileID: 6385070694191812821}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3be11e613f61c004da038f947cf275ec, type: 2}
+  m_Controller: {fileID: 9100000, guid: aa18525cfb75e7345bf15249eb9a54f0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
@@ -615,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialScript: {fileID: 4900000, guid: 141a555da9cf9cb4a909b3bdb8b0676d, type: 3}
-  Script: {fileID: 4900000, guid: 0730b77e94e934d4593457ccdcbcfd56, type: 3}
+  Script: {fileID: 2213920135882650261, guid: aca2f808f9e685a46aaf628508adfafa, type: 3}
 --- !u!50 &6385070694191812826
 Rigidbody2D:
   serializedVersion: 4
@@ -703,6 +704,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayClip: {fileID: 0}
+--- !u!114 &1873539730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385070694191812821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d6ae1e7a68b4f469dff8eb8af205a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zIndex: 3
+  Local: 0
 --- !u!1 &6385070694368407885
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +787,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 44f3d9a0ecf45c94ba56f81222f33a0f, type: 3}
+  m_Sprite: {fileID: 1400002288684528572, guid: 6d0225c1464bff94abab329ff155d52f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
