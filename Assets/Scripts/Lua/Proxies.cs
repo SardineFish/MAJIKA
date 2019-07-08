@@ -97,7 +97,7 @@ namespace LuaHost.Proxy
 
         public void Follow(GameEntity followTarget)
         {
-            target.GetComponent<CameraFollow>().Follow(followTarget.transform);
+            target.GetComponent<CameraFollow>().Follow(followTarget?.transform);
         }
 
         public void Follow(GameEntity[] targets)

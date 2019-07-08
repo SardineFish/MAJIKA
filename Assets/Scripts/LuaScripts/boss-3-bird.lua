@@ -121,6 +121,9 @@ function update()
         droped = true
         scene.event("Stage")
     end
+    if entity.HP <= 0 then
+        camera.follow({entity})
+    end
 end
 
 function changeState(func)
@@ -133,7 +136,7 @@ function stage1UpLeft()
     console.log("upLeft")
 
     repeat
-        coroutine.yield(nil)
+        coroutine.yield(waitForSeconds(1))
 
         if entity.HP <= 0 then
             changeState(death)
@@ -166,7 +169,7 @@ function stage1UpRight()
     console.log("upRight")
 
     repeat
-        coroutine.yield(nil)
+        coroutine.yield(waitForSeconds(1))
 
         if entity.HP <= 0 then
             changeState(death)
@@ -195,7 +198,7 @@ function stage1UpRight()
     until false
 end
 function stage2Center()
-    coroutine.yield(nil)
+        coroutine.yield(waitForSeconds(1))
 
     if entity.HP <= 0 then
         changeState(death)

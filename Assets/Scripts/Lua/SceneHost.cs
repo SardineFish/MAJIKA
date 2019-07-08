@@ -44,5 +44,10 @@ namespace LuaHost
         {
             Level.Instance.GetComponent<EventBus>().Dispatch(eventName);
         }
+
+        public void On(string eventName, Closure callback)
+        {
+            Level.Instance.GetComponent<EventBus>().On(eventName, () => callback?.Call());
+        }
     }
 }

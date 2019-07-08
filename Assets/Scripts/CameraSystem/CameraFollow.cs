@@ -56,6 +56,7 @@ public class CameraFollow : CameraPlugin
 
     public override CameraContext CameraUpdate(CameraContext modifier, float dt)
     {
+        multiFollow = multiFollow.Where(f => f).ToArray();
         if (multiFollow.Length > 0)
         {
             focusPosition = multiFollow.Sum(target => target.transform.position.ToVector2()) / multiFollow.Length;
@@ -70,7 +71,9 @@ public class CameraFollow : CameraPlugin
             }
         }
         else
-            return modifier;
+        {
+            focusPosition = transform.position;
+        }
 
         var follow = focusPosition - movePosition - FollowRangeOffset;
         var followAccelerateRange = MaxFollowRange - FollowStartRange;

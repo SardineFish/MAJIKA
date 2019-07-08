@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 6385070694191812821, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
       propertyPath: m_Name
-      value: Boss-3
+      value: Boss-3-Bird
       objectReference: {fileID: 0}
     - target: {fileID: 6385070694191812827, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
