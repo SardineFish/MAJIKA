@@ -35,43 +35,50 @@ public class Force : Effect
         // Setup force
         var movable = effector.Entity.GetComponent<MovableEntity>();
         var impact = instance.GetTrigger<ImpactData>();
-        var dir = Vector2.zero;
-        switch (ForceType)
+        if (impact is null)
         {
-            case ForceType.Constant:
-                dir = Impulse.normalized;
-                break;
-            case ForceType.Divergent:
-                dir = effector.Entity.transform.position - impact.Position;
-                break;
-            case ForceType.ImpactDirection:
-                dir = impact.Direction;
-                break;
+            movable.PhysicalControl = true;
         }
-        if (ConstraintX)
-            dir.x = 0;
-        if (ConstraintY)
-            dir.y = 0;
-        dir = dir.normalized;
-        var f = dir * Impulse.magnitude * instance.Strength;
+        else
+        {
+            var dir = Vector2.zero;
+            switch (ForceType)
+            {
+                case ForceType.Constant:
+                    dir = Impulse.normalized;
+                    break;
+                case ForceType.Divergent:
+                    dir = effector.Entity.transform.position - impact.Position;
+                    break;
+                case ForceType.ImpactDirection:
+                    dir = impact.Direction;
+                    break;
+            }
+            if (ConstraintX)
+                dir.x = 0;
+            if (ConstraintY)
+                dir.y = 0;
+            dir = dir.normalized;
+            var f = dir * Impulse.magnitude * instance.Strength;
 
-        movable.PhysicalControl = true;
-        if (ForceApplyMode == ForceApplyMode.AddImpulse)
-            movable.AddForce(f, ForceMode2D.Impulse);
-        else if (ForceApplyMode == ForceApplyMode.ModifyMomentum)
-            movable.SetMomentum(f);
+            movable.PhysicalControl = true;
+            if (ForceApplyMode == ForceApplyMode.AddImpulse)
+                movable.AddForce(f, ForceMode2D.Impulse);
+            else if (ForceApplyMode == ForceApplyMode.ModifyMomentum)
+                movable.SetMomentum(f);
 
-        foreach(var t in Utility.Timer(.5f))
-        {
-            yield return null;
+            foreach (var t in Utility.Timer(.5f))
+            {
+                yield return null;
+            }
+            do
+            {
+                yield return null;
+            }
+            while (!movable.OnGround);
+            movable.PhysicalControl = false;
+            effector.RemoveEffect(instance.Effect);
         }
-        do
-        {
-            yield return null;
-        }
-        while (!movable.OnGround);
-        movable.PhysicalControl = false;
-        effector.RemoveEffect(instance.Effect);
     }
 
     public override void OnUpdate(EffectInstance instance, EntityEffector effector)

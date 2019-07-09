@@ -14,7 +14,7 @@ public class EffectInstance
     public Coroutine EffectCoroutine;
     public float Duration = 0;
     public float LifeTime = 0;
-    public EffectTriggerCollection Triggers;
+    public EffectTriggerCollection Triggers = new EffectTriggerCollection();
     public int Priority = 0;
     public GameObject GameObjectInstance;
     [HideInInspector]
