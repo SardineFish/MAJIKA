@@ -38,15 +38,20 @@ namespace Assets.Editor
                 editSpawnDir = GUILayout.Toggle(editSpawnDir, "Edit Spawn Direction", "Button");
             }
 
-            EditorUtilities.DrawList("Additional Effects", spawner.AdditionalEffect, (effect) =>
-            {
-                EditorGUILayout.BeginHorizontal(GUILayout.Height(EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing));
-                effect.Effect = EditorGUILayout.ObjectField(effect.Effect, typeof(Effect), true) as Effect;
-                EditorGUILayout.LabelField("x", GUILayout.Width(EditorGUIUtility.singleLineHeight));
-                effect.Strength = EditorGUILayout.FloatField(effect.Strength);
-                EditorGUILayout.EndHorizontal();
-                return effect;
-            });
+
+
+            EditorUtilities.DrawList(spawner.AdditionalEffect)
+                .Header("Additional Effects")
+                .Item((effect) =>
+                {
+                    EditorGUILayout.BeginHorizontal(GUILayout.Height(EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing));
+                    effect.Effect = EditorGUILayout.ObjectField(effect.Effect, typeof(Effect), true) as Effect;
+                    EditorGUILayout.LabelField("x", GUILayout.Width(EditorGUIUtility.singleLineHeight));
+                    effect.Strength = EditorGUILayout.FloatField(effect.Strength);
+                    EditorGUILayout.EndHorizontal();
+                    return effect;
+                })
+                .Render();
             Undo.RecordObject(target, "Edit Impact Spawner");
             EditorGUILayout.Space();
             editOffset = GUILayout.Toggle(editOffset, "Edit Offset", "Button");

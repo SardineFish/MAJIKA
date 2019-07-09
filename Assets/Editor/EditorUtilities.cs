@@ -32,129 +32,27 @@ namespace Assets.Editor
             return new AngularRange(values[0], values[1]);
         }
 
-        public static bool DrawFoldList(string lable, bool show, Func<bool> itemRenderingCallback)
-        {
-            show = EditorGUILayout.Foldout(show, lable);
-            if (show)
-            {
-                GUIStyle style = new GUIStyle();
-                style.margin.left = 40;
-                EditorGUILayout.BeginVertical(style);
-                while (itemRenderingCallback()) ;
-                EditorGUILayout.EndVertical();
-            }
-            return show;
-        }
-
-        public static bool DrawFoldList(string lable, bool show,int count, Action<int> itemRenderingCallback)
-        {
-            //EditorGUILayout.BeginHorizontal();
-            show = EditorGUILayout.Foldout(show, lable);
-                
-            if (show)
-            {
-                GUIStyle style = new GUIStyle();
-                style.margin.left = 24;
-                EditorGUILayout.BeginVertical(style);
-                for (var i = 0; i < count; i++)
-                {
-                    itemRenderingCallback(i);
-                }
-                EditorGUILayout.EndVertical();
-            }
-            return show;
-        }
-
-        public static List<T> DrawList<T>(List<T> list, Action headerRenderer, Func<T, T> renderCallback)
-        {
-            Verticle(() =>
-            {
-                Horizontal(() =>
-                {
-                    headerRenderer?.Invoke();
-                    if (GUILayout.Button(Styles.PlusIconContent, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
-                    {
-                        list.Add(default(T));
-                    }
-                });
-                EditorGUILayout.Space();
-                Verticle(Styles.Indent, () =>
-                {
-                    for (var i = 0; i < list.Count; i++)
-                    {
-                        Horizontal(() =>
-                        {
-                            if (GUILayout.Button(Styles.MinusIconContent, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
-                            {
-                                list.RemoveAt(i--);
-                                if (i >= list.Count)
-                                    return;
-                                return;
-                            }
-
-                            Verticle(() =>
-                            {
-                                if (renderCallback != null)
-                                    list[i] = renderCallback(list[i]);
-                            });
-                        });
-                    }
-                });
-            });
-            return list;
-        }
-        
-
-        public static List<T> DrawList<T>(string lable, List<T> list, Func<T,T> renderCallback)
-        {
-            return DrawList(list, () => EditorGUILayout.Foldout(true, lable), renderCallback);
-        }
+        public static ListDrawer<T> DrawList<T>(List<T> list)
+            => new ListDrawer<T>(list);
 
         public static T[] DrawArray<T>(T[] array, Action headerRenderer, Func<T, T> renderCallback)
         {
-            return DrawList(array.ToList(), headerRenderer, renderCallback).ToArray();
+            return DrawList(array.ToList())
+                .Header(headerRenderer)
+                .Item(renderCallback)
+                .Render()
+                .ToArray();
         }
 
         public static T[] DrawArray<T>(string lable, T[] array, Func<T,T> renderCallback)
         {
-            return DrawList(
-                array.ToList(),
-                () => EditorGUILayout.Foldout(true, lable),
-                renderCallback
-            ).ToArray();
+            return DrawList(array.ToList())
+                .Header(lable)
+                .Item(renderCallback)
+                .Render()
+                .ToArray();
         }
 
-
-
-        public static bool DrawFoldList(string lable, bool show, int count, Action<int> itemRenderingCallback,Action addCallback, Action removeCallback=null)
-        {
-            EditorGUILayout.BeginHorizontal();
-            show = EditorGUILayout.Foldout(show, lable);
-            var plusIconContext = EditorGUIUtility.IconContent("Toolbar Plus");
-            if (GUILayout.Button(plusIconContext, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
-                addCallback();
-            EditorGUILayout.EndHorizontal();
-
-            if (show)
-            {
-                GUIStyle style = new GUIStyle();
-                style.margin.left = 24;
-                EditorGUILayout.BeginVertical(style);
-                for (var i = 0; i < count; i++)
-                {
-                    EditorGUILayout.BeginHorizontal();
-                    var minusIconContext = EditorGUIUtility.IconContent("Toolbar Minus");
-                    if (GUILayout.Button(minusIconContext, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
-                        removeCallback?.Invoke();
-                    EditorGUILayout.BeginVertical();
-                    itemRenderingCallback(i);
-                    EditorGUILayout.EndVertical();
-                    EditorGUILayout.EndHorizontal();
-                }
-                EditorGUILayout.EndVertical();
-            }
-            return show;
-        }
 
         public static Color HTMLColor(string color)
         {
@@ -187,51 +85,42 @@ namespace Assets.Editor
             var style = new GUIStyle();
             style.margin.left = 60;
             //EditorGUILayout.BeginVertical(style);
-            var removeIdx = -1;
-            DrawFoldList(lable, true, dict.Count, (i) =>
-            {
-                EditorGUILayout.BeginHorizontal();
-                dict.Keys[i] = keyEditCallback(dict.Keys[i]);
-                dict.Values[i] = valueEditCallback(dict.Values[i]);
-                if (GUILayout.Button("-"))
-                    removeIdx = i;
-                EditorGUILayout.EndHorizontal();
-            });
-            if (removeIdx >= 0)
-            {
-                dict.Keys.RemoveAt(removeIdx);
-                dict.Values.RemoveAt(removeIdx);
-            }
-            EditorGUILayout.Space();
-            EditorGUILayout.BeginHorizontal();
-            var valueDrag = valueEditCallback((TValue)(object)null);
-            if (valueDrag != null)
-                dict.Add(default(TKey), valueDrag);
-            if (GUILayout.Button("Add"))
-            {
-                dict.Add(default(TKey), default(TValue));
-            }
-            EditorGUILayout.EndHorizontal();
+            DrawList(dict.Keys)
+                .Header(lable)
+                .Fold(true)
+                .Item((key, i) =>
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    dict.Keys[i] = keyEditCallback(dict.Keys[i]);
+                    dict.Values[i] = valueEditCallback(dict.Values[i]);
+                    return key;
+                })
+                .OnRemove((key, i) =>
+                {
+                    // dict.keys[i] will be remove internally.
+                    dict.Values.RemoveAt(i);
+                    return true;
+                })
+                .OnAdd(() =>
+                {
+                    dict.Add(default(TKey), default(TValue));
+                    return default(TKey);
+                })
+                .Render();
         }
-        /*
-        public static void EditAssetObject<TAssetsLib,TAsset>(TAssetsLib assetsLib,TAssetsLib)
-        {
-            
-        }*/
+
         public static void EditWeightedList(string label, bool show,WeightedList list)
         {
-            DrawFoldList(label, show, list.Count, (i) =>
-               {
-                   EditorGUILayout.BeginHorizontal();
-                   list[i].Object = EditorGUILayout.ObjectField(list[i].Object, typeof(UnityEngine.Object), true);
-                   list[i].Weight = EditorGUILayout.FloatField(list[i].Weight);
-                   if (GUILayout.Button("-"))
-                       list.RemoveAt(i);
-                   EditorGUILayout.EndHorizontal();
-               }, () =>
-               {
-                   list.Add(new WeightedItem(null, 1));
-               });
+            DrawList(list.ToList())
+                .Header(label)
+                .Fold(show)
+                .Item((item) =>
+                {
+                    item.Object = EditorGUILayout.ObjectField(item.Object, typeof(UnityEngine.Object), true);
+                    item.Weight = EditorGUILayout.FloatField(item.Weight);
+                    return item;
+                })
+                .Render();
         }
 
         public static void Verticle(GUIStyle style, Action renderContent)
@@ -263,5 +152,128 @@ namespace Assets.Editor
         {
             Horizontal(null, renderContent);
         }
+
+        public class ListDrawer<T>
+        {
+            bool fold = true;
+            List<T> list = null;
+            Func<T> onCreate = null;
+            Func<T, int, bool> onRemove = null;
+            Action headerRenderer = null;
+            Func<T, int, T> itemRenderer = null;
+
+            public ListDrawer(List<T> list)
+            {
+                this.list = list;
+            }
+
+            public ListDrawer<T> Fold(bool extend)
+            {
+                this.fold = extend;
+                return this;
+            }
+
+            public ListDrawer<T> Header(string label)
+            {
+                this.headerRenderer = () => EditorGUILayout.LabelField(label);
+                return this;
+            }
+
+            public ListDrawer<T> Header(Action renderer)
+            {
+                this.headerRenderer = renderer;
+                return this;
+            }
+
+            public ListDrawer<T> Item(Func<T, int, T> itemRenderer)
+            {
+                this.itemRenderer = itemRenderer;
+                return this;
+            }
+
+            public ListDrawer<T> Item(Func<T, T> itemRenderer)
+                => this.Item((t, i) => itemRenderer(t));
+
+            public ListDrawer<T> OnAdd(Func<T> callback)
+            {
+                this.onCreate = callback;
+                return this;
+            }
+
+            public ListDrawer<T> OnRemove(Func<T, int, bool> callback)
+            {
+                this.onRemove = callback;
+                return this;
+            }
+
+            public List<T> Render()
+            {
+                if (itemRenderer == null)
+                    return list;
+
+                onCreate = onCreate ?? AddItem;
+
+                Verticle(() =>
+                {
+                    Horizontal(() =>
+                    {
+                        headerRenderer?.Invoke();
+                        if (GUILayout.Button(Styles.PlusIconContent, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
+                        {
+                            list.Add(onCreate());
+                        }
+                    });
+                    EditorGUILayout.Space();
+                    Verticle(Styles.Indent, () =>
+                    {
+                        for (var i = 0; i < list.Count; i++)
+                        {
+                            Horizontal(() =>
+                            {
+                                if (GUILayout.Button(Styles.MinusIconContent, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
+                                {
+                                    if(onRemove != null && !onRemove(list[i], i))
+                                    {
+                                        // do nothing;
+                                    }
+                                    else
+                                    {
+                                        list.RemoveAt(i--);
+                                        if (i >= list.Count)
+                                            return;
+                                        return;
+                                    }
+                                }
+
+                                Verticle(() =>
+                                {
+                                    list[i] = itemRenderer.Invoke(list[i], i);
+                                });
+                            });
+                        }
+                    });
+                });
+                return list;
+            }
+
+            T AddItem()
+            {
+                if(typeof(T).IsClass)
+                {
+                    try
+                    {
+                        var instance = Activator.CreateInstance<T>();
+                        return instance;
+                    }
+                    catch
+                    {
+                        Debug.LogWarning($"Failed to create instance of {typeof(T).Name}");
+                    }
+                }
+                return default(T);
+            }
+
+        }
+
     }
 }

@@ -20,14 +20,17 @@ namespace Assets.Editor
 
             eventResponsor.EventBus = EditorGUILayout.ObjectField("Event Bus", eventResponsor.EventBus, typeof(EventBus), true) as EventBus;
 
-            EditorUtilities.DrawList("Event Responsors", eventResponsor.Responsors, (responsor) =>
-            {
-                EditorUtilities.DrawList(
-                    responsor.Targets,
-                    () => responsor.Event = EditorGUILayout.TextField("Event Name", responsor.Event),
-                    (target) => EditResponsor(eventResponsor.gameObject, target));
-                return responsor;
-            });
+            EditorUtilities.DrawList(eventResponsor.Responsors)
+                .Header("Event Responsors")
+                .Item((responsor) =>
+                {
+                    EditorUtilities.DrawList(responsor.Targets)
+                        .Header(() => responsor.Event = EditorGUILayout.TextField("Event Name", responsor.Event))
+                        .Item((target) => EditResponsor(eventResponsor.gameObject, target))
+                        .Render();
+                    return responsor;
+                })
+                .Render();
 
             Undo.RecordObject(target, "Edit Event Responsors");
         }

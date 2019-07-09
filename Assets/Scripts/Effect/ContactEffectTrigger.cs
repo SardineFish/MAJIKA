@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class ContactEffectTrigger : MonoBehaviour, IEffectorTrigger
 {
+    [MAJIKA.Utils.StatusEffect]
     public List<EffectInstance> Effects = new List<EffectInstance>();
     List<GameEntity> contactList = new List<GameEntity>();
     // Use this for initialization

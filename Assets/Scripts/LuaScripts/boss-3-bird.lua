@@ -148,7 +148,7 @@ function stage1UpLeft()
             changeState(stage2Center)
             return
         elseif 
-            player.position.y > 12
+            player.position.y > 15
             and math.random() < .5 
             and entity.skill(SkillWindBlow, Right) 
         then
@@ -181,7 +181,7 @@ function stage1UpRight()
             changeState(stage2Center)
             return
         elseif 
-            player.position.y > 12
+            player.position.y > 15
             and math.random() < .5 
             and entity.skill(SkillWindBlow, Left) 
         then
