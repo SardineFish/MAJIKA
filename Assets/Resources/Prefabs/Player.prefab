@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a25b944a2485648afc3b8adbc9c8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DirectionImplement: 0
+  DirectionImplement: 1
   Direction: 0
 --- !u!114 &114356481816643768
 MonoBehaviour:
@@ -766,6 +766,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1 &1789398624566412
 GameObject:
   m_ObjectHideFlags: 0
