@@ -100,7 +100,7 @@ public class MAJIKAInput : IInputActionCollection
             ""bindings"": [
                 {
                     ""name"": ""2D Vector"",
-                    ""id"": ""049c9eda-98d3-42c5-994b-426ae5e19a2c"",
+                    ""id"": ""2e3528e4-7480-4819-994f-bb9986c5d2a8"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -112,7 +112,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": ""Up"",
-                    ""id"": ""994164b8-1836-4cf0-83ce-a5a38fb8f388"",
+                    ""id"": ""0640f412-c6e7-4f17-8342-f36966d39a6b"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -124,7 +124,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": ""Down"",
-                    ""id"": ""9971552e-fb76-4f58-8ac5-832e414091c2"",
+                    ""id"": ""ab782796-dd25-4b27-ab07-570cf51b7f00"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -136,7 +136,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": ""Left"",
-                    ""id"": ""4e62db60-e3bd-4e1b-be2f-5587dd56b858"",
+                    ""id"": ""55524d30-bd31-4fa1-9389-d4be74bee9c4"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -148,7 +148,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": ""Right"",
-                    ""id"": ""7e72f984-4a94-4958-a2a3-6ea830d2e96b"",
+                    ""id"": ""5725044f-4dfb-46f8-8a2b-25793c54e0e2"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -160,10 +160,10 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8aaf9f63-512b-41b5-b821-237b989f5347"",
+                    ""id"": ""3a399910-d70f-4e5d-af0d-2a6ddc853c02"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone(min=0.2,max=1)"",
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
@@ -172,7 +172,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7c5e0a55-75d7-4055-8c70-41911604c09a"",
+                    ""id"": ""d978ba87-a212-4193-831d-21aafc922fb3"",
                     ""path"": ""<Keyboard>/k"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
@@ -184,7 +184,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b1143c18-7209-418f-92d2-235bb1769687"",
+                    ""id"": ""79815092-d927-44a5-be97-c65193585031"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -196,7 +196,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""64492e5e-7949-48a0-8931-d03476b42853"",
+                    ""id"": ""6d71dbe4-5272-4343-bcad-d703c2bbfa6f"",
                     ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -208,7 +208,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""668301b8-147e-468d-bb39-c49cfbf77e92"",
+                    ""id"": ""e3138b61-42e7-4335-b5fd-47750b3a228c"",
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -220,7 +220,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""43cf41d7-9694-4c59-ab33-18fcebdbbec7"",
+                    ""id"": ""66bbbdbe-c1c3-4e27-83f4-d4441c7d145e"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -232,7 +232,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ac9e1d67-9863-4d66-901f-ddaf46797f0c"",
+                    ""id"": ""e0da2007-5bca-4db7-94a0-b8c10e1c73b0"",
                     ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -244,7 +244,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5c901149-a300-418f-bd93-2695a33fde92"",
+                    ""id"": ""0b269029-1faf-4c18-828b-75b28d11fbb2"",
                     ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -256,7 +256,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8b434aa0-0415-43a5-b7bc-5420a3fa6e92"",
+                    ""id"": ""0f0361d9-01f9-42f1-ac41-88e98eb7c1d7"",
                     ""path"": ""<Keyboard>/o"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -268,7 +268,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d8457e5a-2f6e-4c54-b8d6-7e51211cf17f"",
+                    ""id"": ""cc7f6a3f-12c9-4bd8-a404-3ebfd97bb98c"",
                     ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -365,7 +365,7 @@ public class MAJIKAInput : IInputActionCollection
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""82421fd4-364e-4298-9643-4dd696eb3aeb"",
+                    ""id"": ""7aa4266d-fe6a-4891-8e9d-d7c323769543"",
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
@@ -377,7 +377,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""10919dd5-588f-419f-ba03-f634468eb920"",
+                    ""id"": ""e9770bb1-fcae-44b5-a7b0-913a082c9b47"",
                     ""path"": ""<Touchscreen>/button"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -389,7 +389,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e6b8b731-605d-4fa3-835b-c17f88799324"",
+                    ""id"": ""860eb604-ed87-4ec5-9e63-1ccdd940ee2a"",
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
@@ -401,7 +401,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4795fe0d-dc46-4aba-a72c-e3d8dd3d934f"",
+                    ""id"": ""d312e7ef-acec-419c-9520-1f9d2daf6b31"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -413,7 +413,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9fabf9ac-1821-4341-9cbc-e0ef52f6bdff"",
+                    ""id"": ""acae354a-681a-43b6-9b46-934bbe217c03"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -425,7 +425,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""06dcc9dd-570e-4a76-b3e0-5974076bb3da"",
+                    ""id"": ""e5fa6ee9-720f-4cfe-9784-de54656a8877"",
                     ""path"": ""<Keyboard>/b"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -437,7 +437,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""77c6a977-aa60-4913-912c-f731cd6bde11"",
+                    ""id"": ""8c210dfb-5b51-4246-80b3-8a9f1319d310"",
                     ""path"": ""<Keyboard>/anyKey"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -449,7 +449,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""622ab64d-f7bf-4658-a13d-856576c8b0ac"",
+                    ""id"": ""0440fd89-383f-4a9a-b1e0-3343db116e8f"",
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -461,7 +461,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8e1f3916-70e4-4911-8d1e-8131286c2558"",
+                    ""id"": ""97fc71ed-fa57-438a-bb59-cb7f701c0c24"",
                     ""path"": ""<Touchscreen>/phase"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -473,7 +473,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ff160c95-6bea-4767-84c8-a7af675ac1c3"",
+                    ""id"": ""9bc51cbd-162c-4542-b773-6b1cfea331da"",
                     ""path"": ""<Touchscreen>/touch"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -485,7 +485,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4c70f1a3-b6eb-4cb2-86d9-790c5586ffcd"",
+                    ""id"": ""82739df9-a668-4d6e-bd87-fec79c74bdd1"",
                     ""path"": ""<Touchscreen>/position"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -497,7 +497,7 @@ public class MAJIKAInput : IInputActionCollection
                 },
                 {
                     ""name"": """",
-                    ""id"": ""da1d8495-f5f2-4d7d-808c-28b79975d3a7"",
+                    ""id"": ""a5254ce6-ff70-4204-bb66-dbd90110fdfd"",
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
