@@ -65,10 +65,12 @@ public class Force : Effect
 
         foreach (var t in Utility.Timer(.5f))
         {
+            movable.PhysicalControl = true;
             yield return null;
         }
         do
         {
+            movable.PhysicalControl = true;
             yield return null;
         }
         while (!movable.OnGround);

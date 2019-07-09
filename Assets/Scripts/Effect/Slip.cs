@@ -9,11 +9,17 @@ public class Slip : Effect
         base.OnStart(instance, effector);
         effector.Entity.GetComponent<MovableEntity>().PhysicalControl = true;
     }
+    public override void OnUpdate(EffectInstance instance, EntityEffector effector)
+    {
+        base.OnUpdate(instance, effector);
+        effector.Entity.GetComponent<MovableEntity>().PhysicalControl = true;
+    }
 
     public override void OnEnd(EffectInstance instance, EntityEffector effector)
     {
         base.OnEnd(instance, effector);
-        effector.Entity.GetComponent<MovableEntity>().PhysicalControl = false;
+        if(effector.GetEffect<Force>() == null)
+            effector.Entity.GetComponent<MovableEntity>().PhysicalControl = false;
 
     }
 }

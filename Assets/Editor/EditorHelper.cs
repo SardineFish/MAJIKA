@@ -8,6 +8,7 @@ using UnityEditor;
 using System.Reflection;
 
 [CustomEditor(typeof(MonoBehaviour), true)]
+[CanEditMultipleObjects]
 class EditorHelper : UnityEditor.Editor
 {
     Dictionary<Type, AttributeEditor> attributeEditorInstances = new Dictionary<Type, AttributeEditor>();
@@ -30,24 +31,6 @@ class EditorHelper : UnityEditor.Editor
         for (var i = 0; i < members.Length; i++)
         {
             var member = members[i];
-            /*if (member.MemberType == MemberTypes.Method)
-            {
-                var method = member as MethodInfo;
-                var attr = method.GetCustomAttributes(typeof(EditorButtonAttribute), true).FirstOrDefault() as EditorButtonAttribute;
-                var label = attr.Label;
-                if (label == "")
-                    label = method.Name;
-                if (GUILayout.Button(label))
-                    method.Invoke(target, new object[] { });
-            }
-            else if (member.MemberType == MemberTypes.Field)
-            {
-
-            }
-            else if (member.MemberType == MemberTypes.Property)
-            {
-
-            }*/
 
             var attr = member.GetCustomAttribute<CustomEditorAttribute>(true);
             if (attr is null)
@@ -66,37 +49,7 @@ class EditorHelper : UnityEditor.Editor
             attributeEditorInstances[attrType].OnEdit(member, attr);
         }
 
-        /*
-        target.GetType().GetMethods()
-            .Where(method => method.GetCustomAttributes(typeof(EditorButtonAttribute), true).FirstOrDefault() != null)
-            .ForEach(method =>
-            {
-                var attr = method.GetCustomAttributes(typeof(EditorButtonAttribute), true).FirstOrDefault() as EditorButtonAttribute;
-                var label = attr.Label;
-                if (label == "")
-                    label = method.Name;
-                if(GUILayout.Button(label))
-                    method.Invoke(target, new object[] { });
-            });
-        target.GetType().GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
-            .Where(member => member.MemberType == MemberTypes.Field || member.MemberType == MemberTypes.Property)
-            .Where(member => member.GetCustomAttributes(typeof(ReadOnlyAttribute), true).FirstOrDefault() != null)
-            .ForEach(member =>
-            {
-                var attr = member.GetCustomAttributes(typeof(ReadOnlyAttribute), true).FirstOrDefault() as ReadOnlyAttribute;
-                var label = attr.Label;
-                if (label == "")
-                    label = member.Name;
-                var value = (member as FieldInfo)?.GetValue(target)?.ToString() ?? (member as PropertyInfo).GetValue(target)?.ToString();
-                if (value != null)
-                {
-                    EditorUtilities.Horizontal(() =>
-                    {
-                        EditorGUILayout.PrefixLabel(label);
-                        EditorGUILayout.LabelField(value);
-                    });
-                }
-            });*/
+        Undo.RecordObject(target, $"Edit {target.GetType().Name}");
     }
 }
 
