@@ -643,6 +643,7 @@ GameObject:
   - component: {fileID: 306412430}
   - component: {fileID: 306412429}
   - component: {fileID: 306412428}
+  - component: {fileID: 306412432}
   m_Layer: 8
   m_Name: Platform-06
   m_TagString: Platform
@@ -772,6 +773,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &306412432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306412426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a883204ff37ce4ba94b13b7a89efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effects:
+  - Effect: {fileID: 11400000, guid: 366e0f0840b75b94fad7c0f7adceee8f, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &323266325
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +969,6 @@ GameObject:
   m_Component:
   - component: {fileID: 375007161}
   - component: {fileID: 375007162}
-  - component: {fileID: 375007163}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -1019,25 +1038,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &375007163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375007160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a883204ff37ce4ba94b13b7a89efbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Effects:
-  - Effect: {fileID: 11400000, guid: 366e0f0840b75b94fad7c0f7adceee8f, type: 2}
-    Strength: 1
-    Duration: 0
-    LifeTime: 0
-    Priority: 0
-    GameObjectInstance: {fileID: 0}
 --- !u!1 &398860620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,6 +1905,7 @@ GameObject:
   - component: {fileID: 663059248}
   - component: {fileID: 663059247}
   - component: {fileID: 663059246}
+  - component: {fileID: 663059250}
   m_Layer: 8
   m_Name: Platform-05
   m_TagString: Platform
@@ -2034,6 +2035,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &663059250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663059244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a883204ff37ce4ba94b13b7a89efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effects:
+  - Effect: {fileID: 11400000, guid: 366e0f0840b75b94fad7c0f7adceee8f, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &665049477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2067,7 @@ GameObject:
   - component: {fileID: 665049481}
   - component: {fileID: 665049480}
   - component: {fileID: 665049479}
+  - component: {fileID: 665049483}
   m_Layer: 8
   m_Name: Platform-04
   m_TagString: Platform
@@ -2175,6 +2196,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &665049483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665049477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a883204ff37ce4ba94b13b7a89efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effects:
+  - Effect: {fileID: 11400000, guid: 366e0f0840b75b94fad7c0f7adceee8f, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &699484420
 GameObject:
   m_ObjectHideFlags: 0
@@ -12174,6 +12214,7 @@ GameObject:
   - component: {fileID: 1330458880}
   - component: {fileID: 1330458879}
   - component: {fileID: 1330458878}
+  - component: {fileID: 1330458882}
   m_Layer: 8
   m_Name: Platform-03
   m_TagString: Platform
@@ -12302,6 +12343,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1330458882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330458876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a883204ff37ce4ba94b13b7a89efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effects:
+  - Effect: {fileID: 11400000, guid: 366e0f0840b75b94fad7c0f7adceee8f, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &1395862078
 GameObject:
   m_ObjectHideFlags: 0
@@ -20366,6 +20426,7 @@ GameObject:
   - component: {fileID: 1927237166}
   - component: {fileID: 1927237167}
   - component: {fileID: 1927237168}
+  - component: {fileID: 1927237169}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -20461,6 +20522,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 95.0625, y: 2.8096123}
   m_EdgeRadius: 0
+--- !u!114 &1927237169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927237165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a883204ff37ce4ba94b13b7a89efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effects:
+  - Effect: {fileID: 11400000, guid: 366e0f0840b75b94fad7c0f7adceee8f, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &1936471100
 GameObject:
   m_ObjectHideFlags: 0
@@ -20474,6 +20554,7 @@ GameObject:
   - component: {fileID: 1936471104}
   - component: {fileID: 1936471103}
   - component: {fileID: 1936471102}
+  - component: {fileID: 1936471106}
   m_Layer: 8
   m_Name: Platform-02
   m_TagString: Platform
@@ -20603,6 +20684,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1936471106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936471100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a883204ff37ce4ba94b13b7a89efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effects:
+  - Effect: {fileID: 11400000, guid: 366e0f0840b75b94fad7c0f7adceee8f, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &1996253755
 GameObject:
   m_ObjectHideFlags: 0
@@ -20935,6 +21035,7 @@ GameObject:
   - component: {fileID: 2101896354}
   - component: {fileID: 2101896353}
   - component: {fileID: 2101896352}
+  - component: {fileID: 2101896356}
   m_Layer: 8
   m_Name: Platform-01
   m_TagString: Platform
@@ -21064,6 +21165,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2101896356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101896350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a883204ff37ce4ba94b13b7a89efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effects:
+  - Effect: {fileID: 11400000, guid: 366e0f0840b75b94fad7c0f7adceee8f, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1001 &4994584962158549155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21304,7 +21424,7 @@ PrefabInstance:
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -16.000244
+      value: -16.000229
       objectReference: {fileID: 0}
     - target: {fileID: 3610250976051289633, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}

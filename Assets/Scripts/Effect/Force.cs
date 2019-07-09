@@ -86,6 +86,12 @@ public class Force : Effect
         var impact = instance.GetTrigger<ImpactData>();
     }
 
+    public override void OnEnd(EffectInstance instance, EntityEffector effector)
+    {
+        base.OnEnd(instance, effector);
+        effector.Entity.GetComponent<MovableEntity>().PhysicalControl = false;
+    }
+
     public override EffectInstance Merge(EffectInstance originalInstance, EffectInstance instance, EntityEffector effector)
     {
         return originalInstance;

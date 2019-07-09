@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class ContactEffect : MonoBehaviour, IEffectorTrigger
+public class ContactEffectTrigger : MonoBehaviour, IEffectorTrigger
 {
     public List<EffectInstance> Effects = new List<EffectInstance>();
     List<GameEntity> contactList = new List<GameEntity>();
