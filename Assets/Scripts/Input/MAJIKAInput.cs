@@ -163,7 +163,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""id"": ""3a399910-d70f-4e5d-af0d-2a6ddc853c02"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": ""StickDeadzone(min=0.2,max=1)"",
+                    ""processors"": ""StickDeadzone(min=0.5,max=1)"",
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
