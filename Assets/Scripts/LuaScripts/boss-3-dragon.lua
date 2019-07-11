@@ -17,22 +17,14 @@ splashDrop = nil;
 droped = false;
 
 function start()
-    entity.position = posA
+    entity.position = vec2(43, 0)
     --fsm.start("UpLeft")   
     player = scene.entity("Player") 
     splashDrop = scene.object("Splash-Drop")
-    startCoroutine(stage1UpLeft)
+    startCoroutine(birth)
 end
 
 function update()
-    if not droped and entity.position.y <= 4 then
-        splashDrop.position = vec2(entity.position.x, splashDrop.position.y)
-        droped = true
-        scene.event("Stage")
-    end
-    if entity.HP <= 0 then
-        camera.follow({entity})
-    end
 end
 
 function changeState(func)
@@ -41,13 +33,16 @@ end
 
 actionCount = 0
 
+function birth()
+    repeat
+        coroutine.yield(nil)
+    until entity.state == "Idle"
+
+    changeState(stage2Center)
+end
+
 function stage1UpLeft()
     console.log("upLeft")
-
-    repeat 
-        coroutine.yield(nil)
-        entity.skill(SkillWaterImpact, Right)
-    until false
 
     repeat
         coroutine.yield(waitForSeconds(1))
@@ -69,14 +64,19 @@ function stage1UpLeft()
         then
             coroutine.yield(entity.wait("skill", _host))
             actionCount = actionCount + 1
-        elseif math.random() < .5 and entity.skill(SkillDash, Right) then
+        elseif math.random() < .3 and entity.skill(SkillDash, Right) then
             coroutine.yield(entity.wait("skill", _host))
             changeState(stage1UpRight)
             actionCount = actionCount + 1
             return
-        elseif entity.skill(SkillFeatherBarrier, Right) then
+        elseif math.random() < .5 and entity.skill(SkillFeatherBarrier, Right) then
             coroutine.yield(entity.wait("skill", _host))
+            actionCount = actionCount + 1
+        else
+            entity.skill(SkillWaterImpact, Right)
+            actionCount = actionCount + 1
         end
+        
     until false
 end
 
@@ -91,7 +91,7 @@ function stage1UpRight()
             return
         end
 
-        if actionCount >= 4 and entity.skill(SkillDive, Left) then
+        if actionCount > 4 and entity.skill(SkillDive, Left) then
             coroutine.yield(entity.wait("skill", _host))
             changeState(stage2Center)
             return
@@ -102,13 +102,17 @@ function stage1UpRight()
         then
             coroutine.yield(entity.wait("skill", _host))
             actionCount = actionCount + 1
-        elseif math.random() < .5 and entity.skill(SkillDash, Left) then
+        elseif math.random() < .3 and entity.skill(SkillDash, Left) then
             coroutine.yield(entity.wait("skill", _host))
             changeState(stage1UpLeft)
             actionCount = actionCount + 1
             return
-        elseif entity.skill(SkillFeatherBarrier, Left) then
+        elseif math.random() < .5 and entity.skill(SkillFeatherBarrier, Left) then
             coroutine.yield(entity.wait("skill", _host))
+            actionCount = actionCount + 1
+        else
+            entity.skill(SkillWaterImpact, Left)
+            actionCount = actionCount + 1
         end
     until false
 end

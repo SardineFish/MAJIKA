@@ -17,6 +17,11 @@ namespace LuaHost.Proxy
             //entity.OnUpdate += EntityUpdate;
         }
 
+        public string State
+        {
+            get => target.GetComponent<EntityController>().State.name;
+        }
+
         public float HP
         {
             get => (target as LifeEntity)?.HP ?? 0;
