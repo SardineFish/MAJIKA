@@ -1,6 +1,6 @@
 
 function start()
-    boss = scene.entity("Boss-3-Bird");
+    boss = scene.entity("Boss-3-Dragon");
     player = scene.entity("Player");
     camera.follow({player, boss});
     game.control(player);
