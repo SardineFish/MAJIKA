@@ -3117,8 +3117,6 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 2319143878739948447, guid: c8c7b897af8f9cc4bbad1238e62d7eee, type: 2}
     value: {fileID: 976959356}
-  - key: {fileID: 4081249689987261827, guid: c8c7b897af8f9cc4bbad1238e62d7eee, type: 2}
-    value: {fileID: 1699651192}
   - key: {fileID: 1342402930700737542, guid: c8c7b897af8f9cc4bbad1238e62d7eee, type: 2}
     value: {fileID: 2013025982}
   - key: {fileID: 3049706092105564904, guid: c8c7b897af8f9cc4bbad1238e62d7eee, type: 2}
@@ -3141,6 +3139,8 @@ PlayableDirector:
     value: {fileID: 2013025981}
   - key: {fileID: 903761967248305517, guid: c8c7b897af8f9cc4bbad1238e62d7eee, type: 2}
     value: {fileID: 1927237170}
+  - key: {fileID: 6036052991069121836, guid: c8c7b897af8f9cc4bbad1238e62d7eee, type: 2}
+    value: {fileID: 1699651207}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &976959358
@@ -17274,7 +17274,7 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 2319143878739948447, guid: c8c7b897af8f9cc4bbad1238e62d7eee, type: 2}
     value: {fileID: 1316065841}
-  - key: {fileID: 4081249689987261827, guid: c8c7b897af8f9cc4bbad1238e62d7eee, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 1699651192}
   - key: {fileID: 1342402930700737542, guid: c8c7b897af8f9cc4bbad1238e62d7eee, type: 2}
     value: {fileID: 2013025982}
@@ -17870,6 +17870,7 @@ GameObject:
   - component: {fileID: 1699651194}
   - component: {fileID: 1699651193}
   - component: {fileID: 1699651206}
+  - component: {fileID: 1699651207}
   m_Layer: 0
   m_Name: Boss-3-Dragon
   m_TagString: Untagged
@@ -17916,6 +17917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a25b944a2485648afc3b8adbc9c8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ResetOnAwake: 1
   DirectionImplement: 1
   Direction: 0
 --- !u!114 &1699651196
@@ -17974,10 +17976,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1699651192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4633ca4cdf455a499de03abf43fe671, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d86b199344342242baaa2ae249832c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialScript: {fileID: 4900000, guid: 141a555da9cf9cb4a909b3bdb8b0676d, type: 3}
+  InitialScript: {fileID: 0}
   Script: {fileID: 2213920135882650261, guid: a8cbfd781c16c574e9829f2422e53b11, type: 3}
 --- !u!114 &1699651199
 MonoBehaviour:
@@ -18114,6 +18116,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zIndex: 3
   Local: 0
+--- !u!114 &1699651207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699651192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 84b7a6b8e3c24244a8deedc9f259851a, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1699651204}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1 &1777323531
 GameObject:
   m_ObjectHideFlags: 0
@@ -27539,22 +27572,22 @@ PrefabInstance:
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -196
+      value: -114.464
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -400
+      value: -236.928
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -517.8999
+      value: -103.57985
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -1051.8003
+      value: -223.16019
       objectReference: {fileID: 0}
     - target: {fileID: 3610250976051289633, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}

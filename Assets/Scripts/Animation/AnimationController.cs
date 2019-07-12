@@ -11,8 +11,22 @@ public enum DirectionImplement
 [RequireComponent(typeof(Animator))]
 public class AnimationController : EntityBehaviour
 {
+    public bool ResetOnAwake = true;
     public DirectionImplement DirectionImplement = DirectionImplement.FlipRenderer;
     public int Direction = 0;
+
+    Animator animator;
+    PhysicsRootMotion rootMotion;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        rootMotion = GetComponent<PhysicsRootMotion>();
+
+        if (ResetOnAwake)
+            animator.runtimeAnimatorController = null;
+    }
+
     public IEnumerator WaitAnimation()
     {
         while (!IsEnd())
@@ -26,7 +40,7 @@ public class AnimationController : EntityBehaviour
     {
         if (!animator)
             yield break;
-        GetComponent<Animator>().runtimeAnimatorController = animator;
+        this.animator.runtimeAnimatorController = animator;
         yield return null;
         while (GetComponent<Animator>().runtimeAnimatorController == animator && !IsEnd())
             yield return null;
@@ -46,8 +60,8 @@ public class AnimationController : EntityBehaviour
         if (!Entity.active)
             return;
 
-        GetComponent<PhysicsRootMotion>().EnableRootMotion = false;
-        GetComponent<Animator>().runtimeAnimatorController = animator;
+        rootMotion.EnableRootMotion = false;
+        this.animator.runtimeAnimatorController = animator;
         if(DirectionImplement == DirectionImplement.FlipRenderer)
         {
             if (direction > 0)
@@ -66,6 +80,6 @@ public class AnimationController : EntityBehaviour
     }
     public bool IsEnd()
     {
-        return Entity.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1;
+        return animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1;
     }
 }

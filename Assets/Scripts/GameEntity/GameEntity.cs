@@ -66,6 +66,11 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
         DetectThreat();
     }
 
+    public void SetActive(bool active)
+    {
+        this.active = active;
+    }
+
     protected virtual void Active()
     {
 

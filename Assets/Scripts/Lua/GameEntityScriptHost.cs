@@ -9,6 +9,7 @@ using LuaHost;
 [RequireComponent(typeof(GameEntity))]
 public class GameEntityScriptHost : LuaScriptHost, IEntityLifeCycle
 {
+    GameEntity entity;
     public override void InitRuntime()
     {
         base.InitRuntime();
@@ -18,10 +19,28 @@ public class GameEntityScriptHost : LuaScriptHost, IEntityLifeCycle
     public void OnActive()
     {
         LuaScript.Globals.Get("active").Function?.Call();
+        LuaScript.Globals.Get("start").Function?.Call();
     }
 
     public void OnInactive()
     {
         LuaScript.Globals.Get("inactive").Function?.Call();
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        entity = GetComponent<GameEntity>();
+    }
+
+    protected override void Start()
+    {
+        
+    }
+
+    protected override void Update()
+    {
+        if (entity.active)
+            LuaScript.Globals.Get("update").Function?.Call();
     }
 }

@@ -38,6 +38,8 @@ public class PhysicsRootMotion : MonoBehaviour
         var animator = GetComponent<Animator>();
         if (!animator)
             return;
+        if (!animator.runtimeAnimatorController)
+            return;
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < lastTime)
         {
             origin = transform.position;

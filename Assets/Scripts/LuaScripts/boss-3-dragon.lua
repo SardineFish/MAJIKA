@@ -22,7 +22,8 @@ function awake()
     splashDrop = scene.object("Splash-Drop")
 end
 
-function start()
+function active()
+    console.log("dragon start")
     --fsm.start("UpLeft")   
     startCoroutine(birth)
 end
