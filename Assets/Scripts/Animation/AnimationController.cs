@@ -33,6 +33,9 @@ public class AnimationController : EntityBehaviour
     }
     public void PlayAnimation(RuntimeAnimatorController animator, float direction)
     {
+        if (!Entity.active)
+            return;
+
         if (Entity.GetComponent<Animator>().runtimeAnimatorController == animator && direction == MathUtility.SignInt(this.Direction))
             return;
         else
@@ -40,6 +43,9 @@ public class AnimationController : EntityBehaviour
     }
     public void ChangeAnimation(RuntimeAnimatorController animator, float direction)
     {
+        if (!Entity.active)
+            return;
+
         GetComponent<PhysicsRootMotion>().EnableRootMotion = false;
         GetComponent<Animator>().runtimeAnimatorController = animator;
         if(DirectionImplement == DirectionImplement.FlipRenderer)

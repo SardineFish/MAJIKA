@@ -12,23 +12,27 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
     public const string NameSkills = "Skills";
     public const string NameInventory = "Inventory";
 
-    public bool ActiveOnAwake = true;
+    public bool ActiveOnStart = true;
 
     private bool _active;
-    protected bool active
+    [ReadOnly("Active")]
+    public bool active
     {
         get => _active;
         set
         {
+            var changed = _active != value;
             _active = value;
-            if (value)
+
+            if (changed && value)
             {
                 this.Active();
-                GetComponents<EntityBehaviour>().ForEach(t => t.OnActive());
+                GetComponents<IEntityLifeCycle>().ForEach(t => t.OnActive());
             }
-            else
+            else if(changed && !value)
             {
                 this.Inactive();
+                GetComponentsInChildren<IEntityLifeCycle>().ForEach(t => t.OnInactive());
             }
             
         }
@@ -43,8 +47,6 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
 
     protected virtual void Awake()
     {
-        if (ActiveOnAwake)
-            active = true;
     }
 
 
@@ -52,6 +54,8 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
     protected override void Start()
     {
         base.Start();
+        if (ActiveOnStart)
+            active = true;
     }
 
     // Update is called once per frame

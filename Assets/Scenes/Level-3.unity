@@ -1823,7 +1823,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7de790aba1137f34194b04c97300632f, type: 2}
+      objectReference: {fileID: 9100000, guid: 25f225bc3c932594181d67b043b2da01, type: 2}
     - target: {fileID: 4744935778831600, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
@@ -17876,7 +17876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1699651193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18077,7 +18077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581f9ced6a211d3458d6ea7fb1036b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveOnAwake: 1
+  ActiveOnStart: 0
   StatusEffects: []
   HP: 300
   MaxHP: 1000
@@ -27539,22 +27539,22 @@ PrefabInstance:
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -94.08002
+      value: -196
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -196.16003
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: -517.8999
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -16.000366
+      value: -1051.8003
       objectReference: {fileID: 0}
     - target: {fileID: 3610250976051289633, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}

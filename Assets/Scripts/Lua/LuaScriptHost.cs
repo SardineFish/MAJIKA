@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace LuaHost
 {
-    public class LuaScriptHost : MonoBehaviour, IInitObject
+    public class LuaScriptHost : MonoBehaviour
     {
         public TextAsset InitialScript;
         public TextAsset Script;
@@ -25,25 +25,6 @@ namespace LuaHost
             LuaScript = CreateScriptRuntime(this);
         }
 
-        public virtual void Init()
-        {
-
-            InitRuntime();
-            if (InitialScript)
-                LuaScript.DoString(InitialScript.text);
-            if (Script)
-                LuaScript.DoString(Script.text);
-            var func = LuaScript.Globals.Get("init").Function;
-            func?.Call();
-            /*
-            InitRuntime();
-            if (InitialScript)
-                LuaScript.DoString(InitialScript.text);
-            if (Script)
-                LuaScript.DoString(Script.text);
-            LuaScript.Globals.Get("init").Function?.Call();*/
-        }
-
         protected virtual void Start()
         {
             LuaScript.Globals.Get("start").Function?.Call();
@@ -56,6 +37,11 @@ namespace LuaHost
 
         protected virtual void Awake()
         {
+            InitRuntime();
+            if (InitialScript)
+                LuaScript.DoString(InitialScript.text);
+            if (Script)
+                LuaScript.DoString(Script.text);
             LuaScript.Globals.Get("awake").Function?.Call();
         }
 

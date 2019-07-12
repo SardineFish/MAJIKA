@@ -23,24 +23,21 @@ public class EntityController : EntityStateMachine
     public bool Climbed = false;
     public int SkillIndex = -1;
     public GameEntity SkillTarget = null;
-    
-    // Use this for initialization
-    void Start()
+
+    public override void OnActive()
     {
         if (!InitialState)
             InitialState = IdleState;
         ChangeState(InitialState);
         GetComponent<EventBus>().AddEventListener(EventHit, () =>
-         {
-             ChangeState(HitState);
-         });
+        {
+            ChangeState(HitState);
+        });
         GetComponent<EventBus>().AddEventListener(LifeEntity.EventDeath, () =>
         {
             ChangeState(DeadState);
         });
-
     }
-
 
     protected override void Update()
     {
@@ -57,6 +54,8 @@ public class EntityController : EntityStateMachine
 
     public override bool ChangeState(EntityState nextState)
     {
+        if (!Entity.active)
+            return false;
         if (Locker.Locked)
             return false;
         return base.ChangeState(nextState);

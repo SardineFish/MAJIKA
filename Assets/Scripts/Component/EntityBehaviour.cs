@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class EntityBehaviour : MonoBehaviour
+public abstract class EntityBehaviour : MonoBehaviour, IEntityLifeCycle
 {
     public GameEntity Entity
     {
@@ -15,4 +15,5 @@ public abstract class EntityBehaviour : MonoBehaviour
     }
 
     public virtual void OnActive() { }
+    public virtual void OnInactive() { }
 }
