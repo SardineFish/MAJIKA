@@ -42,7 +42,11 @@ function birth()
         coroutine.yield(nil)
     until entity.state == "Idle"
 
-    changeState(stage2Center)
+    entity.position = posA - (posC - posA)
+    coroutine.yield(waitForSeconds(1))
+    entity.skill(SkillDive, Right)
+    coroutine.yield(entity.wait("skill", _host))
+    changeState(stage1UpLeft)
 end
 
 function stage1UpLeft()

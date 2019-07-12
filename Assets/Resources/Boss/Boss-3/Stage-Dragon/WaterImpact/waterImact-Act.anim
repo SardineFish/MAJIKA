@@ -441,13 +441,6 @@ AnimationClip:
     floatParameter: 0
     intParameter: 4
     messageOptions: 0
-  - time: 4.1
-    functionName: TriggerLevelEvent
-    data: WaterFrozen
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 4.2
     functionName: OnSkillEnd
     data: 
