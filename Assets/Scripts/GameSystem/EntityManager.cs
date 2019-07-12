@@ -12,6 +12,15 @@ public class EntityManager : Singleton<EntityManager>
     {
     }
 
+    private void Awake()
+    {
+        Entities.ForEach(entity =>
+        {
+            if (entity && entity.gameObject)
+                entity.GetComponents<IInitObject>().ForEach(cpn => cpn.Init());
+        });
+    }
+
     // Update is called once per frame
     void Update()
     {

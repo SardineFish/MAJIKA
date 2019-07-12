@@ -16,11 +16,14 @@ player = nil;
 splashDrop = nil;
 droped = false;
 
+function init()
+    console.log("init")
+    --player = scene.entity("Player") 
+    --splashDrop = scene.object("Splash-Drop")
+end
+
 function start()
-    entity.position = vec2(43, 0)
     --fsm.start("UpLeft")   
-    player = scene.entity("Player") 
-    splashDrop = scene.object("Splash-Drop")
     startCoroutine(birth)
 end
 

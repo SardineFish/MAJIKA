@@ -29,6 +29,7 @@ namespace Assets.Editor
             EditorGUI.MultiFloatField(rect,new GUIContent(lable), new GUIContent[] { new GUIContent(" "), new GUIContent("~") }, values);
             EditorGUILayout.EndHorizontal();
 
+
             return new AngularRange(values[0], values[1]);
         }
 

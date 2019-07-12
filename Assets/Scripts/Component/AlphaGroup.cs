@@ -22,4 +22,8 @@ public class AlphaGroup : MonoBehaviour
             renderer.color = color;
         });
     }
+
+    private void UpdateAlpha()
+    {
+    }
 }
