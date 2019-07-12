@@ -400,34 +400,41 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
+    functionName: TriggerLevelEvent
+    data: IceBroken
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
     functionName: SpawnImpact
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 2
     messageOptions: 0
-  - time: 1
+  - time: 1.5
     functionName: SpawnImpact
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 1
+  - time: 1.5
     functionName: SpawnImpact
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 3
     messageOptions: 0
-  - time: 2
+  - time: 2.5
     functionName: SpawnImpact
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2
+  - time: 2.5
     functionName: SpawnImpact
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -435,6 +442,13 @@ AnimationClip:
     intParameter: 4
     messageOptions: 0
   - time: 4.1
+    functionName: TriggerLevelEvent
+    data: WaterFrozen
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4.2
     functionName: OnSkillEnd
     data: 
     objectReferenceParameter: {fileID: 0}

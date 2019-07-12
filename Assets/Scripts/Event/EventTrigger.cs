@@ -3,19 +3,13 @@ using System.Collections;
 
 public class EventTrigger : MonoBehaviour
 {
-    public EventBus EventBus;
-    public string EventName;
-    public bool TriggerOnAwake = false;
-    // Use this for initialization
-    void Start()
+    public void TriggerLevelEvent(string eventName)
     {
-        if (TriggerOnAwake)
-            Trigger();
+        Level.Instance.GetComponent<EventBus>().Dispatch(eventName);
     }
 
-    [EditorButton]
-    public void Trigger()
+    public void TriggerEvent(string eventName)
     {
-        EventBus?.Dispatch(EventName);
+        GetComponent<EventBus>()?.Dispatch(eventName);
     }
 }
