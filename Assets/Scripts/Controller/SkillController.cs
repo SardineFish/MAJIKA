@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Linq;
 
-public class SkillController : EntityBehaviour<Player>
+public class SkillController : EntityBehaviour
 {
     public const string EventSkillEnd = "SkillEnd";
     public Skill EmptySkill;

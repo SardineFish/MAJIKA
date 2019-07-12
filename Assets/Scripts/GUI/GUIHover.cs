@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Canvas))]
-public class GUIHover : EntityBehaviour<GameEntity>
+public class GUIHover : EntityBehaviour
 {
     private void OnEnable()
     {

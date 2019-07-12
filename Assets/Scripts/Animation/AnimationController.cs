@@ -9,7 +9,7 @@ public enum DirectionImplement
 
 [RequireComponent(typeof(PhysicsRootMotion))]
 [RequireComponent(typeof(Animator))]
-public class AnimationController : EntityBehaviour<GameEntity>
+public class AnimationController : EntityBehaviour
 {
     public DirectionImplement DirectionImplement = DirectionImplement.FlipRenderer;
     public int Direction = 0;

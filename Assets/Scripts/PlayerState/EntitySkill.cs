@@ -4,12 +4,12 @@ using System.Collections;
 namespace State
 {
     [CreateAssetMenu(fileName = "Skill", menuName = "EntityState/Skill")]
-    public class EntitySkill : GameEntityState
+    public class EntitySkill : AnimatedState
     {
         public EntityJump JumpState;
         public EntityIdle IdleState;
 
-        public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
+        public override bool OnEnter(GameEntity entity, EntityState previousState, EntityStateMachine fsm)
         {
             var skillIdx = (fsm as EntityController).SkillIndex;
             var skillTarget = (fsm as EntityController).SkillTarget;
@@ -27,7 +27,7 @@ namespace State
             return false;
         }
 
-        public override IEnumerator Begin(GameEntity entity, EntityStateMachine<GameEntity> fsm)
+        public override IEnumerator Begin(GameEntity entity, EntityStateMachine fsm)
         {
             yield return entity.GetComponent<SkillController>().WaitSkill();
             fsm.ChangeState(IdleState);

@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using SardineFish.Unity.FSM;
 using UnityEngine;
 
-public class EntityState<TEntity> : StateAsset, IState<EntityState<TEntity>> where TEntity: GameEntity
+public class EntityState : StateAsset, IState<EntityState>
 {
-    public bool OnEnter(EntityState<TEntity> previousState)
+    public bool OnEnter(EntityState previousState)
     {
         return true;
     }
 
-    public bool OnExit(EntityState<TEntity> nextstate)
+    public bool OnExit(EntityState nextstate)
     {
         return true;
     }
@@ -24,23 +24,23 @@ public class EntityState<TEntity> : StateAsset, IState<EntityState<TEntity>> whe
 
     }
 
-    public virtual IEnumerator Begin(TEntity entity, EntityStateMachine<TEntity> fsm)
+    public virtual IEnumerator Begin(GameEntity entity, EntityStateMachine fsm)
     {
         yield break;
 
     }
 
-    public virtual bool OnEnter(TEntity entity, EntityState<TEntity> previousState, EntityStateMachine<TEntity> fsm)
+    public virtual bool OnEnter(GameEntity entity, EntityState previousState, EntityStateMachine fsm)
     {
         return true;
     }
 
-    public virtual bool OnExit(TEntity entity, EntityState<TEntity> nextState, EntityStateMachine<TEntity> fsm)
+    public virtual bool OnExit(GameEntity entity, EntityState nextState, EntityStateMachine fsm)
     {
         return true;
     }
 
-    public virtual void OnUpdate(TEntity entity, EntityStateMachine<TEntity> fsm)
+    public virtual void OnUpdate(GameEntity entity, EntityStateMachine fsm)
     {
         
     }

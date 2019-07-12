@@ -11,6 +11,29 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
     public const string NameAttached = "Attached";
     public const string NameSkills = "Skills";
     public const string NameInventory = "Inventory";
+
+    public bool ActiveOnAwake = true;
+
+    private bool _active;
+    protected bool active
+    {
+        get => _active;
+        set
+        {
+            _active = value;
+            if (value)
+            {
+                this.Active();
+                GetComponents<EntityBehaviour>().ForEach(t => t.OnActive());
+            }
+            else
+            {
+                this.Inactive();
+            }
+            
+        }
+    }
+
     public GameObject Renderer => transform.Find(NameRenderer).gameObject;
     public GameObject Collider => transform.Find(NameCollider).gameObject;
 
@@ -18,20 +41,35 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
 
     public event Action OnUpdate;
 
-    
+    protected virtual void Awake()
+    {
+        if (ActiveOnAwake)
+            active = true;
+    }
+
 
     // Use this for initialization
-    protected virtual void Start()
+    protected override void Start()
     {
         base.Start();
     }
 
     // Update is called once per frame
-    protected virtual void Update()
+    protected override void Update()
     {
         base.Update();
         OnUpdate?.Invoke();
         DetectThreat();
+    }
+
+    protected virtual void Active()
+    {
+
+    }
+
+    protected virtual void Inactive()
+    {
+        
     }
 
     public static GameEntity GetEntity(Component obj)

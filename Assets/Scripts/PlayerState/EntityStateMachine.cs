@@ -7,18 +7,18 @@ using SardineFish.Unity.FSM;
 using UnityEngine;
 
 [Serializable]
-public class EntityStateMachine<TEntity> : EntityBehaviour<TEntity>, IFSM<EntityState<TEntity>> where TEntity:GameEntity
+public class EntityStateMachine : EntityBehaviour, IFSM<EntityState>
 {
     [SerializeField]
-    private EntityState<TEntity> state;
-    public EntityState<TEntity> State => this.state;
+    private EntityState state;
+    public EntityState State => this.state;
     Coroutine currentStateCoroutine;
     
     [SerializeField]
     private string currentState;
 
 
-    public virtual bool ChangeState(EntityState<TEntity> nextState)
+    public virtual bool ChangeState(EntityState nextState)
     {
         if (nextState == null)
             return false;

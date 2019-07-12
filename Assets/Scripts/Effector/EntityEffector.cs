@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class EntityEffector : EntityBehaviour<GameEntity>
+public class EntityEffector : EntityBehaviour
 {
     public List<EffectInstance> Effects = new List<EffectInstance>();
 

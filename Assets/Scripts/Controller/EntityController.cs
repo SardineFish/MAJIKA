@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(EventBus))]
-public class EntityController : EntityStateMachine<GameEntity>
+public class EntityController : EntityStateMachine
 {
     public const string EventHit = "Hit";
     public Locker Locker = new Locker();
-    public GameEntityState InitialState;
+    public AnimatedState InitialState;
     public EntityIdle IdleState;
     public EntitySkill SkillState;
     public EntityHit HitState;
@@ -55,7 +55,7 @@ public class EntityController : EntityStateMachine<GameEntity>
             ChangeState(IdleState);
     }
 
-    public override bool ChangeState(EntityState<GameEntity> nextState)
+    public override bool ChangeState(EntityState nextState)
     {
         if (Locker.Locked)
             return false;
@@ -90,7 +90,7 @@ public class EntityController : EntityStateMachine<GameEntity>
         return result;
     }
     public virtual System.Guid Lock() => Lock(IdleState);
-    public virtual System.Guid Lock(EntityState<GameEntity> state)
+    public virtual System.Guid Lock(EntityState state)
     {
         ChangeState(state);
         return Locker.Lock();

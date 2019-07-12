@@ -4,9 +4,9 @@ using System.Collections;
 namespace State
 {
     [CreateAssetMenu(fileName = "Dead", menuName = "EntityState/Dead")]
-    public class EntityDead : GameEntityState
+    public class EntityDead : AnimatedState
     {
-        public override bool OnExit(GameEntity entity, EntityState<GameEntity> nextState, EntityStateMachine<GameEntity> fsm)
+        public override bool OnExit(GameEntity entity, EntityState nextState, EntityStateMachine fsm)
         {
             return false;
         }

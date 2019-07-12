@@ -4,7 +4,7 @@ using System.Collections;
 namespace State
 {
     [CreateAssetMenu(fileName = "Hit", menuName = "EntityState/Hit")]
-    public class EntityHit : EntityState<GameEntity>
+    public class EntityHit : EntityState
     {
         public float BlowUpSleepTime = 0.5f;
         public RuntimeAnimatorController HitAction;
@@ -13,7 +13,7 @@ namespace State
         public EntityMove MoveState;
         public EntityJump JumpState;
 
-        public override IEnumerator Begin(GameEntity entity, EntityStateMachine<GameEntity> fsm)
+        public override IEnumerator Begin(GameEntity entity, EntityStateMachine fsm)
         {
             var trigger = entity.GetComponent<EntityEffector>()?.GetEffect<Damage>()?.GetTrigger<ImpactData>();
             var blowUp = entity.GetComponent<EntityEffector>()?.GetEffect<BlowUp>();
@@ -59,12 +59,12 @@ namespace State
             fsm.ChangeState(IdleState);
         }
 
-        public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
+        public override bool OnEnter(GameEntity entity, EntityState previousState, EntityStateMachine fsm)
         {
             return base.OnEnter(entity, previousState, fsm);
         }
 
-        public override bool OnExit(GameEntity entity, EntityState<GameEntity> nextState, EntityStateMachine<GameEntity> fsm)
+        public override bool OnExit(GameEntity entity, EntityState nextState, EntityStateMachine fsm)
         {
             if (nextState is EntityHit)
                 return false;

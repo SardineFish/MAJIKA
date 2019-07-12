@@ -4,7 +4,7 @@ using System.Collections;
 namespace State
 {
     [CreateAssetMenu(fileName = "Move", menuName = "EntityState/Move")]
-    public class EntityMove : GameEntityState
+    public class EntityMove : AnimatedState
     {
         public AudioClip FootStep;
         public float Delay = 0;
@@ -15,7 +15,7 @@ namespace State
         public EntityClimb ClimbState;
         public EntitySkill SkillState;
         public EntityAir AirState;
-        public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
+        public override bool OnEnter(GameEntity entity, EntityState previousState, EntityStateMachine fsm)
         {
             var movement = entity.GetComponent<EntityController>().Movement;
             movement.y = 0;
@@ -23,7 +23,7 @@ namespace State
                 return base.OnEnter(entity, previousState, fsm);
             return false;
         }
-        public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
+        public override void OnUpdate(GameEntity entity, EntityStateMachine fsm)
         {
             // Movement
             var movement = entity.GetComponent<EntityController>().Movement;
@@ -48,7 +48,7 @@ namespace State
                 fsm.ChangeState(SkillState);
             
         }
-        public override IEnumerator Begin(GameEntity entity, EntityStateMachine<GameEntity> fsm)
+        public override IEnumerator Begin(GameEntity entity, EntityStateMachine fsm)
         {
             yield return new WaitForSeconds(Delay);
             while (true)

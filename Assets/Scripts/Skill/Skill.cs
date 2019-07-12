@@ -7,7 +7,7 @@ public enum SkillDirection
 {
     Horizontal,
 }
-public class Skill : EntityBehaviour<GameEntity>
+public class Skill : EntityBehaviour
 {
     public RuntimeAnimatorController AnimatorController;
     public AudioClip AudioEffect;

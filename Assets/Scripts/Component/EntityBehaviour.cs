@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EntityBehaviour<T> : MonoBehaviour where T:GameEntity
+public abstract class EntityBehaviour : MonoBehaviour
 {
-    public T Entity
+    public GameEntity Entity
     {
         get
         {
-            var entity = GetComponent<T>();
+            var entity = GetComponent<GameEntity>();
             if (entity == null || !entity)
-                entity = GetComponentInParent<T>();
+                entity = GetComponentInParent<GameEntity>();
             return entity;
         }
     }
+
+    public virtual void OnActive() { }
 }

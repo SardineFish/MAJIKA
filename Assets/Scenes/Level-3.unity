@@ -17930,6 +17930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051faa088389e9c4d84a0dfca653de8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: {fileID: 0}
   currentState: 
   InitialState: {fileID: 11400000, guid: 7c41bcb415a6a194780b7c436ebfd623, type: 2}
   IdleState: {fileID: 11400000, guid: 95045ac0ed1c7cf45b613a7b608c6dc1, type: 2}
@@ -18076,6 +18077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581f9ced6a211d3458d6ea7fb1036b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveOnAwake: 1
   StatusEffects: []
   HP: 300
   MaxHP: 1000

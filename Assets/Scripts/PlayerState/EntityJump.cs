@@ -4,14 +4,14 @@ using System.Collections;
 namespace State
 {
     [CreateAssetMenu(fileName = "Jump", menuName = "EntityState/Jump")]
-    public class EntityJump : GameEntityState
+    public class EntityJump : AnimatedState
     {
         public EntityAir AirState;
         public EntityMove MoveState;
         public EntityIdle IdleState;
         public EntityClimb ClimbState;
 
-        public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
+        public override bool OnEnter(GameEntity entity, EntityState previousState, EntityStateMachine fsm)
         {
             if((fsm as EntityController).Jumped && entity.GetComponent<MovableEntity>().Jump())
             {
@@ -21,7 +21,7 @@ namespace State
             return false;
         }
 
-        public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
+        public override void OnUpdate(GameEntity entity, EntityStateMachine fsm)
         {
             if (MoveState)
                 fsm.ChangeState(MoveState);

@@ -7,7 +7,7 @@ using System;
 
 namespace SardineFish.Unity.FSM
 {
-    public abstract class FSMBehaviour<TEntity> : EntityBehaviour<TEntity>
+    public abstract class FSMBehaviour<TEntity> : EntityBehaviour
         where TEntity : GameEntity
     {
         public FSM fsm = new FSM();

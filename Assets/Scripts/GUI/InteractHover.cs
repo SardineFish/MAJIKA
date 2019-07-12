@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.EventSystems;
 
-public class InteractHover : EntityBehaviour<GameEntity>
+public class InteractHover : EntityBehaviour
 {
     private void Awake()
     {

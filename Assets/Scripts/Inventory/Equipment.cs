@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Inventory
 {
-    public class Equipment : EntityBehaviour<GameEntity>, ISlotEditor
+    public class Equipment : EntityBehaviour, ISlotEditor
     {
         [Slot("Skills")]
         public ItemWrapper[] SkillSlots = new ItemWrapper[4];

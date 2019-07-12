@@ -5,7 +5,7 @@ using State;
 namespace State
 {
     [CreateAssetMenu(fileName = "Idle", menuName = "EntityState/Idle")]
-    public class EntityIdle : GameEntityState
+    public class EntityIdle : AnimatedState
     {
         public EntityMove MoveState;
         public EntityJump JumpState;
@@ -14,7 +14,7 @@ namespace State
         public EntityAir AirState;
 
         /*
-        public override bool OnEnter(GameEntity entity, EntityState<GameEntity> previousState, EntityStateMachine<GameEntity> fsm)
+        public override bool OnEnter(GameEntity entity, EntityState previousState, EntityStateMachine fsm)
         {
             entity.GetComponent<EventBus>().AddEventListenerOnce("Hit", () =>
             {
@@ -24,7 +24,7 @@ namespace State
             return base.OnEnter(entity, previousState, fsm);
         }*/
 
-        public override void OnUpdate(GameEntity entity, EntityStateMachine<GameEntity> fsm)
+        public override void OnUpdate(GameEntity entity, EntityStateMachine fsm)
         {
             if (MoveState)
                 fsm.ChangeState(MoveState);

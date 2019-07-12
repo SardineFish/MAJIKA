@@ -33,11 +33,11 @@ public static class EventBehaviourExtension
         }
 
     }
-    public static void UseEventListener<EntityT>(this EntityBehaviour<EntityT> entityBehavior, EventBus eventBus) where EntityT : GameEntity
+    public static void UseEventListener<EntityT>(this EntityBehaviour entityBehavior, EventBus eventBus) where EntityT : GameEntity
     {
         (entityBehavior as IEventBehaviour)?.Bind(eventBus);
     }
-    public static void UseEventListener<EntityT>(this EntityBehaviour<EntityT> entityBehavior) where EntityT: GameEntity
+    public static void UseEventListener<EntityT>(this EntityBehaviour entityBehavior) where EntityT: GameEntity
     {
         if (entityBehavior.Entity.GetComponent<EventBus>())
             (entityBehavior as IEventBehaviour)?.Bind(entityBehavior.Entity.GetComponent<EventBus>());

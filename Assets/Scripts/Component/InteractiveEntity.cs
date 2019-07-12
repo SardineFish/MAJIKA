@@ -2,7 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(EventBus))]
-public class InteractiveEntity : EntityBehaviour<GameEntity>
+public class InteractiveEntity : EntityBehaviour
 {
     public const string EventInteract = "OnInteract";
     public const string EventContactEnter = "OnContactEnter";

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Inventory
 {
-    public class Inventory : EntityBehaviour<GameEntity>
+    public class Inventory : EntityBehaviour
     {
         public int Volume = 12;
         public bool AutoPickup = false;

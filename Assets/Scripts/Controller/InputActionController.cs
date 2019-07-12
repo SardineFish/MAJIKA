@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 [RequireComponent(typeof(Player), typeof(EntityController))]
-public class InputActionController : EntityBehaviour<Player>
+public class InputActionController : EntityBehaviour
 {
     public List<InteractiveEntity> InteractiveEntities = new List<InteractiveEntity>();
 

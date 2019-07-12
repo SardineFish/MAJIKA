@@ -10,7 +10,7 @@ public enum ImpactSpawnType
     Barrage
 }
 
-public class SkillImpactSpawner : EntityBehaviour<GameEntity>
+public class SkillImpactSpawner : EntityBehaviour
 {
     public GameObject Prefab;
     public ImpactSpawnType SpawnType = ImpactSpawnType.Default;
