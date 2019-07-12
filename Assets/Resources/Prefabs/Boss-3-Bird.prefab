@@ -60,12 +60,6 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
-  - Effect: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b, type: 2}
-    Strength: 1
-    Duration: 0
-    LifeTime: 0
-    Priority: 0
-    GameObjectInstance: {fileID: 0}
 --- !u!114 &47334572950011991
 MonoBehaviour:
   m_ObjectHideFlags: 0
