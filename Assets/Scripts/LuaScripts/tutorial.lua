@@ -4,8 +4,9 @@ local gameEnd = false;
 
 function start()
     local prefab = resources.prefab("Player");
-    boss = scene.spawn(resources.prefab("Boss-0"), "Boss", vec2(180, 3));
     player = scene.spawn(prefab, "Player", vec2(5, 2.2));
+    boss = scene.spawn(resources.prefab("Boss-0"), "Boss", vec2(180, 3));
+    --boss.setActive(true);
     camera.reset();
     camera.follow(player);
 
@@ -71,7 +72,6 @@ function tutorial()
     until player.position.x > 134;
     
     boss.setActive(true);
-    boss.restartScript();
     coroutine.yield(game.conversation({
         "安静的走廊里好像能听见什么……"
     },{player}, true));

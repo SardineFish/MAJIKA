@@ -25,18 +25,7 @@ namespace LuaHost
         }
         public void Control(GameEntity entity)
         {
-            if (GameSystem.Instance.PlayerInControl == entity)
-                return;
-            if (GameSystem.Instance.PlayerInControl && GameSystem.Instance.PlayerInControl.GetComponent<EntityInputPlugin>())
-                GameObject.Destroy(GameSystem.Instance.PlayerInControl.GetComponent<EntityInputPlugin>());
-            if (entity && !entity.GetComponent<EntityInputPlugin>())
-                entity.gameObject.AddComponent<EntityInputPlugin>();
-            GameSystem.Instance.PlayerInControl = entity;
-            if (GameGUIManager.Instance)
-            {
-                GameGUIManager.Instance.GetComponent<SkillUIManager>().DisplayEntity = entity;
-                GameGUIManager.Instance.PlayerHP.DisplayEntity = entity as LifeEntity;
-            }
+            GameSystem.Instance.Control(entity);
         }
         public void SetTarget(GameEntity entity, string name)
         {

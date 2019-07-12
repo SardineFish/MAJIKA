@@ -20,7 +20,7 @@ public class Level : Singleton<Level>
     IEnumerator OnLevelPass()
     {
         CoveredUI.Find(PassUIName)?.ShowAsync();
-        var animator = CoveredUI.Find(FailedUIName)?.GetComponent<Animator>();
+        var animator = CoveredUI.Find(PassUIName)?.GetComponent<Animator>();
         yield return null;
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
             yield return null;

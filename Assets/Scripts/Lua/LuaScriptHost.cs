@@ -68,7 +68,9 @@ namespace LuaHost
         public static Script CreateScriptRuntime(LuaScriptHost host)
         {
             host.CoroutineManager = new LuaCoroutineManager(host);
-            var script = new Script();
+            var script = new Script(CoreModules.Preset_Default | CoreModules.Debug);
+            script.Options.UseLuaErrorLocations = false;
+            
             script.Globals["_host"] = host;
             script.Globals["console"] = typeof(LuaRuntime.Console);
             script.Globals["scene"] = new SceneHost();

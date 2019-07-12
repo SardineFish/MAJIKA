@@ -3,9 +3,11 @@ VisualRange = 20
 
 local player
 local lastAITime = 0
-function start()
-    player = scene.entity("Player")
+
+function active()
     --startCoroutine(chase)
+    console.log("active")
+    player = scene.entity("Player")
     startCoroutine(bossAI)
 end
 
@@ -13,8 +15,11 @@ function update(dt)
 end
 
 function bossAI()
-    repeat coroutine.yield(nil);
+    repeat 
+        console.log(player.position)
+        coroutine.yield(nil);
     until player.position.x > 134;
+    console.log(player)
     
     local co = startCoroutine(wander)
     local currentState = wander

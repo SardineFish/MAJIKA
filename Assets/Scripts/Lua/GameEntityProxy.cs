@@ -28,7 +28,14 @@ namespace LuaHost.Proxy
             set => (target as LifeEntity).HP = value;
         }
 
-        public void SetActive(bool active) => target.gameObject.SetActive(active);
+        public void SetActive(bool active) => target.SetActive(active);
+
+        public bool Active
+        {
+            get => target.active;
+            set => target.active = value;
+        }
+
         
         public Vector2 Position
         {

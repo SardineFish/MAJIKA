@@ -2,7 +2,8 @@ Interval = 1.5;
 
 local player
 local lastAITime = 0
-function start()
+
+function active()
     player = scene.entity("Player")
     startCoroutine(bossIdle)
 end

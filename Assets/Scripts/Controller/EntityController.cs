@@ -108,4 +108,13 @@ public class EntityController : EntityStateMachine
         Locker.UnLockAll();
         //ChangeState(IdleState);
     }
+
+    public void ResetController()
+    {
+        Jumped = false;
+        Movement = Vector2.zero;
+        Climbed = false;
+        SkillIndex = -1;
+        ClimbSpeed = 0;
+    }
 }

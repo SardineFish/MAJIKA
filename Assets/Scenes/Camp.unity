@@ -419,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c824a1a5b78544e40abb8f0205436798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveOnStart: 1
   StatusEffects: []
 --- !u!114 &182668552
 MonoBehaviour:
@@ -8448,6 +8449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c824a1a5b78544e40abb8f0205436798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveOnStart: 1
   StatusEffects: []
 --- !u!114 &870087329
 MonoBehaviour:
@@ -8618,6 +8620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c824a1a5b78544e40abb8f0205436798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveOnStart: 1
   StatusEffects: []
 --- !u!114 &958162016
 MonoBehaviour:

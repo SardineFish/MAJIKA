@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 6385070694191812825}
   - component: {fileID: 6385070694191812824}
   - component: {fileID: 6385070694191812802}
-  - component: {fileID: 6385070694191812804}
+  - component: {fileID: 1063427663062794894}
   - component: {fileID: 6385070694191812826}
   - component: {fileID: 6385070694191812807}
   - component: {fileID: 6385070694191812828}
@@ -491,7 +491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6385070694191812821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43, y: 11, z: 0}
+  m_LocalPosition: {x: 43, y: 11, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 786276724885726019}
@@ -514,6 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581f9ced6a211d3458d6ea7fb1036b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveOnStart: 1
   StatusEffects: []
   HP: 300
   MaxHP: 1000
@@ -603,7 +604,7 @@ MonoBehaviour:
   jumpCount: 0
   AvailableClimbArea: {fileID: 0}
   velocity: {x: 0, y: 0}
---- !u!114 &6385070694191812804
+--- !u!114 &1063427663062794894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -612,7 +613,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6385070694191812821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4633ca4cdf455a499de03abf43fe671, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d86b199344342242baaa2ae249832c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InitialScript: {fileID: 4900000, guid: 141a555da9cf9cb4a909b3bdb8b0676d, type: 3}
@@ -650,6 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051faa088389e9c4d84a0dfca653de8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: {fileID: 0}
   currentState: 
   InitialState: {fileID: 11400000, guid: 2a12bab675a27a442849b60160332fd0, type: 2}
   IdleState: {fileID: 11400000, guid: 2a12bab675a27a442849b60160332fd0, type: 2}
@@ -675,6 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a25b944a2485648afc3b8adbc9c8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ResetOnAwake: 1
   DirectionImplement: 1
   Direction: 0
 --- !u!114 &6385070694191812806

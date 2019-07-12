@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 361338555447679905}
   - component: {fileID: 361338555447679931}
   - component: {fileID: 361338555447679904}
-  - component: {fileID: 361338555447679928}
+  - component: {fileID: 4583669011139236878}
   - component: {fileID: 361338555447679930}
   - component: {fileID: 361338555447679933}
   - component: {fileID: 5465358969643469089}
@@ -369,6 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581f9ced6a211d3458d6ea7fb1036b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveOnStart: 1
   StatusEffects: []
   HP: 4000
   MaxHP: 4000
@@ -432,18 +433,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf14aec0873b154089722d62bec0ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PhysicalControl: 0
   OnGround: 0
   InClimbArea: 0
   EnableGravity: 1
   Frozen: 0
   FaceDirection: -1
+  MaxMoveForce: 30
   MaxMoveSpeed: 5
   MaxClimbSpeed: 10
-  JumpHeight: 5
   MaxJumpCount: 1
   jumpCount: 0
-  velocity: {x: 0, y: 0}
   AvailableClimbArea: {fileID: 0}
+  velocity: {x: 0, y: 0}
 --- !u!50 &361338555447679910
 Rigidbody2D:
   serializedVersion: 4
@@ -496,6 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051faa088389e9c4d84a0dfca653de8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: {fileID: 0}
   currentState: 
   InitialState: {fileID: 11400000, guid: 50e779d8e6c04a1408c95be74fd14ffc, type: 2}
   IdleState: {fileID: 11400000, guid: 65d95063d36e4cf48ac7a54e946281d1, type: 2}
@@ -521,9 +524,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a25b944a2485648afc3b8adbc9c8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ResetOnAwake: 1
   DirectionImplement: 0
   Direction: 0
---- !u!114 &361338555447679928
+--- !u!114 &4583669011139236878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -532,7 +536,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 361338555447679913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4633ca4cdf455a499de03abf43fe671, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d86b199344342242baaa2ae249832c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   InitialScript: {fileID: 0}
