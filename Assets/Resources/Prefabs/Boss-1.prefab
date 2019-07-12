@@ -269,7 +269,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 15.8125, y: 14}
+  m_Size: {x: 10.375, y: 8.6875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -337,7 +337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &361338555447679911
 Transform:
   m_ObjectHideFlags: 0
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581f9ced6a211d3458d6ea7fb1036b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ActiveOnStart: 1
+  ActiveOnStart: 0
   StatusEffects: []
   HP: 4000
   MaxHP: 4000
@@ -477,7 +477,7 @@ Animator:
   m_GameObject: {fileID: 361338555447679913}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c47b77822d44dd5489d3f0391b580ca4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 632822f7f53f9ee4c9b6cf58b0175ad6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -745,7 +745,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.8125, y: 8.6875}
+  m_Size: {x: 10.375, y: 8.6875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -867,6 +867,12 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
   SpawnDirections: []
 --- !u!114 &3224671904013440685
 MonoBehaviour:
@@ -891,6 +897,12 @@ MonoBehaviour:
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
     Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b, type: 2}
+    Strength: 1
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -923,6 +935,12 @@ MonoBehaviour:
     LifeTime: 0
     Priority: 0
     GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
   SpawnDirections: []
 --- !u!114 &5665454223971375577
 MonoBehaviour:
@@ -947,6 +965,12 @@ MonoBehaviour:
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 183c0902f56af4c46a1d89aa42fe4e92, type: 2}
     Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b, type: 2}
+    Strength: 1
     Duration: 0
     LifeTime: 0
     Priority: 0

@@ -13103,22 +13103,22 @@ PrefabInstance:
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -111.08243
+      value: -134.84799
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -230.16486
+      value: -277.69598
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -86.39661
+      value: -207.15988
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -188.7937
+      value: -430.32025
       objectReference: {fileID: 0}
     - target: {fileID: 4401304396094764393, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
@@ -13590,7 +13590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PassUIName: LevelPass
   FailedUIName: LevelFailed
-  NextScene: Demo-1
+  NextScene: Camp
   ActiveAtLoaded: []
 --- !u!4 &1399220246
 Transform:
@@ -14604,11 +14604,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss-1
       objectReference: {fileID: 0}
-    - target: {fileID: 361338555447679913, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 361338555447679911, guid: 1249514862bf0bf4384153ca7c38bbbd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14664,104 +14659,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 361338555447679905, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 632822f7f53f9ee4c9b6cf58b0175ad6, type: 2}
-    - target: {fileID: 361338555622373903, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 10.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 361338555622373903, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 361338553751984611, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 361338553751984611, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 10.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 361338553751984611, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 8.6875
-      objectReference: {fileID: 0}
-    - target: {fileID: 361338553751984611, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8835563813101479177, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8835563813101479177, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.data[1].Strength
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8835563813101479177, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.data[1].Effect
-      value: 
-      objectReference: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b,
-        type: 2}
-    - target: {fileID: 3224671904013440685, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3224671904013440685, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.data[1].Strength
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3224671904013440685, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.data[1].Effect
-      value: 
-      objectReference: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b,
-        type: 2}
-    - target: {fileID: 7370573971470784213, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370573971470784213, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.data[1].Strength
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370573971470784213, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.data[1].Effect
-      value: 
-      objectReference: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b,
-        type: 2}
-    - target: {fileID: 5665454223971375577, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5665454223971375577, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.data[1].Strength
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5665454223971375577, guid: 1249514862bf0bf4384153ca7c38bbbd,
-        type: 3}
-      propertyPath: AdditionalEffect.Array.data[1].Effect
-      value: 
-      objectReference: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1249514862bf0bf4384153ca7c38bbbd, type: 3}

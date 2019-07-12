@@ -5,6 +5,14 @@ local lastAITime = 0
 
 function active()
     player = scene.entity("Player")
+    startCoroutine(birth)
+end
+
+function birth()
+    repeat
+        coroutine.yield(nil)
+    until entity.state == "Boss1Idle"
+
     startCoroutine(bossIdle)
 end
 

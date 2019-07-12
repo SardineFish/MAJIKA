@@ -39,7 +39,7 @@ function start()
                 "${1}: 下一关？",
                 "${0}: 不 要 停 下 来 "
             },{player, redGlass}, true));
-            game.loadLevel("Demo-2");
+            game.loadLevel("Level-2");
         
         end)
     end)
@@ -52,7 +52,7 @@ function start()
                 "${1}: 这边请。",
                 "${0}: ……"
             },{player, twinTail}, true));
-            game.loadLevel("Boss-0");
+            game.loadLevel("Tutorial");
         
         end)
     end)
