@@ -28156,8 +28156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enabled: 0
-  Strength: 1
-  Frequence: 1
+  Strength: 0
+  Frequence: 5
 --- !u!114 &6441404159551789389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28189,16 +28189,16 @@ MonoBehaviour:
   Enabled: 1
   CushionRange: 2.64
   FollowIgnoreRange: 0
-  FollowRangeOffset: {x: 0, y: 2.95}
-  FollowStartRange: {x: 1.6, y: 0.83}
+  FollowRangeOffset: {x: 0, y: 4.41}
+  FollowStartRange: {x: 1.6, y: 0.41}
   MaxFollowRange: {x: 6.03, y: 4.66}
   MaxSpeed: 12
   MaxAcceleration: 30
-  cushionCollider: {fileID: 0}
-  followTarget: {fileID: 0}
-  focusPosition: {x: 0, y: 0}
-  seperate: {x: 0, y: 0}
-  followSpeed: {x: 0, y: 0}
+  cushionCollider: {fileID: 6441404159551789391}
+  followTarget: {fileID: 1699651205}
+  focusPosition: {x: 53.34716, y: 4.772195}
+  seperate: {x: 0, y: 0.999774}
+  followSpeed: {x: -0.00034342118, y: -0.00069483515}
 --- !u!61 &6441404159551789391
 BoxCollider2D:
   m_ObjectHideFlags: 0

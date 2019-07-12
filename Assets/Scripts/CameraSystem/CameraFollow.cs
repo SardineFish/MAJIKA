@@ -64,8 +64,8 @@ public class CameraFollow : CameraPlugin
             {
                 var screenSpacePos = (multiFollow[0].transform.position.ToVector2() - focusPosition);
                 screenSpacePos = screenSpacePos / (Camera.ViewportRect.size / 2);
-                if (screenSpacePos.magnitude > 0.7f)
-                    screenSpacePos = screenSpacePos.normalized * 0.7f;
+                if (screenSpacePos.magnitude > 0.9f)
+                    screenSpacePos = screenSpacePos.normalized * 0.9f;
                 var pos = screenSpacePos * (Camera.ViewportRect.size / 2);
                 focusPosition = multiFollow[0].transform.position.ToVector2() - pos;
             }
@@ -74,6 +74,7 @@ public class CameraFollow : CameraPlugin
         {
             focusPosition = transform.position;
         }
+        Debug.DrawLine(transform.position, focusPosition, Color.green);
 
         var follow = focusPosition - movePosition - FollowRangeOffset;
         var followAccelerateRange = MaxFollowRange - FollowStartRange;
