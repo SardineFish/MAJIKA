@@ -16,6 +16,8 @@ player = nil;
 splashDrop = nil;
 droped = false;
 
+frozen = true;
+
 function awake()
     entity.position = vec2(43, 0)
     player = scene.entity("Player") 
@@ -76,8 +78,8 @@ function stage1UpLeft()
         elseif math.random() < .5 and entity.skill(SkillFeatherBarrier, Right) then
             coroutine.yield(entity.wait("skill", _host))
             actionCount = actionCount + 1
-        else
-            entity.skill(SkillWaterImpact, Right)
+        elseif PerformWaterImpact(Right) then
+            coroutine.yield(entity.wait("skill", _host))
             actionCount = actionCount + 1
         end
         
@@ -114,8 +116,8 @@ function stage1UpRight()
         elseif math.random() < .5 and entity.skill(SkillFeatherBarrier, Left) then
             coroutine.yield(entity.wait("skill", _host))
             actionCount = actionCount + 1
-        else
-            entity.skill(SkillWaterImpact, Left)
+        elseif PerformWaterImpact(Left) then
+            coroutine.yield(entity.wait("skill", _host))
             actionCount = actionCount + 1
         end
     until false
@@ -130,7 +132,7 @@ function stage2Center()
     
     console.log("center")
     actionCount = 0
-    if entity.skill(SkillSliceScreen, Right) then
+    if PerformSliceScreen() then
         coroutine.yield(entity.wait("skill", _host))
         entity.position = posA - (posC - posA)
         entity.skill(SkillDive, Right)
@@ -138,6 +140,30 @@ function stage2Center()
         changeState(stage1UpLeft)
     end
     console.log("center end")
+end
+
+function PerformSliceScreen()
+    local result = entity.skill(SkillSliceScreen, Right)
+    if not result then
+        return result
+    end
+    if not frozen then
+        scene.event("WaterFrozen")
+        frozen = true
+    end
+    return true
+end
+
+function PerformWaterImpact(dir)
+    local result = entity.skill(SkillWaterImpact, dir)
+    if not result then
+        return result
+    end
+    if frozen then
+        scene.event("IceBroken")
+        frozen = false
+    end
+    return true
 end
 
 function death()

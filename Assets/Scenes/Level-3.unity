@@ -3131,6 +3131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 951452441}
   - component: {fileID: 951452442}
+  - component: {fileID: 951452443}
   m_Layer: 14
   m_Name: Damage
   m_TagString: Untagged
@@ -3178,6 +3179,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 48.85159, y: 1.7731571}
   m_EdgeRadius: 0
+--- !u!114 &951452443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951452440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a883204ff37ce4ba94b13b7a89efbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Effects:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 1e+10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!1 &976959354
 GameObject:
   m_ObjectHideFlags: 0
@@ -18511,7 +18531,7 @@ Animator:
   m_GameObject: {fileID: 1699651192}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c9e5ba16fb4f7b4e96108c638239696, type: 2}
+  m_Controller: {fileID: 9100000, guid: acc50f9923433ff4c941973c90872fb4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

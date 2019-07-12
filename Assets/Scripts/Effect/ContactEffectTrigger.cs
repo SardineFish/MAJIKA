@@ -28,6 +28,30 @@ public class ContactEffectTrigger : MonoBehaviour, IEffectorTrigger
             contactList.Remove(entity);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var entity = collision.GetComponentInParent<GameEntity>();
+        if (entity && !contactList.Contains(entity))
+            contactList.Add(entity);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var entity = collision.GetComponentInParent<GameEntity>();
+        if (entity)
+            contactList.Remove(entity);
+    }
+
+    private void Enter()
+    {
+
+    }
+
+    private void Exit()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
