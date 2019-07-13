@@ -1,3 +1,5 @@
+boss = nil;
+player = nil;
 
 function start()
     boss = scene.entity("Boss-3-Bird");
@@ -9,7 +11,9 @@ function start()
 end
 
 function update(dt)
-
+    if player.HP <= 0 then
+        game.over()
+    end
 end
 
 function stage()
@@ -21,5 +25,10 @@ function stage()
         coroutine.yield(waitForSeconds(6))
         game.setTarget(boss, "Boss")
         camera.follow({player, boss})
+
+        repeat
+            coroutine.yield(nil)
+        until boss.HP <= 0
+        
     end)
 end

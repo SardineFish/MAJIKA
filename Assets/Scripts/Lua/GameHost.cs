@@ -33,12 +33,15 @@ namespace LuaHost
         }
         public void Over()
         {
-            Debug.Log("Game Over");
             Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventFailed);
         }
         public void Pass()
         {
-            Debug.Log("Level Pass");
+            Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventPass);
+        }
+        public void Pass(string nextLevel)
+        {
+            Level.Instance.NextScene = nextLevel;
             Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventPass);
         }
         public void LoadLevel(string level)

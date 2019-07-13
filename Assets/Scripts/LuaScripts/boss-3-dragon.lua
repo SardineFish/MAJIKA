@@ -168,5 +168,6 @@ end
 
 function death()
     coroutine.yield(entity.wait("animation", _host))
+    game.pass("Camp")
     entity.destroy()
 end
