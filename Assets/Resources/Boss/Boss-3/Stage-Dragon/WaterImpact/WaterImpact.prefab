@@ -70,6 +70,8 @@ GameObject:
   - component: {fileID: 3445417087836629440}
   - component: {fileID: 3445417087836629441}
   - component: {fileID: 3445417087836629446}
+  - component: {fileID: 579126969}
+  - component: {fileID: 5371482867265177226}
   m_Layer: 0
   m_Name: WaterImpact
   m_TagString: Untagged
@@ -137,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cc93f1a029ab94d9f7c79ab31c462e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImpactType: 0
+  ImpactType: 1
   ImpactDirection: 0
   Continuous: 0
   ImpactLifeCycle: 0
@@ -146,7 +148,13 @@ MonoBehaviour:
   EntityOnly: 1
   IgnoreCreator: 1
   NextImpact: {fileID: 0}
-  Effects: []
+  Effects:
+  - Effect: {fileID: 0}
+    Strength: 20
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
   Creator: {fileID: 0}
   Active: 0
   Direction: {x: 0, y: 0, z: 0}
@@ -164,6 +172,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventTrigger: 
+--- !u!114 &579126969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445417087836629443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d6ae1e7a68b4f469dff8eb8af205a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zIndex: -1
+  Local: 0
+--- !u!50 &5371482867265177226
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445417087836629443}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3445417089041299533
 GameObject:
   m_ObjectHideFlags: 0

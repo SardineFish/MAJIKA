@@ -655,7 +655,13 @@ MonoBehaviour:
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
-  Effects: []
+  Effects:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &260912611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61691,22 +61697,22 @@ PrefabInstance:
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -155.23201
+      value: -175.61601
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -318.46402
+      value: -359.23203
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -310.7399
+      value: -414.31995
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -637.4803
+      value: -844.6404
       objectReference: {fileID: 0}
     - target: {fileID: 3610250976051289633, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
@@ -61869,9 +61875,9 @@ MonoBehaviour:
   CushionRange: 2.64
   FollowIgnoreRange: 0
   FollowRangeOffset: {x: 0, y: 4.41}
-  FollowStartRange: {x: 1.6, y: 0.41}
+  FollowStartRange: {x: 0.42, y: 0.41}
   MaxFollowRange: {x: 6.03, y: 4.66}
-  MaxSpeed: 12
+  MaxSpeed: 15
   MaxAcceleration: 30
   cushionCollider: {fileID: 6441404159551789391}
   followTarget: {fileID: 1699651205}

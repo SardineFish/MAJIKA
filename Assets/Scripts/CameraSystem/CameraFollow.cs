@@ -64,8 +64,8 @@ public class CameraFollow : CameraPlugin
             {
                 var screenSpacePos = (multiFollow[0].transform.position.ToVector2() - focusPosition);
                 screenSpacePos = screenSpacePos / (Camera.ViewportRect.size / 2);
-                if (screenSpacePos.magnitude > 0.9f)
-                    screenSpacePos = screenSpacePos.normalized * 0.9f;
+                if (screenSpacePos.magnitude > 0.8f)
+                    screenSpacePos = screenSpacePos.normalized * 0.8f;
                 var pos = screenSpacePos * (Camera.ViewportRect.size / 2);
                 focusPosition = multiFollow[0].transform.position.ToVector2() - pos;
             }
