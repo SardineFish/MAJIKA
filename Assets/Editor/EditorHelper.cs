@@ -13,6 +13,7 @@ class EditorHelper : UnityEditor.Editor
 {
     Dictionary<Type, AttributeEditor> attributeEditorInstances = new Dictionary<Type, AttributeEditor>();
     MemberInfo[] members;
+    CustomEditorAttribute[] attrs;
     public EditorHelper() : base()
     {
         if (!CustomEditorHelper.Loaded)
@@ -23,16 +24,20 @@ class EditorHelper : UnityEditor.Editor
         base.OnInspectorGUI();
 
         if (members == null)
+        {
             members = target.GetType().GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)
             .Where(member => member.MemberType == MemberTypes.Field
                 || member.MemberType == MemberTypes.Property || (member.MemberType == MemberTypes.Method && !(member as MethodInfo).IsSpecialName))
+            .Where(member => member.GetCustomAttribute<CustomEditorAttribute>(true) != null)
             .ToArray();
+            attrs = members.Select(member => member.GetCustomAttribute<CustomEditorAttribute>(true)).ToArray();
+        }
 
         for (var i = 0; i < members.Length; i++)
         {
             var member = members[i];
 
-            var attr = member.GetCustomAttribute<CustomEditorAttribute>(true);
+            var attr = attrs[i];
             if (attr is null)
                 continue;
             var attrType = attr.GetType();
