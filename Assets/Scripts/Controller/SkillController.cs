@@ -155,6 +155,7 @@ public class SkillController : EntityBehaviour
     {
         var obj = Instantiate(skill.gameObject);
         obj.transform.parent = Entity.GetChild(GameEntity.NameSkills).transform;
+        obj.transform.localPosition = Vector3.zero;
         obj.transform.SetSiblingIndex(idx);
         UpdateSkillList();
     }

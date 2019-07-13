@@ -667,6 +667,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947b251be49cdd240b50e371e3e0be98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventBus: {fileID: 0}
+  EventName: 
+  Delay: 0
 --- !u!1 &262190755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1975,13 +1978,7 @@ MonoBehaviour:
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
-  Effects:
-  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 10
-    Duration: 0
-    LifeTime: 0
-    Priority: 0
-    GameObjectInstance: {fileID: 0}
+  Effects: []
 --- !u!114 &574503175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3232,7 +3229,7 @@ MonoBehaviour:
   EventBus: {fileID: 7096509983886856577}
   Responsors:
   - Event: Stage
-    Targets:
+    Handlers:
     - ComponentName: PlayableDirector
       MethodName: Play
 --- !u!95 &976959356
@@ -17295,7 +17292,7 @@ MonoBehaviour:
   EventBus: {fileID: 7096509983886856577}
   Responsors:
   - Event: WaterFrozen
-    Targets:
+    Handlers:
     - ComponentName: PlayableDirector
       MethodName: Play
 --- !u!95 &1223197722
@@ -17705,7 +17702,7 @@ MonoBehaviour:
   EventBus: {fileID: 7096509983886856577}
   Responsors:
   - Event: IceBroken
-    Targets:
+    Handlers:
     - ComponentName: PlayableDirector
       MethodName: Play
 --- !u!95 &1316065841
@@ -18632,6 +18629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947b251be49cdd240b50e371e3e0be98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventBus: {fileID: 0}
+  EventName: 
+  Delay: 0
 --- !u!1 &1777323531
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,13 +10,16 @@ using System.Reflection;
 public class EventResponse
 {
     public string Event;
-    public List<ComponentResponsor> Targets = new List<ComponentResponsor>();
+    [UnityEngine.Serialization.FormerlySerializedAs("Targets")]
+    public List<ComponentEventHandler> Handlers = new List<ComponentEventHandler>();
 
     public void Handle(GameObject gameObject)
     {
-        foreach(var responsor in Targets)
+        foreach(var responsor in Handlers)
         {
-            var component = gameObject.GetComponent(responsor.ComponentName);
+            var component = gameObject.GetComponents<Component>()
+                .Where(cpn => cpn.GetType().Name == responsor.ComponentName)
+                .FirstOrDefault();
             var method = component.GetType()
                 .GetMethods(BindingFlags.Instance | BindingFlags.Public)
                 .Where(m => m.Name == responsor.MethodName)
@@ -28,7 +31,7 @@ public class EventResponse
 }
 
 [Serializable]
-public class ComponentResponsor
+public class ComponentEventHandler
 {
     public string ComponentName;
     public string MethodName;

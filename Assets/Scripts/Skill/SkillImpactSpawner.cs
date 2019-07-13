@@ -26,16 +26,34 @@ public class SkillImpactSpawner : EntityBehaviour
     public float SpawnAngle = 60;
 
     [HideInInspector]
+    [MAJIKA.Utils.StatusEffect]
     public List<EffectInstance> AdditionalEffect = new List<EffectInstance>();
 
     [HideInInspector]
     public Vector2[] SpawnDirections;
-    
 
-    IEnumerator SpawnCoroutine(List<EffectInstance> effects , float dir, GameEntity target)
+    public void SpawnSubImpact()
+    {
+        var impact = GetComponent<SkillImpact>();
+        if (!impact)
+            return;
+        var dir = MathUtility.SignInt(impact.Direction.x);
+        var target = impact.TargetEntity;
+        var creator = impact.Creator;
+        if (TimeOffset > 0)
+        {
+            StartCoroutine(SpawnCoroutine(AdditionalEffect.ToList(), dir, target, creator));
+        }
+        else
+        {
+            DoSpawn(AdditionalEffect.ToList(), dir, target, creator);
+        }
+    }
+
+    IEnumerator SpawnCoroutine(List<EffectInstance> effects, float dir, GameEntity target, GameEntity creator)
     {
         yield return new WaitForSeconds(TimeOffset);
-        DoSpawn(effects, dir, target);
+        DoSpawn(effects, dir, target, creator);
     }
 
     public void Spawn(List<EffectInstance> effects, float dir, GameEntity target)
@@ -44,18 +62,18 @@ public class SkillImpactSpawner : EntityBehaviour
         effects = effects.Union(AdditionalEffect).ToList();
         if(TimeOffset>0)
         {
-            StartCoroutine(SpawnCoroutine(effects, dir, target));
+            StartCoroutine(SpawnCoroutine(effects, dir, target, Entity));
         }
         else
         {
-            DoSpawn(effects, dir, target);
+            DoSpawn(effects, dir, target, Entity);
         }
     }
 
-    private SkillImpact SpawnOne(Vector3 pos, Vector3 dir, List<EffectInstance> effects, GameEntity target)
+    private SkillImpact SpawnOne(Vector3 pos, Vector3 dir, List<EffectInstance> effects, GameEntity target, GameEntity creator)
     {
-        var impact = Utility.Instantiate(Prefab, Entity.gameObject.scene).GetComponent<SkillImpact>();
-        impact.Creator = Entity;
+        var impact = Utility.Instantiate(Prefab, gameObject.scene).GetComponent<SkillImpact>();
+        impact.Creator = creator;
         impact.Effects = effects;
         if (SpawnType == ImpactSpawnType.OnGround)
         {
@@ -74,7 +92,7 @@ public class SkillImpactSpawner : EntityBehaviour
         return impact;
     }
 
-    private void DoSpawn(List<EffectInstance> effects, float dir, GameEntity target)
+    private void DoSpawn(List<EffectInstance> effects, float dir, GameEntity target, GameEntity creator)
     {
         if(SpawnType == ImpactSpawnType.Barrage)
         {
@@ -84,8 +102,8 @@ public class SkillImpactSpawner : EntityBehaviour
                 direction.x *= dir;
                 var offset = SpawnOffset;
                 offset.x *= dir;
-                var spawnPos = Entity.transform.position + SpawnOffset.ToVector3();
-                SpawnOne(spawnPos, direction, effects, target);
+                var spawnPos = transform.position + SpawnOffset.ToVector3();
+                SpawnOne(spawnPos, direction, effects, target, creator);
             });
         }
         else
@@ -93,8 +111,8 @@ public class SkillImpactSpawner : EntityBehaviour
             Vector3 direction = Vector3.right * dir;
             var offset = SpawnOffset;
             offset.x *= dir;
-            var pos = Entity.transform.position + offset.ToVector3();
-            Instance = SpawnOne(pos, direction, effects, target);
+            var pos = transform.position + offset.ToVector3();
+            Instance = SpawnOne(pos, direction, effects, target, creator);
         }
     }
 

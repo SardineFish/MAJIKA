@@ -24,9 +24,9 @@ namespace Assets.Editor
                 .Header("Event Responsors")
                 .Item((responsor) =>
                 {
-                    EditorUtilities.DrawList(responsor.Targets)
+                    EditorUtilities.DrawList(responsor.Handlers)
                         .Header(() => responsor.Event = EditorGUILayout.TextField("Event Name", responsor.Event))
-                        .Item((target) => EditResponsor(eventResponsor.gameObject, target))
+                        .Item((handler) => EditResponsor(eventResponsor.gameObject, handler, ()=> Undo.RecordObject(target, "Edit Event Responsors")))
                         .Render();
                     return responsor;
                 })
@@ -35,10 +35,32 @@ namespace Assets.Editor
             Undo.RecordObject(target, "Edit Event Responsors");
         }
 
-        public ComponentResponsor EditResponsor(GameObject context, ComponentResponsor responsor)
+        public ComponentEventHandler EditResponsor(GameObject context, ComponentEventHandler responsor, Action callback)
         {
             if (responsor == null)
-                return new ComponentResponsor();
+                return new ComponentEventHandler();
+            EditorUtilities.Verticle(() =>
+            {
+                if (GUILayout.Button($"{responsor.ComponentName}/{responsor.MethodName}", "TextField"))
+                {
+                    EditorUtilities.PopupMenu(context.GetComponents<Component>()
+                        .Select(component => new PopupMenuItem()
+                        {
+                            Name = component.GetType().Name,
+                            Children = component.GetType().GetMethods(BindingFlags.Instance | BindingFlags.Public)
+                                .Where(m => !m.IsSpecialName)
+                                .Select(method => new PopupMenuItem(method.Name))
+                                .ToArray()
+                        }).ToArray(), $"{responsor.ComponentName}/{responsor.MethodName}", (selected) =>
+                         {
+                             responsor.ComponentName = selected.Split('/')[0];
+                             responsor.MethodName = selected.Split('/')[1];
+                             callback();
+                         });
+
+                }
+            });
+            /*
             EditorGUILayout.BeginHorizontal();
             var components = context.GetComponents<Component>()
                 .Select(cpn => cpn.GetType().Name)
@@ -64,7 +86,7 @@ namespace Assets.Editor
             else
                 responsor.MethodName = methods[idx];
         End:
-            EditorGUILayout.EndHorizontal();
+            EditorGUILayout.EndHorizontal();*/
             return responsor;
         }
     }

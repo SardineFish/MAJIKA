@@ -154,6 +154,27 @@ namespace Assets.Editor
             Horizontal(null, renderContent);
         }
 
+        public static void PopupMenu(PopupMenuItem[] items, string selected, Action<string> selectedCallback)
+        {
+            GenericMenu menu = new GenericMenu();
+            items.ForEach(item => AddMenuItem(menu, item, "", selected, selectedCallback));
+            menu.ShowAsContext();
+        }
+
+        static void AddMenuItem(GenericMenu menu, PopupMenuItem item, string path, string selectedPath, Action<string> callback)
+        {
+            if(item.Children == null)
+            {
+                var currentPath = $"{path}{item.Name}";
+                menu.AddItem(new GUIContent(currentPath), currentPath == selectedPath, (data) => callback?.Invoke((string)data), currentPath);
+            }
+            else
+            {
+                var nextPath = $"{path}{item.Name}/";
+                item.Children.ForEach(i => AddMenuItem(menu, i, nextPath, selectedPath, callback));
+            }
+        }
+
         public class ListDrawer<T>
         {
             bool fold = true;
@@ -276,5 +297,20 @@ namespace Assets.Editor
 
         }
 
+        
+    }
+    public class PopupMenuItem
+    {
+        public string Name;
+        public PopupMenuItem[] Children = null;
+
+        public PopupMenuItem()
+        {
+        }
+
+        public PopupMenuItem(string name)
+        {
+            Name = name;
+        }
     }
 }

@@ -48,6 +48,7 @@ public class SkillImpact : Entity
     public bool IgnoreCreator = true;
     public GameObject NextImpact;
     [HideInInspector]
+    [MAJIKA.Utils.StatusEffect]
     public List<EffectInstance> Effects = new List<EffectInstance>();
     public GameEntity Creator;
     public bool Active = false;
