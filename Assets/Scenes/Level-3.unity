@@ -927,7 +927,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 306412426}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 65cd2b8f2d809a444b1cb5e2aa1960bb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
@@ -997,7 +997,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -6518242031988935372, guid: 020579bd49c47134fa55e837639cbf6e,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9777293}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2210,7 +2210,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 663059244}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 65cd2b8f2d809a444b1cb5e2aa1960bb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
@@ -2280,7 +2280,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -4227913453271759177, guid: 020579bd49c47134fa55e837639cbf6e,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9777293}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2373,7 +2373,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 665049477}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 65cd2b8f2d809a444b1cb5e2aa1960bb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
@@ -2442,7 +2442,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 54522180897507154, guid: 020579bd49c47134fa55e837639cbf6e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9777293}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2541,7 +2541,7 @@ PrefabInstance:
     - target: {fileID: 6385070694191812831, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
       propertyPath: ActiveOnStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6461a67624058d3418671c43d784006a, type: 3}
@@ -36745,7 +36745,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1269761347}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 65cd2b8f2d809a444b1cb5e2aa1960bb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -36801,7 +36801,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 4120885819354532875, guid: 0831286b9b5442d49b5198435b5430ca,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -37170,7 +37170,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1330458876}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 65cd2b8f2d809a444b1cb5e2aa1960bb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
@@ -37239,7 +37239,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 54522180897507154, guid: 020579bd49c47134fa55e837639cbf6e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9777293}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -60760,7 +60760,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -5504557781695212636, guid: 0831286b9b5442d49b5198435b5430ca,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8714396}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -60885,7 +60885,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1936471100}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 65cd2b8f2d809a444b1cb5e2aa1960bb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
@@ -60955,7 +60955,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -871907234539676369, guid: 020579bd49c47134fa55e837639cbf6e,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9777293}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -61367,7 +61367,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2101896350}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 65cd2b8f2d809a444b1cb5e2aa1960bb, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
@@ -61437,7 +61437,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -7925157222857896072, guid: 020579bd49c47134fa55e837639cbf6e,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9777293}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -61691,22 +61691,22 @@ PrefabInstance:
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -94.08
+      value: -196
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -196.16
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: -517.8999
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -16.000244
+      value: -1051.8003
       objectReference: {fileID: 0}
     - target: {fileID: 3610250976051289633, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}

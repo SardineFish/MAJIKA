@@ -14,42 +14,25 @@ public class ContactEffectTrigger : MonoBehaviour, IEffectorTrigger
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision) => Enter(collision.rigidbody.GetComponent<GameEntity>());
+    private void OnCollisionStay2D(Collision2D collision) => Enter(collision.rigidbody.GetComponent<GameEntity>());
+    private void OnTriggerEnter2D(Collider2D collision) => Enter(collision.GetComponentInParent<GameEntity>());
+    private void OnTriggerStay2D(Collider2D collision) => Enter(collision.GetComponentInParent<GameEntity>());
+
+    private void OnTriggerExit2D(Collider2D collision) => Exit(collision.GetComponentInParent<GameEntity>());
+
+    private void OnCollisionExit2D(Collision2D collision) => Exit(collision.rigidbody.GetComponent<GameEntity>());
+
+    private void Enter(GameEntity entity)
     {
-        var entity = collision.rigidbody.GetComponent<GameEntity>();
         if (entity && !contactList.Contains(entity))
             contactList.Add(entity);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void Exit(GameEntity entity)
     {
-        var entity = collision.rigidbody.GetComponent<GameEntity>();
-        if (entity)
+        if (entity && contactList.Contains(entity))
             contactList.Remove(entity);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        var entity = collision.GetComponentInParent<GameEntity>();
-        if (entity && !contactList.Contains(entity))
-            contactList.Add(entity);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        var entity = collision.GetComponentInParent<GameEntity>();
-        if (entity)
-            contactList.Remove(entity);
-    }
-
-    private void Enter()
-    {
-
-    }
-
-    private void Exit()
-    {
-
     }
 
     // Update is called once per frame
