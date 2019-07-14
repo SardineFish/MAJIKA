@@ -1795,11 +1795,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.875
+      value: 55.28
       objectReference: {fileID: 0}
     - target: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.9375
+      value: 8.38
       objectReference: {fileID: 0}
     - target: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2548,6 +2548,36 @@ PrefabInstance:
         type: 3}
       propertyPath: ActiveOnStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385070694191812831, guid: 6461a67624058d3418671c43d784006a,
+        type: 3}
+      propertyPath: MaxHP
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385070694191812831, guid: 6461a67624058d3418671c43d784006a,
+        type: 3}
+      propertyPath: HP
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 47334572950011988, guid: 6461a67624058d3418671c43d784006a,
+        type: 3}
+      propertyPath: CoolDown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 47334573699221899, guid: 6461a67624058d3418671c43d784006a,
+        type: 3}
+      propertyPath: CoolDown
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 47334573828917204, guid: 6461a67624058d3418671c43d784006a,
+        type: 3}
+      propertyPath: CoolDown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 47334574478689685, guid: 6461a67624058d3418671c43d784006a,
+        type: 3}
+      propertyPath: CoolDown
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6461a67624058d3418671c43d784006a, type: 3}
@@ -42608,8 +42638,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActiveOnStart: 0
   StatusEffects: []
-  HP: 300
-  MaxHP: 1000
+  HP: 3000
+  MaxHP: 3000
 --- !u!4 &1699651205
 Transform:
   m_ObjectHideFlags: 0
@@ -61629,6 +61659,41 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -175.616
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -359.232
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -414.3199
+      objectReference: {fileID: 0}
+    - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -844.64026
+      objectReference: {fileID: 0}
+    - target: {fileID: 135148691749587177, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 452.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 135148691749587177, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 452.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 135148691749587177, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 92
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b9034704dde6e4ea609d575faa4738, type: 3}
 --- !u!224 &4994584962158549156 stripped
@@ -61779,10 +61844,11 @@ MonoBehaviour:
   Enabled: 1
   CushionRange: 2.64
   FollowIgnoreRange: 0
-  FollowRangeOffset: {x: 0, y: 4.41}
-  FollowStartRange: {x: 0.42, y: 0.41}
-  MaxFollowRange: {x: 6.03, y: 4.66}
-  MaxSpeed: 15
+  FollowRangeOffset: {x: 0, y: 2.89}
+  FollowStartRange: {x: 1.31, y: 0.88}
+  MultiFollowRange: {x: 8.61, y: 4.08}
+  MaxFollowRange: {x: 11.62, y: 4.66}
+  MaxSpeed: 12
   MaxAcceleration: 30
   cushionCollider: {fileID: 6441404159551789391}
   followTarget: {fileID: 1699651205}

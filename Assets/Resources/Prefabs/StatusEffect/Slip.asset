@@ -15,4 +15,4 @@ MonoBehaviour:
   Duration: 0
   Priority: 10
   EffectPrefab: {fileID: 0}
-  Drag: 3
+  Drag: 10

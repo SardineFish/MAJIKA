@@ -101,7 +101,7 @@ public class SkillImpact : Entity
         else if (ImpactDirection == ImpactDirection.Rotate)
         {
             direction = targetEntity
-                ? targetEntity.transform.position - transform.position
+                ? (targetEntity.transform.position - transform.position).Set(z: 0)
                 : direction;
             transform.rotation *= Quaternion.FromToRotation(transform.right, direction);
         }

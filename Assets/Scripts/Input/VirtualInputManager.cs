@@ -13,7 +13,7 @@ public class VirtualInputManager : MonoBehaviour
     GraphicRaycaster raycaster;
     PointerEventData data;
     EventSystem eventSystem;
-    List<RaycastResult> results = new List<RaycastResult>();
+    List<RaycastResult> results = new List<RaycastResult>(256);
     private void OnEnable()
     {
         raycaster = GetComponentInParent<GraphicRaycaster>();
@@ -40,7 +40,8 @@ public class VirtualInputManager : MonoBehaviour
             //Debug.Log($"{touch.touchId.ReadValue()} {touch.phase.ReadValue()} {touch.pressure.ReadValue()} {touch.radius.ReadValue()}");
             //var pos = Touchscreen.current.activeTouches[touchIdx].position;
             //Debug.Log(pos.ReadValue());
-            data.position = Input.touches[touchIdx].position;
+            data.position = Input.GetTouch(touchIdx).position;
+            
             raycaster.Raycast(data, results);
             //results.ForEach(result => Debug.Log(result.gameObject));
             if (results.Count <= 0)

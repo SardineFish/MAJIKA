@@ -38,9 +38,10 @@ public class ContactEffectTrigger : MonoBehaviour, IEffectorTrigger
     // Update is called once per frame
     void Update()
     {
-        Effects.ForEach(effect =>
-            contactList.ForEach(entity =>
-                entity.GetComponent<EntityEffector>()
-                    .AddEffect(effect.Clone(), this)));
+        for(var i = 0;i<Effects.Count; i++)
+        {
+            for (var j = 0; j < contactList.Count; j++)
+                contactList[j].GetComponent<EntityEffector>().AddEffect(Effects[i], this);
+        }
     }
 }

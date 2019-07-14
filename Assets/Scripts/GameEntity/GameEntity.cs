@@ -63,7 +63,7 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
     {
         base.Update();
         OnUpdate?.Invoke();
-        DetectThreat();
+        //DetectThreat();
     }
 
     public void SetActive(bool active)

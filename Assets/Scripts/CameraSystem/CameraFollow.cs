@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
+using Unity.Mathematics;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class CameraFollow : CameraPlugin
@@ -9,6 +10,7 @@ public class CameraFollow : CameraPlugin
     public float FollowIgnoreRange = 3;
     public Vector2 FollowRangeOffset;
     public Vector2 FollowStartRange;
+    public Vector2 MultiFollowRange;
     public Vector2 MaxFollowRange;
     public float MaxSpeed = 5;
     public float MaxAcceleration = 10;
@@ -62,12 +64,14 @@ public class CameraFollow : CameraPlugin
             focusPosition = multiFollow.Sum(target => target.transform.position.ToVector2()) / multiFollow.Length;
             if (multiFollow.Length > 1)
             {
-                var screenSpacePos = (multiFollow[0].transform.position.ToVector2() - focusPosition);
-                screenSpacePos = screenSpacePos / (Camera.ViewportRect.size / 2);
-                if (screenSpacePos.magnitude > 0.8f)
-                    screenSpacePos = screenSpacePos.normalized * 0.8f;
-                var pos = screenSpacePos * (Camera.ViewportRect.size / 2);
-                focusPosition = multiFollow[0].transform.position.ToVector2() - pos;
+                Debug.DrawLine(transform.position, focusPosition, Color.cyan);
+                var offset = (multiFollow[0].transform.position.ToVector2() - focusPosition);
+                offset = math.abs(offset);
+                offset = (offset - MultiFollowRange) / (MaxFollowRange - MultiFollowRange);
+                offset = math.clamp(offset, 0, 1);
+                var distance = Mathf.Max(offset.x, offset.y);
+                distance = Mathf.Pow(Mathf.Clamp01(offset.magnitude), 2);
+                focusPosition += (multiFollow[0].transform.position.ToVector2() - focusPosition) * distance;
             }
         }
         else
@@ -130,6 +134,8 @@ public class CameraFollow : CameraPlugin
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(transform.position + FollowRangeOffset.ToVector3(), FollowStartRange.ToVector3() * 2);
+        Gizmos.color = (Color.red + Color.yellow) / 2;
+        Gizmos.DrawWireCube(transform.position + FollowRangeOffset.ToVector3(), MultiFollowRange.ToVector3() * 2);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + FollowRangeOffset.ToVector3(), MaxFollowRange * 2);
     }

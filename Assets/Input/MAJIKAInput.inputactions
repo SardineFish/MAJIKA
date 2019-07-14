@@ -182,6 +182,18 @@
                 },
                 {
                     "name": "",
+                    "id": "f66d461d-f7ef-4c40-afb7-173ff4ff67ad",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                },
+                {
+                    "name": "",
                     "id": "6d71dbe4-5272-4343-bcad-d703c2bbfa6f",
                     "path": "<Keyboard>/l",
                     "interactions": "",

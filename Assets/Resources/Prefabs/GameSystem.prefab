@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67556a8024bd01f44aef2f4b83dca1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TutorialScenePath: Scenes/Boss-0
+  TutorialScenePath: Scenes/Level-3
   PlayerInControl: {fileID: 0}
 --- !u!114 &6903434265148320309
 MonoBehaviour:
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd63b462113c1142b95bae8f03ea7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentEvent: 
 --- !u!1 &1317200207788470
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,8 +903,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96a0c0d5f0d96b14998e85f460cb3ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controller:
-    m_Asset: {fileID: 11400000, guid: a87cb84ce1478dc46939b2d7d82c435a, type: 3}
 --- !u!1 &1892892073915986161
 GameObject:
   m_ObjectHideFlags: 0
