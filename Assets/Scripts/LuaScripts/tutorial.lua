@@ -3,6 +3,12 @@ local boss;
 local gameEnd = false;
 
 function start()
+    resources.loadAll("Boss/Boss-0/");
+    resources.loadAll("Player/");
+    resources.loadAll("Texture/UI/");
+    resources.loadAll("Fonts/")
+    resources.loadAll("Texture/Map/Scene-0");
+
     local prefab = resources.prefab("Player");
     player = scene.spawn(prefab, "Player", vec2(5, 2.2));
     boss = scene.spawn(resources.prefab("Boss-0"), "Boss", vec2(180, 3));
@@ -13,6 +19,8 @@ function start()
     boss.setActive(false);
     startCoroutine(tutorial);
     game.control(player);
+
+    game.ready();
 end
 
 function update()

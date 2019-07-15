@@ -134,6 +134,12 @@ function stage2Center()
     actionCount = 0
     if PerformSliceScreen() then
         coroutine.yield(entity.wait("skill", _host))
+        
+        if entity.HP <= 0 then
+            changeState(death)
+            return
+        end
+
         entity.position = posA - (posC - posA)
         entity.skill(SkillDive, Right)
         coroutine.yield(entity.wait("skill", _host))

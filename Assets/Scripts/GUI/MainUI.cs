@@ -28,14 +28,18 @@ public class MainUI : Singleton<MainUI>
     {
         yield return LevelLoader.Instance.LoadLevel(GameSystem.Instance.TutorialScenePath);
         GetComponent<Animator>().SetTrigger("hide");
-        yield return new WaitForSeconds(1);
         var animator = GetComponent<Animator>();
-        while(animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
         {
             yield return null;
         }
         FindObjectOfType<Level>().Ready();
         gameObject.SetActive(false);
+    }
+
+    private void MainUI_OnLevelReady()
+    {
+
     }
 
     public void OnPointerClick(PointerEventData eventData)

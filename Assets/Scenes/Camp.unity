@@ -8961,6 +8961,7 @@ GameObject:
   - component: {fileID: 1399220245}
   - component: {fileID: 1399220247}
   - component: {fileID: 1399220248}
+  - component: {fileID: 1399220249}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -8980,6 +8981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391f0f44927bde5499ae67add68ac0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelState: 0
   PassUIName: LevelPass
   FailedUIName: LevelFailed
   NextScene: 
@@ -9026,6 +9028,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentEvent: 
+--- !u!114 &1399220249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399220244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a141134e620d47e48a200ddf884aa4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1609615582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10651,22 +10665,22 @@ PrefabInstance:
     - target: {fileID: 4498194301963789451, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 32
+      value: 231.5
       objectReference: {fileID: 0}
     - target: {fileID: 4498194301963789451, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4498194301963789451, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4498194301963789451, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4498194301963789451, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}

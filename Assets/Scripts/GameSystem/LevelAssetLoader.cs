@@ -23,7 +23,7 @@ public class LevelAssetLoader : MonoBehaviour
             .ToList();
         //playableDirectors.ForEach(director => director.RebuildGraph());
         playableDirectors.ForEach(director => director.Evaluate());
-        Debug.LogError($"Load {playableDirectors.Count} playables.");
+        Debug.Log($"Load {playableDirectors.Count} playables.");
     }
 
     public void LoadAllInFolder(string path)

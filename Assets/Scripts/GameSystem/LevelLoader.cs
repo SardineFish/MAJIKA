@@ -17,7 +17,7 @@ public class LevelLoader : Singleton<LevelLoader>
     }
     public void CompleteLoading()
     {
-        LoadingUI.HideAsync(1);
+        LoadingUI.HideAsync(.5f);
     }
     public void LoadLevelDetach(string scenePath)
     {

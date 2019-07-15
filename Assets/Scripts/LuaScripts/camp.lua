@@ -18,12 +18,16 @@ conversation2 = {
 }
 
 function start()
+    resources.loadAll("Player/");
+    resources.loadAll("Texture/UI/");
+    resources.loadAll("Texture/Map/Scene-0");
+
     player = scene.entity("Player");
     yellowHair = scene.entity("YellowHair");
     redGlass = scene.entity("RedGlass");
     twinTail = scene.entity("TwinTail");
 
-    console.log(yellowHair);
+    game.ready();
 
     yellowHair.on("OnInteract", function()
         --game.control(null)

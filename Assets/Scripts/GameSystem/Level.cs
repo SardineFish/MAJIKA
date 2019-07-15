@@ -22,6 +22,7 @@ public class Level : Singleton<Level>
     public string FailedUIName = "LevelFailed";
     public string NextScene;
     public List<MonoBehaviour> ActiveAtLoaded = new List<MonoBehaviour>();
+    public event Action OnLevelReady;
 
     protected void Awake()
     {
@@ -86,6 +87,7 @@ public class Level : Singleton<Level>
     }
     public void Ready()
     {
+        OnLevelReady?.Invoke();
         ActiveAtLoaded.ForEach(cpn => cpn.enabled = true);
         LevelLoader.Instance.CompleteLoading();
     }

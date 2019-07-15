@@ -15200,6 +15200,7 @@ GameObject:
   - component: {fileID: 2206048531245311221}
   - component: {fileID: 1782602397}
   - component: {fileID: 1782602396}
+  - component: {fileID: 1834169904803621}
   m_Layer: 0
   m_Name: Level-0
   m_TagString: Level
@@ -15219,11 +15220,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391f0f44927bde5499ae67add68ac0cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelState: 0
   PassUIName: LevelPass
   FailedUIName: LevelFailed
   NextScene: Camp
   ActiveAtLoaded:
   - {fileID: 114480810976018487}
+--- !u!114 &1834169904803621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834169904803619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a141134e620d47e48a200ddf884aa4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4009174072939725
 Transform:
   m_ObjectHideFlags: 0
@@ -15513,6 +15527,26 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -1051.8003
       objectReference: {fileID: 0}
+    - target: {fileID: 1571287455140853702, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -94.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571287455140853702, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -196.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571287455821842689, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571287455821842689, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -16
+      objectReference: {fileID: 0}
     - target: {fileID: 7294128093959739031, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -15572,26 +15606,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: -430.32025
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571287455140853702, guid: 32b9034704dde6e4ea609d575faa4738,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -94.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571287455140853702, guid: 32b9034704dde6e4ea609d575faa4738,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -196.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571287455821842689, guid: 32b9034704dde6e4ea609d575faa4738,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571287455821842689, guid: 32b9034704dde6e4ea609d575faa4738,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b9034704dde6e4ea609d575faa4738, type: 3}

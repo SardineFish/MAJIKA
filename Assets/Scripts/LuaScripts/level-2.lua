@@ -4,11 +4,17 @@ StateEnd = "end";
 local levelState = StateReady;
 
 function start()
+    resources.loadAll("Boss/Boss-1/");
+    resources.loadAll("Player/");
+    resources.loadAll("Texture/UI/");
+    resources.loadAll("Texture/Map/Scene-1/");
+
     player = scene.entity("Player");
     boss = scene.entity("Boss-1");
     camera.follow(player);
     game.control(player);
     startCoroutine(level);
+    game.ready();
 end
 
 function update(dt)
