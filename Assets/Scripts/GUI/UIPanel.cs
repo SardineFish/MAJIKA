@@ -56,6 +56,8 @@ namespace MAJIKA.GUI
         }
         public void HideAsync(float time = .2f)
         {
+            if (!gameObject.activeInHierarchy)
+                return;
             StartCoroutine(Hide(time));
         }
 
