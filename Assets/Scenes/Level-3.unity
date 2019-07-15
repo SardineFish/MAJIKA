@@ -2557,7 +2557,7 @@ PrefabInstance:
     - target: {fileID: 6385070694191812831, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
       propertyPath: HP
-      value: 2000
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 47334572950011988, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
@@ -61662,22 +61662,22 @@ PrefabInstance:
     - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -175.616
+      value: -157.68436
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -359.232
+      value: -323.3687
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -414.3199
+      value: -323.2014
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -844.64026
+      value: -662.40326
       objectReference: {fileID: 0}
     - target: {fileID: 135148691749587177, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
@@ -61908,6 +61908,7 @@ GameObject:
   - component: {fileID: 7096509983886856577}
   - component: {fileID: 9000069231658708969}
   - component: {fileID: 9000069231658708968}
+  - component: {fileID: 8998244156611680856}
   m_Layer: 0
   m_Name: Level
   m_TagString: Level
@@ -61915,6 +61916,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8998244156611680856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8998244156611680855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a141134e620d47e48a200ddf884aa4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9000069231658708968
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,8 +14,10 @@ public class LevelLoader : Singleton<LevelLoader>
     {
         yield return LoadingUI.Show(.5f);
         yield return SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Single);
-        yield return LoadingUI.Hide(1);
-        FindObjectOfType<Level>().Ready();
+    }
+    public void CompleteLoading()
+    {
+        LoadingUI.HideAsync(1);
     }
     public void LoadLevelDetach(string scenePath)
     {

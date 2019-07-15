@@ -31,5 +31,10 @@ namespace LuaHost
         {
             script.Globals["resources"] = new ResourcesHost();
         }
+
+        public static void LoadAll(string path)
+        {
+            Level.Instance.GetComponent<LevelAssetLoader>()?.LoadAllInFolder(path);
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using MAJIKA.GUI;
+using System;
 
 public enum LevelState
 {
@@ -11,6 +12,7 @@ public enum LevelState
     Pass,
 }
 [RequireComponent(typeof(EventBus))]
+[RequireComponent(typeof(LevelAssetLoader))]
 public class Level : Singleton<Level>
 {
     public const string EventFailed = "Failed";
@@ -85,5 +87,6 @@ public class Level : Singleton<Level>
     public void Ready()
     {
         ActiveAtLoaded.ForEach(cpn => cpn.enabled = true);
+        LevelLoader.Instance.CompleteLoading();
     }
 }

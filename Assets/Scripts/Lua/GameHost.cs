@@ -39,6 +39,11 @@ namespace LuaHost
         {
             Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventPass);
         }
+
+        public void Ready()
+        {
+            Level.Instance.Ready();
+        }
         public void Pass(string nextLevel)
         {
             Level.Instance.NextScene = nextLevel;
