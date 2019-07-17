@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace State
+namespace MAJIKA.State
 {
     [CreateAssetMenu(fileName = "Climb", menuName = "EntityState/Climb")]
     public class EntityClimb : AnimatedState

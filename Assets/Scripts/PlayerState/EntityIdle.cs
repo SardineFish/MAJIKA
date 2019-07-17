@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using State;
 
-namespace State
+namespace MAJIKA.State
 {
     [CreateAssetMenu(fileName = "Idle", menuName = "EntityState/Idle")]
     public class EntityIdle : AnimatedState

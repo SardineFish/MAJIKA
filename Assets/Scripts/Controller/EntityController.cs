@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using State;
+using MAJIKA.State;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
