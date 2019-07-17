@@ -2557,7 +2557,7 @@ PrefabInstance:
     - target: {fileID: 6385070694191812831, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
       propertyPath: HP
-      value: 1000
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 47334572950011988, guid: 6461a67624058d3418671c43d784006a,
         type: 3}
@@ -42638,7 +42638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActiveOnStart: 0
   StatusEffects: []
-  HP: 1000
+  HP: 300
   MaxHP: 3000
 --- !u!4 &1699651205
 Transform:
@@ -61619,6 +61619,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646192244, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -103.57985
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646192244, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -223.16019
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646192243, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -114.464
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646192243, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -236.928
+      objectReference: {fileID: 0}
     - target: {fileID: 7294128093959735109, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -61632,7 +61652,7 @@ PrefabInstance:
     - target: {fileID: 7294128093959735114, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 225.68169
+      value: 231.5
       objectReference: {fileID: 0}
     - target: {fileID: 7294128093959735114, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
@@ -61745,9 +61765,9 @@ MonoBehaviour:
   Camera: {fileID: 0}
   ViewportRect:
     serializedVersion: 2
-    x: -7.1561823
-    y: 1.0124998
-    width: 44.532364
+    x: 27.5
+    y: 1.8625002
+    width: 30
     height: 16.875
 --- !u!4 &6441404159551789387
 Transform:

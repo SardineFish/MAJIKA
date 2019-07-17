@@ -5,7 +5,6 @@ using System.Linq;
 
 public class LevelAssetLoader : MonoBehaviour
 {
-    public const string LoadingUIName = "LoadingUI";
     List<UnityEngine.Object> resources = new List<UnityEngine.Object>();
 
     [ReadOnly]
@@ -13,7 +12,7 @@ public class LevelAssetLoader : MonoBehaviour
 
     private void Awake()
     {
-        MAJIKA.GUI.CoveredUI.Find(LoadingUIName).ShowAsync();
+        MAJIKA.GUI.LoadingUI.Instance.ShowAsync();
     }
 
     private void Start()
