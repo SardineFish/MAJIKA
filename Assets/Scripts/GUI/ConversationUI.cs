@@ -106,7 +106,9 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
                 }
                 break;
         }
-        var text = reg.Replace(textTemplate, match => TemplateReplacer(match.Groups[1].Value));
+        var template = new Dictionary<string, string>();
+
+        var text = TextManager.RenderText(textTemplate, new Dictionary<string, string>() { [""]});
         return (talker, text);
     }
 

@@ -5,12 +5,6 @@ local twinTail;
 
 local playerWalkCoroutine;
 
-conversation1 = {
-    "${1}: ${0}你来了。",
-    "${0}: 嗯，我来了。",
-    "${1}: 下一关？",
-    "${0}: 不 要 停 下 来 "
-}
 conversation2 = {
     "${left}: Are You OK? ",
     "${right}: YEAH! ",
@@ -38,8 +32,8 @@ function start()
         --game.conversation(conversation1, {player, redGlass})
         startCoroutine(function ()
             coroutine.yield(game.conversation({
-                "${1}: ${0}你来了。",
-                "${0}: 嗯，我来了。",
+                "${1}: <color=red>${conv1}</color>",
+                "${0}: ${conv2}",
                 "${1}: 下一关？",
                 "${0}: 不 要 停 下 来 "
             },{player, redGlass}, true));
