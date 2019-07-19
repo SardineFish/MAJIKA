@@ -4,16 +4,15 @@ using System.Linq;
 using System.Collections.Generic;
 using MoonSharp.Interpreter;
 using System.Text.RegularExpressions;
+using UnityEngine.UI;
+using MAJIKA.TextManager;
 
-[CreateAssetMenu(fileName ="TextManager", menuName ="GameSystem/TextManager")]
+
+[CreateAssetMenu(fileName = "TextManager", menuName = "GameSystem/TextManager")]
 public class TextManager : SingletonAsset<TextManager>
 {
-    [SerializeField]
-    public List<TextAsset> TextDefinitionCode = new List<TextAsset>();
-    Script ScriptRuntime;
-    Dictionary<string, string> TextDefinitions = new Dictionary<string, string>();
+    public List<TextDefinitionAsset> TextDefinitions = new List<TextDefinitionAsset>();
 
-    public int DefinitionCount => TextDefinitions.Count;
 
     private void OnEnable()
     {
@@ -26,32 +25,37 @@ public class TextManager : SingletonAsset<TextManager>
 
     public void Reload()
     {
-        if (ScriptRuntime is null)
-            ScriptRuntime = new Script();
-        else
-            ScriptRuntime.Globals.Clear();
-        TextDefinitionCode.ForEach(code => ScriptRuntime.DoString(code.text));
-        ScriptRuntime.Globals.Keys
-            .Select(key => key.String)
-            .Where(key => key != null && key != "")
-            .Where(key=>ScriptRuntime.Globals.Get(key).ReadOnly)
-            .ForEach(key => TextDefinitions[key] = ScriptRuntime.Globals.Get(key).String);
-        Debug.Log($"Loaded {DefinitionCount} text definitions.");
+        TextDefinitions.ForEach(textDef => textDef.Reload());
     }
 
-    public static string RenderText(string text, Dictionary<string, string> additionTemplate = null)
+    public static string GetTextByReference(string id, ITextDefinition addition = null)
     {
+        if (addition != null && addition.Has(id))
+            return RenderText(addition[id]);
+        for (var i = 0; i < Asset.TextDefinitions.Count; i++)
+        {
+            if (Asset.TextDefinitions[i].Has(id))
+                return RenderText(Asset.TextDefinitions[i][id]);
+        }
+        return "<undefined>";
+    }
+
+    public static string RenderText(string text, ITextDefinition addition = null)
+    {
+        if (text == null)
+            return "<null>";
+        else if (text == "")
+            return text;
         var reg = new Regex(@"\${(\w+)}", RegexOptions.ECMAScript);
         return reg.Replace(text, (match) =>
-        {
-            var reference = match.Groups[1].Value;
-            if (additionTemplate != null && additionTemplate.ContainsKey(reference))
-                return RenderText(additionTemplate[reference], additionTemplate);
-            else if (Asset.TextDefinitions.ContainsKey(reference))
-                return RenderText(Asset.TextDefinitions[reference]);
-            else
-                return "";
-        });
-        
+            GetTextByReference(match.Groups[1].Value, addition));
+
+    }
+
+    public static void RenderAllUI()
+    {
+        Resources.FindObjectsOfTypeAll<Text>()
+            .Where(text => text)
+            .ForEach(text => text.text = RenderText(text.text));
     }
 }

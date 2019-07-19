@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System;
 using UnityEngine.EventSystems;
+using MAJIKA.TextManager;
+using System.Linq;
 
 public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
 {
@@ -19,6 +21,7 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
     public bool Talking = false;
 
     DoubleBuffer<bool> touchScreenSkip = new DoubleBuffer<bool>();
+    ConversationTextDefinition textDefinition = new ConversationTextDefinition();
 
     void Update()
     {
@@ -38,7 +41,7 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         if (lockPlayer)
             lockID = GameSystem.Instance.PlayerInControl.GetComponent<EntityController>().Lock();
 
-        Talkers = talkers;
+        textDefinition.Talkers = Talkers = talkers;
         Conversation = conversation;
         Talking = true;
         Wrapper.SetActive(true);
@@ -108,7 +111,7 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         }
         var template = new Dictionary<string, string>();
 
-        var text = TextManager.RenderText(textTemplate);
+        var text = TextManager.RenderText(textTemplate, textDefinition);
         return (talker, text);
     }
 
@@ -131,6 +134,36 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
     {
         TouchScreenSkip();
     }
+
+    class ConversationTextDefinition : ITextDefinition
+    {
+        public Talker[] Talkers;
+        public string this[string id]
+        {
+            get
+            {
+                if (id == "player")
+                    return GameSystem.Instance.PlayerInControl?.GetComponent<Talkable>()?.Talker.Name;
+
+                int idx;
+                if (!int.TryParse(id, out idx))
+                    idx = -1;
+                return Talkers.TryGet(Convert.ToInt32(idx))?.Name;
+            }
+        }
+
+
+        public bool Has(string id)
+        {
+            if (id == "player")
+                return GameSystem.Instance.PlayerInControl;
+            int idx = -1;
+            if (!int.TryParse(id, out idx))
+                return false;
+            return idx >= 0 && idx < Talkers.Length;
+        }
+    }
+
 }
 
 class Sentence

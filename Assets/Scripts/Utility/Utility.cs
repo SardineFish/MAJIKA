@@ -395,6 +395,33 @@ public static class Utility
         return gameObject && gameObject.scene != null && gameObject.scene.name != null;
     }
 
+    /// <summary>
+    /// Try to get an element with specific index. Will return null except throwing an exception with an invalid index.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="list"></param>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    public static T TryGet<T>(this List<T> list, int index) where T:class
+    {
+        if (index < 0 || index >= list.Count)
+            return null;
+        return list[index];
+    }
+    /// <summary>
+    /// Try to get an element with specific index. Will return null except throwing an exception with an invalid index.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="list"></param>
+    /// <param name="index"></param>
+    /// <returns></returns>
+    public static T TryGet<T>(this T[] array, int index ) where T : class
+    {
+        if (index < 0 || index >= array.Length)
+            return null;
+        return array[index];
+    }
+
 }
 
 public enum GenericPlatform
