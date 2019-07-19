@@ -7,7 +7,7 @@ using MoonSharp.Interpreter;
 using Inventory;
 using UnityEngine;
 
-namespace LuaHost
+namespace MAJIKA.Lua
 {
     public class InventoryHost
     {

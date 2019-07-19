@@ -7,7 +7,7 @@ using Inventory;
 using UnityEngine;
 using MoonSharp.Interpreter;
 
-namespace LuaHost
+namespace MAJIKA.Lua
 {
     [MoonSharpUserData]
     public class ProductFormula

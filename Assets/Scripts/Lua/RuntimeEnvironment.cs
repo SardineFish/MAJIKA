@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace LuaHost.LuaRuntime
+namespace MAJIKA.Lua.LuaRuntime
 {
     [MoonSharpUserData]
     public class Console

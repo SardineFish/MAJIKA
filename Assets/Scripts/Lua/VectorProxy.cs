@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using MoonSharp.Interpreter;
 
-namespace LuaHost.Proxy
+namespace MAJIKA.Lua.Proxy
 {
     [MoonSharpUserData]
     class Vector2Wrapper

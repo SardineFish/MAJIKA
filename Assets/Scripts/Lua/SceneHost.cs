@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
-namespace LuaHost
+namespace MAJIKA.Lua
 {
     [MoonSharpUserData]
     public class SceneHost

@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 using MoonSharp.Interpreter;
 
-namespace LuaHost
+namespace MAJIKA.Lua
 {
     public class ResourceLoader : LuaScriptHost
     {

@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LuaHost.LuaRuntime;
+using MAJIKA.Lua.LuaRuntime;
 using MoonSharp.Interpreter;
 using UnityEngine;
 
-namespace LuaHost
+namespace MAJIKA.Lua
 {
     public class LuaScriptHost : MonoBehaviour
     {
-        public TextAsset InitialScript;
-        public TextAsset Script;
+        public LuaScript InitialScript;
+        public LuaScript Script;
 
         [NonSerialized]
         public Script LuaScript;
@@ -50,7 +50,7 @@ namespace LuaHost
             StopAllCoroutines();
         }
 
-        public void RunScript(TextAsset script)
+        public void RunScript(LuaScript script)
         {
             LuaScript.DoString(script.text);
             LuaScript.Globals.Get("awake").Function?.Call();

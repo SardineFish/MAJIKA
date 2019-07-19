@@ -297,6 +297,26 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646191913, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -94.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646191913, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -196.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646191914, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646191914, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b9034704dde6e4ea609d575faa4738, type: 3}
 --- !u!224 &4198387 stripped
@@ -7482,7 +7502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialScript: {fileID: 0}
-  Script: {fileID: 2213920135882650261, guid: dcfae434998b35c41b2d14e5a40ad07b, type: 3}
+  Script: {fileID: -4270002856181823206, guid: dcfae434998b35c41b2d14e5a40ad07b, type: 3}
 --- !u!114 &421150852
 MonoBehaviour:
   m_ObjectHideFlags: 0

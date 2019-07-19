@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MoonSharp.Interpreter;
 
-namespace LuaHost
+namespace MAJIKA.Lua
 {
     [MoonSharpUserData]
     public class Promise

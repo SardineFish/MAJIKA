@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MoonSharp.Interpreter;
 using MAJIKA.GUI;
 
-namespace LuaHost
+namespace MAJIKA.Lua
 {
     [MoonSharpUserData]
     public class GUIHost : HostBase

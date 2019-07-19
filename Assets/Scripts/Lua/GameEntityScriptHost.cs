@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-using LuaHost;
+using MAJIKA.Lua;
 
 [RequireComponent(typeof(GameEntity))]
 public class GameEntityScriptHost : LuaScriptHost, IEntityLifeCycle

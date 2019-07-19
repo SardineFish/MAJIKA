@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEditor;
+using MAJIKA.Lua;
 
 namespace Assets.Editor
 {
     [CanEditMultipleObjects]
-    [CustomEditor(typeof(LuaHost.LuaScriptHost), true)]
+    [CustomEditor(typeof(LuaScriptHost), true)]
     class LuaHostEditor:UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
-            var luaHost = target as LuaHost.LuaScriptHost;
+            var luaHost = target as LuaScriptHost;
             EditorGUILayout.Space();
             if (GUILayout.Button("Run"))
             {

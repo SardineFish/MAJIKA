@@ -108,7 +108,7 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         }
         var template = new Dictionary<string, string>();
 
-        var text = TextManager.RenderText(textTemplate, new Dictionary<string, string>() { [""]});
+        var text = TextManager.RenderText(textTemplate);
         return (talker, text);
     }
 

@@ -42537,7 +42537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialScript: {fileID: 0}
-  Script: {fileID: 2213920135882650261, guid: a8cbfd781c16c574e9829f2422e53b11, type: 3}
+  Script: {fileID: -4270002856181823206, guid: a8cbfd781c16c574e9829f2422e53b11, type: 3}
 --- !u!114 &1699651199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61622,22 +61622,22 @@ PrefabInstance:
     - target: {fileID: 5559616483646192244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -226.22491
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646192244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -468.45032
+      value: -16.000244
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646192243, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -138.5999
+      value: -94.08
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646192243, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -285.1998
+      value: -196.16
       objectReference: {fileID: 0}
     - target: {fileID: 7294128093959735109, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
@@ -62116,4 +62116,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialScript: {fileID: 0}
-  Script: {fileID: 4900000, guid: 5961c445fabc7d346bfb84c115092e8f, type: 3}
+  Script: {fileID: -4270002856181823206, guid: 5961c445fabc7d346bfb84c115092e8f, type: 3}
