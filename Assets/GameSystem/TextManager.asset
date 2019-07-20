@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 0fbb9a5b2c327144e9ddbb375ba1ae12, type: 3}
   m_Name: TextManager
-  m_EditorClassIdentifier: Assembly-CSharp::TextManager
+  m_EditorClassIdentifier: 
   TextDefinitions:
+  - {fileID: 11400000, guid: 64af42d29c7dc1b4ea7a9611afaeca2f, type: 2}
   - {fileID: 11400000, guid: 89615fd66506004429bc0b12cccb8f36, type: 2}

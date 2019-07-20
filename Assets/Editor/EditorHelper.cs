@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Reflection;
 
-[CustomEditor(typeof(MonoBehaviour), true)]
+[CustomEditor(typeof(UnityEngine.Object), true)]
 [CanEditMultipleObjects]
 class EditorHelper : UnityEditor.Editor
 {

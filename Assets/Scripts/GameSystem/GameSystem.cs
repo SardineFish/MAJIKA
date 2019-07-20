@@ -8,6 +8,7 @@ public class GameSystem : Singleton<GameSystem>
     private void Start()
     {
         GameObject.DontDestroyOnLoad(gameObject);
+        TextManager.Asset.Reload();
     }
 
     public void Control(GameEntity entity)

@@ -3,6 +3,11 @@ using System.Collections;
 using UnityEngine.InputSystem;
 using System.Linq;
 
+public enum DeviceClass
+{
+    Keyboard,
+    Gamepad,
+};
 public class InputManager : Singleton<InputManager>
 {
     private void OnEnable()
@@ -12,9 +17,34 @@ public class InputManager : Singleton<InputManager>
     [Tooltip("Input action assets")]
     public MAJIKAInput Controller;
 
+    public DeviceClass CurrentActiveDeviceType
+    {
+        get;
+        private set;
+    }
+
+    InputAction gamepad;
+
     private void Awake()
     {
+        gamepad = new InputAction(binding: "<Gamepad>/*");
+        gamepad.performed += (ctx) =>
+        {
+            Debug.LogError(ctx.control.path);
+        };
+        InputSystem.onDeviceChange += InputSystem_onDeviceChange;
         Controller = new MAJIKAInput();
+    }
+
+    private void InputSystem_onDeviceChange(InputDevice device, InputDeviceChange change)
+    {
+        if(change == InputDeviceChange.StateChanged)
+        {
+            if (device.description.deviceClass == "Keyboard")
+                CurrentActiveDeviceType = DeviceClass.Keyboard;
+            else
+                CurrentActiveDeviceType = DeviceClass.Gamepad;
+        }
     }
 
     public MAJIKAInput.ActionsActions Actions => Controller.Actions;

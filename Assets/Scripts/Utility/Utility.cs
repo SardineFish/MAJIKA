@@ -422,6 +422,26 @@ public static class Utility
         return array[index];
     }
 
+    public static string Join(this IEnumerable<string> list, string seperator)
+    {
+        var output = "";
+        var enumerator = list.GetEnumerator();
+        if (enumerator.MoveNext())
+            output = enumerator.Current;
+        while (enumerator.MoveNext())
+            output = output + seperator + enumerator.Current;
+        return output;
+    }
+
+    public static string StringJoin(string seperator, params string[] strings)
+    {
+        if (strings.Length <= 0)
+            return null;
+        var output = strings[0];
+        for (var i = 1; i < strings.Length; i++)
+            output = output + seperator + strings[i];
+        return output;
+    }
 }
 
 public enum GenericPlatform

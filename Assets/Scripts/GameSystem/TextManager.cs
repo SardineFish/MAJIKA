@@ -13,16 +13,7 @@ public class TextManager : SingletonAsset<TextManager>
 {
     public List<TextDefinitionAsset> TextDefinitions = new List<TextDefinitionAsset>();
 
-
-    private void OnEnable()
-    {
-        Reload();
-    }
-    void Awake()
-    {
-        Reload();
-    }
-
+    [EditorButton("Reload")]
     public void Reload()
     {
         TextDefinitions.ForEach(textDef => textDef.Reload());

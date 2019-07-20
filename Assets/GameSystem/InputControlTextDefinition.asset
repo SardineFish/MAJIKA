@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba6e445765e34242a1e7ab04abf86b1, type: 3}
   m_Name: InputControlTextDefinition
   m_EditorClassIdentifier: 
+  TextDefinitionAsset: {fileID: 4900000, guid: 3bce03af759ff7244bdf3c77f08bb759, type: 3}

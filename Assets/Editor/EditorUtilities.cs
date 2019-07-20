@@ -178,6 +178,8 @@ namespace Assets.Editor
         public class ListDrawer<T>
         {
             bool fold = true;
+            bool allowAdd = true;
+            bool allowRemove = false;
             List<T> list = null;
             Func<T> onCreate = null;
             Func<T, int, bool> onRemove = null;
@@ -207,6 +209,24 @@ namespace Assets.Editor
                 return this;
             }
 
+            public ListDrawer<T> Item(Action<T> itemRenderer)
+            {
+                return Item((t, i) =>
+                {
+                    itemRenderer(t);
+                    return t;
+                });
+            }
+
+            public ListDrawer<T> Item(Action<T, int> itemRenderer)
+            {
+                return Item((t, i) =>
+                {
+                    itemRenderer(t, i);
+                    return t;
+                });
+            }
+
             public ListDrawer<T> Item(Func<T, int, T> itemRenderer)
             {
                 this.itemRenderer = itemRenderer;
@@ -216,18 +236,33 @@ namespace Assets.Editor
             public ListDrawer<T> Item(Func<T, T> itemRenderer)
                 => this.Item((t, i) => itemRenderer(t));
 
+            public ListDrawer<T> OnAdd(bool enableAdd)
+            {
+                this.allowAdd = enableAdd;
+                return this;
+            }
             public ListDrawer<T> OnAdd(Func<T> callback)
             {
                 this.onCreate = callback;
                 return this;
             }
 
+            public ListDrawer<T> OnRemove(bool allowRemove)
+            {
+                this.allowRemove = allowRemove;
+                return this;
+            }
             public ListDrawer<T> OnRemove(Func<T, int, bool> callback)
             {
                 this.onRemove = callback;
                 return this;
             }
 
+            public ListDrawer<T> ReadOnly()
+            {
+                allowAdd = allowRemove = false;
+                return this;
+            }
             public List<T> Render()
             {
                 if (itemRenderer == null)
@@ -240,7 +275,7 @@ namespace Assets.Editor
                     Horizontal(() =>
                     {
                         headerRenderer?.Invoke();
-                        if (GUILayout.Button(Styles.PlusIconContent, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
+                        if (allowAdd && GUILayout.Button(Styles.PlusIconContent, GUIStyle.none, GUILayout.Width(EditorGUIUtility.singleLineHeight)))
                         {
                             list.Add(onCreate());
                         }
