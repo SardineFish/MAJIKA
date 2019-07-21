@@ -42,6 +42,8 @@ public class InputManager : Singleton<InputManager>
         {
             if (device.description.deviceClass == "Keyboard")
                 CurrentActiveDeviceType = DeviceClass.Keyboard;
+            else if (device.description.deviceClass == "Mouse")
+                return;
             else
                 CurrentActiveDeviceType = DeviceClass.Gamepad;
         }

@@ -37,7 +37,7 @@ namespace Assets.Editor
 
             EditorUtilities.DrawList(manager.TextDefinitionCode)
                 .Header("Text Definitions")
-                .Item(code => EditorGUILayout.ObjectField(code, typeof(MAJIKA.Lua.LuaScript), true) as MAJIKA.Lua.LuaScript)
+                .Item(code => EditorGUILayout.ObjectField(code, typeof(TextAsset), true) as TextAsset)
                 .Render();
 
             Undo.RecordObject(target, "Edit Text Definition");
@@ -48,10 +48,10 @@ namespace Assets.Editor
             var manager = target as ScriptedTextDefinition;
             var projectPath = new Uri(Application.dataPath);
             manager.TextDefinitionCode.Clear();
-            manager.TextDefinitionCode = Directory.GetFiles(searchFolder, "*.lua", SearchOption.AllDirectories)
+            manager.TextDefinitionCode = Directory.GetFiles(searchFolder, "*.yaml", SearchOption.AllDirectories)
                 .Select(file =>
                 {
-                    return AssetDatabase.LoadAssetAtPath<MAJIKA.Lua.LuaScript>(projectPath.MakeRelativeUri(new Uri(file)).ToString());
+                    return AssetDatabase.LoadAssetAtPath<TextAsset>(projectPath.MakeRelativeUri(new Uri(file)).ToString());
                 })
                 .ToList();
             manager.Reload();

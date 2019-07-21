@@ -11,8 +11,7 @@ namespace MAJIKA.TextManager
     public class ScriptedTextDefinition : TextDefinitionAsset
     {
         [SerializeField]
-        public List<LuaScript> TextDefinitionCode = new List<LuaScript>();
-        Script ScriptRuntime;
+        public List<TextAsset> TextDefinitionCode = new List<TextAsset>();
         Dictionary<string, string> TextDefinitions = new Dictionary<string, string>();
         public int DefinitionCount => TextDefinitions.Count;
 
@@ -20,16 +19,13 @@ namespace MAJIKA.TextManager
 
         public override void Reload()
         {
-            if (ScriptRuntime is null)
-                ScriptRuntime = new Script();
-            else
-                ScriptRuntime.Globals.Clear();
-            TextDefinitionCode.ForEach(code => ScriptRuntime.DoString(code.text));
-            ScriptRuntime.Globals.Keys
-                .Select(key => key.String)
-                .Where(key => key != null && key != "")
-                .Where(key => ScriptRuntime.Globals.Get(key).ReadOnly)
-                .ForEach(key => TextDefinitions[key] = ScriptRuntime.Globals.Get(key).String);
+            TextDefinitions.Clear();
+            var deserializer = new YamlDotNet.Serialization.Deserializer();
+            TextDefinitionCode
+                .Where(asset => asset)
+                .Select(asset => deserializer.Deserialize<Dictionary<string, string>>(asset.text))
+                .ForEach(dict => dict.ForEach(pair => TextDefinitions[pair.Key] = pair.Value));
+                
             Debug.Log($"Loaded {DefinitionCount} text definitions.");
         }
 

@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 public class Tips : Singleton<Tips>
 {
-    public Text Text;
+    public TextMeshProUGUI Text;
     public void ShowTips(string tip, float time)
     {
         StartCoroutine(ShowTipsWait(tip, time));
     }
     public IEnumerator ShowTipsWait(string tip, float time)
     {
+        tip = TextManager.RenderText(tip);
         yield return Utility.ShowUI(GetComponent<Graphic>(), .2f, .4f);
         Text.text = tip;
         yield return Utility.ShowUI(Text, .3f);

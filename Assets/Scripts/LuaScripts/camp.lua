@@ -23,6 +23,9 @@ function start()
 
     game.ready();
 
+    
+    game.tips("使用 ${movement} 移动", 30);
+
     yellowHair.on("OnInteract", function()
         --game.control(null)
         gui.skillPanel.show()
@@ -32,7 +35,7 @@ function start()
         --game.conversation(conversation1, {player, redGlass})
         startCoroutine(function ()
             coroutine.yield(game.conversation({
-                "${1}: <color=red>${conv1}</color>",
+                "${1}: <color=red>${conv1}",
                 "${0}: ${conv2}",
                 "${1}: 下一关？",
                 "${0}: 不 要 停 下 来 "

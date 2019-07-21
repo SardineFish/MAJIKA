@@ -7,12 +7,13 @@ using System;
 using UnityEngine.EventSystems;
 using MAJIKA.TextManager;
 using System.Linq;
+using TMPro;
 
 public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
 {
     public float WPS = 10;
     public GameObject Wrapper;
-    public Text TextRenderer;
+    public TextMeshProUGUI TextRenderer;
     public Image ImageRenderer;
     public Graphic ContinueHint;
     public Sprite Transperant;
@@ -65,6 +66,7 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
 
     public IEnumerator ShowSentence(string text)
     {
+        var richTextElementRegEx = new Regex(@"(<\S+.*>.*</\S+>|<\S+.*>|\S)");
         yield return null;
         var (talker, renderedText) = RenderSentence(text);
         if (talker)
@@ -72,14 +74,19 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         else
             ImageRenderer.sprite = Transperant;
         var secondsPerWord = 1 / WPS;
-        foreach(var t in Utility.TimerNormalized(secondsPerWord*renderedText.Length))
+        var matches = richTextElementRegEx.Matches(renderedText);
+        var displayText = "";
+        for(var i=0;i<matches.Count;i++)
         {
+            var match = matches[i];
             if (InputManager.Instance.Controller.Actions.Accept.WasPressedThisFrame() || touchScreenSkip.Value)
                 break;
-            TextRenderer.text = renderedText.Substring(0, Mathf.FloorToInt(t * renderedText.Length));
-            yield return null;
+            displayText += match.Value;
+            TextRenderer.text = displayText;
+            yield return new WaitForSeconds(secondsPerWord);
         }
         TextRenderer.text = renderedText;
+
         yield return null;
         yield return Utility.ShowUI(ContinueHint, 0.2f);
         while (!InputManager.Instance.Actions.Accept.WasPressedThisFrame() && !touchScreenSkip.Value)
