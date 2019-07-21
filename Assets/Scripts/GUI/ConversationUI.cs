@@ -35,7 +35,14 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         touchScreenSkip.Value = true;
     }
 
-    public IEnumerator StartConversation(IConversation conversation, Talker[] talkers, bool lockPlayer = false)
+    public IEnumerator StartConversationAsync(IConversation conversation, Talker[] talkers, bool lockPlayer = false)
+    {
+        if (!gameObject.activeInHierarchy)
+            gameObject.SetActive(true);
+        yield return StartCoroutine(StartConversationInternal(conversation, talkers, lockPlayer));
+    }
+
+    IEnumerator StartConversationInternal(IConversation conversation, Talker[] talkers, bool lockPlayer = false)
     {
         TextRenderer.text = "";
         Guid lockID;
@@ -66,7 +73,7 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
 
     public IEnumerator ShowSentence(string text)
     {
-        var richTextElementRegEx = new Regex(@"(<\S+.*>.*</\S+>|<\S+.*>|\S)");
+        var richTextElementRegEx = new Regex(@"(<\S+.*>.*</\S+>|<\S+.*>|.)");
         yield return null;
         var (talker, renderedText) = RenderSentence(text);
         if (talker)
@@ -79,12 +86,16 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         for(var i=0;i<matches.Count;i++)
         {
             var match = matches[i];
-            if (InputManager.Instance.Controller.Actions.Accept.WasPressedThisFrame() || touchScreenSkip.Value)
-                break;
             displayText += match.Value;
             TextRenderer.text = displayText;
-            yield return new WaitForSeconds(secondsPerWord);
+            foreach(var t in Utility.Timer(secondsPerWord))
+            {
+                if (InputManager.Instance.Controller.Actions.Accept.WasPressedThisFrame() || touchScreenSkip.Value)
+                    goto SkipAnim;
+                yield return null;
+            }
         }
+      SkipAnim:
         TextRenderer.text = renderedText;
 
         yield return null;

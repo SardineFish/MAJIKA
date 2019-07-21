@@ -1,0 +1,4 @@
+movement-hint: 使用${movement}控制移动
+climb-hint: 使用${climb}抓住绳索
+interact-hint: ${input-action}${interact}与NPC互动
+jump-hint: 使用 ${jump} 跳过障碍物

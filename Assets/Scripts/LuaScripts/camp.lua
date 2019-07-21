@@ -48,7 +48,7 @@ function start()
     twinTail.on("OnInteract", function()
         startCoroutine(function ()
             coroutine.yield(game.conversation({
-                "${1}: 🐴?",
+                "${1}: Emmmm?",
                 "${0}: ¿",
                 "${1}: 这边请。",
                 "${0}: ……"

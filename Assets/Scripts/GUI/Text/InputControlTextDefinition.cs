@@ -69,7 +69,7 @@ namespace MAJIKA.TextManager
                             if (!GamepadKeyText.ContainsKey(actionName))
                                 GamepadKeyText[actionName] = TextDefinitions[binding.path];
                             else
-                                GamepadKeyText[actionName] = Utility.StringJoin("/", GamepadKeyText[actionName], TextDefinitions[binding.path]);
+                                GamepadKeyText[actionName] = Utility.StringJoin(",", GamepadKeyText[actionName], TextDefinitions[binding.path]);
                         }
                         else
                         {
@@ -79,7 +79,7 @@ namespace MAJIKA.TextManager
                                 if (!KeyboardKeyText.ContainsKey(actionName))
                                     KeyboardKeyText[actionName] = TextDefinitions[binding.path];
                                 else
-                                    KeyboardKeyText[actionName] = Utility.StringJoin("/", KeyboardKeyText[actionName], TextDefinitions[binding.path]);
+                                    KeyboardKeyText[actionName] = Utility.StringJoin(",", KeyboardKeyText[actionName], TextDefinitions[binding.path]);
                             }
                         }
                     });

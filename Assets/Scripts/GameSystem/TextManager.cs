@@ -37,7 +37,7 @@ public class TextManager : SingletonAsset<TextManager>
             return "<null>";
         else if (text == "")
             return text;
-        var reg = new Regex(@"\${(\w+)}", RegexOptions.ECMAScript);
+        var reg = new Regex(@"\${(\S+)}", RegexOptions.ECMAScript);
         return reg.Replace(text, (match) =>
             GetTextByReference(match.Groups[1].Value, addition));
 

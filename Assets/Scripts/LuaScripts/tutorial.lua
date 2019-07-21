@@ -59,21 +59,21 @@ end
 
 function tutorial()
     coroutine.yield(waitForSeconds(0.7));
-    game.tips("使用 A, S, D, W 移动", 3);
+    game.tips("${movement-hint}", 3);
     repeat coroutine.yield(nil); 
     until player.position.x > 25;
     coroutine.yield(game.conversation({
-        "血迹，看起来像是发生过战斗"
+        "${turtorial-1}"
     },{player}, true));
 
     repeat coroutine.yield(nil); 
     until player.position.x > 43;
-    game.tips("使用 [Space] 跳过障碍物", 2);
+    game.tips("${jump-hint}", 2);
 
     repeat coroutine.yield(nil);
     until player.position.x > 70;
     coroutine.yield(game.conversation({
-        "外面的天色预示着什么……"
+        "${turtorial-2}"
     },{player}, true));
 
     repeat coroutine.yield(nil);
@@ -81,7 +81,7 @@ function tutorial()
     
     boss.setActive(true);
     coroutine.yield(game.conversation({
-        "安静的走廊里好像能听见什么……"
+        "${turtorial-3}"
     },{player}, true));
 
     camera.follow(boss);
