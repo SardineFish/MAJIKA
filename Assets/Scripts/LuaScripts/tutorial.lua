@@ -63,7 +63,7 @@ function tutorial()
     repeat coroutine.yield(nil); 
     until player.position.x > 25;
     coroutine.yield(game.conversation({
-        "${turtorial-1}"
+        "${conv:turtorial-1}"
     },{player}, true));
 
     repeat coroutine.yield(nil); 
@@ -73,7 +73,7 @@ function tutorial()
     repeat coroutine.yield(nil);
     until player.position.x > 70;
     coroutine.yield(game.conversation({
-        "${turtorial-2}"
+        "${conv:turtorial-2}"
     },{player}, true));
 
     repeat coroutine.yield(nil);
@@ -81,7 +81,7 @@ function tutorial()
     
     boss.setActive(true);
     coroutine.yield(game.conversation({
-        "${turtorial-3}"
+        "${conv:turtorial-3}"
     },{player}, true));
 
     camera.follow(boss);

@@ -5,12 +5,6 @@ local twinTail;
 
 local playerWalkCoroutine;
 
-conversation2 = {
-    "${left}: Are You OK? ",
-    "${right}: YEAH! ",
-    "${left}: ......"
-}
-
 function start()
     resources.loadAll("Player/");
     resources.loadAll("Texture/UI/");
@@ -24,7 +18,7 @@ function start()
     game.ready();
 
     
-    game.tips("使用 ${movement} 移动", 30);
+    game.tips("${climb-hint}", 30);
 
     yellowHair.on("OnInteract", function()
         --game.control(null)
@@ -34,12 +28,7 @@ function start()
     redGlass.on("OnInteract", function()
         --game.conversation(conversation1, {player, redGlass})
         startCoroutine(function ()
-            coroutine.yield(game.conversation({
-                "${1}: <color=red>${conv1}",
-                "${0}: ${conv2}",
-                "${1}: 下一关？",
-                "${0}: 不 要 停 下 来 "
-            },{player, redGlass}, true));
+            coroutine.yield(game.conversation("${conv:camp-red-glass}",{player, redGlass}, true));
             game.loadLevel("Level-2");
         
         end)
@@ -47,12 +36,7 @@ function start()
 
     twinTail.on("OnInteract", function()
         startCoroutine(function ()
-            coroutine.yield(game.conversation({
-                "${1}: Emmmm?",
-                "${0}: ¿",
-                "${1}: 这边请。",
-                "${0}: ……"
-            },{player, twinTail}, true));
+            coroutine.yield(game.conversation("${conv:camp-twin-tail}",{player, twinTail}, true));
             game.loadLevel("Tutorial");
         
         end)

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using MAJIKA.TextManager;
 
 [RequireComponent(typeof(InteractiveEntity))]
 public class Talkable : EventBehaviour

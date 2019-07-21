@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using MoonSharp.Interpreter;
+using MAJIKA.TextManager;
 
 namespace MAJIKA.Lua
 {
@@ -15,9 +16,19 @@ namespace MAJIKA.Lua
         public GameHost(LuaScriptHost host):base(host)
         {
         }
-        public UnityEngine.Coroutine Conversation(List<string> conversation, GameEntity[] talkers, bool lockPlayer = true)
+        public UnityEngine.Coroutine Conversation(string[] conversation, GameEntity[] talkers, bool lockPlayer = true)
         {
-            return host.StartCoroutine(ConversationUI.Instance.StartConversationAsync(new Conversation(conversation), talkers.Select(entity => entity.GetComponent<Talkable>().Talker).ToArray(),lockPlayer));
+            return host.StartCoroutine(ConversationUI.Instance.StartConversationAsync(
+                new ConversationRenderer(conversation), 
+                talkers.Select(entity => entity.GetComponent<Talkable>().Talker).ToArray(),
+                lockPlayer));
+        }
+        public UnityEngine.Coroutine Conversation(string conversation, GameEntity[] talkers, bool lockPlayer = true)
+        {
+            return host.StartCoroutine(ConversationUI.Instance.StartConversationAsync(
+                new ConversationRenderer(new string[] { conversation }), 
+                talkers.Select(entity => entity.GetComponent<Talkable>().Talker).ToArray(), 
+                lockPlayer));
         }
         public UnityEngine.Coroutine tips(string tips, float time = 3)
         {

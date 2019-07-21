@@ -1,6 +1,18 @@
-turtorial-1: 血迹，看起来像是发生过战斗
-turtorial-2: 外面的天色预示着什么……
-turtorial-3: 安静的走廊里好像能听见什么……
+turtorial-1: 
+ - 血迹，看起来像是发生过战斗
+turtorial-2: 
+ - 外面的天色预示着什么……
+turtorial-3: 
+ - 安静的走廊里好像能听见什么……
 
-conv1: ${conv2}, 你来了
-conv2: 我来了${movement}
+camp-red-glass:
+ - "${1}: ${player}, 你来了"
+ - "${0}: 我来了, ${1}"
+ - "${conv:camp-twin-tail}"
+ - "${1}: 下一关？"
+ - "${0}: 不 要 停 下 来————"
+camp-twin-tail:
+ - "${1}: Emmmm?"
+ - "${0}: ¿"
+ - "${1}: 这边请。"
+ - "${0}: ……"
