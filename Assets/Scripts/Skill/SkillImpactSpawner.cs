@@ -42,31 +42,44 @@ public class SkillImpactSpawner : EntityBehaviour
         var creator = impact.Creator;
         if (TimeOffset > 0)
         {
-            StartCoroutine(SpawnCoroutine(AdditionalEffect.ToList(), dir, target, creator));
+            StartCoroutine(SpawnCoroutine(AdditionalEffect.ToList(), transform.position, dir, target, creator));
         }
         else
         {
-            DoSpawn(AdditionalEffect.ToList(), dir, target, creator);
+            DoSpawn(AdditionalEffect.ToList(), transform.position, dir, target, creator);
         }
     }
 
-    IEnumerator SpawnCoroutine(List<EffectInstance> effects, float dir, GameEntity target, GameEntity creator)
+    IEnumerator SpawnCoroutine(List<EffectInstance> effects, Vector2 position, float dir, GameEntity target, GameEntity creator)
     {
         yield return new WaitForSeconds(TimeOffset);
-        DoSpawn(effects, dir, target, creator);
+        DoSpawn(effects, position, dir, target, creator);
     }
 
-    public void Spawn(List<EffectInstance> effects, float dir, GameEntity target)
+    public virtual void Spawn(List<EffectInstance> effects, float dir = 1, GameEntity target = null)
     {
         dir = MathUtility.SignInt(dir);
         effects = effects.Union(AdditionalEffect).ToList();
         if(TimeOffset>0)
         {
-            StartCoroutine(SpawnCoroutine(effects, dir, target, Entity));
+            StartCoroutine(SpawnCoroutine(effects, transform.position, dir, target, Entity));
         }
         else
         {
-            DoSpawn(effects, dir, target, Entity);
+            DoSpawn(effects, transform.position, dir, target, Entity);
+        }
+    }
+
+    public virtual void SpawnAt(List<EffectInstance> effects, Vector2 position)
+    {
+        effects = effects.Union(AdditionalEffect).ToList();
+        if (TimeOffset > 0)
+        {
+            StartCoroutine(SpawnCoroutine(effects, position, 1, null, Entity));
+        }
+        else
+        {
+            DoSpawn(effects, position, 1, null, Entity);
         }
     }
 
@@ -92,7 +105,7 @@ public class SkillImpactSpawner : EntityBehaviour
         return impact;
     }
 
-    private void DoSpawn(List<EffectInstance> effects, float dir, GameEntity target, GameEntity creator)
+    private void DoSpawn(List<EffectInstance> effects, Vector2 position, float dir, GameEntity target, GameEntity creator)
     {
         if(SpawnType == ImpactSpawnType.Barrage)
         {
@@ -102,7 +115,7 @@ public class SkillImpactSpawner : EntityBehaviour
                 direction.x *= dir;
                 var offset = SpawnOffset;
                 offset.x *= dir;
-                var spawnPos = transform.position + SpawnOffset.ToVector3();
+                var spawnPos = position + SpawnOffset;
                 SpawnOne(spawnPos, direction, effects, target, creator);
             });
         }
@@ -111,7 +124,7 @@ public class SkillImpactSpawner : EntityBehaviour
             Vector3 direction = Vector3.right * dir;
             var offset = SpawnOffset;
             offset.x *= dir;
-            var pos = transform.position + offset.ToVector3();
+            var pos = position + offset;
             Instance = SpawnOne(pos, direction, effects, target, creator);
         }
     }
