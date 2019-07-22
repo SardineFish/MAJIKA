@@ -1,4 +1,5 @@
 player = nil
+boss = nil
 
 function start()
     resources.loadAll("Boss/Boss-4/")
@@ -7,8 +8,9 @@ function start()
     resources.loadAll("Texture/Map/Level-4")
 
     player = scene.entity("Player")
+    boss = scene.entity("Boss-4")
 
-    game.control(player)
+    game.control(boss)
     camera.follow({player})
 
     game.ready();

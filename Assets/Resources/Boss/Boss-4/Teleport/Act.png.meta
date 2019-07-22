@@ -1,0 +1,435 @@
+fileFormatVersion: 2
+guid: 73b27bff199c9d44aa48d0457abc8145
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5711015016982387558
+    second: Act_0
+  - first:
+      213: 5967464863058100175
+    second: Act_1
+  - first:
+      213: 2899824006938417117
+    second: Act_2
+  - first:
+      213: 5994616086168404422
+    second: Act_3
+  - first:
+      213: -5599484314182155456
+    second: Act_4
+  - first:
+      213: 9025506586941449184
+    second: Act_5
+  - first:
+      213: 7660390084616667057
+    second: Act_6
+  - first:
+      213: 7545795692056490155
+    second: Act_7
+  - first:
+      213: -3303016526755758541
+    second: Act_8
+  - first:
+      213: 6119806325460447106
+    second: Act_9
+  - first:
+      213: 3946416501285649032
+    second: Act_10
+  - first:
+      213: 2405166889928952701
+    second: Act_11
+  - first:
+      213: -5689475418415897352
+    second: Act_12
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Act_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 231
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6daea532b94a542950e285dd745812
+      internalID: 5711015016982387558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_1
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 231
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ab40f9e369dfa44ba0c329d82116dbc
+      internalID: 5967464863058100175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 231
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5cb3c434e36c094d828f8103ca1bea6
+      internalID: 2899824006938417117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 231
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9be1300d92465e42aacbae784ca27f9
+      internalID: 5994616086168404422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 154
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769871fdd9fdd034b93e76863b2ae35e
+      internalID: -5599484314182155456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_5
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 154
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75a7f55e2fdf8e44bb16207ec9a522c
+      internalID: 9025506586941449184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_6
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 154
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2dacd830d6d1864fad2bc492ee84e93
+      internalID: 7660390084616667057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_7
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 154
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114beb8adfab8d54eb9c4d313a5cd385
+      internalID: 7545795692056490155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 77
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475dc47ecdb62a0448908b870b76ef7e
+      internalID: -3303016526755758541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_9
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 77
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1d24cad4ec2e04d8fd50bca8ff383d
+      internalID: 6119806325460447106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_10
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 77
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91e1da72f9b7d146a2b182afdf2a8b5
+      internalID: 3946416501285649032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_11
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 77
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea30e5614c338740bfe67e956222259
+      internalID: 2405166889928952701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Act_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea190f3e4336e0d429eef8c3831a768d
+      internalID: -5689475418415897352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b5821b8770878b248a21b1889c89eb26
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,291 @@
+fileFormatVersion: 2
+guid: fb7bcd40fea1d1d41ba79366d1c198e7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4357059883567877053
+    second: ArcaneJet-Impact_0
+  - first:
+      213: -4768833888134132771
+    second: ArcaneJet-Impact_1
+  - first:
+      213: -1775122554329541264
+    second: ArcaneJet-Impact_2
+  - first:
+      213: -7092579750376436630
+    second: ArcaneJet-Impact_3
+  - first:
+      213: 6590024842656577104
+    second: ArcaneJet-Impact_4
+  - first:
+      213: -62125594317754134
+    second: ArcaneJet-Impact_5
+  - first:
+      213: -4667296806084942446
+    second: ArcaneJet-Impact_6
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ArcaneJet-Impact_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 118
+        width: 102
+        height: 59
+      alignment: 9
+      pivot: {x: 0, y: 0.4745763}
+      border: {x: 27, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57971a61e9ef711478b04fa8e08bfb53
+      internalID: 4357059883567877053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcaneJet-Impact_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 118
+        width: 102
+        height: 59
+      alignment: 9
+      pivot: {x: 0, y: 0.4745763}
+      border: {x: 27, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b058738c09afb0e46a3de11b3d610bd5
+      internalID: -4768833888134132771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcaneJet-Impact_2
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 118
+        width: 102
+        height: 59
+      alignment: 9
+      pivot: {x: 0, y: 0.4745763}
+      border: {x: 27, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ebcbe00412dda48841705e58077c10
+      internalID: -1775122554329541264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcaneJet-Impact_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 59
+        width: 102
+        height: 59
+      alignment: 9
+      pivot: {x: 0, y: 0.4745763}
+      border: {x: 27, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441185ae8755929458400f305a61bba6
+      internalID: -7092579750376436630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcaneJet-Impact_4
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 59
+        width: 102
+        height: 59
+      alignment: 9
+      pivot: {x: 0, y: 0.4745763}
+      border: {x: 27, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6db716ae2bea3c4199caae67cc31456
+      internalID: 6590024842656577104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcaneJet-Impact_5
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 59
+        width: 102
+        height: 59
+      alignment: 9
+      pivot: {x: 0, y: 0.4745763}
+      border: {x: 27, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6bcd603f5a152f4daaec779eb1582d5
+      internalID: -62125594317754134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArcaneJet-Impact_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 102
+        height: 59
+      alignment: 9
+      pivot: {x: 0, y: 0.4745763}
+      border: {x: 27, y: 0, z: 5, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ea165db3ea6234a9c3c126840ceaf4
+      internalID: -4667296806084942446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 59023b9c9a4c9b949824361c3b7f0f13
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
