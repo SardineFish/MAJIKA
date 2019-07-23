@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 280237649}
   - component: {fileID: 280237650}
   - component: {fileID: 4213086668185249354}
+  - component: {fileID: 4018947749224215228}
   m_Layer: 14
   m_Name: ArcaneBall
   m_TagString: Untagged
@@ -220,6 +221,8 @@ MonoBehaviour:
       MethodName: Destruct
   - Event: Deactivate
     Handlers:
+    - ComponentName: Spawner
+      MethodName: Spawn
     - ComponentName: SelfDestructor
       MethodName: Destruct
 --- !u!114 &4213086668185249375
@@ -249,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
   ChaseType: 1
+  InitialDirection: {x: 1, y: 0}
   MaxForce: 5
   MaxSpeed: 10
   MaxAngularSpeed: 60
@@ -280,3 +284,16 @@ MonoBehaviour:
   Offset: {x: 0, y: 0}
   Radus: 0.2
   EventDestruct: Destruct
+--- !u!114 &4018947749224215228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4213086668185249353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4709785e826a1340ba7c4b4fba537d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 548171427812257090, guid: 14cb0745b744e224791c620fc3a56b6e, type: 3}

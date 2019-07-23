@@ -335,22 +335,22 @@ PrefabInstance:
     - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -94.08
+      value: -114.464
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478014564244, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -196.16
+      value: -236.928
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: -103.57985
       objectReference: {fileID: 0}
     - target: {fileID: 4011484478885484883, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -16.000244
+      value: -223.16019
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646191913, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
@@ -7912,7 +7912,7 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  CoolDown: 1
+  CoolDown: 5
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -8072,7 +8072,7 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  CoolDown: 1
+  CoolDown: 4
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -16917,7 +16917,7 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  CoolDown: 1
+  CoolDown: 1.5
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -17269,7 +17269,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.20326996, y: 2.041596}
@@ -18146,8 +18146,8 @@ MonoBehaviour:
   FollowIgnoreRange: 0
   FollowRangeOffset: {x: 0, y: -1.93}
   FollowStartRange: {x: 1.6, y: 2.76}
-  MultiFollowRange: {x: 12.03, y: 6.1}
-  MaxFollowRange: {x: 6.03, y: 5.7}
+  MultiFollowRange: {x: 7.95, y: 4.3}
+  MaxFollowRange: {x: 11.85, y: 5.7}
   MaxSpeed: 12
   MaxAcceleration: 30
   cushionCollider: {fileID: 0}

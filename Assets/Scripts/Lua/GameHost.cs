@@ -42,6 +42,8 @@ namespace MAJIKA.Lua
         {
             GameGUIManager.Instance.TargetUI.SetTarget(name, entity);
         }
+        public void Target(GameEntity entity, string name)
+            => SetTarget(entity, name);
         public void Over()
         {
             Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventFailed);

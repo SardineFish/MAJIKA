@@ -26,6 +26,7 @@ function birth()
     coroutine.yield(wait(3))
     camera.follow({player, entity})
     game.control(player)
+    game.target(entity, "Boss");
 
     entity.skill(SkillTeleportIn, player.position.x - entity.position.x)
     coroutine.yield(entity.wait("skill", _host))
@@ -34,14 +35,15 @@ function birth()
     if pos.y > 4 then
         pos.y = 4
     end
+                console.log(pos)
     entity.position = pos
     entity.skill(SkillTeleportOut, player.position.x - entity.position.x)
     coroutine.yield(entity.wait("skill", _host))
 
-    startCoroutine(idle);
+    startCoroutine(battle);
 end
 
-function idle()
+function battle()
     repeat
 
         local deltaX = player.position.x - entity.position.x
@@ -70,59 +72,52 @@ function idle()
             coroutine.yield(wait("skill"))
         end
 
-        -- Idle state of boss
-        for t in timer(1.5) do
-            deltaX = player.position.x - entity.position.x
-            console.log(math.abs(deltaX))
-            if player.state == "skill"
-                and sign(-deltaX) == sign(player.direction)
-                and entity.skill(SkillTeleportIn, player)
-            then
-                local pos = player.position
-                pos.x = pos.x - player.direction * 5
-                if pos.y > 4 then
-                    pos.y = 4
-                end
-                coroutine.yield(wait("skill"))
-                entity.position = pos
-                entity.skill(SkillTeleportOut, player)
-                coroutine.yield(wait("skill"))
-                break
-            end
-
-            if math.abs(deltaX) > 18 then
-                entity.move(vec2(sign(deltaX), 0))
-            elseif math.abs(deltaX) < 8 then
-                entity.move(vec2(-sign(deltaX), 0))
-            else 
-                entity.face(deltaX)
-                entity.move(vec2(0, 0))
-            end
-            
-            coroutine.yield(nil)
-        end
-
-        -- entity.skill(SkillArcaneBall, player)
-        -- coroutine.yield(entity.wait("skill", _host))
-
-
-        -- entity.skill(SkillTeleportIn, player.position.x - entity.position.x)
-        -- coroutine.yield(entity.wait("skill", _host))
-        -- local pos = player.position
-        -- pos.x = pos.x - player.direction * 5
-        -- if pos.y > 4 then
-        --     pos.y = 4
-        -- end
-        -- entity.position = pos
-        -- entity.skill(SkillTeleportOut, player.position.x - entity.position.x)
-        -- coroutine.yield(entity.wait("skill", _host))
-        
-        -- entity.skill(SkillArcaneJet, player.position.x - entity.position.x)
-        -- coroutine.yield(entity.wait("skill", _host))
-        
-        -- entity.skill(SkillArcaneBlast, player.position.x - entity.position.x)
-        -- coroutine.yield(entity.wait("skill", _host))
-
-
+        startCoroutine(idle)
+        return
     until false
+end
+
+function idle()
+    local deltaX = player.position.x - entity.position.x
+    local move = 0
+    -- Determind move direction
+    if math.abs(deltaX) > 18 then
+        move = deltaX
+    elseif math.abs(deltaX) < 8 then
+        move = -deltaX
+    elseif math.random() < 0.3 then
+        move = sign(math.random() - 0.5) * deltaX
+    end
+
+    -- Perform moving & player skill detecting
+    for t in timer(0.5 + math.random() * 0.5) do
+        deltaX = player.position.x - entity.position.x
+
+        if 
+            (entity.position.y > 3
+            or (player.state == "skill" and sign(-deltaX) == sign(player.direction)))
+            and entity.skill(SkillTeleportIn, player)
+        then
+            local pos = player.position
+            pos.x = pos.x - player.direction * 5
+            if pos.y > 4 then
+                pos.y = 4
+            end
+            --console.log(pos)
+            coroutine.yield(wait("skill"))
+            entity.position = pos
+            entity.skill(SkillTeleportOut, player)
+            coroutine.yield(wait("skill"))
+            break
+        end
+        if move == 0 then
+            entity.face(deltaX)
+        else
+            entity.move(vec2(sign(move), 0))
+        end
+        
+        coroutine.yield(nil)
+    end
+
+    startCoroutine(battle)
 end
