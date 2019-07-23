@@ -83,11 +83,13 @@ function idle()
     -- Determind move direction
     if math.abs(deltaX) > 18 then
         move = deltaX
-    elseif math.abs(deltaX) < 8 then
+    elseif math.abs(deltaX) < 5 then
         move = -deltaX
-    elseif math.random() < 0.3 then
+    elseif math.random() < 0.2 then
         move = sign(math.random() - 0.5) * deltaX
     end
+    
+    console.log(move)
 
     -- Perform moving & player skill detecting
     for t in timer(0.5 + math.random() * 0.5) do
@@ -112,6 +114,7 @@ function idle()
         end
         if move == 0 then
             entity.face(deltaX)
+            entity.move(vec2(0, 0))
         else
             entity.move(vec2(sign(move), 0))
         end
