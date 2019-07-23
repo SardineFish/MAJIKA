@@ -50,12 +50,13 @@ public class AnimationController : EntityBehaviour
         if (!Entity.active)
             return;
 
-        if (Entity.GetComponent<Animator>().runtimeAnimatorController == animator && direction == MathUtility.SignInt(this.Direction))
-            return;
-        else
-            ChangeAnimation(animator, direction);
+        var dir = MathUtility.SignInt(direction);
+
+        if (Entity.GetComponent<Animator>().runtimeAnimatorController != animator || (dir != 0 && dir != MathUtility.SignInt(this.Direction)))
+            ChangeAnimationInternal(animator, MathUtility.SignInt(dir));
+        return;
     }
-    public void ChangeAnimation(RuntimeAnimatorController animator, float direction)
+    void ChangeAnimationInternal(RuntimeAnimatorController animator, float direction)
     {
         if (!Entity.active)
             return;

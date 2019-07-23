@@ -25,16 +25,17 @@ namespace MAJIKA.State
 
         public override void OnUpdate(GameEntity entity, EntityStateMachine fsm)
         {
-            if (MoveState)
-                fsm.ChangeState(MoveState);
-            if (JumpState)
-                fsm.ChangeState(JumpState);
-            if (SkillState)
-                fsm.ChangeState(SkillState);
-            if (ClimbState)
-                fsm.ChangeState(ClimbState);
-            if (!entity.GetComponent<MovableEntity>().OnGround)
-                fsm.ChangeState(AirState);
+            if (MoveState && fsm.ChangeState(MoveState))
+                return;
+            if (JumpState && fsm.ChangeState(JumpState))
+                return;
+            if (SkillState && fsm.ChangeState(SkillState))
+                return;
+            if (ClimbState && fsm.ChangeState(ClimbState))
+                return;
+            if (!entity.GetComponent<MovableEntity>().OnGround && fsm.ChangeState(AirState))
+                return;
+            fsm.GetComponent<AnimationController>().PlayAnimation(AnimatorController, (fsm as EntityController).FaceDirection);
         }
     }
 

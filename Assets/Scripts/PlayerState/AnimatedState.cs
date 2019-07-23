@@ -14,7 +14,7 @@ public class AnimatedState : EntityState
         if (previousState == this)
             OnRePlay(entity, fsm);
         else
-            Animate(entity, entity.GetComponent<MovableEntity>().FaceDirection);
+            Animate(entity, (fsm as EntityController).FaceDirection);
         return true;
     }
 
@@ -26,11 +26,11 @@ public class AnimatedState : EntityState
     public void Animate(GameEntity entity, float direction)
     {
         if (AnimatorController)
-            entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, direction);
+            entity.GetComponent<AnimationController>().PlayAnimation(AnimatorController, direction);
     }
 
     protected virtual void OnRePlay(GameEntity entity, EntityStateMachine fsm)
     {
-        Animate(entity, entity.GetComponent<MovableEntity>().FaceDirection);
+        Animate(entity, (fsm as EntityController).FaceDirection);
     }
 }

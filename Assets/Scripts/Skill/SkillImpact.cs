@@ -67,7 +67,7 @@ public class SkillImpact : Entity
         }
     }
 
-    private void Start()
+    protected override void Start()
     {
         if (Active)
             StartImpact();

@@ -42,7 +42,7 @@ actionCount = 0
 function birth()
     repeat
         coroutine.yield(nil)
-    until entity.state == "Idle"
+    until entity.state == "idle"
 
     changeState(stage2Center)
 end

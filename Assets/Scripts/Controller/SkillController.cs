@@ -36,7 +36,7 @@ public class SkillController : EntityBehaviour
         if (!Skills[idx].Activate(direction))
             return false;
         ActiveSkill = Skills[idx];
-        GetComponent<AnimationController>().ChangeAnimation(ActiveSkill.AnimatorController, direction);
+        GetComponent<AnimationController>().PlayAnimation(ActiveSkill.AnimatorController, direction);
         return true;
     }
 
@@ -50,7 +50,7 @@ public class SkillController : EntityBehaviour
             return false;
         TargetEntity = entity;
         ActiveSkill = Skills[idx];
-        GetComponent<AnimationController>().ChangeAnimation(ActiveSkill.AnimatorController, (entity.transform.position - transform.position).x);
+        GetComponent<AnimationController>().PlayAnimation(ActiveSkill.AnimatorController, (entity.transform.position - transform.position).x);
         return true;
     }
     
@@ -127,7 +127,7 @@ public class SkillController : EntityBehaviour
     {
         var endTime = Time.time + movement.Duration;
         var dir = movement.Direction;
-        dir.x *= GetComponent<MovableEntity>().FaceDirection;
+        dir.x *= GetComponent<EntityController>().FaceDirection;
         while (Time.time <= endTime)
         {
             yield return null;

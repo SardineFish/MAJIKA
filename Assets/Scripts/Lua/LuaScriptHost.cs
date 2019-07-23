@@ -85,13 +85,38 @@ namespace MAJIKA.Lua
             script.Globals["removeInterval"] = (Action<int>)utility.RemoveInterval;
             script.Globals["waitForSeconds"] = (Func<float, YieldInstruction>)utility.WaitForSeconds;
             script.Globals["Time"] = typeof(Time);
+            script.Globals["timer"] = (Func<float, IEnumerable<float>>)Utility.Timer;
             script.Globals["entity"] = host.GetComponent<GameEntity>();
             script.Globals["startCoroutine"] = (Func<Closure, UnityEngine.Coroutine>)host.CoroutineManager.StartCoroutine;
             script.Globals["stopCoroutine"] = (Action<UnityEngine.Coroutine>)host.CoroutineManager.StopCoroutine;
             script.Globals["utility"] = utility;
             script.Globals["camera"] = SceneCamera.Instance;
+            script.Globals["wait"] = (Func<string, UnityEngine.Coroutine>)((t) => host.StartCoroutine(Wait(host, t)));
+            script.Globals["sign"] = (Func<float, int>)MathUtility.SignInt;
             GUIHost.InitHost(host, script);
             return script;
+        }
+        static IEnumerator Wait(LuaScriptHost host, string t)
+        {
+            float time;
+            var entity = host.GetComponent<GameEntity>();
+            if (float.TryParse(t, out time))
+                yield return new WaitForSeconds(time);
+            else if (entity)
+            {
+                switch (t)
+                {
+                    case "skill":
+                        yield return entity.GetComponent<SkillController>().WaitSkill();
+                        break;
+                    case "animation":
+                    case "animate":
+                    case "anim":
+                    case "action":
+                        yield return entity.GetComponent<AnimationController>().WaitAnimation();
+                        break;
+                }
+            }
         }
         public static void EnableConsole(Script script)
         {

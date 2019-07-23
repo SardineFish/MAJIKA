@@ -19,7 +19,7 @@ namespace MAJIKA.State
                 entity.GetComponent<AudioController>().PlayAudio(null);
                 return true;
             }
-            else if (skillIdx >= 0 && entity.GetComponent<SkillController>().Activate(skillIdx, entity.GetComponent<MovableEntity>().FaceDirection))
+            else if (skillIdx >= 0 && entity.GetComponent<SkillController>().Activate(skillIdx, entity.GetComponent<EntityController>().FaceDirection))
             {
                 entity.GetComponent<AudioController>().PlayAudio(null);
                 return true;

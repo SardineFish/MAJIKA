@@ -11,7 +11,6 @@ public class MovableEntity : MonoBehaviour
     public bool InClimbArea = false;
     public bool EnableGravity = true;
     public bool Frozen = false;
-    public float FaceDirection = 1;
 
     public float MaxMoveForce = 30;
     public float MaxMoveSpeed = 10;
@@ -106,13 +105,13 @@ public class MovableEntity : MonoBehaviour
         return true;
     }
 
-    public bool FaceTo(float direction)
+    /*public bool FaceTo(float direction)
     {
         if (Frozen)
             return false;
         FaceDirection = direction == 0 ? FaceDirection : Mathf.Sign(direction);
         return true;
-    }
+    }*/
 
     public bool AddForce(Vector2 force, ForceMode2D forceMode)
     {
@@ -137,7 +136,7 @@ public class MovableEntity : MonoBehaviour
             return;
         if (Frozen)
             return;
-        FaceDirection = velocity.x == 0 ? FaceDirection : Mathf.Sign(velocity.x);
+        // FaceDirection = velocity.x == 0 ? FaceDirection : Mathf.Sign(velocity.x);
         if (PhysicalControl)
         {
             var rigidbody = GetComponent<Rigidbody2D>();

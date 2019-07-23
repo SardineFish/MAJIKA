@@ -19,7 +19,19 @@ namespace MAJIKA.Lua.Proxy
 
         public string State
         {
-            get => target.GetComponent<EntityController>().State.name;
+            get
+            {
+                var controller = target.GetComponent<EntityController>();
+
+                if (controller.State is MAJIKA.State.EntityBirth)
+                    return "birth";
+                else if (controller.State is MAJIKA.State.EntityDead)
+                    return "dead";
+                else if (controller.State is MAJIKA.State.EntitySkill)
+                    return "skill";
+                else
+                    return "idle";
+            }
         }
 
         public float HP
@@ -51,8 +63,8 @@ namespace MAJIKA.Lua.Proxy
 
         public float Direction
         {
-            get => target.GetComponent<MovableEntity>().FaceDirection;
-            set => target.GetComponent<MovableEntity>().FaceTo(value);
+            get => MathUtility.SignInt(target.GetComponent<EntityController>().FaceDirection);
+            set => target.GetComponent<EntityController>().Face(value);
         }
 
         public bool Skill(int idx, float dir)
@@ -65,6 +77,9 @@ namespace MAJIKA.Lua.Proxy
             => target.GetComponent<EntityController>()?.Jump();
         public void Climb(float speed) 
             => target.GetComponent<EntityController>()?.Climb(speed);
+
+        public void Face(float dir)
+            => target.GetComponent<EntityController>().Face(dir);
         
         public void Destroy()
         {

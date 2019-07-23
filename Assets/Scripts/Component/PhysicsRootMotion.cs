@@ -48,7 +48,7 @@ public class PhysicsRootMotion : MonoBehaviour
         
         if (EnableRootMotion)
         {
-            var dir = MathUtility.SignInt(GetComponent<MovableEntity>().FaceDirection);
+            var dir = MathUtility.SignInt(GetComponent<EntityController>().FaceDirection);
             GetComponent<MovableEntity>().ForceMoveTo(origin + Vector3.Scale(Position, new Vector3(dir, 1, 1)));
         }
     }

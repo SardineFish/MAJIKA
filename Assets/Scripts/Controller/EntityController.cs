@@ -22,6 +22,13 @@ public class EntityController : EntityStateMachine
     public bool Jumped = false;
     public bool Climbed = false;
     public int SkillIndex = -1;
+    [ReadOnly]
+    private float faceDirection = 1;
+    public float FaceDirection
+    {
+        get => faceDirection;
+        set => faceDirection = MathUtility.SignInt(value) == 0 ? faceDirection : MathUtility.SignInt(value);
+    }
     public GameEntity SkillTarget = null;
 
     public override void OnActive()
@@ -62,6 +69,7 @@ public class EntityController : EntityStateMachine
     }
 
     public virtual void Move(Vector2 movement) => Movement = movement;
+    public virtual void Face(float dir) => FaceDirection = dir;
     public virtual void Jump() => Jumped = true;
     public virtual void Climb(float climbSpeed) => ClimbSpeed = climbSpeed;
     public virtual void Skill(int idx) => Skill(idx, Movement.x);
@@ -71,7 +79,7 @@ public class EntityController : EntityStateMachine
         if (Locker.Locked)
             return false;
         SkillIndex = idx;
-        GetComponent<MovableEntity>().FaceTo(dir);
+        //GetComponent<MovableEntity>().FaceTo(dir);
         var result = ChangeState(SkillState);
         SkillIndex = -1;
         return result;
@@ -82,7 +90,7 @@ public class EntityController : EntityStateMachine
             return false;
         SkillIndex = idx;
         SkillTarget = target;
-        GetComponent<MovableEntity>().FaceTo((target.transform.position - transform.position).x);
+        FaceDirection = (target.transform.position - transform.position).x;
         var result = ChangeState(SkillState);
         SkillIndex = -1;
         SkillTarget = null;

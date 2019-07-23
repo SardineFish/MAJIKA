@@ -11,7 +11,7 @@ end
 function birth()
     repeat
         coroutine.yield(nil)
-    until entity.state == "Boss1Idle"
+    until entity.state == "idle"
 
     startCoroutine(bossIdle)
 end

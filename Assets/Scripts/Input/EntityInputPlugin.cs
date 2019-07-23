@@ -58,6 +58,7 @@ public class EntityInputPlugin : ControllerPlugin, MAJIKAInput.IGamePlayActions
         controller.Jumped = jump;
         controller.Climbed = climb;
         controller.SkillIndex = skill;
+        controller.FaceDirection = movement.x;
 
         movement = Vector2.zero;
         jump = false;

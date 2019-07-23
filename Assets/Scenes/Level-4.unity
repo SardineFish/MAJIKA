@@ -8386,11 +8386,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.452671
+      value: 5.75
       objectReference: {fileID: 0}
     - target: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24575305
+      value: 0.1875
       objectReference: {fileID: 0}
     - target: {fileID: 4533384395668034, guid: 30f9432304a8b7c4fa5ded22c7605df6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17653,7 +17653,6 @@ MonoBehaviour:
   InClimbArea: 0
   EnableGravity: 0
   Frozen: 0
-  FaceDirection: 1
   MaxMoveForce: 30
   MaxMoveSpeed: 5
   MaxClimbSpeed: 10
@@ -17739,8 +17738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResetOnAwake: 1
-  DirectionImplement: 0
-  Direction: 0
+  DirectionImplement: 1
+  Direction: -1
 --- !u!4 &64499069803307860
 Transform:
   m_ObjectHideFlags: 0
@@ -17749,7 +17748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64499069803307866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.625, y: 10.1875, z: 1}
+  m_LocalPosition: {x: 39.1875, y: 6.3125, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5949286974787408076}
@@ -18147,7 +18146,7 @@ MonoBehaviour:
   FollowIgnoreRange: 0
   FollowRangeOffset: {x: 0, y: -1.93}
   FollowStartRange: {x: 1.6, y: 2.76}
-  MultiFollowRange: {x: 0, y: 0}
+  MultiFollowRange: {x: 12.03, y: 6.1}
   MaxFollowRange: {x: 6.03, y: 5.7}
   MaxSpeed: 12
   MaxAcceleration: 30

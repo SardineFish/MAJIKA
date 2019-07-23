@@ -20,7 +20,10 @@ namespace MAJIKA.State
             var movement = entity.GetComponent<EntityController>().Movement;
             movement.y = 0;
             if (!Mathf.Approximately(movement.x, 0) && entity.GetComponent<MovableEntity>().Move(movement))
+            {
+                (fsm as EntityController).FaceDirection = movement.x;
                 return base.OnEnter(entity, previousState, fsm);
+            }
             return false;
         }
         public override void OnUpdate(GameEntity entity, EntityStateMachine fsm)
@@ -33,7 +36,7 @@ namespace MAJIKA.State
             if (Mathf.Approximately(movement.x, 0))
                 fsm.ChangeState(IdleState);
             else
-                entity.GetComponent<AnimationController>().ChangeAnimation(AnimatorController, movement.x);
+                entity.GetComponent<AnimationController>().PlayAnimation(AnimatorController, movement.x);
 
             if (!entity.GetComponent<MovableEntity>().OnGround)
                 fsm.ChangeState(AirState);

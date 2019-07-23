@@ -57,7 +57,7 @@ MonoBehaviour:
   ImpactType: 5
   ImpactDirection: 3
   Continuous: 0
-  ImpactLifeCycle: 0
+  ImpactLifeCycle: 1
   LifeTime: -1
   FireRange: -1
   EntityOnly: 1
@@ -215,6 +215,10 @@ MonoBehaviour:
   EventBus: {fileID: 4213086668185249347}
   Responsors:
   - Event: Destruct
+    Handlers:
+    - ComponentName: SelfDestructor
+      MethodName: Destruct
+  - Event: Deactivate
     Handlers:
     - ComponentName: SelfDestructor
       MethodName: Destruct
