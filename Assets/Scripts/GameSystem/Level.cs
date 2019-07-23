@@ -13,6 +13,7 @@ public enum LevelState
 }
 [RequireComponent(typeof(EventBus))]
 [RequireComponent(typeof(LevelAssetLoader))]
+[RequireComponent(typeof(AudioController))]
 public class Level : Singleton<Level>
 {
     public const string EventFailed = "Failed";

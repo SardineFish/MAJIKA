@@ -27,6 +27,7 @@ function birth()
     camera.follow({player, entity})
     game.control(player)
     game.target(entity, "Boss");
+    game.playAudio(resources.audio("Level-4/Level-4-BGM"), 0.25, 1, true);
 
     entity.skill(SkillTeleportIn, player.position.x - entity.position.x)
     coroutine.yield(entity.wait("skill", _host))

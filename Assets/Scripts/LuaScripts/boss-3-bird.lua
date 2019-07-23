@@ -16,11 +16,12 @@ splashDrop = nil;
 droped = false;
 
 function start()
-    entity.position = posA
+    entity.position = posB
     --fsm.start("UpLeft")   
     player = scene.entity("Player") 
     splashDrop = scene.object("Splash-Drop")
-    startCoroutine(stage1UpLeft)
+    startCoroutine(birth)
+    entity.face(Left)
 end
 
 function update()
@@ -40,8 +41,20 @@ end
 
 actionCount = 0
 
+function birth()
+    repeat
+        coroutine.yield(nil)
+    until player.position.x > 31
+    entity.skill(SkillDive, Left)
+    coroutine.yield(wait("skill"))
+    game.playAudio(resources.audio("Level-3/Level-3-BGM"), 0.25, 1, true)
+
+    changeState(stage2Center)
+end
+
 function stage1UpLeft()
     console.log("upLeft")
+    entity.face(Right)
 
     repeat
         coroutine.yield(waitForSeconds(1))
@@ -75,7 +88,7 @@ end
 
 function stage1UpRight()
     console.log("upRight")
-
+    entity.face(Left)
     repeat
         coroutine.yield(waitForSeconds(1))
 
@@ -115,7 +128,7 @@ function stage2Center()
     
     console.log("center")
     actionCount = 0
-    if entity.skill(SkillSliceScreen, Right) then
+    if entity.skill(SkillSliceScreen, 0) then
         coroutine.yield(entity.wait("skill", _host))
 
         if entity.HP <= 0 then

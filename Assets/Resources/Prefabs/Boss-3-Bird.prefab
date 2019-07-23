@@ -49,7 +49,7 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  CoolDown: 0
+  CoolDown: 2
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -243,7 +243,7 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  CoolDown: 1
+  CoolDown: 1.5
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -357,7 +357,7 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  CoolDown: 1
+  CoolDown: 2
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -511,7 +511,7 @@ MonoBehaviour:
   ActiveOnStart: 1
   StatusEffects: []
   HP: 300
-  MaxHP: 1000
+  MaxHP: 2000
 --- !u!95 &6385070694191812829
 Animator:
   serializedVersion: 3
@@ -524,7 +524,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: aa18525cfb75e7345bf15249eb9a54f0, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 1
+  m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -590,7 +590,6 @@ MonoBehaviour:
   InClimbArea: 0
   EnableGravity: 0
   Frozen: 0
-  FaceDirection: 1
   MaxMoveForce: 5
   MaxMoveSpeed: 0.001
   MaxClimbSpeed: 0

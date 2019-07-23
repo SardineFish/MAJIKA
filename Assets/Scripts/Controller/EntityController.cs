@@ -79,6 +79,7 @@ public class EntityController : EntityStateMachine
         if (Locker.Locked)
             return false;
         SkillIndex = idx;
+        FaceDirection = dir;
         //GetComponent<MovableEntity>().FaceTo(dir);
         var result = ChangeState(SkillState);
         SkillIndex = -1;
