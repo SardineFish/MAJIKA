@@ -48,6 +48,13 @@ namespace MAJIKA.Lua.Proxy
                 target.transform.position = target.transform.position.Set(x: value.x, y: value.y);
             }
         }
+
+        public float Direction
+        {
+            get => target.GetComponent<MovableEntity>().FaceDirection;
+            set => target.GetComponent<MovableEntity>().FaceTo(value);
+        }
+
         public bool Skill(int idx, float dir)
             => target.GetComponent<EntityController>()?.Skill(idx, dir) ?? false;
         public bool Skill(int idx, GameEntity skillTarget)

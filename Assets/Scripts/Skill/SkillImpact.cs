@@ -11,6 +11,7 @@ public enum ImpactType
     ColliderCast,
     Manual,
     WholeScene,
+    ChaseEntity,
 }
 public enum ImpactDirection
 {
@@ -38,7 +39,7 @@ public class SkillImpact : Entity
     public const int DamageLayerMask = 1 << 10;
     public const string EventDeactivate = "Deactivate";
     public const string EventHit = "Hit";
-    public ImpactType ImpactType;
+    public ImpactType ImpactType = ImpactType.Collider;
     public ImpactDirection ImpactDirection;
     public bool Continuous = false;
     public ImpactLifeCycle ImpactLifeCycle = ImpactLifeCycle.Manual;
@@ -64,6 +65,12 @@ public class SkillImpact : Entity
         {
             impactedList.ForEach(ApplyDamage);
         }
+    }
+
+    private void Start()
+    {
+        if (Active)
+            StartImpact();
     }
 
     private void ApplyDamage(GameEntity entity)
@@ -259,6 +266,13 @@ public class SkillImpact : Entity
             Resources.FindObjectsOfTypeAll<GameEntity>()
                 .Where(entity => entity.gameObject.scene != null)
                 .ForEach(entity => ApplyDamage(entity));
+        }
+        else if (ImpactType == ImpactType.ChaseEntity)
+        {
+            if (!TargetEntity || !GetComponent<ChaseObject>())
+                return;
+            GetComponent<ChaseObject>().Target = TargetEntity.transform;
+
         }
     }
     public void EndImpact()

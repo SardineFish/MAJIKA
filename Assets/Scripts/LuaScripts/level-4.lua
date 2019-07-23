@@ -10,8 +10,8 @@ function start()
     player = scene.entity("Player")
     boss = scene.entity("Boss-4")
 
-    game.control(boss)
-    camera.follow({player})
+    game.control(player)
+    camera.follow({player, boss})
 
     game.ready();
 end
