@@ -66,13 +66,14 @@ function idle()
 
         if math.random() < 0.7 and entity.skill(SkillArcaneBall, player) then
             coroutine.yield(wait("skill"))
-        elseif entity.skill(SkillArcaneBall, player) then
+        elseif entity.skill(SkillArcaneJet, player) then
             coroutine.yield(wait("skill"))
         end
 
         -- Idle state of boss
         for t in timer(1.5) do
             deltaX = player.position.x - entity.position.x
+            console.log(math.abs(deltaX))
             if player.state == "skill"
                 and sign(-deltaX) == sign(player.direction)
                 and entity.skill(SkillTeleportIn, player)

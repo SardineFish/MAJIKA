@@ -11,6 +11,7 @@ public class ChaseObject : MonoBehaviour
 {
     public Transform Target;
     public ChaseType ChaseType;
+    public Vector2 InitialDirection = Vector2.right;
     public float MaxForce;
     public float MaxSpeed;
     public float MaxAngularSpeed;
@@ -19,7 +20,7 @@ public class ChaseObject : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = transform.right * MaxSpeed;
+        GetComponent<Rigidbody2D>().velocity = InitialDirection.normalized * MaxSpeed;
     }
 
     // Update is called once per frame

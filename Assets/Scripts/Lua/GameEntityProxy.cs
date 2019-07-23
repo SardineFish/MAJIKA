@@ -57,7 +57,8 @@ namespace MAJIKA.Lua.Proxy
             }
             set
             {
-                target.transform.position = target.transform.position.Set(x: value.x, y: value.y);
+                target.GetComponent<MovableEntity>().ForceMoveTo(value);
+                //target.transform.position = target.transform.position.Set(x: value.x, y: value.y);
             }
         }
 

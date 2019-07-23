@@ -272,6 +272,7 @@ public class SkillImpact : Entity
             if (!TargetEntity || !GetComponent<ChaseObject>())
                 return;
             GetComponent<ChaseObject>().Target = TargetEntity.transform;
+            GetComponent<ChaseObject>().InitialDirection = Direction;
 
         }
     }
