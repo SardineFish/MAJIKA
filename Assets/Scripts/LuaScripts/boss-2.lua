@@ -3,6 +3,10 @@ Interval = 1.5;
 local player
 local lastAITime = 0
 
+function start()
+    entity.face(-1)
+end
+
 function active()
     player = scene.entity("Player")
     startCoroutine(birth)

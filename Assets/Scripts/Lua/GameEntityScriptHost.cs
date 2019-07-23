@@ -19,7 +19,6 @@ public class GameEntityScriptHost : LuaScriptHost, IEntityLifeCycle
     public void OnActive()
     {
         LuaScript.Globals.Get("active").Function?.Call();
-        LuaScript.Globals.Get("start").Function?.Call();
     }
 
     public void OnInactive()
@@ -35,7 +34,7 @@ public class GameEntityScriptHost : LuaScriptHost, IEntityLifeCycle
 
     protected override void Start()
     {
-        
+        LuaScript.Globals.Get("start").Function?.Call();
     }
 
     protected override void Update()

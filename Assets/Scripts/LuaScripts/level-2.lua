@@ -49,6 +49,7 @@ function level()
     boss.setActive(true);
     coroutine.yield(waitForSeconds(1.5));
     camera.follow(player);
+    game.playAudio(resources.audio("Level-2/Level-2-BGM"), 0.25, 1, true);
     game.setTarget(boss, "Boss");
     levelState = StateBattle;
 end
