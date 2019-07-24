@@ -67,9 +67,9 @@ function battle()
             end
         end
 
-        if math.random() < 0.7 and entity.skill(SkillArcaneBall, player) then
+        if math.random() < 0.8 and entity.skill(SkillArcaneBall, player) then
             coroutine.yield(wait("skill"))
-        elseif entity.skill(SkillArcaneJet, player) then
+        elseif  entity.skill(SkillArcaneJet, player) then
             coroutine.yield(wait("skill"))
         end
 

@@ -18,4 +18,9 @@ function start()
 end
 
 function update(dt)
+    if player.HP <= 0 then
+        game.over()
+    elseif boss.HP <=0 then
+        game.pass("Camp")
+    end
 end

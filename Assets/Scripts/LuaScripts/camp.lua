@@ -37,7 +37,7 @@ function start()
     twinTail.on("OnInteract", function()
         startCoroutine(function ()
             coroutine.yield(game.conversation("${conv:camp-twin-tail}",{player, twinTail}, true));
-            game.loadLevel("Tutorial");
+            game.loadLevel("Level-3");
         
         end)
     end)

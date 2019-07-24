@@ -79,6 +79,7 @@ public class Level : Singleton<Level>
 
     void StopEverything()
     {
+        return;
         EntityManager.FindEntities<GameEntity>()
             .Where(entity => entity)
             .ForEach(entity => entity.SetActive(false));

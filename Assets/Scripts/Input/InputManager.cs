@@ -49,7 +49,6 @@ public class InputManager : Singleton<InputManager>
                 return;
             else
                 CurrentActiveDeviceType = DeviceClass.Gamepad;
-            CurrentActiveDeviceType = DeviceClass.TouchScreen;
         }
     }
 

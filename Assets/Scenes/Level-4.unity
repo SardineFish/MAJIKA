@@ -352,6 +352,26 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -155.23201
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -318.46402
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -310.7399
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -637.4803
+      objectReference: {fileID: 0}
     - target: {fileID: 7294128093959739034, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -8213,7 +8233,7 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
-  CoolDown: 4
+  CoolDown: 10
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
