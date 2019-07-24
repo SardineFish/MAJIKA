@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f23e62bb058f344cbdeca7c79a102d9, type: 3}
   m_Name: ScriptedTextDefinition
   m_EditorClassIdentifier: 
-  TextDefinitionCode: []
+  TextDefinitionCode:
+  - {fileID: 4900000, guid: 0bd5db9fc6dbf914d955c20424078158, type: 3}

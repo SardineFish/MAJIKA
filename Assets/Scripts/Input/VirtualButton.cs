@@ -15,6 +15,11 @@ public class VirtualButton : OnScreenActionControl
         GetComponentInParent<VirtualInputManager>()?.Register(this);
     }
 
+    private void OnDestroy()
+    {
+        GetComponentInParent<VirtualInputManager>()?.Remove(this);
+    }
+
     public void TouchCallback()
     {
         SendValueToControl<float>(1);

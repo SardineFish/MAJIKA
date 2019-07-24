@@ -29,7 +29,7 @@ function start()
         --game.conversation(conversation1, {player, redGlass})
         startCoroutine(function ()
             coroutine.yield(game.conversation("${conv:camp-red-glass}",{player, redGlass}, true));
-            game.loadLevel("Level-2");
+            game.loadLevel("Level-4");
         
         end)
     end)

@@ -87,8 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: 
-  ActionBind: 7
+  _controlPath: <AndroidGamepad>/select
 --- !u!1 &485596725464076518
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,8 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: 
-  ActionBind: 5
+  _controlPath: <Gamepad>/rightShoulder
 --- !u!1 &936492908775867980
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,8 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: 
-  ActionBind: 3
+  _controlPath: <AndroidGamepad>/buttonNorth
 --- !u!1 &3789491254539856618
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b059354c9ae872149940f4ccf5c2832e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: /<GamePad>/leftStick
+  m_controlPath: <AndroidGamepad>/leftStick
 --- !u!114 &1997935842214858520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,8 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a2811fb37cb84429832b46580f7396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: 
-  ActionBind: 1
+  _controlPath: <AndroidGamepad>/rightTrigger
   Direction: {x: 0, y: 1}
   Threshold: 0.8
 --- !u!1 &4498234463272918188
@@ -482,8 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: 
-  ActionBind: 4
+  _controlPath: <AndroidGamepad>/leftShoulder
 --- !u!1 &4586734007814009441
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,8 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: 
-  ActionBind: 2
+  _controlPath: <AndroidGamepad>/buttonWest
 --- !u!1 &5351878386113742772
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,5 +958,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: /<Keyboard>/k
-  ActionBind: 0
+  _controlPath: <AndroidGamepad>/buttonSouth

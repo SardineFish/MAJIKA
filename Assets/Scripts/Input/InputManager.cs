@@ -7,6 +7,7 @@ public enum DeviceClass
 {
     Keyboard,
     Gamepad,
+    TouchScreen,
 };
 public class InputManager : Singleton<InputManager>
 {
@@ -40,12 +41,15 @@ public class InputManager : Singleton<InputManager>
     {
         if(change == InputDeviceChange.StateChanged)
         {
-            if (device.description.deviceClass == "Keyboard")
+            if (Utility.GetGenericPlatform(Application.platform) == GenericPlatform.Mobile)
+                CurrentActiveDeviceType = DeviceClass.TouchScreen;
+            else if (device.description.deviceClass == "Keyboard")
                 CurrentActiveDeviceType = DeviceClass.Keyboard;
             else if (device.description.deviceClass == "Mouse")
                 return;
             else
                 CurrentActiveDeviceType = DeviceClass.Gamepad;
+            CurrentActiveDeviceType = DeviceClass.TouchScreen;
         }
     }
 

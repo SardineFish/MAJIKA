@@ -6,6 +6,7 @@ function start()
     resources.loadAll("Player/")
     resources.loadAll("Texture/UI/")
     resources.loadAll("Texture/Map/Level-4")
+    resources.loadAll("Audio/Level-4")
 
     player = scene.entity("Player")
     boss = scene.entity("Boss-4")

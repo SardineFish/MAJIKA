@@ -129,6 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TutorialScenePath: Scenes/Level-3
   PlayerInControl: {fileID: 0}
+  TextManager: {fileID: 11400000, guid: 9d070c5b66cfe5e42bc45f54927af47c, type: 2}
+  ConversationManager: {fileID: 11400000, guid: 0c3b196fda9b7fe45902375310a09b64,
+    type: 2}
 --- !u!114 &6903434265148320309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,7 +855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4370334459846947904
 RectTransform:
   m_ObjectHideFlags: 0

@@ -22,16 +22,29 @@ namespace MAJIKA.TextManager
 
         public Dictionary<string, string> GamepadKeyText = new Dictionary<string, string>();
         public Dictionary<string, string> KeyboardKeyText = new Dictionary<string, string>();
+        public Dictionary<string, string> TouchScreenText = new Dictionary<string, string>();
+        public Dictionary<string, Func<string>> DefinitionTranslate = new Dictionary<string, Func<string>>()
+        {
+            ["input-action"] = () => InputManager.Instance.CurrentActiveDeviceType == DeviceClass.Gamepad
+                ? "<Gamepad>/action"
+                : InputManager.Instance.CurrentActiveDeviceType == DeviceClass.Keyboard
+                    ? "<Keyboard>/action"
+                    : "<Touch>/Action"
+        };
         public override string this[string id]
         {
             get
             {
+                if (DefinitionTranslate.ContainsKey(id))
+                    id = DefinitionTranslate[id]();
                 if(InputActions.Contains(id))
                 {
                     if (InputManager.Instance.CurrentActiveDeviceType == DeviceClass.Gamepad)
                         return GamepadKeyText[id];
-                    else
+                    else if (InputManager.Instance.CurrentActiveDeviceType == DeviceClass.Keyboard)
                         return KeyboardKeyText[id];
+                    else if (InputManager.Instance.CurrentActiveDeviceType == DeviceClass.TouchScreen)
+                        return TouchScreenText[id];
                 }
                 return null;
             }
@@ -39,7 +52,7 @@ namespace MAJIKA.TextManager
 
         public override bool Has(string id)
         {
-            return InputActions.Contains(id);
+            return InputActions.Contains(id) || DefinitionTranslate.ContainsKey(id);
         }
 
         [EditorButton]
@@ -56,6 +69,7 @@ namespace MAJIKA.TextManager
             input = new MAJIKAInput();
             var regGamePad = new Regex(@"<Gamepad>/(\S+)", RegexOptions.IgnoreCase | RegexOptions.ECMAScript);
             var regKeyboard = new Regex(@"<Keyboard>/(\S+)", RegexOptions.IgnoreCase | RegexOptions.ECMAScript);
+            var regTouchScreen = new Regex(@"<AndroidGamepad>/(\S+)", RegexOptions.IgnoreCase | RegexOptions.ECMAScript);
             input.ForEach(action =>
             {
                 var actionName = action.name.ToLower();
@@ -63,6 +77,8 @@ namespace MAJIKA.TextManager
                 action.bindings.Where(binding => !binding.isComposite)
                     .ForEach(binding =>
                     {
+                        Debug.Log(binding.path);
+                        // Gamepad
                         var match = regGamePad.Match(binding.path);
                         if (match.Success)
                         {
@@ -71,16 +87,25 @@ namespace MAJIKA.TextManager
                             else
                                 GamepadKeyText[actionName] = Utility.StringJoin(",", GamepadKeyText[actionName], TextDefinitions[binding.path]);
                         }
-                        else
+
+                        // Keyboard
+                        match = regKeyboard.Match(binding.path);
+                        if (match.Success)
                         {
-                            match = regKeyboard.Match(binding.path);
-                            if (match.Success)
-                            {
-                                if (!KeyboardKeyText.ContainsKey(actionName))
-                                    KeyboardKeyText[actionName] = TextDefinitions[binding.path];
-                                else
-                                    KeyboardKeyText[actionName] = Utility.StringJoin(",", KeyboardKeyText[actionName], TextDefinitions[binding.path]);
-                            }
+                            if (!KeyboardKeyText.ContainsKey(actionName))
+                                KeyboardKeyText[actionName] = TextDefinitions[binding.path];
+                            else
+                                KeyboardKeyText[actionName] = Utility.StringJoin(",", KeyboardKeyText[actionName], TextDefinitions[binding.path]);
+                        }
+
+                        // Touch
+                        match = regTouchScreen.Match(binding.path);
+                        if (match.Success)
+                        {
+                            if (!TouchScreenText.ContainsKey(actionName))
+                                TouchScreenText[actionName] = TextDefinitions[$"<Touch>/{match.Groups[1]}"];
+                            else 
+                                TouchScreenText[actionName] = Utility.StringJoin(",", KeyboardKeyText[actionName], TextDefinitions[$"<Touch>/{match.Groups[1]}"]);
                         }
                     });
             });

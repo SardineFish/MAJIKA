@@ -5,6 +5,8 @@ public class GameSystem : Singleton<GameSystem>
 {
     public string TutorialScenePath;
     public GameEntity PlayerInControl;
+    public TextManager TextManager;
+    public MAJIKA.TextManager.ConversationManager ConversationManager;
     private void Start()
     {
         GameObject.DontDestroyOnLoad(gameObject);

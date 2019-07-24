@@ -26,6 +26,11 @@ public class VirtualInputManager : MonoBehaviour
         buttons.Add(button);
     }
 
+    public void Remove(VirtualButton button)
+    {
+        buttons.Remove(button);
+    }
+
     private void FixedUpdate()
     {
         if (Touchscreen.current == null)

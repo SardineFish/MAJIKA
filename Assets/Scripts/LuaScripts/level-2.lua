@@ -8,6 +8,7 @@ function start()
     resources.loadAll("Player/");
     resources.loadAll("Texture/UI/");
     resources.loadAll("Texture/Map/Scene-1/");
+    resources.loadAll("Audio/Level-2")
 
     player = scene.entity("Player");
     boss = scene.entity("Boss-1");

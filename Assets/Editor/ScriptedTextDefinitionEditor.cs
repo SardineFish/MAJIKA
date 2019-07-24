@@ -40,6 +40,7 @@ namespace Assets.Editor
                 .Item(code => EditorGUILayout.ObjectField(code, typeof(TextAsset), true) as TextAsset)
                 .Render();
 
+            EditorUtility.SetDirty(target);
             Undo.RecordObject(target, "Edit Text Definition");
         }
 

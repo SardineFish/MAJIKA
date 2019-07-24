@@ -3,6 +3,12 @@
 <Gamepad>/buttonNorth: <sprite="XBox" name="Y">
 <Gamepad>/buttonEast: <sprite="XBox" name="B">
 <Gamepad>/leftStick: <sprite="XBox" name="LS">
+<Gamepad>/leftShoulder: <sprite="XBox" name="LB">
+<Gamepad>/rightShoulder: <sprite="XBox" name="RB">
+<Gamepad>/leftTrigger: <sprite="XBox" name="LT">
+<Gamepad>/rightTrigger: <sprite="XBox" name="RT">
+<Gamepad>/select: <sprite="XBox" name="View">
+<Gamepad>/action: 使用
 
 <Keyboard>/a: <sprite="Keyboard" name="A">
 <Keyboard>/b: <sprite="Keyboard" name="B">
@@ -44,3 +50,16 @@
 <Keyboard>/space: <sprite="Keyboard" name="Space">
 <Keyboard>/escape: <sprite="Keyboard" name="ESC">
 <Keyboard>/anyKey: <Any Key>
+<Keyboard>/action: 使用
+
+<Touch>/action: 触碰
+<Touch>/buttonSouth: 右侧跳跃键
+<Touch>/buttonWest: ""
+<Touch>/buttonNorth: ""
+<Touch>/buttonEast: ""
+<Touch>/leftStick: 左侧摇杆
+<Touch>/leftShoulder: ""
+<Touch>/rightShoulder: <sprite="XBox" name="RB">
+<Touch>/leftTrigger: ""
+<Touch>/rightTrigger: 左侧摇杆向上
+<Touch>/select: 上方背包
