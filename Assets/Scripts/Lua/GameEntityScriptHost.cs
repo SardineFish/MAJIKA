@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using MAJIKA.Lua;
 
+[RequireComponent(typeof(ScriptedController))]
 [RequireComponent(typeof(GameEntity))]
 public class GameEntityScriptHost : LuaScriptHost, IEntityLifeCycle
 {

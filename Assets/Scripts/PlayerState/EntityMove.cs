@@ -21,7 +21,7 @@ namespace MAJIKA.State
             movement.y = 0;
             if (!Mathf.Approximately(movement.x, 0) && entity.GetComponent<MovableEntity>().Move(movement))
             {
-                (fsm as EntityController).FaceDirection = movement.x;
+                //(fsm as EntityController).FaceDirection = movement.x;
                 return base.OnEnter(entity, previousState, fsm);
             }
             return false;

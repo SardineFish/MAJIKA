@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.InputSystem.Plugins.OnScreen;
+using UnityEngine.InputSystem.OnScreen;
 using UnityEngine.InputSystem.Layouts;
 
 

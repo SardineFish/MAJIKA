@@ -1,9 +1,7 @@
 // GENERATED AUTOMATICALLY FROM 'Assets/Input/MAJIKAInput.inputactions'
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
@@ -21,80 +19,59 @@ public class MAJIKAInput : IInputActionCollection
             ""actions"": [
                 {
                     ""name"": ""Movement"",
+                    ""type"": ""Value"",
                     ""id"": ""dae96b02-b97f-4f4b-89f8-24f12c6c322c"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": true,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Jump"",
+                    ""type"": ""Value"",
                     ""id"": ""a6dfbb9b-4192-4352-8c88-5bb6cb8abfb3"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": true,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Climb"",
+                    ""type"": ""Value"",
                     ""id"": ""afa79d8c-b9bc-4af7-84b8-d7d49e31d59e"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Skill1"",
+                    ""type"": ""Value"",
                     ""id"": ""3d39d5e4-aa51-49ad-bb92-071060061403"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Skill2"",
+                    ""type"": ""Value"",
                     ""id"": ""b1e3df68-b226-412f-a8b9-f0aa5ad60d59"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Skill3"",
+                    ""type"": ""Value"",
                     ""id"": ""728e8880-8695-4ff1-afa7-4e6724b43f3e"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Skill4"",
+                    ""type"": ""Value"",
                     ""id"": ""1a6a92d6-7f38-484f-8e0f-be42ee6fc5e6"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -107,8 +84,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": true,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""Up"",
@@ -119,8 +95,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""Down"",
@@ -131,8 +106,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""Left"",
@@ -143,8 +117,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""Right"",
@@ -155,8 +128,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -167,8 +139,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -179,20 +150,18 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""d978ba87-a212-4193-831d-21aafc922fb3"",
                     ""path"": ""<Keyboard>/k"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -203,8 +172,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -215,8 +183,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -227,8 +194,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -239,8 +205,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Climb"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -251,8 +216,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Climb"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -263,8 +227,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Climb"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -275,8 +238,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill1"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -287,8 +249,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill1"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -299,8 +260,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill1"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -311,8 +271,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill2"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -323,8 +282,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill2"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -335,8 +293,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill2"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -347,8 +304,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill3"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -359,8 +315,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill3"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -371,8 +326,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill3"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -383,8 +337,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill4"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -395,8 +348,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill4"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -407,8 +359,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Skill4"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -418,80 +369,59 @@ public class MAJIKAInput : IInputActionCollection
             ""actions"": [
                 {
                     ""name"": ""Accept"",
+                    ""type"": ""Value"",
                     ""id"": ""65446e76-5303-445e-9a14-aa3d76f04e8c"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Back"",
+                    ""type"": ""Value"",
                     ""id"": ""24aa8211-93cc-4d8c-895f-850829cb1c26"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Interact"",
+                    ""type"": ""Value"",
                     ""id"": ""2d4bb328-46c7-4bd7-bab7-da0d5569037d"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Press"",
-                    ""bindings"": []
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""Inventory"",
+                    ""type"": ""Value"",
                     ""id"": ""64ff6447-e02d-4e4e-9652-5340597bf192"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Press"",
-                    ""bindings"": []
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""AnyKey"",
+                    ""type"": ""Value"",
                     ""id"": ""b3a34c68-9479-44eb-bdec-4e10285db884"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Test"",
+                    ""type"": ""Value"",
                     ""id"": ""f0b2ee71-4669-4ffb-b850-1d10eab9466f"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": false,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 },
                 {
                     ""name"": ""Touch"",
+                    ""type"": ""Value"",
                     ""id"": ""6e192c60-8edc-4d0f-b132-807bbb64e9cf"",
-                    ""expectedControlLayout"": """",
-                    ""continuous"": true,
-                    ""passThrough"": false,
-                    ""initialStateCheck"": false,
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": """",
-                    ""bindings"": []
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -504,8 +434,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Accept"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -516,8 +445,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Accept"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -528,8 +456,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Accept"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -540,8 +467,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Back"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -552,8 +478,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -564,8 +489,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -576,8 +500,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -588,8 +511,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -600,8 +522,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -612,8 +533,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -624,8 +544,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""AnyKey"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -636,8 +555,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""AnyKey"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -648,8 +566,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Test"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -660,8 +577,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Test"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -672,8 +588,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Touch"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -684,8 +599,7 @@ public class MAJIKAInput : IInputActionCollection
                     ""groups"": """",
                     ""action"": ""Touch"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false,
-                    ""modifiers"": """"
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -729,10 +643,7 @@ public class MAJIKAInput : IInputActionCollection
         set => asset.devices = value;
     }
 
-    public ReadOnlyArray<InputControlScheme> controlSchemes
-    {
-        get => asset.controlSchemes;
-    }
+    public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
 
     public bool Contains(InputAction action)
     {
@@ -760,31 +671,30 @@ public class MAJIKAInput : IInputActionCollection
     }
 
     // GamePlay
-    private InputActionMap m_GamePlay;
+    private readonly InputActionMap m_GamePlay;
     private IGamePlayActions m_GamePlayActionsCallbackInterface;
-    private InputAction m_GamePlay_Movement;
-    private InputAction m_GamePlay_Jump;
-    private InputAction m_GamePlay_Climb;
-    private InputAction m_GamePlay_Skill1;
-    private InputAction m_GamePlay_Skill2;
-    private InputAction m_GamePlay_Skill3;
-    private InputAction m_GamePlay_Skill4;
+    private readonly InputAction m_GamePlay_Movement;
+    private readonly InputAction m_GamePlay_Jump;
+    private readonly InputAction m_GamePlay_Climb;
+    private readonly InputAction m_GamePlay_Skill1;
+    private readonly InputAction m_GamePlay_Skill2;
+    private readonly InputAction m_GamePlay_Skill3;
+    private readonly InputAction m_GamePlay_Skill4;
     public struct GamePlayActions
     {
         private MAJIKAInput m_Wrapper;
         public GamePlayActions(MAJIKAInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement { get { return m_Wrapper.m_GamePlay_Movement; } }
-        public InputAction @Jump { get { return m_Wrapper.m_GamePlay_Jump; } }
-        public InputAction @Climb { get { return m_Wrapper.m_GamePlay_Climb; } }
-        public InputAction @Skill1 { get { return m_Wrapper.m_GamePlay_Skill1; } }
-        public InputAction @Skill2 { get { return m_Wrapper.m_GamePlay_Skill2; } }
-        public InputAction @Skill3 { get { return m_Wrapper.m_GamePlay_Skill3; } }
-        public InputAction @Skill4 { get { return m_Wrapper.m_GamePlay_Skill4; } }
+        public InputAction @Movement => m_Wrapper.m_GamePlay_Movement;
+        public InputAction @Jump => m_Wrapper.m_GamePlay_Jump;
+        public InputAction @Climb => m_Wrapper.m_GamePlay_Climb;
+        public InputAction @Skill1 => m_Wrapper.m_GamePlay_Skill1;
+        public InputAction @Skill2 => m_Wrapper.m_GamePlay_Skill2;
+        public InputAction @Skill3 => m_Wrapper.m_GamePlay_Skill3;
+        public InputAction @Skill4 => m_Wrapper.m_GamePlay_Skill4;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
-        public bool enabled { get { return Get().enabled; } }
-        public InputActionMap Clone() { return Get().Clone(); }
+        public bool enabled => Get().enabled;
         public static implicit operator InputActionMap(GamePlayActions set) { return set.Get(); }
         public void SetCallbacks(IGamePlayActions instance)
         {
@@ -839,40 +749,33 @@ public class MAJIKAInput : IInputActionCollection
             }
         }
     }
-    public GamePlayActions @GamePlay
-    {
-        get
-        {
-            return new GamePlayActions(this);
-        }
-    }
+    public GamePlayActions @GamePlay => new GamePlayActions(this);
 
     // Actions
-    private InputActionMap m_Actions;
+    private readonly InputActionMap m_Actions;
     private IActionsActions m_ActionsActionsCallbackInterface;
-    private InputAction m_Actions_Accept;
-    private InputAction m_Actions_Back;
-    private InputAction m_Actions_Interact;
-    private InputAction m_Actions_Inventory;
-    private InputAction m_Actions_AnyKey;
-    private InputAction m_Actions_Test;
-    private InputAction m_Actions_Touch;
+    private readonly InputAction m_Actions_Accept;
+    private readonly InputAction m_Actions_Back;
+    private readonly InputAction m_Actions_Interact;
+    private readonly InputAction m_Actions_Inventory;
+    private readonly InputAction m_Actions_AnyKey;
+    private readonly InputAction m_Actions_Test;
+    private readonly InputAction m_Actions_Touch;
     public struct ActionsActions
     {
         private MAJIKAInput m_Wrapper;
         public ActionsActions(MAJIKAInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Accept { get { return m_Wrapper.m_Actions_Accept; } }
-        public InputAction @Back { get { return m_Wrapper.m_Actions_Back; } }
-        public InputAction @Interact { get { return m_Wrapper.m_Actions_Interact; } }
-        public InputAction @Inventory { get { return m_Wrapper.m_Actions_Inventory; } }
-        public InputAction @AnyKey { get { return m_Wrapper.m_Actions_AnyKey; } }
-        public InputAction @Test { get { return m_Wrapper.m_Actions_Test; } }
-        public InputAction @Touch { get { return m_Wrapper.m_Actions_Touch; } }
+        public InputAction @Accept => m_Wrapper.m_Actions_Accept;
+        public InputAction @Back => m_Wrapper.m_Actions_Back;
+        public InputAction @Interact => m_Wrapper.m_Actions_Interact;
+        public InputAction @Inventory => m_Wrapper.m_Actions_Inventory;
+        public InputAction @AnyKey => m_Wrapper.m_Actions_AnyKey;
+        public InputAction @Test => m_Wrapper.m_Actions_Test;
+        public InputAction @Touch => m_Wrapper.m_Actions_Touch;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
-        public bool enabled { get { return Get().enabled; } }
-        public InputActionMap Clone() { return Get().Clone(); }
+        public bool enabled => Get().enabled;
         public static implicit operator InputActionMap(ActionsActions set) { return set.Get(); }
         public void SetCallbacks(IActionsActions instance)
         {
@@ -927,13 +830,7 @@ public class MAJIKAInput : IInputActionCollection
             }
         }
     }
-    public ActionsActions @Actions
-    {
-        get
-        {
-            return new ActionsActions(this);
-        }
-    }
+    public ActionsActions @Actions => new ActionsActions(this);
     public interface IGamePlayActions
     {
         void OnMovement(InputAction.CallbackContext context);

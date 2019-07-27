@@ -65,22 +65,22 @@ namespace MAJIKA.Lua.Proxy
         public float Direction
         {
             get => MathUtility.SignInt(target.GetComponent<EntityController>().FaceDirection);
-            set => target.GetComponent<EntityController>().Face(value);
+            set => target.GetComponent<ScriptedController>().Face(value);
         }
 
         public bool Skill(int idx, float dir)
-            => target.GetComponent<EntityController>()?.Skill(idx, dir) ?? false;
+            => target.GetComponent<ScriptedController>()?.Skill(idx, dir) ?? false;
         public bool Skill(int idx, GameEntity skillTarget)
-            => target.GetComponent<EntityController>()?.Skill(idx, skillTarget) ?? false;
+            => target.GetComponent<ScriptedController>()?.Skill(idx, skillTarget) ?? false;
         public void Move(Vector2 movement)
-            => target.GetComponent<EntityController>()?.Move(movement);
+            => target.GetComponent<ScriptedController>()?.Move(movement);
         public void Jump() 
-            => target.GetComponent<EntityController>()?.Jump();
+            => target.GetComponent<ScriptedController>()?.Jump();
         public void Climb(float speed) 
-            => target.GetComponent<EntityController>()?.Climb(speed);
+            => target.GetComponent<ScriptedController>()?.Climb(speed);
 
         public void Face(float dir)
-            => target.GetComponent<EntityController>().Face(dir);
+            => target.GetComponent<ScriptedController>().Face(dir);
         
         public void Destroy()
         {

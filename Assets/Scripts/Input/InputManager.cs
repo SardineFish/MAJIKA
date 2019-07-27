@@ -39,7 +39,7 @@ public class InputManager : Singleton<InputManager>
 
     private void InputSystem_onDeviceChange(InputDevice device, InputDeviceChange change)
     {
-        if(change == InputDeviceChange.StateChanged)
+        if(change == InputDeviceChange.UsageChanged)
         {
             if (Utility.GetGenericPlatform(Application.platform) == GenericPlatform.Mobile)
                 CurrentActiveDeviceType = DeviceClass.TouchScreen;
@@ -58,6 +58,6 @@ public class InputManager : Singleton<InputManager>
 
     public bool GetTouch()
     {
-        return Input.touches.Any(touch => touch.phase == TouchPhase.Began);
+        return Input.touches.Any(touch => touch.phase == UnityEngine.TouchPhase.Began);
     }
 }

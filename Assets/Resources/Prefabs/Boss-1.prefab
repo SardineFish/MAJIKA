@@ -331,6 +331,7 @@ GameObject:
   - component: {fileID: 361338555447679930}
   - component: {fileID: 361338555447679933}
   - component: {fileID: 5465358969643469089}
+  - component: {fileID: 6637200465486036230}
   m_Layer: 0
   m_Name: Boss-1
   m_TagString: Untagged
@@ -353,7 +354,7 @@ Transform:
   - {fileID: 361338555622373902}
   - {fileID: 361338555669614906}
   - {fileID: 361338555402574564}
-  - {fileID: 440667393897306196}
+  - {fileID: 361338555014702826}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -438,7 +439,6 @@ MonoBehaviour:
   InClimbArea: 0
   EnableGravity: 1
   Frozen: 0
-  FaceDirection: -1
   MaxMoveForce: 30
   MaxMoveSpeed: 5
   MaxClimbSpeed: 10
@@ -506,12 +506,6 @@ MonoBehaviour:
   HitState: {fileID: 0}
   StunState: {fileID: 0}
   DeadState: {fileID: 11400000, guid: 595211611f55cd5438afb6ed03fcabc6, type: 2}
-  Movement: {x: 0, y: 0}
-  ClimbSpeed: 0
-  Jumped: 0
-  Climbed: 0
-  SkillIndex: -1
-  SkillTarget: {fileID: 0}
 --- !u!114 &361338555447679904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,6 +576,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayClip: {fileID: 0}
+--- !u!114 &6637200465486036230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361338555447679913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c641fbd915033f84f80cf37e89fe3d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Continuous: 0
 --- !u!1 &361338555617389834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
---- !u!224 &440667393897306196 stripped
+--- !u!224 &361338555014702826 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224664484933104010, guid: b20cb3b4b1eed9a4284c16da96ced98e,
     type: 3}

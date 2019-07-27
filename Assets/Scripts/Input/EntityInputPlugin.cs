@@ -1,14 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class EntityInputPlugin : ControllerPlugin, MAJIKAInput.IGamePlayActions
 {
     private MAJIKAInput inputAsset;
+    /*/
     bool climb = false;
     bool jump = false;
     Vector2 movement = Vector2.zero;
-    int skill = -1;
+    int skill = -1;*/
+    List<int> activeSkills = new List<int>();
+
+    public override Vector2 Movement => inputAsset.GamePlay.Movement.ReadValue<Vector2>();
+
+    public override int SkillIndex => activeSkills.Count > 0 ? activeSkills[activeSkills.Count - 1] : -1;
+
+    public override bool Jumped => inputAsset.GamePlay.Jump.ReadValue<float>() > 0;
+
+    public override bool Climbed => inputAsset.GamePlay.Climb.ReadValue<float>() > 0;
+
+    public override float FaceDirection => inputAsset.GamePlay.Movement.ReadValue<Vector2>().x;
+
+    public override GameEntity SkillTarget => null;
 
     private void OnEnable()
     {
@@ -19,50 +34,49 @@ public class EntityInputPlugin : ControllerPlugin, MAJIKAInput.IGamePlayActions
 
     public void OnClimb(InputAction.CallbackContext context)
     {
-        climb = true;
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        jump = true;
     }
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        movement = context.ReadValue<Vector2>();
+    }
+
+    void handleSkill(int idx, InputAction.CallbackContext context)
+    {
+        if ((context.started || context.performed) && !activeSkills.Contains(idx))
+            activeSkills.Add(idx);
+        else if (context.canceled)
+            activeSkills.Remove(idx);
     }
 
     public void OnSkill1(InputAction.CallbackContext context)
-    {
-        skill = 0;
-    }
+        => handleSkill(0, context);
 
     public void OnSkill2(InputAction.CallbackContext context)
-    {
-        skill = 1;
-    }
+        => handleSkill(1, context);
 
     public void OnSkill3(InputAction.CallbackContext context)
-    {
-        skill = 2;
-    }
+        => handleSkill(2, context);
 
     public void OnSkill4(InputAction.CallbackContext context)
-    {
-        skill = 3;
-    }
+        => handleSkill(3, context);
 
     public override void OnUpdate(EntityController controller)
     {
-        controller.Movement = movement;
-        controller.Jumped = jump;
-        controller.Climbed = climb;
+        Debug.Log(inputAsset.GamePlay.Jump.ReadValue<float>());
+        /*
+        controller.Movement = inputAsset.GamePlay.Movement.ReadValue<Vector2>();// movement;
+        controller.Jumped = inputAsset.GamePlay.Jump.ReadValue<float>() > 0;// jump;
+        controller.Climbed = inputAsset.GamePlay.Climb.ReadValue<float>() > 0;// climb;
         controller.SkillIndex = skill;
-        controller.FaceDirection = movement.x;
+        controller.FaceDirection = controller.Movement.x;
 
         movement = Vector2.zero;
         jump = false;
         climb = false;
-        skill = -1;
+        skill = -1;*/
     }
 }

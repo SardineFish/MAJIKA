@@ -3,6 +3,7 @@ using System.Collections;
 using MAJIKA.State;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 [RequireComponent(typeof(EventBus))]
 public class EntityController : EntityStateMachine
@@ -15,21 +16,28 @@ public class EntityController : EntityStateMachine
     public EntityHit HitState;
     public EntityStun StunState;
     public EntityDead DeadState;
-    
 
-    public Vector2 Movement = Vector2.zero;
-    public float ClimbSpeed = 0;
-    public bool Jumped = false;
-    public bool Climbed = false;
-    public int SkillIndex = -1;
+    ControllerPlugin controller;
+
+    public Vector2 Movement => controller ? controller.Movement : Vector2.zero;
+    public float ClimbSpeed => controller ? controller.Movement.y : 0;
+    public bool Jumped => controller ? controller.Jumped : false;
+    public bool Climbed => controller ? controller.Climbed : false;
+    public int SkillIndex => controller ? controller.SkillIndex : -1;
+    public GameEntity SkillTarget => controller ? controller.SkillTarget : null;
     [ReadOnly]
     private float faceDirection = 1;
     public float FaceDirection
     {
-        get => faceDirection;
-        set => faceDirection = MathUtility.SignInt(value) == 0 ? faceDirection : MathUtility.SignInt(value);
+        get
+        {
+            var dir = controller ? controller.FaceDirection : 0;
+            if (dir == 0)
+                return faceDirection;
+            faceDirection = MathUtility.SignInt(dir);
+            return faceDirection;
+        }
     }
-    public GameEntity SkillTarget = null;
 
     public override void OnActive()
     {
@@ -48,11 +56,13 @@ public class EntityController : EntityStateMachine
 
     protected override void Update()
     {
+        controller = GetComponents<ControllerPlugin>().LastOrDefault();
         GetComponents<ControllerPlugin>().ForEach(plugin =>
         {
             if (plugin.enabled)
                 plugin.OnUpdate(this);
         });
+
         if (!Locker.Locked)
             base.Update();
         else if (State is EntityMove)
@@ -68,7 +78,7 @@ public class EntityController : EntityStateMachine
         return base.ChangeState(nextState);
     }
 
-    public virtual void Move(Vector2 movement) => Movement = movement;
+    /*public virtual void Move(Vector2 movement) => Movement = movement;
     public virtual void Face(float dir) => FaceDirection = dir;
     public virtual void Jump() => Jumped = true;
     public virtual void Climb(float climbSpeed) => ClimbSpeed = climbSpeed;
@@ -96,6 +106,13 @@ public class EntityController : EntityStateMachine
         SkillIndex = -1;
         SkillTarget = null;
         return result;
+    }*/
+    public virtual bool Skill()
+    {
+        if (Locker.Locked)
+            return false;
+        return ChangeState(SkillState);
+
     }
     public virtual System.Guid Lock() => Lock(IdleState);
     public virtual System.Guid Lock(EntityState state)
@@ -120,10 +137,6 @@ public class EntityController : EntityStateMachine
 
     public void ResetController()
     {
-        Jumped = false;
-        Movement = Vector2.zero;
-        Climbed = false;
-        SkillIndex = -1;
-        ClimbSpeed = 0;
+        GetComponents<ControllerPlugin>().ForEach(controller => controller.ResetController());
     }
 }

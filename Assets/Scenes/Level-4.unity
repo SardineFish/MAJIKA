@@ -352,26 +352,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -155.23201
-      objectReference: {fileID: 0}
-    - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -318.46402
-      objectReference: {fileID: 0}
-    - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -310.7399
-      objectReference: {fileID: 0}
-    - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -637.4803
-      objectReference: {fileID: 0}
     - target: {fileID: 7294128093959739034, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -401,6 +381,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -155.23201
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646187750, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -318.46402
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -310.7399
+      objectReference: {fileID: 0}
+    - target: {fileID: 5559616483646187751, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -637.4803
       objectReference: {fileID: 0}
     - target: {fileID: 5559616483646191913, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
@@ -17777,12 +17777,6 @@ MonoBehaviour:
   HitState: {fileID: 0}
   StunState: {fileID: 0}
   DeadState: {fileID: 11400000, guid: a6045176f6023884b802706973d917a0, type: 2}
-  Movement: {x: 0, y: 0}
-  ClimbSpeed: 0
-  Jumped: 0
-  Climbed: 0
-  SkillIndex: -1
-  SkillTarget: {fileID: 0}
 --- !u!114 &64499069803307849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17989,6 +17983,7 @@ GameObject:
   - component: {fileID: 64499069803307849}
   - component: {fileID: 64499069803307854}
   - component: {fileID: 5638019689234608594}
+  - component: {fileID: 64499069803307867}
   m_Layer: 0
   m_Name: Boss-4
   m_TagString: Untagged
@@ -17996,6 +17991,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &64499069803307867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64499069803307866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c641fbd915033f84f80cf37e89fe3d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Continuous: 0
 --- !u!1 &64499069812793876
 GameObject:
   m_ObjectHideFlags: 0

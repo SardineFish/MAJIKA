@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.InputSystem.Plugins.OnScreen;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Plugins.OnScreen;
 using UnityEngine.InputSystem.Layouts;
+using UnityEngine.InputSystem.OnScreen;
 using System.Linq;
 
 public enum ActionBind

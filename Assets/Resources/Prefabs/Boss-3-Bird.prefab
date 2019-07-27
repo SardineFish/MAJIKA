@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 6385070694191812806}
   - component: {fileID: 1605308353738424925}
   - component: {fileID: 1873539730}
+  - component: {fileID: 4822368964348349534}
   m_Layer: 0
   m_Name: Boss-3-Bird
   m_TagString: Untagged
@@ -492,7 +493,7 @@ Transform:
   - {fileID: 6385070694368407922}
   - {fileID: 6385070694413425222}
   - {fileID: 6385070694685708696}
-  - {fileID: 6593965703685690152}
+  - {fileID: 6385070694834515350}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -652,12 +653,6 @@ MonoBehaviour:
   HitState: {fileID: 0}
   StunState: {fileID: 0}
   DeadState: {fileID: 11400000, guid: f897bae97a75f0343bcd918fe7ba92e4, type: 2}
-  Movement: {x: 0, y: 0}
-  ClimbSpeed: 0
-  Jumped: 0
-  Climbed: 0
-  SkillIndex: -1
-  SkillTarget: {fileID: 0}
 --- !u!114 &6385070694191812828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +709,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zIndex: 3
   Local: 0
+--- !u!114 &4822368964348349534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385070694191812821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c641fbd915033f84f80cf37e89fe3d12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Continuous: 0
 --- !u!1 &6385070694368407885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
---- !u!224 &6593965703685690152 stripped
+--- !u!224 &6385070694834515350 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224664484933104010, guid: b20cb3b4b1eed9a4284c16da96ced98e,
     type: 3}
