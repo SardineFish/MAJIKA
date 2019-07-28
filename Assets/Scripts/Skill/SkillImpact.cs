@@ -53,6 +53,7 @@ public class SkillImpact : Entity
     public List<EffectInstance> Effects = new List<EffectInstance>();
     public GameEntity Creator;
     public bool Active = false;
+    public bool Detached = false;
     public Vector3 Direction;
     public GameEntity TargetEntity;
 
@@ -297,4 +298,6 @@ public class SkillImpact : Entity
         }
         StartCoroutine(DropAttackCoroutine(targetHeight));
     }
+
+    public void Detach() => Detached = true;
 }

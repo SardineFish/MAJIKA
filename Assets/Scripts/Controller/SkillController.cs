@@ -80,6 +80,13 @@ public class SkillController : EntityBehaviour
         return ActiveSkill.Locked;
     }
 
+    public bool Interrupt(int level)
+    {
+        if (!ActiveSkill)
+            return true;
+        return ActiveSkill.Interrupt(level);
+    }
+
     public bool Abort()
     {
         if (!ActiveSkill)

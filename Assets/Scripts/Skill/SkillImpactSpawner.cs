@@ -16,7 +16,8 @@ public class SkillImpactSpawner : EntityBehaviour
     public ImpactSpawnType SpawnType = ImpactSpawnType.Default;
     public Vector2 SpawnOffset;
     public float TimeOffset = 0;
-    public SkillImpact Instance;
+    [SerializeField]
+    List<SkillImpact> managedImpactInstances = new List<SkillImpact>();
 
     [Range(1, 16)]
     public int SpawnAmount;
@@ -31,6 +32,11 @@ public class SkillImpactSpawner : EntityBehaviour
 
     [HideInInspector]
     public Vector2[] SpawnDirections;
+
+    private void Update()
+    {
+        managedImpactInstances = managedImpactInstances.Where(impact => impact && !impact.Detached).ToList();
+    }
 
     public void SpawnSubImpact()
     {
@@ -116,7 +122,7 @@ public class SkillImpactSpawner : EntityBehaviour
                 var offset = SpawnOffset;
                 offset.x *= dir;
                 var spawnPos = position + SpawnOffset;
-                SpawnOne(spawnPos, direction, effects, target, creator);
+                managedImpactInstances.Add(SpawnOne(spawnPos, direction, effects, target, creator));
             });
         }
         else
@@ -125,20 +131,18 @@ public class SkillImpactSpawner : EntityBehaviour
             var offset = SpawnOffset;
             offset.x *= dir;
             var pos = position + offset;
-            Instance = SpawnOne(pos, direction, effects, target, creator);
+            managedImpactInstances.Add(SpawnOne(pos, direction, effects, target, creator));
         }
     }
 
-    public void Destory()
+    public void DestoryImpactInstance()
     {
-        if (Instance)
-            Destroy(Instance.gameObject);
+        managedImpactInstances.ForEach(impact => Destroy(impact.gameObject));
     }
 
     public void Deactivate()
     {
-        if (Instance)
-            Instance.Deactivate();
+        DestoryImpactInstance();
     }
 
     private void OnDrawGizmosSelected()

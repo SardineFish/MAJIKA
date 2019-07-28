@@ -50,13 +50,19 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 0.0625
   ReleaseOffset: {x: 0, y: 0.9375, z: 0}
-  Direction: 0
   CoolDown: 0.4
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 21300000, guid: d5893a8a5e8cf7643b88ad1d2256b68a, type: 3}
   Effects:
-  - Effect: {fileID: 11400000, guid: 3f7d90e32b4444242af3837a2625afdd, type: 2}
+  - Effect: {fileID: 11400000, guid: 0fce6a1caadcf444d8796bb649088482, type: 2}
+    Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 7153d8b099f11d74b856416de86584ec, type: 2}
     Strength: 1
     Duration: 0
     LifeTime: 0
@@ -90,6 +96,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1577581559733008, guid: 00c756f2d2a5fb24c8aee1406e71da45, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 0, y: 0.9375}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
+  AdditionalEffect: []
+  SpawnDirections: []

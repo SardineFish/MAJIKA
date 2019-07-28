@@ -71,4 +71,15 @@ public class EventBus : MonoBehaviour
         CurrentArgs = null;
         CurrentEvent = null;
     }
+
+    public void DispatchNextFrame(string eventName, params object[] args)
+    {
+        StartCoroutine(DispatchNextFrameInternal(eventName, args));
+    }
+
+    IEnumerator DispatchNextFrameInternal(string eventName, params object[] args)
+    {
+        yield return null;
+        Dispatch(eventName, args);
+    }
 }

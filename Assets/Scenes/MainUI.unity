@@ -178,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 114642579119781240, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 3}
       propertyPath: TutorialScenePath
-      value: Scenes/Level-3
+      value: Scenes/Level-4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}

@@ -15,7 +15,7 @@ public class Damage : Effect
     
     public override void OnStart(EffectInstance instance, EntityEffector effector)
     {
-        effector.Entity.GetComponent<EventBus>().Dispatch("Hit");
+        //effector.Entity.GetComponent<EventBus>().Dispatch("Hit");
         var applyDamage = DPS ? damage * Time.deltaTime : damage;
         effector.Entity.GetComponent<LifeEntity>()?.HP_Decrease(applyDamage * instance.Strength);
     }

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6482c4ced67c448941a75b0a50db17, type: 3}
   m_Name: BlowForce
   m_EditorClassIdentifier: 
-  Duration: -1
+  Duration: 0.5
   Priority: 0
   EffectPrefab: {fileID: 0}
   ForceType: 1
   Impulse: {x: 15, y: 0}
   ForceApplyMode: 1
+  ConstraintX: 0
+  ConstraintY: 0

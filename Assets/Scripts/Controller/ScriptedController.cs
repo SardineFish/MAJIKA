@@ -38,7 +38,7 @@ public class ScriptedController : ControllerPlugin
     public bool Skill(int idx, float dir)
     {
         skillIndex = idx;
-        Face(idx);
+        Face(dir);
         var result = GetComponent<EntityController>().Skill();
         skillIndex = -1;
         return result;

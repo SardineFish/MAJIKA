@@ -28,7 +28,7 @@ TagManager:
   - PostProcess
   - DropedItem
   - SceneOnlyCollider
-  - 
+  - SolidOnly
   - 
   - 
   - 

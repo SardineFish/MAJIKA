@@ -15,6 +15,7 @@ public class Skill : EntityBehaviour
     public float ReleaseRadius;
     public Vector3 ReleaseOffset;
     public float CoolDown = 1;
+    public int InterruptLevel = 0;
     public bool Locked = false;
     public bool Ready = false;
     public Sprite Icon;
@@ -58,12 +59,22 @@ public class Skill : EntityBehaviour
         return true;
     }
 
+    public bool Interrupt(int level)
+    {
+        if(level >= InterruptLevel)
+        {
+            GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.DestoryImpactInstance());
+            return true;
+        }
+        return false;
+    }
+
     public bool Abort()
     {
-        if (Locked)
-            return false;
+        /*if (Locked)
+            return false;*/
 
-        GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.Destory());
+        GetComponents<SkillImpactSpawner>().ForEach(spawner => spawner.DestoryImpactInstance());
         return true;
     }
 

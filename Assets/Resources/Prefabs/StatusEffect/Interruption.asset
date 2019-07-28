@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b6482c4ced67c448941a75b0a50db17, type: 3}
-  m_Name: ShieldForce
+  m_Script: {fileID: 11500000, guid: 45abfe9b8a61b1d4da4b9d4978d75d27, type: 3}
+  m_Name: Interruption
   m_EditorClassIdentifier: 
-  Duration: 0.5
+  Duration: 0
   Priority: 0
   EffectPrefab: {fileID: 0}
-  ForceType: 0
-  Impulse: {x: 20, y: 0}
-  ForceApplyMode: 1
-  ConstraintX: 0
-  ConstraintY: 1

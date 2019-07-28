@@ -17,6 +17,7 @@ namespace MAJIKA.State
         {
             var trigger = entity.GetComponent<EntityEffector>()?.GetEffect<Damage>()?.GetTrigger<ImpactData>();
             var blowUp = entity.GetComponent<EntityEffector>()?.GetEffect<BlowUp>();
+            var effector = entity.GetComponent<EntityEffector>();
             if(trigger!=null)
             {
                 if (blowUp != null)
@@ -45,13 +46,17 @@ namespace MAJIKA.State
                 }
                 else
                 {
-                    entity.GetComponent<AnimationController>().PlayAnimation(HitAction, trigger.Position.x - entity.transform.position.x);
-                    while (!entity.GetComponent<AnimationController>().IsEnd())
+                    var interrupt = effector.GetEffect<Interruption>();
+                    if(interrupt != null && entity.GetComponent<SkillController>().Interrupt(Mathf.RoundToInt(interrupt.Strength)))
                     {
-                        yield return null;
-                        if (fsm.ChangeState(JumpState) || fsm.ChangeState(MoveState))
+                        entity.GetComponent<AnimationController>().PlayAnimation(HitAction, trigger.Position.x - entity.transform.position.x);
+                        while (!entity.GetComponent<AnimationController>().IsEnd())
                         {
-                            yield break;
+                            yield return null;
+                            if (fsm.ChangeState(JumpState) || fsm.ChangeState(MoveState))
+                            {
+                                yield break;
+                            }
                         }
                     }
                 }
@@ -61,7 +66,23 @@ namespace MAJIKA.State
 
         public override bool OnEnter(GameEntity entity, EntityState previousState, EntityStateMachine fsm)
         {
-            return base.OnEnter(entity, previousState, fsm);
+            var effector = entity.GetComponent<EntityEffector>();
+            var trigger = effector.GetEffect<Damage>()?.GetTrigger<ImpactData>()
+                ?? effector.GetEffect<BlowUp>()?.GetTrigger<ImpactData>()
+                ?? effector.GetEffect<Interruption>()?.GetTrigger<ImpactData>();
+            var blowUp = effector.GetEffect<BlowUp>();
+            var interrupt = effector.GetEffect<Interruption>();
+            if (trigger == null)
+                return false;
+            if (blowUp != null)
+                return true;
+            if (fsm.State is EntityMove)
+                return false;
+            if (interrupt is null && fsm.State is EntitySkill)
+                return false;
+            if (interrupt != null && !entity.GetComponent<SkillController>().Interrupt(Mathf.RoundToInt(interrupt.Strength)))
+                return false;
+            return true;
         }
 
         public override bool OnExit(GameEntity entity, EntityState nextState, EntityStateMachine fsm)

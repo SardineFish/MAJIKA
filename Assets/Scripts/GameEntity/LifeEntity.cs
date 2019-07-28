@@ -7,6 +7,7 @@ public class LifeEntity : GameEntity, IHP
     public const string EventHPIncrease = "HPIncrease";
     public const string EventHPDecrease = "HPDecrease";
     public const string EventDeath = "Die";
+    public const string EventHit = "Hit";
 
     public float HP = 100;
 
@@ -23,6 +24,7 @@ public class LifeEntity : GameEntity, IHP
     {
         var effector = GetComponent<EntityEffector>();
         msg.Effects.ForEach(effect => effector.AddEffect(effect, msg.SenderEntity));
+        GetComponent<EventBus>().DispatchNextFrame(EventHit);
     }
 
     public bool HP_Increase(float value)

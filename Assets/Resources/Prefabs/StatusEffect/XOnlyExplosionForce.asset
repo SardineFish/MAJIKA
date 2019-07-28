@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b6482c4ced67c448941a75b0a50db17, type: 3}
-  m_Name: ShieldForce
+  m_Name: XOnlyExplosionForce
   m_EditorClassIdentifier: 
-  Duration: 0.5
+  Duration: 0.2
   Priority: 0
   EffectPrefab: {fileID: 0}
   ForceType: 0
-  Impulse: {x: 20, y: 0}
-  ForceApplyMode: 1
+  Impulse: {x: 25, y: 0}
+  ForceApplyMode: 0
   ConstraintX: 0
   ConstraintY: 1

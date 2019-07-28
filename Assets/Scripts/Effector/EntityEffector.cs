@@ -16,8 +16,8 @@ public class EntityEffector : EntityBehaviour
         // Remove effects
         foreach (var remove in removeList)
         {
-            remove.Effect.OnEnd(remove, this);
             Effects.Remove(remove);
+            remove.Effect.OnEnd(remove, this);
         }
 
         removeList.Clear();

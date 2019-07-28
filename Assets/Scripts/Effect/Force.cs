@@ -16,7 +16,7 @@ public enum ForceApplyMode
 
 
 [CreateAssetMenu(fileName = "Force", menuName = "StatusEffect/Force")]
-public class Force : Effect
+public class Force : PhysicalEffect
 {
     public ForceType ForceType;
     public Vector2 Impulse;
@@ -27,6 +27,7 @@ public class Force : Effect
 
     public override void OnStart(EffectInstance instance, EntityEffector effector)
     {
+        base.OnStart(instance, effector);
         instance.EffectCoroutine = effector.StartCoroutine(EffectCoroutine(instance, effector));
     }
 
@@ -63,7 +64,7 @@ public class Force : Effect
         else if (ForceApplyMode == ForceApplyMode.ModifyMomentum)
             movable.SetMomentum(f);
 
-        foreach (var t in Utility.Timer(.5f))
+        foreach (var t in Utility.Timer(Duration))
         {
             movable.PhysicalControl = true;
             yield return null;
@@ -73,14 +74,20 @@ public class Force : Effect
             movable.PhysicalControl = true;
             yield return null;
         }
-        while (!movable.OnGround);
-        movable.PhysicalControl = false;
+        while (movable.EnableGravity && !movable.OnGround);
+        if(effector.GetEffect<PhysicalEffect>()==null)
+            movable.PhysicalControl = false;
         effector.RemoveEffect(instance.Effect);
     }
 
     public override void OnUpdate(EffectInstance instance, EntityEffector effector)
     {
         var impact = instance.GetTrigger<ImpactData>();
+    }
+
+    public override void OnEnd(EffectInstance instance, EntityEffector effector)
+    {
+
     }
 
     public override EffectInstance Merge(EffectInstance originalInstance, EffectInstance instance, EntityEffector effector)

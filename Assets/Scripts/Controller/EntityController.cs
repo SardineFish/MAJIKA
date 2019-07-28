@@ -8,7 +8,6 @@ using System.Linq;
 [RequireComponent(typeof(EventBus))]
 public class EntityController : EntityStateMachine
 {
-    public const string EventHit = "Hit";
     public Locker Locker = new Locker();
     public AnimatedState InitialState;
     public EntityIdle IdleState;
@@ -44,7 +43,7 @@ public class EntityController : EntityStateMachine
         if (!InitialState)
             InitialState = IdleState;
         ChangeState(InitialState);
-        GetComponent<EventBus>().AddEventListener(EventHit, () =>
+        GetComponent<EventBus>().AddEventListener(LifeEntity.EventHit, () =>
         {
             ChangeState(HitState);
         });
