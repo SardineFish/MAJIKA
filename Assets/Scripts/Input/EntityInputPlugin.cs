@@ -66,7 +66,6 @@ public class EntityInputPlugin : ControllerPlugin, MAJIKAInput.IGamePlayActions
 
     public override void OnUpdate(EntityController controller)
     {
-        Debug.Log(inputAsset.GamePlay.Jump.ReadValue<float>());
         /*
         controller.Movement = inputAsset.GamePlay.Movement.ReadValue<Vector2>();// movement;
         controller.Jumped = inputAsset.GamePlay.Jump.ReadValue<float>() > 0;// jump;

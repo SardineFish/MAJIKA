@@ -37,7 +37,7 @@ public class VirtualInputManager : MonoBehaviour
             return;
         for (var i = 0; i < buttons.Count; i++)
         {
-            buttons[i].Reset();
+            buttons[i].ResetData();
         }
         for (var touchIdx = 0; touchIdx < Input.touchCount; touchIdx++)
         {

@@ -25,7 +25,9 @@ public class VirtualButton : OnScreenActionControl
         SendValueToControl<float>(1);
     }
 
-    public void Reset()
+
+
+    public void ResetData()
     {
         SendValueToControl<float>(0);
     }

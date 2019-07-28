@@ -28,11 +28,6 @@ public class InputManager : Singleton<InputManager>
 
     private void Awake()
     {
-        gamepad = new InputAction(binding: "<Gamepad>/*");
-        gamepad.performed += (ctx) =>
-        {
-            Debug.LogError(ctx.control.path);
-        };
         InputSystem.onDeviceChange += InputSystem_onDeviceChange;
         Controller = new MAJIKAInput();
     }

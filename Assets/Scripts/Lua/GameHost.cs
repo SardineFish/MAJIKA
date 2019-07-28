@@ -52,7 +52,6 @@ namespace MAJIKA.Lua
         {
             Level.Instance.GetComponent<EventBus>().Dispatch(Level.EventPass);
         }
-
         public void Ready()
         {
             Level.Instance.Ready();

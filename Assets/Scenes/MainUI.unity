@@ -180,6 +180,26 @@ PrefabInstance:
       propertyPath: TutorialScenePath
       value: Scenes/Level-4
       objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094712030, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -157.34834
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094712030, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -322.6967
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094712031, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -321.49396
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094712031, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -658.9884
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
 --- !u!1001 &5254103350612120352

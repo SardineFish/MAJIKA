@@ -29,6 +29,10 @@ public class LevelAssetLoader : MonoBehaviour
     {
         var loaded = Resources.LoadAll(path);
         Debug.Log($"Loaded {loaded.Length} resources.");
+        var audioSource = GetComponent<AudioSource>();
+        loaded.Where(asset => asset is AudioClip)
+            .Select(asset => asset as AudioClip)
+            .ForEach(audio => audio.LoadAudioData());
         resources.AddRange(loaded);
     }
 

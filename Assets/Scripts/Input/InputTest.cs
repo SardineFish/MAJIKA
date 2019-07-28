@@ -13,11 +13,6 @@ public class InputTest : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        action = new InputAction(binding: "/*/<button>");
-        action.Enable();
-        action.performed += (ctx) =>
-        {
-        };
         /*InputManager.Instance.GamePlay.Jump.performed += ctx =>
         {
             GetComponent<SpriteRenderer>().color = Utility.RandomColor();
