@@ -18,7 +18,7 @@ function start()
     game.ready();
 
     
-    game.tips("${climb-hint}", 30);
+    game.tips("${climb-hint}", 3);
 
     yellowHair.on("OnInteract", function()
         --game.control(null)
