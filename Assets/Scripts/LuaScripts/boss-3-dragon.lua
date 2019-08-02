@@ -44,6 +44,10 @@ function birth()
         coroutine.yield(nil)
     until entity.state == "idle"
 
+    if player.HP <= 0 then
+        return 
+    end
+
     changeState(stage2Center)
 end
 

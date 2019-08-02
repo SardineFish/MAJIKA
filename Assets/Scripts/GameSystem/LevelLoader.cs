@@ -11,6 +11,7 @@ public class LevelLoader : Singleton<LevelLoader>
     }
     public IEnumerator LoadLevel(string scenePath)
     {
+        yield return MAJIKA.GUI.CoveredUI.Find("GameUI").Hide(.1f);
         yield return LoadingUI.Instance.Show(.5f);
         Debug.Log(scenePath);
         yield return SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Single);

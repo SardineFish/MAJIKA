@@ -12,7 +12,6 @@ function start()
     player = scene.entity("Player");
     camera.follow({player, boss});
     game.control(player);
-    game.setTarget(boss, "Boss");
     scene.on("Stage", stage);
     game.ready();
 end
@@ -30,6 +29,9 @@ function stage()
         coroutine.yield(waitForSeconds(1.5))
         camera.follow({boss})
         coroutine.yield(waitForSeconds(6))
+        if player.HP <= 0 then
+            return
+        end
         game.setTarget(boss, "Boss")
         camera.follow({player, boss})
 

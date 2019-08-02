@@ -547,6 +547,17 @@
                 },
                 {
                     "name": "",
+                    "id": "8d4ba345-f446-46a3-a8b6-81afe6e46d9b",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AnyKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "97fc71ed-fa57-438a-bb59-cb7f701c0c24",
                     "path": "<Touchscreen>/phase",
                     "interactions": "",

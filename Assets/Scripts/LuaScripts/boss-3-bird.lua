@@ -45,6 +45,10 @@ function birth()
     repeat
         coroutine.yield(nil)
     until player.position.x > 31
+    if player.HP <= 0 then
+        return 
+    end
+    game.setTarget(entity, "Boss");
     entity.skill(SkillDive, Left)
     coroutine.yield(wait("skill"))
     game.playAudio(resources.audio("Level-3/Level-3-BGM"), 0.25, 1, true)

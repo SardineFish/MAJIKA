@@ -40,6 +40,7 @@ namespace MAJIKA.Lua
         }
         public void SetTarget(GameEntity entity, string name)
         {
+            GameGUIManager.Instance.GetComponent<MAJIKA.GUI.CoveredUI>().ShowAsync();
             GameGUIManager.Instance.TargetUI.SetTarget(name, entity);
         }
         public void Target(GameEntity entity, string name)

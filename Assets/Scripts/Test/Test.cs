@@ -15,6 +15,16 @@ namespace Testing
         }
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.F1))
+                LevelLoader.Instance.LoadLevelDetach("Camp");
+            else if (Input.GetKeyDown(KeyCode.F2))
+                LevelLoader.Instance.LoadLevelDetach("Tutorial");
+            else if (Input.GetKeyDown(KeyCode.F3))
+                LevelLoader.Instance.LoadLevelDetach("Level-2");
+            else if (Input.GetKeyDown(KeyCode.F4))
+                LevelLoader.Instance.LoadLevelDetach("Level-3");
+            else if (Input.GetKeyDown(KeyCode.F5))
+                LevelLoader.Instance.LoadLevelDetach("Level-4");
         }
 
         private void FixedUpdate()

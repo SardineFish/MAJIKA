@@ -79,13 +79,13 @@ public class Level : Singleton<Level>
 
     void StopEverything()
     {
+        CoveredUI.Find("GameUI")?.HideAsync();
+        CoveredUI.Find("TouchController")?.HideAsync();
+        CoveredUI.Find("Tips")?.HideAsync();
         return;
         EntityManager.FindEntities<GameEntity>()
             .Where(entity => entity)
             .ForEach(entity => entity.SetActive(false));
-        CoveredUI.Find("GameUI")?.HideAsync();
-        CoveredUI.Find("TouchController")?.HideAsync();
-        CoveredUI.Find("Tips")?.HideAsync();
     }
     public void Ready()
     {

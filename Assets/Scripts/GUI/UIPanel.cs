@@ -7,12 +7,19 @@ namespace MAJIKA.GUI
     public abstract class UIPanel<T> : Singleton<T> where T : UIPanel<T>
     {
         public bool Visible = false;
+        public bool LockOnDisplay = false;
+        public bool EnableBack = false;
         System.Guid lockID;
         Coroutine coroutineShow;
         Coroutine coroutineHide;
+        private void Awake()
+        {
+            if (!Visible)
+                gameObject.SetActive(false);
+        }
         protected virtual void Update()
         {
-            if (InputManager.Instance.Controller.Actions.Back.WasPressedThisFrame())
+            if (EnableBack && InputManager.Instance.Controller.Actions.Back.WasPressedThisFrame())
                 HideAsync();
         }
 
@@ -24,11 +31,13 @@ namespace MAJIKA.GUI
                 StopCoroutine(coroutineHide);
             coroutineHide = null;
             Visible = true;
-
-            var player = GameSystem.Instance.PlayerInControl;
-            if (player)
+            if(LockOnDisplay)
             {
-                lockID = player.GetComponent<EntityController>().Lock();
+                var player = GameSystem.Instance.PlayerInControl;
+                if (player)
+                {
+                    lockID = player.GetComponent<EntityController>().Lock();
+                }
             }
             GetComponent<CanvasGroup>().alpha = 0;
             GetComponent<PageContainer>()?.Reset();
@@ -45,10 +54,14 @@ namespace MAJIKA.GUI
             coroutineShow = null;
             Visible = false;
 
-            var player = GameSystem.Instance.PlayerInControl;
-            if (!player)
-                player = null;
-            player?.GetComponent<EntityController>().UnLock(lockID);
+            if(LockOnDisplay)
+            {
+                var player = GameSystem.Instance.PlayerInControl;
+                if (!player)
+                    player = null;
+                player?.GetComponent<EntityController>().UnLock(lockID);
+            }
+
             if (gameObject.activeInHierarchy)
             {
                 yield return Utility.HideUI(GetComponent<CanvasGroup>(), time);
@@ -63,6 +76,7 @@ namespace MAJIKA.GUI
 
         public void ShowAsync(float time = .1f)
         {
+            gameObject.SetActive(true);
             if (!gameObject.activeInHierarchy)
             {
                 gameObject.SetActive(true);
