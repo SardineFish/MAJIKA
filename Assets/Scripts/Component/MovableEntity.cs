@@ -101,6 +101,7 @@ public class MovableEntity : MonoBehaviour
         jumpCount = MaxJumpCount;
         transform.position = transform.position.Set(x: AvailableClimbArea.transform.position.x);
         climbSpeed = normalizedSpeed * MaxClimbSpeed;
+        velocity.y = climbSpeed;
         EnableGravity = false;
         return true;
     }
@@ -142,6 +143,9 @@ public class MovableEntity : MonoBehaviour
             var rigidbody = GetComponent<Rigidbody2D>();
             rigidbody.gravityScale = EnableGravity ? 1 : 0;
             velocity = rigidbody.velocity;
+
+            if (Mathf.Abs(climbSpeed) > 0)
+                velocity.y = climbSpeed;
             if (!Mathf.Approximately(forceVelocity.x, 0))
                 velocity.x = forceVelocity.x;
             if (!Mathf.Approximately(forceVelocity.y, 0))
@@ -170,6 +174,8 @@ public class MovableEntity : MonoBehaviour
                 // Transfrom back to world coordinate
                 v = v.x * groundTangent + v.y * groundNormal;
 
+                if (Mathf.Abs(climbSpeed) > 0)
+                    v.y = climbSpeed;
                 if (Mathf.Abs(forceVelocity.y) > 0)
                     v.y = forceVelocity.y;
                 if (Mathf.Abs(forceVelocity.x) > 0)
@@ -188,6 +194,8 @@ public class MovableEntity : MonoBehaviour
                 v = v.x * groundTangent + v.y * groundNormal;
                 /*if (additionalVelocity.y > 0)
                     v.y = additionalVelocity.y;*/
+                if (Mathf.Abs(climbSpeed) > 0)
+                    v.y = climbSpeed;
                 if (Mathf.Abs(forceVelocity.y) > 0)
                     v.y = forceVelocity.y;
                 if (Mathf.Abs(forceVelocity.x) > 0)

@@ -18,11 +18,18 @@ namespace MAJIKA.State
         }
         public override void OnUpdate(GameEntity entity, EntityStateMachine fsm)
         {
-            if (!entity.GetComponent<MovableEntity>().Climb((fsm as EntityController).Movement.y))
+
+            entity.GetComponent<MovableEntity>().EnableGravity = true;
+            if (!entity.GetComponent<MovableEntity>().Climb((fsm as EntityController).ClimbSpeed))
                 fsm.ChangeState(AirState);
 
             fsm.ChangeState(JumpState);
 
+        }
+
+        public override bool OnExit(GameEntity entity, EntityState nextState, EntityStateMachine fsm)
+        {
+            return base.OnExit(entity, nextState, fsm);
         }
     }
 
