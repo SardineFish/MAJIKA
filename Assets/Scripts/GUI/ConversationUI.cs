@@ -35,14 +35,14 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         touchScreenSkip.Value = true;
     }
 
-    public IEnumerator StartConversationAsync(IConversation conversation, Talker[] talkers, bool lockPlayer = false)
+    public IEnumerator StartConversationAsync(IConversation conversation, Talker[] talkers, bool lockPlayer = false, bool autoHide = true)
     {
         if (!gameObject.activeInHierarchy)
             gameObject.SetActive(true);
-        yield return StartCoroutine(StartConversationInternal(conversation, talkers, lockPlayer));
+        yield return StartCoroutine(StartConversationInternal(conversation, talkers, lockPlayer, autoHide));
     }
 
-    IEnumerator StartConversationInternal(IConversation conversation, Talker[] talkers, bool lockPlayer = false)
+    IEnumerator StartConversationInternal(IConversation conversation, Talker[] talkers, bool lockPlayer = false, bool autoHide = true)
     {
         TextRenderer.text = "";
         Guid lockID;
@@ -57,13 +57,23 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         {
             yield return ShowSentence(text);
         }
+        if (autoHide)
+        {
+            Talkers = null;
+            Conversation = null;
+            Wrapper.SetActive(false);
+            yield return null;
+            GameSystem.Instance.PlayerInControl.GetComponent<EntityController>().UnLock(lockID);
+        }
+        // InputManager.Instance.Jumped = false;
+        // InputManager.Instance.Jumped = false;
+    }
+
+    public void HideConversation()
+    {
         Talkers = null;
         Conversation = null;
         Wrapper.SetActive(false);
-        // InputManager.Instance.Jumped = false;
-        yield return null;
-        // InputManager.Instance.Jumped = false;
-        GameSystem.Instance.PlayerInControl.GetComponent<EntityController>().UnLock(lockID);
     }
 
     public void EndConversation()

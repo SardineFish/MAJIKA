@@ -244,14 +244,15 @@ public static class Utility
         }
     }
 
-    public static IEnumerator HideUI(CanvasGroup canvasGroup, float time)
+    public static IEnumerator HideUI(CanvasGroup canvasGroup, float time, bool deactivate = true)
     {
         foreach (var t in TimerNormalized(time))
         {
             canvasGroup.alpha = 1 - t;
             yield return null;
         }
-        canvasGroup.gameObject.SetActive(false);
+        if (deactivate)
+            canvasGroup.gameObject.SetActive(false);
     }
 
     public static IEnumerator HideUI(UnityEngine.UI.Graphic ui, float time, bool deactive = false)

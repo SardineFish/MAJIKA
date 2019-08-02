@@ -23,6 +23,8 @@ public class InputActionController : EntityBehaviour
 
     public bool Interact()
     {
+        if (Entity.GetComponent<EntityController>().Locker.Locked)
+            return false;
         if(!GetComponent<EntityController>().Locker.Locked && InteractiveEntities.Count > 0)
         {
             InteractiveEntities[0].Interact(Entity);

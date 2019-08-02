@@ -28,8 +28,21 @@ function start()
     redGlass.on("OnInteract", function()
         --game.conversation(conversation1, {player, redGlass})
         startCoroutine(function ()
-            coroutine.yield(game.conversation("${conv:camp-red-glass}",{player, redGlass}, true));
-            game.loadLevel("Level-4");
+            coroutine.yield(game.conversation("${conv:camp-red-glass}",{player, redGlass}, true, false));
+            coroutine.yield(game.choose({
+                "Level-1",
+                "Level-2",
+                "Level-3",
+                "Level-4"
+            }, function (selected)
+                console.log(selected)
+                if selected == 0 then game.loadLevel("Tutorial")
+                elseif selected == 1 then game.loadLevel("Level-2")
+                elseif selected == 2 then game.loadLevel("Level-3")
+                elseif selected == 3 then game.loadLevel("Level-4")
+                end
+            end))
+            --game.loadLevel("Level-4");
         
         end)
     end)

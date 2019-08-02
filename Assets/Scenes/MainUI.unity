@@ -180,6 +180,51 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114642579119781240, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: TutorialScenePath
+      value: Scenes/Camp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644982512899613035, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00012207031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644982512899613035, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -16.000244
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644982513239007148, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -94.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3644982513239007148, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -196.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094708014, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -94.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094708014, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -196.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094708015, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00012207031
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094708015, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -16.000244
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5103d6ac7174cb4084bac9d1ec91c27, type: 3}
 --- !u!1001 &5254103350612120352

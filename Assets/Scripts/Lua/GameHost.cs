@@ -16,19 +16,25 @@ namespace MAJIKA.Lua
         public GameHost(LuaScriptHost host):base(host)
         {
         }
-        public UnityEngine.Coroutine Conversation(string[] conversation, GameEntity[] talkers, bool lockPlayer = true)
+        public UnityEngine.Coroutine Conversation(string[] conversation, GameEntity[] talkers, bool lockPlayer = true, bool autoHide = true)
         {
             return host.StartCoroutine(ConversationUI.Instance.StartConversationAsync(
                 new ConversationRenderer(conversation), 
                 talkers.Select(entity => entity.GetComponent<Talkable>().Talker).ToArray(),
-                lockPlayer));
+                lockPlayer,
+                autoHide));
         }
-        public UnityEngine.Coroutine Conversation(string conversation, GameEntity[] talkers, bool lockPlayer = true)
+        public UnityEngine.Coroutine Conversation(string conversation, GameEntity[] talkers, bool lockPlayer = true, bool autoHide = true)
         {
             return host.StartCoroutine(ConversationUI.Instance.StartConversationAsync(
                 new ConversationRenderer(new string[] { conversation }), 
                 talkers.Select(entity => entity.GetComponent<Talkable>().Talker).ToArray(), 
-                lockPlayer));
+                lockPlayer,
+                autoHide));
+        }
+        public UnityEngine.Coroutine Choose(string[] options, Closure callback)
+        {
+            return host.StartCoroutine(MAJIKA.GUI.SelectMenu.Show(options,(i)=> callback.Call(i)));
         }
         public UnityEngine.Coroutine tips(string tips, float time = 3)
         {

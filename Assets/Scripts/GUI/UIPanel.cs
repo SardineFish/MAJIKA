@@ -44,8 +44,9 @@ namespace MAJIKA.GUI
             yield return Utility.ShowUI(GetComponent<CanvasGroup>(), time);
         }
 
-
         public virtual IEnumerator Hide(float time = .2f)
+            => Hide(time, true);
+        public virtual IEnumerator Hide(float time = .2f, bool deactivate = true)
         {
             if (!Visible)
                 yield break;
@@ -64,7 +65,7 @@ namespace MAJIKA.GUI
 
             if (gameObject.activeInHierarchy)
             {
-                yield return Utility.HideUI(GetComponent<CanvasGroup>(), time);
+                yield return Utility.HideUI(GetComponent<CanvasGroup>(), time, deactivate);
             }
         }
         public void HideAsync(float time = .2f)
