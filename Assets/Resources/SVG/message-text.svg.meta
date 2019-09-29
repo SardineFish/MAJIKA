@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 guid: b1a273e5fc1a60f4881bbb5452fb0f94
 ScriptedImporter:
-  fileIDToRecycleName:
-    2800000: tex
-    21300000: sprite
+  internalIDToNameTable:
+  - first:
+      28: 2800000
+    second: tex
+  - first:
+      213: 21300000
+    second: sprite
   externalObjects: {}
+  serializedVersion: 2
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -16,6 +21,7 @@ ScriptedImporter:
   alignment: 0
   customPivot: {x: 0, y: 0}
   generatePhysicsShape: 0
+  viewportOptions: 0
   preserveViewport: 0
   advancedMode: 0
   predefinedResolutionIndex: 1
@@ -49,4 +55,5 @@ ScriptedImporter:
         width: 20
         height: 20
       spriteID: 403ee4263f9f7c042baafa2f392c830d
+      internalID: 0
     PhysicsOutlines: []

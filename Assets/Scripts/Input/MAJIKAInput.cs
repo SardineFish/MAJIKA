@@ -618,23 +618,23 @@ public class MAJIKAInput : IInputActionCollection
     ""controlSchemes"": []
 }");
         // GamePlay
-        m_GamePlay = asset.GetActionMap("GamePlay");
-        m_GamePlay_Movement = m_GamePlay.GetAction("Movement");
-        m_GamePlay_Jump = m_GamePlay.GetAction("Jump");
-        m_GamePlay_Climb = m_GamePlay.GetAction("Climb");
-        m_GamePlay_Skill1 = m_GamePlay.GetAction("Skill1");
-        m_GamePlay_Skill2 = m_GamePlay.GetAction("Skill2");
-        m_GamePlay_Skill3 = m_GamePlay.GetAction("Skill3");
-        m_GamePlay_Skill4 = m_GamePlay.GetAction("Skill4");
+        m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
+        m_GamePlay_Movement = m_GamePlay.FindAction("Movement", throwIfNotFound: true);
+        m_GamePlay_Jump = m_GamePlay.FindAction("Jump", throwIfNotFound: true);
+        m_GamePlay_Climb = m_GamePlay.FindAction("Climb", throwIfNotFound: true);
+        m_GamePlay_Skill1 = m_GamePlay.FindAction("Skill1", throwIfNotFound: true);
+        m_GamePlay_Skill2 = m_GamePlay.FindAction("Skill2", throwIfNotFound: true);
+        m_GamePlay_Skill3 = m_GamePlay.FindAction("Skill3", throwIfNotFound: true);
+        m_GamePlay_Skill4 = m_GamePlay.FindAction("Skill4", throwIfNotFound: true);
         // Actions
-        m_Actions = asset.GetActionMap("Actions");
-        m_Actions_Accept = m_Actions.GetAction("Accept");
-        m_Actions_Back = m_Actions.GetAction("Back");
-        m_Actions_Interact = m_Actions.GetAction("Interact");
-        m_Actions_Inventory = m_Actions.GetAction("Inventory");
-        m_Actions_AnyKey = m_Actions.GetAction("AnyKey");
-        m_Actions_Test = m_Actions.GetAction("Test");
-        m_Actions_Touch = m_Actions.GetAction("Touch");
+        m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
+        m_Actions_Accept = m_Actions.FindAction("Accept", throwIfNotFound: true);
+        m_Actions_Back = m_Actions.FindAction("Back", throwIfNotFound: true);
+        m_Actions_Interact = m_Actions.FindAction("Interact", throwIfNotFound: true);
+        m_Actions_Inventory = m_Actions.FindAction("Inventory", throwIfNotFound: true);
+        m_Actions_AnyKey = m_Actions.FindAction("AnyKey", throwIfNotFound: true);
+        m_Actions_Test = m_Actions.FindAction("Test", throwIfNotFound: true);
+        m_Actions_Touch = m_Actions.FindAction("Touch", throwIfNotFound: true);
     }
 
     ~MAJIKAInput()
