@@ -50,12 +50,19 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 1
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
   Effects:
   - Effect: {fileID: 11400000, guid: cb3cb8e042fe02846b6bf215b2d6b496, type: 2}
     Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3cca85c78335cce4ba55157b46746941, type: 2}
+    Strength: 10
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -76,7 +83,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 1
   SpawnSectorDirection: {x: 0.70512414, y: -0.70908386}
   SpawnAngle: 0
@@ -174,6 +181,7 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 0
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -194,13 +202,13 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 10
+    Strength: 20
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -222,7 +230,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
@@ -281,7 +289,7 @@ Transform:
   - {fileID: 8828008200465778151}
   - {fileID: 8828008199389090664}
   - {fileID: 8828008198877067161}
-  - {fileID: 8828008200226326581}
+  - {fileID: 8763241297636800139}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -526,8 +534,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
 --- !u!114 &8828008199059258218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,12 +648,19 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 1
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 10
+    Strength: 30
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3c86ac977a4304349a1bd6664060d96b, type: 2}
+    Strength: 1
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -668,7 +681,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 3.5, y: -13.1875}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
@@ -690,7 +703,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 12, y: -13.1875}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
@@ -712,7 +725,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 19, y: -13.1875}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
@@ -734,7 +747,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 26, y: -13.1875}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
@@ -756,7 +769,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 34.5, y: -13.1875}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
@@ -826,6 +839,7 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 0
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -933,6 +947,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1006,12 +1021,19 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 0
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 10
+    Strength: 30
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: b3ffc78061f210a4a89388975b948397, type: 2}
+    Strength: 0.2
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -1032,7 +1054,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
@@ -1217,10 +1239,17 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 1
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
-  Effects: []
+  Effects:
+  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
+    Strength: 10
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
 --- !u!114 &8828008200152882407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,7 +1266,7 @@ MonoBehaviour:
   SpawnType: 2
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 5
   SpawnSectorDirection: {x: 0.70512414, y: -0.70908386}
   SpawnAngle: 90
@@ -1264,7 +1293,7 @@ MonoBehaviour:
   SpawnType: 2
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 5
   SpawnSectorDirection: {x: 0.49382734, y: -0.86955994}
   SpawnAngle: 90
@@ -1291,7 +1320,7 @@ MonoBehaviour:
   SpawnType: 2
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 5
   SpawnSectorDirection: {x: 0.5991657, y: -0.8006251}
   SpawnAngle: 90
@@ -1359,6 +1388,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1390,10 +1420,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8828008199059258215}
     m_Modifications:
-    - target: {fileID: 1075763392718626, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
-      propertyPath: m_Name
-      value: EntityUI
-      objectReference: {fileID: 0}
     - target: {fileID: 224664484933104010, guid: b20cb3b4b1eed9a4284c16da96ced98e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1499,6 +1525,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1075763392718626, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
+      propertyPath: m_Name
+      value: EntityUI
+      objectReference: {fileID: 0}
     - target: {fileID: 224772696314357822, guid: b20cb3b4b1eed9a4284c16da96ced98e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1506,7 +1536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
---- !u!224 &8828008200226326581 stripped
+--- !u!224 &8763241297636800139 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224664484933104010, guid: b20cb3b4b1eed9a4284c16da96ced98e,
     type: 3}

@@ -51,12 +51,13 @@ MonoBehaviour:
   ReleaseRadius: 8.8
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 0.4
+  InterruptLevel: 3
   Locked: 0
   Ready: 0
   Icon: {fileID: 21300000, guid: 605a492fa35fc61469f598eda3f18e00, type: 3}
   Effects:
-  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 500
+  - Effect: {fileID: 11400000, guid: 62ca6964b240c344783160e4bc969a36, type: 2}
+    Strength: 30
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -92,5 +93,9 @@ MonoBehaviour:
   SpawnType: 1
   SpawnOffset: {x: 8.8125, y: 8.75}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
   AdditionalEffect: []
+  SpawnDirections: []

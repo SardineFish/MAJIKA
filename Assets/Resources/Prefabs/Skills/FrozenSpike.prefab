@@ -50,14 +50,14 @@ MonoBehaviour:
   LockAction: 1
   ReleaseRadius: 1.36
   ReleaseOffset: {x: 0, y: 1.35, z: 0}
-  Direction: 0
   CoolDown: 0.4
+  InterruptLevel: 1
   Locked: 0
   Ready: 0
   Icon: {fileID: 21300000, guid: 30e45dbfc5bb3ca4890966f15fa91ddb, type: 3}
   Effects:
-  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 1
+  - Effect: {fileID: 11400000, guid: 707ccad3b130f70439b05a33f631a347, type: 2}
+    Strength: 150
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -90,6 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 1099358161393724, guid: 78b1c346b949534469e42cb534143177, type: 3}
+  SpawnType: 0
   SpawnOffset: {x: 2.3125, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
+  SpawnAmount: 0
+  SpawnSectorDirection: {x: 1, y: 0}
+  SpawnAngle: 60
+  AdditionalEffect: []
+  SpawnDirections: []

@@ -50,12 +50,19 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 2
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
   Effects:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 10
+    Strength: 30
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: b3ffc78061f210a4a89388975b948397, type: 2}
+    Strength: 0.2
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -76,7 +83,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
@@ -133,6 +140,7 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 0
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -153,13 +161,19 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
   AdditionalEffect:
   - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 10
+    Strength: 20
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: b3ffc78061f210a4a89388975b948397, type: 2}
+    Strength: 0.1
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -181,7 +195,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 0
   SpawnSectorDirection: {x: 1, y: 0}
   SpawnAngle: 60
@@ -244,16 +258,11 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 1.5
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
-  Effects:
-  - Effect: {fileID: 11400000, guid: 3c165f295847bb049961f9dcd8f48baa, type: 2}
-    Strength: 10
-    Duration: 0
-    LifeTime: 0
-    Priority: 0
-    GameObjectInstance: {fileID: 0}
+  Effects: []
 --- !u!114 &47334573699221896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +279,7 @@ MonoBehaviour:
   SpawnType: 2
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 5
   SpawnSectorDirection: {x: 0.70512414, y: -0.70908386}
   SpawnAngle: 90
@@ -297,7 +306,7 @@ MonoBehaviour:
   SpawnType: 2
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 5
   SpawnSectorDirection: {x: 0.5346963, y: -0.8450443}
   SpawnAngle: 90
@@ -358,12 +367,19 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 2
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
   Effects:
   - Effect: {fileID: 11400000, guid: cb3cb8e042fe02846b6bf215b2d6b496, type: 2}
     Strength: 1
+    Duration: 0
+    LifeTime: 0
+    Priority: 0
+    GameObjectInstance: {fileID: 0}
+  - Effect: {fileID: 11400000, guid: 3cca85c78335cce4ba55157b46746941, type: 2}
+    Strength: 10
     Duration: 0
     LifeTime: 0
     Priority: 0
@@ -384,7 +400,7 @@ MonoBehaviour:
   SpawnType: 0
   SpawnOffset: {x: 0, y: 0}
   TimeOffset: 0
-  Instance: {fileID: 0}
+  managedImpactInstances: []
   SpawnAmount: 1
   SpawnSectorDirection: {x: 0.70512414, y: -0.70908386}
   SpawnAngle: 0
@@ -444,6 +460,7 @@ MonoBehaviour:
   ReleaseRadius: 0
   ReleaseOffset: {x: 0, y: 0, z: 0}
   CoolDown: 0
+  InterruptLevel: 0
   Locked: 0
   Ready: 0
   Icon: {fileID: 0}
@@ -493,7 +510,7 @@ Transform:
   - {fileID: 6385070694368407922}
   - {fileID: 6385070694413425222}
   - {fileID: 6385070694685708696}
-  - {fileID: 6385070694834515350}
+  - {fileID: 6593965703685690152}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -523,7 +540,7 @@ Animator:
   m_GameObject: {fileID: 6385070694191812821}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aa18525cfb75e7345bf15249eb9a54f0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 91d9d32c84240aa439ad3390a0e01c2e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -779,6 +796,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -797,7 +815,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.9375, y: 5.125}
+  m_Size: {x: 4.6875, y: 5.6875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -972,6 +990,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1129,10 +1148,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6385070694191812827}
     m_Modifications:
-    - target: {fileID: 1075763392718626, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
-      propertyPath: m_Name
-      value: EntityUI
-      objectReference: {fileID: 0}
     - target: {fileID: 224664484933104010, guid: b20cb3b4b1eed9a4284c16da96ced98e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1238,6 +1253,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1075763392718626, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
+      propertyPath: m_Name
+      value: EntityUI
+      objectReference: {fileID: 0}
     - target: {fileID: 224772696314357822, guid: b20cb3b4b1eed9a4284c16da96ced98e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1245,7 +1264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
---- !u!224 &6385070694834515350 stripped
+--- !u!224 &6593965703685690152 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224664484933104010, guid: b20cb3b4b1eed9a4284c16da96ced98e,
     type: 3}
