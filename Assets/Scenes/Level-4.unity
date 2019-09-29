@@ -127,6 +127,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 421150855}
     m_Modifications:
+    - target: {fileID: 4428250248357110565, guid: 32b9034704dde6e4ea609d575faa4738,
+        type: 3}
+      propertyPath: m_Name
+      value: GUI
+      objectReference: {fileID: 0}
     - target: {fileID: 4498039197396181749, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -231,11 +236,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4428250248357110565, guid: 32b9034704dde6e4ea609d575faa4738,
-        type: 3}
-      propertyPath: m_Name
-      value: GUI
       objectReference: {fileID: 0}
     - target: {fileID: 4498248609074906325, guid: 32b9034704dde6e4ea609d575faa4738,
         type: 3}
@@ -17519,6 +17519,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 64499069803307860}
     m_Modifications:
+    - target: {fileID: 1075763392718626, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
+      propertyPath: m_Name
+      value: EntityUI
+      objectReference: {fileID: 0}
     - target: {fileID: 224664484933104010, guid: b20cb3b4b1eed9a4284c16da96ced98e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17623,10 +17627,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1075763392718626, guid: b20cb3b4b1eed9a4284c16da96ced98e, type: 3}
-      propertyPath: m_Name
-      value: EntityUI
       objectReference: {fileID: 0}
     - target: {fileID: 224772696314357822, guid: b20cb3b4b1eed9a4284c16da96ced98e,
         type: 3}
