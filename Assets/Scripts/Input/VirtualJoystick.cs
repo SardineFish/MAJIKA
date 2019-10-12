@@ -6,6 +6,8 @@ using UnityEngine.InputSystem.Layouts;
 
 public class VirtualJoystick : OnScreenControl
 {
+    public bool InvertX = false;
+    public bool InvertY = false;
     VariableJoystick joystick;
     [SerializeField]
     [InputControl(layout = "Vector2")]
@@ -18,7 +20,9 @@ public class VirtualJoystick : OnScreenControl
     }
     private void FixedUpdate()
     {
-        SendValueToControl<Vector2>(new Vector2(joystick.Horizontal, joystick.Vertical));
+        SendValueToControl<Vector2>(new Vector2(
+            joystick.Horizontal * (InvertX ? -1 : 1), 
+            joystick.Vertical * (InvertY ? -1: 1)));
     }
 
 }

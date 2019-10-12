@@ -16,6 +16,7 @@ public class MovableEntity : MonoBehaviour
     public float MaxMoveSpeed = 10;
     public float MaxClimbSpeed = 10;
     public int MaxJumpCount = 1;
+    public float GravityScale = 1;
 
     public int jumpCount = 0;
 
@@ -141,7 +142,7 @@ public class MovableEntity : MonoBehaviour
         if (PhysicalControl)
         {
             var rigidbody = GetComponent<Rigidbody2D>();
-            rigidbody.gravityScale = EnableGravity ? 1 : 0;
+            rigidbody.gravityScale = EnableGravity ? GravityScale : 0;
             velocity = rigidbody.velocity;
 
             if (Mathf.Abs(climbSpeed) > 0)
@@ -165,7 +166,7 @@ public class MovableEntity : MonoBehaviour
         {
             if (EnableGravity)
             {
-                GetComponent<Rigidbody2D>().gravityScale = 1;
+                GetComponent<Rigidbody2D>().gravityScale = GravityScale;
                 var v = GetComponent<Rigidbody2D>().velocity;
                 // Transform to ground coordinate & apply controls
                 v = new Vector2(Vector2.Dot(v, groundTangent), Vector2.Dot(v, groundNormal));
@@ -217,7 +218,7 @@ public class MovableEntity : MonoBehaviour
         AvailableClimbArea = null;
         SetGroundNormal(Vector2.up);
 
-        GetComponent<Rigidbody2D>().gravityScale = EnableGravity ? 1 : 0;
+        GetComponent<Rigidbody2D>().gravityScale = EnableGravity ? GravityScale : 0;
 
     }
 

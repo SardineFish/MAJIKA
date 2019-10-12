@@ -36,7 +36,6 @@ function birth()
     if pos.y > 4 then
         pos.y = 4
     end
-                console.log(pos)
     entity.position = pos
     entity.skill(SkillTeleportOut, player.position.x - entity.position.x)
     coroutine.yield(entity.wait("skill", _host))
@@ -90,7 +89,6 @@ function idle()
         move = sign(math.random() - 0.5) * deltaX
     end
     
-    console.log(move)
 
     -- Perform moving & player skill detecting
     for t in timer(0.5 + math.random() * 0.5) do
