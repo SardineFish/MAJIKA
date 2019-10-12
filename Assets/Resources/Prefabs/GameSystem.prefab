@@ -689,7 +689,7 @@ RectTransform:
   - {fileID: 224673525143128338}
   - {fileID: 4370334459846947904}
   - {fileID: 4585331721073270696}
-  - {fileID: 3644982513165840181}
+  - {fileID: 5195335472094712058}
   m_Father: {fileID: 4713240148662208}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1228,7 +1228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <color="red">LOADING...</color>
+  m_Text: LOADING...
 --- !u!114 &574308862199645008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1481,9 +1481,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -223.16031
       objectReference: {fileID: 0}
+    - target: {fileID: 8830466355586280926, guid: adebc450fd6bf204cbd0449df6922304,
+        type: 3}
+      propertyPath: DisplayEntity
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adebc450fd6bf204cbd0449df6922304, type: 3}
---- !u!224 &3644982513165840181 stripped
+--- !u!224 &5195335472094712058 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8830466355539197941, guid: adebc450fd6bf204cbd0449df6922304,
     type: 3}

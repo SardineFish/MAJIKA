@@ -48,6 +48,7 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         Guid lockID;
         if (lockPlayer)
             lockID = GameSystem.Instance.PlayerInControl.GetComponent<EntityController>().Lock();
+        MAJIKA.GUI.CoveredUI.Find("GameUI")?.HideAsync(.2f);
 
         textDefinition.Talkers = Talkers = talkers;
         Conversation = conversation;
@@ -64,6 +65,7 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
             Wrapper.SetActive(false);
             yield return null;
             GameSystem.Instance.PlayerInControl.GetComponent<EntityController>().UnLock(lockID);
+            MAJIKA.GUI.CoveredUI.Find("GameUI")?.ShowAsync(.2f);
         }
         // InputManager.Instance.Jumped = false;
         // InputManager.Instance.Jumped = false;
@@ -74,6 +76,7 @@ public class ConversationUI : Singleton<ConversationUI>, IPointerClickHandler
         Talkers = null;
         Conversation = null;
         Wrapper.SetActive(false);
+        MAJIKA.GUI.CoveredUI.Find("GameUI")?.ShowAsync(.2f);
     }
 
     public void EndConversation()

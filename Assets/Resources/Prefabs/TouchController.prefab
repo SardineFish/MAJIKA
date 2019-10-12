@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 7649100613026953413}
   - component: {fileID: 1371330268270028592}
   - component: {fileID: 439598316914481921}
-  - component: {fileID: 7979750304746981087}
+  - component: {fileID: 2598790759044658337}
   m_Layer: 5
   m_Name: Jump
   m_TagString: Untagged
@@ -939,7 +939,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7979750304746981087
+--- !u!114 &2598790759044658337
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

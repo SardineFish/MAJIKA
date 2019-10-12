@@ -25,26 +25,20 @@ public class InputManager : Singleton<InputManager>
     }
 
     InputAction gamepad;
+    DeviceChangeDetector DeviceChangeDetector;
 
     private void Awake()
     {
-        InputSystem.onDeviceChange += InputSystem_onDeviceChange;
+        DeviceChangeDetector = new DeviceChangeDetector();
+        DeviceChangeDetector.OnDeviceChanged += DeviceChangeDetector_OnDeviceChanged;
         Controller = new MAJIKAInput();
+        CurrentActiveDeviceType = DeviceClass.TouchScreen;
     }
 
-    private void InputSystem_onDeviceChange(InputDevice device, InputDeviceChange change)
+    private void DeviceChangeDetector_OnDeviceChanged(DeviceClass device)
     {
-        if(change == InputDeviceChange.UsageChanged)
-        {
-            if (Utility.GetGenericPlatform(Application.platform) == GenericPlatform.Mobile)
-                CurrentActiveDeviceType = DeviceClass.TouchScreen;
-            else if (device.description.deviceClass == "Keyboard")
-                CurrentActiveDeviceType = DeviceClass.Keyboard;
-            else if (device.description.deviceClass == "Mouse")
-                return;
-            else
-                CurrentActiveDeviceType = DeviceClass.Gamepad;
-        }
+        Debug.Log(device);
+        CurrentActiveDeviceType = device;
     }
 
     public MAJIKAInput.ActionsActions Actions => Controller.Actions;

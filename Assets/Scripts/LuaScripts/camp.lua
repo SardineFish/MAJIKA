@@ -30,10 +30,10 @@ function start()
         startCoroutine(function ()
             coroutine.yield(game.conversation("${conv:camp-red-glass}",{player, redGlass}, true, false));
             coroutine.yield(game.choose({
-                "Level-1",
-                "Level-2",
-                "Level-3",
-                "Level-4"
+                "> Level-1",
+                "> Level-2",
+                "> Level-3",
+                "> Level-4"
             }, function (selected)
                 console.log(selected)
                 if selected == 0 then game.loadLevel("Tutorial")
@@ -50,7 +50,6 @@ function start()
     twinTail.on("OnInteract", function()
         startCoroutine(function ()
             coroutine.yield(game.conversation("${conv:camp-twin-tail}",{player, twinTail}, true));
-            game.loadLevel("Level-3");
         
         end)
     end)
