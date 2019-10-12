@@ -45,7 +45,7 @@ namespace MAJIKA.GUI
 
         IEnumerator HideInternal(MenuItem selected)
         {
-            yield return Hide(.2f, false);
+            yield return Hide(.2f);
             selected.GetData<Action>()?.Invoke();
             Items.ForEach(item => Destroy(item.gameObject));
             Items.Clear();

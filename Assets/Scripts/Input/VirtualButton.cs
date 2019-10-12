@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class VirtualButton : OnScreenActionControl
 {
+    
     protected override void OnEnable()
     {
         base.OnEnable();

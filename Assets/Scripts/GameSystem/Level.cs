@@ -90,6 +90,8 @@ public class Level : Singleton<Level>
     public void Ready()
     {
         OnLevelReady?.Invoke();
+        this.SetTimeout(() => ActiveAtLoaded.ForEach(cpn => cpn.enabled = true), 0.5f);
+        CoveredUI.Find("GameUI").ShowAsync();
         ActiveAtLoaded.ForEach(cpn => cpn.enabled = true);
         LevelLoader.Instance.CompleteLoading();
     }

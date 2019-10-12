@@ -171,6 +171,9 @@ public static class Utility
         return context.StartCoroutine(WaitForSecondEnumerator(callback, seconds));
     }
 
+    public static Coroutine SetTimeout(this MonoBehaviour context, Action callback, float seconds = 0)
+        => WaitForSecond(context, callback, seconds);
+
     public static Coroutine SetInterval(this MonoBehaviour context, Action callback, float seconds = 0)
     {
         return context.StartCoroutine(IntervalCoroutine(callback, seconds));
@@ -251,6 +254,7 @@ public static class Utility
             canvasGroup.alpha = 1 - t;
             yield return null;
         }
+        canvasGroup.alpha = 0;
         if (deactivate)
             canvasGroup.gameObject.SetActive(false);
     }

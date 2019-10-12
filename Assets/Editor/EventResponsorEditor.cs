@@ -33,6 +33,7 @@ namespace Assets.Editor
                 .Render();
 
             Undo.RecordObject(target, "Edit Event Responsors");
+            EditorUtility.SetDirty(target);
         }
 
         public ComponentEventHandler EditResponsor(GameObject context, ComponentEventHandler responsor, Action callback)

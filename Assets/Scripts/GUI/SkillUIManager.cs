@@ -23,11 +23,11 @@ public class SkillUIManager : MonoBehaviour
                 TemplateRenderer.DataSource = DisplayEntity.GetComponent<SkillController>().Skills;
                 lastUpdate = skills;
             }
-            GetComponent<CanvasGroup>().alpha = 1;
+            //GetComponent<CanvasGroup>().alpha = 1;
         }
         else
         {
-            GetComponent<CanvasGroup>().alpha = 0;
+            //GetComponent<CanvasGroup>().alpha = 0;
         }
         
     }

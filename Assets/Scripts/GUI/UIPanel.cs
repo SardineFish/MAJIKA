@@ -9,9 +9,13 @@ namespace MAJIKA.GUI
         public bool Visible = false;
         public bool LockOnDisplay = false;
         public bool EnableBack = false;
+        public bool DisableWhenHide = true;
         System.Guid lockID;
         Coroutine coroutineShow;
         Coroutine coroutineHide;
+        public EventBus EventBus;
+        public string OnShowEvent;
+        public string OnHideEvent;
         private void Awake()
         {
             if (!Visible)
@@ -27,6 +31,10 @@ namespace MAJIKA.GUI
         {
             if (Visible)
                 yield break;
+            if (EventBus)
+                EventBus.Dispatch(OnShowEvent);
+            else
+                GameSystem.Instance.GetComponent<EventBus>().Dispatch(OnShowEvent);
             if (coroutineHide != null)
                 StopCoroutine(coroutineHide);
             coroutineHide = null;
@@ -39,17 +47,20 @@ namespace MAJIKA.GUI
                     lockID = player.GetComponent<EntityController>().Lock();
                 }
             }
+            GetComponent<CanvasGroup>().interactable = true;
+            GetComponent<CanvasGroup>().blocksRaycasts = true;
             GetComponent<CanvasGroup>().alpha = 0;
             GetComponent<PageContainer>()?.Reset();
             yield return Utility.ShowUI(GetComponent<CanvasGroup>(), time);
         }
-
         public virtual IEnumerator Hide(float time = .2f)
-            => Hide(time, true);
-        public virtual IEnumerator Hide(float time = .2f, bool deactivate = true)
         {
             if (!Visible)
                 yield break;
+            if (EventBus)
+                EventBus.Dispatch(OnHideEvent);
+            else
+                GameSystem.Instance.GetComponent<EventBus>().Dispatch(OnHideEvent);
             if (coroutineShow != null)
                 StopCoroutine(coroutineShow);
             coroutineShow = null;
@@ -65,7 +76,10 @@ namespace MAJIKA.GUI
 
             if (gameObject.activeInHierarchy)
             {
-                yield return Utility.HideUI(GetComponent<CanvasGroup>(), time, deactivate);
+                GetComponent<CanvasGroup>().interactable = false;
+                GetComponent<CanvasGroup>().blocksRaycasts = false;
+                yield return Utility.HideUI(GetComponent<CanvasGroup>(), time, DisableWhenHide);
+
             }
         }
         public void HideAsync(float time = .2f)

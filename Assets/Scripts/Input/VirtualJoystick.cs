@@ -20,4 +20,5 @@ public class VirtualJoystick : OnScreenControl
     {
         SendValueToControl<Vector2>(new Vector2(joystick.Horizontal, joystick.Vertical));
     }
+
 }

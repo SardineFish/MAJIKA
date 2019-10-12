@@ -23,9 +23,9 @@ public class EventResponse
             var method = component.GetType()
                 .GetMethods(BindingFlags.Instance | BindingFlags.Public)
                 .Where(m => m.Name == responsor.MethodName)
-                .Where(m => m.GetParameters().Length <= 0)
+                .Where(m => m.GetParameters().Where(p=>!p.HasDefaultValue).Count() <= 0)
                 .FirstOrDefault();
-            method?.Invoke(component, null);
+            method?.Invoke(component, method.GetParameters().Select(p=>p.DefaultValue).ToArray());
         }
     }
 }
