@@ -36,7 +36,11 @@ namespace MAJIKA.TextManager
             get
             {
                 if (DefinitionTranslate.ContainsKey(id))
+                {
                     id = DefinitionTranslate[id]();
+                    if (TextDefinitions.ContainsKey(id))
+                        return TextDefinitions[id];
+                }
                 if(InputActions.Contains(id))
                 {
                     if (InputManager.Instance.CurrentActiveDeviceType == DeviceClass.Gamepad)

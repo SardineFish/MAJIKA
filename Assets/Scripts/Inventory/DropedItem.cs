@@ -11,6 +11,7 @@ namespace Inventory
         public float TraceRadius = 5;
         public Vector2 PickupVelocity;
         public float Acceleration;
+        public const string EventPickup = "PickUp";
 
 
         private void Start()
@@ -50,6 +51,7 @@ namespace Inventory
                 {
                     inventory.Add(Item);
                     inventory.Entity.GetComponent<AudioController>().PlayEffect(Item.PickupSoundEffect);
+                    inventory.Entity.EventBus.Dispatch(EventPickup, Item);
                     break;
                 }
                 yield return null;

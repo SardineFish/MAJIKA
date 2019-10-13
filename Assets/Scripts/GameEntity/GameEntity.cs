@@ -14,6 +14,8 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
 
     public bool ActiveOnStart = true;
 
+    public EventBus EventBus { get; private set; }
+
     private bool _active;
     [ReadOnly("Active")]
     public bool active
@@ -47,6 +49,7 @@ public class GameEntity : Entity,IMessageSender,IMessageReceiver,IEffectorTrigge
 
     protected virtual void Awake()
     {
+        EventBus = GetComponent<EventBus>();
     }
 
 

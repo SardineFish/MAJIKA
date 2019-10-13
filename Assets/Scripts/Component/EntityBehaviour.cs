@@ -13,6 +13,7 @@ public abstract class EntityBehaviour : MonoBehaviour, IEntityLifeCycle
             return entity;
         }
     }
+    
 
     public virtual void OnActive() { }
     public virtual void OnInactive() { }

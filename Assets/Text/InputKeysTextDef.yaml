@@ -50,7 +50,7 @@
 <Keyboard>/space: <sprite="Keyboard" name="Space">
 <Keyboard>/escape: <sprite="Keyboard" name="ESC">
 <Keyboard>/anyKey: <Any Key>
-<Keyboard>/action: 使用
+<Keyboard>/action: 按下
 
 <Touch>/action: 触碰
 <Touch>/buttonSouth: 右侧跳跃键

@@ -21,6 +21,20 @@ function start()
     game.control(player);
 
     game.ready();
+
+    -- Handle object pick up event
+    player.on("PickUp", function()
+        startCoroutine(function()
+            console.log("pick up!")
+            coroutine.yield(game.conversation(
+                "${conv:turtorial-inventory}",
+                {player},
+                true
+            ))
+            coroutine.yield(waitForSeconds(.5))
+            game.tips("${inventory-hint}", 3);
+        end)
+    end)
 end
 
 function update()
@@ -59,16 +73,23 @@ end
 
 function tutorial()
     coroutine.yield(waitForSeconds(0.7));
-    game.tips("${movement-hint}", 3);
+
+    -- Movement hint
+    if(not game.profile.completeTutorial) then
+        game.tips("${movement-hint}", 3);
+    end
     repeat coroutine.yield(nil); 
     until player.position.x > 25;
     coroutine.yield(game.conversation({
         "${conv:turtorial-1}"
     },{player}, true));
 
+    -- Jump hint
     repeat coroutine.yield(nil); 
     until player.position.x > 43;
-    game.tips("${jump-hint}", 2);
+    if(not game.profile.completeTutorial) then
+        game.tips("${jump-hint}", 2);
+    end
 
     repeat coroutine.yield(nil);
     until player.position.x > 70;
@@ -80,14 +101,12 @@ function tutorial()
     until player.position.x > 134;
     
     boss.setActive(true);
-    coroutine.yield(game.conversation({
-        "${conv:turtorial-3}"
-    },{player}, true));
 
     camera.follow(boss);
     coroutine.yield(waitForSeconds(4));
     game.setTarget(boss, "Boss");
     game.playAudio(resources.audio("Boss"), 0.25, 1, true);
     camera.follow(player);
+    game.tips("${battle-hint}", 5);
 
 end

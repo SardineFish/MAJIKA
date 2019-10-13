@@ -90,6 +90,10 @@ namespace MAJIKA.Lua
         {
             LevelLoader.Instance.LoadLevelDetach(path);
         }
+
+        public PlayerProfile Profile => Saves.Instance.Profile;
+
+        public void Save() => Saves.Instance.Save();
     }
 
     

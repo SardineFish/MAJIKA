@@ -1,4 +1,6 @@
-movement-hint: 使用${movement}控制移动
-climb-hint: 使用${climb}抓住绳索
-interact-hint: ${input-action}${interact}与NPC互动
-jump-hint: 使用 ${jump} 跳过障碍物
+movement-hint: ${input-action} ${movement}控制移动
+climb-hint: ${input-action} ${climb}抓住绳索
+interact-hint: ${input-action} ${interact}与NPC互动
+inventory-hint: ${input-action} ${inventory} 打开背包，将元素石镶嵌到法杖 
+jump-hint: ${input-action} ${jump} 跳过障碍物
+battle-hint: ${input-action} ${skill1}${skill2}${skill3}${skill4} 释放魔法技能

@@ -26,7 +26,7 @@ public class MainUI : Singleton<MainUI>
 
     IEnumerator EnterGameCoroutine()
     {
-        yield return LevelLoader.Instance.LoadLevel(GameSystem.Instance.TutorialScenePath);
+        yield return LevelLoader.Instance.LoadLevel(GameSystem.Instance.SceneToLoad);
         GetComponent<Animator>().SetTrigger("hide");
         var animator = GetComponent<Animator>();
         while (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)

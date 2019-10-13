@@ -142,8 +142,8 @@ MonoBehaviour:
     m_Unicode: 0
     m_GlyphIndex: 20
     m_Scale: 1
-    m_Name: KeyboardAtlas_20
-    m_HashCode: -2093952037
+    m_Name: B
+    m_HashCode: 66
   - m_ElementType: 2
     m_Unicode: 0
     m_GlyphIndex: 21
@@ -208,8 +208,8 @@ MonoBehaviour:
     m_Unicode: 0
     m_GlyphIndex: 31
     m_Scale: 1
-    m_Name: KeyboardAtlas_31
-    m_HashCode: -2093952005
+    m_Name: E
+    m_HashCode: 69
   - m_ElementType: 2
     m_Unicode: 0
     m_GlyphIndex: 32

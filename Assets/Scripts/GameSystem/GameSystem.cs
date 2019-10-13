@@ -3,7 +3,12 @@ using System.Collections;
 
 public class GameSystem : Singleton<GameSystem>
 {
-    public string TutorialScenePath;
+    public string TutorialLevel;
+    public string DefaultLevel;
+    public string SceneToLoad
+        => Saves.Instance.Profile.CompleteTutorial
+            ? DefaultLevel
+            : TutorialLevel;
     public GameEntity PlayerInControl;
     public TextManager TextManager;
     public MAJIKA.TextManager.ConversationManager ConversationManager;
