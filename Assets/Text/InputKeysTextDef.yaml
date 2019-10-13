@@ -54,12 +54,12 @@
 
 <Touch>/action: 触碰
 <Touch>/buttonSouth: 右侧跳跃键
-<Touch>/buttonWest: ""
+<Touch>/buttonWest: 右侧技能按钮
 <Touch>/buttonNorth: ""
 <Touch>/buttonEast: ""
 <Touch>/leftStick: 左侧摇杆
 <Touch>/leftShoulder: ""
-<Touch>/rightShoulder: <sprite="XBox" name="RB">
+<Touch>/rightShoulder: ""
 <Touch>/leftTrigger: ""
 <Touch>/rightTrigger: 左侧摇杆向上
 <Touch>/select: 上方背包

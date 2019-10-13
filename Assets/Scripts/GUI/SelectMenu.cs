@@ -27,7 +27,11 @@ namespace MAJIKA.GUI
                 var obj = Instantiate(ItemPrefab);
                 obj.transform.SetParent(Container);
                 var item = obj.GetComponent<MenuItem>();
-                item.Init(items[i], (Action)(() => selectCallback(idx)));
+                item.Init(items[i], (Action)(
+                    () => {
+                        selectCallback(idx);
+                        }
+                    ));
                 item.OnClick += Item_OnClick;
                 Items.Add(item);
             }

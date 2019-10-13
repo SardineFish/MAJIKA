@@ -29,7 +29,7 @@ namespace MAJIKA.TextManager
                 ? "<Gamepad>/action"
                 : InputManager.Instance.CurrentActiveDeviceType == DeviceClass.Keyboard
                     ? "<Keyboard>/action"
-                    : "<Touch>/Action"
+                    : "<Touch>/action"
         };
         public override string this[string id]
         {

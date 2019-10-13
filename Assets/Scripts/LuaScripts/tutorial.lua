@@ -63,6 +63,8 @@ function playerDead()
 end
 
 function bossDead()
+    game.profile.completeTutorial = true;
+    game.save();
     game.control(nil);
     game.setTarget(nil);
     game.exitAudio();

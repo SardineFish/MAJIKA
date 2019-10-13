@@ -690,7 +690,7 @@ RectTransform:
   - {fileID: 224673525143128338}
   - {fileID: 4370334459846947904}
   - {fileID: 4585331721073270696}
-  - {fileID: 3644982513165840181}
+  - {fileID: 5195335472094712058}
   m_Father: {fileID: 4713240148662208}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1171,7 +1171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4518644320641889260
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1186,11 +1186,11 @@ RectTransform:
   m_Father: {fileID: 4370334459846947904}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -459}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -93, y: 59}
   m_SizeDelta: {x: 380, y: 64}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &1712356504410222665
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1468,6 +1468,11 @@ PrefabInstance:
       propertyPath: DisplayEntity
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9040799677734754570, guid: adebc450fd6bf204cbd0449df6922304,
+        type: 3}
+      propertyPath: EventBus
+      value: 
+      objectReference: {fileID: 308097140}
     - target: {fileID: 8830466355586280926, guid: adebc450fd6bf204cbd0449df6922304,
         type: 3}
       propertyPath: DisplayEntity
@@ -1500,7 +1505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adebc450fd6bf204cbd0449df6922304, type: 3}
---- !u!224 &3644982513165840181 stripped
+--- !u!224 &5195335472094712058 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8830466355539197941, guid: adebc450fd6bf204cbd0449df6922304,
     type: 3}

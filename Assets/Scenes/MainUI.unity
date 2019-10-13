@@ -175,9 +175,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 720652914102827987, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518644320641889260, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518644320641889260, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3644982513165840182, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094712059, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -114.464
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094712059, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -236.928
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094711936, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -103.57985
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094711936, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -223.16019
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195335472094711943, guid: d5103d6ac7174cb4084bac9d1ec91c27,
+        type: 3}
+      propertyPath: Platform
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3644982513118687807, guid: d5103d6ac7174cb4084bac9d1ec91c27,
@@ -189,21 +229,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: -196.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 3644982513165840179, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3644982513165840179, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3644982513165840179, guid: d5103d6ac7174cb4084bac9d1ec91c27,
-        type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644982513019407608, guid: d5103d6ac7174cb4084bac9d1ec91c27,
         type: 3}
