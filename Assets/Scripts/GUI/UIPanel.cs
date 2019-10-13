@@ -84,19 +84,36 @@ namespace MAJIKA.GUI
         }
         public void HideAsync(float time = .2f)
         {
+            if (!Visible)
+                return;
+            if (coroutineShow != null)
+            {
+                StopCoroutine(coroutineShow);
+                coroutineShow = null;
+            }
+
             if (!gameObject.activeInHierarchy)
                 return;
-            StartCoroutine(Hide(time));
+            
+            coroutineHide = StartCoroutine(Hide(time));
         }
 
         public void ShowAsync(float time = .1f)
         {
+            if (Visible)
+                return;
+            if (coroutineHide != null)
+            {
+                StopCoroutine(coroutineHide);
+                coroutineHide = null;
+            }
+
             gameObject.SetActive(true);
             if (!gameObject.activeInHierarchy)
             {
                 gameObject.SetActive(true);
             }
-            StartCoroutine(Show(time));
+            coroutineShow = StartCoroutine(Show(time));
         }
     }
 }
