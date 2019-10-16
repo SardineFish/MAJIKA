@@ -60335,9 +60335,9 @@ MonoBehaviour:
   Camera: {fileID: 0}
   ViewportRect:
     serializedVersion: 2
-    x: -16.769999
+    x: -20.039999
     y: 3.5424995
-    width: 29.999998
+    width: 36.539997
     height: 16.875
 --- !u!4 &6441404159551789387
 Transform:

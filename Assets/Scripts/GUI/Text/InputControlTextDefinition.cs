@@ -73,7 +73,6 @@ namespace MAJIKA.TextManager
             input = new MAJIKAInput();
             var regGamePad = new Regex(@"<Gamepad>/(\S+)", RegexOptions.IgnoreCase | RegexOptions.ECMAScript);
             var regKeyboard = new Regex(@"<Keyboard>/(\S+)", RegexOptions.IgnoreCase | RegexOptions.ECMAScript);
-            var regTouchScreen = new Regex(@"<AndroidGamepad>/(\S+)", RegexOptions.IgnoreCase | RegexOptions.ECMAScript);
             input.ForEach(action =>
             {
                 var actionName = action.name.ToLower();
@@ -87,9 +86,15 @@ namespace MAJIKA.TextManager
                         if (match.Success)
                         {
                             if (!GamepadKeyText.ContainsKey(actionName))
+                            {
                                 GamepadKeyText[actionName] = TextDefinitions[binding.path];
+                                TouchScreenText[actionName] = TextDefinitions[$"<Touch>/{match.Groups[1]}"];
+                            }
                             else
+                            {
                                 GamepadKeyText[actionName] = Utility.StringJoin(",", GamepadKeyText[actionName], TextDefinitions[binding.path]);
+                                TouchScreenText[actionName] = Utility.StringJoin(",", KeyboardKeyText[actionName], TextDefinitions[$"<Touch>/{match.Groups[1]}"]);
+                            }
                         }
 
                         // Keyboard
@@ -100,16 +105,6 @@ namespace MAJIKA.TextManager
                                 KeyboardKeyText[actionName] = TextDefinitions[binding.path];
                             else
                                 KeyboardKeyText[actionName] = Utility.StringJoin(",", KeyboardKeyText[actionName], TextDefinitions[binding.path]);
-                        }
-
-                        // Touch
-                        match = regTouchScreen.Match(binding.path);
-                        if (match.Success)
-                        {
-                            if (!TouchScreenText.ContainsKey(actionName))
-                                TouchScreenText[actionName] = TextDefinitions[$"<Touch>/{match.Groups[1]}"];
-                            else 
-                                TouchScreenText[actionName] = Utility.StringJoin(",", KeyboardKeyText[actionName], TextDefinitions[$"<Touch>/{match.Groups[1]}"]);
                         }
                     });
             });

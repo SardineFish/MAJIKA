@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controlPath: <AndroidGamepad>/select
+  _controlPath: <Gamepad>/select
 --- !u!1 &485596725464076518
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controlPath: <AndroidGamepad>/buttonNorth
+  _controlPath: <Gamepad>/buttonNorth
 --- !u!1 &3789491254539856618
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,8 +372,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InvertX: 0
-  InvertY: 1
-  m_controlPath: <AndroidGamepad>/leftStick
+  InvertY: 0
+  m_controlPath: <Gamepad>/leftStick
 --- !u!114 &1997935842214858520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a2811fb37cb84429832b46580f7396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controlPath: <AndroidGamepad>/rightTrigger
+  _controlPath: <Gamepad>/rightTrigger
   Direction: {x: 0, y: 1}
   Threshold: 0.8
 --- !u!1 &4498234463272918188
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controlPath: <AndroidGamepad>/leftShoulder
+  _controlPath: <Gamepad>/leftShoulder
 --- !u!1 &4586734007814009441
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controlPath: <AndroidGamepad>/buttonWest
+  _controlPath: <Gamepad>/buttonWest
 --- !u!1 &5351878386113742772
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,4 +951,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e18ec7d49a4724082aa59b600b9298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _controlPath: <AndroidGamepad>/buttonSouth
+  _controlPath: <Gamepad>/buttonSouth
